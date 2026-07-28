@@ -35,6 +35,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="sprite" parent="GridContainer/Slot2" index="1" unique_id=2099300488]
+layout_direction = 3
 texture = ExtResource("3_d41l4")
 
 [node name="amount" parent="GridContainer/Slot2" index="2" unique_id=1407623469]
