@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crd7phdd8c28s"]
 
-[ext_resource type="Texture2D" uid="uid://inh37t6r8qoa" path="res://Inventario/sprites/SlotVazioDoInventario.png" id="1_4fyc1"]
-[ext_resource type="Script" uid="uid://bqrxviqeb7sxe" path="res://Inventario/scripts/slot.gd" id="1_32u3u"]
+[ext_resource type="Texture2D" uid="uid://inh37t6r8qoa" path="res://HUD/sprites/SlotVazioDoInventario.png" id="1_4fyc1"]
+[ext_resource type="Script" uid="uid://bqrxviqeb7sxe" path="res://HUD/scripts/slot.gd" id="1_32u3u"]
 
 [node name="Slot" type="Control" unique_id=1077371328]
 custom_minimum_size = Vector2(60, 60)

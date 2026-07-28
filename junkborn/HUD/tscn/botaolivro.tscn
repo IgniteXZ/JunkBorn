@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cmj6ro7q2y0l6"]
+
+[ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="1_34cwd"]
+[ext_resource type="Script" uid="uid://lpsytk0rf4l" path="res://HUD/tscn/botaolivro.gd" id="1_d7t50"]
+[ext_resource type="PackedScene" uid="uid://b7r3lav64vtns" path="res://HUD/tscn/menumissao.tscn" id="3_xyqfl"]
+
+[node name="Botaolivro" type="Control" unique_id=1872793863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d7t50")
+
+[node name="sprite" type="TextureRect" parent="." unique_id=629576971]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 290.0
+texture = ExtResource("1_34cwd")
+
+[node name="Menumissao" parent="." unique_id=630621404 instance=ExtResource("3_xyqfl")]
+visible = false
+layout_mode = 1

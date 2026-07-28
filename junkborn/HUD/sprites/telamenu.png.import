@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://inh37t6r8qoa"
-path="res://.godot/imported/SlotVazioDoInventario.png-3dbb44bd67bf0eb79ef1cbdb834a3e2e.ctex"
+uid="uid://de5cctxoqcc1p"
+path="res://.godot/imported/telamenu.png-a0eb96f43e7d653a2a2f9cfba5025e7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventario/sprites/SlotVazioDoInventario.png"
-dest_files=["res://.godot/imported/SlotVazioDoInventario.png-3dbb44bd67bf0eb79ef1cbdb834a3e2e.ctex"]
+source_file="res://HUD/sprites/telamenu.png"
+dest_files=["res://.godot/imported/telamenu.png-a0eb96f43e7d653a2a2f9cfba5025e7d.ctex"]
 
 [params]
 

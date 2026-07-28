@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://do7u7lph88bvo"]
 
-[ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://Inventario/scripts/ui_canvas.gd" id="1_1i51y"]
+[ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="1_1i51y"]
 [ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Cenario1/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
-[ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://Inventario/tscn/inventory.tscn" id="1_iqoj6"]
+[ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="1_iqoj6"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
 [ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://Cenario1/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
 [ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://Cenario1/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
-[ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://Inventario/scripts/item.gd" id="13_oprud"]
+[ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56cet"]
@@ -1467,7 +1467,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir", "canvas")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 canvas = NodePath("../ui_canvas")

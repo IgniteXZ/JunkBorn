@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg74a5bid7n81"
-path="res://.godot/imported/slot inventario.png-d06e021e55d05698da54b1bd0e9e0cab.ctex"
+uid="uid://x208rr50v2oe"
+path="res://.godot/imported/FundoDoInventario.png-a0c185be5a08b94854bc8454d553351b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventario/sprites/slot inventario.png"
-dest_files=["res://.godot/imported/slot inventario.png-d06e021e55d05698da54b1bd0e9e0cab.ctex"]
+source_file="res://HUD/sprites/FundoDoInventario.png"
+dest_files=["res://.godot/imported/FundoDoInventario.png-a0c185be5a08b94854bc8454d553351b.ctex"]
 
 [params]
 

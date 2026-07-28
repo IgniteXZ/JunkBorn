@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmpg0bdgokh3l"
-path="res://.godot/imported/mochila placehorder.png-afdd1cf8bfcba196b7b5cae426b71825.ctex"
+uid="uid://dg74a5bid7n81"
+path="res://.godot/imported/slot inventario.png-1e8ba1bc9e56521aa6dd71f19225a910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventario/sprites/mochila placehorder.png"
-dest_files=["res://.godot/imported/mochila placehorder.png-afdd1cf8bfcba196b7b5cae426b71825.ctex"]
+source_file="res://HUD/sprites/slot inventario.png"
+dest_files=["res://.godot/imported/slot inventario.png-1e8ba1bc9e56521aa6dd71f19225a910.ctex"]
 
 [params]
 
