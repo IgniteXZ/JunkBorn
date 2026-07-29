@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://do7u7lph88bvo"]
 
 [ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="1_1i51y"]
+[ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_8llo0"]
 [ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Cenario1/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
 [ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="1_iqoj6"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
@@ -1262,6 +1263,7 @@ outline_color = Color(0, 0, 0, 1)
 size = Vector2(68, 50)
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
+script = ExtResource("1_8llo0")
 
 [node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1610952429 groups=["UI"]]
 script = ExtResource("1_1i51y")

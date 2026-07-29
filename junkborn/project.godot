@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*uid://ds2q0uclmolvu"
 GerenciadorMissoes="*uid://c5dqm5rbf8rvg"
+Global="*uid://cx8w5ymdwkvy2"
 
 [dialogic]
 
