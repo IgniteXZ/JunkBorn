@@ -306,5 +306,3 @@ show_behind_parent = true
 position = Vector2(0, -41.99)
 scale = Vector2(0.885, 5.11)
 shape = SubResource("RectangleShape2D_6q8wu")
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1758282326]

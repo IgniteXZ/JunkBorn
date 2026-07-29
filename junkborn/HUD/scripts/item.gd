@@ -8,6 +8,7 @@ var player: Area2D = null
 @export var canvas: CanvasLayer
 
 var MissaoTeste = preload("res://Resource/MissaoTeste.tres")
+var MissaoDebug = preload("res://Resource/MissaoLegal.tres")
 
 
 func _process(delta: float) -> void:
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 		
 	if perto:
 		GerenciadorMissoes.adicionar_missao(MissaoTeste)
+		GerenciadorMissoes.adicionar_missao(MissaoDebug)
 			
 
 

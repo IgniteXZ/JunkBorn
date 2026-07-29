@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#signal DaumaPegadaAqui(global_position: Vector2)
+
 var _state_machine
 
 @export_category("Variables")

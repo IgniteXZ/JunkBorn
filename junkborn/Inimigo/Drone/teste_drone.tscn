@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkpioc4gtrwip"]
+
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="1_dm1br"]
+[ext_resource type="PackedScene" uid="uid://dcsc2ipuigyya" path="res://Inimigo/Drone/drone.tscn" id="1_tn8jh"]
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_dm1br"]
+
+[node name="TesteDrone" type="Node2D" unique_id=780761738]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=597942991]
+scale = Vector2(20.343748, 13.312499)
+texture = ExtResource("1_dm1br")
+
+[node name="Drone" parent="." unique_id=689894852 instance=ExtResource("1_tn8jh")]
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_dm1br")]
+position = Vector2(437, 153)

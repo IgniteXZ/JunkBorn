@@ -7,6 +7,8 @@ extends Node2D
 @export var limite_minimo: Vector2 = Vector2(30, 100) # X inicial (esquerda), Y inicial (início do chão)
 @export var limite_maximo: Vector2 = Vector2(1050, 700) # X final (direita), Y final (rodapé da tela)
 
+
+	
 func _ready() -> void:
 	randomize()
 	for i in range(5):
@@ -31,3 +33,5 @@ func spawnar_lixo() -> void:
 	# Adiciona à cena e passa os dados
 	add_child(novo_lixo_node)
 	novo_lixo_node.configurar(lixo_aleatorio)
+	
+	
