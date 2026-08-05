@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://crd7phdd8c28s"]
+
+[ext_resource type="Texture2D" uid="uid://inh37t6r8qoa" path="res://Inventario/sprites/SlotVazioDoInventario.png" id="1_4fyc1"]
+[ext_resource type="Script" uid="uid://bqrxviqeb7sxe" path="res://Inventario/scripts/slot.gd" id="1_32u3u"]
+
+[node name="Slot" type="Control" unique_id=1077371328]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -260.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("1_32u3u")
+
+[node name="background" type="TextureRect" parent="." unique_id=1549255035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4fyc1")
+expand_mode = 1
+
+[node name="sprite" type="TextureRect" parent="." unique_id=2099300488]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="amount" type="Label" parent="." unique_id=1407623469]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -23.0
+offset_right = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy830r536cfox"
-path="res://.godot/imported/tileset-palha-terra2.png-fd04009233ae260e0cf2aacf57d9a0e7.ctex"
+uid="uid://x208rr50v2oe"
+path="res://.godot/imported/FundoDoInventario.png-ada5173301e8d1716f773b3d8c8fbc6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSet/tileset-palha-terra2.png"
-dest_files=["res://.godot/imported/tileset-palha-terra2.png-fd04009233ae260e0cf2aacf57d9a0e7.ctex"]
+source_file="res://Inventario/sprites/FundoDoInventario.png"
+dest_files=["res://.godot/imported/FundoDoInventario.png-ada5173301e8d1716f773b3d8c8fbc6c.ctex"]
 
 [params]
 

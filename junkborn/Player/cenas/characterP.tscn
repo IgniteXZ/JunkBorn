@@ -1,21 +1,21 @@
 [gd_scene format=4 uid="uid://0vrlihcu02bv"]
 
-[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://Assets/TileSet/tileset-palha-terra.png" id="1_56cet"]
-[ext_resource type="Script" uid="uid://b1g4jeq3pgdxk" path="res://character/cenas/character.gd" id="1_h38yq"]
-[ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Assets/paralax/paralax4.png" id="1_ly6wo"]
-[ext_resource type="Texture2D" uid="uid://dr3bd4t8s83j3" path="res://character/assets/filomeno_sprites_placeholder.png" id="1_oxrcy"]
-[ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Assets/paralax/paralax3.png" id="2_0o3cm"]
-[ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://Assets/TileSet/tileset cerca.png" id="2_v7fka"]
-[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://Assets/TileSet/tileset terra pedrasa.png" id="3_nexi7"]
-[ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://Assets/paralax/paralax2.png" id="3_tdpp7"]
-[ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Assets/TileSet/tileset placeholder imoveis.png" id="3_th56v"]
-[ext_resource type="Script" uid="uid://csvkl1kwxd3cu" path="res://character/cenas/camera_2d.gd" id="4_56cet"]
-[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://Assets/TileSet/tileset-palha-terra2.png" id="4_nexi7"]
-[ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://Assets/paralax/paralax1.png" id="4_q4ume"]
-[ext_resource type="Script" uid="uid://1wol6rk7qfjo" path="res://character/cenas/area_2d.gd" id="5_56cet"]
+[ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Cenario1/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
+[ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
+[ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://Cenario1/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
+[ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://Cenario1/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
+[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="5_qdxuf"]
+[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra2.png" id="6_xhem3"]
+[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="7_72tdg"]
+[ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
+[ext_resource type="Script" uid="uid://b1g4jeq3pgdxk" path="res://Player/scripts/character.gd" id="9_4vwmg"]
+[ext_resource type="Texture2D" uid="uid://dr3bd4t8s83j3" path="res://Player/assets/spriteMove/filomeno_sprites_placeholder.png" id="10_qwfdc"]
+[ext_resource type="Script" uid="uid://csvkl1kwxd3cu" path="res://Player/scripts/camera_2d.gd" id="11_brdqy"]
+[ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
+[ext_resource type="Script" uid="uid://1wol6rk7qfjo" path="res://Player/scripts/area_2d.gd" id="13_er25d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56cet"]
-texture = ExtResource("1_56cet")
+texture = ExtResource("5_qdxuf")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -35,7 +35,7 @@ texture_region_size = Vector2i(24, 24)
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly6wo"]
-texture = ExtResource("4_nexi7")
+texture = ExtResource("6_xhem3")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -55,7 +55,7 @@ texture_region_size = Vector2i(24, 24)
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bok62"]
-texture = ExtResource("3_nexi7")
+texture = ExtResource("7_72tdg")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -129,7 +129,7 @@ sources/3 = SubResource("TileSetAtlasSource_ly6wo")
 sources/4 = SubResource("TileSetAtlasSource_bok62")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th56v"]
-texture = ExtResource("2_v7fka")
+texture = ExtResource("8_bo250")
 17:0/0 = 0
 18:0/0 = 0
 19:0/0 = 0
@@ -1307,7 +1307,7 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7fka"]
-texture = ExtResource("3_th56v")
+texture = ExtResource("12_gdgtv")
 texture_region_size = Vector2i(24, 24)
 use_texture_padding = false
 18:0/0 = 0
@@ -2848,7 +2848,7 @@ use_texture_padding = false
 30:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nivmh"]
-texture = ExtResource("3_nexi7")
+texture = ExtResource("7_72tdg")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -2916,7 +2916,7 @@ texture_region_size = Vector2i(24, 24)
 7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weet6"]
-texture = ExtResource("1_56cet")
+texture = ExtResource("5_qdxuf")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -2952,27 +2952,27 @@ scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(480, 264)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax4" unique_id=990022117]
-texture = ExtResource("1_ly6wo")
+texture = ExtResource("1_f8jfp")
 
 [node name="Parallax3" type="Parallax2D" parent="." unique_id=2003176638]
 scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(480, 264)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax3" unique_id=539411340]
-texture = ExtResource("2_0o3cm")
+texture = ExtResource("2_obtqt")
 
 [node name="Parallax2" type="Parallax2D" parent="." unique_id=781148253]
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(480, 264)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2" unique_id=1454134262]
-texture = ExtResource("3_tdpp7")
+texture = ExtResource("3_sogpy")
 
 [node name="Parallax1" type="Parallax2D" parent="." unique_id=425484701]
 repeat_size = Vector2(480, 264)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax1" unique_id=1558738478]
-texture = ExtResource("4_q4ume")
+texture = ExtResource("4_v5uad")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1141648855]
 position = Vector2(67, 41)
@@ -2985,12 +2985,12 @@ tile_set = SubResource("TileSet_yd1hl")
 
 [node name="Character" type="CharacterBody2D" parent="." unique_id=617584520 node_paths=PackedStringArray("_animation_tree")]
 position = Vector2(31, 86)
-script = ExtResource("1_h38yq")
+script = ExtResource("9_4vwmg")
 _animation_tree = NodePath("AnimationTree")
 
 [node name="texture" type="Sprite2D" parent="Character" unique_id=636350926]
 position = Vector2(0.5, -44)
-texture = ExtResource("1_oxrcy")
+texture = ExtResource("10_qwfdc")
 hframes = 4
 vframes = 2
 
@@ -3008,7 +3008,7 @@ anim_player = NodePath("../Animation")
 parameters/idle/blend_position = Vector2(0.0031898, 0.142857)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1658053808]
-script = ExtResource("4_56cet")
+script = ExtResource("11_brdqy")
 
 [node name="Interagir" type="Area2D" parent="Character" unique_id=698333636]
 
@@ -3034,7 +3034,7 @@ tile_set = SubResource("TileSet_x42px")
 rendering_quadrant_size = 24
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1671440250]
-script = ExtResource("5_56cet")
+script = ExtResource("13_er25d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=157285799]
 position = Vector2(-1422, 265)
