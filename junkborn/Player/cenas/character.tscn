@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://bblifjy18wubl"]
+
+[ext_resource type="Script" uid="uid://b1g4jeq3pgdxk" path="res://Player/scripts/character.gd" id="1_gbkji"]
+[ext_resource type="Texture2D" uid="uid://dr3bd4t8s83j3" path="res://Player/assets/spriteMove/filomeno_sprites_placeholder.png" id="2_4qe4t"]
+[ext_resource type="Script" uid="uid://csvkl1kwxd3cu" path="res://Player/scripts/camera_2d.gd" id="3_1kn0l"]
+
+[sub_resource type="Animation" id="Animation_66n8x"]
+length = 0.001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mxsgq"]
+resource_name = "idle_down"
+length = 1.0001
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -44)]
+}
+
+[sub_resource type="Animation" id="Animation_offt7"]
+resource_name = "idle_left"
+length = 1.0001
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -44)]
+}
+
+[sub_resource type="Animation" id="Animation_2riud"]
+resource_name = "idle_right"
+length = 1.0001
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u2s83"]
+resource_name = "idle_up"
+length = 1.0001
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -44)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7u3ob"]
+_data = {
+&"RESET": SubResource("Animation_66n8x"),
+&"idle_down": SubResource("Animation_mxsgq"),
+&"idle_left": SubResource("Animation_offt7"),
+&"idle_right": SubResource("Animation_2riud"),
+&"idle_up": SubResource("Animation_u2s83")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_85fdo"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lasei"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h38yq"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ruoe"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vd50r"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_85fdo")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
+blend_point_1/node = SubResource("AnimationNodeAnimation_lasei")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"1"
+blend_point_2/node = SubResource("AnimationNodeAnimation_h38yq")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"2"
+blend_point_3/node = SubResource("AnimationNodeAnimation_7ruoe")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"3"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jwrm1"]
+states/Start/position = Vector2(189, 114)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_vd50r")
+states/idle/position = Vector2(530, 106)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrw66"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
+size = Vector2(43, 17)
+
+[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("_animation_tree")]
+script = ExtResource("1_gbkji")
+_animation_tree = NodePath("AnimationTree")
+
+[node name="texture" type="Sprite2D" parent="." unique_id=1843069659]
+position = Vector2(0.5, -44)
+texture = ExtResource("2_4qe4t")
+hframes = 4
+vframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=569436080]
+libraries/ = SubResource("AnimationLibrary_7u3ob")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1725991115]
+tree_root = SubResource("AnimationNodeStateMachine_jwrm1")
+anim_player = NodePath("../Animation")
+parameters/idle/blend_position = Vector2(0.0031898, 0.142857)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1370765563]
+script = ExtResource("3_1kn0l")
+
+[node name="Interagir" type="Area2D" parent="." unique_id=2001418787]
+
+[node name="LabelInteragir" type="Label" parent="Interagir" unique_id=1547334625]
+visible = false
+offset_left = -82.0
+offset_top = -95.0
+offset_right = 104.0
+offset_bottom = -72.0
+text = "Aperte E para conversar"
+label_settings = SubResource("LabelSettings_qrw66")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interagir" unique_id=2078145236]
+show_behind_parent = true
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6q8wu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1612096471]
+show_behind_parent = true
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6q8wu")
