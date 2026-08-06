@@ -1,6 +1,8 @@
 extends Control
+
+
 #serve para arrastar o que nosso criador chama de itens(skibd toiled)
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(position: Vector2):
 #não sei para que serve mas não mexe
 	var data
 	
@@ -14,14 +16,15 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	preview.get_node("sprite").position = -preview.size/2
 
 	set_drag_preview(preview)
+	
 	return preview.get_node("sprite").texture 
 #agora vamos dropar o tungtung sarrur celestial
 
 #verifica se pode dar aquela dropada
-func can_drop_data(position: Vector2, data) -> bool:
+func _can_drop_data(position: Vector2, data) -> bool:
 	
 	return true
 #da aquela dropada	
-func  drop_data(position: Vector2, data) -> void:
+func  _drop_data(position: Vector2, data) -> void:
 	$sprite.texture = data
 	
