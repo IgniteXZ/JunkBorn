@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://0vrlihcu02bv"]
 
+[ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://Inventario/scripts/ui_canvas.gd" id="1_1i51y"]
 [ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Cenario1/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
+[ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://Inventario/tscn/inventory.tscn" id="1_iqoj6"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
 [ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://Cenario1/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
 [ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://Cenario1/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
@@ -10,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
+[ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
+[ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://Inventario/scripts/item.gd" id="13_oprud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56cet"]
 texture = ExtResource("5_qdxuf")
@@ -2258,7 +2262,15 @@ sources/0 = SubResource("TileSetAtlasSource_v7fka")
 sources/1 = SubResource("TileSetAtlasSource_nivmh")
 sources/2 = SubResource("TileSetAtlasSource_weet6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
+
 [node name="Node2D" type="Node2D" unique_id=240260216]
+
+[node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1610952429]
+script = ExtResource("1_1i51y")
+
+[node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("1_iqoj6")]
+visible = false
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1322766949]
 position = Vector2(0, -280)
@@ -2335,3 +2347,16 @@ rendering_quadrant_size = 24
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("9_qq5vk")]
 position = Vector2(31, 86)
+
+[node name="item1" type="Area2D" parent="." unique_id=810148950]
+script = ExtResource("13_oprud")
+
+[node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
+shape = SubResource("RectangleShape2D_500wf")
+
+[node name="sprite" type="Sprite2D" parent="item1" unique_id=1393674261]
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("13_500wf")
+
+[connection signal="body_entered" from="item1" to="item1" method="_on_body_entered"]
+[connection signal="body_exited" from="item1" to="item1" method="_on_body_exited"]

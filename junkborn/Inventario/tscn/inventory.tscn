@@ -46,7 +46,7 @@ layout_direction = 3
 texture = ExtResource("3_d41l4")
 
 [node name="amount" parent="GridContainer/Slot2" index="2" unique_id=1407623469]
-text = "99"
+text = "90"
 
 [node name="Slot3" parent="GridContainer" unique_id=22392142 instance=ExtResource("2_lic60")]
 layout_mode = 2
@@ -59,6 +59,12 @@ layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot4" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot4" index="1" unique_id=2099300488]
+texture = ExtResource("4_iclnp")
+
+[node name="amount" parent="GridContainer/Slot4" index="2" unique_id=1407623469]
+text = "1"
 
 [node name="Slot5" parent="GridContainer" unique_id=1186434627 instance=ExtResource("2_lic60")]
 layout_mode = 2
@@ -90,6 +96,78 @@ layout_mode = 2
 [node name="background" parent="GridContainer/Slot8" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
+[node name="Slot9" parent="GridContainer" unique_id=748481143 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot9" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot10" parent="GridContainer" unique_id=389718707 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot10" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot11" parent="GridContainer" unique_id=1754837915 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot11" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot12" parent="GridContainer" unique_id=1419154164 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot12" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot13" parent="GridContainer" unique_id=1405631013 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot13" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot14" parent="GridContainer" unique_id=154393647 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot14" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot15" parent="GridContainer" unique_id=286813772 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot15" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot16" parent="GridContainer" unique_id=1744155287 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot16" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot17" parent="GridContainer" unique_id=276070336 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot17" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot18" parent="GridContainer" unique_id=2095458766 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot18" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot19" parent="GridContainer" unique_id=358943296 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot19" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot20" parent="GridContainer" unique_id=1345642550 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot20" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [editable path="GridContainer/Slot"]
 [editable path="GridContainer/Slot2"]
 [editable path="GridContainer/Slot3"]
@@ -98,3 +176,15 @@ texture = ExtResource("3_rqyyd")
 [editable path="GridContainer/Slot6"]
 [editable path="GridContainer/Slot7"]
 [editable path="GridContainer/Slot8"]
+[editable path="GridContainer/Slot9"]
+[editable path="GridContainer/Slot10"]
+[editable path="GridContainer/Slot11"]
+[editable path="GridContainer/Slot12"]
+[editable path="GridContainer/Slot13"]
+[editable path="GridContainer/Slot14"]
+[editable path="GridContainer/Slot15"]
+[editable path="GridContainer/Slot16"]
+[editable path="GridContainer/Slot17"]
+[editable path="GridContainer/Slot18"]
+[editable path="GridContainer/Slot19"]
+[editable path="GridContainer/Slot20"]

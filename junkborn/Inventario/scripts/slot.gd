@@ -18,7 +18,7 @@ func _get_drag_data(position: Vector2):
 	preview.get_node("amount").hide()
 	
 #deixa o item no centro da sua bunda... digo mouse
-	preview.get_node("sprite").position = -preview.size/2
+	preview.get_node("sprite").position = -preview.size
 
 	set_empty_slot()
 	set_drag_preview(preview)
@@ -39,10 +39,16 @@ func _can_drop_data(position: Vector2, data) -> bool:
 #da aquela dropada	
 func  _drop_data(position: Vector2, data) -> void:
 	##trocar o lado dos dados de cada item no momento da troca de slot
-	data.backup.get_node("sprite").texture = $sprite
-	data.backup.get_node("amount").text = $amount.text
-	
-	$sprite.texture = data.sprite
-	$amount.text = data.amount
+	##esse if verifica se os dois itens são iguais, se for, eles se juntam
+	if $sprite.texture == data.sprite:
+		var drop_item = int($amount.text)
+		drop_item += int(data.amount)
+		$amount.text = str(drop_item)
+	else:
+		data.backup.get_node("sprite").texture = $sprite.texture
+		data.backup.get_node("amount").text = $amount.text
+		
+		$sprite.texture = data.sprite
+		$amount.text = data.amount
 #fim da dropada
 	
