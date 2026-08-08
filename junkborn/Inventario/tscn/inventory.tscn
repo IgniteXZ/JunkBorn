@@ -1,56 +1,82 @@
 [gd_scene format=3 uid="uid://doyj5detmwxjj"]
 
-[ext_resource type="Texture2D" uid="uid://x208rr50v2oe" path="res://Inventario/sprites/FundoDoInventario.png" id="1_jmra0"]
+[ext_resource type="Texture2D" uid="uid://dmpg0bdgokh3l" path="res://Inventario/sprites/mochila placehorder.png" id="1_iclnp"]
 [ext_resource type="PackedScene" uid="uid://crd7phdd8c28s" path="res://Inventario/tscn/slot.tscn" id="2_lic60"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="3_d41l4"]
+[ext_resource type="Texture2D" uid="uid://dg74a5bid7n81" path="res://Inventario/sprites/slot inventario.png" id="3_rqyyd"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="4_iclnp"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
 offset_bottom = 348.0
-texture = ExtResource("1_jmra0")
+texture = ExtResource("1_iclnp")
 expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=102233563]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.582
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.582
 anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = -121.0
-offset_right = 268.0
-offset_bottom = 120.0
+offset_left = -166.20001
+offset_top = -128.0
+offset_right = 165.79999
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
-columns = 8
+columns = 5
 
 [node name="Slot" parent="GridContainer" unique_id=1077371328 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [node name="Slot2" parent="GridContainer" unique_id=1339989651 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot2" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [node name="sprite" parent="GridContainer/Slot2" index="1" unique_id=2099300488]
+layout_direction = 3
 texture = ExtResource("3_d41l4")
 
 [node name="amount" parent="GridContainer/Slot2" index="2" unique_id=1407623469]
-text = "99"
+text = "90"
 
 [node name="Slot3" parent="GridContainer" unique_id=22392142 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot3" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [node name="Slot4" parent="GridContainer" unique_id=424986864 instance=ExtResource("2_lic60")]
 layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot4" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot4" index="1" unique_id=2099300488]
+texture = ExtResource("4_iclnp")
+
+[node name="amount" parent="GridContainer/Slot4" index="2" unique_id=1407623469]
+text = "1"
 
 [node name="Slot5" parent="GridContainer" unique_id=1186434627 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot5" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [node name="Slot6" parent="GridContainer" unique_id=867441514 instance=ExtResource("2_lic60")]
 layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot6" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
 
 [node name="sprite" parent="GridContainer/Slot6" index="1" unique_id=2099300488]
 texture = ExtResource("4_iclnp")
@@ -61,8 +87,104 @@ text = "2"
 [node name="Slot7" parent="GridContainer" unique_id=248800838 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot7" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
 [node name="Slot8" parent="GridContainer" unique_id=1082262799 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
+[node name="background" parent="GridContainer/Slot8" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot9" parent="GridContainer" unique_id=748481143 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot9" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot10" parent="GridContainer" unique_id=389718707 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot10" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot11" parent="GridContainer" unique_id=1754837915 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot11" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot12" parent="GridContainer" unique_id=1419154164 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot12" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot13" parent="GridContainer" unique_id=1405631013 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot13" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot14" parent="GridContainer" unique_id=154393647 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot14" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot15" parent="GridContainer" unique_id=286813772 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot15" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot16" parent="GridContainer" unique_id=1744155287 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot16" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot17" parent="GridContainer" unique_id=276070336 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot17" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot18" parent="GridContainer" unique_id=2095458766 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot18" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot19" parent="GridContainer" unique_id=358943296 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot19" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[node name="Slot20" parent="GridContainer" unique_id=1345642550 instance=ExtResource("2_lic60")]
+layout_mode = 2
+
+[node name="background" parent="GridContainer/Slot20" index="0" unique_id=1549255035]
+texture = ExtResource("3_rqyyd")
+
+[editable path="GridContainer/Slot"]
 [editable path="GridContainer/Slot2"]
+[editable path="GridContainer/Slot3"]
+[editable path="GridContainer/Slot4"]
+[editable path="GridContainer/Slot5"]
 [editable path="GridContainer/Slot6"]
+[editable path="GridContainer/Slot7"]
+[editable path="GridContainer/Slot8"]
+[editable path="GridContainer/Slot9"]
+[editable path="GridContainer/Slot10"]
+[editable path="GridContainer/Slot11"]
+[editable path="GridContainer/Slot12"]
+[editable path="GridContainer/Slot13"]
+[editable path="GridContainer/Slot14"]
+[editable path="GridContainer/Slot15"]
+[editable path="GridContainer/Slot16"]
+[editable path="GridContainer/Slot17"]
+[editable path="GridContainer/Slot18"]
+[editable path="GridContainer/Slot19"]
+[editable path="GridContainer/Slot20"]
