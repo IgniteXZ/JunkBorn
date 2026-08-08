@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="JunkBorn"
-run/main_scene="uid://0vrlihcu02bv"
+run/main_scene="uid://do7u7lph88bvo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
