@@ -182,6 +182,7 @@ texture = ExtResource("8_bo250")
 27:3/0 = 0
 28:3/0 = 0
 29:3/0 = 0
+29:3/0/y_sort_origin = -111
 13:4/0 = 0
 14:4/0 = 0
 15:4/0 = 0
@@ -239,7 +240,6 @@ texture = ExtResource("8_bo250")
 31:6/0 = 0
 32:6/0 = 0
 33:6/0 = 0
-33:6/0/y_sort_origin = -127
 10:7/0 = 0
 11:7/0 = 0
 12:7/0 = 0
@@ -254,9 +254,7 @@ texture = ExtResource("8_bo250")
 31:7/0 = 0
 32:7/0 = 0
 33:7/0 = 0
-33:7/0/y_sort_origin = -111
 34:7/0 = 0
-34:7/0/y_sort_origin = -127
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
@@ -270,11 +268,8 @@ texture = ExtResource("8_bo250")
 31:8/0 = 0
 32:8/0 = 0
 33:8/0 = 0
-33:8/0/y_sort_origin = -95
 34:8/0 = 0
-34:8/0/y_sort_origin = -111
 35:8/0 = 0
-35:8/0/y_sort_origin = -127
 8:9/0 = 0
 9:9/0 = 0
 10:9/0 = 0
@@ -286,12 +281,10 @@ texture = ExtResource("8_bo250")
 31:9/0 = 0
 32:9/0 = 0
 33:9/0 = 0
-33:9/0/y_sort_origin = -79
 34:9/0 = 0
-34:9/0/y_sort_origin = -95
 35:9/0 = 0
-35:9/0/y_sort_origin = -111
 36:9/0 = 0
+36:9/0/y_sort_origin = -111
 37:9/0 = 0
 6:10/0 = 0
 7:10/0 = 0
@@ -304,12 +297,12 @@ texture = ExtResource("8_bo250")
 31:10/0 = 0
 32:10/0 = 0
 33:10/0 = 0
-33:10/0/y_sort_origin = -63
 34:10/0 = 0
 34:10/0/y_sort_origin = -79
 35:10/0 = 0
 35:10/0/y_sort_origin = -95
 36:10/0 = 0
+36:10/0/y_sort_origin = -95
 37:10/0 = 0
 38:10/0 = 0
 39:10/0 = 0
@@ -323,17 +316,18 @@ texture = ExtResource("8_bo250")
 12:11/0 = 0
 32:11/0 = 0
 33:11/0 = 0
-33:11/0/y_sort_origin = -47
 34:11/0 = 0
 34:11/0/y_sort_origin = -63
 35:11/0 = 0
 35:11/0/y_sort_origin = -79
 36:11/0 = 0
+36:11/0/y_sort_origin = -79
 37:11/0 = 0
 38:11/0 = 0
 39:11/0 = 0
 39:11/0/y_sort_origin = 113
 40:11/0 = 0
+40:11/0/y_sort_origin = 137
 5:12/0 = 0
 6:12/0 = 0
 7:12/0 = 0
@@ -342,12 +336,12 @@ texture = ExtResource("8_bo250")
 10:12/0 = 0
 11:12/0 = 0
 33:12/0 = 0
-33:12/0/y_sort_origin = -32
 34:12/0 = 0
 34:12/0/y_sort_origin = -47
 35:12/0 = 0
 35:12/0/y_sort_origin = -63
 36:12/0 = 0
+36:12/0/y_sort_origin = -63
 37:12/0 = 0
 38:12/0 = 0
 39:12/0 = 0
@@ -355,6 +349,7 @@ texture = ExtResource("8_bo250")
 40:12/0 = 0
 40:12/0/y_sort_origin = 89
 41:12/0 = 0
+41:12/0/y_sort_origin = 137
 4:13/0 = 0
 5:13/0 = 0
 6:13/0 = 0
@@ -367,6 +362,7 @@ texture = ExtResource("8_bo250")
 35:13/0 = 0
 35:13/0/y_sort_origin = -47
 36:13/0 = 0
+36:13/0/y_sort_origin = -47
 37:13/0 = 0
 38:13/0 = 0
 39:13/0 = 0
@@ -376,6 +372,7 @@ texture = ExtResource("8_bo250")
 41:13/0 = 0
 41:13/0/y_sort_origin = 89
 42:13/0 = 0
+42:13/0/y_sort_origin = 137
 3:14/0 = 0
 4:14/0 = 0
 5:14/0 = 0
@@ -389,6 +386,7 @@ texture = ExtResource("8_bo250")
 35:14/0 = 0
 35:14/0/y_sort_origin = -32
 36:14/0 = 0
+36:14/0/y_sort_origin = -32
 37:14/0 = 0
 38:14/0 = 0
 39:14/0 = 0
@@ -398,7 +396,9 @@ texture = ExtResource("8_bo250")
 41:14/0 = 0
 41:14/0/y_sort_origin = 65
 42:14/0 = 0
+42:14/0/y_sort_origin = 113
 43:14/0 = 0
+43:14/0/y_sort_origin = 137
 2:15/0 = 0
 3:15/0 = 0
 4:15/0 = 0
@@ -415,8 +415,11 @@ texture = ExtResource("8_bo250")
 41:15/0 = 0
 41:15/0/y_sort_origin = 41
 42:15/0 = 0
+42:15/0/y_sort_origin = 89
 43:15/0 = 0
+43:15/0/y_sort_origin = 113
 44:15/0 = 0
+44:15/0/y_sort_origin = 137
 1:16/0 = 0
 2:16/0 = 0
 3:16/0 = 0
@@ -432,9 +435,13 @@ texture = ExtResource("8_bo250")
 41:16/0 = 0
 41:16/0/y_sort_origin = 17
 42:16/0 = 0
+42:16/0/y_sort_origin = 65
 43:16/0 = 0
+43:16/0/y_sort_origin = 89
 44:16/0 = 0
+44:16/0/y_sort_origin = 113
 45:16/0 = 0
+45:16/0/y_sort_origin = 137
 1:17/0 = 0
 2:17/0 = 0
 3:17/0 = 0
@@ -443,35 +450,51 @@ texture = ExtResource("8_bo250")
 6:17/0 = 0
 7:17/0 = 0
 39:17/0 = 0
+39:17/0/y_sort_origin = -31
 40:17/0 = 0
+40:17/0/y_sort_origin = -31
 41:17/0 = 0
 41:17/0/y_sort_origin = -7
 42:17/0 = 0
+42:17/0/y_sort_origin = 41
 43:17/0 = 0
+43:17/0/y_sort_origin = 65
 44:17/0 = 0
+44:17/0/y_sort_origin = 89
 45:17/0 = 0
+45:17/0/y_sort_origin = 113
 1:18/0 = 0
 2:18/0 = 0
 3:18/0 = 0
 4:18/0 = 0
 5:18/0 = 0
 41:18/0 = 0
+41:18/0/y_sort_origin = -31
 42:18/0 = 0
+42:18/0/y_sort_origin = 17
 43:18/0 = 0
+43:18/0/y_sort_origin = 41
 44:18/0 = 0
+44:18/0/y_sort_origin = 65
 45:18/0 = 0
+45:18/0/y_sort_origin = 89
 1:19/0 = 0
 2:19/0 = 0
 3:19/0 = 0
 4:19/0 = 0
 43:19/0 = 0
+43:19/0/y_sort_origin = 17
 44:19/0 = 0
+44:19/0/y_sort_origin = 41
 45:19/0 = 0
+45:19/0/y_sort_origin = 65
 1:20/0 = 0
 2:20/0 = 0
 3:20/0 = 0
 44:20/0 = 0
+44:20/0/y_sort_origin = 41
 45:20/0 = 0
+45:20/0/y_sort_origin = 41
 1:21/0 = 0
 2:21/0 = 0
 45:21/0 = 0
@@ -889,12 +912,12 @@ radius = 49.0
 height = 962.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qfd0"]
-radius = 31.369202
-height = 430.20386
+radius = 35.722565
+height = 455.5548
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgpvk"]
-radius = 28.55243
-height = 460.9325
+radius = 40.230316
+height = 390.9735
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7fka"]
 texture = ExtResource("12_gdgtv")
@@ -1606,7 +1629,7 @@ size = Vector2(367, 113)
 size = Vector2(369, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xci24"]
-size = Vector2(365.5, 95)
+size = Vector2(365.5, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1pe"]
 size = Vector2(390, 170)
@@ -1630,7 +1653,7 @@ size = Vector2(117, 22.000006)
 size = Vector2(33.999996, 27.797348)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fegt"]
-size = Vector2(35.5, 27.898678)
+size = Vector2(42, 35.89868)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1730,12 +1753,12 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_w3opj")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="y-sort/TileMapLayer3/Node2D/StaticBody2D" unique_id=117548115]
-position = Vector2(656, 37.999996)
+position = Vector2(664, 24.000027)
 rotation = -0.87615526
 shape = SubResource("CapsuleShape2D_6qfd0")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="y-sort/TileMapLayer3/Node2D/StaticBody2D" unique_id=706626389]
-position = Vector2(1055, 357)
+position = Vector2(1026, 321.99997)
 rotation = 2.2933626
 shape = SubResource("CapsuleShape2D_bgpvk")
 
@@ -1747,97 +1770,80 @@ tile_set = SubResource("TileSet_x42px")
 rendering_quadrant_size = 24
 
 [node name="StaticBody2D" type="StaticBody2D" parent="y-sort/TileMapLayer2" unique_id=1205839759]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=709763408]
-visible = false
 position = Vector2(-178, 33.5)
 shape = SubResource("RectangleShape2D_m5a1v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=718428990]
-visible = false
 position = Vector2(520, 34)
 shape = SubResource("RectangleShape2D_0hx70")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=124497274]
-visible = false
 position = Vector2(-490, -16.3125)
 shape = SubResource("RectangleShape2D_db6ii")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1316488135]
-visible = false
 position = Vector2(144.25, -9)
 shape = SubResource("RectangleShape2D_qf8oh")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1622004234]
-visible = false
 position = Vector2(-230.5, 293.75)
 shape = SubResource("RectangleShape2D_socw6")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=833513600]
-visible = false
 position = Vector2(253, 284.5)
 shape = SubResource("RectangleShape2D_alf3y")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1241116346]
-visible = false
 position = Vector2(-732, 287.5)
 shape = SubResource("RectangleShape2D_6o4we")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1935695420]
-visible = false
-position = Vector2(805, 307.5)
+position = Vector2(805, 311)
 shape = SubResource("RectangleShape2D_xci24")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1252829533]
-visible = false
 position = Vector2(910, -176)
 shape = SubResource("RectangleShape2D_rj1pe")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=475095950]
-visible = false
 position = Vector2(1122.0001, -127.000015)
 rotation = 1.446878
 shape = SubResource("CircleShape2D_w3opj")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=896023152]
-visible = false
 position = Vector2(1404.5945, 277.21088)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_w3opj")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=68876947]
-visible = false
 position = Vector2(1346.5945, 106.60544)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_6qfd0")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1007151684]
-visible = false
 position = Vector2(1332, 1.0000019)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_bgpvk")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1629016668]
-visible = false
 position = Vector2(1315, -129.5)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_i8oj1")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=111857947]
-visible = false
 position = Vector2(1329.8987, -61)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_pg6uu")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=1461049543]
-visible = false
-position = Vector2(1365.9493, 194.75)
+position = Vector2(1361.9493, 198)
 rotation = 1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_4fegt")
@@ -1846,6 +1852,7 @@ shape = SubResource("RectangleShape2D_4fegt")
 position = Vector2(31, 86)
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950]
+visible = false
 script = ExtResource("13_oprud")
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
