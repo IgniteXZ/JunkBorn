@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
 [ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://Inventario/scripts/item.gd" id="13_oprud"]
+[ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56cet"]
 texture = ExtResource("5_qdxuf")
@@ -1657,6 +1658,9 @@ size = Vector2(42, 35.89868)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(68, 50)
+
 [node name="Node2D" type="Node2D" unique_id=240260216]
 
 [node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1610952429]
@@ -1851,9 +1855,10 @@ shape = SubResource("RectangleShape2D_4fegt")
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("9_qq5vk")]
 position = Vector2(31, 86)
 
-[node name="item1" type="Area2D" parent="." unique_id=810148950]
+[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("canvas")]
 visible = false
 script = ExtResource("13_oprud")
+canvas = NodePath("../ui_canvas")
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
 shape = SubResource("RectangleShape2D_500wf")
@@ -1862,5 +1867,14 @@ shape = SubResource("RectangleShape2D_500wf")
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
 
-[connection signal="body_entered" from="item1" to="item1" method="_on_body_entered"]
-[connection signal="body_exited" from="item1" to="item1" method="_on_body_exited"]
+[node name="MiniGameColeta" type="Area2D" parent="." unique_id=515256518]
+position = Vector2(213, -41)
+script = ExtResource("15_0icm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniGameColeta" unique_id=1533733020]
+shape = SubResource("RectangleShape2D_xrivr")
+
+[connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
+[connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
+[connection signal="area_entered" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_entered"]
+[connection signal="area_exited" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_exited"]
