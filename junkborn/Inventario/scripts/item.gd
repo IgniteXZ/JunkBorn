@@ -3,7 +3,7 @@ extends Area2D
 var perto: bool = false
 var player: Area2D = null
 
-@onready var labelinteragir = $"../Character/Interagir/LabelInteragir"
+@export var labelinteragir: Label
 
 @export var canvas: CanvasLayer
 
