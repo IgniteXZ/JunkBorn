@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://gepkcakul0j1"]
+
+[ext_resource type="Script" uid="uid://blc30b4fsn266" path="res://lixo/lixo.gd" id="1_874oa"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="2_54jgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(130, 126)
+
+[node name="Lixo" type="Area2D" unique_id=1509895119 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_874oa")
+sprite = NodePath("LixoSprite")
+
+[node name="LixoSprite" type="Sprite2D" parent="." unique_id=1195423979]
+texture = ExtResource("2_54jgt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=483642299]
+shape = SubResource("RectangleShape2D_xrivr")
