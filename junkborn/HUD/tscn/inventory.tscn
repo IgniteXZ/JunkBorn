@@ -183,9 +183,9 @@ offset_bottom = 150.392
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Botaolivro" parent="GridContainer2" unique_id=1872793863 instance=ExtResource("6_u6vfn")]
+[node name="botaolivro" parent="GridContainer2" unique_id=1191467775 instance=ExtResource("6_u6vfn")]
+custom_minimum_size = Vector2(120, 290)
 layout_mode = 2
-size_flags_vertical = 4
 
 [editable path="GridContainer/Slot"]
 [editable path="GridContainer/Slot2"]
@@ -207,3 +207,4 @@ size_flags_vertical = 4
 [editable path="GridContainer/Slot18"]
 [editable path="GridContainer/Slot19"]
 [editable path="GridContainer/Slot20"]
+[editable path="GridContainer2/botaolivro"]
