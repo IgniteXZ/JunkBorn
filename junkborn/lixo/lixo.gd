@@ -35,7 +35,8 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 		coletar_lixo()
 
 func coletar_lixo() -> void:
-	if dados:
+	if dados.Coletavel:
 		print("Iniciando cutscene para o lixo: ", dados.nome)
 		# No futuro, chame o gerenciador de cutscenes aqui
 		queue_free() # Remove o lixo coletado da tela
+	
