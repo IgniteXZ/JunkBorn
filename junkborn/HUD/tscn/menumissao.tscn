@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7r3lav64vtns"]
 
 [ext_resource type="Texture2D" uid="uid://de5cctxoqcc1p" path="res://HUD/sprites/telamenu.png" id="1_bc2gu"]
+[ext_resource type="PackedScene" uid="uid://cdxygjvfnduoh" path="res://HUD/tscn/botaofechadiario.tscn" id="2_big72"]
 
 [node name="Menumissao" type="Control" unique_id=630621404]
 layout_mode = 3
@@ -16,3 +17,13 @@ offset_right = 600.0
 offset_bottom = 348.0
 texture = ExtResource("1_bc2gu")
 expand_mode = 1
+
+[node name="botaofechadiario" parent="." unique_id=1943244752 instance=ExtResource("2_big72")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchor_left = 1.7370001
+anchor_right = 1.8780001
+anchor_bottom = 0.25500003
+offset_left = -3.8400269
+offset_right = -40.960022
+offset_bottom = -37.900005

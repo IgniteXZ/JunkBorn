@@ -26,10 +26,14 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"Filomeno": "res://Dialogos/Characters/Filomeno.dch",
 "Player": "res://DialogicSystem/Character/Player.dch"
 }
 directories/dtl_directory={
-"Teste": "res://DialogicSystem/Timelines/Teste.dtl"
+"CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
+"PrologoDoInicio": "res://Dialogos/Timeline/PrologoDoInicio.dtl",
+"Teste": "res://DialogicSystem/Timelines/Teste.dtl",
+"portao": "res://Dialogos/Timeline/portao.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
@@ -67,6 +71,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+variables={}
 
 [display]
 
