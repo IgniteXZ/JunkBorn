@@ -1483,6 +1483,7 @@ position = Vector2(213, -41)
 script = ExtResource("15_0icm8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiniGameColeta" unique_id=1533733020]
+position = Vector2(2, -15)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
