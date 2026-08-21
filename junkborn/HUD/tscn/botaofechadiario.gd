@@ -1,11 +1,19 @@
 extends Button
+#@export var MenuFechaMissaoTscn: PackedScene
+#var MenuFechaMissaoTscn = load("res://HUD/tscn/menumissao.tscn")
+#var menu_fecha_missao_instancia: Node = null
 
+@export var menuMissao: Node
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Tenta instanciar o recurso
+	#menu_fecha_missao_instancia = MenuFechaMissaoTscn.instantiate()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	#add_child(menu_fecha_missao_instancia)
 	pass
+
+
+func _on_pressed() -> void:
+	menuMissao.hide()
+	#print("67")
+	#menu_fecha_missao_instancia.hide()

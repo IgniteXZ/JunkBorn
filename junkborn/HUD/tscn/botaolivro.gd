@@ -1,12 +1,15 @@
-extends Control
-var cliquei = null 
+extends Button
 
-# Called when the node enters the scene tree for the first time.
+const MenuMissaoTscn = preload("res://HUD/tscn/menumissao.tscn")
+var menu_missao_instancia: Node = null
+
 func _ready() -> void:
-	pass # Replace with function body.
+	# Tenta instanciar o recurso
+	menu_missao_instancia = MenuMissaoTscn.instantiate()
+	add_child(menu_missao_instancia)
+	
+	menu_missao_instancia.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("mouse_clickleft") and $sprite.texture:
-		$Menumissao.visible = not $Menumissao.visible
+func _on_pressed() -> void:
+	print("67")
+	menu_missao_instancia.show()
