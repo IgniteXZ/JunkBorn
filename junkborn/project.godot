@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GerenciadorMissoes="*uid://c5dqm5rbf8rvg"
 
 [dialogic]
 

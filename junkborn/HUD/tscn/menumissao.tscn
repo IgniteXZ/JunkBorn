@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://de5cctxoqcc1p" path="res://HUD/sprites/telamenu.png" id="1_bc2gu"]
 [ext_resource type="PackedScene" uid="uid://cdxygjvfnduoh" path="res://HUD/tscn/botaofechadiario.tscn" id="2_big72"]
+[ext_resource type="Script" uid="uid://dk2b7sx7s22qi" path="res://HUD/tscn/missao.gd" id="3_6r453"]
 
 [node name="Menumissao" type="Control" unique_id=630621404]
 layout_mode = 3
@@ -31,3 +32,9 @@ offset_bottom = -0.04000473
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 menuMissao = NodePath("../..")
+
+[node name="Missao" type="Label" parent="." unique_id=1919143902]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_6r453")

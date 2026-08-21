@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://bxj7i160s325x"]
+
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_x6vrp"]
+
+[resource]
+script = ExtResource("1_x6vrp")
+id_missao = "1"
+titulo = "Comer Bosta"
+descricao = "Venha Comer Bosta"
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"
