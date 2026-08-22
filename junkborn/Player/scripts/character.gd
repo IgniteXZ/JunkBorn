@@ -10,7 +10,7 @@ var _state_machine
 
 @export_category("Objects")
 @export var _animation_tree: AnimationTree = null
-@onready var ui_canvas: CanvasLayer = $"../ui_canvas"
+
 
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]

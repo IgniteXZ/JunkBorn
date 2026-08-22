@@ -22,14 +22,55 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+GerenciadorMissoes="*uid://c5dqm5rbf8rvg"
 
 [dialogic]
 
 directories/dch_directory={
-"Player": "res://DialogicSystem/Character/Player.dch"
+"Filomeno": "res://Dialogos/Characters/Filomeno.dch",
+"Player": "res://DialogicSystem/Character/Player.dch",
+"mandacaru": "res://Dialogos/Characters/mandacaru.dch",
+"npc1": "res://Dialogos/Characters/npc1.dch",
+"npc2": "res://Dialogos/Characters/npc2.dch",
+"npc3": "res://Dialogos/Characters/npc3.dch",
+"npc4": "res://Dialogos/Characters/npc4.dch",
+"npc5": "res://Dialogos/Characters/npc5.dch",
+"npc6": "res://Dialogos/Characters/npc6.dch",
+"srEstanho": "res://Dialogos/Characters/srEstanho.dch"
 }
 directories/dtl_directory={
-"Teste": "res://DialogicSystem/Timelines/Teste.dtl"
+"CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
+"FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
+"Teste": "res://DialogicSystem/Timelines/Teste.dtl",
+"armario": "res://Dialogos/Timeline/armario.dtl",
+"armarioEstanho": "res://Dialogos/Timeline/armarioEstanho.dtl",
+"armarioFilomeno": "res://Dialogos/Timeline/armarioFilomeno.dtl",
+"bucha": "res://Dialogos/Timeline/bucha.dtl",
+"camaEstanho": "res://Dialogos/Timeline/camaEstanho.dtl",
+"carpete": "res://Dialogos/Timeline/carpete.dtl",
+"cutsceneCamaFiolmeno": "res://Dialogos/Timeline/cutsceneCamaFiolmeno.dtl",
+"cutsceneInicial": "res://Dialogos/Timeline/cutsceneInicial.dtl",
+"discusaoFilomenoEstanho": "res://Dialogos/Timeline/discusaoFilomenoEstanho.dtl",
+"estanhoFala2": "res://Dialogos/Timeline/estanhoFala2.dtl",
+"falaNpc5": "res://Dialogos/Timeline/falaNpc5.dtl",
+"falaSrEstanho1": "res://Dialogos/Timeline/falaSrEstanho1.dtl",
+"falasNpc3": "res://Dialogos/Timeline/falasNpc3.dtl",
+"falasNpc4": "res://Dialogos/Timeline/falasNpc4.dtl",
+"falasNpc6": "res://Dialogos/Timeline/falasNpc6.dtl",
+"falasdonpc1": "res://Dialogos/Timeline/falasdonpc1.dtl",
+"filomenoChegaVila": "res://Dialogos/Timeline/filomenoChegaVila.dtl",
+"grupoNpcs": "res://Dialogos/Timeline/grupoNpcs.dtl",
+"janela": "res://Dialogos/Timeline/janela.dtl",
+"mandacaruFala1": "res://Dialogos/Timeline/mandacaruFala1.dtl",
+"mesa": "res://Dialogos/Timeline/mesa.dtl",
+"pia": "res://Dialogos/Timeline/pia.dtl",
+"pinico": "res://Dialogos/Timeline/pinico.dtl",
+"poratabloqueada": "res://Dialogos/Timeline/poratabloqueada.dtl",
+"portaoesdascasas": "res://Dialogos/Timeline/portaoesdascasas.dtl",
+"portaoparaodesertoinicio": "res://Dialogos/Timeline/portaoparaodesertoinicio.dtl",
+"retrato": "res://Dialogos/Timeline/retrato.dtl",
+"sofa": "res://Dialogos/Timeline/sofa.dtl",
+"tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
@@ -66,6 +107,12 @@ audio/channel_defaults={
 "loop": true,
 "volume": 0.0
 }
+}
+variables={
+"Filomeno_estacoComBoneco": false,
+"filomeno_estaComDiario": false,
+"madancaru_falou": false,
+"rauchy_company": false
 }
 
 [display]
@@ -122,6 +169,11 @@ Interagir={
 inventory={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+mouse_clickleft={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(243, 17),"global_position":Vector2(252, 65),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
