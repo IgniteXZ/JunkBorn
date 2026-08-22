@@ -7,6 +7,8 @@ extends Node2D
 @export var limite_minimo: Vector2 = Vector2(100, 100)
 @export var limite_maximo: Vector2 = Vector2(1000, 500)
 
+
+	
 func _ready() -> void:
 	randomize()
 	# Exemplo: gera 5 lixos no início do jogo

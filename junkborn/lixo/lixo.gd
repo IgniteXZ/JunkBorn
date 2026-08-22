@@ -16,6 +16,8 @@ func _ready() -> void:
 	
 	if dados:
 		_atualizar_item()
+		
+
 
 func configurar(novo_lixo: LixoData) -> void:
 	dados = novo_lixo
