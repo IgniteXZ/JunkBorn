@@ -126,6 +126,10 @@ window/size/window_height_override=720
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[global_group]
+
+UI=""
+
 [input]
 
 move_left={

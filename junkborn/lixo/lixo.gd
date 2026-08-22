@@ -49,6 +49,10 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 
 func coletar_lixo() -> void:
 	if dados and dados.Coletavel:
-		print("Iniciando cutscene para o lixo: ", dados.nome)
-		# No futuro, chame o gerenciador de cutscenes aqui
-		queue_free() # Remove o lixo coletado da tela
+		var textura = dados.textura if dados.textura else sprite.texture
+		
+		var canvas = get_tree().root.find_child("ui_canvas", true, false)
+		if canvas:
+			canvas.add_item_inventory(textura)
+		
+		queue_free()
