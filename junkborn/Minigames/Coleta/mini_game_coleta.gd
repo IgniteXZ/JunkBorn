@@ -32,3 +32,5 @@ func spawnar_lixo() -> void:
 	# Adiciona à cena e passa os dados
 	add_child(novo_lixo_node)
 	novo_lixo_node.configurar(lixo_aleatorio)
+	
+	
