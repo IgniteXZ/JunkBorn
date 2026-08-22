@@ -37,6 +37,7 @@ func _on_mouse_entered() -> void:
 	if dados:
 		print("--- LIXO ENCONTRADO ---")
 		print("Nome: ", dados.nome)
+		print("Tipo: ", dados.tipoDeLixo)
 		print("Descrição: ", dados.descricao)
 
 func _on_mouse_exited() -> void:
