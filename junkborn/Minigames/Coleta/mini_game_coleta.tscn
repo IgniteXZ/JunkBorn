@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://jp2w2rnghboj" path="res://Minigames/Coleta/mini_game_coleta.gd" id="1_pewcx"]
 [ext_resource type="PackedScene" uid="uid://gepkcakul0j1" path="res://lixo/lixo.tscn" id="2_6vuad"]
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="3_b61wl"]
-[ext_resource type="Texture2D" uid="uid://h2558eeci1v8" path="res://Minigames/Coleta/FundoLixo.png" id="4_4ainh"]
-[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="4_88y5l"]
+[ext_resource type="Texture2D" uid="uid://qvgsdutwo35l" path="res://Minigames/Coleta/roblox.jpg" id="4_yqq3e"]
+[ext_resource type="Texture2D" uid="uid://v1xlln28q1ao" path="res://Minigames/Coleta/MonteColeta.png" id="5_yqq3e"]
+[ext_resource type="Texture2D" uid="uid://yipdife67ysi" path="res://Minigames/Coleta/CeuColeta.png" id="6_oquob"]
 
 [sub_resource type="Resource" id="Resource_54jgt"]
 script = ExtResource("3_b61wl")
 nome = "Roblox"
 descricao = "Matador de matematica"
-textura = ExtResource("4_88y5l")
+textura = ExtResource("4_yqq3e")
 tipo = "Mogadinho"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"
 
@@ -27,7 +28,12 @@ script = ExtResource("1_pewcx")
 lixo_scene = ExtResource("2_6vuad")
 lista_de_lixos = Array[ExtResource("3_b61wl")]([SubResource("Resource_54jgt"), SubResource("Resource_03a0w")])
 
-[node name="FundoLixo" type="Sprite2D" parent="." unique_id=364837510]
-position = Vector2(664.75, 344.5)
-scale = Vector2(1.1835443, 1.2826797)
-texture = ExtResource("4_4ainh")
+[node name="MonteColeta" type="Sprite2D" parent="." unique_id=1272992534]
+position = Vector2(667.49994, 365.00003)
+scale = Vector2(1.1822784, 1.2712419)
+texture = ExtResource("5_yqq3e")
+
+[node name="CeuColeta" type="Sprite2D" parent="." unique_id=799694178]
+position = Vector2(667, 382.00003)
+scale = Vector2(1.1831224, 1.1830065)
+texture = ExtResource("6_oquob")
