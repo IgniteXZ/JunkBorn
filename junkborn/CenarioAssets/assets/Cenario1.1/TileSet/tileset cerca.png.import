@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8jvhdnth6djd"
-path="res://.godot/imported/tileset placeholder imoveis.png-f37972973818a104dfed907dc6abafa2.ctex"
+uid="uid://brrb8yuya7jwx"
+path="res://.godot/imported/tileset cerca.png-35e885750a8e5eaf872c9ef3dcbaaa0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png"
-dest_files=["res://.godot/imported/tileset placeholder imoveis.png-f37972973818a104dfed907dc6abafa2.ctex"]
+source_file="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png"
+dest_files=["res://.godot/imported/tileset cerca.png-35e885750a8e5eaf872c9ef3dcbaaa0d.ctex"]
 
 [params]
 

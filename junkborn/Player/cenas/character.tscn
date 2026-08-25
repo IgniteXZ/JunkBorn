@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://b1g4jeq3pgdxk" path="res://Player/scripts/character.gd" id="1_gbkji"]
 [ext_resource type="Texture2D" uid="uid://dr3bd4t8s83j3" path="res://Player/assets/spriteMove/filomeno_sprites_placeholder.png" id="2_4qe4t"]
 [ext_resource type="Script" uid="uid://csvkl1kwxd3cu" path="res://Player/scripts/camera_2d.gd" id="3_1kn0l"]
+[ext_resource type="Script" uid="uid://3krnns6r52u4" path="res://HUD/scripts/canva_mapa.gd" id="4_1kn0l"]
+[ext_resource type="PackedScene" uid="uid://bkh8j1xovnmhy" path="res://HUD/tscn/mapamundi.tscn" id="5_53gt6"]
+[ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="6_jlgaa"]
+[ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="7_8jiok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
 size = Vector2(43, 17)
@@ -306,3 +310,22 @@ show_behind_parent = true
 position = Vector2(0, -41.99)
 scale = Vector2(0.885, 5.11)
 shape = SubResource("RectangleShape2D_6q8wu")
+
+[node name="CanvaMapa" type="CanvasLayer" parent="." unique_id=1013689500]
+script = ExtResource("4_1kn0l")
+
+[node name="Mapa" parent="CanvaMapa" unique_id=763159148 instance=ExtResource("5_53gt6")]
+visible = false
+offset_left = 433.0
+offset_top = 124.0
+offset_right = 433.0
+offset_bottom = 124.0
+
+[node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1677732798 groups=["UI"]]
+script = ExtResource("6_jlgaa")
+
+[node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("7_8jiok")]
+visible = false
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=581194120]
+position = Vector2(564, 482)

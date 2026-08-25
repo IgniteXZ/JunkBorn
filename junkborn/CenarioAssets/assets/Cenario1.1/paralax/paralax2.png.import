@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brrb8yuya7jwx"
-path="res://.godot/imported/tileset cerca.png-12290e16887d7de20f94e5cc2f7dd1e0.ctex"
+uid="uid://bc4hljxdltkap"
+path="res://.godot/imported/paralax2.png-5338f7bc42eb30e4e6e3ddf734380b33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/TileSet/tileset cerca.png"
-dest_files=["res://.godot/imported/tileset cerca.png-12290e16887d7de20f94e5cc2f7dd1e0.ctex"]
+source_file="res://CenarioAssets/assets/Cenario1.1/paralax/paralax2.png"
+dest_files=["res://.godot/imported/paralax2.png-5338f7bc42eb30e4e6e3ddf734380b33.ctex"]
 
 [params]
 

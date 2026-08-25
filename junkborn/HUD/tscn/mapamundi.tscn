@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cws57itrk6ugj" path="res://HUD/scripts/mapamundi.gd" id="1_f50jw"]
 [ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="2_0dxcv"]
 
-[node name="Mapa" type="Control" unique_id=763159148]
+[node name="Mapa" type="Control" unique_id=763159148 node_paths=PackedStringArray("iconejogador")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +18,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_f50jw")
+iconejogador = NodePath("TextureRect/iconejogador")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1406470925]
 layout_mode = 0
@@ -25,9 +26,10 @@ offset_left = -240.0
 offset_top = -14.0
 offset_right = 960.0
 offset_bottom = 771.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_38eyw")
 
-[node name="iconejogador" type="Sprite2D" parent="." unique_id=1769370632]
-position = Vector2(390.99997, 612)
+[node name="iconejogador" type="Sprite2D" parent="TextureRect" unique_id=1769370632]
+position = Vector2(1079, 644)
 scale = Vector2(0.08749999, 0.07847227)
 texture = ExtResource("2_0dxcv")

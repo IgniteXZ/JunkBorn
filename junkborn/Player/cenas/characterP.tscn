@@ -1,21 +1,20 @@
 [gd_scene format=4 uid="uid://do7u7lph88bvo"]
 
-[ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="1_1i51y"]
 [ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_8llo0"]
-[ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://Cenario1/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
-[ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="1_iqoj6"]
-[ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
-[ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://Cenario1/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
-[ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://Cenario1/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
-[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="5_qdxuf"]
-[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra2.png" id="6_xhem3"]
-[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="7_72tdg"]
-[ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
+[ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
+[ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
+[ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
+[ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
+[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="5_qdxuf"]
+[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra2.png" id="6_xhem3"]
+[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="7_72tdg"]
+[ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
-[ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
+[ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
 [ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
+[ext_resource type="Script" uid="uid://bimkn5176ws25" path="res://Cenarios/CenarioVila/area_2d.gd" id="17_irw8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1262,14 +1261,11 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(68, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wldxa"]
+size = Vector2(56.29135, 94.892944)
+
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_8llo0")
-
-[node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1610952429 groups=["UI"]]
-script = ExtResource("1_1i51y")
-
-[node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("1_iqoj6")]
-visible = false
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1322766949]
 visible = false
@@ -1471,7 +1467,7 @@ vertical_alignment = 1
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir", "canvas")]
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-canvas = NodePath("../ui_canvas")
+canvas = NodePath("")
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
 shape = SubResource("RectangleShape2D_500wf")
@@ -1488,7 +1484,17 @@ script = ExtResource("15_0icm8")
 position = Vector2(2, -15)
 shape = SubResource("RectangleShape2D_xrivr")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1892304998]
+script = ExtResource("17_irw8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1559293473]
+position = Vector2(-621.62634, 104.76358)
+rotation = -2.3265238
+shape = SubResource("RectangleShape2D_wldxa")
+
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
 [connection signal="area_entered" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_entered"]
 [connection signal="area_exited" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_exited"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]

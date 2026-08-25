@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n47blrulp01g"
-path="res://.godot/imported/tileset terra pedrasa.png-0aaccc79efa728898dbcec5cd94e2489.ctex"
+uid="uid://i30vrivj2w0w"
+path="res://.godot/imported/paralax3.png-cab9a5357074b33941b5cfd59568b49f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/TileSet/tileset terra pedrasa.png"
-dest_files=["res://.godot/imported/tileset terra pedrasa.png-0aaccc79efa728898dbcec5cd94e2489.ctex"]
+source_file="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png"
+dest_files=["res://.godot/imported/paralax3.png-cab9a5357074b33941b5cfd59568b49f.ctex"]
 
 [params]
 
