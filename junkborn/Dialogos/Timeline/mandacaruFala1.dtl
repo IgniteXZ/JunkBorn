@@ -6,29 +6,29 @@ if {madancaru_falou} == false:
 	mandacaru: O que você quer garoto?
 set {madancaru_falou} = true
 if {madancaru_falou} == true:
-	- Floresta de Pedra
+	- Floresta de Pedras
 		mandacaru: Ah, a floresta de pedras, a grande cidade vista após as dunas.
-		mandacaru: Aqueles pimposos da cidade! 
+		mandacaru: Aqueles pimposos da cidade!
 		mandacaru: Pelo menos dão um bom retorno pra quem merece seu posto. Se é que me entende, ha! Ha!
 		mandacaru: Se  trabalhar duro talvez consiga um serviço por lá, mas prepare os pulmões!
 		mandacaru: Se acha o ar daqui ruim, não viu como é a rotina naquele lugar.
 		mandacaru: E é bom não se meter em encrencas! Aqueles bixos de metal voadores da Rauch Company estão por toda parte.
-		mandacaru: Como é o nome deles? Drânes?.. Dunes? 
+		mandacaru: Como é o nome deles? Drânes?.. Dunes?
 	- Forja
-		mandacaru:  É pra onde vai todos os minérios que vocês coletam.
+		mandacaru: É pra onde vai todos os minérios que vocês coletam.
 		mandacaru: Separamos as impurezas e formamos as barras.
-		mandacaru:  E tudo é mandado para a floresta de pedras.
-		mandacaru:  Depois disso é aquele pessoal da cidade que se vira com o resto.
+		mandacaru: E tudo é mandado para a floresta de pedras.
+		mandacaru: Depois disso é aquele pessoal da cidade que se vira com o resto.
 		mandacaru: Pouco me importa o que querem com isso.
 		mandacaru: Se eu continuar onde estou, pra mim está ótimo.
 	- Suprimentos
 		mandacaru: Bom, vocês trabalham pra isso não?
-		mandacaru:  Essa rotina que todos da vila estanho tem é apenas para sobreviver a esse “mundo cruel” em que vivemos.
+		mandacaru: Essa rotina que todos da vila estanho tem é apenas para sobreviver a esse “mundo cruel” em que vivemos.
 		mandacaru: E é claro, você gosta de comer, beber, ter um lugar pra se tratar de doenças e dormir não?
 		mandacaru: Se não quiser trabalhar, o deserto está lá fora a todo dispor.
 	- Natureza
 		mandacaru: Que? Natureza?
-		mandacaru:  HAHAHAHA!!!!
+		mandacaru: HAHAHAHA!!!!
 		mandacaru: O QUE?! VAI ME CONTAR SOBRE CAMPOS VERDES E FLORESTAS?! NÃO ME FAÇA RIR GAROTO!! HAHAHA!!
 		mandacaru: Esse mundo fantástico já se foi a tempos garoto.
 		mandacaru: Seu avô deve ter visto o fim dessa época, antes de virar apenas memória.
