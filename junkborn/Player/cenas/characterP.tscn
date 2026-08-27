@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
 [ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
+[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="14_8llo0"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 [ext_resource type="Script" uid="uid://bimkn5176ws25" path="res://Cenarios/CenarioVila/area_2d.gd" id="17_irw8e"]
 
@@ -1464,10 +1465,9 @@ label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir", "canvas")]
+[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-canvas = NodePath("")
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
 shape = SubResource("RectangleShape2D_500wf")
@@ -1475,6 +1475,19 @@ shape = SubResource("RectangleShape2D_500wf")
 [node name="sprite" type="Sprite2D" parent="item1" unique_id=1393674261]
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
+
+[node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
+script = ExtResource("13_oprud")
+labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+
+[node name="collision" type="CollisionShape2D" parent="item2" unique_id=763775455]
+position = Vector2(84, -9)
+shape = SubResource("RectangleShape2D_500wf")
+
+[node name="sprite" type="Sprite2D" parent="item2" unique_id=259322660]
+position = Vector2(85.00001, -9.000001)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("14_8llo0")
 
 [node name="MiniGameColeta" type="Area2D" parent="." unique_id=515256518]
 position = Vector2(213, -41)
@@ -1492,8 +1505,11 @@ position = Vector2(-621.62634, 104.76358)
 rotation = -2.3265238
 shape = SubResource("RectangleShape2D_wldxa")
 
+[connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
+[connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]
+[connection signal="area_exited" from="item2" to="item2" method="_on_area_exited"]
 [connection signal="area_entered" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_entered"]
 [connection signal="area_exited" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_exited"]
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

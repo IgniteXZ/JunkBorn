@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://cksc4gv210vwf"]
+
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_g0kdc"]
+
+[resource]
+script = ExtResource("1_g0kdc")
+id_missao = "4"
+titulo = "OLOKo"
+descricao = "Oloko"
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

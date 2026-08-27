@@ -36,6 +36,7 @@ func _atualizar_item() -> void:
 		control_tooltip.tooltip_text = dados.nome + "\n" + dados.descricao
 
 func _on_mouse_entered() -> void:
+	
 	if dados:
 		print("--- LIXO ENCONTRADO ---")
 		print("Nome: ", dados.nome)
@@ -43,7 +44,9 @@ func _on_mouse_entered() -> void:
 		print("Descrição: ", dados.descricao)
 
 func _on_mouse_exited() -> void:
-	pass
+	print("67")
+	
+	
 
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	# Detecta o clique com o botão esquerdo sobre a Area2D

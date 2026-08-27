@@ -128,6 +128,12 @@ window/size/window_height_override=720
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Resource/Itens/": "green"
+}
+
 [global_group]
 
 UI=""
