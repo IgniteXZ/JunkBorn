@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://8xgqd2m04ge0"]
 
-[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="1_hpbw2"]
-[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset-palha-terra2.png" id="2_tp7uv"]
-[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://Cenario1/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="3_7n4nw"]
+[ext_resource type="Script" uid="uid://d2paon6vh6pw7" path="res://deserto_1.gd" id="1_0klxa"]
+[ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="1_hpbw2"]
+[ext_resource type="Texture2D" uid="uid://dy830r536cfox" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra2.png" id="2_tp7uv"]
+[ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="3_7n4nw"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset areia pedrasa.png" id="4_d7c43"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="4_mgrrd"]
 [ext_resource type="Texture2D" uid="uid://n575n5pnc2xf" path="res://Cenarios/CenariosDeserto/tileset pedrareia.png" id="5_0klxa"]
@@ -499,6 +500,7 @@ sources/6 = SubResource("TileSetAtlasSource_s4tim")
 sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 
 [node name="Node2D" type="Node2D" unique_id=1307634865]
+script = ExtResource("1_0klxa")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1208593091]
 position = Vector2(98, 127)

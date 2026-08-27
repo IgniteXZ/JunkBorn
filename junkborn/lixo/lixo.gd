@@ -16,6 +16,8 @@ func _ready() -> void:
 	
 	if dados:
 		_atualizar_item()
+		
+
 
 func configurar(novo_lixo: LixoData) -> void:
 	dados = novo_lixo
@@ -37,6 +39,7 @@ func _on_mouse_entered() -> void:
 	if dados:
 		print("--- LIXO ENCONTRADO ---")
 		print("Nome: ", dados.nome)
+		print("Tipo: ", dados.tipoDeLixo)
 		print("Descrição: ", dados.descricao)
 
 func _on_mouse_exited() -> void:

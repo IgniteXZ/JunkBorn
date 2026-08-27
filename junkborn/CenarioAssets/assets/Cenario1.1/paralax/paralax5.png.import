@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i30vrivj2w0w"
-path="res://.godot/imported/paralax3.png-c8a3089cee6da7849c9d8a341c786710.ctex"
+uid="uid://cruvqg26ijl2k"
+path="res://.godot/imported/paralax5.png-4b31329554933736b0d43ad5f3cf422a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/paralax/paralax3.png"
-dest_files=["res://.godot/imported/paralax3.png-c8a3089cee6da7849c9d8a341c786710.ctex"]
+source_file="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png"
+dest_files=["res://.godot/imported/paralax5.png-4b31329554933736b0d43ad5f3cf422a.ctex"]
 
 [params]
 

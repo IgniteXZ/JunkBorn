@@ -1,8 +1,8 @@
 if {filomeno_estaComDiario} == false:
-	srEstanho:  Quer conversar sobre algo Filomeno?
+	srEstanho: Quer conversar sobre algo Filomeno?
 	- Porquê Sr. Estanho
-		srEstanho:  Haha! Quer saber desse velho apelido? 
-		srEstanho: Seu vô Hivaldo era o líder da vila a anos atrás. 
+		srEstanho: Haha! Quer saber desse velho apelido?
+		srEstanho: Seu vô Hivaldo era o líder da vila a anos atrás.
 		srEstanho: E por ter recém descoberto a mina no meu tempo ela era abundante em estanho.
 		srEstanho: Então recebi esse apelido do povo.
 		srEstanho: Mas se eu soubesse do estrago que a rauch company teria feito com isso…
@@ -12,9 +12,9 @@ if {filomeno_estaComDiario} == false:
 	- Vila
 		srEstanho: Ah, nossa vila.
 		srEstanho: Seu nome original se perdeu com o passar dos anos.
-		srEstanho:  Assim como tudo que existia antes da extinção da natureza.
+		srEstanho: Assim como tudo que existia antes da extinção da natureza.
 		srEstanho: Agora chamada “vila estanho”.
-		srEstanho:  Pois antigamente tinha uma alta quantia de estanho na mina.
+		srEstanho: Pois antigamente tinha uma alta quantia de estanho na mina.
 		srEstanho: Agora a quantidade diminuiu consideravelmente desde então.
 		srEstanho: Mas o nome prevalece apesar de tudo.
 	- Natureza
@@ -23,14 +23,14 @@ if {filomeno_estaComDiario} == false:
 		Filomeno: Então lentamente a areia começou a tomar tudo…
 		Filomeno: A terra começou a ressecar, ficando semelhante a rochas, o gramado virou palha, e areia começou a tomar o horizonte.
 		Filomeno: E então acabou no momento que vivemos.
-		Filomeno:  Enfim… tudo isso culpa das decisões de pessoas irresponsáveis que só\
+		Filomeno: Enfim… tudo isso culpa das decisões de pessoas irresponsáveis que só\
 		pensavam em si.
-		Filomeno:  Infelizmente eu era uma delas… Agora estou colhendo o que plantei.
+		Filomeno: Infelizmente eu era uma delas… Agora estou colhendo o que plantei.
 	- Mandacaru
 		srEstanho: É… Agora ele é quem toma conta dessa vila.
 		srEstanho: Alguém arrogante e orgulhoso, que só pensa em seu próprio benefício.
 		srEstanho: Eu também era assim quando tomava conta da vila, infelizmente.
-		srEstanho:  Mas quando percebi o que estava fazendo, e quais seriam as consequências disso pro futuro.
+		srEstanho: Mas quando percebi o que estava fazendo, e quais seriam as consequências disso pro futuro.
 		srEstanho: Busquei agir de alguma forma, mas me tiraram do comando antes que eu fizesse qualquer coisa.
 		srEstanho: E botaram alguém que simbolizava força e autoridade, apenas para continuar o ciclo.
 		srEstanho: E vai continuar assim, enquanto “eles” estiverem no comando de tudo isso.
@@ -40,7 +40,7 @@ if {filomeno_estaComDiario} == false:
 				srEstanho: A partir da destruição da fauna e flora durante décadas.
 				srEstanho: Quase nada restou nesse mundo.
 				srEstanho: Governos caíram, cidades deixaram de existir.
-				srEstanho:  Então a Rauch Company surgiu, com a promessa de trazer “ordem e fartura” para esse mundo arrasado.
+				srEstanho: Então a Rauch Company surgiu, com a promessa de trazer “ordem e fartura” para esse mundo arrasado.
 				srEstanho: Todos se agarraram a promessa do novo salvador.
 				srEstanho: Mal sabiam que iriam trazer essa “ordem e fartura” tornando o povo em peões.
 				srEstanho: Agora não passam de figurões que consomem o pouco que sobrou desse mundo em caos.

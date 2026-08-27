@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dcsc2ipuigyya"]
+
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="1_iswms"]
+[ext_resource type="Script" uid="uid://q5asjbskxbrv" path="res://Inimigo/Drone/drone.gd" id="1_iuvdm"]
+[ext_resource type="Script" uid="uid://cmcpvp0c1g5dg" path="res://Inimigo/Drone/detectar.gd" id="3_3y0pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(102, 94)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
+radius = 316.0712
+
+[node name="Drone" type="CharacterBody2D" unique_id=689894852]
+script = ExtResource("1_iuvdm")
+
+[node name="SpriteDrone" type="Sprite2D" parent="." unique_id=78656635]
+scale = Vector2(0.765625, 0.734375)
+texture = ExtResource("1_iswms")
+
+[node name="ColisaoMaster" type="CollisionShape2D" parent="." unique_id=595015388]
+visible = false
+shape = SubResource("RectangleShape2D_a3nj5")
+
+[node name="Detectar" type="Area2D" parent="." unique_id=27841393]
+script = ExtResource("3_3y0pp")
+
+[node name="ColisaoDetectar" type="CollisionShape2D" parent="Detectar" unique_id=1364793349]
+shape = SubResource("CircleShape2D_ns0o7")
+
+[connection signal="MandarAura" from="Detectar" to="." method="_on_detectar_mandar_aura"]
+[connection signal="TirarAura" from="Detectar" to="." method="_on_detectar_tirar_aura"]
+[connection signal="area_entered" from="Detectar" to="Detectar" method="_alguem_entrou"]
+[connection signal="area_exited" from="Detectar" to="Detectar" method="_alguem_saiu"]

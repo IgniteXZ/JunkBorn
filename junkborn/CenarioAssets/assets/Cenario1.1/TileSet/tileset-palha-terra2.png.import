@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4hljxdltkap"
-path="res://.godot/imported/paralax2.png-59c3096dd3a1f78e539832ac89f70b9e.ctex"
+uid="uid://dy830r536cfox"
+path="res://.godot/imported/tileset-palha-terra2.png-3a1e7f96af5f1c140e1c89f05185342c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/paralax/paralax2.png"
-dest_files=["res://.godot/imported/paralax2.png-59c3096dd3a1f78e539832ac89f70b9e.ctex"]
+source_file="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra2.png"
+dest_files=["res://.godot/imported/tileset-palha-terra2.png-3a1e7f96af5f1c140e1c89f05185342c.ctex"]
 
 [params]
 

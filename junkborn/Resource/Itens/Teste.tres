@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://cf4puld8xrm70"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_3bakk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n8jfk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3bakk"]
+noise = SubResource("FastNoiseLite_n8jfk")
+
+[resource]
+script = ExtResource("1_3bakk")
+nome = "Teste"
+descricao = "Item Teste"
+textura = SubResource("NoiseTexture2D_3bakk")
+tipoDeLixo = "Vidro"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n47blrulp01g"
-path="res://.godot/imported/tileset terra pedrasa.png-0aaccc79efa728898dbcec5cd94e2489.ctex"
+uid="uid://yipdife67ysi"
+path="res://.godot/imported/CeuColeta.png-3b34b248f52d3c457ee44b68c7ca9ad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenario1/assets/Cenario1.1/TileSet/tileset terra pedrasa.png"
-dest_files=["res://.godot/imported/tileset terra pedrasa.png-0aaccc79efa728898dbcec5cd94e2489.ctex"]
+source_file="res://Minigames/Coleta/CeuColeta.png"
+dest_files=["res://.godot/imported/CeuColeta.png-3b34b248f52d3c457ee44b68c7ca9ad4.ctex"]
 
 [params]
 
