@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+
+
 #atalho abrir e fechar inventario
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory"):

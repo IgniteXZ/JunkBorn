@@ -264,10 +264,11 @@ states/idle/position = Vector2(530, 106)
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("_animation_tree")]
+[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("_animation_tree", "canvaa")]
 y_sort_enabled = true
 script = ExtResource("1_gbkji")
 _animation_tree = NodePath("AnimationTree")
+canvaa = NodePath("ui_canvas")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1612096471]
 show_behind_parent = true
@@ -321,11 +322,11 @@ offset_top = 124.0
 offset_right = 433.0
 offset_bottom = 124.0
 
-[node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1677732798 groups=["UI"]]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=581194120]
+position = Vector2(564, 482)
+
+[node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1048379025 groups=["UI"]]
 script = ExtResource("6_jlgaa")
 
 [node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("7_8jiok")]
 visible = false
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=581194120]
-position = Vector2(564, 482)

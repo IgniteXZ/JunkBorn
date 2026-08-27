@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 var _state_machine
 
+signal PassarCanvas(canvas:CanvasLayer)
+
 @export_category("Variables")
 @export var _mover_speed: float = 240.0
 
@@ -12,6 +14,8 @@ var _state_machine
 
 @export_category("Objects")
 @export var _animation_tree: AnimationTree = null
+
+@export var canvaa: CanvasLayer
 
 
 func _ready() -> void:
@@ -38,3 +42,6 @@ func _move() -> void:
 	
 func _animate() -> void:
 	_state_machine.travel("idle")
+
+func _process(delta: float) -> void:
+	PassarCanvas.emit(canvaa)

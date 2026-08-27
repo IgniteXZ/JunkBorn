@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://jp2w2rnghboj" path="res://Minigames/Coleta/mini_game_coleta.gd" id="1_pewcx"]
 [ext_resource type="PackedScene" uid="uid://gepkcakul0j1" path="res://lixo/lixo.tscn" id="2_6vuad"]
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="3_b61wl"]
+[ext_resource type="Resource" uid="uid://cf4puld8xrm70" path="res://Resource/Itens/Teste.tres" id="4_yqq3e"]
+[ext_resource type="Resource" uid="uid://unrxob6ay2ue" path="res://Resource/Itens/Magma.tres" id="5_2ugpm"]
 [ext_resource type="Texture2D" uid="uid://v1xlln28q1ao" path="res://Minigames/Coleta/MonteColeta.png" id="5_yqq3e"]
 [ext_resource type="Texture2D" uid="uid://yipdife67ysi" path="res://Minigames/Coleta/CeuColeta.png" id="6_oquob"]
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="7_oquob"]
 
 [node name="MiniGameColeta" type="Node2D" unique_id=1136356552]
 script = ExtResource("1_pewcx")
 lixo_scene = ExtResource("2_6vuad")
+lista_de_lixos = Array[ExtResource("3_b61wl")]([ExtResource("4_yqq3e"), ExtResource("5_2ugpm")])
 
 [node name="MonteColeta" type="Sprite2D" parent="." unique_id=1272992534]
 position = Vector2(667.49994, 365.00003)
@@ -18,3 +23,5 @@ texture = ExtResource("5_yqq3e")
 position = Vector2(667, 382.00003)
 scale = Vector2(1.1831224, 1.1830065)
 texture = ExtResource("6_oquob")
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("7_oquob")]
