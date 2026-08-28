@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://c5kkh275xgen0"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_2ycsy"]
+[ext_resource type="Texture2D" uid="uid://c2hjc17jjebwi" path="res://Resource/Itens/osso.png" id="2_4xpwt"]
+
+[resource]
+script = ExtResource("1_2ycsy")
+nome = "Osso"
+textura = ExtResource("2_4xpwt")
+tipoDeLixo = "Metal"
+Coletavel = false
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

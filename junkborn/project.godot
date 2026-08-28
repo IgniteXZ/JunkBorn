@@ -42,7 +42,6 @@ directories/dch_directory={
 directories/dtl_directory={
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
 "FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
-"PrologoDoInicio": "res://Dialogos/Timeline/PrologoDoInicio.dtl",
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",
 "armario": "res://Dialogos/Timeline/armario.dtl",
 "armarioEstanho": "res://Dialogos/Timeline/armarioEstanho.dtl",
@@ -51,7 +50,6 @@ directories/dtl_directory={
 "camaEstanho": "res://Dialogos/Timeline/camaEstanho.dtl",
 "carpete": "res://Dialogos/Timeline/carpete.dtl",
 "cutsceneCamaFiolmeno": "res://Dialogos/Timeline/cutsceneCamaFiolmeno.dtl",
-"cutsceneInicial": "res://Dialogos/Timeline/cutsceneInicial.dtl",
 "discusaoFilomenoEstanho": "res://Dialogos/Timeline/discusaoFilomenoEstanho.dtl",
 "estanhoFala2": "res://Dialogos/Timeline/estanhoFala2.dtl",
 "falaNpc5": "res://Dialogos/Timeline/falaNpc5.dtl",
@@ -68,7 +66,6 @@ directories/dtl_directory={
 "pia": "res://Dialogos/Timeline/pia.dtl",
 "pinico": "res://Dialogos/Timeline/pinico.dtl",
 "poratabloqueada": "res://Dialogos/Timeline/poratabloqueada.dtl",
-"portao": "res://Dialogos/Timeline/portao.dtl",
 "portaoesdascasas": "res://Dialogos/Timeline/portaoesdascasas.dtl",
 "portaoparaodesertoinicio": "res://Dialogos/Timeline/portaoparaodesertoinicio.dtl",
 "retrato": "res://Dialogos/Timeline/retrato.dtl",

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bhowue21upne8"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_vmjs7"]
+
+[resource]
+script = ExtResource("1_vmjs7")
+nome = "Papel com restos"
+descricao = "É um papel com restos"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

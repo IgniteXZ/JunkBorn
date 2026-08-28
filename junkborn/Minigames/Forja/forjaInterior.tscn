@@ -47,5 +47,7 @@ script = ExtResource("5_6osia")
 position = Vector2(-3.2542372, 16.175823)
 shape = SubResource("CircleShape2D_ns0o7")
 
+[connection signal="area_entered" from="prensa/Area2D" to="prensa/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="prensa/Area2D" to="prensa/Area2D" method="_on_area_exited"]
 [connection signal="area_entered" from="forja/Area2D2" to="forja/Area2D2" method="_on_area_entered"]
 [connection signal="area_exited" from="forja/Area2D2" to="forja/Area2D2" method="_on_area_exited"]

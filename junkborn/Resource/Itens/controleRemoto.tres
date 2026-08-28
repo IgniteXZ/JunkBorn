@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://f7hihwwuneji"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_he8fo"]
+[ext_resource type="Texture2D" uid="uid://b7r6v2myydf4t" path="res://Resource/Itens/controleRemoto.jpg" id="2_voa8o"]
+
+[resource]
+script = ExtResource("1_he8fo")
+nome = "Controle Remoto"
+descricao = "É um controle Remoto"
+textura = ExtResource("2_voa8o")
+tipoDeLixo = "Plastico"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -1253,10 +1253,10 @@ size = Vector2(33.999996, 27.797348)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fegt"]
 size = Vector2(42, 35.89868)
+
 [sub_resource type="LabelSettings" id="LabelSettings_0icm8"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1469,7 +1469,7 @@ label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir", "canvas")]
+[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
