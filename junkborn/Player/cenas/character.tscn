@@ -330,3 +330,5 @@ script = ExtResource("6_jlgaa")
 
 [node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("7_8jiok")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=347830893]

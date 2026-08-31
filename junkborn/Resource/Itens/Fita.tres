@@ -9,4 +9,5 @@ nome = "Fita"
 descricao = "É uma Fita"
 textura = ExtResource("2_hapuh")
 tipoDeLixo = "Plastico"
+Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

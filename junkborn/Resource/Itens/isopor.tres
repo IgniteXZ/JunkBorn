@@ -7,4 +7,5 @@
 script = ExtResource("1_64tbx")
 textura = ExtResource("2_sof7g")
 tipoDeLixo = "Plastico"
+Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

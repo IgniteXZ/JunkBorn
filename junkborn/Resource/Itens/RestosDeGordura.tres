@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bhowue21upne8"]
 
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_vmjs7"]
+[ext_resource type="Texture2D" uid="uid://cfba3prgqsa3e" path="res://Resource/Itens/restosDeGordura.jpg" id="2_e5cem"]
 
 [resource]
 script = ExtResource("1_vmjs7")
 nome = "Papel com restos"
 descricao = "É um papel com restos"
+textura = ExtResource("2_e5cem")
+tipoDeLixo = "Papel"
+Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

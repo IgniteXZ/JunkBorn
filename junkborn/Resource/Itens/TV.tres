@@ -9,5 +9,4 @@ nome = "TV"
 descricao = "É uma TV"
 textura = ExtResource("2_8mnqm")
 tipoDeLixo = "Vidro"
-Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

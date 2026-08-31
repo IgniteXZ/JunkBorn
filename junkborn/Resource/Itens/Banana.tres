@@ -1,3 +1,13 @@
-[gd_resource type="Resource" format=3 uid="uid://bua335scn1c3h"]
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bua335scn1c3h"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_h1roc"]
+[ext_resource type="Texture2D" uid="uid://xxt527hvpc6g" path="res://Resource/Itens/Banana.png" id="2_67sq8"]
 
 [resource]
+script = ExtResource("1_h1roc")
+nome = "Banana"
+descricao = "É uma banana"
+textura = ExtResource("2_67sq8")
+tipoDeLixo = "Papel"
+Coletavel = false
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

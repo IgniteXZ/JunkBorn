@@ -9,4 +9,5 @@ nome = "Escova de dente"
 descricao = "Usá para enfiar na boca é faze ruma lavagem bucal"
 textura = ExtResource("2_fwgtu")
 tipoDeLixo = "Plastico"
+Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

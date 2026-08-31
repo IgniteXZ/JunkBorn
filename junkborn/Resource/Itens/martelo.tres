@@ -8,5 +8,4 @@ script = ExtResource("1_ejgxv")
 nome = "Martelo"
 descricao = "É um martelo"
 textura = ExtResource("2_1we0m")
-Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"
