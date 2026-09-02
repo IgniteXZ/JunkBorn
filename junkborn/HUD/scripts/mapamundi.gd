@@ -1,8 +1,8 @@
 extends Control
 
 var posicaocidade: Array[Vector2] = [
-	Vector2(835, 511),
-	Vector2(568, 462),
+	Vector2(810, 254),
+	Vector2(602, 231),
 	Vector2(391, 612),
 ]
 
