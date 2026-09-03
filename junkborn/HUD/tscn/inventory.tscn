@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="4_iclnp"]
 [ext_resource type="Texture2D" uid="uid://ck1itqk83hvtb" path="res://Resource/Itens/Plastico.png" id="4_qehyk"]
 [ext_resource type="PackedScene" uid="uid://cmj6ro7q2y0l6" path="res://HUD/tscn/botaolivro.tscn" id="6_u6vfn"]
+[ext_resource type="Texture2D" uid="uid://b1bub2gyr0wyl" path="res://Resource/chip.jpg" id="6_w6ni3"]
+[ext_resource type="Texture2D" uid="uid://b71ouiwrqb5iw" path="res://Resource/gold.png" id="8_kbgbe"]
+[ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="9_kbgbe"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
@@ -62,6 +65,12 @@ layout_mode = 2
 [node name="background" parent="GridContainer/Slot3" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
+[node name="sprite" parent="GridContainer/Slot3" index="1" unique_id=2099300488]
+texture = ExtResource("6_w6ni3")
+
+[node name="amount" parent="GridContainer/Slot3" index="2" unique_id=1407623469]
+text = "67"
+
 [node name="Slot4" parent="GridContainer" unique_id=424986864 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
@@ -80,6 +89,12 @@ layout_mode = 2
 [node name="background" parent="GridContainer/Slot5" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
+[node name="sprite" parent="GridContainer/Slot5" index="1" unique_id=2099300488]
+texture = ExtResource("8_kbgbe")
+
+[node name="amount" parent="GridContainer/Slot5" index="2" unique_id=1407623469]
+text = "67"
+
 [node name="Slot6" parent="GridContainer" unique_id=867441514 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
@@ -97,6 +112,12 @@ layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot7" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot7" index="1" unique_id=2099300488]
+texture = ExtResource("9_kbgbe")
+
+[node name="amount" parent="GridContainer/Slot7" index="2" unique_id=1407623469]
+text = "67"
 
 [node name="Slot8" parent="GridContainer" unique_id=1082262799 instance=ExtResource("2_lic60")]
 layout_mode = 2

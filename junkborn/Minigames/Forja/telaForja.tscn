@@ -1,3 +1,36 @@
 [gd_scene format=3 uid="uid://dkihrw1vll4jv"]
 
-[node name="TelaForja" type="Node2D" unique_id=209442283]
+[ext_resource type="Script" uid="uid://c6jjtgeo0bb1g" path="res://Minigames/Forja/tela_forja.gd" id="1_q68au"]
+
+[node name="TelaForja" type="Control" unique_id=455193884]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q68au")
+
+[node name="divisaoPrincipal" type="HBoxContainer" parent="." unique_id=649055177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areaDaLista" type="ScrollContainer" parent="divisaoPrincipal" unique_id=633332334]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="listaDeItens" type="VBoxContainer" parent="divisaoPrincipal/areaDaLista" unique_id=710849870]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Button" type="Button" parent="divisaoPrincipal" unique_id=1555887530]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Forjar"
+
+[connection signal="pressed" from="divisaoPrincipal/Button" to="." method="_on_button_pressed"]

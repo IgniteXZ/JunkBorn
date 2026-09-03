@@ -1348,6 +1348,7 @@ tile_set = SubResource("TileSet_yd1hl")
 [node name="Node2D" type="Node2D" parent="y-sort/TileMapLayer3" unique_id=671052147]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="y-sort/TileMapLayer3/Node2D" unique_id=181325692]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/TileMapLayer3/Node2D/StaticBody2D" unique_id=727952579]
 position = Vector2(-747, 200)
@@ -1377,6 +1378,7 @@ tile_set = SubResource("TileSet_x42px")
 rendering_quadrant_size = 24
 
 [node name="StaticBody2D" type="StaticBody2D" parent="y-sort/TileMapLayer2" unique_id=1205839759]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=709763408]
 position = Vector2(-178, 33.5)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://do306vm8vbepk"]
+
+[ext_resource type="Texture2D" uid="uid://dmuc3yqovw3qh" path="res://Resource/Itens/Pá.png" id="1_b0pd6"]
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_xgfuf"]
+
+[resource]
+script = ExtResource("1_xgfuf")
+icone_resultado = ExtResource("1_b0pd6")
+metadata/_custom_type_script = "uid://dycfmqmje3pms"
