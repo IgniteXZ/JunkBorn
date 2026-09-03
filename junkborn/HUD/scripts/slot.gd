@@ -138,6 +138,7 @@ func  _drop_data(position: Vector2, data) -> void:
 		
 		$sprite.texture = data.sprite
 		$amount.text = data.amount
+	get_node("../../..").salvar_inventario()
 #fim da dropada
 
 # ============================================================
@@ -155,6 +156,8 @@ func _notification(what):
 
 			$sprite.texture = drag_backup["sprite"]
 			$amount.text = drag_backup["amount"]
+			
+			get_node("../../..").salvar_inventario()
 
 		# Limpa o backup depois que o arrasto terminou.
 		drag_backup = null
