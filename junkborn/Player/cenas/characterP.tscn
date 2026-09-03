@@ -1472,7 +1472,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
@@ -1513,8 +1512,9 @@ script = ExtResource("15_8llo0")
 position = Vector2(857, -61)
 shape = SubResource("CircleShape2D_a3nj5")
 
-[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998]
+[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("17_irw8e")
+labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/Area2D" unique_id=1559293473]
 position = Vector2(-621.62634, 104.76358)
@@ -1522,6 +1522,7 @@ rotation = -2.3265238
 shape = SubResource("RectangleShape2D_wldxa")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
+[connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
 [connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]
