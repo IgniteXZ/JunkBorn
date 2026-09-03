@@ -16,6 +16,8 @@ var MissaoDebug = preload("res://Resource/MissaoLegal.tres")
 
 func _process(delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
+		print("CANVAS: ", canvass)
+
 		if canvass.add_item_inventory($sprite.texture):
 			labelinteragir.visible = false
 			queue_free()
