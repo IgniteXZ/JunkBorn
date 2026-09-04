@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dkul7a0q5ere8"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_g4pet"]
+[ext_resource type="Texture2D" uid="uid://bkhc2t70ati88" path="res://Resource/Itens/FitaAdesiva.png" id="2_hapuh"]
+
+[resource]
+script = ExtResource("1_g4pet")
+nome = "Fita"
+descricao = "É uma Fita"
+textura = ExtResource("2_hapuh")
+tipoDeLixo = "Plastico"
+Coletavel = false
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

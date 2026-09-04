@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://kwgxwi5x75iy"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_ejgxv"]
+[ext_resource type="Texture2D" uid="uid://csaowpm2q1epx" path="res://Resource/Itens/Martelo.png" id="2_1we0m"]
+
+[resource]
+script = ExtResource("1_ejgxv")
+nome = "Martelo"
+descricao = "É um martelo"
+textura = ExtResource("2_1we0m")
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

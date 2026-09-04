@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bvst42ru1nyik"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_kbd81"]
+[ext_resource type="Texture2D" uid="uid://dw2vknr32ou4x" path="res://Resource/Itens/kicano.png" id="2_nvk4d"]
+
+[resource]
+script = ExtResource("1_kbd81")
+nome = "Cano"
+descricao = "É um cano"
+textura = ExtResource("2_nvk4d")
+tipoDeLixo = "Metal"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

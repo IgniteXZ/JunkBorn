@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://djpxmvi5yqr6x"]
+
+[ext_resource type="Texture2D" uid="uid://cakn15jiw1c0w" path="res://Minigames/Forja/seubroxa.png" id="1_a4sf4"]
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_kbls2"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="3_73k6l"]
+[ext_resource type="Script" uid="uid://dgc623e8cysmp" path="res://Minigames/Forja/area_2d.gd" id="4_3tini"]
+[ext_resource type="Script" uid="uid://c4fvm6dgkerf5" path="res://Minigames/Forja/area_2d_2.gd" id="5_6osia"]
+[ext_resource type="Script" uid="uid://c36eww8iq3bqy" path="res://Minigames/Forja/saidafabrica.gd" id="6_3tini"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3nj5"]
+radius = 54.230988
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
+radius = 47.095646
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb5fl"]
+radius = 32.06244
+
+[node name="ForjaInterior" type="Node2D" unique_id=534777475]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540132339]
+position = Vector2(772.75, 411)
+scale = Vector2(1.2848102, 1.3496732)
+texture = ExtResource("1_a4sf4")
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_kbls2")]
+position = Vector2(220, 786)
+
+[node name="AbrirCenas" type="Node2D" parent="." unique_id=428024065]
+
+[node name="prensa" type="Sprite2D" parent="AbrirCenas" unique_id=1908161588]
+position = Vector2(444, 262)
+texture = ExtResource("3_73k6l")
+
+[node name="Area2DPrensa" type="Area2D" parent="AbrirCenas/prensa" unique_id=1822030722]
+script = ExtResource("4_3tini")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbrirCenas/prensa/Area2DPrensa" unique_id=1330852747]
+position = Vector2(3, 13)
+shape = SubResource("CircleShape2D_a3nj5")
+
+[node name="forja" type="Sprite2D" parent="AbrirCenas" unique_id=314499974]
+position = Vector2(1156, 283)
+scale = Vector2(0.921875, 0.7109375)
+texture = ExtResource("3_73k6l")
+
+[node name="Area2DForja" type="Area2D" parent="AbrirCenas/forja" unique_id=1015474309]
+script = ExtResource("5_6osia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbrirCenas/forja/Area2DForja" unique_id=1035717396]
+position = Vector2(-3.2542372, 16.175823)
+shape = SubResource("CircleShape2D_ns0o7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=791627248]
+position = Vector2(220, 818)
+scale = Vector2(1, 0.515625)
+texture = ExtResource("3_73k6l")
+
+[node name="saidafabrica" type="Area2D" parent="Sprite2D2" unique_id=1044067319]
+position = Vector2(-215, -1588.3636)
+scale = Vector2(1, 1.939394)
+script = ExtResource("6_3tini")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/saidafabrica" unique_id=169731816]
+position = Vector2(215, 818)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[connection signal="area_entered" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_entered"]
+[connection signal="area_exited" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_exited"]
+[connection signal="area_entered" from="AbrirCenas/forja/Area2DForja" to="AbrirCenas/forja/Area2DForja" method="_on_area_entered"]
+[connection signal="area_exited" from="AbrirCenas/forja/Area2DForja" to="AbrirCenas/forja/Area2DForja" method="_on_area_exited"]
+[connection signal="area_entered" from="Sprite2D2/saidafabrica" to="Sprite2D2/saidafabrica" method="_on_area_entered"]
+[connection signal="area_exited" from="Sprite2D2/saidafabrica" to="Sprite2D2/saidafabrica" method="_on_area_exited"]

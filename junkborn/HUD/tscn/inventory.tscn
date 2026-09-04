@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="3_d41l4"]
 [ext_resource type="Texture2D" uid="uid://dg74a5bid7n81" path="res://HUD/sprites/slot inventario.png" id="3_rqyyd"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="4_iclnp"]
+[ext_resource type="Texture2D" uid="uid://ck1itqk83hvtb" path="res://Resource/Itens/Plastico.png" id="4_qehyk"]
 [ext_resource type="PackedScene" uid="uid://cmj6ro7q2y0l6" path="res://HUD/tscn/botaolivro.tscn" id="6_u6vfn"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
@@ -35,6 +36,12 @@ layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot" index="1" unique_id=2099300488]
+texture = ExtResource("4_qehyk")
+
+[node name="amount" parent="GridContainer/Slot" index="2" unique_id=1407623469]
+text = "67"
 
 [node name="Slot2" parent="GridContainer" unique_id=1339989651 instance=ExtResource("2_lic60")]
 layout_mode = 2

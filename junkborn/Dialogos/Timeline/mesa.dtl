@@ -1,0 +1,11 @@
+if {Filomeno_estacoComBoneco} == false:
+	Filomeno: Meu boneco de palha.
+	O vô diz que foi uma das coisas que meus pais deixaram.
+	- Sim
+		Filomeno: Bom, que tal passear um pouco amigão?
+		Conseguiu um boneco de palha
+		set {Filomeno_estacoComBoneco} = true
+	- Não
+		Você deixou o boneco de palha na mesa.
+else:
+	Filomeno: A mesa de jantar

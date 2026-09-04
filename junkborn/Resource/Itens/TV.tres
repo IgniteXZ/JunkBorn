@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://deumblsyq3pjx"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_n3eao"]
+[ext_resource type="Texture2D" uid="uid://cbv0eo0med3gv" path="res://Resource/Itens/TV.png" id="2_8mnqm"]
+
+[resource]
+script = ExtResource("1_n3eao")
+nome = "TV"
+descricao = "É uma TV"
+textura = ExtResource("2_8mnqm")
+tipoDeLixo = "Vidro"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

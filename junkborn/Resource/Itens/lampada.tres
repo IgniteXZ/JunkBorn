@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://cen3dulybcmsb"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_hixas"]
+[ext_resource type="Texture2D" uid="uid://bq3kospkxy31v" path="res://Resource/Itens/Lampada.png" id="2_f2r2c"]
+
+[resource]
+script = ExtResource("1_hixas")
+nome = "Lampada"
+descricao = "É uma lampada"
+textura = ExtResource("2_f2r2c")
+tipoDeLixo = "Vidro"
+Coletavel = false
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

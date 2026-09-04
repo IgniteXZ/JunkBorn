@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dfi8godcxvfrg"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_ir6vr"]
+[ext_resource type="Texture2D" uid="uid://qkqqo55gpvxv" path="res://Resource/Itens/Esponja.png" id="2_r35hu"]
+
+[resource]
+script = ExtResource("1_ir6vr")
+nome = "Esponja"
+descricao = "É uma esponja"
+textura = ExtResource("2_r35hu")
+tipoDeLixo = "Metal"
+Coletavel = false
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

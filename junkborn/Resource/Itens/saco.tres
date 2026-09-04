@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://xm38uk16hdng"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_nfm5n"]
+[ext_resource type="Texture2D" uid="uid://c3av3ejo1smjn" path="res://Resource/Itens/Saco.png" id="2_bcooj"]
+
+[resource]
+script = ExtResource("1_nfm5n")
+nome = "Saco"
+descricao = "É um saco"
+textura = ExtResource("2_bcooj")
+tipoDeLixo = "Papel"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"
