@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c1ve53griok2a"]
+
+[ext_resource type="Script" uid="uid://d4l7rcsb4hk66" path="res://Minigames/Forja/linha_forja.gd" id="1_84hv8"]
+
+[node name="LinhaForja" type="HBoxContainer" unique_id=1997074124]
+custom_minimum_size = Vector2(45, 45)
+offset_right = 40.0
+offset_bottom = 23.0
+size_flags_vertical = 8
+script = ExtResource("1_84hv8")
+
+[node name="iconeResultado" type="TextureRect" parent="." unique_id=1960637930]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 3
+
+[node name="sinalIgual" type="Label" parent="." unique_id=546908935]
+layout_mode = 2
+text = "="
+
+[node name="containerMateriais" type="HBoxContainer" parent="." unique_id=1034391560]
+layout_mode = 2
+size_flags_horizontal = 3

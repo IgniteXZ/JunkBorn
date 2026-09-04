@@ -1348,6 +1348,7 @@ tile_set = SubResource("TileSet_yd1hl")
 [node name="Node2D" type="Node2D" parent="y-sort/TileMapLayer3" unique_id=671052147]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="y-sort/TileMapLayer3/Node2D" unique_id=181325692]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/TileMapLayer3/Node2D/StaticBody2D" unique_id=727952579]
 position = Vector2(-747, 200)
@@ -1377,6 +1378,7 @@ tile_set = SubResource("TileSet_x42px")
 rendering_quadrant_size = 24
 
 [node name="StaticBody2D" type="StaticBody2D" parent="y-sort/TileMapLayer2" unique_id=1205839759]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/TileMapLayer2/StaticBody2D" unique_id=709763408]
 position = Vector2(-178, 33.5)
@@ -1456,7 +1458,7 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_4fegt")
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("9_qq5vk")]
-position = Vector2(31, 86)
+position = Vector2(-596, 112)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
 visible = false
@@ -1470,9 +1472,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+id_item_mapa = "ve_item1"
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
 shape = SubResource("RectangleShape2D_500wf")
@@ -1484,6 +1486,7 @@ texture = ExtResource("13_500wf")
 [node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+id_item_mapa = "ve_item2"
 
 [node name="collision" type="CollisionShape2D" parent="item2" unique_id=763775455]
 position = Vector2(84, -9)
@@ -1511,8 +1514,9 @@ script = ExtResource("15_8llo0")
 position = Vector2(857, -61)
 shape = SubResource("CircleShape2D_a3nj5")
 
-[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998]
+[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("17_irw8e")
+labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/Area2D" unique_id=1559293473]
 position = Vector2(-621.62634, 104.76358)
@@ -1520,6 +1524,7 @@ rotation = -2.3265238
 shape = SubResource("RectangleShape2D_wldxa")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
+[connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
 [connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]

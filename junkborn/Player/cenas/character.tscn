@@ -321,11 +321,14 @@ offset_left = 433.0
 offset_top = 124.0
 offset_right = 433.0
 offset_bottom = 124.0
+scale = Vector2(0.6, 0.6)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=581194120]
-position = Vector2(564, 482)
+position = Vector2(602, 231)
+gizmo_extents = 0.0
 
 [node name="ui_canvas" type="CanvasLayer" parent="." unique_id=1048379025 groups=["UI"]]
+layer = 20
 script = ExtResource("6_jlgaa")
 
 [node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("7_8jiok")]

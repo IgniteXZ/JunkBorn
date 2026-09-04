@@ -7,6 +7,8 @@ var player: Area2D = null
 var canva = null
 var canvass: CanvasLayer
 
+@export var id_item_mapa: String #id do item no chao
+
 
 
 
@@ -14,9 +16,18 @@ var MissaoTeste = preload("res://Resource/MissaoTeste.tres")
 var MissaoDebug = preload("res://Resource/MissaoLegal.tres")
 
 
+func _ready() -> void:
+	if Global.itens_coletados.has(id_item_mapa):
+		queue_free()
+
+
+
 func _process(delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
+	
 		if canvass.add_item_inventory($sprite.texture):
+			if not Global.itens_coletados.has(id_item_mapa):
+					Global.itens_coletados.append(id_item_mapa)
 			labelinteragir.visible = false
 			queue_free()
 		pass

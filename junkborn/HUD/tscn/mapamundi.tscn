@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bkh8j1xovnmhy"]
 
-[ext_resource type="Texture2D" uid="uid://xucw82b265ob" path="res://HUD/sprites/mapa.jpg" id="1_38eyw"]
 [ext_resource type="Script" uid="uid://cws57itrk6ugj" path="res://HUD/scripts/mapamundi.gd" id="1_f50jw"]
 [ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="2_0dxcv"]
+[ext_resource type="Texture2D" uid="uid://jy2fb674xvsf" path="res://HUD/sprites/mapa.png" id="2_f50jw"]
 
 [node name="Mapa" type="Control" unique_id=763159148 node_paths=PackedStringArray("iconejogador")]
 layout_mode = 3
@@ -22,14 +22,14 @@ iconejogador = NodePath("TextureRect/iconejogador")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1406470925]
 layout_mode = 0
-offset_left = -240.0
-offset_top = -14.0
-offset_right = 960.0
-offset_bottom = 771.0
+offset_left = -581.0
+offset_top = -2.0
+offset_right = 2059.0
+offset_bottom = 1438.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_38eyw")
+texture = ExtResource("2_f50jw")
 
 [node name="iconejogador" type="Sprite2D" parent="TextureRect" unique_id=1769370632]
-position = Vector2(1079, 644)
+position = Vector2(2058.3333, 373.3333)
 scale = Vector2(0.08749999, 0.07847227)
 texture = ExtResource("2_0dxcv")

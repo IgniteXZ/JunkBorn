@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dgc623e8cysmp" path="res://Minigames/Forja/area_2d.gd" id="4_3tini"]
 [ext_resource type="Script" uid="uid://c4fvm6dgkerf5" path="res://Minigames/Forja/area_2d_2.gd" id="5_6osia"]
 [ext_resource type="Script" uid="uid://c36eww8iq3bqy" path="res://Minigames/Forja/saidafabrica.gd" id="6_3tini"]
+[ext_resource type="PackedScene" uid="uid://dkihrw1vll4jv" path="res://Minigames/Forja/telaForja.tscn" id="7_6osia"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a3nj5"]
 radius = 54.230988
@@ -64,6 +65,11 @@ script = ExtResource("6_3tini")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/saidafabrica" unique_id=169731816]
 position = Vector2(215, 818)
 shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="interfaceusuario" type="CanvasLayer" parent="." unique_id=1567065949]
+
+[node name="TelaForja" parent="interfaceusuario" unique_id=455193884 instance=ExtResource("7_6osia")]
+visible = false
 
 [connection signal="area_entered" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_entered"]
 [connection signal="area_exited" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_exited"]
