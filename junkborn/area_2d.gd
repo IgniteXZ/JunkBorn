@@ -5,6 +5,7 @@ var perto: bool = false
 
 
 func _ready() -> void:
+	pass
 
 func _process(delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
