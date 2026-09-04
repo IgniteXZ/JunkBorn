@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b1bub2gyr0wyl" path="res://Resource/chip.jpg" id="6_w6ni3"]
 [ext_resource type="Texture2D" uid="uid://b71ouiwrqb5iw" path="res://Resource/gold.png" id="8_kbgbe"]
 [ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="9_kbgbe"]
+[ext_resource type="Texture2D" uid="uid://bbpnfiom47oum" path="res://Resource/Itens/madeira.png" id="10_rdhxq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rcjap"]
+load_path = "res://.godot/imported/images.jpg-da4814d45b86bad63d4630094e604049.ctex"
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
@@ -102,7 +106,7 @@ layout_mode = 2
 texture = ExtResource("3_rqyyd")
 
 [node name="sprite" parent="GridContainer/Slot6" index="1" unique_id=2099300488]
-texture = ExtResource("4_iclnp")
+texture = SubResource("CompressedTexture2D_rcjap")
 
 [node name="amount" parent="GridContainer/Slot6" index="2" unique_id=1407623469]
 text = "2"
@@ -130,6 +134,12 @@ layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot9" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot9" index="1" unique_id=2099300488]
+texture = ExtResource("10_rdhxq")
+
+[node name="amount" parent="GridContainer/Slot9" index="2" unique_id=1407623469]
+text = "67"
 
 [node name="Slot10" parent="GridContainer" unique_id=389718707 instance=ExtResource("2_lic60")]
 layout_mode = 2
