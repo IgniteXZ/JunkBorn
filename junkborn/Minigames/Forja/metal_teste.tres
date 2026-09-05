@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://35k2k47ipmpl"]
+
+[ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="1_0ti3h"]
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_lc7gl"]
+
+[resource]
+script = ExtResource("1_lc7gl")
+nome_resultado = "metal"
+icone_resultado = ExtResource("1_0ti3h")
+ingredientes = {
+ExtResource("1_0ti3h"): 2
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c6jjtgeo0bb1g" path="res://Minigames/Forja/tela_forja.gd" id="1_q68au"]
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="2_tyqu5"]
-[ext_resource type="Resource" uid="uid://do306vm8vbepk" path="res://Minigames/Forja/receita_pa.tres" id="3_4edgt"]
+[ext_resource type="Resource" uid="uid://on0aqhj8wgr5" path="res://Minigames/Forja/teste1.tres" id="3_tyqu5"]
+[ext_resource type="Resource" uid="uid://bej8am0vxq67r" path="res://Minigames/Forja/teste2.tres" id="4_4edgt"]
 
 [node name="TelaForja" type="Control" unique_id=455193884]
 layout_mode = 3
@@ -13,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q68au")
-receitas = Array[ExtResource("2_tyqu5")]([ExtResource("3_4edgt")])
+receitas = Array[ExtResource("2_tyqu5")]([ExtResource("3_tyqu5"), ExtResource("4_4edgt")])
 
 [node name="divisaoPrincipal" type="HBoxContainer" parent="." unique_id=649055177]
 layout_mode = 1
