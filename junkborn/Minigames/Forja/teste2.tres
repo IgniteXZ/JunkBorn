@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://bej8am0vxq67r"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_5tbbf"]
+[ext_resource type="Texture2D" uid="uid://b274yd2gr4l61" path="res://Minigames/Forja/oloco.png" id="1_frubs"]
+[ext_resource type="Texture2D" uid="uid://b71ouiwrqb5iw" path="res://Resource/gold.png" id="2_eg8ub"]
+
+[resource]
+script = ExtResource("1_5tbbf")
+nome_resultado = "teste2"
+icone_resultado = ExtResource("1_frubs")
+ingredientes = {
+ExtResource("2_eg8ub"): 2
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

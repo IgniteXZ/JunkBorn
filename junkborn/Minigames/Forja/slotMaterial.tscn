@@ -4,6 +4,7 @@
 
 [node name="SlotMaterial" type="PanelContainer" unique_id=163936353]
 custom_minimum_size = Vector2(40, 40)
+clip_contents = true
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_jxj3i")
@@ -11,6 +12,9 @@ script = ExtResource("1_jxj3i")
 [node name="iconeMaterial" type="TextureRect" parent="." unique_id=1129226570]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 

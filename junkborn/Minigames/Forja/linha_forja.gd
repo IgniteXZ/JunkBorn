@@ -24,20 +24,10 @@ func configurar_linha(receita: RecipeData):
 		
 		var novo_slot = SLOT_MATERIAL_SCENE.instantiate()
 		
-		novo_slot.textura_obrigatoria = imagem_item
-		novo_slot.quantidade_obrigatoria = quantidade_necessaria
-		
 		container_materiais.add_child(novo_slot)
 		slots_da_linha.append(novo_slot)
 		
-		var icone_slot = novo_slot.get_node_or_null("IconeMaterial")
-		var texto_slot = novo_slot.get_node_or_null("textoQuantidade")
-		
-		if icone_slot:
-			icone_slot.texture = imagem_item
-			icone_slot.modulate = Color(1, 1, 1, 0.8)
-		if texto_slot:
-			texto_slot.text = "0/" + str(quantidade_necessaria)
+		novo_slot.setup_slot(imagem_item, quantidade_necessaria)
 		
 		if i < lista_ingredientes.size() - 1:
 			var sinal_mais = Label.new()

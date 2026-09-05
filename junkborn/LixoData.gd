@@ -6,3 +6,4 @@ extends Resource
 @export var textura: Texture2D
 @export_enum("Vidro", "Metal", "Plastico", "Papel") var tipoDeLixo: String = "Algo"
 @export var Coletavel: bool = true
+@export var pode_desmanchar: bool = false

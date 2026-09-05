@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bv237wbtub86q"]
+
+[ext_resource type="Script" uid="uid://rqqmyish5ts2" path="res://Minigames/Forja/tela_prensa.gd" id="1_e841g"]
+[ext_resource type="PackedScene" uid="uid://c6tb7fv0bqbxi" path="res://Minigames/Forja/slotMaterial.tscn" id="1_jokbf"]
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="2_jtwxe"]
+[ext_resource type="Resource" uid="uid://on0aqhj8wgr5" path="res://Minigames/Forja/teste1.tres" id="3_vpupt"]
+
+[node name="TelaPrensa" type="Control" unique_id=1187864529]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_e841g")
+receitas = Array[ExtResource("2_jtwxe")]([ExtResource("3_vpupt")])
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=335549352]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="divisaoPrincipal" type="HBoxContainer" parent="PanelContainer" unique_id=1203488299]
+layout_mode = 2
+
+[node name="SlotMaterial" parent="PanelContainer/divisaoPrincipal" unique_id=163936353 instance=ExtResource("1_jokbf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/divisaoPrincipal" unique_id=1223802276]
+layout_mode = 2
+text = "="
+
+[node name="previa" type="HBoxContainer" parent="PanelContainer/divisaoPrincipal" unique_id=1106849774]
+layout_mode = 2
+
+[node name="prensar" type="Button" parent="PanelContainer/divisaoPrincipal" unique_id=712311381]
+layout_mode = 2
+text = "Prensar"
+
+[connection signal="pressed" from="PanelContainer/divisaoPrincipal/prensar" to="." method="_on_prensar_pressed"]

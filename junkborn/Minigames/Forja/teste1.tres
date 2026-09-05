@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://on0aqhj8wgr5"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_1py56"]
+[ext_resource type="Texture2D" uid="uid://bika0pxr61yt1" path="res://Minigames/Forja/teste.png" id="1_a3doc"]
+[ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="2_wmsqf"]
+[ext_resource type="Resource" uid="uid://br1yargy6civb" path="res://Resource/Itens/testedesmanche.tres" id="3_wmsqf"]
+
+[resource]
+script = ExtResource("1_1py56")
+nome_resultado = "teste1"
+icone_resultado = ExtResource("1_a3doc")
+item_resultado = ExtResource("3_wmsqf")
+ingredientes = {
+ExtResource("2_wmsqf"): 5
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

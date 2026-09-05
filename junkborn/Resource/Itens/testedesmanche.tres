@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://br1yargy6civb"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_rs1yk"]
+[ext_resource type="Texture2D" uid="uid://bika0pxr61yt1" path="res://Minigames/Forja/teste.png" id="3_3teai"]
+
+[resource]
+script = ExtResource("1_rs1yk")
+nome = "Teste do desmanche"
+descricao = "esse item sera possivelmente desmanchado"
+textura = ExtResource("3_3teai")
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

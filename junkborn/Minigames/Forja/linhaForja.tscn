@@ -7,6 +7,7 @@ custom_minimum_size = Vector2(45, 45)
 offset_right = 40.0
 offset_bottom = 23.0
 size_flags_vertical = 8
+theme_override_constants/separation = 8
 script = ExtResource("1_84hv8")
 
 [node name="iconeResultado" type="TextureRect" parent="." unique_id=1960637930]
