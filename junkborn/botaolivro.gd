@@ -1,19 +1,15 @@
 extends Button
 
-var cliquei = null 
+const MenuMissaoTscn = preload("res://HUD/tscn/menumissao.tscn")
+var menu_missao_instancia: Node = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	# Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-		
-
+	# Tenta instanciar o recurso
+	menu_missao_instancia = MenuMissaoTscn.instantiate()
+	add_child(menu_missao_instancia)
+	
+	menu_missao_instancia.visible = false
 
 func _on_pressed() -> void:
-		$Menumissao.visible = not $Menumissao.visible
-		
+	print("67")
+	menu_missao_instancia.show()

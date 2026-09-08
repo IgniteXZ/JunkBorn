@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://rb67up68ic4"]
+
+[ext_resource type="Texture2D" uid="uid://4chjhoctyetc" path="res://Menu/sprite/menufundo.png" id="1_b4q87"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_mjkk2"]
+
+[node name="Menu" type="Control" unique_id=1228996853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1299808416]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_b4q87")
+
+[node name="Jogar" type="Button" parent="." unique_id=1570807049]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 323.0
+offset_right = 413.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 48
+action_mode = 0
+text = "Jogar"
+flat = true
+
+[node name="Opcoes" type="Button" parent="." unique_id=1683945924]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 422.0
+offset_right = 442.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 48
+action_mode = 0
+text = "Opções"
+flat = true
+
+[node name="Sair" type="Button" parent="." unique_id=1577330465]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 513.0
+offset_right = 393.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 48
+action_mode = 0
+text = "Sair
+"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=18289514]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 143.0
+offset_right = 800.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(0.3529412, 0, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 67
+text = "JunkBorn"
