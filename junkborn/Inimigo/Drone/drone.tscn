@@ -4,13 +4,18 @@
 [ext_resource type="Script" uid="uid://q5asjbskxbrv" path="res://Inimigo/Drone/drone.gd" id="1_iuvdm"]
 [ext_resource type="Script" uid="uid://cmcpvp0c1g5dg" path="res://Inimigo/Drone/detectar.gd" id="3_3y0pp"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dm1br"]
+bounce = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(102, 94)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
 radius = 316.0712
 
-[node name="Drone" type="CharacterBody2D" unique_id=689894852]
+[node name="Drone" type="RigidBody2D" unique_id=201041272]
+physics_material_override = SubResource("PhysicsMaterial_dm1br")
+gravity_scale = 0.0
 script = ExtResource("1_iuvdm")
 
 [node name="SpriteDrone" type="Sprite2D" parent="." unique_id=78656635]
