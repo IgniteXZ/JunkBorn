@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 var OndeEuvou: Vector2
 var Perseguicao: bool = false
@@ -8,10 +8,20 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	velocity = Vector2.ZERO
+	
 	if Perseguicao:
-		velocity = position.direction_to(OndeEuvou) * 100
-	move_and_slide()	
+		var direction = global_position.direction_to(OndeEuvou)
+		apply_central_impulse(direction * 5)
+		look_at(OndeEuvou)
+		sleeping = false
+		print(linear_velocity.length())
+		
+	elif linear_velocity.length() < 2:
+		sleeping = true
+		
+		
+	
+	
 
 
 
