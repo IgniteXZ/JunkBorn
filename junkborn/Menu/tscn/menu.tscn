@@ -2,6 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://4chjhoctyetc" path="res://Menu/sprite/menufundo.png" id="1_b4q87"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_mjkk2"]
+[ext_resource type="Script" uid="uid://dmppt1foktb1q" path="res://Menu/script/sair.gd" id="3_m05b3"]
+[ext_resource type="Script" uid="uid://bdtcxscdwa2nw" path="res://Menu/script/jogar.gd" id="3_t6cjk"]
+[ext_resource type="Script" uid="uid://ikdj5v3a7448" path="res://Menu/script/opcoes.gd" id="4_ixj20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpcwk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3x2rq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aj8g2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikroo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ffxa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vrqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycrix"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pf65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dh322"]
 
 [node name="Menu" type="Control" unique_id=1228996853]
 layout_mode = 3
@@ -27,9 +48,28 @@ offset_bottom = 441.0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpcwk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3x2rq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aj8g2")
 action_mode = 0
 text = "Jogar"
 flat = true
+script = ExtResource("3_t6cjk")
+
+[node name="SetaFoco" type="Label" parent="Jogar" unique_id=1134617639]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16100001
+anchor_bottom = 0.16100001
+offset_left = -7.0
+offset_top = 18.001999
+offset_right = 40.0
+offset_bottom = 83.002
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 47
+text = ">"
 
 [node name="Opcoes" type="Button" parent="." unique_id=1683945924]
 layout_mode = 0
@@ -40,9 +80,28 @@ offset_bottom = 540.0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ikroo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8ffxa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1vrqj")
 action_mode = 0
 text = "Opções"
 flat = true
+script = ExtResource("4_ixj20")
+
+[node name="SetaFoco" type="Label" parent="Opcoes" unique_id=742204767]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16100001
+anchor_bottom = 0.16100001
+offset_left = -34.0
+offset_top = 17.001999
+offset_right = 13.0
+offset_bottom = 82.002
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 47
+text = ">"
 
 [node name="Sair" type="Button" parent="." unique_id=1577330465]
 layout_mode = 0
@@ -53,12 +112,31 @@ offset_bottom = 631.0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ycrix")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0pf65")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dh322")
 action_mode = 0
 text = "Sair
 "
 flat = true
+script = ExtResource("3_m05b3")
 
-[node name="Label" type="Label" parent="." unique_id=18289514]
+[node name="SetaFoco" type="Label" parent="Sair" unique_id=233176466]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16100001
+anchor_bottom = 0.16100001
+offset_left = 16.0
+offset_top = 14.001999
+offset_right = 63.0
+offset_bottom = 79.002
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 47
+text = ">"
+
+[node name="Titulo" type="Label" parent="." unique_id=18289514]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 143.0
@@ -68,3 +146,17 @@ theme_override_colors/font_color = Color(0.3529412, 0, 0.16078432, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 67
 text = "JunkBorn"
+
+[connection signal="focus_entered" from="Jogar" to="Jogar" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Jogar" to="Jogar" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Jogar" to="Jogar" method="_on_mouse_entered"]
+[connection signal="pressed" from="Jogar" to="Jogar" method="_on_pressed"]
+[connection signal="focus_entered" from="Opcoes" to="Opcoes" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Opcoes" to="Opcoes" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Opcoes" to="Opcoes" method="_on_mouse_entered"]
+[connection signal="focus_entered" from="Sair" to="Sair" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Sair" to="Sair" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Sair" to="Sair" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sair" to="Sair" method="_on_mouse_exited"]
+[connection signal="pressed" from="Sair" to="Jogar" method="_on_jogar_pressed"]
+[connection signal="pressed" from="Sair" to="Sair" method="_on_pressed"]
