@@ -5,18 +5,22 @@
 [ext_resource type="Script" uid="uid://cmcpvp0c1g5dg" path="res://Inimigo/Drone/detectar.gd" id="3_3y0pp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dm1br"]
+friction = 1000.4
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(102, 94)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
-radius = 316.0712
+radius = 309.0
 
-[node name="Drone" type="RigidBody2D" unique_id=201041272]
+[node name="Drone" type="RigidBody2D" unique_id=201041272 node_paths=PackedStringArray("Tempo")]
+collision_layer = 2
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_dm1br")
 gravity_scale = 0.0
 script = ExtResource("1_iuvdm")
+Tempo = NodePath("TempoPraImpulso")
 
 [node name="SpriteDrone" type="Sprite2D" parent="." unique_id=78656635]
 scale = Vector2(0.765625, 0.734375)
@@ -32,7 +36,18 @@ script = ExtResource("3_3y0pp")
 [node name="ColisaoDetectar" type="CollisionShape2D" parent="Detectar" unique_id=1364793349]
 shape = SubResource("CircleShape2D_ns0o7")
 
+[node name="TempoPraImpulso" type="Timer" parent="." unique_id=749511734]
+wait_time = 2.67
+autostart = true
+
+[node name="Empurra" type="Area2D" parent="." unique_id=588069091]
+
+[node name="ColisaoMaster" type="CollisionShape2D" parent="Empurra" unique_id=1180405895]
+visible = false
+shape = SubResource("RectangleShape2D_a3nj5")
+
 [connection signal="MandarAura" from="Detectar" to="." method="_on_detectar_mandar_aura"]
 [connection signal="TirarAura" from="Detectar" to="." method="_on_detectar_tirar_aura"]
 [connection signal="area_entered" from="Detectar" to="Detectar" method="_alguem_entrou"]
 [connection signal="area_exited" from="Detectar" to="Detectar" method="_alguem_saiu"]
+[connection signal="timeout" from="TempoPraImpulso" to="." method="_on_timer_timeout"]

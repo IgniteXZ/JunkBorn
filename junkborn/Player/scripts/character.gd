@@ -17,6 +17,13 @@ signal PassarCanvas(canvas:CanvasLayer)
 
 @export var canvaa: CanvasLayer
 
+var knockback_vector = Vector2.ZERO
+
+var bodyy = null
+var empurrado: bool
+
+var tempoAcabado: bool = false
+
 
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
@@ -25,7 +32,14 @@ func _ready() -> void:
 func  _physics_process(_delta: float) -> void:
 	_move()
 	_animate()
+	
+	if empurrado:
+		knockback_vector = (bodyy.global_position - global_position)
+		velocity = lerp(global_position, -knockback_vector, 1)
+		
 	move_and_slide()
+	
+	
 
 func _move() -> void:
 	var _direction: Vector2 = Vector2(
@@ -53,3 +67,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_empurrado_body_entered(body: Node2D) -> void:
+	empurrado = true
+	bodyy = body
+	
+	
+
+
+func _on_empurrado_body_exited(body: Node2D) -> void:
+	pass

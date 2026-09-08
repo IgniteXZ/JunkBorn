@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_yf2ls")
+item_id = 1
 nome = "Plastico"
 descricao = "É um plastico"
 textura = ExtResource("2_uqowf")

@@ -1,6 +1,7 @@
 class_name LixoData
 extends Resource
 
+@export var item_id: int 
 @export var nome: String = ""
 @export_multiline var descricao: String = ""
 @export var textura: Texture2D

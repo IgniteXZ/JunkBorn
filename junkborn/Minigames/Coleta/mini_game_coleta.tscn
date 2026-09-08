@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://deumblsyq3pjx" path="res://Resource/Itens/TV.tres" id="18_gc8ir"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="22_jp2bg"]
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="23_jp2bg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
 radius = 64.00781
@@ -52,6 +53,8 @@ script = ExtResource("23_hjkpg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saidaMinigame/Sprite2D/Area2D" unique_id=2111937106]
 shape = SubResource("CircleShape2D_ce1y2")
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("23_jp2bg")]
 
 [connection signal="area_entered" from="saidaMinigame/Sprite2D/Area2D" to="saidaMinigame/Sprite2D/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="saidaMinigame/Sprite2D/Area2D" to="saidaMinigame/Sprite2D/Area2D" method="_on_area_exited"]

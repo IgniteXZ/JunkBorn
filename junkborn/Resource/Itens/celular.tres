@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_6jcli")
+ID = 3
 nome = "Celular"
 descricao = "É um celular"
 textura = ExtResource("2_3jvf7")

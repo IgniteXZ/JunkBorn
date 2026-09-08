@@ -264,6 +264,9 @@ states/idle/position = Vector2(530, 106)
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(42, 16)
+
 [node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("_animation_tree", "canvaa")]
 y_sort_enabled = true
 script = ExtResource("1_gbkji")
@@ -335,3 +338,15 @@ script = ExtResource("6_jlgaa")
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=347830893]
+
+[node name="Empurrado" type="Area2D" parent="." unique_id=882215780]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Empurrado" unique_id=1182913122]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Inpurrado" type="Timer" parent="." unique_id=442156919]
+
+[connection signal="body_entered" from="Empurrado" to="." method="_on_empurrado_body_entered"]
+[connection signal="body_exited" from="Empurrado" to="." method="_on_empurrado_body_exited"]

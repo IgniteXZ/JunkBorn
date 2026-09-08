@@ -4,5 +4,5 @@ extends Node
 var cidade_atual : int = 0
 
 #itens
-var itens = []
-var itens_coletados = []
+var itens: Array = []
+var itens_coletados: Array = []

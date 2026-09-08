@@ -36,15 +36,10 @@ func _atualizar_item() -> void:
 		control_tooltip.tooltip_text = dados.nome + "\n" + dados.descricao
 
 func _on_mouse_entered() -> void:
-	
-	if dados:
-		print("--- LIXO ENCONTRADO ---")
-		print("Nome: ", dados.nome)
-		print("Tipo: ", dados.tipoDeLixo)
-		print("Descrição: ", dados.descricao)
+	pass
 
 func _on_mouse_exited() -> void:
-	print("67")
+	pass
 	
 	
 
@@ -59,6 +54,15 @@ func coletar_lixo() -> void:
 		
 		var canvas = get_tree().root.find_child("ui_canvas", true, false)
 		if canvas:
-			canvas.add_item_inventory(textura)
-		
+			canvas.add_item_inventory(dados.item_id, textura)
+	
 		queue_free()
+		
+	if dados and not dados.Coletavel:
+		var canvas = get_tree().root.find_child("ui_canvas", true, false)
+		if canvas:
+			canvas.remover_item_aleatorio()
+	
+	
+		
+		
