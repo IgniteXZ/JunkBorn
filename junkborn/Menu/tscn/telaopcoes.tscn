@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://byp7do82i13y1"]
+
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_hiah4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiah4"]
+bg_color = Color(0.58431375, 0.22745098, 0.03529412, 0.40392157)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.36862746, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dlp2"]
+bg_color = Color(0.46117932, 0.13918486, 0.011914046, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.36862746, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx4kr"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnvj7"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0vyn"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yljg"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv5fa"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pyy0r"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijhuo"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrng6"]
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+
+[node name="Opcoes" type="Control" unique_id=2117586468]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1548611499]
+layout_mode = 0
+offset_left = 43.999996
+offset_top = 40.999996
+offset_right = 1161.0
+offset_bottom = 667.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hiah4")
+
+[node name="Panel2" type="Panel" parent="." unique_id=308993637]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 14.0
+offset_right = 704.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dlp2")
+
+[node name="Label" type="Label" parent="Panel2" unique_id=1568773954]
+layout_mode = 0
+offset_left = 19.00003
+offset_top = 23.0
+offset_right = 91.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 31
+text = "Opções"
+
+[node name="audio" type="Label" parent="." unique_id=1676252677]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 193.0
+offset_right = 288.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 43
+text = "Som Geral"
+
+[node name="audio2" type="Label" parent="." unique_id=1022373752]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 272.0
+offset_right = 514.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 43
+text = "Música"
+
+[node name="audio3" type="Label" parent="." unique_id=2058043545]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 367.0
+offset_right = 517.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 43
+text = "Tela"
+
+[node name="CheckSom" type="CheckButton" parent="." unique_id=1213395678]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 162.0
+offset_right = 647.0
+offset_bottom = 201.0
+scale = Vector2(3, 3)
+button_pressed = true
+action_mode = 0
+
+[node name="CheckMusica" type="CheckButton" parent="." unique_id=834893578]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 225.0
+offset_right = 648.0
+offset_bottom = 264.0
+scale = Vector2(3, 3)
+button_pressed = true
+action_mode = 0
+
+[node name="OpcaoTela" type="OptionButton" parent="." unique_id=771037498]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 356.0
+offset_right = 868.0
+offset_bottom = 418.0
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_hx4kr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_tnvj7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hx4kr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hx4kr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t0vyn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_1yljg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gv5fa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_hx4kr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pyy0r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ijhuo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vrng6")
+selected = 0
+item_count = 2
+popup/item_0/text = "Tela Cheia"
+popup/item_0/id = 0
+popup/item_1/text = "Janela"
+popup/item_1/id = 1
