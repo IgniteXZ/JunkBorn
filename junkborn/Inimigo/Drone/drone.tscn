@@ -37,7 +37,7 @@ script = ExtResource("3_3y0pp")
 shape = SubResource("CircleShape2D_ns0o7")
 
 [node name="TempoPraImpulso" type="Timer" parent="." unique_id=749511734]
-wait_time = 2.67
+wait_time = 3.0
 autostart = true
 
 [node name="Empurra" type="Area2D" parent="." unique_id=588069091]
