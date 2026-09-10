@@ -57,16 +57,18 @@ func _move() -> void:
 		Input.get_axis("move_up", "move_down")
 	)
 	if _direction != Vector2.ZERO:
-		_animation_tree["parameters/idle/blend_position"] = _direction
+		
 		velocity.x = lerp(velocity.x, _direction.normalized().x * _mover_speed, _aceleration)
 		velocity.y = lerp(velocity.y, _direction.normalized().y * _mover_speed, _aceleration)
+		_animation_tree["parameters/Walk/blend_position"] = _direction
 		return
 	velocity.x = lerp(velocity.x, _direction.normalized().x * _mover_speed, _friction)
 	velocity.y = lerp(velocity.y, _direction.normalized().y * _mover_speed, _friction)
-	
+	#_animation_tree["parameters/Idle/blend_position"] = _direction
 func _animate() -> void:
-	_state_machine.travel("idle")
-
+	_state_machine.travel("Walk")
+	#_state_machine.travel("Idle")
+	
 func _process(delta: float) -> void:
 	PassarCanvas.emit(canvaa)
 

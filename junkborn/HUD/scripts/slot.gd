@@ -54,7 +54,7 @@ func set_empty_slot() -> void:
 	item_data = null
 
 # Função nativa do Godot que valida se este slot pode receber o item que está sendo solto em cima dele
-func _can_drop_data(position: Vector2, data) -> bool:
+func _can_drop_data(_position: Vector2, data) -> bool:
 	# Retorna verdadeiro apenas se os dados existirem e tiverem uma sprite válida
 	return data != null and data.has("sprite") and data["sprite"] != null
 

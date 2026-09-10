@@ -14,7 +14,7 @@ var posicaocidade: Array[Vector2] = [
 func _ready() -> void:
 	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var pos_atual = Global.cidade_atual
 	
 	iconejogador.global_position = posicaocidade[pos_atual]
