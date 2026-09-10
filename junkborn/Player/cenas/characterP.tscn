@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
+[ext_resource type="Script" uid="uid://cpdnva0gmxxb4" path="res://NPC/ScriptsNPC/npcTeste.gd" id="12_kds3k"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="13_b33t2"]
+[ext_resource type="Resource" uid="uid://p2qy8knk5vnm" path="res://Resource/NPC/NPCDebug.tres" id="13_kds3k"]
 [ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="14_8llo0"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
@@ -1258,6 +1261,9 @@ size = Vector2(42, 35.89868)
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
+size = Vector2(129.32672, 129.74258)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
@@ -1470,6 +1476,21 @@ text = "Aperte E para interagir"
 label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NPCTEste" type="CharacterBody2D" parent="y-sort" unique_id=1756052417 node_paths=PackedStringArray("Sprite")]
+y_sort_enabled = true
+position = Vector2(26.345, 99.24)
+scale = Vector2(0.505, 0.505)
+script = ExtResource("12_kds3k")
+NPCdados = ExtResource("13_kds3k")
+Sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://b7ipxbsxc15od"
+
+[node name="Sprite2D" type="Sprite2D" parent="y-sort/NPCTEste" unique_id=962517853]
+texture = ExtResource("13_b33t2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/NPCTEste" unique_id=193779878]
+shape = SubResource("RectangleShape2D_ns0o7")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
