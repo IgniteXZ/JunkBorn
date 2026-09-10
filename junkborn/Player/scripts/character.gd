@@ -24,22 +24,32 @@ var empurrado: bool
 
 var tempoAcabado: bool = false
 
+var t: float = 0.0
+
 
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
 	
 
-func  _physics_process(_delta: float) -> void:
+	
+func _physics_process(_delta: float) -> void:
 	_move()
 	_animate()
 	
+	
 	if empurrado:
-		knockback_vector = (bodyy.global_position - global_position)
-		velocity = lerp(global_position, -knockback_vector, 1)
+		#knockback_vector = (bodyy.global_position - global_position) * 0.01
+		#velocity = lerp(global_position, -knockback_vector, _delta)
+		t += _delta *  0.4
+		position = global_position.lerp(bodyy.global_position - -global_position, t)
+		await get_tree().create_timer(0.3).timeout
+		empurrado = false
 		
+	elif not empurrado:
+		t = 0.0
 	move_and_slide()
 	
-	
+
 
 func _move() -> void:
 	var _direction: Vector2 = Vector2(
