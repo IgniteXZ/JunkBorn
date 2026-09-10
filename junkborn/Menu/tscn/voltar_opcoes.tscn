@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bkiihpw6s81lm"]
+
+[ext_resource type="Script" uid="uid://tnsmboliqqcs" path="res://Menu/script/voltar_opcoes.gd" id="1_lysan"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_rrb7v"]
+
+[node name="VoltarOpcoes" type="Button" unique_id=123328916]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_rrb7v")
+theme_override_font_sizes/font_size = 43
+text = "Voltar"
+flat = true
+script = ExtResource("1_lysan")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -30,3 +30,6 @@ func mudar_cor(cor: Color) -> void:
 	add_theme_color_override("font_hover_color", cor)
 	add_theme_color_override("font_focus_color", cor)
 	add_theme_color_override("font_pressed_color", cor)
+
+
+	
