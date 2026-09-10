@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://p2qy8knk5vnm"]
+
+[ext_resource type="Script" uid="uid://wmar6n0rqr08" path="res://NPCResource.gd" id="1_ud7qy"]
+[ext_resource type="Texture2D" uid="uid://csaowpm2q1epx" path="res://Resource/Itens/Martelo.png" id="1_ysh45"]
+
+[resource]
+script = ExtResource("1_ud7qy")
+id_NPC = 1
+nomeNPC = "Oloko"
+Sprite = ExtResource("1_ysh45")
+metadata/_custom_type_script = "uid://wmar6n0rqr08"

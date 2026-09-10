@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c8ax1togpx0yb"]
+
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="1_thakb"]
+[ext_resource type="Script" uid="uid://b7ipxbsxc15od" path="res://NPC/NPCTeste/npc.gd" id="1_xv1ox"]
+[ext_resource type="Script" uid="uid://wmar6n0rqr08" path="res://NPCResource.gd" id="2_hdct4"]
+[ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="2_pj3nw"]
+
+[sub_resource type="Resource" id="Resource_hdct4"]
+script = ExtResource("2_hdct4")
+nomeNPC = "ee"
+Sprite = ExtResource("2_pj3nw")
+metadata/_custom_type_script = "uid://wmar6n0rqr08"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
+radius = 169.07394
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(126, 64)
+
+[node name="NPC" type="CharacterBody2D" unique_id=1437040998 node_paths=PackedStringArray("Sprite")]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_xv1ox")
+NPCdados = SubResource("Resource_hdct4")
+Sprite = NodePath("NPCSprite")
+
+[node name="NPCSprite" type="Sprite2D" parent="." unique_id=1626766356]
+texture = ExtResource("1_thakb")
+
+[node name="Interagir" type="Area2D" parent="." unique_id=121799977]
+
+[node name="CollisaoInteracao" type="CollisionShape2D" parent="Interagir" unique_id=1680571151]
+visible = false
+shape = SubResource("CircleShape2D_ns0o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=831632578]
+visible = false
+shape = SubResource("RectangleShape2D_a3nj5")

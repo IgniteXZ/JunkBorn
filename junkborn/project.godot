@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 GerenciadorMissoes="*uid://c5dqm5rbf8rvg"
 Global="*uid://cx8w5ymdwkvy2"
+Pause="*uid://bgewmbkw8lm8"
 
 [dialogic]
 
@@ -72,10 +73,13 @@ directories/dtl_directory={
 "sofa": "res://Dialogos/Timeline/sofa.dtl",
 "tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Dialogos/Style/EstiloTeste.tres",
+"EstiloTeste": "res://Dialogos/Style/EstiloTeste.tres"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Dialogos/Style/EstiloTeste.tres"]
+layout/default_style="res://Dialogos/Style/EstiloTeste.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -129,7 +133,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Resource/Itens/": "green"
+"res://Resource/Itens/": "green",
+"res://Resource/NPC/": "yellow"
 }
 
 [global_group]
