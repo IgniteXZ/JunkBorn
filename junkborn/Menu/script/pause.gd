@@ -13,15 +13,21 @@ func toggle_pause() -> void:
 	get_tree().paused = new_pause_state
 	visible = new_pause_state
 	print("Pausa alternada via entrada direta!")
-
+	
+	if not new_pause_state:
+		$Opcoes.hide()
+		$panelMain.show()
 
 func _on_continuar_pressed() -> void:
 	toggle_pause()
 
 func _on_opcoes_pressed() -> void:
-	visible = false
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Menu/tscn/telaopcoes.tscn")
+	$panelMain.hide()
+	$Opcoes.show()
+	
+func _on_opcoes_voltar_pressionado() -> void:
+	$Opcoes.hide()
+	$panelMain.show()
 
 func _on_menu_principal_pressed() -> void:
 	visible = false

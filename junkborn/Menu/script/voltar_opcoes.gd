@@ -15,4 +15,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_pressed() -> void:	
-	Opcoes.hide()
+	owner.voltar_pressionado.emit()

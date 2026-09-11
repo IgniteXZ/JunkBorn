@@ -208,3 +208,4 @@ offset_bottom = -342.0
 [connection signal="mouse_exited" from="Sair" to="Sair" method="_on_mouse_exited"]
 [connection signal="pressed" from="Sair" to="Jogar" method="_on_jogar_pressed"]
 [connection signal="pressed" from="Sair" to="Sair" method="_on_pressed"]
+[connection signal="voltar_pressionado" from="ui_opcoes/Opcoes" to="ui_opcoes" method="_on_opcoes_voltar_pressionado"]

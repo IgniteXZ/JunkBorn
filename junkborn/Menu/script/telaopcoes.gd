@@ -1,5 +1,6 @@
-extends CanvasLayer
+extends Control
 
+signal voltar_pressionado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,14 +8,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
-
-
-
-func _on_opcoes_pressed() -> void:
-	$Opcoes.visible = not $Opcoes.visible
-
-
-func _on_opcoes_voltar_pressionado() -> void:
-	$Opcoes.hide()

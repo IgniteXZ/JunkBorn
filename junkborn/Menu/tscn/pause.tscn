@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_d20rc"]
 [ext_resource type="Script" uid="uid://b5kbx6aj50mrf" path="res://Menu/script/pause.gd" id="1_jxdse"]
+[ext_resource type="PackedScene" uid="uid://byp7do82i13y1" path="res://Menu/tscn/telaopcoes.tscn" id="3_3877j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3nj5"]
 bg_color = Color(0.58431375, 0.22745098, 0.03529412, 0.40392157)
@@ -179,7 +180,11 @@ text = "→ "
 layout_mode = 2
 text = "←"
 
+[node name="Opcoes" parent="." unique_id=2117586468 instance=ExtResource("3_3877j")]
+scale = Vector2(0.9, 0.9)
+
 [connection signal="pressed" from="panelMain/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="panelMain/VBoxContainer/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="panelMain/VBoxContainer/menuPrincipal" to="." method="_on_menu_principal_pressed"]
 [connection signal="pressed" from="panelMain/VBoxContainer/sairJogo" to="." method="_on_sair_jogo_pressed"]
+[connection signal="voltar_pressionado" from="Opcoes" to="." method="_on_opcoes_voltar_pressionado"]
