@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bopdbhsqeeln8" path="res://Menu/script/telaopcoes.gd" id="1_tnvj7"]
 [ext_resource type="PackedScene" uid="uid://bkiihpw6s81lm" path="res://Menu/tscn/voltar_opcoes.tscn" id="2_0dlp2"]
 [ext_resource type="Script" uid="uid://c3aui7q7lygsm" path="res://Menu/script/opcao_tela.gd" id="2_hx4kr"]
+[ext_resource type="Script" uid="uid://cijf81tjcbdju" path="res://Menu/script/ui_controles.gd" id="5_1yljg"]
+[ext_resource type="PackedScene" uid="uid://cn4ptwthdxw6l" path="res://Menu/tscn/controles.tscn" id="5_t0vyn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiah4"]
 bg_color = Color(0.58431375, 0.22745098, 0.03529412, 0.40392157)
@@ -209,4 +211,27 @@ offset_right = 710.0
 offset_bottom = 633.0
 Opcoes = NodePath("../..")
 
+[node name="VerControles" type="Button" parent="Panel" unique_id=1634508796]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 496.0
+offset_right = 879.0
+offset_bottom = 563.0
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 43
+text = "Ver Controles"
+flat = true
+
+[node name="ui_controles" type="CanvasLayer" parent="." unique_id=109601965]
+script = ExtResource("5_1yljg")
+
+[node name="Controles" parent="ui_controles" unique_id=1001078878 instance=ExtResource("5_t0vyn")]
+visible = false
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 781.0
+offset_bottom = 480.0
+
 [connection signal="item_selected" from="Panel/OpcaoTela" to="Panel/OpcaoTela" method="_on_item_selected"]
+[connection signal="pressed" from="Panel/VerControles" to="ui_controles" method="_on_ver_controles_pressed"]
+[connection signal="voltar_controles_pressionado" from="ui_controles/Controles" to="ui_controles" method="_on_controles_voltar_controles_pressionado"]

@@ -181,6 +181,7 @@ layout_mode = 2
 text = "←"
 
 [node name="Opcoes" parent="." unique_id=2117586468 instance=ExtResource("3_3877j")]
+visible = false
 scale = Vector2(0.9, 0.9)
 
 [connection signal="pressed" from="panelMain/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]

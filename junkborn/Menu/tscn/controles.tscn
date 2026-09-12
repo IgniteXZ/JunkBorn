@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://cn4ptwthdxw6l"]
+
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_uplbc"]
+[ext_resource type="Script" uid="uid://dvrt3ippaeafq" path="res://Menu/script/controles.gd" id="1_wuskh"]
+[ext_resource type="Texture2D" uid="uid://cwxaa0k2lq818" path="res://Menu/sprite/wasd.png" id="2_s5jdh"]
+[ext_resource type="Script" uid="uid://dhnanj5fjgetq" path="res://Menu/script/voltar_controles.gd" id="4_xdly5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiah4"]
+bg_color = Color(0.58431375, 0.22745098, 0.03529412, 0.40392157)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.36862746, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5jdh"]
+bg_color = Color(0.46117932, 0.13918486, 0.011914046, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.36862746, 0.16078432, 1)
+
+[node name="Controles" type="Control" unique_id=1001078878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 799.0
+offset_bottom = 441.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wuskh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1793173023]
+layout_mode = 1
+offset_right = 1198.0
+offset_bottom = 667.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hiah4")
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1734237613]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.5
+offset_top = -27.0
+offset_right = 148.5
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5jdh")
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=1071640573]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_top = 21.0
+offset_right = 151.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 32
+text = "Controles"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=351844193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 82.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=1201262117]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 135
+
+[node name="Wasd" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=202452267]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Movimentar"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="WasdSprite" type="Sprite2D" parent="Panel/ScrollContainer/VBoxContainer" unique_id=2095248179]
+position = Vector2(585, 162.99998)
+scale = Vector2(1.3968977, 1.1184207)
+texture = ExtResource("2_s5jdh")
+
+[node name="InteragirLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1175922845]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Interagir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteragirSprite" type="Sprite2D" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1812426597]
+position = Vector2(590, 338)
+scale = Vector2(1.3558395, 1.0973682)
+texture = ExtResource("2_s5jdh")
+
+[node name="InventarioLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=479174567]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Inventário
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventarioSprite" type="Sprite2D" parent="Panel/ScrollContainer/VBoxContainer" unique_id=54515297]
+position = Vector2(590, 507)
+scale = Vector2(1.319343, 1.0236843)
+texture = ExtResource("2_s5jdh")
+
+[node name="Mapa" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1615038937]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Mapa
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MapaSprite" type="Sprite2D" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1450617935]
+position = Vector2(595, 747)
+scale = Vector2(1.319343, 1.0236843)
+texture = ExtResource("2_s5jdh")
+
+[node name="Pausar" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1482068646]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Pausar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PausarSprite" type="Sprite2D" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1776751248]
+position = Vector2(593, 960.00006)
+scale = Vector2(1.319343, 1.0236843)
+texture = ExtResource("2_s5jdh")
+
+[node name="margem" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1964694802]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VoltarControles" type="Button" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1985699581]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 43
+text = "Voltar"
+flat = true
+script = ExtResource("4_xdly5")
+
+[node name="margem2" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1649799059]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_uplbc")
+theme_override_font_sizes/font_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/ScrollContainer/VBoxContainer/VoltarControles" to="Panel/ScrollContainer/VBoxContainer/VoltarControles" method="_on_pressed"]

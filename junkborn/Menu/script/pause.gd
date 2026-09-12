@@ -16,6 +16,8 @@ func toggle_pause() -> void:
 	
 	if not new_pause_state:
 		$Opcoes.hide()
+		$Opcoes/ui_controles/Controles.hide()
+		$Opcoes/Panel.show()
 		$panelMain.show()
 
 func _on_continuar_pressed() -> void:
