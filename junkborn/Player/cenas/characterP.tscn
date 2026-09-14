@@ -1518,6 +1518,20 @@ position = Vector2(85.00001, -9.000001)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("14_8llo0")
 
+[node name="item3" type="Area2D" parent="." unique_id=1127147407 node_paths=PackedStringArray("labelinteragir")]
+script = ExtResource("13_oprud")
+labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+id_item_mapa = "ve_item2"
+
+[node name="collision" type="CollisionShape2D" parent="item3" unique_id=1603857462]
+position = Vector2(129, 83)
+shape = SubResource("RectangleShape2D_500wf")
+
+[node name="sprite" type="Sprite2D" parent="item3" unique_id=644374980]
+position = Vector2(129, 83.00001)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("14_8llo0")
+
 [node name="MiniGameColeta" type="Area2D" parent="." unique_id=515256518]
 position = Vector2(213, -41)
 script = ExtResource("15_0icm8")
@@ -1550,6 +1564,8 @@ shape = SubResource("RectangleShape2D_wldxa")
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
 [connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]
 [connection signal="area_exited" from="item2" to="item2" method="_on_area_exited"]
+[connection signal="area_entered" from="item3" to="item3" method="_on_area_entered"]
+[connection signal="area_exited" from="item3" to="item3" method="_on_area_exited"]
 [connection signal="area_entered" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_entered"]
 [connection signal="area_exited" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_exited"]
 [connection signal="area_entered" from="passarEntreCenas/forja" to="passarEntreCenas/forja" method="_on_area_entered"]

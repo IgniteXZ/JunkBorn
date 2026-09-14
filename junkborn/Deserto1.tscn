@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="10_tk3gm"]
 [ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_7c7ir"]
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
+[ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_7c7ir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7c43"]
 texture = ExtResource("1_hpbw2")
@@ -558,6 +559,11 @@ script = ExtResource("11_t0mu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDesertoVila/Area2D" unique_id=169427568]
 shape = SubResource("CircleShape2D_ce1y2")
+
+[node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
+
+[node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_7c7ir")]
+visible = false
 
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
