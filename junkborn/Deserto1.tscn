@@ -544,8 +544,10 @@ rendering_quadrant_size = 24
 position = Vector2(-427, 281)
 texture = ExtResource("10_tk3gm")
 
-[node name="Area2DMini" type="Area2D" parent="passagemdeCena/EntradadesertoMinigame" unique_id=895365158]
+[node name="Area2DMini" type="Area2D" parent="passagemdeCena/EntradadesertoMinigame" unique_id=895365158 node_paths=PackedStringArray("mini_game_coleta", "jogador")]
 script = ExtResource("11_7c7ir")
+mini_game_coleta = NodePath("../../../ui_coleta/MiniGameColeta")
+jogador = NodePath("../../../Character")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=33387605]
 shape = SubResource("CircleShape2D_tb5fl")
@@ -569,3 +571,4 @@ visible = false
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
+[connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]

@@ -26,6 +26,7 @@ var tempoAcabado: bool = false
 
 var t: float = 0.0
 
+var pode_mover: bool = true #travar depois em minigames
 
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
@@ -33,6 +34,11 @@ func _ready() -> void:
 
 	
 func _physics_process(_delta: float) -> void:
+	
+	if not pode_mover:
+		velocity = Vector2.ZERO
+		return
+	
 	_move()
 	_animate()
 	

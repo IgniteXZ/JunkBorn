@@ -1,5 +1,7 @@
 extends Node2D
 
+signal fechar_coleta
+
 @export var lixo_scene: PackedScene # Arraste a cena do Lixo (com a Area2D) para esta variável no Inspector
 @export var lista_de_lixos: Array[LixoData] = [] # Adicione os Resources de lixo criados no Inspector
 
