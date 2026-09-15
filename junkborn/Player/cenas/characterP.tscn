@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://uexfobaabm7d" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
 [ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
 [ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
+[ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1344,6 +1345,9 @@ radius = 30.066593
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wldxa"]
 size = Vector2(56.29135, 94.892944)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
+size = Vector2(54, 63)
+
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_8llo0")
 
@@ -1677,6 +1681,14 @@ position = Vector2(-621.62634, 104.76358)
 rotation = -2.3265238
 shape = SubResource("RectangleShape2D_wldxa")
 
+[node name="casaFilo" type="Area2D" parent="passarEntreCenas" unique_id=488784489 node_paths=PackedStringArray("labelinteragir")]
+script = ExtResource("21_b33t2")
+labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/casaFilo" unique_id=1524744938]
+position = Vector2(222, 55)
+shape = SubResource("RectangleShape2D_vd7c3")
+
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
@@ -1691,3 +1703,5 @@ shape = SubResource("RectangleShape2D_wldxa")
 [connection signal="area_exited" from="passarEntreCenas/forja" to="passarEntreCenas/forja" method="_on_area_exited"]
 [connection signal="area_entered" from="passarEntreCenas/Area2D" to="passarEntreCenas/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passarEntreCenas/Area2D" to="passarEntreCenas/Area2D" method="_on_area_exited"]
+[connection signal="area_entered" from="passarEntreCenas/casaFilo" to="passarEntreCenas/casaFilo" method="_on_area_entered"]
+[connection signal="area_exited" from="passarEntreCenas/casaFilo" to="passarEntreCenas/casaFilo" method="_on_area_exited"]

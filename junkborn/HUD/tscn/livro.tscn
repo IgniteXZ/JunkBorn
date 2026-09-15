@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://vdamr8acgl8k"]
+
+[ext_resource type="Texture2D" uid="uid://c1sxne5emv2xn" path="res://HUD/sprites/pagina.jpg" id="1_u7svt"]
+[ext_resource type="Script" uid="uid://b8380stcxn4sq" path="res://HUD/scripts/livro.gd" id="1_yf5l6"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_ivuo1"]
+
+[node name="Livro" type="Control" unique_id=2109212644 node_paths=PackedStringArray("fotodireita", "textodireita", "fotoesquerda", "textoesquerda", "botaovoltapag", "botaoavancapag")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yf5l6")
+fotodireita = NodePath("TextureRect/MarginContainer/HBoxContainer/VBoxDir/TextureRect")
+textodireita = NodePath("TextureRect/MarginContainer/HBoxContainer/VBoxDir/RichTextLabel")
+fotoesquerda = NodePath("TextureRect/MarginContainer/HBoxContainer/VBoxEsq/TextureRect")
+textoesquerda = NodePath("TextureRect/MarginContainer/HBoxContainer/VBoxEsq/RichTextLabel")
+botaovoltapag = NodePath("TextureRect/HBoxVirarPag/VoltaPag")
+botaoavancapag = NodePath("TextureRect/HBoxVirarPag/AvancaPag")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1156959553]
+custom_minimum_size = Vector2(0, 0.035)
+custom_maximum_size = Vector2(1600, 1000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u7svt")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=264398243]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer" unique_id=210955413]
+layout_mode = 2
+theme_override_constants/separation = 600
+
+[node name="VBoxEsq" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=236703891]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxEsq" unique_id=2086082690]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/HBoxContainer/VBoxEsq" unique_id=1456994603]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ivuo1")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="VBoxDir" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=579977106]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer/VBoxDir" unique_id=1842160465]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/HBoxContainer/VBoxDir" unique_id=33416947]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ivuo1")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="HBoxVirarPag" type="HBoxContainer" parent="TextureRect" unique_id=1694096829]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -31.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VoltaPag" type="Button" parent="TextureRect/HBoxVirarPag" unique_id=273460964]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ivuo1")
+theme_override_font_sizes/font_size = 60
+text = "<"
+
+[node name="Spacer" type="Control" parent="TextureRect/HBoxVirarPag" unique_id=1016922087]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AvancaPag" type="Button" parent="TextureRect/HBoxVirarPag" unique_id=2082248966]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ivuo1")
+theme_override_font_sizes/font_size = 60
+text = ">"
