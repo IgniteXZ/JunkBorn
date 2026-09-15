@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_ecsqw"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_ifgmi"]
+[ext_resource type="Script" uid="uid://caapqivltdtb2" path="res://Cenarios/CenarioDentroCasa/sair_casa_filo.gd" id="3_ifgmi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_ecsqw")
@@ -225,6 +226,9 @@ sources/5 = SubResource("TileSetAtlasSource_5vr3i")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
+size = Vector2(73, 34.5)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -262,3 +266,16 @@ text = "Aperte E para interagir"
 label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="passagemCenas" type="Node2D" parent="." unique_id=1699138988]
+
+[node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835 node_paths=PackedStringArray("labelinteragir")]
+script = ExtResource("3_ifgmi")
+labelinteragir = NodePath("../../Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=210186153]
+position = Vector2(75, 214)
+shape = SubResource("RectangleShape2D_vd7c3")
+
+[connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
+[connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
