@@ -5,6 +5,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		# Se a cena atual estiver no grupo "no_pause", ignora o comando
+		var current_scene = get_tree().current_scene
+		if current_scene and current_scene.is_in_group("no_pause"):
+			return
+			
 		toggle_pause()
 		get_viewport().set_input_as_handled()
 

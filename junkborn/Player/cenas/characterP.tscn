@@ -11,15 +11,25 @@
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
-[ext_resource type="Script" uid="uid://cpdnva0gmxxb4" path="res://NPC/ScriptsNPC/npcTeste.gd" id="12_kds3k"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
-[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="13_b33t2"]
-[ext_resource type="Resource" uid="uid://p2qy8knk5vnm" path="res://Resource/NPC/NPCDebug.tres" id="13_kds3k"]
 [ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="14_8llo0"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 [ext_resource type="Script" uid="uid://dc0k7pgpqu7jm" path="res://Player/cenas/forja.gd" id="15_8llo0"]
+[ext_resource type="Texture2D" uid="uid://bkhswug126xl1" path="res://NPC/Sprites/Npc1/npc1-1.png" id="16_0xg0n"]
+[ext_resource type="Script" uid="uid://7bgpadim8637" path="res://Player/cenas/npc_1.gd" id="16_wuro2"]
+[ext_resource type="Texture2D" uid="uid://bj0xtcy4v5sp4" path="res://NPC/Sprites/Npc1/npc1-2.png" id="17_04mck"]
 [ext_resource type="Script" uid="uid://bimkn5176ws25" path="res://Cenarios/CenarioVila/area_2d.gd" id="17_irw8e"]
+[ext_resource type="Texture2D" uid="uid://b85mx2ebc135p" path="res://NPC/Sprites/personagens.png" id="17_urtpg"]
+[ext_resource type="Script" uid="uid://beqoecgt122qy" path="res://Player/cenas/mandacaru_2.gd" id="18_jytyn"]
+[ext_resource type="Texture2D" uid="uid://ctdit5tr8mbg4" path="res://NPC/Sprites/mandacaru/manda1.png" id="18_urtpg"]
+[ext_resource type="Texture2D" uid="uid://cusxv27tunsdb" path="res://NPC/Sprites/Npc2/npc2-1.png" id="18_wuro2"]
+[ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="19_jytyn"]
+[ext_resource type="Script" uid="uid://pg17f66qut5o" path="res://Player/cenas/npc_2.gd" id="19_nslkj"]
+[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
+[ext_resource type="Script" uid="uid://uexfobaabm7d" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
+[ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
+[ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1261,8 +1271,67 @@ size = Vector2(42, 35.89868)
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
-size = Vector2(129.32672, 129.74258)
+[sub_resource type="SpriteFrames" id="SpriteFrames_sq0mp"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("18_urtpg")
+}, {
+"duration": 1.5,
+"texture": ExtResource("19_jytyn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b33t2"]
+radius = 33.24154
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6esrk"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("16_0xg0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_04mck")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfwth"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("18_wuro2")
+}, {
+"duration": 1.5,
+"texture": ExtResource("19_upyhu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrjrq"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": ExtResource("23_hs813")
+}, {
+"duration": 2.5,
+"texture": ExtResource("24_tavow")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sq0mp"]
+radius = 32.24903
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1277,6 +1346,15 @@ size = Vector2(56.29135, 94.892944)
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_8llo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
+position = Vector2(-544.125, 113.24999)
+scale = Vector2(2.5326076, 2.5326087)
+texture = ExtResource("17_urtpg")
+hframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2(0, 0, 47.251465, 46.897408)
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1322766949]
 visible = false
@@ -1477,20 +1555,59 @@ label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NPCTEste" type="CharacterBody2D" parent="y-sort" unique_id=1756052417 node_paths=PackedStringArray("Sprite")]
+[node name="mandacaru" type="Area2D" parent="y-sort" unique_id=1262989772]
 y_sort_enabled = true
-position = Vector2(26.345, 99.24)
-scale = Vector2(0.505, 0.505)
-script = ExtResource("12_kds3k")
-NPCdados = ExtResource("13_kds3k")
-Sprite = NodePath("Sprite2D")
-metadata/_custom_type_script = "uid://b7ipxbsxc15od"
+script = ExtResource("18_jytyn")
 
-[node name="Sprite2D" type="Sprite2D" parent="y-sort/NPCTEste" unique_id=962517853]
-texture = ExtResource("13_b33t2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/mandacaru" unique_id=651672611]
+y_sort_enabled = true
+position = Vector2(1234.0001, 164.00002)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_sq0mp")
+frame = 1
+frame_progress = 0.9176922
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/NPCTEste" unique_id=193779878]
-shape = SubResource("RectangleShape2D_ns0o7")
+[node name="mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
+position = Vector2(1234, 201)
+shape = SubResource("CircleShape2D_b33t2")
+
+[node name="Npc1" type="Area2D" parent="y-sort" unique_id=572283517]
+y_sort_enabled = true
+script = ExtResource("16_wuro2")
+
+[node name="Npc1" type="CollisionShape2D" parent="y-sort/Npc1" unique_id=1466186829]
+position = Vector2(985, 83)
+shape = SubResource("CircleShape2D_b33t2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc1" unique_id=91676296]
+position = Vector2(983.9999, 50)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_6esrk")
+
+[node name="Npc2" type="Area2D" parent="y-sort" unique_id=1777900447]
+position = Vector2(1077, -124)
+script = ExtResource("19_nslkj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc2" unique_id=2082660921]
+position = Vector2(-481, 399)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_bfwth")
+
+[node name="Npc2" type="CollisionShape2D" parent="y-sort/Npc2" unique_id=1677409906]
+position = Vector2(-482, 440)
+shape = SubResource("CircleShape2D_b33t2")
+
+[node name="Npc3" type="Area2D" parent="y-sort" unique_id=2061851211]
+script = ExtResource("22_fa7nq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc3" unique_id=676969007]
+position = Vector2(-261, 38)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_rrjrq")
+
+[node name="Npc3" type="CollisionShape2D" parent="y-sort/Npc3" unique_id=704285782]
+position = Vector2(-256, 76)
+shape = SubResource("CircleShape2D_sq0mp")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
@@ -1498,9 +1615,11 @@ labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item1"
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
+position = Vector2(12, -14)
 shape = SubResource("RectangleShape2D_500wf")
 
 [node name="sprite" type="Sprite2D" parent="item1" unique_id=1393674261]
+position = Vector2(12.000002, -14.000002)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
 
