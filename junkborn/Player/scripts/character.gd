@@ -94,6 +94,11 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 	
 	if camera:
 		camera.tremer(3.0)
+	
+
+	var canvas = get_tree().root.find_child("ui_canvas", true, false)
+	if canvas:
+		canvas.remover_item_aleatorio()
 		
 	var direcaoEmpurra = (global_position - bodyy.global_position).normalized()
 	knockback_vector = (direcaoEmpurra * 400.0)
@@ -104,9 +109,5 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 	bodyy = null
 	
 	
-	
-	
-
-
 func _on_empurrado_body_exited(body: Node2D) -> void:
 	pass
