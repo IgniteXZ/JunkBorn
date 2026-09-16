@@ -17,20 +17,28 @@
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 [ext_resource type="Script" uid="uid://dc0k7pgpqu7jm" path="res://Player/cenas/forja.gd" id="15_8llo0"]
 [ext_resource type="Texture2D" uid="uid://bkhswug126xl1" path="res://NPC/Sprites/Npc1/npc1-1.png" id="16_0xg0n"]
-[ext_resource type="Script" uid="uid://7bgpadim8637" path="res://Player/cenas/npc_1.gd" id="16_wuro2"]
+[ext_resource type="Script" uid="uid://dvxnnbfwym5x7" path="res://Player/cenas/npc_1.gd" id="16_wuro2"]
 [ext_resource type="Texture2D" uid="uid://bj0xtcy4v5sp4" path="res://NPC/Sprites/Npc1/npc1-2.png" id="17_04mck"]
 [ext_resource type="Script" uid="uid://bimkn5176ws25" path="res://Cenarios/CenarioVila/area_2d.gd" id="17_irw8e"]
-[ext_resource type="Texture2D" uid="uid://b85mx2ebc135p" path="res://NPC/Sprites/personagens.png" id="17_urtpg"]
-[ext_resource type="Script" uid="uid://beqoecgt122qy" path="res://Player/cenas/mandacaru_2.gd" id="18_jytyn"]
 [ext_resource type="Texture2D" uid="uid://ctdit5tr8mbg4" path="res://NPC/Sprites/mandacaru/manda1.png" id="18_urtpg"]
 [ext_resource type="Texture2D" uid="uid://cusxv27tunsdb" path="res://NPC/Sprites/Npc2/npc2-1.png" id="18_wuro2"]
 [ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="19_jytyn"]
 [ext_resource type="Script" uid="uid://pg17f66qut5o" path="res://Player/cenas/npc_2.gd" id="19_nslkj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
-[ext_resource type="Script" uid="uid://uexfobaabm7d" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
-[ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
-[ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
 [ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
+[ext_resource type="Script" uid="uid://c776gecpk15fa" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
+[ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
+[ext_resource type="Texture2D" uid="uid://b0o8yukgmatf2" path="res://NPC/Sprites/Npc4/npc4-1.png" id="24_1evj1"]
+[ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
+[ext_resource type="Texture2D" uid="uid://dto6t62p7rcto" path="res://NPC/Sprites/Npc4/npc4-2.png" id="25_a4q6s"]
+[ext_resource type="Texture2D" uid="uid://bcva03bfu2qfb" path="res://NPC/Sprites/Npc5/npc5-1.png" id="26_lsdmm"]
+[ext_resource type="Texture2D" uid="uid://dvxny4pnjflfl" path="res://NPC/Sprites/Npc5/npc5-2.png" id="27_cegfn"]
+[ext_resource type="Texture2D" uid="uid://k1ogycl15q4t" path="res://NPC/Sprites/trabalhadores/personagens1.png" id="28_7xnrc"]
+[ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="29_g0mcs"]
+[ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="29_hs813"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
+load_path = "res://.godot/imported/personagens.png-d28ecbf873a560744d45d7c75f7b272d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1287,7 +1295,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b33t2"]
-radius = 33.24154
+radius = 40.311287
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6esrk"]
 animations = [{
@@ -1303,6 +1311,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
+radius = 29.614185
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bfwth"]
 animations = [{
 "frames": [{
@@ -1316,6 +1327,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvkme"]
+radius = 17.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rrjrq"]
 animations = [{
@@ -1333,6 +1347,53 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq0mp"]
 radius = 32.24903
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3nj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_1evj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_a4q6s")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifxyd"]
+radius = 18.027756
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ns0o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_lsdmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cegfn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7g8jk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvkme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_7xnrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_g0mcs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1354,7 +1415,7 @@ script = ExtResource("1_8llo0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
 scale = Vector2(2.5326076, 2.5326087)
-texture = ExtResource("17_urtpg")
+texture = SubResource("CompressedTexture2D_hwkeg")
 hframes = 2
 frame = 1
 region_enabled = true
@@ -1559,9 +1620,8 @@ label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="mandacaru" type="Area2D" parent="y-sort" unique_id=1262989772]
-y_sort_enabled = true
-script = ExtResource("18_jytyn")
+[node name="mandacaru" type="CharacterBody2D" parent="y-sort" unique_id=1397314812]
+script = ExtResource("29_hs813")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/mandacaru" unique_id=651672611]
 y_sort_enabled = true
@@ -1573,45 +1633,76 @@ frame_progress = 0.9176922
 
 [node name="mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
 position = Vector2(1234, 201)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b33t2")
 
-[node name="Npc1" type="Area2D" parent="y-sort" unique_id=572283517]
-y_sort_enabled = true
+[node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
 script = ExtResource("16_wuro2")
 
-[node name="Npc1" type="CollisionShape2D" parent="y-sort/Npc1" unique_id=1466186829]
-position = Vector2(985, 83)
-shape = SubResource("CircleShape2D_b33t2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc1" unique_id=91676296]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc1" unique_id=91676296]
 position = Vector2(983.9999, 50)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_6esrk")
 
-[node name="Npc2" type="Area2D" parent="y-sort" unique_id=1777900447]
-position = Vector2(1077, -124)
+[node name="Npc1" type="CollisionShape2D" parent="y-sort/npc1" unique_id=1810140180]
+position = Vector2(988.00006, 82)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_ns0o7")
+
+[node name="npc2" type="CharacterBody2D" parent="y-sort" unique_id=585383922]
+y_sort_enabled = true
 script = ExtResource("19_nslkj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc2" unique_id=2082660921]
-position = Vector2(-481, 399)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc2" unique_id=2082660921]
+position = Vector2(596, 275)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_bfwth")
 
-[node name="Npc2" type="CollisionShape2D" parent="y-sort/Npc2" unique_id=1677409906]
-position = Vector2(-482, 440)
-shape = SubResource("CircleShape2D_b33t2")
+[node name="Npc2" type="CollisionShape2D" parent="y-sort/npc2" unique_id=765007747]
+position = Vector2(589, 325)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CircleShape2D_tvkme")
 
-[node name="Npc3" type="Area2D" parent="y-sort" unique_id=2061851211]
+[node name="npc3" type="CharacterBody2D" parent="y-sort" unique_id=15617534]
 script = ExtResource("22_fa7nq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc3" unique_id=676969007]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc3" unique_id=676969007]
 position = Vector2(-261, 38)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_rrjrq")
 
-[node name="Npc3" type="CollisionShape2D" parent="y-sort/Npc3" unique_id=704285782]
+[node name="Npc3" type="CollisionShape2D" parent="y-sort/npc3" unique_id=704285782]
 position = Vector2(-256, 76)
 shape = SubResource("CircleShape2D_sq0mp")
+
+[node name="npc4" type="CharacterBody2D" parent="y-sort" unique_id=1286992904]
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc4" unique_id=492916500]
+position = Vector2(-400, 250)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_a3nj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc4" unique_id=1724317678]
+position = Vector2(-401, 295)
+shape = SubResource("CircleShape2D_ifxyd")
+
+[node name="npc5" type="CharacterBody2D" parent="y-sort" unique_id=148003284]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc5" unique_id=1268200743]
+position = Vector2(79, 310)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_ns0o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc5" unique_id=1918696857]
+shape = SubResource("CircleShape2D_7g8jk")
+
+[node name="npc6" type="CharacterBody2D" parent="y-sort" unique_id=1880780762]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc6" unique_id=996274957]
+position = Vector2(1299.0001, 44)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_tvkme")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")

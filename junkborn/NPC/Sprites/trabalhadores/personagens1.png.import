@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu8mynexo7w2a"
-path="res://.godot/imported/personagens2.png-e00d65d82f7f5f8015ea90b1975a426b.ctex"
+uid="uid://k1ogycl15q4t"
+path="res://.godot/imported/personagens1.png-c27b607d199bcbc675684b7787392901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/Sprites/Npcs6/personagens2.png"
-dest_files=["res://.godot/imported/personagens2.png-e00d65d82f7f5f8015ea90b1975a426b.ctex"]
+source_file="res://NPC/Sprites/trabalhadores/personagens1.png"
+dest_files=["res://.godot/imported/personagens1.png-c27b607d199bcbc675684b7787392901.ctex"]
 
 [params]
 
