@@ -6,6 +6,8 @@ var _state_machine
 
 signal PassarCanvas(canvas:CanvasLayer)
 
+@export var camera: Camera2D
+
 @export_category("Variables")
 @export var _mover_speed: float = 240.0
 
@@ -17,14 +19,13 @@ signal PassarCanvas(canvas:CanvasLayer)
 
 @export var canvaa: CanvasLayer
 
-var knockback_vector = Vector2.ZERO
+var knockback_vector: Vector2 = Vector2.ZERO
 
 var bodyy = null
 var empurrado: bool
 
 var tempoAcabado: bool = false
 
-var t: float = 0.0
 
 var pode_mover: bool = true #travar depois em minigames
 
@@ -38,24 +39,21 @@ func _physics_process(_delta: float) -> void:
 	if not pode_mover:
 		velocity = Vector2.ZERO
 		return
-	
-	_move()
-	_animate()
-	
-	
+
 	if empurrado:
 		#knockback_vector = (bodyy.global_position - global_position) * 0.01
 		#velocity = lerp(global_position, -knockback_vector, _delta)
-		t += _delta *  0.4
-		position = global_position.lerp(bodyy.global_position - -global_position, t)
-		await get_tree().create_timer(0.3).timeout
-		empurrado = false
+		velocity = knockback_vector
+		knockback_vector = knockback_vector.move_toward(Vector2.ZERO, _friction * 1000 * _delta)
 		
-	elif not empurrado:
-		t = 0.0
+		
+	
+	else:
+		_move()
+		_animate()
+	
 	move_and_slide()
 	
-
 
 func _move() -> void:
 	var _direction: Vector2 = Vector2(
@@ -88,8 +86,24 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_empurrado_body_entered(body: Node2D) -> void:
+	if empurrado:
+		return
+		
 	empurrado = true
 	bodyy = body
+	
+	if camera:
+		camera.tremer(3.0)
+		
+	var direcaoEmpurra = (global_position - bodyy.global_position).normalized()
+	knockback_vector = (direcaoEmpurra * 400.0)
+	
+	
+	await get_tree().create_timer(0.2).timeout
+	empurrado = false
+	bodyy = null
+	
+	
 	
 	
 
