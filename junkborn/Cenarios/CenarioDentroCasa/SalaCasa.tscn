@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_ecsqw"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_ifgmi"]
 [ext_resource type="Script" uid="uid://caapqivltdtb2" path="res://Cenarios/CenarioDentroCasa/sair_casa_filo.gd" id="3_ifgmi"]
+[ext_resource type="Script" uid="uid://wugla3rpbvrw" path="res://Cenarios/CenarioDentroCasa/entrar_no_quarto_filo.gd" id="4_5vr3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_ecsqw")
@@ -229,6 +230,9 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
 size = Vector2(73, 34.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(46, 30)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -254,7 +258,7 @@ tile_set = SubResource("TileSet_tf7uv")
 rendering_quadrant_size = 9
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_ifgmi")]
-position = Vector2(31, 86)
+position = Vector2(218, 115)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
 visible = false
@@ -277,5 +281,15 @@ labelinteragir = NodePath("../../Character/LabelInteragir")
 position = Vector2(75, 214)
 shape = SubResource("RectangleShape2D_vd7c3")
 
+[node name="EntrarNoQuartoFilo" type="Area2D" parent="passagemCenas" unique_id=1628054982 node_paths=PackedStringArray("labelInteragir")]
+script = ExtResource("4_5vr3i")
+labelInteragir = NodePath("../../Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=662428472]
+position = Vector2(231, 20)
+shape = SubResource("RectangleShape2D_a3nj5")
+
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
+[connection signal="area_entered" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_entered"]
+[connection signal="area_exited" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_exited"]
