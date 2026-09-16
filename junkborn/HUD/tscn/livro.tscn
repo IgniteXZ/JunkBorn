@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c1sxne5emv2xn" path="res://HUD/sprites/pagina.jpg" id="1_u7svt"]
 [ext_resource type="Script" uid="uid://b8380stcxn4sq" path="res://HUD/scripts/livro.gd" id="1_yf5l6"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_ivuo1"]
+[ext_resource type="PackedScene" uid="uid://c7w5bsslvh2a0" path="res://HUD/tscn/botaofechalivro.tscn" id="4_tyal7"]
 
 [node name="Livro" type="Control" unique_id=2109212644 node_paths=PackedStringArray("fotodireita", "textodireita", "fotoesquerda", "textoesquerda", "botaovoltapag", "botaoavancapag")]
 layout_mode = 3
@@ -106,3 +107,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ivuo1")
 theme_override_font_sizes/font_size = 60
 text = ">"
+
+[node name="HBoxSairLivro" type="HBoxContainer" parent="TextureRect" unique_id=615405768]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="botaofechalivro" parent="TextureRect/HBoxSairLivro" unique_id=550276476 node_paths=PackedStringArray("livro") instance=ExtResource("4_tyal7")]
+layout_mode = 2
+livro = NodePath("../../..")

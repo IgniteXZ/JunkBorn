@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="19_jytyn"]
 [ext_resource type="Script" uid="uid://pg17f66qut5o" path="res://Player/cenas/npc_2.gd" id="19_nslkj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
+[ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
 [ext_resource type="Script" uid="uid://uexfobaabm7d" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
 [ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
 [ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
-[ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1686,7 +1686,7 @@ script = ExtResource("21_b33t2")
 labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/casaFilo" unique_id=1524744938]
-position = Vector2(222, 55)
+position = Vector2(223, 37)
 shape = SubResource("RectangleShape2D_vd7c3")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
