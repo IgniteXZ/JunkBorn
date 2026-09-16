@@ -1631,7 +1631,7 @@ sprite_frames = SubResource("SpriteFrames_sq0mp")
 frame = 1
 frame_progress = 0.9176922
 
-[node name="mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
+[node name="Mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
 position = Vector2(1234, 201)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b33t2")
@@ -1639,40 +1639,41 @@ shape = SubResource("CircleShape2D_b33t2")
 [node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
 script = ExtResource("16_wuro2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc1" unique_id=91676296]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc1" unique_id=91676296]
 position = Vector2(983.9999, 50)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_6esrk")
 
-[node name="Npc1" type="CollisionShape2D" parent="y-sort/npc1" unique_id=1810140180]
+[node name="Npc1" type="CollisionShape2D" parent="y-sort/Npc1" unique_id=1810140180]
 position = Vector2(988.00006, 82)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_ns0o7")
 
-[node name="npc2" type="CharacterBody2D" parent="y-sort" unique_id=585383922]
+[node name="Npc2" type="CharacterBody2D" parent="y-sort" unique_id=585383922]
 y_sort_enabled = true
 script = ExtResource("19_nslkj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc2" unique_id=2082660921]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc2" unique_id=2082660921]
 position = Vector2(596, 275)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_bfwth")
 
-[node name="Npc2" type="CollisionShape2D" parent="y-sort/npc2" unique_id=765007747]
+[node name="Npc2" type="CollisionShape2D" parent="y-sort/Npc2" unique_id=765007747]
 position = Vector2(589, 325)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_tvkme")
 
-[node name="npc3" type="CharacterBody2D" parent="y-sort" unique_id=15617534]
+[node name="Npc3" type="CharacterBody2D" parent="y-sort" unique_id=15617534]
 script = ExtResource("22_fa7nq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc3" unique_id=676969007]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc3" unique_id=676969007]
 position = Vector2(-261, 38)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_rrjrq")
 
-[node name="Npc3" type="CollisionShape2D" parent="y-sort/npc3" unique_id=704285782]
+[node name="Npc3" type="CollisionShape2D" parent="y-sort/Npc3" unique_id=704285782]
 position = Vector2(-256, 76)
+shape = SubResource("CircleShape2D_sq0mp")
 shape = SubResource("CircleShape2D_sq0mp")
 
 [node name="npc4" type="CharacterBody2D" parent="y-sort" unique_id=1286992904]
@@ -1777,7 +1778,7 @@ script = ExtResource("21_b33t2")
 labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/casaFilo" unique_id=1524744938]
-position = Vector2(222, 55)
+position = Vector2(223, 37)
 shape = SubResource("RectangleShape2D_vd7c3")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
