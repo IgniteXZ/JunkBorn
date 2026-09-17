@@ -359,8 +359,6 @@ position = Vector2(-23.355, 28.985)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("5_msrtw")
 WayPoint = Array[Vector2]([Vector2(271, 47), Vector2(67, 67), Vector2(288, 90)])
-velocidade = null
-tempoParadex = null
 player = NodePath("../Character")
 
 [node name="Animate" type="AnimatedSprite2D" parent="Estanho" unique_id=1491661243]
