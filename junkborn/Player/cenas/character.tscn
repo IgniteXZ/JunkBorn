@@ -228,9 +228,10 @@ states/Idle/position = Vector2(666, 101)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_nf8lx")
 states/Walk/position = Vector2(453, 104)
 
-[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("_animation_tree", "canvaa")]
+[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("camera", "_animation_tree", "canvaa")]
 y_sort_enabled = true
 script = ExtResource("1_gbkji")
+camera = NodePath("Camera2D")
 _animation_tree = NodePath("AnimationTree")
 canvaa = NodePath("ui_canvas")
 
