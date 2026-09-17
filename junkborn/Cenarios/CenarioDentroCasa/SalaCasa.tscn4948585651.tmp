@@ -233,7 +233,7 @@ outline_color = Color(0, 0, 0, 1)
 size = Vector2(73, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
-size = Vector2(46, 42)
+size = Vector2(46, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msrtw"]
 atlas = ExtResource("5_tf7uv")
@@ -324,7 +324,6 @@ rendering_quadrant_size = 9
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_ifgmi")]
 position = Vector2(218, 115)
-scale = Vector2(0.9, 0.9)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
 visible = false
@@ -352,7 +351,7 @@ script = ExtResource("4_5vr3i")
 labelInteragir = NodePath("../../Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=662428472]
-position = Vector2(231, -16)
+position = Vector2(231, 20)
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="Estanho" type="CharacterBody2D" parent="." unique_id=1463653629 node_paths=PackedStringArray("player")]

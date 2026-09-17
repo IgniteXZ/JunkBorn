@@ -89,12 +89,16 @@ border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
 
 [node name="Opcoes" type="Control" unique_id=2117586468]
 layout_mode = 3
-anchor_right = 3.4970002
-anchor_bottom = 3.45
-offset_right = -0.040039063
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_tnvj7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=1548611499]
 layout_mode = 1
