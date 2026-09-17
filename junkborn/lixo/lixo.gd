@@ -58,10 +58,7 @@ func coletar_lixo() -> void:
 	
 		queue_free()
 		
-	if dados and not dados.Coletavel:
-		var canvas = get_tree().root.find_child("ui_canvas", true, false)
-		if canvas:
-			canvas.remover_item_aleatorio()
+	
 	
 	
 		

@@ -3,7 +3,7 @@ extends Node2D
 var drone = preload("res://Inimigo/Drone/drone.tscn")
 # Called when the node enters the scen$Dronee tree for the first time.
 func _ready() -> void:
-	for i in 1:
+	for i in 2:
 		var a = drone.instantiate()
 		add_child(a)
 		
