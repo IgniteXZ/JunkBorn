@@ -27,11 +27,14 @@
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
 [ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
 [ext_resource type="Script" uid="uid://c776gecpk15fa" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
+[ext_resource type="Script" uid="uid://c0f0victkpmel" path="res://Player/cenas/npc_4.gd" id="22_lsdmm"]
 [ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
 [ext_resource type="Texture2D" uid="uid://b0o8yukgmatf2" path="res://NPC/Sprites/Npc4/npc4-1.png" id="24_1evj1"]
 [ext_resource type="Texture2D" uid="uid://dralfo7yups06" path="res://NPC/Sprites/Npc3/npc3-2.png" id="24_tavow"]
 [ext_resource type="Texture2D" uid="uid://dto6t62p7rcto" path="res://NPC/Sprites/Npc4/npc4-2.png" id="25_a4q6s"]
+[ext_resource type="Script" uid="uid://dg1yy0sue7fn2" path="res://Player/cenas/npc_5.gd" id="25_cegfn"]
 [ext_resource type="Texture2D" uid="uid://bcva03bfu2qfb" path="res://NPC/Sprites/Npc5/npc5-1.png" id="26_lsdmm"]
+[ext_resource type="Script" uid="uid://bxssxpe6unguk" path="res://Player/cenas/npc_6.gd" id="27_7xnrc"]
 [ext_resource type="Texture2D" uid="uid://dvxny4pnjflfl" path="res://NPC/Sprites/Npc5/npc5-2.png" id="27_cegfn"]
 [ext_resource type="Texture2D" uid="uid://k1ogycl15q4t" path="res://NPC/Sprites/trabalhadores/personagens1.png" id="28_7xnrc"]
 [ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="29_g0mcs"]
@@ -1297,10 +1300,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_b33t2"]
 radius = 40.311287
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6esrk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifxyd"]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 1.0,
 "texture": ExtResource("16_0xg0n")
 }, {
 "duration": 1.0,
@@ -1311,8 +1314,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
-radius = 29.614185
+[sub_resource type="CircleShape2D" id="CircleShape2D_i7e1x"]
+radius = 21.377558
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bfwth"]
 animations = [{
@@ -1346,7 +1349,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq0mp"]
-radius = 32.24903
+radius = 22.561028
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3nj5"]
 animations = [{
@@ -1380,6 +1383,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g8jk"]
+radius = 18.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvkme"]
 animations = [{
@@ -1394,6 +1398,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fm7tp"]
+radius = 18.248287
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1637,17 +1644,17 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b33t2")
 
 [node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
+y_sort_enabled = true
 script = ExtResource("16_wuro2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc1" unique_id=91676296]
-position = Vector2(983.9999, 50)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc1" unique_id=1196712725]
+position = Vector2(26.99997, 58.000008)
 scale = Vector2(2.5, 2.5)
-sprite_frames = SubResource("SpriteFrames_6esrk")
+sprite_frames = SubResource("SpriteFrames_ifxyd")
 
-[node name="Npc1" type="CollisionShape2D" parent="y-sort/Npc1" unique_id=1810140180]
-position = Vector2(988.00006, 82)
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("CircleShape2D_ns0o7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc1" unique_id=1792735549]
+position = Vector2(27, 99)
+shape = SubResource("CircleShape2D_i7e1x")
 
 [node name="Npc2" type="CharacterBody2D" parent="y-sort" unique_id=585383922]
 y_sort_enabled = true
@@ -1664,6 +1671,7 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_tvkme")
 
 [node name="Npc3" type="CharacterBody2D" parent="y-sort" unique_id=15617534]
+y_sort_enabled = true
 script = ExtResource("22_fa7nq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/Npc3" unique_id=676969007]
@@ -1674,10 +1682,10 @@ sprite_frames = SubResource("SpriteFrames_rrjrq")
 [node name="Npc3" type="CollisionShape2D" parent="y-sort/Npc3" unique_id=704285782]
 position = Vector2(-256, 76)
 shape = SubResource("CircleShape2D_sq0mp")
-shape = SubResource("CircleShape2D_sq0mp")
 
 [node name="npc4" type="CharacterBody2D" parent="y-sort" unique_id=1286992904]
 y_sort_enabled = true
+script = ExtResource("22_lsdmm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc4" unique_id=492916500]
 position = Vector2(-400, 250)
@@ -1689,6 +1697,8 @@ position = Vector2(-401, 295)
 shape = SubResource("CircleShape2D_ifxyd")
 
 [node name="npc5" type="CharacterBody2D" parent="y-sort" unique_id=148003284]
+y_sort_enabled = true
+script = ExtResource("25_cegfn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc5" unique_id=1268200743]
 position = Vector2(79, 310)
@@ -1696,14 +1706,21 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ns0o7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc5" unique_id=1918696857]
+position = Vector2(1021, -3)
 shape = SubResource("CircleShape2D_7g8jk")
 
 [node name="npc6" type="CharacterBody2D" parent="y-sort" unique_id=1880780762]
+y_sort_enabled = true
+script = ExtResource("27_7xnrc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc6" unique_id=996274957]
 position = Vector2(1299.0001, 44)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_tvkme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6" unique_id=1372160085]
+position = Vector2(78, 355)
+shape = SubResource("CircleShape2D_fm7tp")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
@@ -1761,7 +1778,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 script = ExtResource("15_8llo0")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="passarEntreCenas/forja" unique_id=95484985]
-position = Vector2(857, -61)
+position = Vector2(861, -58)
 shape = SubResource("CircleShape2D_a3nj5")
 
 [node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998 node_paths=PackedStringArray("labelinteragir")]
