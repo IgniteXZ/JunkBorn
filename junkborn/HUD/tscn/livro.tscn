@@ -26,16 +26,14 @@ botaoavancapag = NodePath("TextureRect/HBoxVirarPag/AvancaPag")
 custom_minimum_size = Vector2(0, 0.035)
 custom_maximum_size = Vector2(1600, 1000)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -410.0
-offset_right = 440.0
-offset_bottom = 285.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 80.0
+offset_top = 10.0
+offset_right = 1480.0
+offset_bottom = 885.0
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_tyal7")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxVirarPag" type="HBoxContainer" parent="TextureRect" unique_id=1694096829]
 layout_mode = 1
@@ -66,9 +64,9 @@ theme_override_font_sizes/font_size = 60
 text = ">"
 
 [node name="HBoxSairLivro" type="HBoxContainer" parent="TextureRect" unique_id=615405768]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 120.0
 
 [node name="botaofechalivro" parent="TextureRect/HBoxSairLivro" unique_id=550276476 node_paths=PackedStringArray("livro") instance=ExtResource("4_tyal7")]
 layout_mode = 2
@@ -87,25 +85,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 47
+theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/EspacoEsq/VBoxEsq" unique_id=23054016]
 texture_filter = 1
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 texture = ExtResource("3_02bdd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/EspacoEsq/VBoxEsq" unique_id=1134170586]
-custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_ivuo1")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 18
 
 [node name="EspacoDir" type="Control" parent="TextureRect" unique_id=1299080639]
 layout_mode = 1
@@ -120,22 +121,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/EspacoDir/VBoxDir" unique_id=1862995299]
 texture_filter = 1
-custom_minimum_size = Vector2(200, 300)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 texture = ExtResource("5_fssjj")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/EspacoDir/VBoxDir" unique_id=1530474607]
-custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_ivuo1")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 18

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://doyj5detmwxjj"]
 
-[ext_resource type="Texture2D" uid="uid://dmpg0bdgokh3l" path="res://HUD/sprites/mochila placehorder.png" id="1_iclnp"]
+[ext_resource type="Texture2D" uid="uid://w5h4qjs6ht0f" path="res://HUD/sprites/mochila.png" id="1_8kugn"]
 [ext_resource type="PackedScene" uid="uid://crd7phdd8c28s" path="res://HUD/tscn/slot.tscn" id="2_lic60"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="3_d41l4"]
 [ext_resource type="Texture2D" uid="uid://dg74a5bid7n81" path="res://HUD/sprites/slot inventario.png" id="3_rqyyd"]
@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b71ouiwrqb5iw" path="res://Resource/gold.png" id="8_kbgbe"]
 [ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="9_kbgbe"]
 [ext_resource type="Texture2D" uid="uid://bbpnfiom47oum" path="res://Resource/Itens/madeira.png" id="10_rdhxq"]
+[ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="12_8kugn"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
+[ext_resource type="Texture2D" uid="uid://ouorf48t2ljp" path="res://HUD/sprites/diarioShiny.png" id="13_58chr"]
 [ext_resource type="Script" uid="uid://07t3i7xodfmn" path="res://HUD/scripts/ui_livro.gd" id="14_10kb4"]
 [ext_resource type="PackedScene" uid="uid://vdamr8acgl8k" path="res://HUD/tscn/livro.tscn" id="14_gqrh1"]
 
@@ -22,7 +24,7 @@ load_path = "res://.godot/imported/images.jpg-da4814d45b86bad63d4630094e604049.c
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
 offset_bottom = 348.0
-texture = ExtResource("1_iclnp")
+texture = ExtResource("1_8kugn")
 expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=102233563]
@@ -230,6 +232,8 @@ columns = 2
 [node name="botaolivro" parent="GridContainer2" unique_id=1191467775 instance=ExtResource("6_u6vfn")]
 custom_minimum_size = Vector2(190, 290)
 layout_mode = 2
+diario_normal = ExtResource("12_8kugn")
+diario_shiny = ExtResource("13_58chr")
 
 [node name="TextureRect" parent="GridContainer2/botaolivro" index="0" unique_id=1017881095]
 offset_right = 239.0
@@ -252,6 +256,8 @@ script = ExtResource("14_10kb4")
 [node name="Livro" parent="ui_livro" unique_id=2109212644 instance=ExtResource("14_gqrh1")]
 visible = false
 
+[connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]
 [connection signal="pressed" from="GridContainer2/botaolivrobotanica" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
 
 [editable path="GridContainer/Slot"]
