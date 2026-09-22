@@ -218,18 +218,21 @@ anchor_left = 1.098
 anchor_top = 0.49600002
 anchor_right = 1.098
 anchor_bottom = 0.49600002
-offset_left = -59.80005
+offset_left = -121.80005
 offset_top = -150.608
-offset_right = 60.19995
+offset_right = 215.19995
 offset_bottom = 150.392
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = -19
+theme_override_constants/h_separation = 4
 columns = 2
 
 [node name="botaolivro" parent="GridContainer2" unique_id=1191467775 instance=ExtResource("6_u6vfn")]
-custom_minimum_size = Vector2(120, 290)
+custom_minimum_size = Vector2(190, 290)
 layout_mode = 2
+
+[node name="TextureRect" parent="GridContainer2/botaolivro" index="0" unique_id=1017881095]
+offset_right = 239.0
 
 [node name="botaolivrobotanica" type="Button" parent="GridContainer2" unique_id=616761625]
 custom_minimum_size = Vector2(120, 290)
