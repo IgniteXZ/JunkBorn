@@ -41,7 +41,6 @@
 [ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="29_hs813"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
-load_path = "res://.godot/imported/personagens.png-d28ecbf873a560744d45d7c75f7b272d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1618,6 +1617,8 @@ position = Vector2(-596, 112)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
 visible = false
+z_index = 1
+y_sort_enabled = true
 offset_left = -82.0
 offset_top = -95.0
 offset_right = 104.0

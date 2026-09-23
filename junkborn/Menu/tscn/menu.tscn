@@ -59,10 +59,6 @@ script = ExtResource("6_bohx3")
 
 [node name="Opcoes" parent="ui_opcoes" unique_id=2117586468 instance=ExtResource("6_0ly2k")]
 visible = false
-offset_left = -611.0
-offset_top = -342.0
-offset_right = -611.0
-offset_bottom = -342.0
 
 [node name="VBoxMenu" type="VBoxContainer" parent="." unique_id=1505673653]
 layout_mode = 1

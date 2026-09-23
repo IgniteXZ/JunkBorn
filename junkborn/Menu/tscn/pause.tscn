@@ -198,7 +198,6 @@ text = "←"
 
 [node name="Opcoes" parent="." unique_id=2117586468 instance=ExtResource("3_3877j")]
 visible = false
-scale = Vector2(0.9, 0.9)
 
 [connection signal="focus_entered" from="panelMain/VBoxContainer/continuar" to="." method="_on_continuar_focus_entered"]
 [connection signal="focus_exited" from="panelMain/VBoxContainer/continuar" to="." method="_on_continuar_focus_exited"]
