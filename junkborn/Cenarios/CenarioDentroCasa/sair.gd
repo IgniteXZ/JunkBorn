@@ -5,6 +5,7 @@ var player: Area2D = null
 
 @export var labelInteragir: Label
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,8 +15,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
 			print("gonnei")
-			get_tree().change_scene_to_file("res://Cenarios/CenarioDentroCasa/QuartoFilo.tscn")
-			
+			get_tree().change_scene_to_file("res://Cenarios/CenarioDentroCasa/SalaCasa.tscn")
 
 
 func _on_area_entered(area: Area2D) -> void:

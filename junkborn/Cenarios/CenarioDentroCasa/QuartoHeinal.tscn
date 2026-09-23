@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_8oxnq"]
 [ext_resource type="Texture2D" uid="uid://cv0frprgohdi4" path="res://Cenarios/CenarioDentroCasa/quarto srestanho.png" id="2_jhjp2"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_vipka"]
+[ext_resource type="Script" uid="uid://w2jtan2c4qwi" path="res://Cenarios/CenarioDentroCasa/sair.gd" id="4_jhjp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_8oxnq")
@@ -786,6 +787,9 @@ sources/1 = SubResource("TileSetAtlasSource_cxtgh")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(41, 28)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -804,7 +808,8 @@ tile_map_data = PackedByteArray("AAD5//H/AQABAAgAAAD5//L/AQABAAgAAAD5//P/AAAFAAQ
 tile_set = SubResource("TileSet_vhdtt")
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("3_vipka")]
-position = Vector2(31, 86)
+position = Vector2(64, 79)
+scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
 visible = false
@@ -816,3 +821,13 @@ text = "Aperte E para interagir"
 label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sair" type="Area2D" parent="." unique_id=255454266]
+script = ExtResource("4_jhjp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sair" unique_id=2021191876]
+position = Vector2(61, 147)
+shape = SubResource("RectangleShape2D_a3nj5")
+
+[connection signal="area_entered" from="Sair" to="Sair" method="_on_area_entered"]
+[connection signal="area_exited" from="Sair" to="Sair" method="_on_area_exited"]
