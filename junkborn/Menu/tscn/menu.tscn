@@ -43,19 +43,42 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_b4q87")
 
-[node name="Jogar" type="Button" parent="." unique_id=1570807049]
+[node name="Titulo" type="Label" parent="." unique_id=18289514]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+offset_left = 80.0
+offset_top = 68.0
+offset_right = 616.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0.3529412, 0, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("2_mjkk2")
+theme_override_font_sizes/font_size = 67
+text = "JunkBorn"
+
+[node name="ui_opcoes" type="CanvasLayer" parent="." unique_id=1163188302]
+script = ExtResource("6_bohx3")
+
+[node name="Opcoes" parent="ui_opcoes" unique_id=2117586468 instance=ExtResource("6_0ly2k")]
+visible = false
+offset_left = -611.0
+offset_top = -342.0
+offset_right = -611.0
+offset_bottom = -342.0
+
+[node name="VBoxMenu" type="VBoxContainer" parent="." unique_id=1505673653]
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -939.0
-offset_top = -140.0
-offset_right = -615.0
-offset_bottom = -22.0
-grow_horizontal = 2
+offset_left = 64.0
+offset_top = -97.0
+offset_right = 352.0
+offset_bottom = 97.0
 grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Jogar" type="Button" parent="VBoxMenu" unique_id=1570807049]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
@@ -67,34 +90,25 @@ text = "Jogar"
 flat = true
 script = ExtResource("3_t6cjk")
 
-[node name="SetaFoco" type="Label" parent="Jogar" unique_id=1134617639]
+[node name="SetaFoco" type="Label" parent="VBoxMenu/Jogar" unique_id=1134617639]
 visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.16100001
-anchor_bottom = 0.16100001
-offset_left = -7.0
-offset_top = 18.001999
-offset_right = 40.0
-offset_bottom = 83.002
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 39.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 47
 text = ">"
 
-[node name="Opcoes" type="Button" parent="." unique_id=1683945924]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -904.0
-offset_top = -63.0
-offset_right = -580.0
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Opcoes" type="Button" parent="VBoxMenu" unique_id=1683945924]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
@@ -106,34 +120,25 @@ text = "Opções"
 flat = true
 script = ExtResource("4_ixj20")
 
-[node name="SetaFoco" type="Label" parent="Opcoes" unique_id=742204767]
+[node name="SetaFoco" type="Label" parent="VBoxMenu/Opcoes" unique_id=742204767]
 visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.16100001
-anchor_bottom = 0.16100001
-offset_left = -34.0
-offset_top = 17.001999
-offset_right = 13.0
-offset_bottom = 82.002
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 39.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 47
 text = ">"
 
-[node name="Sair" type="Button" parent="." unique_id=1577330465]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -957.0
-offset_top = 16.0
-offset_right = -633.0
-offset_bottom = 134.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sair" type="Button" parent="VBoxMenu" unique_id=1577330465]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
@@ -146,66 +151,33 @@ text = "Sair
 flat = true
 script = ExtResource("3_m05b3")
 
-[node name="SetaFoco" type="Label" parent="Sair" unique_id=233176466]
+[node name="SetaFoco" type="Label" parent="VBoxMenu/Sair" unique_id=233176466]
 visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.16100001
-anchor_bottom = 0.16100001
-offset_left = 16.0
-offset_top = 14.001999
-offset_right = 63.0
-offset_bottom = 79.002
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -28.0
+offset_bottom = 37.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 47
 text = ">"
 
-[node name="Titulo" type="Label" parent="." unique_id=18289514]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -740.0
-offset_top = -358.0
-offset_right = -204.0
-offset_bottom = -102.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.3529412, 0, 0.16078432, 1)
-theme_override_fonts/font = ExtResource("2_mjkk2")
-theme_override_font_sizes/font_size = 67
-text = "JunkBorn"
-
-[node name="ui_opcoes" type="CanvasLayer" parent="." unique_id=1163188302]
-script = ExtResource("6_bohx3")
-
-[node name="Opcoes" parent="ui_opcoes" unique_id=2117586468 instance=ExtResource("6_0ly2k")]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -611.0
-offset_top = -342.0
-offset_right = -611.0
-offset_bottom = -342.0
-
-[connection signal="focus_entered" from="Jogar" to="Jogar" method="_on_focus_entered"]
-[connection signal="focus_exited" from="Jogar" to="Jogar" method="_on_focus_exited"]
-[connection signal="mouse_entered" from="Jogar" to="Jogar" method="_on_mouse_entered"]
-[connection signal="pressed" from="Jogar" to="Jogar" method="_on_pressed"]
-[connection signal="focus_entered" from="Opcoes" to="Opcoes" method="_on_focus_entered"]
-[connection signal="focus_exited" from="Opcoes" to="Opcoes" method="_on_focus_exited"]
-[connection signal="mouse_entered" from="Opcoes" to="Opcoes" method="_on_mouse_entered"]
-[connection signal="pressed" from="Opcoes" to="ui_opcoes" method="_on_opcoes_pressed"]
-[connection signal="focus_entered" from="Sair" to="Sair" method="_on_focus_entered"]
-[connection signal="focus_exited" from="Sair" to="Sair" method="_on_focus_exited"]
-[connection signal="mouse_entered" from="Sair" to="Sair" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sair" to="Sair" method="_on_mouse_exited"]
-[connection signal="pressed" from="Sair" to="Jogar" method="_on_jogar_pressed"]
-[connection signal="pressed" from="Sair" to="Sair" method="_on_pressed"]
 [connection signal="voltar_pressionado" from="ui_opcoes/Opcoes" to="ui_opcoes" method="_on_opcoes_voltar_pressionado"]
+[connection signal="focus_entered" from="VBoxMenu/Jogar" to="VBoxMenu/Jogar" method="_on_focus_entered"]
+[connection signal="focus_exited" from="VBoxMenu/Jogar" to="VBoxMenu/Jogar" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="VBoxMenu/Jogar" to="VBoxMenu/Jogar" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxMenu/Jogar" to="VBoxMenu/Jogar" method="_on_pressed"]
+[connection signal="focus_entered" from="VBoxMenu/Opcoes" to="VBoxMenu/Opcoes" method="_on_focus_entered"]
+[connection signal="focus_exited" from="VBoxMenu/Opcoes" to="VBoxMenu/Opcoes" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="VBoxMenu/Opcoes" to="VBoxMenu/Opcoes" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxMenu/Opcoes" to="ui_opcoes" method="_on_opcoes_pressed"]
+[connection signal="focus_entered" from="VBoxMenu/Sair" to="VBoxMenu/Sair" method="_on_focus_entered"]
+[connection signal="focus_exited" from="VBoxMenu/Sair" to="VBoxMenu/Sair" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="VBoxMenu/Sair" to="VBoxMenu/Sair" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxMenu/Sair" to="VBoxMenu/Sair" method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxMenu/Sair" to="VBoxMenu/Jogar" method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxMenu/Sair" to="VBoxMenu/Sair" method="_on_pressed"]

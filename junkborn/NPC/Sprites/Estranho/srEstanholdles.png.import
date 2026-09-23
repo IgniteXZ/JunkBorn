@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beht4g0w4r2m3"
-path="res://.godot/imported/personagens1.png-31424a9321cbf0f6f3655ab1dac7e6f2.ctex"
+uid="uid://cjbq4hy7cmnxc"
+path="res://.godot/imported/srEstanholdles.png-0a8b712fa87932435932ea5be45d1802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/Sprites/Npcs6/personagens1.png"
-dest_files=["res://.godot/imported/personagens1.png-31424a9321cbf0f6f3655ab1dac7e6f2.ctex"]
+source_file="res://NPC/Sprites/Estranho/srEstanholdles.png"
+dest_files=["res://.godot/imported/srEstanholdles.png-0a8b712fa87932435932ea5be45d1802.ctex"]
 
 [params]
 

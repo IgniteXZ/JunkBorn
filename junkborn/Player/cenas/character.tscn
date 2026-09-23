@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="6_jlgaa"]
 [ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="7_8jiok"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
-size = Vector2(43, 17)
-
 [sub_resource type="LabelSettings" id="LabelSettings_qrw66"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
+size = Vector2(43, 8.055284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(42, 16)
@@ -228,17 +228,15 @@ states/Idle/position = Vector2(666, 101)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_nf8lx")
 states/Walk/position = Vector2(453, 104)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlgaa"]
+radius = 17.029387
+
 [node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("camera", "_animation_tree", "canvaa")]
 y_sort_enabled = true
 script = ExtResource("1_gbkji")
 camera = NodePath("Camera2D")
 _animation_tree = NodePath("AnimationTree")
 canvaa = NodePath("ui_canvas")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1612096471]
-show_behind_parent = true
-position = Vector2(-3, 45)
-shape = SubResource("RectangleShape2D_6q8wu")
 
 [node name="texture" type="Sprite2D" parent="." unique_id=1843069659]
 scale = Vector2(2.5, 2.5)
@@ -264,9 +262,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interagir" unique_id=2078145236]
-visible = false
 show_behind_parent = true
-position = Vector2(0, -41.99)
+position = Vector2(0, -19.2775)
 scale = Vector2(0.885, 5.11)
 shape = SubResource("RectangleShape2D_6q8wu")
 
@@ -311,6 +308,11 @@ tree_root = SubResource("AnimationNodeStateMachine_ifxyd")
 anim_player = NodePath("../Animation")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=707526218]
+y_sort_enabled = true
+position = Vector2(-1, 43)
+shape = SubResource("CircleShape2D_jlgaa")
 
 [connection signal="body_entered" from="Empurrado" to="." method="_on_empurrado_body_entered"]
 [connection signal="body_exited" from="Empurrado" to="." method="_on_empurrado_body_exited"]
