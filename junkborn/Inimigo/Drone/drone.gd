@@ -57,3 +57,7 @@ func _on_detectar_tirar_aura(Tirar: bool) -> void:
 func _on_timer_timeout() -> void:
 	impulso = true
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
