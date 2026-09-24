@@ -12,6 +12,7 @@ func start_dialog():
 	Dialogic.start("filomenoChegaVila")
 	Player.process_mode = Node.PROCESS_MODE_DISABLED
 	
+	
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

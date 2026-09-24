@@ -225,10 +225,6 @@ texture_region_size = Vector2i(24, 24)
 tile_size = Vector2i(24, 24)
 sources/5 = SubResource("TileSetAtlasSource_5vr3i")
 
-[sub_resource type="LabelSettings" id="LabelSettings_msrtw"]
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
 size = Vector2(73, 34.5)
 
@@ -281,7 +277,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"AndandoCima",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,11 +288,15 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Parado",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
 size = Vector2(16.000002, 6.3999977)
+
+[sub_resource type="LabelSettings" id="LabelSettings_msrtw"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
@@ -322,11 +322,52 @@ tile_map_data = PackedByteArray("AACJ/9f/BQATABAAAACJ/9j/BQATABAAAACJ/9n/BQATABA
 tile_set = SubResource("TileSet_tf7uv")
 rendering_quadrant_size = 9
 
-[node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_ifgmi")]
+[node name="passagemCenas" type="Node2D" parent="." unique_id=1699138988]
+
+[node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835 node_paths=PackedStringArray("labelinteragir")]
+script = ExtResource("3_ifgmi")
+labelinteragir = NodePath("../../Node/Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=210186153]
+position = Vector2(75, 214)
+shape = SubResource("RectangleShape2D_vd7c3")
+
+[node name="EntrarNoQuartoFilo" type="Area2D" parent="passagemCenas" unique_id=1628054982 node_paths=PackedStringArray("labelInteragir")]
+script = ExtResource("4_5vr3i")
+labelInteragir = NodePath("../../Node/Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=662428472]
+position = Vector2(231, -16)
+shape = SubResource("RectangleShape2D_a3nj5")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=862806683]
+position = Vector2(-51, 104)
+
+[node name="Node" type="Node2D" parent="." unique_id=506132449]
+y_sort_enabled = true
+
+[node name="Estanho" type="CharacterBody2D" parent="Node" unique_id=1463653629 node_paths=PackedStringArray("player")]
+y_sort_enabled = true
+position = Vector2(-0.86, -2.99)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("5_msrtw")
+player = NodePath("../Character")
+
+[node name="Animate" type="AnimatedSprite2D" parent="Node/Estanho" unique_id=1491661243]
+position = Vector2(-26.455997, 31.995996)
+sprite_frames = SubResource("SpriteFrames_a3nj5")
+animation = &"AndandoCima"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Estanho" unique_id=1850242223]
+position = Vector2(-0.6580001, 19.605997)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_ns0o7")
+
+[node name="Character" parent="Node" unique_id=489748546 instance=ExtResource("2_ifgmi")]
 position = Vector2(209, 123)
 scale = Vector2(0.9, 0.9)
 
-[node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
+[node name="LabelInteragir" type="Label" parent="Node/Character" unique_id=1910808721]
 visible = false
 offset_left = -82.0
 offset_top = -95.0
@@ -336,43 +377,6 @@ text = "Aperte E para interagir"
 label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="passagemCenas" type="Node2D" parent="." unique_id=1699138988]
-
-[node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835 node_paths=PackedStringArray("labelinteragir")]
-script = ExtResource("3_ifgmi")
-labelinteragir = NodePath("../../Character/LabelInteragir")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=210186153]
-position = Vector2(75, 214)
-shape = SubResource("RectangleShape2D_vd7c3")
-
-[node name="EntrarNoQuartoFilo" type="Area2D" parent="passagemCenas" unique_id=1628054982 node_paths=PackedStringArray("labelInteragir")]
-script = ExtResource("4_5vr3i")
-labelInteragir = NodePath("../../Character/LabelInteragir")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=662428472]
-position = Vector2(231, -16)
-shape = SubResource("RectangleShape2D_a3nj5")
-
-[node name="Estanho" type="CharacterBody2D" parent="." unique_id=1463653629 node_paths=PackedStringArray("player")]
-position = Vector2(-0.86, -2.99)
-scale = Vector2(2.5, 2.5)
-script = ExtResource("5_msrtw")
-player = NodePath("../Character")
-
-[node name="Animate" type="AnimatedSprite2D" parent="Estanho" unique_id=1491661243]
-position = Vector2(-26.455997, 31.995996)
-sprite_frames = SubResource("SpriteFrames_a3nj5")
-animation = &"AndandoCima"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Estanho" unique_id=1850242223]
-position = Vector2(-0.6580001, 19.605997)
-scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_ns0o7")
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=862806683]
-position = Vector2(-51, 104)
 
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]

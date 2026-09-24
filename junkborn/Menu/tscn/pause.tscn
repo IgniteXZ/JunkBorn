@@ -30,6 +30,7 @@ border_color = Color(1, 0.36862746, 0.16078432, 1)
 
 [node name="Pause" type="CanvasLayer" unique_id=443878840]
 process_mode = 3
+layer = 22
 script = ExtResource("1_jxdse")
 
 [node name="panelMain" type="Panel" parent="." unique_id=1678087857]
