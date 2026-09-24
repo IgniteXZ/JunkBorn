@@ -12,9 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_ver_controles_pressed() -> void:
-	$"../Panel".hide()
+	$Panel.hide()
 	$Controles.show()
 
 func _on_controles_voltar_controles_pressionado() -> void:
 	$Controles.hide()
-	$"../Panel".show()
+	$Panel.show()

@@ -239,8 +239,10 @@ Opcoes = NodePath("../../..")
 [node name="Controles" parent="." unique_id=1001078878 instance=ExtResource("5_t0vyn")]
 visible = false
 layout_mode = 1
-offset_right = 776.0
-offset_bottom = 474.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 2.0
+offset_bottom = 7.0
 
 [connection signal="item_selected" from="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" to="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" method="_on_item_selected"]
 [connection signal="pressed" from="Panel/VBoxOpcoes/VerControles" to="." method="_on_ver_controles_pressed"]
