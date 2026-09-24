@@ -323,7 +323,7 @@ tile_set = SubResource("TileSet_tf7uv")
 rendering_quadrant_size = 9
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_ifgmi")]
-position = Vector2(209, 123)
+position = Vector2(218, 115)
 scale = Vector2(0.9, 0.9)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
@@ -362,9 +362,8 @@ script = ExtResource("5_msrtw")
 player = NodePath("../Character")
 
 [node name="Animate" type="AnimatedSprite2D" parent="Estanho" unique_id=1491661243]
-position = Vector2(-26.455997, 31.995996)
 sprite_frames = SubResource("SpriteFrames_a3nj5")
-animation = &"AndandoCima"
+animation = &"Andando"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Estanho" unique_id=1850242223]
 position = Vector2(-0.6580001, 19.605997)
@@ -372,7 +371,7 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ns0o7")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=862806683]
-position = Vector2(-51, 104)
+position = Vector2(271, 47)
 
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
