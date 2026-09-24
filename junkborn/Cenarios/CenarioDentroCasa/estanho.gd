@@ -15,7 +15,7 @@ var tempoParado: float = 0.0
 func _ready() -> void:
 	randomize()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	look_at(player.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

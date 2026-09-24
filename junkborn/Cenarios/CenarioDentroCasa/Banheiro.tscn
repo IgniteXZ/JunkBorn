@@ -513,8 +513,9 @@ label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="sairB" type="Area2D" parent="." unique_id=869517601]
+[node name="sairB" type="Area2D" parent="." unique_id=869517601 node_paths=PackedStringArray("labelInteragir")]
 script = ExtResource("4_4ddvs")
+labelInteragir = NodePath("../Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sairB" unique_id=800239575]
 position = Vector2(37, 100)

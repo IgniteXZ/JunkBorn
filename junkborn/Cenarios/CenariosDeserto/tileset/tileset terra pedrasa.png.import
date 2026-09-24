@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1slbbri1613g"
-path="res://.godot/imported/tileset terra pedrasa.png-62c811d6cb5a2fcddcf35d5a922b7795.ctex"
+path="res://.godot/imported/tileset terra pedrasa.png-ec29d44304c70dd871aba0b8b08926c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenarios/CenariosDeserto/tileset terra pedrasa.png"
-dest_files=["res://.godot/imported/tileset terra pedrasa.png-62c811d6cb5a2fcddcf35d5a922b7795.ctex"]
+source_file="res://Cenarios/CenariosDeserto/tileset/tileset terra pedrasa.png"
+dest_files=["res://.godot/imported/tileset terra pedrasa.png-ec29d44304c70dd871aba0b8b08926c6.ctex"]
 
 [params]
 

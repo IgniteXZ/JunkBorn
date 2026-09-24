@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://rwff68lg5f1s" path="res://Cenarios/CenarioDentroCasa/entrar_quarto_heinal.gd" id="5_iujb1"]
 [ext_resource type="Script" uid="uid://chyjqje86cacw" path="res://Cenarios/CenarioDentroCasa/estanho.gd" id="5_msrtw"]
 [ext_resource type="Texture2D" uid="uid://cjbq4hy7cmnxc" path="res://NPC/Sprites/Estranho/srEstanholdles.png" id="5_tf7uv"]
+[ext_resource type="Script" uid="uid://3grqdxrokl1w" path="res://Cenarios/CenarioDentroCasa/banheiro.gd" id="6_3epk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_ecsqw")
@@ -239,6 +240,9 @@ size = Vector2(46, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvkme"]
 size = Vector2(52, 44)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifxyd"]
+size = Vector2(57, 49)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_msrtw"]
 atlas = ExtResource("5_tf7uv")
 region = Rect2(0, 48, 24, 48)
@@ -367,7 +371,13 @@ labelInteragir = NodePath("../../Character/LabelInteragir")
 position = Vector2(67, -19)
 shape = SubResource("RectangleShape2D_tvkme")
 
-[node name="Banheiro" type="Area2D" parent="passagemCenas" unique_id=2016635236]
+[node name="Banheiro" type="Area2D" parent="passagemCenas" unique_id=2016635236 node_paths=PackedStringArray("labelInteragir")]
+script = ExtResource("6_3epk2")
+labelInteragir = NodePath("../../Character/LabelInteragir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/Banheiro" unique_id=663648371]
+position = Vector2(-81, -15)
+shape = SubResource("RectangleShape2D_ifxyd")
 
 [node name="Estanho" type="CharacterBody2D" parent="." unique_id=1463653629 node_paths=PackedStringArray("player")]
 position = Vector2(-23.355, 28.985)
@@ -397,3 +407,5 @@ position = Vector2(271, 47)
 [connection signal="area_exited" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemCenas/EntrarQuartoHeinal" to="passagemCenas/EntrarQuartoHeinal" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/EntrarQuartoHeinal" to="passagemCenas/EntrarQuartoHeinal" method="_on_area_exited"]
+[connection signal="area_entered" from="passagemCenas/Banheiro" to="passagemCenas/Banheiro" method="_on_area_entered"]
+[connection signal="area_exited" from="passagemCenas/Banheiro" to="passagemCenas/Banheiro" method="_on_area_exited"]

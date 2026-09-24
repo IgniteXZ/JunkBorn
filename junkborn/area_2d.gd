@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
 		print("Aperte E para entrar na forja")
-		get_tree().change_scene_to_file("res://Player/cenas/characterP.tscn")
+		get_tree().change_scene_to_file("res://Cenarios/CenarioVila/characterP.tscn")
 		
 		
 

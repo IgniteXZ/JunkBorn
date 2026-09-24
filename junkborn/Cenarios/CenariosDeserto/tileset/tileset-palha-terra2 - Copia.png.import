@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fmary4la52e4"
-path="res://.godot/imported/tileset areia pedrasa.png-074b518187e862a789ecdeaef0fa73f7.ctex"
+uid="uid://bjflfoxi4xdhp"
+path="res://.godot/imported/tileset-palha-terra2 - Copia.png-e3f058d816e6ecfb1faeaca6a84d4497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenarios/CenariosDeserto/tileset areia pedrasa.png"
-dest_files=["res://.godot/imported/tileset areia pedrasa.png-074b518187e862a789ecdeaef0fa73f7.ctex"]
+source_file="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png"
+dest_files=["res://.godot/imported/tileset-palha-terra2 - Copia.png-e3f058d816e6ecfb1faeaca6a84d4497.ctex"]
 
 [params]
 

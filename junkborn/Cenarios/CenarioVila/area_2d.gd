@@ -9,10 +9,10 @@ var player: Area2D = null
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
 		print("gonnei")
-		get_tree().change_scene_to_file("res://Deserto1.tscn")
+		get_tree().change_scene_to_file("res://Cenarios/CenariosDeserto/Deserto1.tscn")
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -24,7 +24,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	perto = false
 	player = null
 
