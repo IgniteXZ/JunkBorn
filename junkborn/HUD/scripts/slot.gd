@@ -59,7 +59,7 @@ func _can_drop_data(_position: Vector2, data) -> bool:
 	return data != null and data.has("sprite") and data["sprite"] != null
 
 # Função nativa do Godot executada quando o jogador solta (drop) um item em cima deste slot
-func _drop_data(position: Vector2, data) -> void:
+func _drop_data(_position: Vector2, data) -> void:
 	# Verifica se o item que está sendo solto é EXATAMENTE IGUAL ao item que já está neste slot
 	if $sprite.texture == data.sprite:
 		# Se for igual, soma as quantidades (empilhamento)

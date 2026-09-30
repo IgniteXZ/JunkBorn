@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfqlhckbtx3kv"
-path="res://.godot/imported/tileset areia pedrasa escura.png-0446de336821034c6e9bebb46e02f18d.ctex"
+uid="uid://ce1clhy6o6oha"
+path="res://.godot/imported/images.jpg-7571367fdb4b7a3e2938f1fa100a9715.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenarios/CenariosDeserto/tileset areia pedrasa escura.png"
-dest_files=["res://.godot/imported/tileset areia pedrasa escura.png-0446de336821034c6e9bebb46e02f18d.ctex"]
+source_file="res://Cutsenes/images.jpg"
+dest_files=["res://.godot/imported/images.jpg-7571367fdb4b7a3e2938f1fa100a9715.ctex"]
 
 [params]
 

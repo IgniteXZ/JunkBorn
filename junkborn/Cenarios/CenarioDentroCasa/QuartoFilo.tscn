@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_c0nvc"]
 [ext_resource type="Texture2D" uid="uid://csrg3ljqheq8d" path="res://Cenarios/CenarioDentroCasa/quarto finlomeno.png" id="2_gn4rn"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_qc74i"]
+[ext_resource type="Script" uid="uid://beyayhl2laaak" path="res://Cenarios/CenarioDentroCasa/sai_do_quarto_filo.gd" id="4_gn4rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_c0nvc")
@@ -457,8 +458,13 @@ label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="." unique_id=149304502]
+[node name="saiDoQuartoFilo" type="Area2D" parent="." unique_id=149304502 node_paths=PackedStringArray("labelInteragir")]
+script = ExtResource("4_gn4rn")
+labelInteragir = NodePath("../Character/LabelInteragir")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1460835453]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saiDoQuartoFilo" unique_id=1460835453]
 position = Vector2(37, 102)
 shape = SubResource("RectangleShape2D_a3nj5")
+
+[connection signal="area_entered" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_entered"]
+[connection signal="area_exited" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_exited"]

@@ -13,7 +13,8 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
-size = Vector2(43, 8.055284)
+resource_local_to_scene = true
+size = Vector2(43, 2.1200094)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(42, 16)
@@ -263,7 +264,7 @@ vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interagir" unique_id=2078145236]
 show_behind_parent = true
-position = Vector2(0, -19.2775)
+position = Vector2(0, 51.416626)
 scale = Vector2(0.885, 5.11)
 shape = SubResource("RectangleShape2D_6q8wu")
 
