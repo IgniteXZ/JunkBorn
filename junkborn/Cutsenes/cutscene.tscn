@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cm2e20wjwibmx"]
 
-[node name="Cutscene" type="Control" unique_id=54709852]
+[ext_resource type="Texture2D" uid="uid://ce1clhy6o6oha" path="res://Cutsenes/images.jpg" id="1_joq0i"]
+[ext_resource type="Script" uid="uid://iqef125v4c5o" path="res://Cutsenes/texture_rect.gd" id="2_r4vyf"]
+
+[node name="Cutscene" type="Control" unique_id=2020684685]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1285740479]
+layout_mode = 0
+offset_right = 816.0
+offset_bottom = 597.0
+texture = ExtResource("1_joq0i")
+script = ExtResource("2_r4vyf")
