@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c7w5bsslvh2a0"]
+
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="1_j606w"]
+[ext_resource type="Script" uid="uid://dvrq4wtlyee5f" path="res://HUD/scripts/botaofechalivro.gd" id="1_y8pyt"]
+
+[node name="botaofechalivro" type="Button" unique_id=550276476]
+custom_minimum_size = Vector2(120, 120)
+size_flags_horizontal = 3
+action_mode = 0
+flat = true
+script = ExtResource("1_y8pyt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=607029757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j606w")
+expand_mode = 3
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

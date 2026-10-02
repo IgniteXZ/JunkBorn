@@ -412,6 +412,9 @@ sources/1 = SubResource("TileSetAtlasSource_8ynj7")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(34, 37)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -440,7 +443,8 @@ tile_map_data = PackedByteArray("AAD4//v/AQABAA4AAAD4//z/AQABAA8AAAD5//v/AQACAA4
 tile_set = SubResource("TileSet_x42px")
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("3_qc74i")]
-position = Vector2(31, 86)
+position = Vector2(37, 19)
+scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
 visible = false
@@ -452,3 +456,9 @@ text = "Aperte E para interagir"
 label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=149304502]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1460835453]
+position = Vector2(37, 102)
+shape = SubResource("RectangleShape2D_a3nj5")
