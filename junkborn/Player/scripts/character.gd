@@ -32,6 +32,9 @@ var pode_mover: bool = true #travar depois em minigames
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
 	
+	
+	
+	
 
 	
 func _physics_process(_delta: float) -> void:
@@ -76,7 +79,6 @@ func _animate() -> void:
 func _process(delta: float) -> void:
 	PassarCanvas.emit(canvaa)
 
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	pass # Replace with function body.
 
@@ -101,7 +103,7 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 		canvas.remover_item_aleatorio()
 		
 	var direcaoEmpurra = (global_position - bodyy.global_position).normalized()
-	knockback_vector = (direcaoEmpurra * 400.0)
+	knockback_vector = (direcaoEmpurra * 400.0 * 2)
 	
 	
 	await get_tree().create_timer(0.2).timeout

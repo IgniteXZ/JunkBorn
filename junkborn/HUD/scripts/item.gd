@@ -10,7 +10,7 @@ var canvass: CanvasLayer
 @export var id_item_mapa: String #id do item no chao
 
 
-
+var Id: int = 1
 
 var MissaoTeste = preload("res://Resource/MissaoTeste.tres")
 var MissaoDebug = preload("res://Resource/MissaoLegal.tres")
@@ -19,13 +19,16 @@ var MissaoDebug = preload("res://Resource/MissaoLegal.tres")
 func _ready() -> void:
 	if Global.itens_coletados.has(id_item_mapa):
 		queue_free()
+		
+	get_meta("Id", Id)
 
 
 
 func _process(delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
 	
-		if canvass.add_item_inventory($sprite.texture):
+		if canva.add_item_inventory(Id, $sprite.texture):
+			
 			if not Global.itens_coletados.has(id_item_mapa):
 					Global.itens_coletados.append(id_item_mapa)
 			labelinteragir.visible = false

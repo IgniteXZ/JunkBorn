@@ -5,7 +5,11 @@ var dados: LixoData
 @export var sprite: Sprite2D
 @onready var control_tooltip: Control = $ControlLixo
 
+
+
 func _ready() -> void:
+	
+	
 	# Configura o Control para deixar os cliques de mouse passarem para a Area2D
 	if control_tooltip:
 		control_tooltip.mouse_filter = Control.MOUSE_FILTER_PASS
