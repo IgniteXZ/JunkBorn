@@ -13,9 +13,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
-			print("gonnei")
-			get_tree().change_scene_to_file("res://Cenarios/CenarioDentroCasa/QuartoFilo.tscn")
-			
+		print("gonnei")
+		get_tree().change_scene_to_file("res://Cenarios/CenarioDentroCasa/Banheiro.tscn")
 
 
 func _on_area_entered(area: Area2D) -> void:
