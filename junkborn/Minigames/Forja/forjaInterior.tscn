@@ -71,6 +71,12 @@ shape = SubResource("CircleShape2D_tb5fl")
 [node name="TelaForja" parent="interfaceusuario" unique_id=455193884 instance=ExtResource("7_f0243")]
 visible = false
 
+[node name="spawnsForja" type="Node2D" parent="." unique_id=2135651128]
+
+[node name="entradaForja" type="Marker2D" parent="spawnsForja" unique_id=1356522167]
+position = Vector2(220, 798)
+gizmo_extents = 0.0
+
 [connection signal="area_entered" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_entered"]
 [connection signal="area_exited" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_exited"]
 [connection signal="area_entered" from="AbrirCenas/forja/Area2DForja" to="AbrirCenas/forja/Area2DForja" method="_on_area_entered"]
