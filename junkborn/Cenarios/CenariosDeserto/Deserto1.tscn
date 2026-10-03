@@ -562,8 +562,13 @@ script = ExtResource("11_t0mu4")
 shape = SubResource("CircleShape2D_ce1y2")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
+layer = 10
 
 [node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_7c7ir")]
+visible = false
+
+[node name="DialogoColeta" parent="ui_coleta/MiniGameColeta" index="3" unique_id=246670327]
+layer = 100
 visible = false
 
 [node name="spawnsDeserto" type="Node2D" parent="." unique_id=1250606799]
@@ -576,3 +581,5 @@ position = Vector2(518, 41)
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
 [connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]
+
+[editable path="ui_coleta/MiniGameColeta"]

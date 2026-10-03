@@ -5,52 +5,67 @@ var dados: LixoData
 @export var sprite: Sprite2D
 @onready var control_tooltip: Control = $ControlLixo
 
+var caixa_dialogo: Control
+var texto_dialogo: RichTextLabel
 
 
 func _ready() -> void:
-	
-	
-	# Configura o Control para deixar os cliques de mouse passarem para a Area2D
 	if control_tooltip:
 		control_tooltip.mouse_filter = Control.MOUSE_FILTER_PASS
 	
-	# Conecta os sinais da Area2D para detectar entrada/saída do mouse
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	
 	if dados:
 		_atualizar_item()
-		
 
 
-func configurar(novo_lixo: LixoData) -> void:
+func configurar(
+	novo_lixo: LixoData,
+	nova_caixa_dialogo: Control,
+	novo_texto_dialogo: RichTextLabel
+) -> void:
 	dados = novo_lixo
+	caixa_dialogo = nova_caixa_dialogo
+	texto_dialogo = novo_texto_dialogo
 	_atualizar_item()
+
 
 func _atualizar_item() -> void:
 	if not dados:
 		return
-		
-	# Atualiza a textura
+	
 	if sprite and dados.textura:
 		sprite.texture = dados.textura
-		
-	# Configura o texto do tooltip no nó Control
+	
 	if control_tooltip:
-		control_tooltip.tooltip_text = dados.nome + "\n" + dados.descricao
+		control_tooltip.tooltip_text = ""
+
 
 func _on_mouse_entered() -> void:
-	pass
+	if dados and caixa_dialogo and texto_dialogo:
+		texto_dialogo.text = dados.nome + "\n\n" + dados.descricao
+		texto_dialogo.visible_characters = 0
+		caixa_dialogo.get_parent().show()
+		
+		var tween := create_tween()
+		tween.tween_property(
+			texto_dialogo,
+			"visible_characters",
+			texto_dialogo.get_total_character_count(),
+			2.0
+		)
+
 
 func _on_mouse_exited() -> void:
-	pass
-	
-	
+	if caixa_dialogo:
+		caixa_dialogo.get_parent().hide()
+
 
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	# Detecta o clique com o botão esquerdo sobre a Area2D
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		coletar_lixo()
+
 
 func coletar_lixo() -> void:
 	if dados and dados.Coletavel:
@@ -59,11 +74,5 @@ func coletar_lixo() -> void:
 		var canvas = get_tree().root.find_child("ui_canvas", true, false)
 		if canvas:
 			canvas.add_item_inventory(dados.item_id, textura)
-	
+		
 		queue_free()
-		
-	
-	
-	
-		
-		
