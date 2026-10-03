@@ -26,7 +26,7 @@
 [ext_resource type="Script" uid="uid://pg17f66qut5o" path="res://Player/cenas/npc_2.gd" id="19_nslkj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
 [ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
-[ext_resource type="Script" uid="uid://uexfobaabm7d" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
+[ext_resource type="Script" uid="uid://c776gecpk15fa" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
 [ext_resource type="Script" uid="uid://c0f0victkpmel" path="res://Player/cenas/npc_4.gd" id="22_lsdmm"]
 [ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
 [ext_resource type="Texture2D" uid="uid://b0o8yukgmatf2" path="res://NPC/Sprites/Npc4/npc4-1.png" id="24_1evj1"]
@@ -40,9 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="29_g0mcs"]
 [ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="29_hs813"]
 
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1800,6 +1798,15 @@ labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/casaFilo" unique_id=1524744938]
 position = Vector2(223, 37)
 shape = SubResource("RectangleShape2D_vd7c3")
+
+[node name="spawnsVila" type="Node2D" parent="." unique_id=1024789791]
+
+[node name="sairCasaFilo" type="Marker2D" parent="spawnsVila" unique_id=595492095]
+position = Vector2(221, 82)
+gizmo_extents = 0.0
+
+[node name="sairDesertoParaVila" type="Marker2D" parent="spawnsVila" unique_id=1453320485]
+position = Vector2(-615, 108)
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]

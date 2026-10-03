@@ -409,6 +409,12 @@ label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="spawnsCasaFilo" type="Node2D" parent="." unique_id=128737679]
+
+[node name="entradaCasa" type="Marker2D" parent="spawnsCasaFilo" unique_id=592743173]
+position = Vector2(76, 216)
+gizmo_extents = 0.0
+
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_entered"]

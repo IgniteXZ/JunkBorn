@@ -31,7 +31,10 @@ var pode_mover: bool = true #travar depois em minigames
 
 func _ready() -> void:
 	_state_machine = _animation_tree["parameters/playback"]
+	call_deferred("_aplicar_spawn")
 	
+func _aplicar_spawn() -> void:
+	Global.aplicar_spawn(self)
 	
 	
 	

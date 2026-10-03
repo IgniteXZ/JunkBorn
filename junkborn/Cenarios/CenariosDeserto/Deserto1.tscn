@@ -554,7 +554,6 @@ shape = SubResource("CircleShape2D_tb5fl")
 
 [node name="saidaDesertoVila" type="Sprite2D" parent="passagemdeCena" unique_id=385324499]
 position = Vector2(627, 33)
-texture = ExtResource("10_tk3gm")
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/saidaDesertoVila" unique_id=1446586386]
 script = ExtResource("11_t0mu4")
@@ -566,6 +565,11 @@ shape = SubResource("CircleShape2D_ce1y2")
 
 [node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_7c7ir")]
 visible = false
+
+[node name="spawnsDeserto" type="Node2D" parent="." unique_id=1250606799]
+
+[node name="sairVilaParaDeserto" type="Marker2D" parent="spawnsDeserto" unique_id=1005998621]
+position = Vector2(518, 41)
 
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
