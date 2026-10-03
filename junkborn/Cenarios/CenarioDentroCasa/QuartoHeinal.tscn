@@ -830,5 +830,9 @@ labelInteragir = NodePath("../Character/LabelInteragir")
 position = Vector2(61, 147)
 shape = SubResource("RectangleShape2D_a3nj5")
 
+[node name="SpawnQuartoHeinel" type="Node2D" parent="." unique_id=1217943537]
+
+[node name="EntrarHeinelQ" type="Marker2D" parent="SpawnQuartoHeinel" unique_id=1750353659]
+
 [connection signal="area_entered" from="Sair" to="Sair" method="_on_area_entered"]
 [connection signal="area_exited" from="Sair" to="Sair" method="_on_area_exited"]

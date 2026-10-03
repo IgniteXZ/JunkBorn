@@ -138,7 +138,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if perto and Input.is_action_just_pressed("Interagir"):
 			print("gonnei")
-			get_tree().change_scene_to_file("res://Cenarios/CenarioDentroCasa/QuartoHeinal.tscn")
+			Global.trocar_cena(
+				"res://Cenarios/CenarioDentroCasa/QuartoHeinal.tscn",
+				"$SpawnQuartoHeinel/EntrarHeinelQ"
+
+			)
 
 
 func _on_area_entered(area: Area2D) -> void:

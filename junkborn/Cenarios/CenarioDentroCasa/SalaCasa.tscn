@@ -340,19 +340,11 @@ labelinteragir = NodePath("../../Node/Character/LabelInteragir")
 position = Vector2(75, 214)
 shape = SubResource("RectangleShape2D_vd7c3")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=966485440]
-position = Vector2(74, 236)
-shape = SubResource("RectangleShape2D_vd7c3")
-
 [node name="EntrarNoQuartoFilo" type="Area2D" parent="passagemCenas" unique_id=1628054982 node_paths=PackedStringArray("labelInteragir")]
 script = ExtResource("4_5vr3i")
 labelInteragir = NodePath("../../Node/Character/LabelInteragir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=662428472]
-position = Vector2(231, -16)
-shape = SubResource("RectangleShape2D_a3nj5")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="passagemCenas/EntrarNoQuartoFilo" unique_id=1256592227]
 position = Vector2(231, -16)
 shape = SubResource("RectangleShape2D_a3nj5")
 
@@ -397,6 +389,7 @@ shape = SubResource("RectangleShape2D_ns0o7")
 
 [node name="Character" parent="Node" unique_id=489748546 instance=ExtResource("2_ifgmi")]
 position = Vector2(209, 123)
+scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="Node/Character" unique_id=1910808721]
 visible = false

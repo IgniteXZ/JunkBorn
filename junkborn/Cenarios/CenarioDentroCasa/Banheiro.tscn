@@ -521,5 +521,11 @@ labelInteragir = NodePath("../Character/LabelInteragir")
 position = Vector2(37, 100)
 shape = SubResource("RectangleShape2D_a3nj5")
 
+[node name="SpawnBanheiro" type="Node2D" parent="." unique_id=567901471]
+position = Vector2(37, 100)
+
+[node name="entrarBanheiro" type="Marker2D" parent="SpawnBanheiro" unique_id=57811900]
+position = Vector2(0, -12)
+
 [connection signal="area_entered" from="sairB" to="sairB" method="_on_area_entered"]
 [connection signal="area_exited" from="sairB" to="sairB" method="_on_area_exited"]
