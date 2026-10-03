@@ -1808,6 +1808,9 @@ gizmo_extents = 0.0
 [node name="sairDesertoParaVila" type="Marker2D" parent="spawnsVila" unique_id=1453320485]
 position = Vector2(-615, 108)
 
+[node name="sairForja" type="Marker2D" parent="spawnsVila" unique_id=906331749]
+position = Vector2(858, -64)
+
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]

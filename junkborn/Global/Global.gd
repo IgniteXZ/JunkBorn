@@ -13,23 +13,24 @@ var spawn_destino: String = ""
 
 func trocar_cena(caminho: String, spawn: String) -> void:
 	spawn_destino = spawn
+	
+	await Transicao.fade_out()
+	
 	get_tree().change_scene_to_file(caminho)
+	await get_tree().scene_changed
+	
+	await get_tree().process_frame
+	
+	await Transicao.fade_in()
 
 func aplicar_spawn(player: Node2D) -> void:
 	if spawn_destino == "":
-		print("Nenhum spawn definido.")
 		return
-
-	print("Tentando usar spawn: ", spawn_destino)
 
 	var cena_atual := get_tree().current_scene
 	var spawn := cena_atual.get_node_or_null(spawn_destino) as Marker2D
 
 	if spawn != null:
-		print("Spawn encontrado!")
-		print("Posição do spawn: ", spawn.global_position)
 		player.global_position = spawn.global_position
-	else:
-		print("Spawn NÃO encontrado: ", spawn_destino)
 
 	spawn_destino = ""

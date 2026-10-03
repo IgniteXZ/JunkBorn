@@ -415,6 +415,15 @@ vertical_alignment = 1
 position = Vector2(76, 216)
 gizmo_extents = 0.0
 
+[node name="sairBanheiro" type="Marker2D" parent="spawnsCasaFilo" unique_id=555425081]
+position = Vector2(-82, 27)
+
+[node name="sairQuartoEstanho" type="Marker2D" parent="spawnsCasaFilo" unique_id=183363348]
+position = Vector2(63, 27)
+
+[node name="sairQuartoFilo" type="Marker2D" parent="spawnsCasaFilo" unique_id=51370694]
+position = Vector2(230, 27)
+
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_entered"]
