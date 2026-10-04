@@ -509,7 +509,11 @@ radius = 59.03389
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
 radius = 56.400356
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
+radius = 61.846584
+
 [node name="Node2D" type="Node2D" unique_id=1307634865]
+position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1208593091]
@@ -560,6 +564,15 @@ script = ExtResource("11_t0mu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDesertoVila/Area2D" unique_id=169427568]
 shape = SubResource("CircleShape2D_ce1y2")
+
+[node name="minGameCano" type="Sprite2D" parent="passagemdeCena" unique_id=1797226633]
+position = Vector2(-459, 616)
+texture = ExtResource("10_tk3gm")
+
+[node name="Area2D" type="Area2D" parent="passagemdeCena/minGameCano" unique_id=1110741888]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/minGameCano/Area2D" unique_id=589286028]
+shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 
