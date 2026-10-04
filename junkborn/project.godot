@@ -72,7 +72,8 @@ directories/dtl_directory={
 "portaoparaodesertoinicio": "res://Dialogos/Timeline/portaoparaodesertoinicio.dtl",
 "retrato": "res://Dialogos/Timeline/retrato.dtl",
 "sofa": "res://Dialogos/Timeline/sofa.dtl",
-"tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl"
+"tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl",
+"timelineTeste": "res://Dialogos/teste/timelineTeste.dtl"
 }
 layout/style_directory={
 "": "res://Dialogos/Style/EstiloTeste.tres",

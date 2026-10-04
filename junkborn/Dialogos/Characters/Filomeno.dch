@@ -19,11 +19,29 @@
 &"portraits": {
 "Normal": {
 "export_overrides": {
-"image": "\"res://Sprites/FilomenoBetinhaMogado.png\""
+"image": "\"res://Sprites/portraits/filomeno/neutro/neutromeno1.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(70, 0),
+"scale": 0.75,
+"scene": ""
+},
+"bravo": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/filomeno/bravo/bravomeno1.png\""
+},
+"mirror": false,
+"offset": Vector2(-130, 0),
+"scale": 0.75,
+"scene": ""
+},
+"cansado": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/filomeno/olho fechado/fechadomeno2.png\""
+},
+"mirror": false,
+"offset": Vector2(-130, 0),
+"scale": 0.75,
 "scene": ""
 }
 },
