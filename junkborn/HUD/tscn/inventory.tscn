@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ouorf48t2ljp" path="res://HUD/sprites/diarioShiny.png" id="13_58chr"]
 [ext_resource type="Script" uid="uid://07t3i7xodfmn" path="res://HUD/scripts/ui_livro.gd" id="14_10kb4"]
 [ext_resource type="PackedScene" uid="uid://vdamr8acgl8k" path="res://HUD/tscn/livro.tscn" id="14_gqrh1"]
+[ext_resource type="Texture2D" uid="uid://bvchkvpt2r85d" path="res://HUD/sprites/livroBotanicaShiny.png" id="16_58chr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rcjap"]
 load_path = "res://.godot/imported/images.jpg-da4814d45b86bad63d4630094e604049.ctex"
@@ -243,6 +244,8 @@ custom_minimum_size = Vector2(120, 290)
 layout_mode = 2
 flat = true
 script = ExtResource("12_awwgi")
+botanica_normal = ExtResource("13_10kb4")
+botanica_shiny = ExtResource("16_58chr")
 
 [node name="TextureRect" type="TextureRect" parent="GridContainer2/botaolivrobotanica" unique_id=210918039]
 layout_mode = 0
@@ -258,6 +261,8 @@ visible = false
 
 [connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GridContainer2/botaolivrobotanica" to="GridContainer2/botaolivrobotanica" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer2/botaolivrobotanica" to="GridContainer2/botaolivrobotanica" method="_on_mouse_exited"]
 [connection signal="pressed" from="GridContainer2/botaolivrobotanica" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
 
 [editable path="GridContainer/Slot"]
