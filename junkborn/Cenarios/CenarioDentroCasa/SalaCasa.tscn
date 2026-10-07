@@ -222,6 +222,11 @@ texture_region_size = Vector2i(24, 24)
 19:15/0 = 0
 18:16/0 = 0
 19:16/0 = 0
+13:13/0 = 0
+12:12/0 = 0
+12:13/0 = 0
+12:11/0 = 0
+13:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tf7uv"]
 tile_size = Vector2i(24, 24)
