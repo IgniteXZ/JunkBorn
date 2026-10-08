@@ -397,12 +397,11 @@ position = Vector2(209, 123)
 scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="Node/Character" unique_id=1910808721]
-visible = false
-offset_left = -82.0
-offset_top = -95.0
-offset_right = 104.0
-offset_bottom = -72.0
-text = "Aperte E para interagir"
+offset_left = -88.74999
+offset_top = -67.5
+offset_right = 97.25001
+offset_bottom = -44.5
+text = "[E] Interagir"
 label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
