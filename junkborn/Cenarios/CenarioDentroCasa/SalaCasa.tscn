@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_ecsqw"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_ifgmi"]
-[ext_resource type="Script" uid="uid://caapqivltdtb2" path="res://Cenarios/CenarioDentroCasa/sair_casa_filo.gd" id="3_ifgmi"]
 [ext_resource type="Script" uid="uid://wugla3rpbvrw" path="res://Cenarios/CenarioDentroCasa/entrar_no_quarto_filo.gd" id="4_5vr3i"]
 [ext_resource type="Script" uid="uid://rwff68lg5f1s" path="res://Cenarios/CenarioDentroCasa/entrar_quarto_heinal.gd" id="5_iujb1"]
 [ext_resource type="Script" uid="uid://chyjqje86cacw" path="res://Cenarios/CenarioDentroCasa/estanho.gd" id="5_msrtw"]
 [ext_resource type="Texture2D" uid="uid://cjbq4hy7cmnxc" path="res://NPC/Sprites/Estranho/srEstanholdles.png" id="5_tf7uv"]
 [ext_resource type="Script" uid="uid://3grqdxrokl1w" path="res://Cenarios/CenarioDentroCasa/banheiro.gd" id="6_3epk2"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="8_rxvhl"]
+[ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="9_rxvhl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_ecsqw")
@@ -307,6 +308,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
 size = Vector2(16.000002, 6.3999977)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
+radius = 12.0
+height = 50.4
+
 [sub_resource type="LabelSettings" id="LabelSettings_msrtw"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
@@ -337,9 +342,10 @@ rendering_quadrant_size = 9
 
 [node name="passagemCenas" type="Node2D" parent="." unique_id=1699138988]
 
-[node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835 node_paths=PackedStringArray("labelinteragir")]
-script = ExtResource("3_ifgmi")
-labelinteragir = NodePath("../../Node/Character/LabelInteragir")
+[node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835]
+script = ExtResource("8_rxvhl")
+cena_destino = "res://Cenarios/CenarioVila/characterP.tscn"
+spawn_destino = "spawnsVila/sairCasaFilo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=210186153]
 position = Vector2(75, 214)
@@ -392,6 +398,14 @@ position = Vector2(-0.6580001, 19.605997)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_ns0o7")
 
+[node name="DialogoEstanho" type="Area2D" parent="Node/Estanho" unique_id=1728474017]
+script = ExtResource("8_rxvhl")
+timeline = "estanhoFala2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Estanho/DialogoEstanho" unique_id=814879209]
+position = Vector2(-26.855999, 38.795998)
+shape = SubResource("CapsuleShape2D_qrw66")
+
 [node name="Character" parent="Node" unique_id=489748546 instance=ExtResource("2_ifgmi")]
 position = Vector2(209, 123)
 scale = Vector2(0.8, 0.8)
@@ -420,6 +434,12 @@ position = Vector2(63, 27)
 
 [node name="sairQuartoFilo" type="Marker2D" parent="spawnsCasaFilo" unique_id=51370694]
 position = Vector2(230, 27)
+
+[node name="DialogoEntradaCasa" type="Node2D" parent="." unique_id=1321612086 node_paths=PackedStringArray("jogador")]
+script = ExtResource("9_rxvhl")
+timeline = "falaSrEstanho1"
+variavel_visto = "VISTO.dialogo_casainicial"
+jogador = NodePath("../Node/Character")
 
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
