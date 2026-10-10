@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b74dcy7cxsd3r" path="res://Cenarios/CenarioDentroCasa/banheiro filomeno.png" id="2_4ddvs"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_is0nw"]
 [ext_resource type="Script" uid="uid://cakvpr1uch00d" path="res://Cenarios/CenarioDentroCasa/sair_b.gd" id="4_4ddvs"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="5_is0nw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_w207t")
@@ -484,6 +485,12 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(38, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
+size = Vector2(35.125, 25.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpo1d"]
+size = Vector2(52, 52)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -528,6 +535,23 @@ position = Vector2(37, 100)
 
 [node name="entrarBanheiro" type="Marker2D" parent="SpawnBanheiro" unique_id=57811900]
 position = Vector2(0, -12)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1375535079]
+script = ExtResource("5_is0nw")
+timeline = "pinico"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=223034009]
+position = Vector2(92.875, -25.25)
+shape = SubResource("RectangleShape2D_qrw66")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1509005099]
+position = Vector2(12, 46)
+script = ExtResource("5_is0nw")
+timeline = "pia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=2103217913]
+position = Vector2(85, -15)
+shape = SubResource("RectangleShape2D_fpo1d")
 
 [connection signal="area_entered" from="sairB" to="sairB" method="_on_area_entered"]
 [connection signal="area_exited" from="sairB" to="sairB" method="_on_area_exited"]
