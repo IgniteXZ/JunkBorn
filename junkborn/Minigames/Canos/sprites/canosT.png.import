@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xp40ol0it8p"
-path="res://.godot/imported/quadradoTerra.jpg-86eecbba351709a6fa657a35e1cb29c5.ctex"
+uid="uid://d0niegjtohgp5"
+path="res://.godot/imported/canosT.png-644842c7ce00805c1354ecbf0c78b9bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigames/Canos/sprites/quadradoTerra.jpg"
-dest_files=["res://.godot/imported/quadradoTerra.jpg-86eecbba351709a6fa657a35e1cb29c5.ctex"]
+source_file="res://Minigames/Canos/sprites/canosT.png"
+dest_files=["res://.godot/imported/canosT.png-644842c7ce00805c1354ecbf0c78b9bf.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobbepttto5cd"
-path="res://.godot/imported/cano4.png-d6e892c376f594eecd9b3bdd85071e6f.ctex"
+uid="uid://c0ajnjlmw7p0c"
+path="res://.godot/imported/terraCanos.png-fcb4eea1cabbd839f7fb754579137231.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigames/Canos/sprites/cano4.png"
-dest_files=["res://.godot/imported/cano4.png-d6e892c376f594eecd9b3bdd85071e6f.ctex"]
+source_file="res://Minigames/Canos/sprites/terraCanos.png"
+dest_files=["res://.godot/imported/terraCanos.png-fcb4eea1cabbd839f7fb754579137231.ctex"]
 
 [params]
 

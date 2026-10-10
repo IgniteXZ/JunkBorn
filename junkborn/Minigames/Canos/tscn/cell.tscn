@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dix1go7jhl86r"]
+
+[ext_resource type="Texture2D" uid="uid://c0ajnjlmw7p0c" path="res://Minigames/Canos/sprites/terraCanos.png" id="1_a6oyo"]
+[ext_resource type="Script" uid="uid://coqk0of4isadj" path="res://Minigames/Canos/scripts/cell.gd" id="1_u568i"]
+[ext_resource type="Texture2D" uid="uid://d0niegjtohgp5" path="res://Minigames/Canos/sprites/canosT.png" id="3_et22u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5a1v"]
+size = Vector2(48, 48)
+
+[node name="Cell" type="Node2D" unique_id=1869934506]
+script = ExtResource("1_u568i")
+
+[node name="Terreno" type="Sprite2D" parent="." unique_id=1516586631]
+texture = ExtResource("1_a6oyo")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 48)
+
+[node name="Cano" type="Sprite2D" parent="." unique_id=1754702972]
+texture = ExtResource("3_et22u")
+region_enabled = true
+region_rect = Rect2(48, 48, 48, 48)
+
+[node name="AreaClique" type="Area2D" parent="." unique_id=1711968328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaClique" unique_id=799569109]
+shape = SubResource("RectangleShape2D_m5a1v")

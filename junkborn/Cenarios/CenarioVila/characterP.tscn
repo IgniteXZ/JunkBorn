@@ -1428,8 +1428,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 47.251465, 46.897408)
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1322766949]
-visible = false
-z_index = 1
+z_index = -1
 position = Vector2(0, -280)
 
 [node name="Parallax4" type="Parallax2D" parent="ParallaxNode" unique_id=1383583922]

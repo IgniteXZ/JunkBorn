@@ -1,321 +1,68 @@
 [gd_scene format=3 uid="uid://sqha5vcfp3ib"]
 
-[ext_resource type="Texture2D" uid="uid://c1xp40ol0it8p" path="res://Minigames/Canos/sprites/quadradoTerra.jpg" id="1_lldx8"]
-[ext_resource type="Script" uid="uid://forc0ewma24b" path="res://Minigames/Canos/scripts/mingames_canos.gd" id="1_slrws"]
-[ext_resource type="Texture2D" uid="uid://bvbxetv54ss4t" path="res://Minigames/Canos/sprites/cano1.png" id="3_sbf8s"]
-[ext_resource type="Texture2D" uid="uid://br47wygf0wqh7" path="res://Minigames/Canos/sprites/cano2.png" id="4_47rks"]
-[ext_resource type="Texture2D" uid="uid://cdh2q3jfdfdq1" path="res://Minigames/Canos/sprites/cano3.png" id="5_plvnb"]
-[ext_resource type="Texture2D" uid="uid://cobbepttto5cd" path="res://Minigames/Canos/sprites/cano4.png" id="6_etn1e"]
-[ext_resource type="Texture2D" uid="uid://dnmffx6sahxsn" path="res://Minigames/Canos/sprites/cano5.png" id="7_km400"]
-[ext_resource type="Texture2D" uid="uid://b3wwi5e1lvde3" path="res://Minigames/Canos/sprites/terraminada.png" id="8_54hq6"]
-[ext_resource type="Texture2D" uid="uid://cx28gf5tkk102" path="res://Minigames/Canos/sprites/agua.png" id="9_47rks"]
+[ext_resource type="Script" uid="uid://gqcnvr3tsasl" path="res://Minigames/Canos/scripts/mingames_canos.gd" id="1_slrws"]
+[ext_resource type="Texture2D" uid="uid://c0ajnjlmw7p0c" path="res://Minigames/Canos/sprites/terraCanos.png" id="2_15gnt"]
+[ext_resource type="Script" uid="uid://cndn21iputnfl" path="res://Minigames/Canos/sprites/hud.gd" id="2_slrws"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_slrws"]
-texture = ExtResource("1_lldx8")
-texture_region_size = Vector2i(64, 64)
-43:23/0 = 0
-42:23/0 = 0
-41:23/0 = 0
-40:23/0 = 0
-39:23/0 = 0
-38:23/0 = 0
-37:24/0 = 0
-36:24/0 = 0
-35:24/0 = 0
-34:25/0 = 0
-33:25/0 = 0
-32:25/0 = 0
-31:26/0 = 0
-30:26/0 = 0
-29:26/0 = 0
-28:27/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:4/0 = 0
-8:5/0 = 0
-9:6/0 = 0
-9:7/0 = 0
-10:8/0 = 0
-11:9/0 = 0
-11:10/0 = 0
-12:11/0 = 0
-12:12/0 = 0
-13:13/0 = 0
-14:14/0 = 0
-14:15/0 = 0
-15:16/0 = 0
-16:17/0 = 0
-17:18/0 = 0
-17:19/0 = 0
-18:20/0 = 0
-19:21/0 = 0
-20:22/0 = 0
-20:23/0 = 0
-21:24/0 = 0
-22:25/0 = 0
-23:26/0 = 0
-23:27/0 = 0
-24:28/0 = 0
-25:29/0 = 0
-26:30/0 = 0
-26:31/0 = 0
-27:32/0 = 0
-28:33/0 = 0
-28:34/0 = 0
-29:35/0 = 0
-30:36/0 = 0
-30:37/0 = 0
-31:38/0 = 0
-32:39/0 = 0
-32:40/0 = 0
-33:41/0 = 0
-34:42/0 = 0
-35:43/0 = 0
-35:44/0 = 0
-36:45/0 = 0
-37:46/0 = 0
-37:47/0 = 0
-38:48/0 = 0
-38:49/0 = 0
-39:50/0 = 0
-40:51/0 = 0
-40:52/0 = 0
-41:53/0 = 0
-41:54/0 = 0
-42:55/0 = 0
-0:0/0 = 0
+[node name="minagemCanos" type="Node2D" unique_id=243183180]
 
-[sub_resource type="TileSet" id="TileSet_15gnt"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_slrws")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bd5lq"]
-texture = ExtResource("3_sbf8s")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8pyn"]
-texture = ExtResource("4_47rks")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mm6s"]
-texture = ExtResource("5_plvnb")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kir4u"]
-texture = ExtResource("6_etn1e")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn86m"]
-texture = ExtResource("7_km400")
-texture_region_size = Vector2i(62, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3dds"]
-texture = ExtResource("8_54hq6")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_8ex1e"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_bd5lq")
-sources/1 = SubResource("TileSetAtlasSource_h8pyn")
-sources/2 = SubResource("TileSetAtlasSource_6mm6s")
-sources/3 = SubResource("TileSetAtlasSource_kir4u")
-sources/4 = SubResource("TileSetAtlasSource_jn86m")
-sources/5 = SubResource("TileSetAtlasSource_y3dds")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_plvnb"]
-texture = ExtResource("9_47rks")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_m5a1v"]
-sources/0 = SubResource("TileSetAtlasSource_plvnb")
-
-[node name="control" type="Control" unique_id=241635578]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="mingameCanos" type="CanvasLayer" parent="." unique_id=1177337287]
-
-[node name="Control" type="Control" parent="mingameCanos" unique_id=118950568]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -317.0
-offset_top = -227.0
-offset_right = 283.0
-offset_bottom = 373.0
+[node name="board" type="Node2D" parent="." unique_id=1466661010]
 script = ExtResource("1_slrws")
-metadata/_edit_use_anchors_ = true
 
-[node name="cabecario" type="Panel" parent="mingameCanos/Control" unique_id=1020040864]
+[node name="FonteAgua" type="Sprite2D" parent="board" unique_id=1226418366]
+z_index = 10
+position = Vector2(0, 240)
+texture = ExtResource("2_15gnt")
+region_enabled = true
+region_rect = Rect2(144, 48, 48, 48)
+
+[node name="FluxoAgua" type="Line2D" parent="board" unique_id=382845755]
+visible = false
+z_index = 20
+width = 1.0
+default_color = Color(0.15686275, 0.6666667, 1, 1)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2049390218]
+script = ExtResource("2_slrws")
+
+[node name="PainelInformacoes" type="Panel" parent="HUD" unique_id=1609356760]
+offset_left = 192.0
+offset_top = 60.0
+offset_right = 1052.0
+offset_bottom = 120.0
+
+[node name="Fase" type="Label" parent="HUD/PainelInformacoes" unique_id=754174719]
 layout_mode = 0
-offset_left = 775.0
-offset_top = 272.0
-offset_right = 1179.0
-offset_bottom = 336.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 69.0
+text = "FASE: 1/3
+"
 
-[node name="fase" type="Label" parent="mingameCanos/Control/cabecario" unique_id=1006528913]
+[node name="Tempo" type="Label" parent="HUD/PainelInformacoes" unique_id=983256056]
 layout_mode = 0
-offset_left = 71.0
-offset_right = 104.0
-offset_bottom = 23.0
+offset_left = 220.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 69.0
+text = "TEMPO: 30s
+"
 
-[node name="tempo" type="Label" parent="mingameCanos/Control/cabecario" unique_id=1247651640]
+[node name="VelocidadeAgua" type="Label" parent="HUD/PainelInformacoes" unique_id=1847414104]
 layout_mode = 0
-offset_left = 169.0
-offset_right = 220.0
-offset_bottom = 23.0
+offset_left = 420.0
+offset_top = 20.0
+offset_right = 523.0
+offset_bottom = 43.0
+text = "ÁGUA: LENTA"
 
-[node name="canos" type="Label" parent="mingameCanos/Control/cabecario" unique_id=977214663]
+[node name="CanosRestantes" type="Label" parent="HUD/PainelInformacoes" unique_id=1737659549]
 layout_mode = 0
-offset_left = 292.0
-offset_top = 1.0
-offset_right = 337.0
-offset_bottom = 24.0
+offset_left = 700.0
+offset_top = 20.0
+offset_right = 782.0
+offset_bottom = 43.0
+text = "CANOS: 12"
 
-[node name="queue" type="Panel" parent="mingameCanos/Control" unique_id=556407645]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.5230001
-anchor_top = 0.915
-anchor_right = 1.5230001
-anchor_bottom = 0.915
-offset_left = -227.80005
-offset_top = -274.0
-offset_right = -142.80005
-offset_bottom = -216.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="mingameCanos/Control/queue" unique_id=1534733367]
-layout_mode = 0
-offset_left = 3.0
-offset_top = -3.0
-offset_right = 85.0
-offset_bottom = 29.0
-
-[node name="start2" type="Label" parent="mingameCanos/Control" unique_id=692700233]
-layout_mode = 0
-offset_left = 664.0
-offset_top = 305.0
-offset_right = 704.0
-offset_bottom = 328.0
-
-[node name="terra" type="TileMapLayer" parent="." unique_id=226379033]
-position = Vector2(400, 120)
-tile_set = SubResource("TileSet_15gnt")
-
-[node name="canos_minas" type="TileMapLayer" parent="." unique_id=1708254113]
-position = Vector2(400, 120)
-tile_set = SubResource("TileSet_8ex1e")
-
-[node name="agua" type="TileMapLayer" parent="." unique_id=1837507550]
-tile_set = SubResource("TileSet_m5a1v")
-
-[node name="Timer" type="Timer" parent="." unique_id=572509473]
-
-[connection signal="timeout" from="Timer" to="mingameCanos/Control" method="_on_timer_timeout"]
+[node name="ContadorTempo" type="Timer" parent="HUD" unique_id=1938433790]
