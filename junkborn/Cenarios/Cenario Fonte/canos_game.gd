@@ -5,6 +5,7 @@ extends Node2D
 @export var tex_curva: Texture2D
 @export var tex_cruz: Texture2D
 @export var tex_pa: Texture2D
+@export var modo_teste = false
 
 @onready var area = $Area2D
 
@@ -72,39 +73,60 @@ func _unhandled_input(event):
 
 
 # ---------------------------------------------------------------
-# INVENTÁRIO (lido pelo sprite)
+# INVENTÁRIO (lido pelo sprite, como na forja)
 # ---------------------------------------------------------------
 
+func obter_slots() -> Array:
+	var slots = []
+	var jogador = get_tree().get_first_node_in_group("player")
+
+	if jogador == null:
+		return slots
+
+	for no in jogador.find_children("*", "Control", true, false):
+		if no.has_method("set_empty_slot"):
+			slots.append(no)
+
+	return slots
+
+
+func mesma_textura(a, b) -> bool:
+	if a == null or b == null:
+		return false
+	if a == b:
+		return true
+	return a.resource_path != "" and a.resource_path == b.resource_path
+
+
 func chave_da_textura(tex) -> String:
-	if tex == tex_reto:
+	if mesma_textura(tex, tex_reto):
 		return "reto"
-	if tex == tex_curva:
+	if mesma_textura(tex, tex_curva):
 		return "curva"
-	if tex == tex_cruz:
+	if mesma_textura(tex, tex_cruz):
 		return "cruz"
-	if tex == tex_pa:
+	if mesma_textura(tex, tex_pa):
 		return "pa"
 	return ""
 
 
 func contar() -> Dictionary:
+	if modo_teste:
+		return {"reto": 45, "curva": 17, "cruz": 5, "pa": 1}
+
 	var r = {"reto": 0, "curva": 0, "cruz": 0, "pa": 0}
-	var grade = get_tree().get_first_node_in_group("grade_inventario")
 
-	if grade == null:
-		return r
-
-	for slot in grade.get_children():
+	for slot in obter_slots():
 		var spr = slot.get_node_or_null("sprite")
-		var qtd_label = slot.get_node_or_null("amount")
+		var qtd = slot.get_node_or_null("amount")
 
-		if spr == null or qtd_label == null or spr.texture == null:
+		if spr == null or qtd == null or spr.texture == null:
 			continue
 
 		var chave = chave_da_textura(spr.texture)
 
 		if chave != "":
-			r[chave] += max(1, int(qtd_label.text))
+			r[chave] += max(1, int(qtd.text))
 
 	return r
 
@@ -118,17 +140,19 @@ func requisitos_ok(c: Dictionary) -> bool:
 
 
 func debitar(gasto: Dictionary):
-	var grade = get_tree().get_first_node_in_group("grade_inventario")
-
-	if grade == null:
+	if modo_teste:
 		return
 
-	for slot in grade.get_children():
+	var dono = null
+
+	for slot in obter_slots():
 		var spr = slot.get_node_or_null("sprite")
 		var qtd_label = slot.get_node_or_null("amount")
 
 		if spr == null or qtd_label == null or spr.texture == null:
 			continue
+
+		dono = slot.get_node_or_null("../../..")
 
 		var chave = chave_da_textura(spr.texture)
 
@@ -143,8 +167,6 @@ func debitar(gasto: Dictionary):
 			slot.set_empty_slot()
 		else:
 			qtd_label.text = str(qtd - tirar)
-
-	var dono = grade.get_parent().get_parent() if grade.get_parent() else null
 
 	if dono and dono.has_method("salvar_inventario"):
 		dono.salvar_inventario()
@@ -179,6 +201,7 @@ func abrir(verificar: bool):
 	var fundo = ColorRect.new()
 	fundo.color = Color(0.05, 0.05, 0.08, 1.0)
 	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fundo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	camada_minigame.add_child(fundo)
 
 	var instancia = cena_minigame.instantiate()

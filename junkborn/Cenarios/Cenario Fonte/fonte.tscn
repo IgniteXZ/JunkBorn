@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="4_vnfls"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="6_pqhaq"]
 [ext_resource type="Script" uid="uid://dhdv4jj888du8" path="res://Cenarios/Cenario Fonte/canos_game.gd" id="6_vnfls"]
+[ext_resource type="PackedScene" uid="uid://sqha5vcfp3ib" path="res://Minigames/Canos/tscn/minigamecanos_1.tscn" id="7_1od1r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1526,6 +1527,8 @@ vertical_alignment = 1
 
 [node name="canosGame" type="Node2D" parent="." unique_id=1245883517]
 script = ExtResource("6_vnfls")
+cena_minigame = ExtResource("7_1od1r")
+modo_teste = true
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)
