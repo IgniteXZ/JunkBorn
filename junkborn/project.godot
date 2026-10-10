@@ -116,10 +116,6 @@ audio/channel_defaults={
 }
 variables={
 "Filomeno_estacoComBoneco": false,
-"VISTO": {
-"dialogo_casainicial": false
-},
-"falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
 "madancaru_falou": false,
 "rauchy_company": false

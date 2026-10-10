@@ -1,6 +1,9 @@
+class_name MinigameCanos
 extends Node2D
 
 signal minigame_concluido
+signal sair_solicitado
+signal reiniciar_solicitado
 
 const TAMANHO_CELULA = 48
 const RAIO_CURVA = 24.0
@@ -68,12 +71,9 @@ static var inventario = {"reto": 45, "curva": 30, "cruz": 5}
 
 const PAGINAS_TUTORIAL = [
 	["OBJETIVO", "Leve a água da fonte (quadrado azul) até o topo do tabuleiro montando a tubulação."],
-	["CONTROLES", "Clique na terra para cavar e colocar um cano. Clique no cano para girá-lo (antes da água chegar).\nTeclas: 1 = reto, 2 = curva, 3 = cruz."],
-	["CONTROLES", "Botão DIREITO: cava a terra.\nBotão ESQUERDO: coloca um cano na terra cavada (ou gira o cano, antes da água chegar).\nTeclas: 1 = reto, 2 = curva, 3 = cruz."],
 	["CONTROLES", "Botão DIREITO: cava a terra (o chão acinzentado é duro e leva 2 cliques).\nBotão ESQUERDO: coloca um cano na terra cavada (ou gira o cano, antes da água chegar).\nTeclas: 1 = reto, 2 = curva, 3 = cruz."],
-["A ÁGUA", "Depois do VAI!, a água sai sozinha da fonte pelo lado em que houver um cano ligado a ela. Se não houver nenhum, ou se ela chegar em uma célula sem cano, você perde."],
-	["CUIDADO", "Minas: clicar nelas ou deixar a água apontar para elas faz você perder. Pedras não aceitam cano.\nVocê também perde se a água vazar, se faltar cano ou se o tempo acabar."],
-	["A ÁGUA", "Depois do VAI!, a água sai sozinha da fonte e não espera ninguém. Se ela chegar em uma célula sem cano, você perde."]
+	["A ÁGUA", "Depois do VAI!, a água sai sozinha da fonte pelo lado em que houver um cano ligado a ela. Se ela chegar em uma célula sem cano, você perde."],
+	["CUIDADO", "Minas: clicar nelas ou deixar a água apontar para elas faz você perder. Pedras não aceitam cano.\nO CRUZ divide a água nos 3 outros lados: todos precisam ter cano.\nVocê também perde se a água vazar, se faltar cano ou se o tempo acabar."],
 ]
 
 var fase: Dictionary
@@ -393,11 +393,13 @@ func _ao_clicar_principal():
 			mostrar_pagina_tutorial()
 	elif modo_intro == "preview":
 		comecar_contagem()
+	elif modo_intro == "bloqueado":
+		sair_solicitado.emit()
 	elif modo_intro == "travado":
 		fase_atual = 0
 		reserva = {}
 		mapa_salvo = []
-		get_tree().reload_current_scene()
+		reiniciar_solicitado.emit()
 
 func _ao_clicar_pular():
 	tutorial_visto = true
@@ -855,7 +857,6 @@ func derrotar_jogo(motivo = "tempo"):
 
 	mostrar_resultado("IT'S OVER", texto, "Tentar novamente", reiniciar_fase, CURIOSIDADES.pick_random())
 
-	await get_tree().create_timer(0.7).timeout
 
 func mostrar_resultado(titulo_txt: String, corpo: String, rotulo_botao: String, acao: Callable, curiosidade: Dictionary = {}):
 	var camada = CanvasLayer.new()
@@ -917,16 +918,18 @@ func mostrar_resultado(titulo_txt: String, corpo: String, rotulo_botao: String, 
 	caixa.add_child(botao)
 
 func reiniciar_fase():
-	get_tree().reload_current_scene()
+	reiniciar_solicitado.emit()
 
 
 func proxima_fase():
 	fase_atual += 1
 	mapa_salvo = []
-	get_tree().reload_current_scene()
+	reiniciar_solicitado.emit()
 
 
 func concluir_minigame():
+	inventario = reserva.duplicate()
+	reserva = {}
 	fase_atual = 0
 	mapa_salvo = []
 	minigame_concluido.emit()

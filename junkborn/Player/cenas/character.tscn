@@ -233,7 +233,7 @@ states/Walk/position = Vector2(453, 104)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlgaa"]
 radius = 17.029387
 
-[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("camera", "_animation_tree", "canvaa")]
+[node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("camera", "_animation_tree", "canvaa") groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_gbkji")
 camera = NodePath("Camera2D")
