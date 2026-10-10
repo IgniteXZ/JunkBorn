@@ -10,12 +10,49 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "normal",
 &"description": "",
 &"display_name": "Mandacaru",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"bravo": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/mandacaru/faces/bravo/bravocaru1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"confusso": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/mandacaru/faces/cara feia/mandaconfusos2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"normal": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/mandacaru/faces/sorriso/mandacaru1.png\""
+},
+"mirror": false,
+"offset": Vector2(-130, 0),
+"scale": 0.85,
+"scene": ""
+},
+"rindo": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/mandacaru/faces/rindo/rindacaru2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 &"scale": 1.0
 }

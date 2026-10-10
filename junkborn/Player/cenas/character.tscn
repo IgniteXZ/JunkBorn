@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr4eeuat57ufc" path="res://Player/assets/spriteMove/filomeno sprites finals.png" id="2_jlgaa"]
 [ext_resource type="Script" uid="uid://csvkl1kwxd3cu" path="res://Player/scripts/camera_2d.gd" id="3_1kn0l"]
 [ext_resource type="Script" uid="uid://3krnns6r52u4" path="res://HUD/scripts/canva_mapa.gd" id="4_1kn0l"]
+[ext_resource type="Script" uid="uid://bmv3giglov588" path="res://Player/scripts/limpa_label_interagir.gd" id="4_8jiok"]
 [ext_resource type="PackedScene" uid="uid://bkh8j1xovnmhy" path="res://HUD/tscn/mapamundi.tscn" id="5_53gt6"]
 [ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="6_jlgaa"]
 [ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="7_8jiok"]
@@ -250,14 +251,16 @@ zoom = Vector2(2, 2)
 script = ExtResource("3_1kn0l")
 
 [node name="Interagir" type="Area2D" parent="." unique_id=2001418787]
+script = ExtResource("4_8jiok")
 
 [node name="LabelInteragir" type="Label" parent="Interagir" unique_id=1547334625]
 visible = false
-offset_left = -82.0
-offset_top = -95.0
-offset_right = 104.0
-offset_bottom = -72.0
-text = "Aperte E para interagir"
+offset_left = -97.0
+offset_top = -71.0
+offset_right = 111.0
+offset_bottom = -48.0
+theme_override_font_sizes/font_size = 9
+text = "[E] Interagir"
 label_settings = SubResource("LabelSettings_qrw66")
 horizontal_alignment = 1
 vertical_alignment = 1

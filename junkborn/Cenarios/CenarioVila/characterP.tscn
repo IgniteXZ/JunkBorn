@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://bkhswug126xl1" path="res://NPC/Sprites/Npc1/npc1-1.png" id="16_0xg0n"]
 [ext_resource type="Script" uid="uid://dvxnnbfwym5x7" path="res://Player/cenas/npc_1.gd" id="16_wuro2"]
 [ext_resource type="Texture2D" uid="uid://bj0xtcy4v5sp4" path="res://NPC/Sprites/Npc1/npc1-2.png" id="17_04mck"]
-[ext_resource type="Script" uid="uid://bimkn5176ws25" path="res://Cenarios/CenarioVila/area_2d.gd" id="17_irw8e"]
 [ext_resource type="Texture2D" uid="uid://ctdit5tr8mbg4" path="res://NPC/Sprites/mandacaru/manda1.png" id="18_urtpg"]
 [ext_resource type="Texture2D" uid="uid://cusxv27tunsdb" path="res://NPC/Sprites/Npc2/npc2-1.png" id="18_wuro2"]
 [ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="19_jytyn"]
@@ -39,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://k1ogycl15q4t" path="res://NPC/Sprites/trabalhadores/personagens1.png" id="28_7xnrc"]
 [ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="29_g0mcs"]
 [ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="29_hs813"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="38_5d4lt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1299,6 +1299,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_b33t2"]
 radius = 40.311287
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
+radius = 42.0
+height = 94.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifxyd"]
 animations = [{
 "frames": [{
@@ -1332,6 +1336,10 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvkme"]
 radius = 17.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87td0"]
+radius = 42.0
+height = 126.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rrjrq"]
 animations = [{
@@ -1400,6 +1408,10 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fm7tp"]
 radius = 18.248287
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fpo1d"]
+radius = 41.0
+height = 154.00171
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1510,6 +1522,7 @@ rotation = -2.3457224
 shape = SubResource("CapsuleShape2D_m5a1v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="y-sort/TileMapLayer3/Node2D/StaticBody2D" unique_id=513649652]
+visible = false
 position = Vector2(29, -93)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_w3opj")
@@ -1618,11 +1631,11 @@ position = Vector2(-596, 112)
 visible = false
 z_index = 1
 y_sort_enabled = true
-offset_left = -82.0
-offset_top = -95.0
-offset_right = 104.0
-offset_bottom = -72.0
-text = "Aperte E para interagir"
+offset_left = -88.0
+offset_top = -69.0
+offset_right = 98.0
+offset_bottom = -46.0
+text = "[E] Interagir"
 label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1642,6 +1655,14 @@ frame_progress = 0.9176922
 position = Vector2(1234, 201)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b33t2")
+
+[node name="Area2D" type="Area2D" parent="y-sort/mandacaru" unique_id=929955987]
+script = ExtResource("38_5d4lt")
+timeline = "mandacaruFala1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/mandacaru/Area2D" unique_id=2025617285]
+position = Vector2(1230, 183)
+shape = SubResource("CapsuleShape2D_qrw66")
 
 [node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
 y_sort_enabled = true
@@ -1669,6 +1690,14 @@ sprite_frames = SubResource("SpriteFrames_bfwth")
 position = Vector2(589, 325)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CircleShape2D_tvkme")
+
+[node name="DialogoNpc2" type="Area2D" parent="y-sort/Npc2" unique_id=1212561626]
+script = ExtResource("38_5d4lt")
+timeline = "FalasNpc2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/Npc2/DialogoNpc2" unique_id=20347199]
+position = Vector2(592, 285)
+shape = SubResource("CapsuleShape2D_87td0")
 
 [node name="Npc3" type="CharacterBody2D" parent="y-sort" unique_id=15617534]
 y_sort_enabled = true
@@ -1721,6 +1750,15 @@ sprite_frames = SubResource("SpriteFrames_tvkme")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6" unique_id=1372160085]
 position = Vector2(78, 355)
 shape = SubResource("CircleShape2D_fm7tp")
+
+[node name="DialogoGrupo" type="Area2D" parent="y-sort/npc6" unique_id=1804924058]
+script = ExtResource("38_5d4lt")
+timeline = "falasNpc6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6/DialogoGrupo" unique_id=306774901]
+position = Vector2(1297.9999, 69.99999)
+rotation = 1.5711273
+shape = SubResource("CapsuleShape2D_fpo1d")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
 script = ExtResource("13_oprud")
@@ -1781,9 +1819,12 @@ script = ExtResource("15_8llo0")
 position = Vector2(861, -58)
 shape = SubResource("CircleShape2D_a3nj5")
 
-[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998 node_paths=PackedStringArray("labelinteragir")]
-script = ExtResource("17_irw8e")
-labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
+[node name="Area2D" type="Area2D" parent="passarEntreCenas" unique_id=1892304998]
+script = ExtResource("38_5d4lt")
+variavel_necessaria = "falou_estanhoinicio"
+timeline_bloqueado = "portaoparaodesertoinicio"
+cena_destino = "res://Cenarios/CenariosDeserto/Deserto1.tscn"
+spawn_destino = "sairVilaParaDeserto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/Area2D" unique_id=1559293473]
 position = Vector2(-621.62634, 104.76358)
