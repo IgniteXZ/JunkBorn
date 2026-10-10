@@ -34,7 +34,7 @@ func toggle_pause() -> void:
 	else:
 		esconder_todas_setas()
 		$Opcoes.hide()
-		$Opcoes/ui_controles/Controles.hide()
+		$Opcoes/Controles.hide()
 		$Opcoes/Panel.show()
 		$panelMain.show()
 

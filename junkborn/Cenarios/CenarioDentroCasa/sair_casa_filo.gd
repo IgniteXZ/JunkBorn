@@ -14,8 +14,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 		if perto and Input.is_action_just_pressed("Interagir"):
 			print("gonnei")
-			get_tree().change_scene_to_file("res://Cenarios/CenarioVila/characterP.tscn")
-
+			Global.trocar_cena(
+				"res://Cenarios/CenarioVila/characterP.tscn",
+			    "spawnsVila/sairCasaFilo"
+			)
 
 
 

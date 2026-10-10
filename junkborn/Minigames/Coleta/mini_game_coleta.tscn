@@ -22,6 +22,26 @@
 [ext_resource type="Resource" uid="uid://deumblsyq3pjx" path="res://Resource/Itens/TV.tres" id="18_gc8ir"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="22_jp2bg"]
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="23_jp2bg"]
+[ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="24_hjkpg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjkpg"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.09019608, 0.09019608, 0.09019608, 0.9019608)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23cby"]
+bg_color = Color(0.027673533, 0.09479255, 0.08584555, 1)
 
 [node name="MiniGameColeta" type="Node2D" unique_id=1136356552]
 script = ExtResource("1_pewcx")
@@ -50,5 +70,76 @@ offset_top = -62.0
 offset_right = 65.0
 offset_bottom = 63.0
 script = ExtResource("23_hjkpg")
+
+[node name="DialogoColeta" type="CanvasLayer" parent="." unique_id=246670327]
+
+[node name="CaraFilomeno" type="TextureRect" parent="DialogoColeta" unique_id=411925445]
+custom_minimum_size = Vector2(400, 600)
+offset_left = -44.0
+offset_top = 204.0
+offset_right = 356.0
+offset_bottom = 904.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("24_hjkpg")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="CaixaDialogo" type="PanelContainer" parent="DialogoColeta" unique_id=587509673]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.703
+anchor_right = 0.85
+anchor_bottom = 0.96
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hjkpg")
+
+[node name="MargemDialogo" type="MarginContainer" parent="DialogoColeta/CaixaDialogo" unique_id=1736605947]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxDialogo" type="HBoxContainer" parent="DialogoColeta/CaixaDialogo/MargemDialogo" unique_id=776426684]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextoDialogo" type="RichTextLabel" parent="DialogoColeta/CaixaDialogo/MargemDialogo/HBoxDialogo" unique_id=157465725]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("23_jp2bg")
+theme_override_font_sizes/normal_font_size = 20
+text = "Blablabalbalabla"
+vertical_alignment = 1
+
+[node name="NomeFilomeno" type="Panel" parent="DialogoColeta" unique_id=186502322]
+custom_minimum_size = Vector2(140, 35)
+offset_left = 331.0
+offset_top = 488.0
+offset_right = 331.0
+offset_bottom = 488.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_23cby")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogoColeta/NomeFilomeno" unique_id=1684580951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -9.0
+offset_right = 4.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("23_jp2bg")
+text = " Filomeno"
+vertical_alignment = 1
 
 [connection signal="pressed" from="saidaMinigame/Sprite2D/Button" to="saidaMinigame/Sprite2D/Button" method="_on_pressed"]
