@@ -10,8 +10,12 @@ const RAIO_CURVA = 24.0
 const LARGURA_AGUA = 10.0
 const LARGURA_CONTORNO = 14.0
 
-# Requisito simples: o lago confere 1 de cada tipo + pá (ajuste no canos_game.gd)
-const MINIMO_TOTAL = 3
+const CAMINHO_ATLAS = "res://Minigames/Canos/sprites/canosT.png"
+const REGIOES_CANOS = [
+	Rect2(48, 48, 48, 48), # reto
+	Rect2(0, 0, 48, 48),   # curva
+	Rect2(48, 0, 48, 48),  # cruz
+]
 
 const TIPOS = ["reto", "curva", "cruz"]
 
@@ -42,24 +46,25 @@ const CURIOSIDADES = [
 const CODIGOS = {"T": 3, "D": 3, "P": 2, "M": 6, "S": 3}
 
 # preview: 0 = livre (botão INICIAR); acima de 0 = segundos, com botão Pular
+# tolerancia 0.0 = a água chegou onde não há cano, perdeu
 const FASES = [
 	{
-		"tamanho": 8, "minas": 10, "pedras": 8, "duros": 5, "desvio": 2,
+		"tamanho": 9, "minas": 16, "pedras": 12, "duros": 6, "desvio": 4,
 		"preview": 0, "ocultas": false,
 		"velocidade": "LENTA",
-		"duracao_celula": 2.5, "tolerancia": 0.3, "folga": 5.0,
+		"duracao_celula": 2.2, "tolerancia": 0.0, "folga": 3.0,
 	},
 	{
-		"tamanho": 9, "minas": 17, "pedras": 11, "duros": 10, "desvio": 3,
+		"tamanho": 10, "minas": 26, "pedras": 17, "duros": 12, "desvio": 5,
 		"preview": 20, "ocultas": true,
 		"velocidade": "MÉDIA",
-		"duracao_celula": 2.0, "tolerancia": 0.3, "folga": 5.0,
+		"duracao_celula": 1.8, "tolerancia": 0.0, "folga": 3.0,
 	},
 	{
-		"tamanho": 10, "minas": 26, "pedras": 14, "duros": 14, "desvio": 4,
+		"tamanho": 11, "minas": 32, "pedras": 18, "duros": 17, "desvio": 6,
 		"preview": 30, "ocultas": true,
 		"velocidade": "RÁPIDA",
-		"duracao_celula": 1.5, "tolerancia": 0.3, "folga": 5.0,
+		"duracao_celula": 1.5, "tolerancia": 0.0, "folga": 3.0,
 	},
 ]
 
@@ -73,9 +78,9 @@ static var reserva = {}
 
 # Texto provisório (você vai mandar o definitivo)
 const PAGINAS_TUTORIAL = [
-	["OBJETIVO", "Leve a água que sai do bloco azul até o topo do tabuleiro, montando uma tubulação.\nDepois do VAI!, a água sai sozinha em 5 segundos e não espera ninguém."],
+	["OBJETIVO", "Leve a água que sai do bloco azul até o topo do tabuleiro, montando uma tubulação.\nDepois do VAI!, a água sai sozinha em 3 segundos e não espera ninguém."],
 	["CONTROLES", "Botão DIREITO: cava a terra (chão acinzentado é duro e leva 2 cliques).\nBotão ESQUERDO: coloca um cano na terra cavada. Clicar num cano o gira, só até a água chegar nele."],
-	["OS CANOS", "Teclas 1, 2 e 3 trocam o cano.\n1 Reto: liga dois lados opostos.\n2 Curva: liga dois lados vizinhos.\n3 Cruz: liga os quatro lados e divide a água. Todos os lados precisam ter cano."],
+	["OS CANOS", "Teclas 1, 2 e 3 (ou clique na barra embaixo) trocam o cano.\n1 Reto: liga dois lados opostos.\n2 Curva: liga dois lados vizinhos.\n3 Cruz: liga os quatro lados e divide a água. Todos os lados precisam ter cano."],
 	["CUIDADO", "Áreas contaminadas (verdes): clicar nelas, ou deixar a água chegar perto delas, faz você perder. Pedras não aceitam cano.\nVocê também perde se a água vazar ou chegar onde não há cano.\nNas fases 2 e 3 as áreas contaminadas somem depois do preview. Memorize onde estão!"],
 ]
 
@@ -87,9 +92,9 @@ var celulas = []
 
 var tipo_cano_selecionado = 0
 
-var duracao_celula = 2.5
-var tempo_espera_agua = 0.3
-var folga_agua = 5.0
+var duracao_celula = 2.2
+var tempo_espera_agua = 0.0
+var folga_agua = 3.0
 
 var cena_celula = preload("res://Minigames/Canos/tscn/cell.tscn")
 @onready var hud = get_parent().get_node("HUD")
@@ -104,13 +109,23 @@ var partida_encerrada = false
 var modo_intro = ""
 var pagina_tutorial = 0
 var preview_pulado = false
+var preview_pausado = false
+var preview_restante = 0
+var tutorial_do_preview = false
+var texto_preview_base = ""
+var texto_preview_extra = ""
+
 var camada_intro: CanvasLayer
 var painel_intro: PanelContainer
 var titulo_intro: Label
 var texto_intro: Label
-var botao_principal: Button
+var botao_voltar: Button
+var botao_ajuda: Button
 var botao_pular: Button
+var botao_principal: Button
 var rotulo_contagem: Label
+
+var slots_barra = []
 
 
 # Uma "trilha" de água = linha principal + contorno escuro
@@ -152,8 +167,10 @@ func _ready():
 
 	var tamanho = Vector2(colunas, linhas) * TAMANHO_CELULA
 	var vp = get_viewport_rect().size
-	position = Vector2((vp.x - tamanho.x) / 2.0, 130.0) \
+	position = Vector2((vp.x - tamanho.x) / 2.0, 110.0) \
 		+ Vector2(TAMANHO_CELULA, TAMANHO_CELULA) / 2.0
+
+	criar_fundo(tamanho, vp)
 
 	for y in range(linhas):
 		celulas.append([])
@@ -185,19 +202,149 @@ func _ready():
 	camada_agua = Node2D.new()
 	add_child(camada_agua)
 
+	criar_barra_selecao()
+
 	hud.atualizar_fase.call_deferred(fase_atual + 1, FASES.size())
 	hud.atualizar_velocidade.call_deferred(fase["velocidade"])
-	limpar_texto_tempo.call_deferred()
-	atualizar_hud_canos.call_deferred()
+	limpar_textos_hud.call_deferred()
 
 	iniciar_intro()
 
 
-# O relógio foi removido: esvazia o texto do tempo no HUD
-func limpar_texto_tempo():
+func definir_picareta(tem: bool):
+	for linha in celulas:
+		for c in linha:
+			c.tem_picareta = tem
+
+
+# O relógio e o texto de canos saíram do HUD de cima
+func limpar_textos_hud():
 	var lt = hud.get_node_or_null("PainelInformacoes/Tempo")
 	if lt:
 		lt.text = ""
+	var lc = hud.get_node_or_null("PainelInformacoes/CanosRestantes")
+	if lc:
+		lc.text = ""
+
+
+# ---------------------------------------------------------------
+# FUNDO
+# ---------------------------------------------------------------
+
+func criar_fundo(tamanho: Vector2, vp: Vector2):
+	var camada = CanvasLayer.new()
+	camada.layer = 4
+	add_child(camada)
+
+	var grad = Gradient.new()
+	grad.set_color(0, Color(0.16, 0.11, 0.24))
+	grad.set_color(1, Color(0.04, 0.03, 0.07))
+
+	var tex = GradientTexture2D.new()
+	tex.gradient = grad
+	tex.fill = GradientTexture2D.FILL_RADIAL
+	tex.fill_from = Vector2(0.5, 0.5)
+	tex.fill_to = Vector2(1.0, 0.5)
+	tex.width = 512
+	tex.height = 512
+
+	var fundo = TextureRect.new()
+	fundo.texture = tex
+	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fundo.stretch_mode = TextureRect.STRETCH_SCALE
+	fundo.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	fundo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	camada.add_child(fundo)
+
+	var topo_esq = Vector2((vp.x - tamanho.x) / 2.0, 110.0)
+	var moldura = Panel.new()
+	var estilo = StyleBoxFlat.new()
+	estilo.bg_color = Color(0.2, 0.12, 0.08)
+	estilo.border_color = Color(0.1, 0.06, 0.04)
+	estilo.set_border_width_all(4)
+	estilo.set_corner_radius_all(4)
+	moldura.add_theme_stylebox_override("panel", estilo)
+	moldura.position = topo_esq - Vector2(10, 10)
+	moldura.size = tamanho + Vector2(20, 20)
+	moldura.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	camada.add_child(moldura)
+
+
+# ---------------------------------------------------------------
+# BARRA DE SELEÇÃO DE CANOS (embaixo, fixa na base)
+# ---------------------------------------------------------------
+
+func criar_barra_selecao():
+	var camada = CanvasLayer.new()
+	camada.layer = 8
+	add_child(camada)
+
+	var atlas = load(CAMINHO_ATLAS)
+
+	var barra = HBoxContainer.new()
+	barra.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	barra.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	barra.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	barra.offset_bottom = -16
+	barra.add_theme_constant_override("separation", 12)
+	camada.add_child(barra)
+
+	for i in range(3):
+		var painel = PanelContainer.new()
+		painel.custom_minimum_size = Vector2(76, 76)
+		painel.mouse_filter = Control.MOUSE_FILTER_STOP
+		barra.add_child(painel)
+
+		var tex_rect = TextureRect.new()
+		tex_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		tex_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		tex_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+		if atlas:
+			var at = AtlasTexture.new()
+			at.atlas = atlas
+			at.region = REGIOES_CANOS[i]
+			tex_rect.texture = at
+
+		painel.add_child(tex_rect)
+
+		var tecla = Label.new()
+		tecla.text = str(i + 1)
+		tecla.add_theme_font_size_override("font_size", 14)
+		tecla.add_theme_constant_override("outline_size", 4)
+		tecla.add_theme_color_override("font_outline_color", Color.BLACK)
+		tecla.position = Vector2(6, 2)
+		tecla.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		painel.add_child(tecla)
+
+		painel.gui_input.connect(_ao_clicar_slot.bind(i))
+		slots_barra.append(painel)
+
+	atualizar_hud_canos()
+
+
+func _ao_clicar_slot(event: InputEvent, indice: int):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		tipo_cano_selecionado = indice
+		atualizar_hud_canos()
+
+
+func atualizar_hud_canos():
+	for i in range(slots_barra.size()):
+		var estilo = StyleBoxFlat.new()
+		estilo.set_corner_radius_all(4)
+		estilo.set_border_width_all(3)
+
+		if i == tipo_cano_selecionado:
+			estilo.bg_color = Color(0.25, 0.3, 0.4, 0.95)
+			estilo.border_color = Color(0.9, 0.95, 1.0)
+			slots_barra[i].modulate = Color.WHITE
+		else:
+			estilo.bg_color = Color(0.1, 0.1, 0.14, 0.85)
+			estilo.border_color = Color(0.25, 0.25, 0.3)
+			slots_barra[i].modulate = Color(0.65, 0.65, 0.65)
+
+		slots_barra[i].add_theme_stylebox_override("panel", estilo)
 
 
 func _input(event):
@@ -216,19 +363,6 @@ func _input(event):
 # ---------------------------------------------------------------
 # CANOS (infinitos)
 # ---------------------------------------------------------------
-
-func atualizar_hud_canos():
-	var nomes = ["1 RETO", "2 CURVA", "3 CRUZ"]
-	var partes = []
-
-	for i in range(nomes.size()):
-		var s = nomes[i]
-		if i == tipo_cano_selecionado:
-			s = "[" + s + "]"
-		partes.append(s)
-
-	hud.atualizar_canos("  ".join(partes))
-
 
 func tentar_colocar_cano(celula):
 	if not jogando or partida_encerrada:
@@ -251,6 +385,7 @@ func iniciar_intro():
 	if tutorial_visto:
 		mostrar_preview()
 	else:
+		tutorial_do_preview = false
 		pagina_tutorial = 0
 		mostrar_pagina_tutorial()
 
@@ -262,13 +397,6 @@ func criar_interface_intro():
 	camada_intro.layer = 10
 	add_child(camada_intro)
 
-	var fundo = ColorRect.new()
-	fundo.color = Color(0.1, 0.1, 0.1, 0.45)
-	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
-	fundo.mouse_filter = Control.MOUSE_FILTER_STOP
-	camada_intro.add_child(fundo)
-
-	# Painel na lateral, para o mapa ficar visível no preview
 	painel_intro = PanelContainer.new()
 	painel_intro.custom_minimum_size = Vector2(330, 0)
 	painel_intro.position = Vector2(vp.x - 360, 200)
@@ -291,8 +419,19 @@ func criar_interface_intro():
 
 	var botoes = HBoxContainer.new()
 	botoes.alignment = BoxContainer.ALIGNMENT_CENTER
-	botoes.add_theme_constant_override("separation", 12)
+	botoes.add_theme_constant_override("separation", 8)
 	caixa.add_child(botoes)
+
+	botao_voltar = Button.new()
+	botao_voltar.text = "Voltar"
+	botao_voltar.pressed.connect(_ao_clicar_voltar)
+	botoes.add_child(botao_voltar)
+
+	botao_ajuda = Button.new()
+	botao_ajuda.text = "?"
+	botao_ajuda.tooltip_text = "Ver o tutorial de novo"
+	botao_ajuda.pressed.connect(_ao_clicar_ajuda)
+	botoes.add_child(botao_ajuda)
 
 	botao_pular = Button.new()
 	botao_pular.pressed.connect(_ao_clicar_pular)
@@ -307,6 +446,8 @@ func criar_interface_intro():
 	rotulo_contagem.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	rotulo_contagem.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	rotulo_contagem.add_theme_font_size_override("font_size", 120)
+	rotulo_contagem.add_theme_constant_override("outline_size", 12)
+	rotulo_contagem.add_theme_color_override("font_outline_color", Color.BLACK)
 	rotulo_contagem.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	rotulo_contagem.pivot_offset = vp / 2.0
 	rotulo_contagem.visible = false
@@ -316,48 +457,105 @@ func criar_interface_intro():
 func mostrar_pagina_tutorial():
 	modo_intro = "tutorial"
 	var pagina = PAGINAS_TUTORIAL[pagina_tutorial]
-	titulo_intro.text = pagina[0]
+	titulo_intro.text = "%s (%d/%d)" % [pagina[0], pagina_tutorial + 1, PAGINAS_TUTORIAL.size()]
 	texto_intro.text = pagina[1]
+
 	var ultima = pagina_tutorial == PAGINAS_TUTORIAL.size() - 1
+
+	botao_voltar.visible = pagina_tutorial > 0
+	botao_ajuda.visible = false
 	botao_principal.visible = true
 	botao_principal.text = "Entendi" if ultima else "Próximo"
-	botao_pular.text = "Pular tutorial"
 	botao_pular.visible = true
+	botao_pular.text = "Fechar" if tutorial_do_preview else "Pular tutorial"
+
+
+func _ao_clicar_voltar():
+	if modo_intro == "tutorial" and pagina_tutorial > 0:
+		pagina_tutorial -= 1
+		mostrar_pagina_tutorial()
+
+
+# "?" no preview: abre o tutorial e pausa a contagem do preview
+func _ao_clicar_ajuda():
+	if modo_intro != "preview":
+		return
+
+	tutorial_do_preview = true
+	preview_pausado = true
+	pagina_tutorial = 0
+	mostrar_pagina_tutorial()
+
+
+func terminar_tutorial():
+	if tutorial_do_preview:
+		tutorial_do_preview = false
+		preview_pausado = false
+		modo_intro = "preview"
+		mostrar_interface_preview()
+		desenhar_texto_preview()
+	else:
+		tutorial_visto = true
+		mostrar_preview()
+
+
+func mostrar_interface_preview():
+	titulo_intro.text = "FASE %d: PLANEJE" % (fase_atual + 1)
+	botao_voltar.visible = false
+	botao_ajuda.visible = true
+
+	if fase["preview"] > 0:
+		botao_principal.visible = false
+		botao_pular.visible = true
+		botao_pular.text = "Pular"
+	else:
+		botao_principal.visible = true
+		botao_principal.text = "INICIAR"
+		botao_pular.visible = false
+
+
+func desenhar_texto_preview():
+	if fase["preview"] > 0:
+		texto_intro.text = "%s%s\n\nComeça em %d s..." % [texto_preview_base, texto_preview_extra, preview_restante]
+	else:
+		texto_intro.text = texto_preview_base + texto_preview_extra + "\n\nQuando estiver pronto, clique em INICIAR."
 
 
 func mostrar_preview():
 	modo_intro = "preview"
 	preview_pulado = false
-	titulo_intro.text = "FASE %d: PLANEJE" % (fase_atual + 1)
+	preview_pausado = false
+	tutorial_do_preview = false
 
-	var base = "Cave (botão direito) e coloque canos (botão esquerdo) da fonte até o topo, desviando das áreas contaminadas (verdes) e das pedras (cinza)."
-	var extra = "\n\nAs áreas contaminadas vão DESAPARECER. Memorize onde estão!" if fase["ocultas"] else ""
+	texto_preview_base = "Cave (botão direito) e coloque canos (botão esquerdo) da fonte até o topo, desviando das áreas contaminadas (verdes) e das pedras (cinza)."
+	texto_preview_extra = "\n\nAs áreas contaminadas vão DESAPARECER. Memorize onde estão!" if fase["ocultas"] else ""
+
+	mostrar_interface_preview()
 
 	if fase["preview"] > 0:
-		botao_principal.visible = false
-		botao_pular.text = "Pular"
-		botao_pular.visible = true
+		preview_restante = int(fase["preview"])
 
-		var restante = int(fase["preview"])
-		while restante > 0 and not preview_pulado:
-			texto_intro.text = "%s%s\n\nComeça em %d s..." % [base, extra, restante]
+		while preview_restante > 0 and not preview_pulado:
+			if preview_pausado:
+				await get_tree().create_timer(0.1).timeout
+				continue
+
+			desenhar_texto_preview()
 			await get_tree().create_timer(1.0).timeout
-			restante -= 1
+
+			if not preview_pausado:
+				preview_restante -= 1
 
 		comecar_contagem()
 	else:
-		texto_intro.text = base + extra + "\n\nQuando estiver pronto, clique em INICIAR."
-		botao_principal.text = "INICIAR"
-		botao_principal.visible = true
-		botao_pular.visible = false
+		desenhar_texto_preview()
 
 
 func _ao_clicar_principal():
 	if modo_intro == "tutorial":
 		pagina_tutorial += 1
 		if pagina_tutorial >= PAGINAS_TUTORIAL.size():
-			tutorial_visto = true
-			mostrar_preview()
+			terminar_tutorial()
 		else:
 			mostrar_pagina_tutorial()
 	elif modo_intro == "preview":
@@ -366,10 +564,8 @@ func _ao_clicar_principal():
 
 func _ao_clicar_pular():
 	if modo_intro == "tutorial":
-		tutorial_visto = true
-		mostrar_preview()
+		terminar_tutorial()
 	elif modo_intro == "preview":
-		# Encerra o preview com tempo; o laço do preview inicia a contagem
 		preview_pulado = true
 
 
@@ -437,21 +633,7 @@ func iniciar_fluxo_agua():
 	if partida_encerrada:
 		return
 
-	var direcoes = []
-	var decorrido = 0.0
-
-	while true:
-		direcoes = achar_saidas_fonte()
-
-		if direcoes.size() > 0 or decorrido > tempo_espera_agua:
-			break
-
-		await get_tree().create_timer(0.05).timeout
-
-		if partida_encerrada:
-			return
-
-		decorrido += 0.05
+	var direcoes = achar_saidas_fonte()
 
 	if direcoes.is_empty():
 		derrotar_jogo("sem_cano")
@@ -508,9 +690,9 @@ func fluxir(pos: Vector2i, entrada: String, trilha: Trilha):
 	while not partida_encerrada:
 		var celula = celulas[pos.y][pos.x]
 
-		if not await esperar_conexao(celula, entrada):
-			if not partida_encerrada:
-				derrotar_jogo("sem_cano")
+		# Chegou e não tem cano que encaixe: perdeu na hora
+		if not (celula.cano_colocado and entrada in celula.obter_conexoes()):
+			derrotar_jogo("sem_cano")
 			return
 
 		celula.agua_chegou = true
@@ -597,23 +779,6 @@ func avancar(pos: Vector2i, saida: String) -> bool:
 		return false
 
 	return true
-
-
-func esperar_conexao(celula, entrada: String) -> bool:
-	var decorrido = 0.0
-
-	while decorrido <= tempo_espera_agua:
-		if celula.cano_colocado and entrada in celula.obter_conexoes():
-			return true
-
-		await get_tree().create_timer(0.05).timeout
-
-		if partida_encerrada:
-			return false
-
-		decorrido += 0.05
-
-	return false
 
 
 func tem_contaminacao_ao_redor(celula) -> bool:
@@ -852,7 +1017,7 @@ func derrotar_jogo(motivo = "sem_cano"):
 
 	await get_tree().create_timer(0.7).timeout
 
-	mostrar_resultado("IT'S OVER", texto, "Tentar novamente", reiniciar_fase, CURIOSIDADES.pick_random())
+	mostrar_resultado("TENTE DE NOVO", texto, "Tentar novamente", reiniciar_fase, CURIOSIDADES.pick_random())
 
 
 func mostrar_resultado(titulo_txt: String, corpo: String, rotulo_botao: String, acao: Callable, curiosidade: Dictionary = {}):

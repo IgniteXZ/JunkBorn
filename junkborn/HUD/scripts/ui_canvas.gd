@@ -2,6 +2,11 @@ extends CanvasLayer
 
 # atalho abrir e fechar inventario
 func _process(_delta: float) -> void:
+	
+	if get_tree().get_nodes_in_group("minigame_aberto").size() > 0:
+		$inventory.visible = false
+		return
+	
 	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false):
 		$inventory.visible = not $inventory.visible
 
