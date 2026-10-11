@@ -97,15 +97,22 @@ func _quando_clicou(viewport, event, shape_idx):
 		return
 
 	# Botão esquerdo
+		# Botão esquerdo
 	if cano_colocado:
 		if agua_chegou:
 			return
 
-		$Cano.rotation_degrees = wrapi(
-			int($Cano.rotation_degrees) + 90,
-			0,
-			360
-		)
+		var selecionado = get_parent().tipo_cano_selecionado
+
+		if selecionado != tipo_cano:
+			# Outro tipo selecionado: troca o cano (a água ainda não chegou)
+			definir_cano(selecionado)
+		else:
+			$Cano.rotation_degrees = wrapi(
+				int($Cano.rotation_degrees) + 90,
+				0,
+				360
+			)
 	elif cavado:
 		get_parent().tentar_colocar_cano(self)
 
