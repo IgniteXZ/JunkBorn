@@ -10,9 +10,8 @@ const RAIO_CURVA = 24.0
 const LARGURA_AGUA = 10.0
 const LARGURA_CONTORNO = 14.0
 
-const MINIMO_TOTAL = 67
-
-static var reserva = {}
+# Requisito simples: o lago confere 1 de cada tipo + pá (ajuste no canos_game.gd)
+const MINIMO_TOTAL = 3
 
 const TIPOS = ["reto", "curva", "cruz"]
 
@@ -39,26 +38,28 @@ const CURIOSIDADES = [
 	},
 ]
 
-const CODIGOS = {"T": 3, "D": 3, "P": 2, "M": 6, "N": 5, "S": 3}
+# T = terra, D = chão duro, P = pedra, M = área contaminada (só em terra), S = fonte
+const CODIGOS = {"T": 3, "D": 3, "P": 2, "M": 6, "S": 3}
 
+# preview: 0 = livre (botão INICIAR); acima de 0 = segundos, com botão Pular
 const FASES = [
 	{
-		"tamanho": 8, "minas": 8, "pedras": 6, "duros": 5, "desvio": 2,
+		"tamanho": 8, "minas": 10, "pedras": 8, "duros": 5, "desvio": 2,
 		"preview": 0, "ocultas": false,
-		"velocidade": "LENTA", "tempo": 60.0,
-		"duracao_celula": 0.8, "tolerancia": 1.5, "folga": 4.0,
+		"velocidade": "LENTA",
+		"duracao_celula": 2.5, "tolerancia": 0.3, "folga": 5.0,
 	},
 	{
-		"tamanho": 9, "minas": 14, "pedras": 8, "duros": 10, "desvio": 3,
-		"preview": 8, "ocultas": true,
-		"velocidade": "MÉDIA", "tempo": 50.0,
-		"duracao_celula": 0.6, "tolerancia": 1.5, "folga": 3.0,
+		"tamanho": 9, "minas": 17, "pedras": 11, "duros": 10, "desvio": 3,
+		"preview": 20, "ocultas": true,
+		"velocidade": "MÉDIA",
+		"duracao_celula": 2.0, "tolerancia": 0.3, "folga": 5.0,
 	},
 	{
-		"tamanho": 10, "minas": 22, "pedras": 10, "duros": 14, "desvio": 4,
-		"preview": 5, "ocultas": true,
-		"velocidade": "RÁPIDA", "tempo": 45.0,
-		"duracao_celula": 0.45, "tolerancia": 1.5, "folga": 2.0,
+		"tamanho": 10, "minas": 26, "pedras": 14, "duros": 14, "desvio": 4,
+		"preview": 30, "ocultas": true,
+		"velocidade": "RÁPIDA",
+		"duracao_celula": 1.5, "tolerancia": 0.3, "folga": 5.0,
 	},
 ]
 
@@ -66,14 +67,16 @@ const FASES = [
 static var fase_atual = 0
 static var tutorial_visto = false
 static var mapa_salvo = []
-var minimo_fase = 0
-static var inventario = {"reto": 45, "curva": 30, "cruz": 5}
+# O lago grava aqui o que o jogador tem; ao concluir tudo, sai 1 de cada tipo
+static var inventario = {"reto": 1, "curva": 1, "cruz": 1}
+static var reserva = {}
 
+# Texto provisório (você vai mandar o definitivo)
 const PAGINAS_TUTORIAL = [
-	["OBJETIVO", "Leve a água da fonte (quadrado azul) até o topo do tabuleiro montando a tubulação."],
-	["CONTROLES", "Botão DIREITO: cava a terra (o chão acinzentado é duro e leva 2 cliques).\nBotão ESQUERDO: coloca um cano na terra cavada (ou gira o cano, antes da água chegar).\nTeclas: 1 = reto, 2 = curva, 3 = cruz."],
-	["A ÁGUA", "Depois do VAI!, a água sai sozinha da fonte pelo lado em que houver um cano ligado a ela. Se ela chegar em uma célula sem cano, você perde."],
-	["CUIDADO", "Minas: clicar nelas ou deixar a água apontar para elas faz você perder. Pedras não aceitam cano.\nO CRUZ divide a água nos 3 outros lados: todos precisam ter cano.\nVocê também perde se a água vazar, se faltar cano ou se o tempo acabar."],
+	["OBJETIVO", "Leve a água que sai do bloco azul até o topo do tabuleiro, montando uma tubulação.\nDepois do VAI!, a água sai sozinha em 5 segundos e não espera ninguém."],
+	["CONTROLES", "Botão DIREITO: cava a terra (chão acinzentado é duro e leva 2 cliques).\nBotão ESQUERDO: coloca um cano na terra cavada. Clicar num cano o gira, só até a água chegar nele."],
+	["OS CANOS", "Teclas 1, 2 e 3 trocam o cano.\n1 Reto: liga dois lados opostos.\n2 Curva: liga dois lados vizinhos.\n3 Cruz: liga os quatro lados e divide a água. Todos os lados precisam ter cano."],
+	["CUIDADO", "Áreas contaminadas (verdes): clicar nelas, ou deixar a água chegar perto delas, faz você perder. Pedras não aceitam cano.\nVocê também perde se a água vazar ou chegar onde não há cano.\nNas fases 2 e 3 as áreas contaminadas somem depois do preview. Memorize onde estão!"],
 ]
 
 var fase: Dictionary
@@ -82,15 +85,11 @@ var linhas = 8
 var fonte = Vector2i.ZERO
 var celulas = []
 
-var estoque = {}
-var usados = {"reto": 0, "curva": 0, "cruz": 0}
 var tipo_cano_selecionado = 0
 
-var duracao_celula = 0.5
-var tempo_espera_agua = 1.0
-var folga_agua = 3.0
-var tempo_restante = 45.0
-var cronometro_ativo = false
+var duracao_celula = 2.5
+var tempo_espera_agua = 0.3
+var folga_agua = 5.0
 
 var cena_celula = preload("res://Minigames/Canos/tscn/cell.tscn")
 @onready var hud = get_parent().get_node("HUD")
@@ -104,6 +103,7 @@ var partida_encerrada = false
 
 var modo_intro = ""
 var pagina_tutorial = 0
+var preview_pulado = false
 var camada_intro: CanvasLayer
 var painel_intro: PanelContainer
 var titulo_intro: Label
@@ -133,10 +133,6 @@ class Trilha:
 func _ready():
 	fase = FASES[fase_atual]
 
-	if fase_atual == 0 and reserva.is_empty():
-		reserva = inventario.duplicate()
-	estoque = reserva.duplicate()
-
 	if mapa_salvo.is_empty():
 		mapa_salvo = gerar_mapa(
 			fase["tamanho"],
@@ -153,7 +149,6 @@ func _ready():
 	duracao_celula = fase["duracao_celula"]
 	tempo_espera_agua = fase["tolerancia"]
 	folga_agua = fase["folga"]
-	tempo_restante = fase["tempo"]
 
 	var tamanho = Vector2(colunas, linhas) * TAMANHO_CELULA
 	var vp = get_viewport_rect().size
@@ -190,14 +185,20 @@ func _ready():
 	camada_agua = Node2D.new()
 	add_child(camada_agua)
 
-	hud.atualizar_tempo.call_deferred(ceili(tempo_restante))
 	hud.atualizar_fase.call_deferred(fase_atual + 1, FASES.size())
 	hud.atualizar_velocidade.call_deferred(fase["velocidade"])
+	limpar_texto_tempo.call_deferred()
 	atualizar_hud_canos.call_deferred()
 
-	minimo_fase = caminho_minimo(mapa, linhas, fonte.x) + 2
-
 	iniciar_intro()
+
+
+# O relógio foi removido: esvazia o texto do tempo no HUD
+func limpar_texto_tempo():
+	var lt = hud.get_node_or_null("PainelInformacoes/Tempo")
+	if lt:
+		lt.text = ""
+
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -212,39 +213,16 @@ func _input(event):
 		atualizar_hud_canos()
 
 
-func _process(delta):
-	if not cronometro_ativo or partida_encerrada:
-		return
-
-	tempo_restante -= delta
-
-	if tempo_restante <= 0.0:
-		tempo_restante = 0.0
-		cronometro_ativo = false
-		hud.atualizar_tempo(0)
-		derrotar_jogo("tempo")
-		return
-
-	hud.atualizar_tempo(ceili(tempo_restante))
-
-
 # ---------------------------------------------------------------
-# INVENTÁRIO
+# CANOS (infinitos)
 # ---------------------------------------------------------------
-
-func total_canos() -> int:
-	var soma = 0
-	for t in TIPOS:
-		soma += estoque[t]
-	return soma
-
 
 func atualizar_hud_canos():
+	var nomes = ["1 RETO", "2 CURVA", "3 CRUZ"]
 	var partes = []
 
-	for i in range(TIPOS.size()):
-		var t = TIPOS[i]
-		var s = "%s %d" % [t.to_upper(), estoque[t]]
+	for i in range(nomes.size()):
+		var s = nomes[i]
 		if i == tipo_cano_selecionado:
 			s = "[" + s + "]"
 		partes.append(s)
@@ -256,37 +234,26 @@ func tentar_colocar_cano(celula):
 	if not jogando or partida_encerrada:
 		return
 
-	var tipo = TIPOS[tipo_cano_selecionado]
-
-	if estoque[tipo] <= 0:
-		return
-
 	if not celula.pode_receber_cano() or celula.cano_colocado:
 		return
 
 	celula.colocar_cano(tipo_cano_selecionado)
-	estoque[tipo] -= 1
-	usados[tipo] += 1
-	atualizar_hud_canos()
 
 
 # ---------------------------------------------------------------
-# INTRO: bloqueio, tutorial, preview e contagem
+# INTRO: tutorial, preview e contagem
 # ---------------------------------------------------------------
 
 func iniciar_intro():
 	jogando = false
 	criar_interface_intro()
 
-	if fase_atual == 0 and total_canos() < MINIMO_TOTAL:
-		mostrar_bloqueio()
-	elif total_canos() < minimo_fase:
-		mostrar_travado()
-	elif tutorial_visto:
+	if tutorial_visto:
 		mostrar_preview()
 	else:
 		pagina_tutorial = 0
 		mostrar_pagina_tutorial()
+
 
 func criar_interface_intro():
 	var vp = get_viewport_rect().size
@@ -328,7 +295,6 @@ func criar_interface_intro():
 	caixa.add_child(botoes)
 
 	botao_pular = Button.new()
-	botao_pular.text = "Pular tutorial"
 	botao_pular.pressed.connect(_ao_clicar_pular)
 	botoes.add_child(botao_pular)
 
@@ -347,31 +313,34 @@ func criar_interface_intro():
 	camada_intro.add_child(rotulo_contagem)
 
 
-
 func mostrar_pagina_tutorial():
 	modo_intro = "tutorial"
 	var pagina = PAGINAS_TUTORIAL[pagina_tutorial]
 	titulo_intro.text = pagina[0]
 	texto_intro.text = pagina[1]
 	var ultima = pagina_tutorial == PAGINAS_TUTORIAL.size() - 1
+	botao_principal.visible = true
 	botao_principal.text = "Entendi" if ultima else "Próximo"
+	botao_pular.text = "Pular tutorial"
 	botao_pular.visible = true
 
 
 func mostrar_preview():
 	modo_intro = "preview"
+	preview_pulado = false
 	titulo_intro.text = "FASE %d: PLANEJE" % (fase_atual + 1)
 
-	var base = "Cave (botão direito) e coloque canos (botão esquerdo) da fonte até o topo, desviando das minas (verde) e das pedras (cinza)."
-	var extra = "\n\nAs minas vão DESAPARECER. Memorize onde estão!" if fase["ocultas"] else ""
+	var base = "Cave (botão direito) e coloque canos (botão esquerdo) da fonte até o topo, desviando das áreas contaminadas (verdes) e das pedras (cinza)."
+	var extra = "\n\nAs áreas contaminadas vão DESAPARECER. Memorize onde estão!" if fase["ocultas"] else ""
 
 	if fase["preview"] > 0:
 		botao_principal.visible = false
-		botao_pular.visible = false
+		botao_pular.text = "Pular"
+		botao_pular.visible = true
 
 		var restante = int(fase["preview"])
-		while restante > 0:
-			texto_intro.text = "%s%s\n\nComeça em %d..." % [base, extra, restante]
+		while restante > 0 and not preview_pulado:
+			texto_intro.text = "%s%s\n\nComeça em %d s..." % [base, extra, restante]
 			await get_tree().create_timer(1.0).timeout
 			restante -= 1
 
@@ -393,20 +362,21 @@ func _ao_clicar_principal():
 			mostrar_pagina_tutorial()
 	elif modo_intro == "preview":
 		comecar_contagem()
-	elif modo_intro == "bloqueado":
-		sair_solicitado.emit()
-	elif modo_intro == "travado":
-		fase_atual = 0
-		reserva = {}
-		mapa_salvo = []
-		reiniciar_solicitado.emit()
+
 
 func _ao_clicar_pular():
-	tutorial_visto = true
-	mostrar_preview()
+	if modo_intro == "tutorial":
+		tutorial_visto = true
+		mostrar_preview()
+	elif modo_intro == "preview":
+		# Encerra o preview com tempo; o laço do preview inicia a contagem
+		preview_pulado = true
 
 
 func comecar_contagem():
+	if modo_intro == "contagem":
+		return
+
 	modo_intro = "contagem"
 	painel_intro.visible = false
 	rotulo_contagem.visible = true
@@ -425,7 +395,6 @@ func comecar_contagem():
 
 	camada_intro.queue_free()
 	jogando = true
-	cronometro_ativo = true
 	iniciar_fluxo_agua()
 
 
@@ -435,6 +404,10 @@ func esconder_minas():
 			if c.eh_mina():
 				c.ocultar_mina()
 
+
+# ---------------------------------------------------------------
+# FLUXO DA ÁGUA
+# ---------------------------------------------------------------
 
 func achar_saidas_fonte() -> Array:
 	var saidas = []
@@ -452,13 +425,14 @@ func achar_saidas_fonte() -> Array:
 
 	return saidas
 
+
 func iniciar_fluxo_agua():
 	if partida_encerrada or agua_movendo:
 		return
 
 	agua_movendo = true
 
-	await get_tree().create_timer(folga_agua).timeout
+	await contagem_folga()
 
 	if partida_encerrada:
 		return
@@ -480,11 +454,38 @@ func iniciar_fluxo_agua():
 		decorrido += 0.05
 
 	if direcoes.is_empty():
-		derrotar_jogo("tempo")
+		derrotar_jogo("sem_cano")
 		return
 
 	for d in direcoes:
 		sair_da_fonte(d)
+
+
+# Mostra "A água sai em Xs" durante a folga inicial
+func contagem_folga():
+	var camada = CanvasLayer.new()
+	camada.layer = 7
+	add_child(camada)
+
+	var rotulo = Label.new()
+	rotulo.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	rotulo.offset_top = 190
+	rotulo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	rotulo.add_theme_font_size_override("font_size", 24)
+	rotulo.add_theme_constant_override("outline_size", 8)
+	rotulo.add_theme_color_override("font_outline_color", Color.BLACK)
+	rotulo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	camada.add_child(rotulo)
+
+	var restante = folga_agua
+
+	while restante > 0.0 and not partida_encerrada:
+		rotulo.text = "A água sai em %d s" % ceili(restante)
+		await get_tree().create_timer(0.1).timeout
+		restante -= 0.1
+
+	camada.queue_free()
+
 
 func sair_da_fonte(direcao: String):
 	var primeira = obter_proxima_posicao(fonte, direcao)
@@ -502,13 +503,14 @@ func sair_da_fonte(direcao: String):
 
 	await fluxir(primeira, entrada, trilha)
 
+
 func fluxir(pos: Vector2i, entrada: String, trilha: Trilha):
 	while not partida_encerrada:
 		var celula = celulas[pos.y][pos.x]
 
 		if not await esperar_conexao(celula, entrada):
 			if not partida_encerrada:
-				derrotar_jogo("tempo")
+				derrotar_jogo("sem_cano")
 			return
 
 		celula.agua_chegou = true
@@ -581,7 +583,7 @@ func ramificar(pos: Vector2i, saida: String):
 
 func avancar(pos: Vector2i, saida: String) -> bool:
 	var proxima = obter_proxima_posicao(pos, saida)
-	
+
 	if proxima == fonte:
 		derrotar_jogo("vazamento")
 		return false
@@ -812,44 +814,39 @@ func ganhar_jogo():
 
 	partida_encerrada = true
 	agua_movendo = false
-	cronometro_ativo = false
-
-	# Só na vitória o que foi usado sai do inventário
-	var gasto = []
-	for t in TIPOS:
-		reserva[t] = max(0, reserva[t] - usados[t])
-		if usados[t] > 0:
-			gasto.append("%d %s" % [usados[t], t])
-
-	var resumo = "Canos usados: " + (", ".join(gasto) if gasto.size() > 0 else "nenhum")
 
 	await get_tree().create_timer(0.7).timeout
 
 	if fase_atual < FASES.size() - 1:
-		mostrar_resultado("FASE CONCLUÍDA!", resumo, "Próxima fase", proxima_fase)
+		mostrar_resultado("FASE CONCLUÍDA!", "A água chegou ao topo!", "Próxima fase", proxima_fase)
 	else:
-		mostrar_resultado("TUBULAÇÃO COMPLETA!", resumo, "Concluir", concluir_minigame)
+		mostrar_resultado(
+			"TUBULAÇÃO COMPLETA!",
+			"Ao concluir, 1 cano de cada tipo sai do seu inventário.",
+			"Concluir",
+			concluir_minigame
+		)
 
 
-func derrotar_jogo(motivo = "tempo"):
+func derrotar_jogo(motivo = "sem_cano"):
 	if partida_encerrada:
 		return
 
 	partida_encerrada = true
 	agua_movendo = false
-	cronometro_ativo = false
 	revelar_minas()
+
 	var texto = "Você não conseguiu completar a tubulação."
 
 	match motivo:
-		"tempo":
-			texto = "O tempo acabou ou a água ficou sem cano!\nVocê não completou a tubulação a tempo."
+		"sem_cano":
+			texto = "A água chegou onde não havia cano!\nA tubulação não acompanhou o fluxo."
 		"mina":
-			texto = "Você tocou em uma área minada!\nA contaminação tornou a operação impossível."
+			texto = "Você tocou em uma área contaminada!\nA contaminação tornou a operação impossível."
 		"vazamento":
 			texto = "A água vazou para fora do tabuleiro!\nA tubulação não conseguiu conter o fluxo."
 		"contaminacao":
-			texto = "A água encontrou uma área minada!\nA contaminação se espalhou pela tubulação."
+			texto = "A água encontrou uma área contaminada!\nA contaminação se espalhou pela tubulação."
 
 	texto += "\n\nSeus canos continuam no inventário."
 
@@ -917,6 +914,7 @@ func mostrar_resultado(titulo_txt: String, corpo: String, rotulo_botao: String, 
 	botao.pressed.connect(acao)
 	caixa.add_child(botao)
 
+
 func reiniciar_fase():
 	reiniciar_solicitado.emit()
 
@@ -928,87 +926,114 @@ func proxima_fase():
 
 
 func concluir_minigame():
-	inventario = reserva.duplicate()
+	# Só na vitória final: sai 1 de cada tipo (o lago calcula o gasto por diferença)
+	for t in TIPOS:
+		inventario[t] = max(0, inventario[t] - 1)
+
 	reserva = {}
 	fase_atual = 0
 	mapa_salvo = []
 	minigame_concluido.emit()
-	
-	
+
+
+# ---------------------------------------------------------------
+# GERADOR DE MAPA
+# ---------------------------------------------------------------
+
 func gerar_mapa(n: int, minas: int, pedras: int, duros: int, desvio_min: int) -> Array:
 	var melhor = null
 
-	for tentativa in range(300):
-		var g = []
-		for y in range(n):
-			g.append([])
-			for x in range(n):
-				g[y].append("T")
+	# Se não achar mapa com o desvio pedido, vai relaxando até 0
+	for desvio in range(desvio_min, -1, -1):
+		for tentativa in range(150):
+			var g = montar_mapa(n, minas, pedras, duros)
+			var fx = encontrar_fonte(g, n)
+			var c = caminho_minimo(g, n, fx)
 
-		var fx = randi_range(1, n - 2)
-		g[n - 1][fx] = "S"
+			if c >= n - 1 + desvio:
+				return g
+			if c > 0:
+				melhor = g
 
-		# Livres: tudo, menos a fonte e os vizinhos dela (cima, esquerda, direita)
-		var livres = []
-		for y in range(n):
-			for x in range(n):
-				if abs(x - fx) + (n - 1 - y) <= 1:
-					continue
-				livres.append(Vector2i(x, y))
-		livres.shuffle()
-
-		var colocadas = 0
-		var tentativas = 0
-
-		while colocadas < pedras and tentativas < 500:
-			tentativas += 1
-			var o = livres[randi() % livres.size()]
-			var tamanho_mancha = randi_range(3, 6)
-			var frente = [o]
-
-			while frente.size() > 0 and tamanho_mancha > 0 and colocadas < pedras:
-				var p = frente.pop_at(randi() % frente.size())
-
-				if g[p.y][p.x] != "T" or not (p in livres):
-					continue
-
-				g[p.y][p.x] = "P"
-				colocadas += 1
-				tamanho_mancha -= 1
-
-				for d in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
-					var q = p + d
-					if q.x >= 0 and q.x < n and q.y >= 0 and q.y < n:
-						frente.append(q)
-
-		var restantes = []
-		for p in livres:
-			if g[p.y][p.x] == "T":
-				restantes.append(p)
-		restantes.shuffle()
-
-		var i = 0
-
-		for k in range(minas):
-			if i >= restantes.size():
-				break
-			g[restantes[i].y][restantes[i].x] = "M" if randf() < 0.5 else "N"
-			i += 1
-
-		for k in range(duros):
-			if i >= restantes.size():
-				break
-			g[restantes[i].y][restantes[i].x] = "D"
-			i += 1
-
-		var c = caminho_minimo(g, n, fx)
-
-		if c >= n - 1 + desvio_min:
-			return g
-		if c > 0:
-			melhor = g
+		if melhor != null and desvio < desvio_min:
+			return melhor
 
 	return melhor
+
+
+func encontrar_fonte(g: Array, n: int) -> int:
+	for x in range(n):
+		if g[n - 1][x] == "S":
+			return x
+	return 0
+
+
+func montar_mapa(n: int, minas: int, pedras: int, duros: int) -> Array:
+	var g = []
+	for y in range(n):
+		g.append([])
+		for x in range(n):
+			g[y].append("T")
+
+	var fx = randi_range(1, n - 2)
+	g[n - 1][fx] = "S"
+
+	# Livres: tudo, menos a fonte e os vizinhos dela (cima, esquerda, direita)
+	var livres = []
+	for y in range(n):
+		for x in range(n):
+			if abs(x - fx) + (n - 1 - y) <= 1:
+				continue
+			livres.append(Vector2i(x, y))
+	livres.shuffle()
+
+	# Pedras em manchas
+	var colocadas = 0
+	var tentativas = 0
+
+	while colocadas < pedras and tentativas < 500:
+		tentativas += 1
+		var o = livres[randi() % livres.size()]
+		var tamanho_mancha = randi_range(3, 6)
+		var frente = [o]
+
+		while frente.size() > 0 and tamanho_mancha > 0 and colocadas < pedras:
+			var p = frente.pop_at(randi() % frente.size())
+
+			if g[p.y][p.x] != "T" or not (p in livres):
+				continue
+
+			g[p.y][p.x] = "P"
+			colocadas += 1
+			tamanho_mancha -= 1
+
+			for d in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
+				var q = p + d
+				if q.x >= 0 and q.x < n and q.y >= 0 and q.y < n:
+					frente.append(q)
+
+	var restantes = []
+	for p in livres:
+		if g[p.y][p.x] == "T":
+			restantes.append(p)
+	restantes.shuffle()
+
+	var i = 0
+
+	# Áreas contaminadas: só em terra
+	for k in range(minas):
+		if i >= restantes.size():
+			break
+		g[restantes[i].y][restantes[i].x] = "M"
+		i += 1
+
+	for k in range(duros):
+		if i >= restantes.size():
+			break
+		g[restantes[i].y][restantes[i].x] = "D"
+		i += 1
+
+	return g
 
 
 # Tamanho (em células) do caminho mais curto da fonte até o topo. -1 se não existe.
@@ -1053,21 +1078,3 @@ func revelar_minas():
 		for c in linha:
 			if c.eh_mina():
 				c.mostrar_mina()
-
-func mostrar_bloqueio():
-	modo_intro = "bloqueado"
-	reserva = {}
-	mapa_salvo = []
-	titulo_intro.text = "CANOS INSUFICIENTES"
-	texto_intro.text = "Para fazer o minigame você precisa de pelo menos %d canos no inventário (você tem %d)." \
-		% [MINIMO_TOTAL, total_canos()]
-	botao_principal.text = "Voltar"
-	botao_pular.visible = false
-
-
-func mostrar_travado():
-	modo_intro = "travado"
-	titulo_intro.text = "SEM CANOS"
-	texto_intro.text = "Os canos que sobraram não bastam para esta fase. Recomece do início: seu inventário continua intacto."
-	botao_principal.text = "Recomeçar do início"
-	botao_pular.visible = false
