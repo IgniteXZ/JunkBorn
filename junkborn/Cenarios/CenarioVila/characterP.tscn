@@ -1400,8 +1400,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7g8jk"]
-radius = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3loim"]
+radius = 13.849228
+height = 130.10791
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbqf3"]
 radius = 33.0
@@ -1659,22 +1660,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="mandacaru" type="CharacterBody2D" parent="y-sort" unique_id=1397314812]
+y_sort_enabled = true
 script = ExtResource("29_hs813")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/mandacaru" unique_id=651672611]
 y_sort_enabled = true
-position = Vector2(1234.0001, 164.00002)
+position = Vector2(1222, 161)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_sq0mp")
 frame = 1
 frame_progress = 0.9176922
 
 [node name="Mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
+y_sort_enabled = true
 position = Vector2(1234, 201)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_b33t2")
 
 [node name="Area2D" type="Area2D" parent="y-sort/mandacaru" unique_id=929955987]
+y_sort_enabled = true
 script = ExtResource("38_5d4lt")
 timeline = "mandacaruFala1"
 
@@ -1777,8 +1781,9 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ns0o7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc5" unique_id=1918696857]
-position = Vector2(1021, -3)
-shape = SubResource("CircleShape2D_7g8jk")
+position = Vector2(1301.0001, 89)
+rotation = -1.5952309
+shape = SubResource("CapsuleShape2D_3loim")
 
 [node name="DialogoNpc5" type="Area2D" parent="y-sort/npc5" unique_id=698870849]
 script = ExtResource("38_5d4lt")
