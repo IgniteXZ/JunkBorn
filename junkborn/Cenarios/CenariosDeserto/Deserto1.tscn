@@ -525,9 +525,10 @@ radius = 61.846584
 
 [sub_resource type="Resource" id="Resource_of28l"]
 script = ExtResource("15_s4fo3")
+id = 1
 nome = "Semente"
 textura = ExtResource("16_0mmed")
-id_item_mapa = "0"
+id_item_mapa = "1"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]

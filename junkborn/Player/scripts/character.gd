@@ -82,13 +82,18 @@ func _animate() -> void:
 func _process(_delta: float) -> void:
 	PassarCanvas.emit(canvaa)
 
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	pass
-
-
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	pass # Replace with function body.
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_1:
+			Global.trocarCenaSemSpawn(
+				"res://Cenarios/CenariosDeserto/Deserto1.tscn"
+			)
+		if event.keycode == KEY_2:
+			Global.trocarCenaSemSpawn(
+				"res://Cenarios/Cenario Fonte/fonte.tscn"
+			)
+		
+		
 
 
 func _on_empurrado_body_entered(body: Node2D) -> void:
