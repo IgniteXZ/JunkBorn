@@ -2,13 +2,20 @@
 
 [ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_uldkv"]
 [ext_resource type="Texture2D" uid="uid://eu5h3ougkq2w" path="res://Cenarios/cenario desertoFonte/tileset terrapedra.png" id="2_h1eus"]
+[ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_h1lxh"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="3_26iue"]
+[ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png" id="3_esxbg"]
 [ext_resource type="Texture2D" uid="uid://n575n5pnc2xf" path="res://Cenarios/CenariosDeserto/tileset/tileset pedrareia.png" id="4_fsomt"]
+[ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax2.png" id="4_xilwp"]
+[ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax1.png" id="5_ec6ab"]
 [ext_resource type="Texture2D" uid="uid://1slbbri1613g" path="res://Cenarios/CenariosDeserto/tileset/tileset terra pedrasa.png" id="5_h1lxh"]
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="6_esxbg"]
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="7_xilwp"]
 [ext_resource type="Texture2D" uid="uid://bn2c24f5jq8fr" path="res://Cenarios/Cenario Fonte/tileset fonte1.png" id="8_ec6ab"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_e1c8b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1c8b"]
+load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -709,6 +716,80 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_uldkv")
+
+[node name="ParallaxNode" type="Node2D" parent="." unique_id=1761516652]
+z_index = -1
+position = Vector2(-917, -400)
+
+[node name="Parallax5" type="Parallax2D" parent="ParallaxNode" unique_id=554180341]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(480, 0)
+repeat_size = Vector2(480, 0)
+autoscroll = Vector2(5, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax5" unique_id=690745024]
+texture = ExtResource("2_h1lxh")
+centered = false
+offset = Vector2(0, -150)
+
+[node name="Parallax4" type="Parallax2D" parent="ParallaxNode" unique_id=194766779]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(480, 0)
+repeat_size = Vector2(480, 0)
+autoscroll = Vector2(5, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax4" unique_id=871970654]
+texture = SubResource("CompressedTexture2D_e1c8b")
+centered = false
+offset = Vector2(0, -150)
+
+[node name="Parallax3" type="Parallax2D" parent="ParallaxNode" unique_id=2118696635]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(480, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax3" unique_id=1309866913]
+texture = ExtResource("3_esxbg")
+centered = false
+offset = Vector2(0, -150)
+
+[node name="Parallax2" type="Parallax2D" parent="ParallaxNode" unique_id=531658793]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(480, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax2" unique_id=1429640820]
+texture = ExtResource("4_xilwp")
+centered = false
+offset = Vector2(0, -150)
+
+[node name="Parallax1" type="Parallax2D" parent="ParallaxNode" unique_id=1801463483]
+texture_filter = 1
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(480, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax1" unique_id=1687949763]
+texture = ExtResource("5_ec6ab")
+centered = false
+offset = Vector2(0, -150)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)

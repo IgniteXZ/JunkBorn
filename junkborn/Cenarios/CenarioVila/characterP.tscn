@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://do7u7lph88bvo"]
 
 [ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_8llo0"]
-[ext_resource type="Texture2D" uid="uid://bvhrsabuuf4h7" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax4.png" id="1_f8jfp"]
+[ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_gswdo"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png" id="2_obtqt"]
 [ext_resource type="Texture2D" uid="uid://bc4hljxdltkap" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax2.png" id="3_sogpy"]
 [ext_resource type="Texture2D" uid="uid://d2n0nfa5xoo3x" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax1.png" id="4_v5uad"]
@@ -40,6 +40,9 @@
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="38_5d4lt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5d4lt"]
+load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icm8"]
 texture = ExtResource("5_qdxuf")
@@ -1446,7 +1449,7 @@ size = Vector2(54, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
 size = Vector2(55, 117.5)
 
-[node name="Node2D" type="Node2D" unique_id=240260216]
+[node name="Node2D3" type="Node2D" unique_id=240260216]
 script = ExtResource("1_8llo0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
@@ -1460,7 +1463,22 @@ region_rect = Rect2(0, 0, 47.251465, 46.897408)
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1322766949]
 z_index = -1
-position = Vector2(0, -280)
+position = Vector2(0, -400)
+
+[node name="Parallax5" type="Parallax2D" parent="ParallaxNode" unique_id=1125301772]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(480, 0)
+repeat_size = Vector2(480, 0)
+autoscroll = Vector2(5, 0)
+repeat_times = 7
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 0)
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax5" unique_id=783072755]
+texture = ExtResource("2_gswdo")
+centered = false
+offset = Vector2(0, -150)
 
 [node name="Parallax4" type="Parallax2D" parent="ParallaxNode" unique_id=1383583922]
 scroll_scale = Vector2(0.2, 0.2)
@@ -1473,7 +1491,7 @@ limit_end = Vector2(10000000, 0)
 follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxNode/Parallax4" unique_id=990022117]
-texture = ExtResource("1_f8jfp")
+texture = SubResource("CompressedTexture2D_5d4lt")
 centered = false
 offset = Vector2(0, -150)
 

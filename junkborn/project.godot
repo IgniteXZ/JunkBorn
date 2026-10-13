@@ -45,7 +45,6 @@ directories/dtl_directory={
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
 "FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",
-"TimelineTeste": "res://Dialogos/Timeline/TimelineTeste.dtl",
 "armario": "res://Dialogos/Timeline/armario.dtl",
 "armarioDiario": "res://Dialogos/Timeline/armarioDiario.dtl",
 "armarioEstanho": "res://Dialogos/Timeline/armarioEstanho.dtl",
