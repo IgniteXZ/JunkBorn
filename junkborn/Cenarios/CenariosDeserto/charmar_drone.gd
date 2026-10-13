@@ -29,6 +29,7 @@ func ChamarDrone() -> void:
 		# e se mover junto se a área se mover. Se quiser que eles fiquem soltos no mundo, 
 		# é melhor usar: get_parent().add_child(a) e definir a global_position.
 		add_child(a)
+		
 
 func _on_area_entered(area: Area2D) -> void:
 	# Verifica se quem entrou foi o Player (evita ativar com tiros ou outras áreas)
