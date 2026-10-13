@@ -250,7 +250,7 @@ vframes = 4
 zoom = Vector2(2, 2)
 script = ExtResource("3_1kn0l")
 
-[node name="Interagir" type="Area2D" parent="." unique_id=2001418787]
+[node name="Interagir" type="Area2D" parent="." unique_id=2001418787 groups=["Player"]]
 script = ExtResource("4_8jiok")
 
 [node name="LabelInteragir" type="Label" parent="Interagir" unique_id=1547334625]

@@ -13,6 +13,10 @@
 [ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_7c7ir"]
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_7c7ir"]
+[ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
+[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="15_s4fo3"]
+[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="16_0mmed"]
+[ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7c43"]
 texture = ExtResource("1_hpbw2")
@@ -512,6 +516,16 @@ radius = 56.400356
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
 radius = 61.846584
 
+[sub_resource type="Resource" id="Resource_of28l"]
+script = ExtResource("15_s4fo3")
+nome = "Semente"
+textura = ExtResource("16_0mmed")
+id_item_mapa = "0"
+metadata/_custom_type_script = "uid://btfe53qhba1f0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(870, 362)
+
 [node name="Node2D" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
@@ -589,10 +603,27 @@ visible = false
 [node name="sairVilaParaDeserto" type="Marker2D" parent="spawnsDeserto" unique_id=1005998621]
 position = Vector2(518, 41)
 
+[node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
+position = Vector2(-1406, 100)
+dados_item = SubResource("Resource_of28l")
+labelinteragir = NodePath("../Character/LabelInteragir")
+
+[node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
+position = Vector2(-1412, 109)
+script = ExtResource("17_s4fo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharmarDrone" unique_id=1664574486]
+position = Vector2(5, -9)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[connection signal="PassarCanvas" from="Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
 [connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]
+[connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
+[connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
+[connection signal="area_entered" from="CharmarDrone" to="CharmarDrone" method="_on_area_entered"]
 
 [editable path="ui_coleta/MiniGameColeta"]

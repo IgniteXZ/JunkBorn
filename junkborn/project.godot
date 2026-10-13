@@ -123,7 +123,7 @@ variables={
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
 "forja_liberada": false,
-"liberou_menus": false,
+"liberou_menus": true,
 "madancaru_falou": false,
 "pode_dormir": false,
 "pode_sair_casa": true,
@@ -154,6 +154,7 @@ folder_colors={
 [global_group]
 
 UI=""
+Player="InteragirDoplayer"
 
 [input]
 

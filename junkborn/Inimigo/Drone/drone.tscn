@@ -47,6 +47,7 @@ visible = false
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1524801019]
+rect = Rect2(-91, -68, 182, 136)
 
 [connection signal="MandarAura" from="Detectar" to="." method="_on_detectar_mandar_aura"]
 [connection signal="TirarAura" from="Detectar" to="." method="_on_detectar_tirar_aura"]
