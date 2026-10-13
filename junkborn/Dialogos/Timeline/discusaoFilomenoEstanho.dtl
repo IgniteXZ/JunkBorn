@@ -1,3 +1,4 @@
+set {pode_sair_casa} = false
 Filomeno: Porquê você nunca me contou sobre?
 srEstanho: Você era muito imaturo para saber sobre isso, mas agora com os 17 anos você está pronto.
 srEstanho: Ha anos atras seu pais sairam em uma jornada para poder reverter o que a humanidade fez, eles anotavam o seu progresso nesse diário, até que um dia eles acharam um fonte de agua natural perto do pantano químico, eles queriam tornar isso uma fonte de água potável para população, para que o mundo parasse de depender dos suprimentos da floresta de concreto e Rauch company, entretanto a Rauch company descobriu mais cedo do que deveria resultando na caçada de seus pais, sua mãe desesperada me entregou você e o diário, partindo para o deserto.
@@ -14,3 +15,5 @@ Filomeno: Agora.. só quero deitar um pouco…
 Recebeu\: Livro de Botânica
 Recebeu\: Mapa
 Recebeu\: Diario
+set {pode_dormir} = true
+set {liberou_menus} = true

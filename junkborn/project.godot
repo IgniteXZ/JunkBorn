@@ -47,6 +47,7 @@ directories/dtl_directory={
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",
 "TimelineTeste": "res://Dialogos/Timeline/TimelineTeste.dtl",
 "armario": "res://Dialogos/Timeline/armario.dtl",
+"armarioDiario": "res://Dialogos/Timeline/armarioDiario.dtl",
 "armarioEstanho": "res://Dialogos/Timeline/armarioEstanho.dtl",
 "armarioFilomeno": "res://Dialogos/Timeline/armarioFilomeno.dtl",
 "bucha": "res://Dialogos/Timeline/bucha.dtl",
@@ -117,8 +118,15 @@ audio/channel_defaults={
 }
 variables={
 "Filomeno_estacoComBoneco": false,
+"NewVar": "",
+"deserto_liberado": false,
+"falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
+"forja_liberada": false,
+"liberou_menus": false,
 "madancaru_falou": false,
+"pode_dormir": false,
+"pode_sair_casa": true,
 "rauchy_company": false
 }
 glossary/glossary_files=["uid://b5xaxr87hkumi"]

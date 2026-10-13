@@ -5,13 +5,13 @@ extends Node2D
 @export var tex_curva: Texture2D
 @export var tex_cruz: Texture2D
 @export var tex_pa: Texture2D
+@export var tex_picareta: Texture2D
 @export var modo_teste = false
 
 @onready var area = $Area2D
 
 var jogador_dentro = false
 var aberto = false
-var contagem_inicial = {}
 
 var camada_aviso: CanvasLayer
 var aviso: Label
@@ -58,8 +58,8 @@ func _process(_delta):
 	if requisitos_ok(c):
 		aviso.text = "Aperte E para interagir"
 	else:
-		aviso.text = "Você precisa de %d canos no total e 1 pá.\nVocê tem %d canos e %d pá(s)." \
-			% [MinigameCanos.MINIMO_TOTAL, total_canos(c), c["pa"]]
+		aviso.text = "Você precisa de 1 cano reto, 1 curva, 1 cruz e 1 pá.\nVocê tem: %d reto, %d curva, %d cruz, %d pá." \
+			% [c["reto"], c["curva"], c["cruz"], c["pa"]]
 
 	aviso.visible = true
 
@@ -69,7 +69,7 @@ func _unhandled_input(event):
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		abrir(true)
+		abrir()
 
 
 # ---------------------------------------------------------------
@@ -107,14 +107,16 @@ func chave_da_textura(tex) -> String:
 		return "cruz"
 	if mesma_textura(tex, tex_pa):
 		return "pa"
+	if mesma_textura(tex, tex_picareta):
+		return "picareta"
 	return ""
 
 
 func contar() -> Dictionary:
 	if modo_teste:
-		return {"reto": 45, "curva": 17, "cruz": 5, "pa": 1}
+		return {"reto": 1, "curva": 1, "cruz": 1, "pa": 1, "picareta": 0}
 
-	var r = {"reto": 0, "curva": 0, "cruz": 0, "pa": 0}
+	var r = {"reto": 0, "curva": 0, "cruz": 0, "pa": 0, "picareta": 0}
 
 	for slot in obter_slots():
 		var spr = slot.get_node_or_null("sprite")
@@ -131,18 +133,16 @@ func contar() -> Dictionary:
 	return r
 
 
-func total_canos(c: Dictionary) -> int:
-	return c["reto"] + c["curva"] + c["cruz"]
-
-
 func requisitos_ok(c: Dictionary) -> bool:
-	return total_canos(c) >= MinigameCanos.MINIMO_TOTAL and c["pa"] >= 1
+	return c["reto"] >= 1 and c["curva"] >= 1 and c["cruz"] >= 1 and c["pa"] >= 1
 
 
-func debitar(gasto: Dictionary):
+# Na vitória final: sai 1 de cada tipo (a pá não é consumida)
+func debitar_um_de_cada():
 	if modo_teste:
 		return
 
+	var faltam = {"reto": 1, "curva": 1, "cruz": 1}
 	var dono = null
 
 	for slot in obter_slots():
@@ -152,46 +152,67 @@ func debitar(gasto: Dictionary):
 		if spr == null or qtd_label == null or spr.texture == null:
 			continue
 
-		dono = slot.get_node_or_null("../../..")
-
 		var chave = chave_da_textura(spr.texture)
 
-		if chave == "" or chave == "pa" or gasto.get(chave, 0) <= 0:
+		if chave == "" or chave == "pa" or faltam.get(chave, 0) <= 0:
 			continue
 
+		faltam[chave] -= 1
 		var qtd = max(1, int(qtd_label.text))
-		var tirar = min(qtd, gasto[chave])
-		gasto[chave] -= tirar
 
-		if qtd - tirar <= 0:
+		if qtd - 1 <= 0:
 			slot.set_empty_slot()
+			if slot.has_meta("item_id"):
+				slot.remove_meta("item_id")
 		else:
-			qtd_label.text = str(qtd - tirar)
+			qtd_label.text = str(qtd - 1)
 
-	if dono and dono.has_method("salvar_inventario"):
+	# Acha o nó do inventário que salva em Global.itens
+	var no = slots_dono()
+	if no:
+		dono = no
+
+	if dono:
 		dono.salvar_inventario()
+
+
+func slots_dono():
+	var jogador = get_tree().get_first_node_in_group("player")
+
+	if jogador == null:
+		return null
+
+	var no = jogador.find_child("*", true, false)
+	for n in jogador.find_children("*", "CanvasLayer", true, false):
+		if n.has_method("salvar_inventario"):
+			return n
+
+	return null
 
 
 # ---------------------------------------------------------------
 # ABRIR E FECHAR O MINIGAME
 # ---------------------------------------------------------------
 
-func abrir(verificar: bool):
-	if verificar:
-		var c = contar()
+func abrir():
+	if cena_minigame == null:
+		push_error("canosGame: arraste a cena do minigame para 'Cena Minigame' no Inspetor.")
+		return
 
-		if not requisitos_ok(c):
-			return
+	if not requisitos_ok(contar()):
+		return
 
-		contagem_inicial = {"reto": c["reto"], "curva": c["curva"], "cruz": c["cruz"]}
+	MinigameCanos.fase_atual = 0
+	MinigameCanos.mapa_salvo = []
+	MinigameCanos.inventario = {"reto": 1, "curva": 1, "cruz": 1}
 
-		MinigameCanos.fase_atual = 0
-		MinigameCanos.reserva = {}
-		MinigameCanos.mapa_salvo = []
-		MinigameCanos.inventario = contagem_inicial.duplicate()
+	_montar()
 
+
+func _montar():
 	aberto = true
 	aviso.visible = false
+	add_to_group("minigame_aberto")
 	congelar_jogador(true)
 
 	camada_minigame = CanvasLayer.new()
@@ -199,7 +220,7 @@ func abrir(verificar: bool):
 	add_child(camada_minigame)
 
 	var fundo = ColorRect.new()
-	fundo.color = Color(0.05, 0.05, 0.08, 1.0)
+	fundo.color = Color(0, 0, 0, 0)
 	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
 	fundo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	camada_minigame.add_child(fundo)
@@ -226,6 +247,9 @@ func abrir(verificar: bool):
 	botao.custom_minimum_size = Vector2(100, 40)
 	botao.pressed.connect(_ao_sair_do_minigame)
 	camada_botao.add_child(botao)
+	
+	var tem_pic = contar()["picareta"] >= 1
+	tabuleiro.definir_picareta(tem_pic)
 
 
 func fechar():
@@ -237,6 +261,7 @@ func fechar():
 	camada_minigame = null
 	camada_botao = null
 	aberto = false
+	remove_from_group("minigame_aberto")
 	congelar_jogador(false)
 
 
@@ -249,23 +274,18 @@ func congelar_jogador(congelar: bool):
 
 
 func _ao_sair_do_minigame():
-	# Sair no meio = descartar a reserva; o inventário real não muda
+	# Sair no meio: nada é consumido
 	MinigameCanos.fase_atual = 0
-	MinigameCanos.reserva = {}
 	MinigameCanos.mapa_salvo = []
 	fechar()
 
 
 func _ao_reiniciar():
+	# Tentar de novo / próxima fase: fecha e reabre sem rechecar requisitos
 	fechar()
-	abrir(false)
+	_montar()
 
 
 func _ao_concluir():
-	var gasto = {}
-
-	for t in ["reto", "curva", "cruz"]:
-		gasto[t] = max(0, contagem_inicial[t] - MinigameCanos.inventario[t])
-
-	debitar(gasto)
+	debitar_um_de_cada()
 	fechar()

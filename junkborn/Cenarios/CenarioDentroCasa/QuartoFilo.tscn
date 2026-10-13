@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csrg3ljqheq8d" path="res://Cenarios/CenarioDentroCasa/quarto finlomeno.png" id="2_gn4rn"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_qc74i"]
 [ext_resource type="Script" uid="uid://beyayhl2laaak" path="res://Cenarios/CenarioDentroCasa/sai_do_quarto_filo.gd" id="4_gn4rn"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="5_qc74i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_c0nvc")
@@ -416,6 +417,10 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(34, 37)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
+radius = 25.152039
+height = 85.91753
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -469,6 +474,17 @@ shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="entrarQuarto" type="Marker2D" parent="SpawnFiloQ" unique_id=1702315987]
 position = Vector2(37, 95)
+
+[node name="DialogoCama" type="Area2D" parent="." unique_id=1982845732]
+script = ExtResource("5_qc74i")
+timeline = "cutsceneCamaFiolmeno"
+uma_vez = true
+variavel_necessaria = "pode_dormir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoCama" unique_id=417290989]
+position = Vector2(107, -4)
+rotation = 4.7852297
+shape = SubResource("CapsuleShape2D_qrw66")
 
 [connection signal="area_entered" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_exited"]

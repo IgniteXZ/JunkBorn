@@ -5,4 +5,3 @@ srEstanho: Que bom, agora terá um tempinho a mais para descansar.
 srEstanho: E Filomeno, pode pegar algo na estante do meu quarto por favor?
 srEstanho: É uma caderneta de anotações marrom e um livro verde
 Filomeno: Oh, okay
-set {falou_estanhoinicio} = true

@@ -21,6 +21,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if current_scene and current_scene.is_in_group("no_pause"):
 			return
 			
+		if get_tree().get_nodes_in_group("minigame_aberto").size() > 0:
+			return
+			
 		toggle_pause()
 		get_viewport().set_input_as_handled()
 

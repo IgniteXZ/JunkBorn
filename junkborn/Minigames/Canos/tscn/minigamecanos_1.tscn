@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0ajnjlmw7p0c" path="res://Minigames/Canos/sprites/terraCanos.png" id="2_15gnt"]
 [ext_resource type="Script" uid="uid://cndn21iputnfl" path="res://Minigames/Canos/sprites/hud.gd" id="2_slrws"]
 
-[node name="minagemCanos" type="Node2D" unique_id=243183180]
+[node name="minagemCanos" type="Node2D" unique_id=243183180 groups=["no_pause"]]
 
 [node name="board" type="Node2D" parent="." unique_id=1466661010]
 script = ExtResource("1_slrws")

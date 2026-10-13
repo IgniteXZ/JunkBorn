@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv0frprgohdi4" path="res://Cenarios/CenarioDentroCasa/quarto srestanho.png" id="2_jhjp2"]
 [ext_resource type="Texture2D" uid="uid://csrg3ljqheq8d" path="res://Cenarios/CenarioDentroCasa/quarto finlomeno.png" id="3_hacy1"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_vipka"]
-[ext_resource type="Script" uid="uid://w2jtan2c4qwi" path="res://Cenarios/CenarioDentroCasa/sair.gd" id="4_jhjp2"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="6_hacy1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
 texture = ExtResource("1_8oxnq")
@@ -956,6 +956,9 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(41, 28)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
+radius = 32.01562
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -997,17 +1000,27 @@ label_settings = SubResource("LabelSettings_msrtw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sair" type="Area2D" parent="." unique_id=255454266 node_paths=PackedStringArray("labelInteragir")]
-script = ExtResource("4_jhjp2")
-labelInteragir = NodePath("../Character/LabelInteragir")
+[node name="Sair" type="Area2D" parent="." unique_id=255454266]
+script = ExtResource("6_hacy1")
+cena_destino = "res://Cenarios/CenarioDentroCasa/SalaCasa.tscn"
+spawn_destino = "spawnsCasaFilo/sairQuartoEstanho"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sair" unique_id=2021191876]
-position = Vector2(61, 147)
+position = Vector2(61, 136)
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="SpawnQuartoHeinel" type="Node2D" parent="." unique_id=1217943537]
 
 [node name="EntrarHeinelQ" type="Marker2D" parent="SpawnQuartoHeinel" unique_id=1750353659]
+
+[node name="DialogoEstante" type="Area2D" parent="." unique_id=1610186550]
+script = ExtResource("6_hacy1")
+timeline = "armarioDiario"
+uma_vez = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoEstante" unique_id=149057442]
+position = Vector2(-26, 96)
+shape = SubResource("CircleShape2D_qrw66")
 
 [connection signal="area_entered" from="Sair" to="Sair" method="_on_area_entered"]
 [connection signal="area_exited" from="Sair" to="Sair" method="_on_area_exited"]

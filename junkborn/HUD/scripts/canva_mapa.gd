@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Mapa"):
+	if Input.is_action_just_pressed("Mapa") and Dialogic.VAR.get_variable("liberou_menus", false):
 		$Mapa.visible = not $Mapa.visible

@@ -234,7 +234,7 @@ tile_size = Vector2i(24, 24)
 sources/5 = SubResource("TileSetAtlasSource_5vr3i")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
-size = Vector2(73, 34.5)
+size = Vector2(73, 58.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(46, 42)
@@ -316,6 +316,12 @@ height = 50.4
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
+radius = 39.20459
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
+size = Vector2(160, 75)
+
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -344,11 +350,13 @@ rendering_quadrant_size = 9
 
 [node name="sairCasaFilo" type="Area2D" parent="passagemCenas" unique_id=335695835]
 script = ExtResource("8_rxvhl")
+variavel_necessaria = "pode_sair_casa"
+timeline_bloqueado = "poratabloqueada"
 cena_destino = "res://Cenarios/CenarioVila/characterP.tscn"
 spawn_destino = "spawnsVila/sairCasaFilo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemCenas/sairCasaFilo" unique_id=210186153]
-position = Vector2(75, 214)
+position = Vector2(75, 225.875)
 shape = SubResource("RectangleShape2D_vd7c3")
 
 [node name="EntrarNoQuartoFilo" type="Area2D" parent="passagemCenas" unique_id=1628054982 node_paths=PackedStringArray("labelInteragir")]
@@ -438,8 +446,29 @@ position = Vector2(230, 27)
 [node name="DialogoEntradaCasa" type="Node2D" parent="." unique_id=1321612086 node_paths=PackedStringArray("jogador")]
 script = ExtResource("9_rxvhl")
 timeline = "falaSrEstanho1"
-variavel_visto = "VISTO.dialogo_casainicial"
 jogador = NodePath("../Node/Character")
+
+[node name="DialogoDiscussao" type="Node2D" parent="." unique_id=529890784 node_paths=PackedStringArray("jogador")]
+script = ExtResource("9_rxvhl")
+timeline = "discusaoFilomenoEstanho"
+variavel_necessaria = "filomeno_estaComDiario"
+jogador = NodePath("../Node/Character")
+
+[node name="DialogoRetrato" type="Area2D" parent="." unique_id=889113032]
+script = ExtResource("8_rxvhl")
+timeline = "retrato"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoRetrato" unique_id=879347244]
+position = Vector2(257, 144)
+shape = SubResource("CircleShape2D_qrw66")
+
+[node name="DialogoMesa" type="Area2D" parent="." unique_id=1031613547]
+script = ExtResource("8_rxvhl")
+timeline = "mesa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoMesa" unique_id=1367243413]
+position = Vector2(64, 128.5)
+shape = SubResource("RectangleShape2D_qrw66")
 
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]

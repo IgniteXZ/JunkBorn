@@ -2,6 +2,7 @@ extends Area2D
 
 @export var timeline: String = ""
 @export var automatico: bool = false
+@export var uma_vez: bool = false
 @export var variavel_necessaria: String = ""
 @export var timeline_bloqueado: String = ""
 @export var cena_destino: String = ""
@@ -17,6 +18,12 @@ func _ready() -> void:
 	if not area_exited.is_connected(_on_area_exited):
 		area_exited.connect(_on_area_exited)
 
+func _chave() -> String:
+	return "visto:" + get_tree().current_scene.scene_file_path + ":" + str(get_path())
+
+func _esgotada() -> bool:
+	return uma_vez and cena_destino == "" and Global.eventos.get(_chave(), false)
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.name != "Interagir":
 		return
@@ -25,7 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 		_interagir()
 		return
 	_label = area.get_node_or_null("LabelInteragir") as Label
-	if _label:
+	if _label and not _esgotada():
 		_label.visible = true
 
 func _on_area_exited(area: Area2D) -> void:
@@ -44,8 +51,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_interagir()
 
 func _interagir() -> void:
-	
-	if _ocupado or Dialogic.current_timeline != null:
+	if _ocupado or Dialogic.current_timeline != null or _esgotada():
 		return
 	if variavel_necessaria != "" and not Dialogic.VAR.get_variable(variavel_necessaria, false):
 		await _tocar_dialogo(timeline_bloqueado)
@@ -53,6 +59,8 @@ func _interagir() -> void:
 		_ocupado = true
 		Global.trocar_cena(cena_destino, spawn_destino)
 	else:
+		if uma_vez:
+			Global.eventos[_chave()] = true
 		await _tocar_dialogo(timeline)
 
 func _tocar_dialogo(nome: String) -> void:
@@ -67,6 +75,6 @@ func _tocar_dialogo(nome: String) -> void:
 	await Dialogic.timeline_ended
 	if is_instance_valid(jogador):
 		jogador.pode_mover = true
-	if _label and _player != null:
+	if _label and _player != null and not _esgotada():
 		_label.visible = true
 	_ocupado = false

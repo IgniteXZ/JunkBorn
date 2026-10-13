@@ -1,18 +1,22 @@
 extends Node
 
 @export var timeline: String = ""
-@export var variavel_visto: String = ""
+@export var uma_vez: bool = true
+@export var variavel_necessaria: String = ""
 @export var jogador: CharacterBody2D
 
 func _ready() -> void:
 	if timeline == "":
 		return
-	if variavel_visto != "" and Dialogic.VAR.get_variable(variavel_visto, false):
+	if variavel_necessaria != "" and not Dialogic.VAR.get_variable(variavel_necessaria, false):
+		return
+	var chave := "entrada:" + str(get_path())
+	if uma_vez and Global.eventos.get(chave, false):
 		return
 	_travar(true)
 	await get_tree().create_timer(0.6).timeout
-	if variavel_visto != "":
-		Dialogic.VAR.set_variable(variavel_visto, true)
+	if uma_vez:
+		Global.eventos[chave] = true
 	Dialogic.start(timeline)
 	await Dialogic.timeline_ended
 	_travar(false)
