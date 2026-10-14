@@ -41,7 +41,6 @@ func _aplicar_spawn() -> void:
 
 	
 func _physics_process(_delta: float) -> void:
-	
 	if not pode_mover:
 		velocity = Vector2.ZERO
 		return
@@ -57,6 +56,8 @@ func _physics_process(_delta: float) -> void:
 	else:
 		_move()
 		_animate()
+		
+		
 	
 	move_and_slide()
 	
@@ -67,17 +68,21 @@ func _move() -> void:
 		Input.get_axis("move_up", "move_down")
 	)
 	if _direction != Vector2.ZERO:
+		_animation_tree["parameters/idle/blend_position"] = _direction
+		_animation_tree["parameters/walk/blend_position"] = _direction
 		
 		velocity.x = lerp(velocity.x, _direction.normalized().x * _mover_speed, _aceleration)
 		velocity.y = lerp(velocity.y, _direction.normalized().y * _mover_speed, _aceleration)
-		_animation_tree["parameters/Walk/blend_position"] = _direction
 		return
+		
 	velocity.x = lerp(velocity.x, _direction.normalized().x * _mover_speed, _friction)
 	velocity.y = lerp(velocity.y, _direction.normalized().y * _mover_speed, _friction)
-	#_animation_tree["parameters/Idle/blend_position"] = _direction
 func _animate() -> void:
-	_state_machine.travel("Walk")
-	#_state_machine.travel("Idle")
+	if velocity.length() > 1:
+		_state_machine.travel("walk")
+		return
+		
+	_state_machine.travel("idle")
 	
 func _process(_delta: float) -> void:
 	PassarCanvas.emit(canvaa)
