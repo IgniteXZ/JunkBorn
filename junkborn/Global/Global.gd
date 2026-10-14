@@ -11,6 +11,8 @@ var itens_coletados: Array = []
 var eventos: Dictionary = {}
 var spawn_destino: String = ""
 
+var DesligarMusica: bool = false
+
 func trocar_cena(caminho: String, spawn: String) -> void:
 	spawn_destino = spawn
 	
