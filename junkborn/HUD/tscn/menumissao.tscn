@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dk2b7sx7s22qi" path="res://HUD/tscn/missao.gd" id="3_6r453"]
 
 [node name="Menumissao" type="Control" unique_id=630621404]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
