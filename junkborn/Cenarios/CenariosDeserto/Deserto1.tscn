@@ -534,7 +534,7 @@ metadata/_custom_type_script = "uid://btfe53qhba1f0"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
-[node name="Node2D" type="Node2D" unique_id=1307634865]
+[node name="Node2D2" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 

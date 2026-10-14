@@ -563,7 +563,7 @@ textura = ExtResource("13_tagv4")
 id_item_mapa = "1"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
-[node name="Node2D" type="Node2D" unique_id=240260216]
+[node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_nn1nm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
