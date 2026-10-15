@@ -9,7 +9,7 @@ signal PassarCanvas(canvas:CanvasLayer)
 @export var camera: Camera2D
 
 @export_category("Variables")
-@export var _mover_speed: float = 240.0
+@export var _mover_speed: float = 140.0
 
 @export var _friction: float = 1
 @export var _aceleration: float = 0.2
