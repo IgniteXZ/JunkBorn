@@ -309,8 +309,8 @@ animations = [{
 size = Vector2(16.000002, 6.3999977)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
-radius = 12.0
-height = 50.4
+radius = 13.199999
+height = 42.4
 
 [sub_resource type="LabelSettings" id="LabelSettings_msrtw"]
 outline_size = 6
@@ -411,7 +411,7 @@ script = ExtResource("8_rxvhl")
 timeline = "estanhoFala2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Estanho/DialogoEstanho" unique_id=814879209]
-position = Vector2(-26.855999, 38.795998)
+position = Vector2(-25.655998, 45.196)
 shape = SubResource("CapsuleShape2D_qrw66")
 
 [node name="Character" parent="Node" unique_id=489748546 instance=ExtResource("2_ifgmi")]

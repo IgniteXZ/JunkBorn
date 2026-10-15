@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="19_jytyn"]
 [ext_resource type="Script" uid="uid://pg17f66qut5o" path="res://Player/cenas/npc_2.gd" id="19_nslkj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="19_upyhu"]
-[ext_resource type="Script" uid="uid://ghpe6acjshew" path="res://Cenarios/CenarioVila/entrar_casa_filo.gd" id="21_b33t2"]
 [ext_resource type="Script" uid="uid://c776gecpk15fa" path="res://Player/cenas/npc_3.gd" id="22_fa7nq"]
 [ext_resource type="Script" uid="uid://c0f0victkpmel" path="res://Player/cenas/npc_4.gd" id="22_lsdmm"]
 [ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="23_hs813"]
@@ -1444,7 +1443,7 @@ radius = 30.066593
 size = Vector2(56.29135, 94.892944)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7c3"]
-size = Vector2(54, 63)
+size = Vector2(54, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
 size = Vector2(55, 117.5)
@@ -1908,12 +1907,13 @@ position = Vector2(-621.62634, 104.76358)
 rotation = -2.3265238
 shape = SubResource("RectangleShape2D_wldxa")
 
-[node name="casaFilo" type="Area2D" parent="passarEntreCenas" unique_id=488784489 node_paths=PackedStringArray("labelinteragir")]
-script = ExtResource("21_b33t2")
-labelinteragir = NodePath("../../y-sort/Character/LabelInteragir")
+[node name="casaFilo" type="Area2D" parent="passarEntreCenas" unique_id=488784489]
+script = ExtResource("38_5d4lt")
+cena_destino = "res://Cenarios/CenarioDentroCasa/SalaCasa.tscn"
+spawn_destino = "spawnsCasaFilo/entradaCasa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passarEntreCenas/casaFilo" unique_id=1524744938]
-position = Vector2(223, 37)
+position = Vector2(223, 61)
 shape = SubResource("RectangleShape2D_vd7c3")
 
 [node name="spawnsVila" type="Node2D" parent="." unique_id=1024789791]
