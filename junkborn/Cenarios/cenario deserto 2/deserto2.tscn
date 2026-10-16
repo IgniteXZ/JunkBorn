@@ -527,7 +527,7 @@ metadata/_custom_type_script = "uid://btfe53qhba1f0"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
-[node name="Node2D2" type="Node2D" unique_id=1307634865]
+[node name="Node2D4" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_pmyn0")
 
@@ -617,6 +617,11 @@ script = ExtResource("17_ij8sj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharmarDrone" unique_id=1664574486]
 position = Vector2(5, -9)
 shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="spawnsDeserto2" type="Node2D" parent="." unique_id=1817560835]
+
+[node name="entradaDeserto2" type="Marker2D" parent="spawnsDeserto2" unique_id=1555590594]
+position = Vector2(225, -409)
 
 [connection signal="PassarCanvas" from="Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]

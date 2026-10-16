@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="15_s4fo3"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="16_0mmed"]
+[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -523,6 +525,12 @@ radius = 56.400356
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
 radius = 61.846584
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
+radius = 61.008198
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpo1d"]
+radius = 55.00909
+
 [sub_resource type="Resource" id="Resource_of28l"]
 script = ExtResource("15_s4fo3")
 id = 1
@@ -672,6 +680,31 @@ texture = ExtResource("10_tk3gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/minGameCano/Area2D" unique_id=589286028]
 shape = SubResource("CircleShape2D_m5a1v")
+
+[node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
+position = Vector2(-4184, 12)
+texture = ExtResource("17_dhrox")
+
+[node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDesertoFonte" unique_id=1978442284]
+script = ExtResource("18_6u4ac")
+cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
+spawn_destino = "spawnsDesertoFonte/entradaDesertoFonte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaDesertoFonte/Area2D" unique_id=947339904]
+shape = SubResource("CircleShape2D_qrw66")
+
+[node name="entradaDeserto2" type="Sprite2D" parent="passagemdeCena" unique_id=283236006]
+position = Vector2(-661, 2352)
+texture = ExtResource("10_tk3gm")
+
+[node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDeserto2" unique_id=1955715949]
+script = ExtResource("18_6u4ac")
+cena_destino = "res://Cenarios/cenario deserto 2/deserto2.tscn"
+spawn_destino = "spawnsDeserto2/entradaDeserto2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaDeserto2/Area2D" unique_id=1773968306]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_fpo1d")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10
