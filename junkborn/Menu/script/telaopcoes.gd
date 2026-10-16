@@ -17,14 +17,35 @@ func _process(delta: float) -> void:
 	else:
 		Global.DesligarMusica = true
 		
+func animar_painel(painel: Control, abrindo: bool) -> void:
+	var posicao = painel.position
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.set_parallel(true)
 
+	if abrindo:
+		painel.modulate.a = 0.0
+		painel.position = posicao + Vector2(0, 8)
+		tween.tween_property(painel, "modulate:a", 1.0, 0.25)
+		tween.tween_property(painel, "position", posicao, 0.25)
+	else:
+		tween.tween_property(painel, "modulate:a", 0.0, 0.2)
+		tween.tween_property(painel, "position", posicao + Vector2(0, 8), 0.2)
+
+	await tween.finished
+	
 func _on_ver_controles_pressed() -> void:
+	await animar_painel($Panel, false)
 	$Panel.hide()
 	$Controles.show()
+	await animar_painel($Controles, true)
+
 
 func _on_controles_voltar_controles_pressionado() -> void:
+	await animar_painel($Controles, false)
 	$Controles.hide()
 	$Panel.show()
+	await animar_painel($Panel, true)
 	
 func _on_ver_controles_focus_entered() -> void:
 	$Panel/VBoxOpcoes/HBoxControles/VerControles/SetaFoco.show()

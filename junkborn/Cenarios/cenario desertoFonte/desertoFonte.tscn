@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="7_xilwp"]
 [ext_resource type="Texture2D" uid="uid://bn2c24f5jq8fr" path="res://Cenarios/Cenario Fonte/tileset fonte1.png" id="8_ec6ab"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_e1c8b"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="14_esxbg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1c8b"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -735,6 +736,9 @@ sources/1 = SubResource("TileSetAtlasSource_h1lxh")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
+radius = 139.23003
+
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_uldkv")
 
@@ -858,3 +862,17 @@ text = "[E] Interagir"
 label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="entradaFonte" type="Area2D" parent="." unique_id=2036386437]
+script = ExtResource("14_esxbg")
+cena_destino = "res://Cenarios/Cenario Fonte/fonte.tscn"
+spawn_destino = "spawnFonte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entradaFonte" unique_id=1808492738]
+position = Vector2(-534, 405)
+shape = SubResource("CircleShape2D_qrw66")
+
+[node name="spawnsDesertoFonte" type="Node2D" parent="." unique_id=1034912162]
+
+[node name="spawnSaiFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=1656624643]
+position = Vector2(-586, 345)
