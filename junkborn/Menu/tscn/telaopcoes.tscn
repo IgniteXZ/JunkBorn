@@ -22,6 +22,19 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.36862746, 0.16078432, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esxbg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.27450982, 0.13333334, 0.019607844, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+corner_detail = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx4kr"]
 bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
 border_width_left = 1
@@ -79,12 +92,16 @@ border_width_bottom = 1
 border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrng6"]
-bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
+bg_color = Color(0.4627451, 0.13725491, 0.011764706, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6509804, 0.34901962, 0.101960786, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0vyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yljg"]
 
 [node name="Opcoes" type="Control" unique_id=2117586468 node_paths=PackedStringArray("ButtonSong")]
 layout_mode = 3
@@ -156,12 +173,15 @@ custom_minimum_size = Vector2(90, 60)
 layout_mode = 2
 
 [node name="CheckSom" type="CheckButton" parent="Panel/VBoxOpcoes/HBoxSom/AreaCheckSom" unique_id=1213395678]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -32.0
-offset_right = 24.0
-offset_bottom = 11.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_right = -0.2
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 25.0
 scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxFlat_esxbg")
 button_pressed = true
 action_mode = 0
 
@@ -181,12 +201,18 @@ custom_minimum_size = Vector2(90, 60)
 layout_mode = 2
 
 [node name="CheckMusica" type="CheckButton" parent="Panel/VBoxOpcoes/HBoxMusica/AreaCheckMusica" unique_id=834893578]
-layout_mode = 0
-offset_left = -19.0
-offset_top = -30.0
-offset_right = 25.0
-offset_bottom = 13.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.21100001
+anchor_top = -0.067
+anchor_right = -0.21100001
+anchor_bottom = -0.067
+offset_left = -0.0099983215
+offset_top = 0.02001524
+offset_right = 43.99
+offset_bottom = 24.020016
 scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxFlat_esxbg")
 button_pressed = true
 action_mode = 0
 
@@ -225,17 +251,62 @@ popup/item_1/text = "Janela"
 popup/item_1/id = 1
 script = ExtResource("2_hx4kr")
 
-[node name="VerControles" type="Button" parent="Panel/VBoxOpcoes" unique_id=1634508796]
+[node name="HBoxControles" type="HBoxContainer" parent="Panel/VBoxOpcoes" unique_id=1791709264]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="VerControles" type="Button" parent="Panel/VBoxOpcoes/HBoxControles" unique_id=1634508796]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_fonts/font = ExtResource("1_hiah4")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t0vyn")
 text = "Ver Controles"
 flat = true
 
-[node name="VoltarOpcoes" parent="Panel/VBoxOpcoes" unique_id=123328916 node_paths=PackedStringArray("Opcoes") instance=ExtResource("2_0dlp2")]
+[node name="SetaFoco" type="Label" parent="Panel/VBoxOpcoes/HBoxControles/VerControles" unique_id=765147053]
+visible = false
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 41
+text = ">"
+
+[node name="HBoxVoltar" type="HBoxContainer" parent="Panel/VBoxOpcoes" unique_id=1637434717]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="VoltarOpcoes" parent="Panel/VBoxOpcoes/HBoxVoltar" unique_id=123328916 node_paths=PackedStringArray("Opcoes") instance=ExtResource("2_0dlp2")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_font_sizes/font_size = 28
-Opcoes = NodePath("../../..")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1yljg")
+Opcoes = NodePath("../../../..")
+
+[node name="SetaFoco" type="Label" parent="Panel/VBoxOpcoes/HBoxVoltar/VoltarOpcoes" unique_id=1200126012]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("1_hiah4")
+theme_override_font_sizes/font_size = 41
+text = ">"
 
 [node name="Controles" parent="." unique_id=1001078878 instance=ExtResource("5_t0vyn")]
 visible = false
@@ -245,6 +316,21 @@ offset_top = 7.0
 offset_right = 2.0
 offset_bottom = 7.0
 
+[connection signal="mouse_entered" from="Panel/VBoxOpcoes/HBoxSom/AreaCheckSom/CheckSom" to="." method="_on_check_som_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxOpcoes/HBoxSom/AreaCheckSom/CheckSom" to="." method="_on_check_som_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/VBoxOpcoes/HBoxMusica/AreaCheckMusica/CheckMusica" to="." method="_on_check_musica_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxOpcoes/HBoxMusica/AreaCheckMusica/CheckMusica" to="." method="_on_check_musica_mouse_exited"]
+[connection signal="focus_entered" from="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" to="." method="_on_opcao_tela_focus_entered"]
+[connection signal="focus_exited" from="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" to="." method="_on_opcao_tela_focus_exited"]
 [connection signal="item_selected" from="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" to="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" method="_on_item_selected"]
-[connection signal="pressed" from="Panel/VBoxOpcoes/VerControles" to="." method="_on_ver_controles_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxOpcoes/HBoxTela/OpcaoTela" to="." method="_on_opcao_tela_mouse_entered"]
+[connection signal="focus_entered" from="Panel/VBoxOpcoes/HBoxControles/VerControles" to="." method="_on_ver_controles_focus_entered"]
+[connection signal="focus_exited" from="Panel/VBoxOpcoes/HBoxControles/VerControles" to="." method="_on_ver_controles_focus_exited"]
+[connection signal="mouse_entered" from="Panel/VBoxOpcoes/HBoxControles/VerControles" to="." method="_on_ver_controles_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxOpcoes/HBoxControles/VerControles" to="." method="_on_ver_controles_mouse_exited"]
+[connection signal="pressed" from="Panel/VBoxOpcoes/HBoxControles/VerControles" to="." method="_on_ver_controles_pressed"]
+[connection signal="focus_entered" from="Panel/VBoxOpcoes/HBoxVoltar/VoltarOpcoes" to="." method="_on_voltar_opcoes_focus_entered"]
+[connection signal="focus_exited" from="Panel/VBoxOpcoes/HBoxVoltar/VoltarOpcoes" to="." method="_on_voltar_opcoes_focus_exited"]
+[connection signal="mouse_entered" from="Panel/VBoxOpcoes/HBoxVoltar/VoltarOpcoes" to="." method="_on_voltar_opcoes_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxOpcoes/HBoxVoltar/VoltarOpcoes" to="." method="_on_voltar_opcoes_mouse_exited"]
 [connection signal="voltar_controles_pressionado" from="Controles" to="." method="_on_controles_voltar_controles_pressionado"]

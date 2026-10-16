@@ -82,12 +82,14 @@ func _on_continuar_pressed() -> void:
 	toggle_pause()
 
 func _on_opcoes_pressed() -> void:
-	$panelMain.hide()
-	$Opcoes.show()
+	$panelMain.visible = false
+	$Opcoes.visible = true
+	$Opcoes/Panel/VBoxOpcoes/HBoxSom/AreaCheckSom/CheckSom.grab_focus()
 	
 func _on_opcoes_voltar_pressionado() -> void:
 	$Opcoes.hide()
 	$panelMain.show()
+	$panelMain/VBoxContainer/opcoes.grab_focus()
 
 func _on_menu_principal_pressed() -> void:
 	visible = false

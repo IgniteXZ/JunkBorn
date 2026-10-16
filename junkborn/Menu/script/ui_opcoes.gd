@@ -13,8 +13,9 @@ func _process(_delta: float) -> void:
 
 
 func _on_opcoes_pressed() -> void:
-	$Opcoes.visible = not $Opcoes.visible
-
+	$Opcoes.show()
+	$Opcoes/Panel/VBoxOpcoes/HBoxSom/AreaCheckSom/CheckSom.grab_focus()
 
 func _on_opcoes_voltar_pressionado() -> void:
 	$Opcoes.hide()
+	get_parent().get_node("VBoxMenu/Opcoes").grab_focus()
