@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="10_u2vtj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_behyc"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1287,6 +1288,9 @@ textura = ExtResource("11_behyc")
 id_item_mapa = "0"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
+size = Vector2(574, 67)
+
 [node name="Node2D" type="Node2D" unique_id=240260216 node_paths=PackedStringArray("MusicaFonte")]
 script = ExtResource("1_u2vtj")
 MusicaFonte = NodePath("AudioStreamPlayer")
@@ -1356,6 +1360,19 @@ labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1856725427]
 stream = ExtResource("12_u2vtj")
 parameters/looping = true
+
+[node name="spawnFonte" type="Marker2D" parent="." unique_id=191055139]
+position = Vector2(-599, 197)
+
+[node name="saidaFonte" type="Area2D" parent="." unique_id=222716419]
+position = Vector2(-565, 212)
+script = ExtResource("13_behyc")
+cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
+spawn_destino = "spawnsDesertoFonte/spawnSaiFonte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saidaFonte" unique_id=344294550]
+position = Vector2(-11, 33)
+shape = SubResource("RectangleShape2D_qrw66")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]

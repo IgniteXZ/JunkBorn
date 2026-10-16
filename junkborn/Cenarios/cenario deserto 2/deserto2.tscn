@@ -591,6 +591,7 @@ shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10
+visible = false
 
 [node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_5owje")]
 visible = false
