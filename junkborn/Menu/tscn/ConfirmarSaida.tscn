@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://b8egsqvoe5auc"]
+
+[ext_resource type="Script" uid="uid://bmqcyi6o2o83x" path="res://Menu/script/confirmar_saida.gd" id="1_jn8mg"]
+[ext_resource type="StyleBox" uid="uid://bqlflmxihxvxl" path="res://Menu/estilo/panel.tres" id="1_prij7"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_8s6hj"]
+[ext_resource type="Script" uid="uid://ikdj5v3a7448" path="res://Menu/script/opcoes.gd" id="3_4iukh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_318q3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4251s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wo1aa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w0qr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_micqn"]
+
+[node name="ConfirmarSaida" type="CanvasLayer" unique_id=2033782522 node_paths=PackedStringArray("fundo", "painel", "sim", "nao")]
+process_mode = 3
+layer = 30
+script = ExtResource("1_jn8mg")
+fundo = NodePath("Fundo")
+painel = NodePath("Fundo/Panel")
+sim = NodePath("Fundo/Panel/VBoxContainer/HBoxContainer/Sim")
+nao = NodePath("Fundo/Panel/VBoxContainer/HBoxContainer/Nao")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=844609213]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="Panel" parent="Fundo" unique_id=312997433]
+custom_minimum_size = Vector2(560, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_prij7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fundo/Panel" unique_id=807429330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Pergunta" type="Label" parent="Fundo/Panel/VBoxContainer" unique_id=1960296685]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8s6hj")
+text = "Deseja mesmo sair do jogo?
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Fundo/Panel/VBoxContainer" unique_id=693200616]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Sim" type="Button" parent="Fundo/Panel/VBoxContainer/HBoxContainer" unique_id=191727383]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
+theme_override_fonts/font = ExtResource("2_8s6hj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_318q3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4251s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wo1aa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3w0qr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_micqn")
+action_mode = 0
+text = "Sim
+"
+flat = true
+script = ExtResource("3_4iukh")
+
+[node name="SetaFoco" type="Label" parent="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" unique_id=925404921]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -15.0
+offset_right = 13.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("2_8s6hj")
+theme_override_font_sizes/font_size = 30
+text = ">"
+
+[node name="Nao" type="Button" parent="Fundo/Panel/VBoxContainer/HBoxContainer" unique_id=1890528846]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
+theme_override_fonts/font = ExtResource("2_8s6hj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_318q3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4251s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wo1aa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3w0qr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_micqn")
+action_mode = 0
+text = "Não
+"
+flat = true
+script = ExtResource("3_4iukh")
+
+[node name="SetaFoco" type="Label" parent="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" unique_id=1215721187]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -17.0
+offset_right = 14.0
+offset_bottom = 48.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15686275, 0, 0.019607844, 1)
+theme_override_fonts/font = ExtResource("2_8s6hj")
+theme_override_font_sizes/font_size = 30
+text = ">"
+
+[connection signal="focus_entered" from="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" to="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" to="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" to="Fundo/Panel/VBoxContainer/HBoxContainer/Sim" method="_on_mouse_entered"]
+[connection signal="focus_entered" from="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" to="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" to="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" to="Fundo/Panel/VBoxContainer/HBoxContainer/Nao" method="_on_mouse_entered"]

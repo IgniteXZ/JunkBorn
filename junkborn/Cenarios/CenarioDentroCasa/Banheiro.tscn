@@ -534,7 +534,7 @@ shape = SubResource("RectangleShape2D_a3nj5")
 position = Vector2(37, 100)
 
 [node name="entrarBanheiro" type="Marker2D" parent="SpawnBanheiro" unique_id=57811900]
-position = Vector2(0, -12)
+position = Vector2(24, -37)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1375535079]
 script = ExtResource("5_is0nw")

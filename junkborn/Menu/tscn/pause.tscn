@@ -2,15 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_d20rc"]
 [ext_resource type="Script" uid="uid://b5kbx6aj50mrf" path="res://Menu/script/pause.gd" id="1_jxdse"]
+[ext_resource type="StyleBox" uid="uid://bqlflmxihxvxl" path="res://Menu/estilo/panel.tres" id="2_l35w2"]
 [ext_resource type="PackedScene" uid="uid://byp7do82i13y1" path="res://Menu/tscn/telaopcoes.tscn" id="3_3877j"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3nj5"]
-bg_color = Color(0.58431375, 0.22745098, 0.03529412, 0.40392157)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.36862746, 0.16078432, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns0o7"]
 bg_color = Color(0.4627451, 0.13725491, 0.011764706, 1)
@@ -45,7 +38,7 @@ offset_right = 448.0
 offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a3nj5")
+theme_override_styles/panel = ExtResource("2_l35w2")
 
 [node name="panelPause" type="Panel" parent="panelMain" unique_id=1797719258]
 layout_mode = 0

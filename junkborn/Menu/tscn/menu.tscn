@@ -10,7 +10,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpcwk"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bli52"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3x2rq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjmvu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aj8g2"]
 
@@ -87,7 +91,9 @@ theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpcwk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bli52")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3x2rq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjmvu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aj8g2")
 action_mode = 0
 text = "Jogar"
@@ -120,7 +126,9 @@ theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ikroo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bli52")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8ffxa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjmvu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1vrqj")
 action_mode = 0
 text = "Opções"
@@ -150,7 +158,9 @@ theme_override_colors/font_color = Color(0.6523014, 0.347332, 0.102322884, 1)
 theme_override_fonts/font = ExtResource("2_mjkk2")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ycrix")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bli52")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0pf65")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjmvu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dh322")
 action_mode = 0
 text = "Sair

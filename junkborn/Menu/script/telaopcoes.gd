@@ -3,22 +3,46 @@ extends Control
 signal voltar_pressionado
 var estilo_check: StyleBox
 var estilo_janela: StyleBox
+var _pos_base := {}
 
 @export var ButtonSong: CheckButton
+@export var ButtonSom: CheckButton
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	estilo_check = $Panel/VBoxOpcoes/HBoxMusica/AreaCheckMusica/CheckMusica.get_theme_stylebox("focus")
 	estilo_janela = $Panel/VBoxOpcoes/HBoxTela/OpcaoTela.get_theme_stylebox("focus")
+	visibility_changed.connect(_sincronizar)
+	_sincronizar()
+	
+func _sincronizar() -> void:
+	if not visible:
+		return
+	ButtonSong.button_pressed = not Global.DesligarMusica
+	ButtonSom.button_pressed = not AudioServer.is_bus_mute(0)
+	var modo := DisplayServer.window_get_mode()
+	var tela_cheia := modo == DisplayServer.WINDOW_MODE_FULLSCREEN \
+			or modo == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+	$Panel/VBoxOpcoes/HBoxTela/OpcaoTela.select(0 if tela_cheia else 1)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	if not visible:
+		return
 	if ButtonSong.button_pressed:
 		Global.DesligarMusica = false
 	else:
 		Global.DesligarMusica = true
+	if ButtonSom.button_pressed:
+		AudioServer.set_bus_mute(0, false)
+	else:
+		AudioServer.set_bus_mute(0, true)
 		
 func animar_painel(painel: Control, abrindo: bool) -> void:
-	var posicao = painel.position
+	if not _pos_base.has(painel):
+		_pos_base[painel] = painel.position
+	var posicao: Vector2 = _pos_base[painel]
 	var tween = create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.set_parallel(true)
@@ -33,6 +57,8 @@ func animar_painel(painel: Control, abrindo: bool) -> void:
 		tween.tween_property(painel, "position", posicao + Vector2(0, 8), 0.2)
 
 	await tween.finished
+	if not abrindo:
+		painel.position = posicao
 	
 func _on_ver_controles_pressed() -> void:
 	await animar_painel($Panel, false)

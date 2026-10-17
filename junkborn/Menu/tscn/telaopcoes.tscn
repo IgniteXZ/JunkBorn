@@ -103,7 +103,7 @@ border_color = Color(0.6509804, 0.34901962, 0.101960786, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yljg"]
 
-[node name="Opcoes" type="Control" unique_id=2117586468 node_paths=PackedStringArray("ButtonSong")]
+[node name="Opcoes" type="Control" unique_id=2117586468 node_paths=PackedStringArray("ButtonSong", "ButtonSom")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,6 +113,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_tnvj7")
 ButtonSong = NodePath("Panel/VBoxOpcoes/HBoxMusica/AreaCheckMusica/CheckMusica")
+ButtonSom = NodePath("Panel/VBoxOpcoes/HBoxSom/AreaCheckSom/CheckSom")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=1548611499]

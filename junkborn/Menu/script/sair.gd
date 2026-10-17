@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass
 
 func _on_pressed() -> void:
-	get_tree().quit()
+	ConfirmarSaida.abrir()
 
 
 func _on_mouse_entered() -> void:

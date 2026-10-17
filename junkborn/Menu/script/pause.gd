@@ -174,4 +174,4 @@ func _on_menu_principal_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu/tscn/menu.tscn")
 
 func _on_sair_jogo_pressed() -> void:
-	get_tree().quit()
+	ConfirmarSaida.abrir()
