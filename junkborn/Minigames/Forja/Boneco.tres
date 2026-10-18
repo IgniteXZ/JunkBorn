@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://dipk32i5wxe4b"]
+
+[ext_resource type="Texture2D" uid="uid://bd8d14ef3btjn" path="res://Resource/Itens/boneco.png" id="1_ji5c2"]
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_jyf2h"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_l7522"]
+[ext_resource type="Resource" uid="uid://cxmr1phfoa8im" path="res://Minigames/Forja/BonecoLixoData.tres" id="2_rpqw8"]
+
+[resource]
+script = ExtResource("1_jyf2h")
+nome_resultado = "Boneco"
+icone_resultado = ExtResource("1_ji5c2")
+item_resultado = ExtResource("2_rpqw8")
+ingredientes = {
+ExtResource("2_l7522"): 1
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

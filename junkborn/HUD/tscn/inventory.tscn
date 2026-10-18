@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="3_d41l4"]
 [ext_resource type="Texture2D" uid="uid://dg74a5bid7n81" path="res://HUD/sprites/slot inventario.png" id="3_rqyyd"]
 [ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="4_iclnp"]
-[ext_resource type="Texture2D" uid="uid://ck1itqk83hvtb" path="res://Resource/Itens/Plastico.png" id="4_qehyk"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="4_qehyk"]
 [ext_resource type="PackedScene" uid="uid://cmj6ro7q2y0l6" path="res://HUD/tscn/botaolivro.tscn" id="6_u6vfn"]
 [ext_resource type="Texture2D" uid="uid://b1bub2gyr0wyl" path="res://Resource/chip.jpg" id="6_w6ni3"]
 [ext_resource type="Texture2D" uid="uid://b71ouiwrqb5iw" path="res://Resource/gold.png" id="8_kbgbe"]
-[ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="9_kbgbe"]
-[ext_resource type="Texture2D" uid="uid://bbpnfiom47oum" path="res://Resource/Itens/madeira.png" id="10_rdhxq"]
+[ext_resource type="Texture2D" uid="uid://b801w37l66fvs" path="res://Resource/Itens/Metal.png" id="9_kbgbe"]
+[ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="10_pt6v2"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="11_hem2k"]
 [ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="12_8kugn"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
@@ -132,21 +133,22 @@ text = "67"
 
 [node name="Slot8" parent="GridContainer" unique_id=1082262799 instance=ExtResource("2_lic60")]
 layout_mode = 2
+item_data = ExtResource("10_pt6v2")
 
 [node name="background" parent="GridContainer/Slot8" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
+
+[node name="sprite" parent="GridContainer/Slot8" index="1" unique_id=2099300488]
+texture = ExtResource("11_hem2k")
+
+[node name="amount" parent="GridContainer/Slot8" index="2" unique_id=1407623469]
+text = "65"
 
 [node name="Slot9" parent="GridContainer" unique_id=748481143 instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot9" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
-
-[node name="sprite" parent="GridContainer/Slot9" index="1" unique_id=2099300488]
-texture = ExtResource("10_rdhxq")
-
-[node name="amount" parent="GridContainer/Slot9" index="2" unique_id=1407623469]
-text = "67"
 
 [node name="Slot10" parent="GridContainer" unique_id=389718707 instance=ExtResource("2_lic60")]
 layout_mode = 2

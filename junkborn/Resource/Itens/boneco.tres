@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dahotf5asp7br"]
 
-[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_sfodu"]
-[ext_resource type="Texture2D" uid="uid://58f5vg4r4ck4" path="res://Resource/Itens/vodu.png" id="2_csg2b"]
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_gb2lh"]
+[ext_resource type="Texture2D" uid="uid://bd8d14ef3btjn" path="res://Resource/Itens/boneco.png" id="2_mqehe"]
 
 [resource]
-script = ExtResource("1_sfodu")
-nome = "Boneco de palha"
-descricao = "É um boneco"
-textura = ExtResource("2_csg2b")
-tipoDeLixo = "Plastico"
+script = ExtResource("1_gb2lh")
+nome = "Boneco"
+textura = ExtResource("2_mqehe")
+tipoDeLixo = "Nada"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

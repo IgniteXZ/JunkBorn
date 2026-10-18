@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://deqbxeag6bsa4"]
+
+[ext_resource type="Texture2D" uid="uid://chukgtn7g1abc" path="res://Resource/Itens/corda.png" id="1_oy304"]
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_rwkmj"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_ndqhw"]
+[ext_resource type="Resource" uid="uid://h0ow1bcddfm1" path="res://Minigames/Forja/CordaLixoData.tres" id="3_fhwdb"]
+
+[resource]
+script = ExtResource("1_rwkmj")
+nome_resultado = "Corda"
+icone_resultado = ExtResource("1_oy304")
+item_resultado = ExtResource("3_fhwdb")
+ingredientes = {
+ExtResource("2_ndqhw"): 1
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

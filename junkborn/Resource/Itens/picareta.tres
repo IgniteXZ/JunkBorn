@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://6r52yiwkltil"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_pxcnr"]
+[ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="2_ncsj2"]
+
+[resource]
+script = ExtResource("1_pxcnr")
+item_id = 10
+nome = "Picareta"
+textura = ExtResource("2_ncsj2")
+tipoDeLixo = "Metal"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

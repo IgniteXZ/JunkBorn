@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://b567qh5m3dm8g"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_0inpf"]
+[ext_resource type="Texture2D" uid="uid://dj3s1yksd5hvv" path="res://Resource/Itens/sementeAguap.png" id="2_aj3hk"]
+
+[resource]
+script = ExtResource("1_0inpf")
+item_id = 14
+nome = "Semente aguapé"
+textura = ExtResource("2_aj3hk")
+tipoDeLixo = "Nada"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bp11od7mokj74"]
 
-[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_fvhih"]
-[ext_resource type="Texture2D" uid="uid://1svu6gcvdbky" path="res://Resource/Itens/Metal.png" id="2_o1xhe"]
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_fskp0"]
+[ext_resource type="Texture2D" uid="uid://b801w37l66fvs" path="res://Resource/Itens/metal.png" id="2_drcyl"]
 
 [resource]
-script = ExtResource("1_fvhih")
+script = ExtResource("1_fskp0")
+item_id = 7
 nome = "Metal"
-descricao = "é um metal"
-textura = ExtResource("2_o1xhe")
-tipoDeLixo = "Metal"
+descricao = "É um objeto bem resistente, ele reflete um pouco da luz que recebe"
+textura = ExtResource("2_drcyl")
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

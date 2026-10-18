@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://ca1nr7oq1u8jp"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_r06fp"]
+[ext_resource type="Texture2D" uid="uid://ny25nr1784mi" path="res://Resource/Itens/panela.png" id="2_5jxp5"]
+
+[resource]
+script = ExtResource("1_r06fp")
+item_id = 9
+nome = "Panela"
+descricao = "As panelas antigamente eram usadas pra fazer comida, atualmente nos não a usamos mais"
+textura = ExtResource("2_5jxp5")
+tipoDeLixo = "Metal"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

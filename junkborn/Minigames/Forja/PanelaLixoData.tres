@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://cn6v14peieg4d"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_fk6xw"]
+[ext_resource type="Texture2D" uid="uid://ny25nr1784mi" path="res://Resource/Itens/panela.png" id="2_4vunu"]
+
+[resource]
+script = ExtResource("1_fk6xw")
+item_id = 4
+nome = "Panela"
+textura = ExtResource("2_4vunu")
+tipoDeLixo = "Metal"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

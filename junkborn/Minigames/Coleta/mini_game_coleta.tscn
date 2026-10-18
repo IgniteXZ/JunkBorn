@@ -3,23 +3,17 @@
 [ext_resource type="Script" uid="uid://jp2w2rnghboj" path="res://Minigames/Coleta/mini_game_coleta.gd" id="1_pewcx"]
 [ext_resource type="PackedScene" uid="uid://gepkcakul0j1" path="res://lixo/lixo.tscn" id="2_6vuad"]
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="3_b61wl"]
-[ext_resource type="Resource" uid="uid://bmxyr6eqonmsa" path="res://Resource/Itens/escovaDeDente.tres" id="5_8ulqq"]
 [ext_resource type="Texture2D" uid="uid://v1xlln28q1ao" path="res://Minigames/Coleta/MonteColeta.png" id="5_yqq3e"]
-[ext_resource type="Resource" uid="uid://c5kkh275xgen0" path="res://Resource/Itens/osso.tres" id="6_2uoxl"]
+[ext_resource type="Resource" uid="uid://ca1nr7oq1u8jp" path="res://Resource/Itens/Panela.tres" id="6_lo5ct"]
 [ext_resource type="Texture2D" uid="uid://yipdife67ysi" path="res://Minigames/Coleta/CeuColeta.png" id="6_oquob"]
-[ext_resource type="Resource" uid="uid://c5r456fqnhjmh" path="res://Resource/Itens/Vidro.tres" id="6_sw4jj"]
-[ext_resource type="Resource" uid="uid://dkul7a0q5ere8" path="res://Resource/Itens/Fita.tres" id="7_gc8ir"]
-[ext_resource type="Resource" uid="uid://bp11od7mokj74" path="res://Resource/Itens/metal.tres" id="8_gagkx"]
+[ext_resource type="Resource" uid="uid://bp11od7mokj74" path="res://Resource/Itens/Metal.tres" id="8_gagkx"]
+[ext_resource type="Resource" uid="uid://d0e1khf5w0sdf" path="res://Resource/Itens/Talheres.tres" id="9_8ulqq"]
 [ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="9_jp2bg"]
-[ext_resource type="Resource" uid="uid://bhowue21upne8" path="res://Resource/Itens/RestosDeGordura.tres" id="10_hjkpg"]
-[ext_resource type="Resource" uid="uid://bbjfbxsh84hq6" path="res://Resource/Itens/madeira.tres" id="11_23cby"]
-[ext_resource type="Resource" uid="uid://cen3dulybcmsb" path="res://Resource/Itens/lampada.tres" id="12_wm4ip"]
-[ext_resource type="Resource" uid="uid://don5v34sjfdw1" path="res://Resource/Itens/celular.tres" id="13_01sla"]
+[ext_resource type="Resource" uid="uid://d1olv62vwmh15" path="res://Resource/Itens/RestosOrganicos.tres" id="10_2uoxl"]
+[ext_resource type="Resource" uid="uid://ccabuixb7keu6" path="res://Resource/Itens/SacolaPlastica.tres" id="11_gc8ir"]
+[ext_resource type="Resource" uid="uid://bf7q5gil0d1t1" path="res://Resource/Itens/garrafaplastica.tres" id="12_gagkx"]
 [ext_resource type="Resource" uid="uid://dfi8godcxvfrg" path="res://Resource/Itens/Esponja.tres" id="14_wt056"]
-[ext_resource type="Resource" uid="uid://cicbqjbfmqhxe" path="res://Resource/Itens/pilha.tres" id="15_vambm"]
 [ext_resource type="Resource" uid="uid://b5wdxhdlxpk7a" path="res://Resource/Itens/isopor.tres" id="16_ovcw4"]
-[ext_resource type="Resource" uid="uid://bua335scn1c3h" path="res://Resource/Itens/Banana.tres" id="17_2uoxl"]
-[ext_resource type="Resource" uid="uid://deumblsyq3pjx" path="res://Resource/Itens/TV.tres" id="18_gc8ir"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="22_jp2bg"]
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="23_jp2bg"]
@@ -46,7 +40,7 @@ bg_color = Color(0.027673533, 0.09479255, 0.08584555, 1)
 [node name="MiniGameColeta" type="Node2D" unique_id=1136356552]
 script = ExtResource("1_pewcx")
 lixo_scene = ExtResource("2_6vuad")
-lista_de_lixos = Array[ExtResource("3_b61wl")]([ExtResource("6_sw4jj"), ExtResource("5_8ulqq"), ExtResource("6_2uoxl"), ExtResource("7_gc8ir"), ExtResource("8_gagkx"), ExtResource("9_jp2bg"), ExtResource("10_hjkpg"), ExtResource("11_23cby"), ExtResource("12_wm4ip"), ExtResource("13_01sla"), ExtResource("14_wt056"), ExtResource("15_vambm"), ExtResource("16_ovcw4"), ExtResource("17_2uoxl"), ExtResource("18_gc8ir")])
+lista_de_lixos = Array[ExtResource("3_b61wl")]([ExtResource("9_jp2bg"), ExtResource("8_gagkx"), ExtResource("6_lo5ct"), ExtResource("16_ovcw4"), ExtResource("14_wt056"), ExtResource("9_8ulqq"), ExtResource("10_2uoxl"), ExtResource("11_gc8ir"), ExtResource("12_gagkx")])
 
 [node name="MonteColeta" type="Sprite2D" parent="." unique_id=1272992534]
 position = Vector2(667.49994, 365.00003)

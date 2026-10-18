@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bf7q5gil0d1t1"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_6vp0b"]
+[ext_resource type="Texture2D" uid="uid://dxuxy4wgamst3" path="res://Resource/Itens/garrafaPlastica.png" id="2_c3f88"]
+
+[resource]
+script = ExtResource("1_6vp0b")
+item_id = 4
+nome = "Garrafa Plastica"
+descricao = "Meu avô tinha um dessas em casa, lembro quando ele contava historias sobre que eles guardavam varias quantidades de agua em varias dessas, devia ser bom..."
+textura = ExtResource("2_c3f88")
+tipoDeLixo = "Plastico"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

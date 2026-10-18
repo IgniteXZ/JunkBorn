@@ -3,7 +3,13 @@
 [ext_resource type="Script" uid="uid://rqqmyish5ts2" path="res://Minigames/Forja/tela_prensa.gd" id="1_e841g"]
 [ext_resource type="PackedScene" uid="uid://c6tb7fv0bqbxi" path="res://Minigames/Forja/slotMaterial.tscn" id="1_jokbf"]
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="2_jtwxe"]
-[ext_resource type="Resource" uid="uid://on0aqhj8wgr5" path="res://Minigames/Forja/teste1.tres" id="3_vpupt"]
+[ext_resource type="Resource" uid="uid://cp3bjdmvqt0lb" path="res://Minigames/Forja/GarrafaPlastica.tres" id="3_xaie4"]
+[ext_resource type="Resource" uid="uid://bu1jqqfdm58w0" path="res://Minigames/Forja/SacolaPlastica.tres" id="4_evxgb"]
+[ext_resource type="Resource" uid="uid://gu61falukpy8" path="res://Minigames/Forja/Picareta.tres" id="5_175ki"]
+[ext_resource type="Resource" uid="uid://d36o7w1j5uqcl" path="res://Minigames/Forja/Panela.tres" id="6_gqd1b"]
+[ext_resource type="Resource" uid="uid://deqbxeag6bsa4" path="res://Minigames/Forja/Corda.tres" id="7_m6p2d"]
+[ext_resource type="Resource" uid="uid://dfjg0booxvebn" path="res://Minigames/Forja/Cano.tres" id="8_cf2kd"]
+[ext_resource type="Resource" uid="uid://bnnkb1cqq08ke" path="res://Minigames/Forja/pá.tres" id="9_5g8fd"]
 
 [node name="TelaPrensa" type="Control" unique_id=1187864529]
 layout_mode = 3
@@ -16,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_e841g")
-receitas = Array[ExtResource("2_jtwxe")]([ExtResource("3_vpupt")])
+receitas = Array[ExtResource("2_jtwxe")]([ExtResource("3_xaie4"), ExtResource("4_evxgb"), ExtResource("5_175ki"), ExtResource("6_gqd1b"), ExtResource("7_m6p2d"), ExtResource("8_cf2kd"), ExtResource("9_5g8fd")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=335549352]
 layout_mode = 0

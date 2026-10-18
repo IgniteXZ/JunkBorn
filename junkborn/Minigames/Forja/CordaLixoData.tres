@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://h0ow1bcddfm1"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_tsm6s"]
+[ext_resource type="Texture2D" uid="uid://chukgtn7g1abc" path="res://Resource/Itens/corda.png" id="2_8dlwx"]
+
+[resource]
+script = ExtResource("1_tsm6s")
+item_id = 2
+nome = "Corda"
+textura = ExtResource("2_8dlwx")
+tipoDeLixo = "Plastico"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

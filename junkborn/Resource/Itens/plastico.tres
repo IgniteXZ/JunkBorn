@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://swdjci3wgmne"]
 
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_yf2ls"]
-[ext_resource type="Texture2D" uid="uid://ck1itqk83hvtb" path="res://Resource/Itens/Plastico.png" id="2_uqowf"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_uqowf"]
 
 [resource]
 script = ExtResource("1_yf2ls")
-item_id = 1
+item_id = 11
 nome = "Plastico"
-descricao = "É um plastico"
+descricao = "Sempre que eu volto da mina sempre vejo um monte desses \"Plasticos\", acho que é assim que meu avô chama, porque parece que eles nunca somem?"
 textura = ExtResource("2_uqowf")
 tipoDeLixo = "Plastico"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dt1qe8rnhk1q5"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_erofi"]
+[ext_resource type="Texture2D" uid="uid://bow1jnh7hngv5" path="res://Resource/Itens/sacolaPlastica.png" id="2_64l42"]
+
+[resource]
+script = ExtResource("1_erofi")
+item_id = 7
+nome = "Sacola Plastica"
+textura = ExtResource("2_64l42")
+tipoDeLixo = "Plastico"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

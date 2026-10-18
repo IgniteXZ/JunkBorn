@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://dfjg0booxvebn"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_2yw1y"]
+[ext_resource type="Texture2D" uid="uid://bggefxy3gnikc" path="res://Resource/Itens/cano.png" id="1_gikxi"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_fflqx"]
+[ext_resource type="Resource" uid="uid://byleqcwcak2mw" path="res://Minigames/Forja/CanoLixoData.tres" id="3_jauwn"]
+
+[resource]
+script = ExtResource("1_2yw1y")
+nome_resultado = "Cano"
+icone_resultado = ExtResource("1_gikxi")
+item_resultado = ExtResource("3_jauwn")
+ingredientes = {
+ExtResource("2_fflqx"): 1
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

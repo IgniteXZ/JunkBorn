@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://ckulsn8vkqdei"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_2ilur"]
+[ext_resource type="Texture2D" uid="uid://dxuxy4wgamst3" path="res://Resource/Itens/garrafaPlastica.png" id="2_1tqwj"]
+
+[resource]
+script = ExtResource("1_2ilur")
+item_id = 3
+nome = "Garrafa Plastica"
+textura = ExtResource("2_1tqwj")
+tipoDeLixo = "Plastico"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

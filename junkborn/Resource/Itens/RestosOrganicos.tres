@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://d1olv62vwmh15"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_8jo23"]
+[ext_resource type="Texture2D" uid="uid://cppq8am73st1v" path="res://Resource/Itens/restosOrganicos.png" id="2_jjuo1"]
+
+[resource]
+script = ExtResource("1_8jo23")
+item_id = 12
+nome = "Restos"
+textura = ExtResource("2_jjuo1")
+tipoDeLixo = "Nada"
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

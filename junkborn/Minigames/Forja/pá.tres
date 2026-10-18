@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://bnnkb1cqq08ke"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_7ubsm"]
+[ext_resource type="Texture2D" uid="uid://ryf00hcp53uk" path="res://Resource/Itens/pa.png" id="1_pclnp"]
+[ext_resource type="Texture2D" uid="uid://b801w37l66fvs" path="res://Resource/Itens/metal.png" id="2_l544r"]
+[ext_resource type="Resource" uid="uid://dkr43ylf57qaw" path="res://Resource/Itens/pa.tres" id="3_en5p8"]
+
+[resource]
+script = ExtResource("1_7ubsm")
+nome_resultado = "Pá"
+icone_resultado = ExtResource("1_pclnp")
+item_resultado = ExtResource("3_en5p8")
+ingredientes = {
+ExtResource("2_l544r"): 2
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

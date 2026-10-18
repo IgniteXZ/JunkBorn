@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bf78op1b5gxpu"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_6tj45"]
+[ext_resource type="Texture2D" uid="uid://d4fer4bovrp55" path="res://Resource/Itens/sementeGiras.png" id="2_kvlxf"]
+
+[resource]
+script = ExtResource("1_6tj45")
+item_id = 15
+nome = "Semente de Girasol"
+textura = ExtResource("2_kvlxf")
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://byleqcwcak2mw"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_ubh40"]
+[ext_resource type="Texture2D" uid="uid://bggefxy3gnikc" path="res://Resource/Itens/cano.png" id="2_f1uv1"]
+
+[resource]
+script = ExtResource("1_ubh40")
+item_id = 1
+nome = "Cano"
+textura = ExtResource("2_f1uv1")
+tipoDeLixo = "Metal"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

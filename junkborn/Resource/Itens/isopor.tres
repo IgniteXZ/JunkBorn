@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://b5wdxhdlxpk7a"]
 
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_64tbx"]
-[ext_resource type="Texture2D" uid="uid://s6wif38hkew3" path="res://Resource/Itens/Isopor.jpg" id="2_sof7g"]
+[ext_resource type="Texture2D" uid="uid://cywr31x3c6vct" path="res://Resource/Itens/isopor.png" id="2_sof7g"]
 
 [resource]
 script = ExtResource("1_64tbx")
+item_id = 5
+nome = "Isopor"
+descricao = "É um objeto estranho, ele meio que vai se partindo na mão, se transformando em objetos menores"
 textura = ExtResource("2_sof7g")
-tipoDeLixo = "Plastico"
+tipoDeLixo = "Papel"
 Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

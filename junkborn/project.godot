@@ -122,7 +122,7 @@ variables={
 "deserto_liberado": false,
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
-"forja_liberada": false,
+"forja_liberada": true,
 "liberou_menus": true,
 "madancaru_falou": false,
 "pode_dormir": false,

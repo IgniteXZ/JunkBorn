@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://bxai52wbhhv8u"]
 
-[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_d62lp"]
-[ext_resource type="Texture2D" uid="uid://cppd7uinnrkgv" path="res://Resource/Itens/corda.jpg" id="2_tq4so"]
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_g2i1c"]
+[ext_resource type="Texture2D" uid="uid://chukgtn7g1abc" path="res://Resource/Itens/corda.png" id="2_bbn52"]
 
 [resource]
-script = ExtResource("1_d62lp")
+script = ExtResource("1_g2i1c")
+item_id = 2
 nome = "Corda"
-descricao = "É uma corda"
-textura = ExtResource("2_tq4so")
-tipoDeLixo = "Plastico"
+textura = ExtResource("2_bbn52")
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

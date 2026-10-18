@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dkr43ylf57qaw"]
 
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_fsxin"]
-[ext_resource type="Texture2D" uid="uid://dmuc3yqovw3qh" path="res://Resource/Itens/Pá.png" id="2_td34n"]
+[ext_resource type="Texture2D" uid="uid://ryf00hcp53uk" path="res://Resource/Itens/pa.png" id="2_td34n"]
 
 [resource]
 script = ExtResource("1_fsxin")
-nome = "Pá"
-descricao = "É uma PÁ"
+item_id = 8
+nome = "pá"
 textura = ExtResource("2_td34n")
 tipoDeLixo = "Metal"
+pode_desmanchar = true
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

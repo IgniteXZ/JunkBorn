@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkqqo55gpvxv"
-path="res://.godot/imported/Esponja.png-1b8092b6801ef3619b0bed547ef03cb9.ctex"
+uid="uid://c3hkvwm56emlh"
+path="res://.godot/imported/esponja.png-c57746e2eac35bbc4631666870893aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/Itens/Esponja.png"
-dest_files=["res://.godot/imported/Esponja.png-1b8092b6801ef3619b0bed547ef03cb9.ctex"]
+source_file="res://Resource/Itens/esponja.png"
+dest_files=["res://.godot/imported/esponja.png-c57746e2eac35bbc4631666870893aa0.ctex"]
 
 [params]
 

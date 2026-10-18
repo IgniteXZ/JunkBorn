@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://b6g3s2ejvc38u"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_6u23u"]
+[ext_resource type="Texture2D" uid="uid://cig0s7wt1pxv0" path="res://Resource/Itens/sementeOrapro.png" id="2_kkmsu"]
+
+[resource]
+script = ExtResource("1_6u23u")
+item_id = 17
+nome = "Semente ora pro nóbis"
+textura = ExtResource("2_kkmsu")
+metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://dsc0bk8wtitpi"]
+
+[ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_b3gse"]
+[ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="2_i7bty"]
+
+[resource]
+script = ExtResource("1_b3gse")
+item_id = 6
+nome = "Jangada"
+textura = ExtResource("2_i7bty")
+tipoDeLixo = "Nada"
+pode_desmanchar = true
+metadata/_custom_type_script = "uid://emlo1ywngpfw"
