@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8oalqt2swfps"
-path="res://.godot/imported/plastico.png-3ff6cae56ea9c396ff29d32c3de57ef8.ctex"
+path="res://.godot/imported/Plastico.png-71b39d73d6965f5df2154eaf77040684.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/Itens/plastico.png"
-dest_files=["res://.godot/imported/plastico.png-3ff6cae56ea9c396ff29d32c3de57ef8.ctex"]
+source_file="res://Resource/Itens/Plastico.png"
+dest_files=["res://.godot/imported/Plastico.png-71b39d73d6965f5df2154eaf77040684.ctex"]
 
 [params]
 

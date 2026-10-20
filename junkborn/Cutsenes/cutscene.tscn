@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://cm2e20wjwibmx"]
 
-[ext_resource type="Texture2D" uid="uid://ce1clhy6o6oha" path="res://Cutsenes/images.jpg" id="1_joq0i"]
-[ext_resource type="Script" uid="uid://iqef125v4c5o" path="res://Cutsenes/texture_rect.gd" id="2_r4vyf"]
+[ext_resource type="VideoStream" uid="uid://cdlruru3n30yc" path="res://Cutsenes/videoplayback.ogv" id="1_jjkyd"]
+[ext_resource type="Script" uid="uid://bqy7lla3rqe7n" path="res://Cutsenes/video_stream_player.gd" id="2_joq0i"]
 
 [node name="Cutscene" type="Control" unique_id=2020684685]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1285740479]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1408844527]
 layout_mode = 0
-offset_right = 816.0
-offset_bottom = 597.0
-texture = ExtResource("1_joq0i")
-script = ExtResource("2_r4vyf")
+offset_left = -50.0
+offset_top = -43.0
+offset_right = 1359.0
+offset_bottom = 753.0
+stream = ExtResource("1_jjkyd")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("2_joq0i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1506457436]
+position = Vector2(658, 352)

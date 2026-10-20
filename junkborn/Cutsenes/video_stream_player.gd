@@ -1,9 +1,9 @@
-extends TextureRect
+extends VideoStreamPlayer
 var passarCena: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	passarCena = true
 	if passarCena:
 		get_tree().change_scene_to_file("res://Cenarios/CenarioVila/characterP.tscn")
