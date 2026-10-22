@@ -1297,12 +1297,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b33t2"]
-radius = 40.311287
+[sub_resource type="CircleShape2D" id="CircleShape2D_0pf4l"]
+radius = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
-radius = 42.0
-height = 94.0
+radius = 65.0
+height = 130.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifxyd"]
 animations = [{
@@ -1447,6 +1447,15 @@ size = Vector2(54, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
 size = Vector2(55, 117.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8q0j"]
+size = Vector2(11.097427, 294.05878)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsx6d"]
+size = Vector2(206.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31fey"]
+size = Vector2(2463.5, 9)
 
 [node name="Node2D3" type="Node2D" unique_id=240260216]
 script = ExtResource("1_8llo0")
@@ -1690,9 +1699,9 @@ frame_progress = 0.9176922
 
 [node name="Mandacaru" type="CollisionShape2D" parent="y-sort/mandacaru" unique_id=1378490439]
 y_sort_enabled = true
-position = Vector2(1234, 201)
+position = Vector2(1220, 204)
 scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("CircleShape2D_b33t2")
+shape = SubResource("CircleShape2D_0pf4l")
 
 [node name="Area2D" type="Area2D" parent="y-sort/mandacaru" unique_id=929955987]
 y_sort_enabled = true
@@ -1700,7 +1709,7 @@ script = ExtResource("38_5d4lt")
 timeline = "mandacaruFala1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/mandacaru/Area2D" unique_id=2025617285]
-position = Vector2(1230, 183)
+position = Vector2(1217, 193)
 shape = SubResource("CapsuleShape2D_qrw66")
 
 [node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
@@ -1833,6 +1842,7 @@ rotation = 1.5711273
 shape = SubResource("CapsuleShape2D_fpo1d")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item1"
@@ -1847,6 +1857,7 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
 
 [node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item2"
@@ -1861,6 +1872,7 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("14_8llo0")
 
 [node name="item3" type="Area2D" parent="." unique_id=1127147407 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item2"
@@ -1945,6 +1957,22 @@ shape = SubResource("RectangleShape2D_qrw66")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="dialogosCasa/CasaErrada" unique_id=1726200287]
 position = Vector2(-104, 74.25)
 shape = SubResource("RectangleShape2D_qrw66")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=399607242]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1649639670]
+position = Vector2(633.00006, -162.00002)
+rotation = -1.5463617
+shape = SubResource("RectangleShape2D_f8q0j")
+debug_color = Color(0, 0.050980393, 0.69803923, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=90070553]
+position = Vector2(1278.75, -156.5)
+shape = SubResource("RectangleShape2D_rsx6d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1095655308]
+position = Vector2(260.25, 400.5)
+shape = SubResource("RectangleShape2D_31fey")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
