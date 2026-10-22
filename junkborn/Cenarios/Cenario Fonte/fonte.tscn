@@ -5,10 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://b4vu4xvkiutbk" path="res://Cenarios/Cenario Fonte/tileset fonte2.png" id="3_pqhaq"]
 [ext_resource type="Texture2D" uid="uid://c8tcudvsmr43" path="res://Cenarios/Cenario Fonte/tileset fonte1e2.png" id="4_igb4l"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="4_vnfls"]
-[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="6_pqhaq"]
 [ext_resource type="Script" uid="uid://dhdv4jj888du8" path="res://Cenarios/Cenario Fonte/canos_game.gd" id="6_vnfls"]
 [ext_resource type="PackedScene" uid="uid://sqha5vcfp3ib" path="res://Minigames/Canos/tscn/minigamecanos_1.tscn" id="7_1od1r"]
+[ext_resource type="Texture2D" uid="uid://bggefxy3gnikc" path="res://Resource/Itens/cano.png" id="8_wi68o"]
+[ext_resource type="Texture2D" uid="uid://ryf00hcp53uk" path="res://Resource/Itens/pa.png" id="9_4jw3k"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="9_p1e2c"]
+[ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="10_dvo31"]
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="10_u2vtj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_behyc"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
@@ -1278,8 +1280,8 @@ sources/0 = SubResource("TileSetAtlasSource_qwcuk")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0hx70"]
-radius = 25.079872
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw5o1"]
+size = Vector2(548, 221)
 
 [sub_resource type="Resource" id="Resource_wi68o"]
 script = ExtResource("10_u2vtj")
@@ -1338,19 +1340,16 @@ vertical_alignment = 1
 [node name="canosGame" type="Node2D" parent="." unique_id=1245883517 groups=["no_pause"]]
 script = ExtResource("6_vnfls")
 cena_minigame = ExtResource("7_1od1r")
-modo_teste = true
+tex_cano = ExtResource("8_wi68o")
+tex_pa = ExtResource("9_4jw3k")
+tex_picareta = ExtResource("10_dvo31")
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)
 
-[node name="Sprite2D" type="Sprite2D" parent="canosGame/Area2D" unique_id=1754592662]
-position = Vector2(-13.999977, -16.5)
-scale = Vector2(0.43749988, 0.32031262)
-texture = ExtResource("6_pqhaq")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="canosGame/Area2D" unique_id=1339610815]
-position = Vector2(-14, -16)
-shape = SubResource("CircleShape2D_0hx70")
+position = Vector2(-3, -95.5)
+shape = SubResource("RectangleShape2D_cw5o1")
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_p1e2c")]
 position = Vector2(-421, -721)

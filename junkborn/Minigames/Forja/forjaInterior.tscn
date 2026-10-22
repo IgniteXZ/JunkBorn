@@ -481,7 +481,7 @@ position = Vector2(220, 786)
 position = Vector2(-27.000008, 126.999985)
 scale = Vector2(0.39487118, 0.9541467)
 
-[node name="prensa" type="Sprite2D" parent="AbrirCenas" unique_id=1908161588]
+[node name="prensa" type="Node2D" parent="AbrirCenas" unique_id=1235971879]
 position = Vector2(471.10437, 319.6845)
 scale = Vector2(1.4235055, 0.09867954)
 
@@ -493,7 +493,7 @@ position = Vector2(7.0707216, 328.9704)
 rotation = 1.446878
 shape = SubResource("CircleShape2D_a3nj5")
 
-[node name="forja" type="Sprite2D" parent="AbrirCenas" unique_id=314499974]
+[node name="forja" type="Node2D" parent="AbrirCenas" unique_id=1265001266]
 position = Vector2(1261.1708, 286.11957)
 scale = Vector2(2.014627, 0.069083065)
 

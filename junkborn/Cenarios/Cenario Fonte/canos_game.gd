@@ -1,9 +1,7 @@
 extends Node2D
 
 @export var cena_minigame: PackedScene
-@export var tex_reto: Texture2D
-@export var tex_curva: Texture2D
-@export var tex_cruz: Texture2D
+@export var tex_cano: Texture2D
 @export var tex_pa: Texture2D
 @export var tex_picareta: Texture2D
 @export var modo_teste = false
@@ -58,8 +56,7 @@ func _process(_delta):
 	if requisitos_ok(c):
 		aviso.text = "Aperte E para interagir"
 	else:
-		aviso.text = "Você precisa de 1 cano reto, 1 curva, 1 cruz e 1 pá.\nVocê tem: %d reto, %d curva, %d cruz, %d pá." \
-			% [c["reto"], c["curva"], c["cruz"], c["pa"]]
+		aviso.text = "Você precisa de um cano e uma pá para usar a fonte."
 
 	aviso.visible = true
 
@@ -99,12 +96,8 @@ func mesma_textura(a, b) -> bool:
 
 
 func chave_da_textura(tex) -> String:
-	if mesma_textura(tex, tex_reto):
-		return "reto"
-	if mesma_textura(tex, tex_curva):
-		return "curva"
-	if mesma_textura(tex, tex_cruz):
-		return "cruz"
+	if mesma_textura(tex, tex_cano):
+		return "cano"
 	if mesma_textura(tex, tex_pa):
 		return "pa"
 	if mesma_textura(tex, tex_picareta):
@@ -114,80 +107,26 @@ func chave_da_textura(tex) -> String:
 
 func contar() -> Dictionary:
 	if modo_teste:
-		return {"reto": 1, "curva": 1, "cruz": 1, "pa": 1, "picareta": 0}
+		return {"cano": 1, "pa": 1, "picareta": 0}
 
-	var r = {"reto": 0, "curva": 0, "cruz": 0, "pa": 0, "picareta": 0}
+	var r = {"cano": 0, "pa": 0, "picareta": 0}
 
 	for slot in obter_slots():
 		var spr = slot.get_node_or_null("sprite")
-		var qtd = slot.get_node_or_null("amount")
 
-		if spr == null or qtd == null or spr.texture == null:
+		if spr == null or spr.texture == null:
 			continue
 
 		var chave = chave_da_textura(spr.texture)
 
 		if chave != "":
-			r[chave] += max(1, int(qtd.text))
+			r[chave] += 1
 
 	return r
 
 
 func requisitos_ok(c: Dictionary) -> bool:
-	return c["reto"] >= 1 and c["curva"] >= 1 and c["cruz"] >= 1 and c["pa"] >= 1
-
-
-# Na vitória final: sai 1 de cada tipo (a pá não é consumida)
-func debitar_um_de_cada():
-	if modo_teste:
-		return
-
-	var faltam = {"reto": 1, "curva": 1, "cruz": 1}
-	var dono = null
-
-	for slot in obter_slots():
-		var spr = slot.get_node_or_null("sprite")
-		var qtd_label = slot.get_node_or_null("amount")
-
-		if spr == null or qtd_label == null or spr.texture == null:
-			continue
-
-		var chave = chave_da_textura(spr.texture)
-
-		if chave == "" or chave == "pa" or faltam.get(chave, 0) <= 0:
-			continue
-
-		faltam[chave] -= 1
-		var qtd = max(1, int(qtd_label.text))
-
-		if qtd - 1 <= 0:
-			slot.set_empty_slot()
-			if slot.has_meta("item_id"):
-				slot.remove_meta("item_id")
-		else:
-			qtd_label.text = str(qtd - 1)
-
-	# Acha o nó do inventário que salva em Global.itens
-	var no = slots_dono()
-	if no:
-		dono = no
-
-	if dono:
-		dono.salvar_inventario()
-
-
-func slots_dono():
-	var jogador = get_tree().get_first_node_in_group("player")
-
-	if jogador == null:
-		return null
-
-	var no = jogador.find_child("*", true, false)
-	for n in jogador.find_children("*", "CanvasLayer", true, false):
-		if n.has_method("salvar_inventario"):
-			return n
-
-	return null
+	return c["cano"] >= 1 and c["pa"] >= 1
 
 
 # ---------------------------------------------------------------
@@ -204,7 +143,6 @@ func abrir():
 
 	MinigameCanos.fase_atual = 0
 	MinigameCanos.mapa_salvo = []
-	MinigameCanos.inventario = {"reto": 1, "curva": 1, "cruz": 1}
 
 	_montar()
 
@@ -219,12 +157,6 @@ func _montar():
 	camada_minigame.layer = 5
 	add_child(camada_minigame)
 
-	var fundo = ColorRect.new()
-	fundo.color = Color(0, 0, 0, 0)
-	fundo.set_anchors_preset(Control.PRESET_FULL_RECT)
-	fundo.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	camada_minigame.add_child(fundo)
-
 	var instancia = cena_minigame.instantiate()
 	camada_minigame.add_child(instancia)
 
@@ -236,6 +168,7 @@ func _montar():
 	tabuleiro.sair_solicitado.connect(_ao_sair_do_minigame)
 	tabuleiro.reiniciar_solicitado.connect(_ao_reiniciar)
 	tabuleiro.minigame_concluido.connect(_ao_concluir)
+	tabuleiro.definir_picareta(contar()["picareta"] >= 1)
 
 	camada_botao = CanvasLayer.new()
 	camada_botao.layer = 30
@@ -247,9 +180,6 @@ func _montar():
 	botao.custom_minimum_size = Vector2(100, 40)
 	botao.pressed.connect(_ao_sair_do_minigame)
 	camada_botao.add_child(botao)
-	
-	var tem_pic = contar()["picareta"] >= 1
-	tabuleiro.definir_picareta(tem_pic)
 
 
 func fechar():
@@ -274,7 +204,6 @@ func congelar_jogador(congelar: bool):
 
 
 func _ao_sair_do_minigame():
-	# Sair no meio: nada é consumido
 	MinigameCanos.fase_atual = 0
 	MinigameCanos.mapa_salvo = []
 	fechar()
@@ -287,5 +216,5 @@ func _ao_reiniciar():
 
 
 func _ao_concluir():
-	debitar_um_de_cada()
+	# Nada é consumido: o cano e a pá são "chaves"
 	fechar()

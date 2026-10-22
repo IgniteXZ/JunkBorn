@@ -10,14 +10,15 @@ const RAIO_CURVA = 24.0
 const LARGURA_AGUA = 10.0
 const LARGURA_CONTORNO = 14.0
 
-const CAMINHO_ATLAS = "res://Minigames/Canos/sprites/canosT.png"
+# Barra de seleção usa os canos "fechados" (cano.png); o tabuleiro continua com o canosT.png
+const CAMINHO_ATLAS = "res://Minigames/Canos/sprites/canos.png"
+const CAMINHO_TORNEIRA = "res://Minigames/Canos/sprites/torneira.png"
 const REGIOES_CANOS = [
 	Rect2(48, 48, 48, 48), # reto
 	Rect2(0, 0, 48, 48),   # curva
-	Rect2(48, 0, 48, 48),  # cruz
 ]
 
-const TIPOS = ["reto", "curva", "cruz"]
+const TIPOS = ["reto", "curva"]
 
 const CURIOSIDADES = [
 	{
@@ -72,15 +73,12 @@ const FASES = [
 static var fase_atual = 0
 static var tutorial_visto = false
 static var mapa_salvo = []
-# O lago grava aqui o que o jogador tem; ao concluir tudo, sai 1 de cada tipo
-static var inventario = {"reto": 1, "curva": 1, "cruz": 1}
-static var reserva = {}
 
 # Texto provisório (você vai mandar o definitivo)
 const PAGINAS_TUTORIAL = [
-	["OBJETIVO", "Leve a água que sai do bloco azul até o topo do tabuleiro, montando uma tubulação.\nDepois do VAI!, a água sai sozinha em 3 segundos e não espera ninguém."],
+	["OBJETIVO", "Leve a água que sai da torneira até o topo do tabuleiro, montando uma tubulação.\nDepois do VAI!, a água sai sozinha em 3 segundos e não espera ninguém."],
 	["CONTROLES", "Botão DIREITO: cava a terra (chão acinzentado é duro e leva 2 cliques).\nBotão ESQUERDO: coloca um cano na terra cavada. Clicar num cano o gira, só até a água chegar nele."],
-	["OS CANOS", "Teclas 1, 2 e 3 (ou clique na barra embaixo) trocam o cano.\n1 Reto: liga dois lados opostos.\n2 Curva: liga dois lados vizinhos.\n3 Cruz: liga os quatro lados e divide a água. Todos os lados precisam ter cano."],
+	["OS CANOS", "Teclas 1 e 2 (ou clique na barra embaixo) trocam o cano.\n1 Reto: liga dois lados opostos.\n2 Curva: liga dois lados vizinhos.\nClique num cano com outro tipo selecionado para trocá-lo, antes da água chegar."],
 	["CUIDADO", "Áreas contaminadas (verdes): clicar nelas, ou deixar a água chegar perto delas, faz você perder. Pedras não aceitam cano.\nVocê também perde se a água vazar ou chegar onde não há cano.\nNas fases 2 e 3 as áreas contaminadas somem depois do preview. Memorize onde estão!"],
 ]
 
@@ -172,6 +170,8 @@ func _ready():
 
 	criar_fundo(tamanho, vp)
 
+	var tex_torneira = load(CAMINHO_TORNEIRA)
+
 	for y in range(linhas):
 		celulas.append([])
 
@@ -193,9 +193,17 @@ func _ready():
 				fonte = Vector2i(x, y)
 				celula.marcar_fonte()
 
+				# Torneira no lugar do bloco azul
+				if tex_torneira:
+					var spr = Sprite2D.new()
+					spr.texture = tex_torneira
+					spr.z_index = 2
+					celula.add_child(spr)
+
+	# Esconde o antigo bloco azul da fonte
 	var no_fonte = get_node_or_null("FonteAgua")
 	if no_fonte:
-		no_fonte.position = obter_ponto_centro(fonte)
+		no_fonte.visible = false
 
 	camada_contornos = Node2D.new()
 	add_child(camada_contornos)
@@ -289,7 +297,7 @@ func criar_barra_selecao():
 	barra.add_theme_constant_override("separation", 12)
 	camada.add_child(barra)
 
-	for i in range(3):
+	for i in range(REGIOES_CANOS.size()):
 		var painel = PanelContainer.new()
 		painel.custom_minimum_size = Vector2(76, 76)
 		painel.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -353,8 +361,6 @@ func _input(event):
 			tipo_cano_selecionado = 0
 		elif event.keycode == KEY_2:
 			tipo_cano_selecionado = 1
-		elif event.keycode == KEY_3:
-			tipo_cano_selecionado = 2
 		else:
 			return
 		atualizar_hud_canos()
@@ -725,7 +731,7 @@ func fluxir(pos: Vector2i, entrada: String, trilha: Trilha):
 			entrada = obter_direcao_oposta(saida)
 			continue
 
-		# Cruz: vai ao centro e ramifica
+		# Várias saídas: vai ao centro e ramifica
 		await animar_caminho(
 			trilha,
 			[obter_ponto_borda(pos, entrada), obter_ponto_centro(pos)],
@@ -987,7 +993,7 @@ func ganhar_jogo():
 	else:
 		mostrar_resultado(
 			"TUBULAÇÃO COMPLETA!",
-			"Ao concluir, 1 cano de cada tipo sai do seu inventário.",
+			"Você levou a água até o topo nas três fases!",
 			"Concluir",
 			concluir_minigame
 		)
@@ -1012,8 +1018,6 @@ func derrotar_jogo(motivo = "sem_cano"):
 			texto = "A água vazou para fora do tabuleiro!\nA tubulação não conseguiu conter o fluxo."
 		"contaminacao":
 			texto = "A água encontrou uma área contaminada!\nA contaminação se espalhou pela tubulação."
-
-	texto += "\n\nSeus canos continuam no inventário."
 
 	await get_tree().create_timer(0.7).timeout
 
@@ -1091,11 +1095,7 @@ func proxima_fase():
 
 
 func concluir_minigame():
-	# Só na vitória final: sai 1 de cada tipo (o lago calcula o gasto por diferença)
-	for t in TIPOS:
-		inventario[t] = max(0, inventario[t] - 1)
-
-	reserva = {}
+	# Sem consumo de itens: o cano é uma "chave", como a pá
 	fase_atual = 0
 	mapa_salvo = []
 	minigame_concluido.emit()

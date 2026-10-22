@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://v1xlln28q1ao" path="res://Minigames/Coleta/MonteColeta.png" id="5_yqq3e"]
 [ext_resource type="Resource" uid="uid://ca1nr7oq1u8jp" path="res://Resource/Itens/Panela.tres" id="6_lo5ct"]
 [ext_resource type="Texture2D" uid="uid://yipdife67ysi" path="res://Minigames/Coleta/CeuColeta.png" id="6_oquob"]
-[ext_resource type="Resource" uid="uid://bp11od7mokj74" path="res://Resource/Itens/Metal.tres" id="8_gagkx"]
+[ext_resource type="Resource" uid="uid://bp11od7mokj74" path="res://Resource/Itens/metal.tres" id="8_gagkx"]
 [ext_resource type="Resource" uid="uid://d0e1khf5w0sdf" path="res://Resource/Itens/Talheres.tres" id="9_8ulqq"]
 [ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="9_jp2bg"]
 [ext_resource type="Resource" uid="uid://d1olv62vwmh15" path="res://Resource/Itens/RestosOrganicos.tres" id="10_2uoxl"]

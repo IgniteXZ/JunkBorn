@@ -12,8 +12,7 @@ enum TipoTerreno {
 
 enum TipoCano {
 	RETO,
-	CURVA,
-	CRUZ
+	CURVA
 }
 
 var tipo_terreno = TipoTerreno.TERRA_COM_BURACO
@@ -31,7 +30,7 @@ var cavado = false
 var duro = false
 var cavadas = 0
 
-# Picareta: ainda não existe o item. Quando existir, o lago liga isto.
+# Picareta: o lago liga isto quando o jogador tem o item
 var tem_picareta = false
 var cliques_pedra = 0
 var aviso_pedra: Label
@@ -63,7 +62,7 @@ func definir_duro():
 
 
 func pode_receber_cano():
-	if eh_fonte or eh_mina() or tipo_terreno == TipoTerreno.PEDRA:
+	if eh_fonte or eh_mina():
 		return false
 
 	return cavado
@@ -97,7 +96,6 @@ func _quando_clicou(viewport, event, shape_idx):
 		return
 
 	# Botão esquerdo
-		# Botão esquerdo
 	if cano_colocado:
 		if agua_chegou:
 			return
@@ -133,17 +131,13 @@ func cavar():
 			return
 
 		terreno.modulate = Color.WHITE
-
-		if randf() < 0.5:
-			terreno.region_rect = Rect2(48, 0, 48, 48)
-		else:
-			terreno.region_rect = Rect2(0, 48, 48, 48)
+		# Chão duro cavado: tile misto de pedra e terra
+		terreno.region_rect = Rect2(0, 48, 48, 48)
 	else:
 		terreno.region_rect = Rect2(0, 0, 48, 48)
 
 	cavado = true
 	_efeito_cavar()
-
 
 # Pedra: sem picareta mostra aviso; com picareta leva 3 cliques e vira terra cavada
 func cavar_pedra():
@@ -159,8 +153,8 @@ func cavar_pedra():
 		return
 
 	terreno.modulate = Color.WHITE
-	tipo_terreno = TipoTerreno.TERRA
-	terreno.region_rect = Rect2(0, 0, 48, 48)
+	# Buraco em pedra (o terreno continua sendo pedra visualmente)
+	terreno.region_rect = Rect2(48, 0, 48, 48)
 	cavado = true
 	_efeito_cavar()
 
@@ -203,8 +197,6 @@ func definir_cano(tipo):
 			$Cano.region_rect = Rect2(48, 48, 48, 48)
 		TipoCano.CURVA:
 			$Cano.region_rect = Rect2(0, 0, 48, 48)
-		TipoCano.CRUZ:
-			$Cano.region_rect = Rect2(48, 0, 48, 48)
 
 	$Cano.rotation_degrees = 0
 	$Cano.visible = true
@@ -238,9 +230,6 @@ func obter_conexoes():
 				return ["cima", "direita"]
 			else:
 				return ["baixo", "direita"]
-
-		TipoCano.CRUZ:
-			return ["cima", "direita", "baixo", "esquerda"]
 
 	return []
 
