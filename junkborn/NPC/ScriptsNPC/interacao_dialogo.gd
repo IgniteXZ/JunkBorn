@@ -1,3 +1,4 @@
+
 extends Area2D
 
 @export var timeline: String = ""
@@ -22,7 +23,7 @@ func _chave() -> String:
 	return "visto:" + get_tree().current_scene.scene_file_path + ":" + str(get_path())
 
 func _esgotada() -> bool:
-	return uma_vez and cena_destino == "" and Global.eventos.get(_chave(), false)
+	return uma_vez and Global.eventos.get(_chave(), false)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name != "Interagir":
@@ -53,28 +54,43 @@ func _unhandled_input(event: InputEvent) -> void:
 func _interagir() -> void:
 	if _ocupado or Dialogic.current_timeline != null or _esgotada():
 		return
+
+	_ocupado = true
+
+	if uma_vez:
+		Global.eventos[_chave()] = true
+
 	if variavel_necessaria != "" and not Dialogic.VAR.get_variable(variavel_necessaria, false):
 		await _tocar_dialogo(timeline_bloqueado)
+	elif automatico and cena_destino != "":
+		await _tocar_dialogo(timeline)
+		if is_inside_tree():
+			Global.trocar_cena(cena_destino, spawn_destino)
 	elif cena_destino != "":
-		_ocupado = true
 		Global.trocar_cena(cena_destino, spawn_destino)
 	else:
-		if uma_vez:
-			Global.eventos[_chave()] = true
 		await _tocar_dialogo(timeline)
 
 func _tocar_dialogo(nome: String) -> void:
 	if nome == "":
+		_ocupado = false
 		return
-	_ocupado = true
+
 	var jogador := _player
+
 	if _label:
 		_label.visible = false
-	jogador.pode_mover = false
+
+	if is_instance_valid(jogador):
+		jogador.pode_mover = false
+
 	Dialogic.start(nome)
 	await Dialogic.timeline_ended
+
 	if is_instance_valid(jogador):
 		jogador.pode_mover = true
+
 	if _label and _player != null and not _esgotada():
 		_label.visible = true
+
 	_ocupado = false

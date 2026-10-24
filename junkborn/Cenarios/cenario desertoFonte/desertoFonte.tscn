@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="7_xilwp"]
 [ext_resource type="Texture2D" uid="uid://bn2c24f5jq8fr" path="res://Cenarios/Cenario Fonte/tileset fonte1.png" id="8_ec6ab"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_e1c8b"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="14_esxbg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1c8b"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -1030,6 +1031,10 @@ size = Vector2(88, 712.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xilwp"]
 size = Vector2(93, 1723.375)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87td0"]
+radius = 45.70102
+height = 280.09985
+
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_uldkv")
 
@@ -1149,7 +1154,7 @@ rendering_quadrant_size = 24
 [node name="spawnsDesertoFonte" type="Node2D" parent="." unique_id=708454426]
 
 [node name="spawnSaiFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=667308716]
-position = Vector2(-510, 422)
+position = Vector2(-637, 322)
 
 [node name="entradaDesertoFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=1984481161]
 position = Vector2(21, -76)
@@ -1172,3 +1177,21 @@ shape = SubResource("RectangleShape2D_esxbg")
 position = Vector2(-754.6875, -157.99998)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_xilwp")
+
+[node name="entradaFonte" type="Area2D" parent="." unique_id=1317015298]
+script = ExtResource("14_esxbg")
+timeline = "caifonte"
+automatico = true
+uma_vez = true
+cena_destino = "res://Cenarios/Cenario Fonte/fonte.tscn"
+spawn_destino = "res://Cenarios/Cenario Fonte/fonte.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entradaFonte" unique_id=945158878]
+position = Vector2(-531, 385)
+rotation = 0.84870976
+shape = SubResource("CapsuleShape2D_87td0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="entradaFonte" unique_id=55678003]
+position = Vector2(-611.99994, 535)
+rotation = 0.16715127
+shape = SubResource("CapsuleShape2D_87td0")

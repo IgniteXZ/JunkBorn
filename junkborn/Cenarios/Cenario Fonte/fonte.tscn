@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_behyc"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
+[ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1568,15 +1569,25 @@ parameters/looping = true
 [node name="spawnFonte" type="Marker2D" parent="." unique_id=191055139]
 position = Vector2(-599, 197)
 
+[node name="spawnFonte2" type="Marker2D" parent="." unique_id=1699361554]
+position = Vector2(-599, 197)
+
 [node name="saidaFonte" type="Area2D" parent="." unique_id=222716419]
 position = Vector2(-565, 212)
 script = ExtResource("13_behyc")
+variavel_necessaria = "podeSairFonte"
+timeline_bloqueado = "bloqueadoSaidaFonte"
 cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
 spawn_destino = "spawnsDesertoFonte/spawnSaiFonte"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saidaFonte" unique_id=344294550]
 position = Vector2(-11, 33)
 shape = SubResource("RectangleShape2D_qrw66")
+
+[node name="dialogoCaiu" type="Node2D" parent="." unique_id=1214536766 node_paths=PackedStringArray("jogador")]
+script = ExtResource("16_4jw3k")
+timeline = "dialogoEntrouFonte"
+jogador = NodePath("../y-sort/Character")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
