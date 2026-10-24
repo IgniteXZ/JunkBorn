@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 			return
 
 		# Tenta adicionar o item usando os dados do Recurso
-		if canvass.add_item_inventory(dados_item.id, dados_item.textura):
+		if canvass.add_item_inventory(dados_item.id, dados_item.textura, dados_item.nome):
 			
 			if not Global.itens_coletados.has(dados_item.id_item_mapa):
 				Global.itens_coletados.append(dados_item.id_item_mapa)

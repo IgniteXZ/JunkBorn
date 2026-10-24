@@ -1,7 +1,11 @@
 extends CanvasLayer
 
+@onready var tooltip: PanelContainer = $Tooltip
+@onready var tooltip_nome: Label = $Tooltip/Nome
+
 # atalho abrir e fechar inventario
 func _process(_delta: float) -> void:
+	_atualizar_tooltip()
 	
 	if get_tree().get_nodes_in_group("minigame_aberto").size() > 0:
 		$inventory.visible = false
@@ -12,9 +16,23 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	carregar_inventario()
+	
+func _atualizar_tooltip() -> void:
+	var nome := ""
+	if $inventory.visible and not get_viewport().gui_is_dragging():
+		for slot in $inventory/GridContainer.get_children():
+			if slot.get_global_rect().has_point(slot.get_global_mouse_position()):
+				print("MOUSE NO SLOT: ", slot.name, " | nome: ", Global.nomes_itens.get(slot.get_node("sprite").texture, "SEM NOME"))
+				nome = Global.nomes_itens.get(slot.get_node("sprite").texture, "")
+				break
+	tooltip.visible = nome != ""
+	if tooltip.visible:
+		tooltip_nome.text = nome
+		tooltip.reset_size()
+		tooltip.position = tooltip.get_global_mouse_position() + Vector2(16, 16)
 
 # coletar item no chão
-func add_item_inventory(ID: int, sprite: Texture) -> bool:
+func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 	for slot in $inventory/GridContainer.get_children():
 		if slot.get_node("sprite").texture == null:
 			slot.get_node("sprite").texture = sprite
@@ -22,6 +40,12 @@ func add_item_inventory(ID: int, sprite: Texture) -> bool:
 
 			# SALVA O ID NO SLOT (usando metadados do Godot)
 			slot.set_meta("item_id", ID)
+			print("COLETOU id=", ID, " nome='", nome, "'")
+			
+
+			# guarda o nome ligado à imagem (usado pelo tooltip)
+			if nome != "":
+				Global.nomes_itens[sprite] = nome
 
 			salvar_inventario()
 			return true # Item adicionado com sucesso

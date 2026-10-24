@@ -65,8 +65,10 @@ text = ">"
 
 [node name="HBoxSairLivro" type="HBoxContainer" parent="TextureRect" unique_id=615405768]
 layout_mode = 1
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = -1.2499999
+offset_top = 34.999996
+offset_right = 118.75
+offset_bottom = 155.0
 
 [node name="botaofechalivro" parent="TextureRect/HBoxSairLivro" unique_id=550276476 node_paths=PackedStringArray("livro") instance=ExtResource("4_tyal7")]
 layout_mode = 2

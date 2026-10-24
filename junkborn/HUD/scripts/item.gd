@@ -8,6 +8,7 @@ var canva = null
 var canvass: CanvasLayer = null # Boa prática inicializar como null
 
 @export var id_item_mapa: String # id do item no chao
+@export var nome: String #nome do item
 
 var Id: int = 1
 
@@ -33,7 +34,7 @@ func _process(delta: float) -> void:
 			return
 
 		# Tenta adicionar o item ao inventário
-		if canvass.add_item_inventory(Id, $sprite.texture):
+		if canvass.add_item_inventory(Id, $sprite.texture, nome):
 			
 			if not Global.itens_coletados.has(id_item_mapa):
 				Global.itens_coletados.append(id_item_mapa)

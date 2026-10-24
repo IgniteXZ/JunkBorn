@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_2yw1y"]
 [ext_resource type="Texture2D" uid="uid://bggefxy3gnikc" path="res://Resource/Itens/cano.png" id="1_gikxi"]
-[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_fflqx"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="2_fflqx"]
 [ext_resource type="Resource" uid="uid://byleqcwcak2mw" path="res://Minigames/Forja/CanoLixoData.tres" id="3_jauwn"]
 
 [resource]

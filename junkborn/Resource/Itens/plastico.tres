@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LixoData" format=3 uid="uid://swdjci3wgmne"]
 
 [ext_resource type="Script" uid="uid://emlo1ywngpfw" path="res://LixoData.gd" id="1_yf2ls"]
-[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/plastico.png" id="2_uqowf"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="2_uqowf"]
 
 [resource]
 script = ExtResource("1_yf2ls")

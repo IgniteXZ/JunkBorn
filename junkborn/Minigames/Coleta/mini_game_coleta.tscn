@@ -14,10 +14,27 @@
 [ext_resource type="Resource" uid="uid://bf7q5gil0d1t1" path="res://Resource/Itens/garrafaplastica.tres" id="12_gagkx"]
 [ext_resource type="Resource" uid="uid://dfi8godcxvfrg" path="res://Resource/Itens/Esponja.tres" id="14_wt056"]
 [ext_resource type="Resource" uid="uid://b5wdxhdlxpk7a" path="res://Resource/Itens/isopor.tres" id="16_ovcw4"]
-[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="22_jp2bg"]
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="23_jp2bg"]
 [ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="24_hjkpg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcfq6"]
+bg_color = Color(0.39803013, 0.12282937, 0.01494621, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lo5ct"]
+bg_color = Color(0.39607844, 0.12156863, 0.015686275, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0.66245234, 0.66245234, 0.6624523, 0.6)
+shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjkpg"]
 content_margin_left = 15.0
@@ -56,13 +73,19 @@ texture = ExtResource("5_yqq3e")
 
 [node name="Sprite2D" type="Sprite2D" parent="saidaMinigame" unique_id=1736626852]
 position = Vector2(27, 79)
-texture = ExtResource("22_jp2bg")
 
 [node name="Button" type="Button" parent="saidaMinigame/Sprite2D" unique_id=932905486]
-offset_left = -63.0
-offset_top = -62.0
-offset_right = 65.0
-offset_bottom = 63.0
+custom_minimum_size = Vector2(200, 80)
+offset_top = -32.0
+offset_right = 200.0
+offset_bottom = 48.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("23_jp2bg")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tcfq6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lo5ct")
+text = "Sair"
 script = ExtResource("23_hjkpg")
 
 [node name="DialogoColeta" type="CanvasLayer" parent="." unique_id=246670327]

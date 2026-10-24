@@ -6,6 +6,7 @@ var cidade_atual : int = 0
 #itens
 var itens: Array = []
 var itens_coletados: Array = []
+var nomes_itens: Dictionary = {}
 
 # fluxo do jogo
 var eventos: Dictionary = {}

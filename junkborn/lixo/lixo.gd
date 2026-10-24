@@ -73,6 +73,6 @@ func coletar_lixo() -> void:
 		
 		var canvas = get_tree().root.find_child("ui_canvas", true, false)
 		if canvas:
-			canvas.add_item_inventory(dados.item_id, textura)
+			canvas.add_item_inventory(dados.item_id, textura, dados.nome)
 		
 		queue_free()

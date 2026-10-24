@@ -1,23 +1,36 @@
 [gd_scene format=3 uid="uid://c7w5bsslvh2a0"]
 
-[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="1_j606w"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_wnw87"]
 [ext_resource type="Script" uid="uid://dvrq4wtlyee5f" path="res://HUD/scripts/botaofechalivro.gd" id="1_y8pyt"]
 
-[node name="botaofechalivro" type="Button" unique_id=550276476]
-custom_minimum_size = Vector2(120, 120)
-size_flags_horizontal = 3
-action_mode = 0
-flat = true
-script = ExtResource("1_y8pyt")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8pyt"]
+bg_color = Color(0.39803013, 0.12282937, 0.01494621, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=607029757]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_j606w")
-expand_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnw87"]
+bg_color = Color(0.39607844, 0.12156863, 0.015686275, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0.66245234, 0.66245234, 0.6624523, 0.6)
+shadow_size = 6
+
+[node name="botaofechalivro" type="Button" unique_id=550276476]
+custom_minimum_size = Vector2(150, 60)
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wnw87")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_y8pyt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wnw87")
+action_mode = 0
+text = "Sair"
+script = ExtResource("1_y8pyt")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

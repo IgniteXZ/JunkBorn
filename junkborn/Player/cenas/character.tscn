@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkh8j1xovnmhy" path="res://HUD/tscn/mapamundi.tscn" id="5_53gt6"]
 [ext_resource type="Script" uid="uid://dlmntolcc0am3" path="res://HUD/scripts/ui_canvas.gd" id="6_jlgaa"]
 [ext_resource type="PackedScene" uid="uid://doyj5detmwxjj" path="res://HUD/tscn/inventory.tscn" id="7_8jiok"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="9_e40vv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qrw66"]
 outline_size = 6
@@ -16,6 +17,18 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8wu"]
 resource_local_to_scene = true
 size = Vector2(43, 2.1200094)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrw66"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0627451, 0, 0.0627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1764706, 0.039215688, 0.3882353, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(42, 16)
@@ -414,6 +427,18 @@ script = ExtResource("6_jlgaa")
 
 [node name="inventory" parent="ui_canvas" unique_id=1380545637 instance=ExtResource("7_8jiok")]
 visible = false
+
+[node name="Tooltip" type="PanelContainer" parent="ui_canvas" unique_id=2128392440]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrw66")
+
+[node name="Nome" type="Label" parent="ui_canvas/Tooltip" unique_id=1872309436]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_e40vv")
+theme_override_font_sizes/font_size = 18
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=347830893]
 
