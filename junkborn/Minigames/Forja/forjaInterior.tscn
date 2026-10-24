@@ -525,7 +525,7 @@ scale = Vector2(2.014627, 0.069083065)
 script = ExtResource("5_8hflg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbrirCenas/forja/Area2DForja" unique_id=1035717396]
-position = Vector2(3.771153, 576.4969)
+position = Vector2(-1.2570281, 212.39372)
 rotation = 1.246165
 shape = SubResource("CircleShape2D_ns0o7")
 

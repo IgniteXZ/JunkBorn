@@ -49,6 +49,9 @@ func _on_button_pressed():
 			
 			print(">>> DEBUG FORJA - Recurso gerado pela receita: ", recurso_gerado)
 			
+			var nome_item: String = recurso_gerado.nome if recurso_gerado else receita.nome_resultado
+			Global.nomes_itens[receita.icone_resultado] = nome_item
+			
 			if canvas_inventario:
 				var todos_os_nos = canvas_inventario.find_children("*", "Control", true, false)
 				

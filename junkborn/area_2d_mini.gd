@@ -12,12 +12,14 @@ func _process(_delta: float) -> void:
 		print("Aperte E para entrar no minigame")
 		mini_game_coleta.show()
 		jogador.pode_mover = false
+		Global.esta_coleta = true
 		
 		
 		
 func _on_mini_game_coleta_fechar_coleta() -> void:
 	mini_game_coleta.hide()
 	jogador.pode_mover = true
+	Global.esta_coleta = false
 
 func _on_area_entered(_area: Area2D) -> void:
 	perto = true

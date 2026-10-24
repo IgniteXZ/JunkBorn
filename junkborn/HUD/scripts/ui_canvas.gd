@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 		$inventory.visible = false
 		return
 	
-	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false):
+	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false) and not Global.esta_coleta:
 		$inventory.visible = not $inventory.visible
 
 func _ready() -> void:
@@ -22,7 +22,6 @@ func _atualizar_tooltip() -> void:
 	if $inventory.visible and not get_viewport().gui_is_dragging():
 		for slot in $inventory/GridContainer.get_children():
 			if slot.get_global_rect().has_point(slot.get_global_mouse_position()):
-				print("MOUSE NO SLOT: ", slot.name, " | nome: ", Global.nomes_itens.get(slot.get_node("sprite").texture, "SEM NOME"))
 				nome = Global.nomes_itens.get(slot.get_node("sprite").texture, "")
 				break
 	tooltip.visible = nome != ""
@@ -40,7 +39,6 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 
 			# SALVA O ID NO SLOT (usando metadados do Godot)
 			slot.set_meta("item_id", ID)
-			print("COLETOU id=", ID, " nome='", nome, "'")
 			
 
 			# guarda o nome ligado à imagem (usado pelo tooltip)

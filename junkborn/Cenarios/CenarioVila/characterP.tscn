@@ -1842,10 +1842,10 @@ rotation = 1.5711273
 shape = SubResource("CapsuleShape2D_fpo1d")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item1"
+nome = "Tung"
 
 [node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
 position = Vector2(12, -14)
@@ -1857,10 +1857,10 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
 
 [node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item2"
+nome = "Roblox"
 
 [node name="collision" type="CollisionShape2D" parent="item2" unique_id=763775455]
 position = Vector2(84, -9)
@@ -1872,10 +1872,10 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("14_8llo0")
 
 [node name="item3" type="Area2D" parent="." unique_id=1127147407 node_paths=PackedStringArray("labelinteragir")]
-visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-id_item_mapa = "ve_item2"
+id_item_mapa = "ve_item3"
+nome = "Robloxzinho"
 
 [node name="collision" type="CollisionShape2D" parent="item3" unique_id=1603857462]
 position = Vector2(129, 83)

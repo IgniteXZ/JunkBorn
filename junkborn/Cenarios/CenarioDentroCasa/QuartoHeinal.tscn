@@ -1086,7 +1086,7 @@ shape = SubResource("RectangleShape2D_a3nj5")
 [node name="SpawnQuartoHeinel" type="Node2D" parent="." unique_id=1217943537]
 
 [node name="EntrarHeinelQ" type="Marker2D" parent="SpawnQuartoHeinel" unique_id=1750353659]
-position = Vector2(61, 129)
+position = Vector2(61, 114)
 gizmo_extents = 0.0
 
 [node name="DialogoEstante" type="Area2D" parent="." unique_id=1610186550]

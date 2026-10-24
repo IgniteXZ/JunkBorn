@@ -23,7 +23,6 @@ func _ready() -> void:
 
 func spawnar_lixo() -> void:
 	if lista_de_lixos.is_empty() or not lixo_scene:
-		print("Certifique-se de configurar a lixo_scene e adicionar itens na lista_de_lixos!")
 		return
 	
 	var novo_lixo_node = lixo_scene.instantiate()

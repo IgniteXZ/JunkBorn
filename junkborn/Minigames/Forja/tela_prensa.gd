@@ -130,8 +130,12 @@ func executar_desmanche() -> void:
 			
 		if not tex:
 			continue
+			
+		if recurso_ingrediente and "nome" in recurso_ingrediente:
+			Global.nomes_itens[tex] = recurso_ingrediente.nome
 
 		var item_adicionado = false
+
 
 		for no in todos_os_nos:
 			if not no.has_method("set_empty_slot") or no == slot_entrada:

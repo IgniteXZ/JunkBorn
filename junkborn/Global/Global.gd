@@ -11,6 +11,7 @@ var nomes_itens: Dictionary = {}
 # fluxo do jogo
 var eventos: Dictionary = {}
 var spawn_destino: String = ""
+var esta_coleta: bool = false
 
 var DesligarMusica: bool = false
 
