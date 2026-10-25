@@ -7,8 +7,10 @@
 [ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="10_pt6v2"]
 [ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="12_8kugn"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
+[ext_resource type="Texture2D" uid="uid://5x47uyca4bwo" path="res://HUD/sprites/livroAberto.png" id="13_1s72l"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
 [ext_resource type="Texture2D" uid="uid://ouorf48t2ljp" path="res://HUD/sprites/diarioShiny.png" id="13_58chr"]
+[ext_resource type="Texture2D" uid="uid://c1sxne5emv2xn" path="res://HUD/sprites/pagina.jpg" id="13_awwgi"]
 [ext_resource type="Script" uid="uid://07t3i7xodfmn" path="res://HUD/scripts/ui_livro.gd" id="14_10kb4"]
 [ext_resource type="PackedScene" uid="uid://vdamr8acgl8k" path="res://HUD/tscn/livro.tscn" id="14_gqrh1"]
 [ext_resource type="Texture2D" uid="uid://bvchkvpt2r85d" path="res://HUD/sprites/livroBotanicaShiny.png" id="16_58chr"]
@@ -177,27 +179,34 @@ theme_override_constants/h_separation = 4
 columns = 2
 
 [node name="botaolivro" parent="GridContainer2" unique_id=1191467775 instance=ExtResource("6_u6vfn")]
-custom_minimum_size = Vector2(190, 290)
-layout_mode = 2
-diario_normal = ExtResource("12_8kugn")
-diario_shiny = ExtResource("13_58chr")
-
-[node name="TextureRect" parent="GridContainer2/botaolivro" index="0" unique_id=1017881095]
-offset_right = 239.0
-
-[node name="botaolivrobotanica" type="Button" parent="GridContainer2" unique_id=616761625]
 custom_minimum_size = Vector2(120, 290)
 layout_mode = 2
-flat = true
 script = ExtResource("12_awwgi")
 botanica_normal = ExtResource("13_10kb4")
 botanica_shiny = ExtResource("16_58chr")
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer2/botaolivrobotanica" unique_id=210918039]
-layout_mode = 0
+[node name="TextureRect" parent="GridContainer2/botaolivro" index="0" unique_id=1017881095]
+custom_minimum_size = Vector2(120, 290)
 offset_right = 160.0
-offset_bottom = 290.0
 texture = ExtResource("13_10kb4")
+
+[node name="botaolivrodiario" type="Button" parent="GridContainer2/botaolivro" unique_id=616761625]
+custom_minimum_size = Vector2(190, 290)
+layout_mode = 0
+offset_left = 174.0
+offset_top = -1.0
+offset_right = 364.0
+offset_bottom = 289.0
+flat = true
+script = ExtResource("12_awwgi")
+botanica_normal = ExtResource("12_8kugn")
+botanica_shiny = ExtResource("13_58chr")
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/botaolivro/botaolivrodiario" unique_id=210918039]
+layout_mode = 0
+offset_right = 239.0
+offset_bottom = 290.0
+texture = ExtResource("12_8kugn")
 
 [node name="ui_livro" type="CanvasLayer" parent="." unique_id=1690693382]
 script = ExtResource("14_10kb4")
@@ -205,11 +214,29 @@ script = ExtResource("14_10kb4")
 [node name="Livro" parent="ui_livro" unique_id=2109212644 instance=ExtResource("14_gqrh1")]
 visible = false
 
+[node name="Livro2" parent="ui_livro" unique_id=1488017157 instance=ExtResource("14_gqrh1")]
+visible = false
+bloquear_paginas = true
+rasgada_esquerda = ExtResource("13_awwgi")
+rasgada_direita = ExtResource("13_awwgi")
+
+[node name="TextureRect" parent="ui_livro/Livro2" index="0" unique_id=1156959553]
+texture = ExtResource("13_1s72l")
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" parent_id_path=PackedInt32Array(1488017157, 1721902399) index="0" unique_id=23054016]
+size_flags_vertical = 3
+stretch_mode = 0
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" parent_id_path=PackedInt32Array(1488017157, 173351270) index="0" unique_id=1862995299]
+size_flags_vertical = 3
+stretch_mode = 0
+
 [connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="GridContainer2/botaolivrobotanica" to="GridContainer2/botaolivrobotanica" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer2/botaolivrobotanica" to="GridContainer2/botaolivrobotanica" method="_on_mouse_exited"]
-[connection signal="pressed" from="GridContainer2/botaolivrobotanica" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
+[connection signal="pressed" from="GridContainer2/botaolivro" to="ui_livro" method="_on_botaolivronovo_pressed"]
+[connection signal="mouse_entered" from="GridContainer2/botaolivro/botaolivrodiario" to="GridContainer2/botaolivro/botaolivrodiario" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer2/botaolivro/botaolivrodiario" to="GridContainer2/botaolivro/botaolivrodiario" method="_on_mouse_exited"]
+[connection signal="pressed" from="GridContainer2/botaolivro/botaolivrodiario" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
 
 [editable path="GridContainer/Slot"]
 [editable path="GridContainer/Slot2"]
@@ -232,3 +259,4 @@ visible = false
 [editable path="GridContainer/Slot19"]
 [editable path="GridContainer/Slot20"]
 [editable path="GridContainer2/botaolivro"]
+[editable path="ui_livro/Livro2"]
