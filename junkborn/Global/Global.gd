@@ -12,6 +12,7 @@ var nomes_itens: Dictionary = {}
 var eventos: Dictionary = {}
 var spawn_destino: String = ""
 var esta_coleta: bool = false
+var paginas_coletadas: Dictionary = {}
 
 var DesligarMusica: bool = false
 

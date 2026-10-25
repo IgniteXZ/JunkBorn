@@ -15,3 +15,7 @@ func _process(delta: float) -> void:
 func _on_botaolivrobotanica_pressed() -> void:
 	$Livro.show()
 	$"..".hide()
+
+func _on_botaolivronovo_pressed() -> void:
+	$Livro2.show()
+	$"..".hide()
