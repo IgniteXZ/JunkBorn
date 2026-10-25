@@ -1976,6 +1976,7 @@ shape = SubResource("RectangleShape2D_31fey")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
 [connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
+[connection signal="PassarCanvas" from="y-sort/Character" to="item3" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
 [connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
 [connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]

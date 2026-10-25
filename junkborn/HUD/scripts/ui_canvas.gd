@@ -15,7 +15,9 @@ func _process(_delta: float) -> void:
 		$inventory.visible = not $inventory.visible
 
 func _ready() -> void:
+	add_to_group("inventario")
 	carregar_inventario()
+	
 	
 func _atualizar_tooltip() -> void:
 	var nome := ""
@@ -108,3 +110,15 @@ func carregar_inventario() -> void:
 
 		if dados.has("item_id") and dados["item_id"] != -1:
 			slots[i].set_meta("item_id", dados["item_id"])
+			
+# Remove do inventário todos os itens com essa textura e devolve a quantidade total
+func remover_itens_por_textura(textura: Texture2D) -> int:
+	var total := 0
+	for slot in $inventory/GridContainer.get_children():
+		if slot.get_node("sprite").texture == textura:
+			var qtd: String = slot.get_node("amount").text
+			total += int(qtd) if qtd != "" else 1
+			limpar_slot(slot)
+	if total > 0:
+		salvar_inventario()
+	return total

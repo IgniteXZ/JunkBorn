@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c1hhpw6bo5ql0"]
+
+[ext_resource type="Script" uid="uid://bauorcil3a3x0" path="res://Minigames/PlantarSemente/plantio.gd" id="2_rxr3m"]
+[ext_resource type="Resource" uid="uid://cavn05nq18vt0" path="res://Item/Semente1.tres" id="3_217e1"]
+[ext_resource type="PackedScene" uid="uid://dcsc2ipuigyya" path="res://Inimigo/Drone/drone.tscn" id="4_enwl5"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="5_enwl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(62, 60)
+
+[node name="Plantio" type="Area2D" unique_id=1897567993 node_paths=PackedStringArray("label_interagir")]
+script = ExtResource("2_rxr3m")
+semente = ExtResource("3_217e1")
+planta_scene = ExtResource("4_enwl5")
+label_interagir = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671368219]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=809508210]
+texture = ExtResource("5_enwl5")

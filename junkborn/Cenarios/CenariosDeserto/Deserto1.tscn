@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
+[ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -952,16 +953,16 @@ visible = false
 position = Vector2(518, 41)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
-position = Vector2(-1406, 100)
+position = Vector2(-176, 116)
 dados_item = SubResource("Resource_of28l")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
-position = Vector2(-1412, 109)
+position = Vector2(-1502, 118)
 script = ExtResource("17_s4fo3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharmarDrone" unique_id=1664574486]
-position = Vector2(5, -9)
+position = Vector2(-447, 27)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684488821]
@@ -1049,6 +1050,10 @@ shape = SubResource("RectangleShape2D_k2fa0")
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=155876778]
 position = Vector2(-4067.25, -73)
 shape = SubResource("RectangleShape2D_ataks")
+
+[node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("24_6u4ac")]
+position = Vector2(-342, 144)
+label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
