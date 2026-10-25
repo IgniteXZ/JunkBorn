@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://bf7q5gil0d1t1" path="res://Resource/Itens/garrafaplastica.tres" id="12_gagkx"]
 [ext_resource type="Resource" uid="uid://dfi8godcxvfrg" path="res://Resource/Itens/Esponja.tres" id="14_wt056"]
 [ext_resource type="Resource" uid="uid://b5wdxhdlxpk7a" path="res://Resource/Itens/isopor.tres" id="16_ovcw4"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="18_lo5ct"]
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="23_jp2bg"]
 [ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="24_hjkpg"]
@@ -159,4 +160,16 @@ theme_override_fonts/normal_font = ExtResource("23_jp2bg")
 text = " Filomeno"
 vertical_alignment = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=74013769]
+position = Vector2(859, 75)
+scale = Vector2(0.2692188, 0.234375)
+texture = ExtResource("18_lo5ct")
+
+[node name="Button" type="Button" parent="Sprite2D" unique_id=1445178606]
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 50.0
+offset_bottom = 7.0
+
 [connection signal="pressed" from="saidaMinigame/Sprite2D/Button" to="saidaMinigame/Sprite2D/Button" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
