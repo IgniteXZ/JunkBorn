@@ -1,9 +1,11 @@
 extends Control
 
-const LARGURA := 520.0
+const LARGURA := 420.0   # largura do post-it aberto (era 520)
 const PEEK := 60.0
 const MARGEM := 8.0
-const DURACAO_AVISO := 3500  # ms que o post-it fica aberto sozinho
+const DURACAO_AVISO := 3500
+const TAM_TITULO := 24
+const TAM_DESC := 18     # descrição maior (era 16)
 
 @onready var papel: PanelContainer = $Papel
 @onready var texto: RichTextLabel = $Papel/Texto
@@ -94,10 +96,10 @@ func _montar_texto(lista: Array) -> String:
 	var t: String = ""
 	for m in lista:
 		if _concluidas.has(m):
-			t += "[color=#8a7a4a][s][font_size=24]%s[/font_size]\n%s[/s][/color]\n\n" % [m.titulo, m.descricao]
+			t += "[color=#8a7a4a][s][font_size=%d]%s[/font_size]\n[font_size=%d]%s[/font_size][/s][/color]\n\n" % [TAM_TITULO, m.titulo, TAM_DESC, m.descricao]
 		else:
 			var tag: String = "[color=#d03030]NOVA! [/color]" if _novas.has(m) else ""
-			t += "[font_size=24]%s[color=#a6591a]%s[/color][/font_size]\n%s\n\n" % [tag, m.titulo, m.descricao]
+			t += "[font_size=%d]%s[color=#a6591a]%s[/color][/font_size]\n[font_size=%d]%s[/font_size]\n\n" % [TAM_TITULO, tag, m.titulo, TAM_DESC, m.descricao]
 	return t.strip_edges()
 
 func _atualizar_texto(novo: String) -> void:

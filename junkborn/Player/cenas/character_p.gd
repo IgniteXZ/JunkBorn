@@ -1,5 +1,6 @@
 extends Node2D
-
+@export var mandacaru: CharacterBody2D
+@export var npc: CharacterBody2D
 @onready var Player = $"y-sort/Character"
 
 func _ready() -> void:
@@ -7,6 +8,11 @@ func _ready() -> void:
 	
 	if not Global.eventos.get("intro_vila", false):
 		start_dialog()
+	
+	if Dialogic.VAR.deserto_liberado == true:
+		mandacaru.queue_free()
+		npc.queue_free()
+
 
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

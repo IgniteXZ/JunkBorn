@@ -1,2 +1,3 @@
 Filomeno: Oloco meu um diario q bacana
 set {filomeno_estaComDiario} = true
+do GerenciadorMissoes.completar_missao("pedidoestanho")
