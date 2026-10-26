@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://djpxmvi5yqr6x"]
 
 [ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="1_1qej2"]
+[ext_resource type="Script" uid="uid://dkf4nxnymdms7" path="res://Minigames/Forja/forja_interior.gd" id="1_tiw0q"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_odo8e"]
 [ext_resource type="Texture2D" uid="uid://n575n5pnc2xf" path="res://Cenarios/CenariosDeserto/tileset/tileset pedrareia.png" id="2_uwx8q"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="3_0ul4c"]
@@ -12,6 +13,13 @@
 [ext_resource type="Script" uid="uid://c36eww8iq3bqy" path="res://Minigames/Forja/saidafabrica.gd" id="6_uifd1"]
 [ext_resource type="Texture2D" uid="uid://qlh68ir5jd7r" path="res://Cenarios/Cenario pantano/tileset pedra.png" id="7_5wnv6"]
 [ext_resource type="PackedScene" uid="uid://dkihrw1vll4jv" path="res://Minigames/Forja/telaForja.tscn" id="7_f0243"]
+[ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="13_kqiwa"]
+[ext_resource type="Texture2D" uid="uid://ctdit5tr8mbg4" path="res://NPC/Sprites/mandacaru/manda1.png" id="14_tiw0q"]
+[ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="15_rwvvd"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="16_5wnv6"]
+[ext_resource type="Script" uid="uid://bxssxpe6unguk" path="res://Player/cenas/npc_6.gd" id="18_ckp5w"]
+[ext_resource type="Texture2D" uid="uid://k1ogycl15q4t" path="res://NPC/Sprites/trabalhadores/personagens1.png" id="19_mak5v"]
+[ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="20_cdac8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckp5w"]
 texture = ExtResource("1_1qej2")
@@ -478,7 +486,53 @@ size = Vector2(79, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xci24"]
 size = Vector2(97, 15)
 
-[node name="ForjaInterior" type="Node2D" unique_id=534777475]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckp5w"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("14_tiw0q")
+}, {
+"duration": 1.5,
+"texture": ExtResource("15_rwvvd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mak5v"]
+radius = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdac8"]
+radius = 65.0
+height = 130.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57uas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_mak5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cdac8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3loim"]
+radius = 13.849228
+height = 130.10791
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqmrr"]
+radius = 41.0
+height = 239.99976
+
+[node name="ForjaInterior" type="Node2D" unique_id=534777475 node_paths=PackedStringArray("mandacaru", "npc")]
+script = ExtResource("1_tiw0q")
+mandacaru = NodePath("mandacaruDois")
+npc = NodePath("npc6")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2123369225]
 position = Vector2(1246.3438, 373.28906)
@@ -586,6 +640,58 @@ shape = SubResource("RectangleShape2D_mgf31")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1620885671]
 position = Vector2(472, 386)
 shape = SubResource("RectangleShape2D_xci24")
+
+[node name="mandacaruDois" type="CharacterBody2D" parent="." unique_id=1029387928]
+y_sort_enabled = true
+position = Vector2(-63, 346)
+script = ExtResource("13_kqiwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mandacaruDois" unique_id=1576836131]
+y_sort_enabled = true
+position = Vector2(1222, 161)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_ckp5w")
+
+[node name="Mandacaru" type="CollisionShape2D" parent="mandacaruDois" unique_id=184357438]
+y_sort_enabled = true
+position = Vector2(1220, 204)
+scale = Vector2(1.3199999, 0.99999994)
+shape = SubResource("CircleShape2D_mak5v")
+
+[node name="Area2D" type="Area2D" parent="mandacaruDois" unique_id=1300587998]
+y_sort_enabled = true
+script = ExtResource("16_5wnv6")
+timeline = "mandacaruFala1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mandacaruDois/Area2D" unique_id=1300268700]
+position = Vector2(1217, 193)
+shape = SubResource("CapsuleShape2D_cdac8")
+
+[node name="npc6" type="CharacterBody2D" parent="." unique_id=1872283003]
+visible = false
+y_sort_enabled = true
+position = Vector2(82, 410)
+script = ExtResource("18_ckp5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc6" unique_id=1644616594]
+position = Vector2(1299.0001, 44)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_57uas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc6" unique_id=393625725]
+position = Vector2(1300.0001, 95)
+rotation = 1.5731107
+scale = Vector2(2.1600878, 1.5596192)
+shape = SubResource("CapsuleShape2D_3loim")
+
+[node name="DialogoGrupo" type="Area2D" parent="npc6" unique_id=755780944]
+script = ExtResource("16_5wnv6")
+timeline = "falasNpc6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc6/DialogoGrupo" unique_id=980791976]
+position = Vector2(1294.9999, 75.99999)
+rotation = 1.5711273
+shape = SubResource("CapsuleShape2D_xqmrr")
 
 [connection signal="area_entered" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_entered"]
 [connection signal="area_exited" from="AbrirCenas/prensa/Area2DPrensa" to="AbrirCenas/prensa/Area2DPrensa" method="_on_area_exited"]

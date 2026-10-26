@@ -17,3 +17,4 @@ Recebeu\: Mapa
 Recebeu\: Diario
 set {pode_dormir} = true
 set {liberou_menus} = true
+do GerenciadorMissoes.iniciar("dormir")

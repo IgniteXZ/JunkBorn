@@ -1301,8 +1301,8 @@ animations = [{
 radius = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrw66"]
-radius = 65.0
-height = 130.0
+radius = 42.0
+height = 84.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifxyd"]
 animations = [{
@@ -1429,7 +1429,7 @@ radius = 18.248287
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fpo1d"]
 radius = 41.0
-height = 154.00171
+height = 220.00122
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
 
@@ -1457,8 +1457,10 @@ size = Vector2(206.5, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31fey"]
 size = Vector2(2463.5, 9)
 
-[node name="Node2D3" type="Node2D" unique_id=240260216]
+[node name="Node2D3" type="Node2D" unique_id=240260216 node_paths=PackedStringArray("mandacaru", "npc")]
 script = ExtResource("1_8llo0")
+mandacaru = NodePath("y-sort/mandacaru")
+npc = NodePath("y-sort/npc6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
@@ -1709,7 +1711,7 @@ script = ExtResource("38_5d4lt")
 timeline = "mandacaruFala1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/mandacaru/Area2D" unique_id=2025617285]
-position = Vector2(1217, 193)
+position = Vector2(1219, 207)
 shape = SubResource("CapsuleShape2D_qrw66")
 
 [node name="npc1" type="CharacterBody2D" parent="y-sort" unique_id=1376750110]
@@ -1825,7 +1827,7 @@ script = ExtResource("27_7xnrc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/npc6" unique_id=996274957]
 position = Vector2(1299.0001, 44)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_tvkme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6" unique_id=1372160085]
@@ -1834,7 +1836,7 @@ shape = SubResource("CircleShape2D_fm7tp")
 
 [node name="DialogoGrupo" type="Area2D" parent="y-sort/npc6" unique_id=1804924058]
 script = ExtResource("38_5d4lt")
-timeline = "falasNpc6"
+timeline = "grupoNpcs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6/DialogoGrupo" unique_id=306774901]
 position = Vector2(1297.9999, 69.99999)
@@ -1842,6 +1844,7 @@ rotation = 1.5711273
 shape = SubResource("CapsuleShape2D_fpo1d")
 
 [node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item1"
@@ -1857,6 +1860,7 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("13_500wf")
 
 [node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item2"
@@ -1872,6 +1876,7 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("14_8llo0")
 
 [node name="item3" type="Area2D" parent="." unique_id=1127147407 node_paths=PackedStringArray("labelinteragir")]
+visible = false
 script = ExtResource("13_oprud")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 id_item_mapa = "ve_item3"

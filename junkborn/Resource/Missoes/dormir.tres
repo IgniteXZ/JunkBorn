@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://cvskryw45yhfn"]
+
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_atf30"]
+
+[resource]
+script = ExtResource("1_atf30")
+id_missao = "dormir"
+titulo = "Que canseira..."
+descricao = "Vá para seu quarto dormir."
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"
