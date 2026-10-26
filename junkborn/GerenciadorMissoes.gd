@@ -1,16 +1,25 @@
 extends Node
 
-# Lista com todas as missões ativas no seu diário/jogo
+signal missao_adicionada(missao: MissaoR)
+signal missao_concluida(missao: MissaoR)
+
 @export var missoes_ativas: Array[MissaoR] = []
 
-# Função para adicionar uma missão na lista
-func adicionar_missao(missao: MissaoR):
+func adicionar_missao(missao: MissaoR) -> void:
 	if not missoes_ativas.has(missao):
 		missoes_ativas.append(missao)
+		missao_adicionada.emit(missao)
 
-# Função para completar uma missão
-func completar_missao(id: String):
+func completar_missao(id: String) -> void:
 	for missao in missoes_ativas:
-		if missao.id_missao == id:
+		if missao.id_missao == id and not missao.concluida:
 			missao.concluida = true
-			# Aqui você pode chamar uma função para atualizar a Label na tela
+			missao_concluida.emit(missao)
+
+# Atalho para o Dialogic e para qualquer script: GerenciadorMissoes.iniciar("dormir")
+func iniciar(id: String) -> void:
+	var caminho: String = "res://Resource/Missoes/%s.tres" % id
+	if ResourceLoader.exists(caminho):
+		adicionar_missao(load(caminho))
+	else:
+		push_warning("Missão não encontrada: " + caminho)

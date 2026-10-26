@@ -190,19 +190,15 @@ custom_minimum_size = Vector2(120, 290)
 offset_right = 160.0
 texture = ExtResource("13_10kb4")
 
-[node name="botaolivrodiario" type="Button" parent="GridContainer2/botaolivro" unique_id=616761625]
+[node name="botaolivrodiario" type="Button" parent="GridContainer2" unique_id=616761625]
 custom_minimum_size = Vector2(190, 290)
-layout_mode = 0
-offset_left = 174.0
-offset_top = -1.0
-offset_right = 364.0
-offset_bottom = 289.0
+layout_mode = 2
 flat = true
 script = ExtResource("12_awwgi")
 botanica_normal = ExtResource("12_8kugn")
 botanica_shiny = ExtResource("13_58chr")
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer2/botaolivro/botaolivrodiario" unique_id=210918039]
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/botaolivrodiario" unique_id=210918039]
 layout_mode = 0
 offset_right = 239.0
 offset_bottom = 290.0
@@ -223,20 +219,32 @@ rasgada_direita = ExtResource("13_awwgi")
 [node name="TextureRect" parent="ui_livro/Livro2" index="0" unique_id=1156959553]
 texture = ExtResource("13_1s72l")
 
-[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" parent_id_path=PackedInt32Array(1488017157, 1721902399) index="0" unique_id=23054016]
+[node name="VBoxEsq" parent="ui_livro/Livro2/TextureRect/EspacoEsq" parent_id_path=PackedInt32Array(1488017157, 930050189) index="0" unique_id=1721902399]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = -30.0
+offset_bottom = -30.0
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="0" unique_id=23054016]
 size_flags_vertical = 3
 stretch_mode = 0
 
-[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" parent_id_path=PackedInt32Array(1488017157, 173351270) index="0" unique_id=1862995299]
+[node name="VBoxDir" parent="ui_livro/Livro2/TextureRect/EspacoDir" parent_id_path=PackedInt32Array(1488017157, 1299080639) index="0" unique_id=173351270]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = -29.0
+offset_bottom = -30.0
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="0" unique_id=1862995299]
 size_flags_vertical = 3
 stretch_mode = 0
 
 [connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]
 [connection signal="pressed" from="GridContainer2/botaolivro" to="ui_livro" method="_on_botaolivronovo_pressed"]
-[connection signal="mouse_entered" from="GridContainer2/botaolivro/botaolivrodiario" to="GridContainer2/botaolivro/botaolivrodiario" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer2/botaolivro/botaolivrodiario" to="GridContainer2/botaolivro/botaolivrodiario" method="_on_mouse_exited"]
-[connection signal="pressed" from="GridContainer2/botaolivro/botaolivrodiario" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
+[connection signal="mouse_entered" from="GridContainer2/botaolivrodiario" to="GridContainer2/botaolivrodiario" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GridContainer2/botaolivrodiario" to="GridContainer2/botaolivrodiario" method="_on_mouse_exited"]
+[connection signal="pressed" from="GridContainer2/botaolivrodiario" to="ui_livro" method="_on_botaolivrobotanica_pressed"]
 
 [editable path="GridContainer/Slot"]
 [editable path="GridContainer/Slot2"]
