@@ -1,3 +1,9 @@
-Filomeno: Oloco meu um diario q bacana
+Filomeno: Aqui estão!
+Filomeno: O diário e o livro
+[wait time="2.0"]
+Filomeno: Espera… Esse era o diário dos meus pais?
+Filomeno: Porque ele nunca me disse sobre isso?
+Filomeno: .......
+Filomeno: Preciso falar com ele.
 set {filomeno_estaComDiario} = true
 do GerenciadorMissoes.completar_missao("pedidoestanho")

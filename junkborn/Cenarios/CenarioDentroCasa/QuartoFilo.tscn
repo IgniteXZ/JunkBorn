@@ -497,7 +497,7 @@ shape = SubResource("RectangleShape2D_a3nj5")
 [node name="SpawnFiloQ" type="Node2D" parent="." unique_id=1302086743]
 
 [node name="entrarQuarto" type="Marker2D" parent="SpawnFiloQ" unique_id=1702315987]
-position = Vector2(37, 95)
+position = Vector2(38, 54)
 
 [node name="DialogoCama" type="Area2D" parent="." unique_id=1982845732]
 script = ExtResource("5_qc74i")
