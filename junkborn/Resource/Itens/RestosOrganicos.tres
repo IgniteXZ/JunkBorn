@@ -9,4 +9,5 @@ item_id = 12
 nome = "Restos"
 textura = ExtResource("2_jjuo1")
 tipoDeLixo = "Nada"
+Coletavel = false
 metadata/_custom_type_script = "uid://emlo1ywngpfw"
