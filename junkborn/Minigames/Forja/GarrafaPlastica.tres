@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dxuxy4wgamst3" path="res://Resource/Itens/garrafaPlastica.png" id="1_ba32r"]
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_hbwn0"]
 [ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="2_lvrnn"]
-[ext_resource type="Resource" uid="uid://bf7q5gil0d1t1" path="res://Resource/Itens/garrafaplastica.tres" id="3_07hln"]
+[ext_resource type="Resource" uid="uid://ckulsn8vkqdei" path="res://Minigames/Forja/GarrafaPlasticaLixoData.tres" id="3_ba32r"]
 
 [resource]
 script = ExtResource("1_hbwn0")
 nome_resultado = "Garrafa Plastica"
 icone_resultado = ExtResource("1_ba32r")
-item_resultado = ExtResource("3_07hln")
+item_resultado = ExtResource("3_ba32r")
 ingredientes = {
 ExtResource("2_lvrnn"): 1
 }

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://c1vnokxn1rg6w"]
 
+[ext_resource type="Texture2D" uid="uid://dyafy3uummap8" path="res://Resource/Itens/talheres.png" id="1_8xxp7"]
 [ext_resource type="Texture2D" uid="uid://b801w37l66fvs" path="res://Resource/Itens/Metal.png" id="1_io70f"]
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_tilav"]
 [ext_resource type="Resource" uid="uid://d0e1khf5w0sdf" path="res://Resource/Itens/Talheres.tres" id="2_8xxp7"]
@@ -7,7 +8,7 @@
 [resource]
 script = ExtResource("1_tilav")
 nome_resultado = "metal"
-icone_resultado = ExtResource("1_io70f")
+icone_resultado = ExtResource("1_8xxp7")
 item_resultado = ExtResource("2_8xxp7")
 ingredientes = {
 ExtResource("1_io70f"): 1
