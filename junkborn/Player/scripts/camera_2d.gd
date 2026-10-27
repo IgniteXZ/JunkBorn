@@ -28,7 +28,8 @@ func _process(_delta: float) -> void:
 		limit_bottom = 400
 	elif Global.cidade_atual ==1:
 		limit_bottom =1550
-		limit_right = 10999
+		limit_right = 1595
+		limit_left = -3345
 		
 		
 	drag_horizontal_enabled = true
