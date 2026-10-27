@@ -30,6 +30,6 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_f50jw")
 
 [node name="iconejogador" type="Sprite2D" parent="TextureRect" unique_id=1769370632]
-position = Vector2(2058.3333, 373.3333)
-scale = Vector2(0.08749999, 0.07847227)
+position = Vector2(2027.1915, 410.3625)
+scale = Vector2(3.9802094, 3.6654515)
 texture = ExtResource("2_0dxcv")

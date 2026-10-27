@@ -1,7 +1,11 @@
 Filomeno: O que fazer? Será que eu sou capaz? Como a rauch company descobriu? Tantas perguntas …
-[wait time="2.5"]
+[wait time="2.1"]
 Filomeno: Mas se meus pais tentaram então eu também devo, começando pela fonte.
 set {pode_sair_casa} = true
 set {deserto_liberado} = true
 set {pode_dormir} = false
+[wait time="1.5"]
+do Global.fade()
+[wait time="0.1"]
 do GerenciadorMissoes.completar_missao("dormir")
+do Dialogic.start_timeline("acordou")

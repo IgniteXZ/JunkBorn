@@ -46,6 +46,7 @@ directories/dtl_directory={
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
 "FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",
+"acordou": "res://Dialogos/Timeline/acordou.dtl",
 "armario": "res://Dialogos/Timeline/armario.dtl",
 "armarioDiario": "res://Dialogos/Timeline/armarioDiario.dtl",
 "armarioEstanho": "res://Dialogos/Timeline/armarioEstanho.dtl",
@@ -130,7 +131,7 @@ variables={
 "liberou_menus": true,
 "madancaru_falou": false,
 "podeSairFonte": false,
-"pode_dormir": false,
+"pode_dormir": true,
 "pode_sair_casa": true,
 "rauchy_company": false
 }

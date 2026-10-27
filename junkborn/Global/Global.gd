@@ -18,6 +18,11 @@ var DesligarMusica: bool = false
 
 var TerminouOminiGame: bool = false
 
+func fade() -> void:
+	await Transicao.fade_out()
+	await Transicao.fade_in()
+
+
 func trocar_cena(caminho: String, spawn: String) -> void:
 	spawn_destino = spawn
 	
