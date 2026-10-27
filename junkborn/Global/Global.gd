@@ -16,6 +16,8 @@ var paginas_coletadas: Dictionary = {}
 
 var DesligarMusica: bool = false
 
+var TerminouOminiGame: bool = false
+
 func trocar_cena(caminho: String, spawn: String) -> void:
 	spawn_destino = spawn
 	

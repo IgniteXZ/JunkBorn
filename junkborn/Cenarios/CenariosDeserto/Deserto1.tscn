@@ -18,11 +18,10 @@
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_7c7ir"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="15_s4fo3"]
-[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="16_0mmed"]
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
+[ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="21_dhrox"]
 [ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
@@ -696,14 +695,6 @@ radius = 61.008198
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpo1d"]
 radius = 55.00909
 
-[sub_resource type="Resource" id="Resource_of28l"]
-script = ExtResource("15_s4fo3")
-id = 1
-nome = "Semente"
-textura = ExtResource("16_0mmed")
-id_item_mapa = "1"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
@@ -954,7 +945,7 @@ position = Vector2(518, 41)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
 position = Vector2(-176, 116)
-dados_item = SubResource("Resource_of28l")
+dados_item = ExtResource("21_dhrox")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
@@ -1053,6 +1044,7 @@ shape = SubResource("RectangleShape2D_ataks")
 
 [node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("24_6u4ac")]
 position = Vector2(-342, 144)
+semente = ExtResource("21_dhrox")
 label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]

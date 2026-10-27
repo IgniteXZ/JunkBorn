@@ -997,6 +997,7 @@ func ganhar_jogo():
 			"Concluir",
 			concluir_minigame
 		)
+		Global.TerminouOminiGame = true
 
 
 func derrotar_jogo(motivo = "sem_cano"):
