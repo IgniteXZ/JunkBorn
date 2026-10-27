@@ -8,4 +8,5 @@ script = ExtResource("1_g2i1c")
 item_id = 2
 nome = "Corda"
 textura = ExtResource("2_bbn52")
+pode_desmanchar = true
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

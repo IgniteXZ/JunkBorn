@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cg6c73lfv8u3n"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_6852h"]
+[ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="1_chn52"]
+[ext_resource type="Texture2D" uid="uid://chukgtn7g1abc" path="res://Resource/Itens/corda.png" id="2_34uqu"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="3_errox"]
+[ext_resource type="Resource" uid="uid://dsc0bk8wtitpi" path="res://Resource/Itens/jangada.tres" id="4_1pefg"]
+
+[resource]
+script = ExtResource("1_6852h")
+nome_resultado = "Jangada"
+icone_resultado = ExtResource("1_chn52")
+item_resultado = ExtResource("4_1pefg")
+ingredientes = {
+ExtResource("2_34uqu"): 6,
+ExtResource("3_errox"): 10
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"
