@@ -445,7 +445,7 @@ size = Vector2(77, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xci24"]
 size = Vector2(52, 8.5)
 
-[node name="Node2D" type="Node2D" unique_id=1574714337]
+[node name="Node2D2" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
 position = Vector2(98, 127)
@@ -473,7 +473,7 @@ tile_map_data = PackedByteArray("AAD///v/AQANAA0AAAA=")
 tile_set = SubResource("TileSet_x42px")
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("3_qc74i")]
-position = Vector2(37, 19)
+position = Vector2(41, 65)
 scale = Vector2(0.5, 0.5)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
@@ -497,7 +497,7 @@ shape = SubResource("RectangleShape2D_a3nj5")
 [node name="SpawnFiloQ" type="Node2D" parent="." unique_id=1302086743]
 
 [node name="entrarQuarto" type="Marker2D" parent="SpawnFiloQ" unique_id=1702315987]
-position = Vector2(37, 95)
+position = Vector2(38, 54)
 
 [node name="DialogoCama" type="Area2D" parent="." unique_id=1982845732]
 script = ExtResource("5_qc74i")

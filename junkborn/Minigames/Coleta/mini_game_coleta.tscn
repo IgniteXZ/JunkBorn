@@ -161,15 +161,21 @@ text = " Filomeno"
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=74013769]
-position = Vector2(859, 75)
+position = Vector2(1179, 68)
 scale = Vector2(0.2692188, 0.234375)
 texture = ExtResource("18_lo5ct")
 
 [node name="Button" type="Button" parent="Sprite2D" unique_id=1445178606]
-offset_left = -10.0
-offset_top = -1.0
-offset_right = 50.0
-offset_bottom = 7.0
+anchors_preset = -1
+anchor_left = -0.34822845
+anchor_top = -0.5921877
+anchor_right = 0.1986885
+anchor_bottom = 0.34531224
+offset_left = -22.286888
+offset_top = 11.800003
+offset_right = 37.71311
+offset_bottom = 19.800003
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="saidaMinigame/Sprite2D/Button" to="saidaMinigame/Sprite2D/Button" method="_on_pressed"]
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]

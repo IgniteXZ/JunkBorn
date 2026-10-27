@@ -763,6 +763,7 @@ size = Vector2(24.999878, 27.892578)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ataks"]
 size = Vector2(394.5, 20)
 
+
 [sub_resource type="Resource" id="Resource_jqjrk"]
 script = ExtResource("24_5a60c")
 id = 4
@@ -772,6 +773,9 @@ id_item_mapa = "4"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
 [node name="Node2D2" type="Node2D" unique_id=1307634865]
+
+[node name="Node2D3" type="Node2D" unique_id=1307634865]
+
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 

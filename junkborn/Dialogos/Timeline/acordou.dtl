@@ -1,0 +1,5 @@
+[wait time="1.0"]
+Filomeno: Mmm... Parece que nesse diário tem várias páginas faltando
+Filomeno: E o local desenhado parece o deserto, perto do pantano quimico
+Filomeno: Talvez lá eu encontre mais respostas…
+do GerenciadorMissoes.iniciar("explorardeserto")

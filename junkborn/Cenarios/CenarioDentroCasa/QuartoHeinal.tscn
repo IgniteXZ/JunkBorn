@@ -1009,12 +1009,12 @@ tile_set = SubResource("TileSet_vhdtt")
 
 [node name="TileMapLayer6" type="TileMapLayer" parent="." unique_id=1759443898]
 position = Vector2(86, 127)
-tile_map_data = PackedByteArray("AAD+////AAAMABAAAAD6//3/AAAHAA0AAAD6//7/AAAHAA4AAAD6////AAAHAA8AAAD7//3/AAAIAA0AAAD7//7/AAAIAA4AAAD7////AAAIAA8AAAA=")
+tile_map_data = PackedByteArray("AAD6//3/AAAHAA0AAAD6//7/AAAHAA4AAAD6////AAAHAA8AAAD7//3/AAAIAA0AAAD7//7/AAAIAA4AAAD7////AAAIAA8AAAA=")
 tile_set = SubResource("TileSet_vhdtt")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="." unique_id=1545211664]
 position = Vector2(105, 127)
-tile_map_data = PackedByteArray("AAD+////AAAMABAAAAD///z/AAAJAAsAAAD///3/AAAJAAwAAAD///7/AAAJAA0AAAAAAPz/AAAKAAsAAAAAAP3/AAAKAAwAAAAAAP7/AAAKAA0AAAABAPz/AAALAAsAAAABAP3/AAALAAwAAAABAP7/AAALAA0AAAA=")
+tile_map_data = PackedByteArray("AAD///z/AAAJAAsAAAD///3/AAAJAAwAAAD///7/AAAJAA0AAAAAAPz/AAAKAAsAAAAAAP3/AAAKAAwAAAAAAP7/AAAKAA0AAAABAPz/AAALAAsAAAABAP3/AAALAAwAAAABAP7/AAALAA0AAAA=")
 tile_set = SubResource("TileSet_vhdtt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=490047866]
@@ -1061,7 +1061,7 @@ shape = SubResource("RectangleShape2D_rj1pe")
 
 [node name="Character" parent="." unique_id=489748546 instance=ExtResource("3_vipka")]
 y_sort_enabled = false
-position = Vector2(64, 79)
+position = Vector2(63, 95)
 scale = Vector2(0.5, 0.5)
 
 [node name="LabelInteragir" type="Label" parent="Character" unique_id=1910808721]
