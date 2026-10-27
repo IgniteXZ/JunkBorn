@@ -4,6 +4,7 @@ var posicaocidade: Array[Vector2] = [
 	Vector2(810, 254),
 	Vector2(602, 231),
 	Vector2(391, 612),
+	Vector2(220,798)
 ]
 
 

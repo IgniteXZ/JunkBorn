@@ -1549,6 +1549,7 @@ cena_minigame = ExtResource("7_1od1r")
 tex_cano = ExtResource("8_wi68o")
 tex_pa = ExtResource("9_4jw3k")
 tex_picareta = ExtResource("10_dvo31")
+modo_teste = true
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)
