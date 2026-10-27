@@ -21,12 +21,14 @@ func trocar_cena(caminho: String, spawn: String) -> void:
 	
 	await Transicao.fade_out()
 	
+	
 	get_tree().change_scene_to_file(caminho)
 	await get_tree().scene_changed
 	
 	await get_tree().process_frame
 	
 	await Transicao.fade_in()
+	
 	
 func trocarCenaSemSpawn(caminho: String) -> void:
 	

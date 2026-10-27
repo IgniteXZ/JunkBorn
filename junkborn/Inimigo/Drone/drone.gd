@@ -5,15 +5,18 @@ var Perseguicao: bool = false
 
 var ImpulsoMaster: float = 5
 var impulso: bool = false
-
+@onready var SP = $SpriteDrone
 @export var Tempo: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SP.play("default")
 	IniciarTempo()
 
 
 func _physics_process(delta: float) -> void:
+	
+	
 	
 	if Perseguicao and linear_velocity.length() < 255.5 and not impulso:
 		var direction = global_position.direction_to(OndeEuvou)
