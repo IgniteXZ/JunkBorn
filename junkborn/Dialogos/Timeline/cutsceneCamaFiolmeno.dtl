@@ -3,3 +3,5 @@ Filomeno: O que fazer? Será que eu sou capaz? Como a rauch company descobriu? T
 Filomeno: Mas se meus pais tentaram então eu também devo, começando pela fonte.
 set {pode_sair_casa} = true
 set {deserto_liberado} = true
+set {pode_dormir} = false
+do GerenciadorMissoes.completar_missao("dormir")

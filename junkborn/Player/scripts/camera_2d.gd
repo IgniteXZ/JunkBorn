@@ -23,3 +23,14 @@ func _process(_delta: float) -> void:
 		_shake_forca = move_toward(_shake_forca, 0, shake_decaimento * _delta)
 	else:
 		offset = Vector2.ZERO
+	
+	if Global.cidade_atual == 0:
+		limit_bottom = 400
+	elif Global.cidade_atual ==1:
+		limit_bottom =1550
+		limit_right = 10999
+		
+		
+	drag_horizontal_enabled = true
+	
+	drag_vertical_enabled = true

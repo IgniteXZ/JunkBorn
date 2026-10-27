@@ -38,9 +38,9 @@ directories/dch_directory={
 "npc2": "res://Dialogos/Characters/npc2.dch",
 "npc3": "res://Dialogos/Characters/npc3.dch",
 "npc4": "res://Dialogos/Characters/npc4.dch",
-"npc5": "res://Dialogos/Characters/npc5.dch",
 "npc6": "res://Dialogos/Characters/npc6.dch",
-"srEstanho": "res://Dialogos/Characters/srEstanho.dch"
+"srEstanho": "res://Dialogos/Characters/srEstanho.dch",
+"walter": "res://Dialogos/Characters/walter.dch"
 }
 directories/dtl_directory={
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
@@ -54,6 +54,7 @@ directories/dtl_directory={
 "bucha": "res://Dialogos/Timeline/bucha.dtl",
 "caifonte": "res://Dialogos/Timeline/caifonte.dtl",
 "camaEstanho": "res://Dialogos/Timeline/camaEstanho.dtl",
+"cansado": "res://Dialogos/Timeline/cansado.dtl",
 "carpete": "res://Dialogos/Timeline/carpete.dtl",
 "cutsceneCamaFiolmeno": "res://Dialogos/Timeline/cutsceneCamaFiolmeno.dtl",
 "dialogoEntrouFonte": "res://Dialogos/Timeline/dialogoEntrouFonte.dtl",
@@ -152,6 +153,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 folder_colors={
 "res://Resource/Itens/": "green",
+"res://Resource/Missoes/": "purple",
 "res://Resource/NPC/": "yellow"
 }
 

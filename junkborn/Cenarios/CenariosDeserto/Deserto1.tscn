@@ -1055,6 +1055,9 @@ shape = SubResource("RectangleShape2D_ataks")
 position = Vector2(-342, 144)
 label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]
+position = Vector2(-584, 2442)
+
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]

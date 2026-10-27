@@ -81,7 +81,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_8jiok"]
 resource_name = "idle_down"
-length = 0.8000033750567586
+length = 1.60000341678001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -110,7 +110,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_e40vv"]
 resource_name = "idle_left"
-length = 0.8000033750567586
+length = 1.60000341678001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -139,7 +139,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_hnbcr"]
 resource_name = "idle_right"
-length = 0.8000033750567586
+length = 1.60000341678001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -168,7 +168,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nf8lx"]
 resource_name = "idle_up"
-length = 0.8000033750567586
+length = 1.60000341678001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -197,7 +197,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dkyph"]
 resource_name = "walk_down"
-length = 0.3000033489797264
+length = 0.5333366944823414
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -226,7 +226,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_e8ngr"]
 resource_name = "walk_left"
-length = 0.3000033489797264
+length = 0.5333366944823414
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -255,7 +255,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_66mvx"]
 resource_name = "walk_right"
-length = 0.3000033489797264
+length = 0.5333366944823414
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -284,7 +284,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ofb83"]
 resource_name = "walk_up"
-length = 0.3000033489797264
+length = 0.5333366944823414
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -391,15 +391,15 @@ camera = NodePath("Camera2D")
 _animation_tree = NodePath("AnimationTree")
 canvaa = NodePath("ui_canvas")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1370765563]
+zoom = Vector2(2, 2)
+script = ExtResource("3_1kn0l")
+
 [node name="texture" type="Sprite2D" parent="." unique_id=1843069659]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_8jiok")
 hframes = 5
 vframes = 4
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1370765563]
-zoom = Vector2(2, 2)
-script = ExtResource("3_1kn0l")
 
 [node name="Interagir" type="Area2D" parent="." unique_id=2001418787 groups=["Player"]]
 script = ExtResource("4_8jiok")
