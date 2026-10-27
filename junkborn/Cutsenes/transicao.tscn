@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://dvbfwx3uf7gy4"]
 
 [ext_resource type="Script" uid="uid://yhv0fr5lbt2w" path="res://Cutsenes/transicao.gd" id="1_oy173"]
+[ext_resource type="Shader" uid="uid://y3lfoqe0uvba" path="res://Cutsenes/transicao.gdshader" id="2_tacjh"]
+[ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="3_28fd7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnbcr"]
+shader = ExtResource("2_tacjh")
+shader_parameter/luminance_cutoff = 0.7350000349125
+shader_parameter/invert = true
+shader_parameter/mask_texture = ExtResource("3_28fd7")
 
 [node name="Transicao" type="CanvasLayer" unique_id=1555262951]
 layer = 100
 script = ExtResource("1_oy173")
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1675103448]
+material = SubResource("ShaderMaterial_hnbcr")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0)
+color = Color(0.015686275, 0.015686275, 0.015686275, 0)

@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://c3kcdcwcyv8t0" path="res://Item/itemno_chao.gd" id="1_bonot"]
 [ext_resource type="Resource" uid="uid://cavn05nq18vt0" path="res://Item/Semente1.tres" id="2_hrnj7"]
+[ext_resource type="Shader" uid="uid://bo4tl2qgi1m78" path="res://Item/itemno_chao.gdshader" id="3_wvgc5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65m4b"]
+shader = ExtResource("3_wvgc5")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.55
+shader_parameter/width = 0.16
+shader_parameter/angle = 0.6
+shader_parameter/intensity = 1.1
+shader_parameter/bands = 1.0
+shader_parameter/band_gap = 0.12
+shader_parameter/band_falloff = 0.45
+shader_parameter/hardness = 0.242000011495
+shader_parameter/tail_color = Color(1, 1, 1, 1)
+shader_parameter/auto_speed = 1.0000000475
+shader_parameter/auto_pause = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x04"]
 
@@ -14,6 +30,7 @@ script = ExtResource("1_bonot")
 dados_item = ExtResource("2_hrnj7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=381586886]
+material = SubResource("ShaderMaterial_65m4b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1950287398]
 shape = SubResource("RectangleShape2D_b3x04")

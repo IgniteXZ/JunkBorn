@@ -1,27 +1,21 @@
 shader_type canvas_item;
 
-uniform float _Progress : hint_range(0, 1, 0.01) = 0.5;
-uniform float _Strips : hint_range(0, 100, 1) = 20.;
-uniform float _Blur : hint_range(0.0, 1.0, 0.01) = 1.;
-uniform float _Angle : hint_range(-180, 180, 15) = 0.;
+uniform float luminance_cutoff: hint_range(0.0, 1.0) = 0.0;
+uniform bool invert = false;
+uniform sampler2D mask_texture;
+uniform sampler2D display_texture;
 
-
-float strip_mask(vec2 uv, float n, float progress){
-	float f = fract(n * uv.x);
-	float i = floor(n * uv.x) / n;
-	float e = _Blur / 2.;
-	float p = smoothstep(f-e, f+e, mix(-e, 1. + (n - 1.) / n + e, _Progress) - i);
-	return p;
-}
-
-void fragment(){
-	float a = _Angle * PI / 180.;
-	float c = cos(a);
-	float s = sin(a);
-	mat2 rot = mat2(vec2(c,s), vec2(-s, c));
-	// Coefficient to help keep the uv in [0, 1] even when rotated
-	float p = 1./(abs(c) + abs(s));
-	vec2 uv = rot * (UV - 0.5) * p + 0.5;
-	// Substract or multiply
-	COLOR.rgb *= strip_mask(uv, _Strips, _Progress);
+void fragment() {
+	vec4 sample_color = texture(mask_texture, UV);
+	float luminance = dot(sample_color.rgb, vec3(0.2126, 0.7152, 0.0722));
+	bool filter = luminance > luminance_cutoff;
+	if (invert) {
+		filter = !filter;
+	}
+	
+	if (filter) {
+		COLOR = texture(display_texture, UV);
+	} else {
+		COLOR = vec4(1.0, 1.0, 1.0, 0.0) * texture(display_texture, UV);
+	}
 }

@@ -22,7 +22,9 @@
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="21_dhrox"]
+[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="24_5a60c"]
 [ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
+[ext_resource type="Texture2D" uid="uid://cig0s7wt1pxv0" path="res://Resource/Itens/sementeOrapro.png" id="25_vcs2c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -761,6 +763,14 @@ size = Vector2(24.999878, 27.892578)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ataks"]
 size = Vector2(394.5, 20)
 
+[sub_resource type="Resource" id="Resource_jqjrk"]
+script = ExtResource("24_5a60c")
+id = 4
+nome = "SementeOprarprio"
+textura = ExtResource("25_vcs2c")
+id_item_mapa = "4"
+metadata/_custom_type_script = "uid://btfe53qhba1f0"
+
 [node name="Node2D2" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
@@ -1044,7 +1054,7 @@ shape = SubResource("RectangleShape2D_ataks")
 
 [node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("24_6u4ac")]
 position = Vector2(-342, 144)
-semente = ExtResource("21_dhrox")
+semente = SubResource("Resource_jqjrk")
 label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]
