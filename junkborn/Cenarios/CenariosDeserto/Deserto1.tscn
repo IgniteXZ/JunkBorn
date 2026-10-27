@@ -773,9 +773,6 @@ id_item_mapa = "4"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
 [node name="Node2D2" type="Node2D" unique_id=1307634865]
-
-[node name="Node2D3" type="Node2D" unique_id=1307634865]
-
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 
