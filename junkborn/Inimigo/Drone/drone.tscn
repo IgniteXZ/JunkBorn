@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
-size = Vector2(102, 94)
+size = Vector2(80, 70)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns0o7"]
 radius = 309.0
@@ -62,11 +62,10 @@ script = ExtResource("1_iuvdm")
 Tempo = NodePath("TempoPraImpulso")
 
 [node name="SpriteDrone" type="AnimatedSprite2D" parent="." unique_id=635259645]
-scale = Vector2(8.333333, 7.166666)
+scale = Vector2(3.1666667, 3.0000002)
 sprite_frames = SubResource("SpriteFrames_wldxa")
 
 [node name="ColisaoMaster" type="CollisionShape2D" parent="." unique_id=595015388]
-visible = false
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="Detectar" type="Area2D" parent="." unique_id=27841393]
@@ -86,6 +85,7 @@ visible = false
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1524801019]
+visible = false
 rect = Rect2(-91, -68, 182, 136)
 
 [connection signal="MandarAura" from="Detectar" to="." method="_on_detectar_mandar_aura"]

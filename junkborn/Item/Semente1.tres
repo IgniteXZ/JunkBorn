@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cavn05nq18vt0"]
 
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_tav8i"]
-[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="2_evjdn"]
+[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="2_evjdn"]
 
 [resource]
 script = ExtResource("1_tav8i")
