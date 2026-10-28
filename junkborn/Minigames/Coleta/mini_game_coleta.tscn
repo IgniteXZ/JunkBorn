@@ -14,10 +14,14 @@
 [ext_resource type="Resource" uid="uid://bf7q5gil0d1t1" path="res://Resource/Itens/garrafaplastica.tres" id="12_gagkx"]
 [ext_resource type="Resource" uid="uid://dfi8godcxvfrg" path="res://Resource/Itens/Esponja.tres" id="14_wt056"]
 [ext_resource type="Resource" uid="uid://b5wdxhdlxpk7a" path="res://Resource/Itens/isopor.tres" id="16_ovcw4"]
+
 [ext_resource type="StyleBox" uid="uid://bqlflmxihxvxl" path="res://Menu/estilo/panel.tres" id="18_lo5ct"]
+
+[ext_resource type="Texture2D" uid="uid://bp3cr41eeyavf" path="res://Sprites/portraits/filomeno/neutro/neutromeno1.png" id="17_lo5ct"]
+[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="18_lo5ct"]
+
 [ext_resource type="Script" uid="uid://btoahnneem6q4" path="res://Minigames/Coleta/area_2d.gd" id="23_hjkpg"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="23_jp2bg"]
-[ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="24_hjkpg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcfq6"]
 bg_color = Color(0.39803013, 0.12282937, 0.01494621, 1)
@@ -101,10 +105,9 @@ offset_bottom = 889.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("24_hjkpg")
+texture = ExtResource("17_lo5ct")
 expand_mode = 1
 stretch_mode = 5
-flip_h = true
 
 [node name="CaixaDialogo" type="PanelContainer" parent="DialogoColeta" unique_id=587509673]
 anchors_preset = -1
