@@ -123,6 +123,9 @@ audio/channel_defaults={
 }
 variables={
 "Filomeno_estacoComBoneco": false,
+"FinalSecreto": {
+"BonecoNoBolso": false
+},
 "NewVar": "",
 "deserto_liberado": false,
 "falou_estanhoinicio": false,

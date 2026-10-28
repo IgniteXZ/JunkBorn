@@ -35,3 +35,13 @@ if {madancaru_falou} == true:
 		mandacaru: Agora será apenas mais uma coisa levada pelas areias do tempo.
 	- Nada
 		mandacaru: Para de me encher, então!
+	if {FinalSecreto.BonecoNoBolso} == true:
+		- Boneco
+			mandacaru: Esse Boneco... Ele parece bem interessante...
+			[wait_input]
+			mandacaru: Você poderia dar ele para mim?
+			- Sim
+				Você deu o boneco para mandacaru
+				set {FinalSecreto.BonecoNoBolso} = false
+			- Não
+				Você não deu o boneco para mandacaru
