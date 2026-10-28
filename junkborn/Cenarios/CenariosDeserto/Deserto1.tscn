@@ -688,9 +688,6 @@ radius = 59.03389
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
 radius = 56.400356
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
-radius = 61.846584
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
 radius = 61.008198
 
@@ -763,7 +760,6 @@ size = Vector2(24.999878, 27.892578)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ataks"]
 size = Vector2(394.5, 20)
 
-
 [sub_resource type="Resource" id="Resource_jqjrk"]
 script = ExtResource("24_5a60c")
 id = 4
@@ -771,6 +767,13 @@ nome = "SementeOprarprio"
 textura = ExtResource("25_vcs2c")
 id_item_mapa = "4"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5a60c"]
+a = Vector2(18.49012, -445.7408)
+b = Vector2(-22.2725, 454.86688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
+size = Vector2(377.7827, 33.67872)
 
 [node name="Node2D2" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
@@ -904,15 +907,6 @@ script = ExtResource("11_t0mu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDesertoVila/Area2D" unique_id=169427568]
 shape = SubResource("CircleShape2D_ce1y2")
-
-[node name="minGameCano" type="Sprite2D" parent="passagemdeCena" unique_id=1797226633]
-position = Vector2(-459, 616)
-texture = ExtResource("10_tk3gm")
-
-[node name="Area2D" type="Area2D" parent="passagemdeCena/minGameCano" unique_id=1110741888]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/minGameCano/Area2D" unique_id=589286028]
-shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
 position = Vector2(-4184, 12)
@@ -1060,6 +1054,29 @@ label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]
 position = Vector2(-584, 2442)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=459802662]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=533181149]
+position = Vector2(-419.61438, 822.88403)
+rotation = 1.5707964
+scale = Vector2(1.3880683, -0.5753772)
+skew = 0.09195173
+shape = SubResource("SegmentShape2D_5a60c")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=828174820]
+position = Vector2(-487, 843)
+rotation = -0.028361078
+scale = Vector2(1.3892792, -0.57244706)
+script = ExtResource("18_6u4ac")
+timeline = "caminhoerrado"
+automatico = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50367244]
+position = Vector2(49.45726, 42.032272)
+rotation = -0.038397245
+scale = Vector2(1.053854, -0.5374398)
+shape = SubResource("RectangleShape2D_ns0o7")
 
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]

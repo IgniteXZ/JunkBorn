@@ -1500,7 +1500,7 @@ metadata/_custom_type_script = "uid://btfe53qhba1f0"
 size = Vector2(574, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w2tn"]
-size = Vector2(365, 28)
+size = Vector2(365, 67)
 
 [node name="Node2D" type="Node2D" unique_id=240260216 node_paths=PackedStringArray("MusicaFonte")]
 script = ExtResource("1_u2vtj")
@@ -1595,10 +1595,12 @@ jogador = NodePath("../y-sort/Character")
 [node name="DialogoFonte" type="Area2D" parent="." unique_id=817841899]
 position = Vector2(-608, -699)
 script = ExtResource("13_behyc")
+timeline = "fonte"
+automatico = true
 uma_vez = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoFonte" unique_id=456953750]
-position = Vector2(48.5, -1)
+position = Vector2(48.5, 18.5)
 shape = SubResource("RectangleShape2D_6w2tn")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
