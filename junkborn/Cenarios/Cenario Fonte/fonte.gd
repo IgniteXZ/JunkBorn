@@ -29,3 +29,7 @@ func _process(delta: float) -> void:
 		Musica = true
 		MusicaFonte.volume_db = -80.0
 		
+
+
+func _on_dialogo_fonte_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

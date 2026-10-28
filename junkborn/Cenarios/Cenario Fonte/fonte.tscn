@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
+[ext_resource type="Script" uid="uid://dgoca301ua7ii" path="res://Cenarios/Cenario Fonte/teste_jangada.gd" id="17_dvo31"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1502,6 +1503,12 @@ size = Vector2(574, 67)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w2tn"]
 size = Vector2(365, 28)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a3nj5"]
+a = Vector2(-3.000061, -417.00003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
+size = Vector2(377.5, 20)
+
 [node name="Node2D" type="Node2D" unique_id=240260216 node_paths=PackedStringArray("MusicaFonte")]
 script = ExtResource("1_u2vtj")
 MusicaFonte = NodePath("AudioStreamPlayer")
@@ -1601,6 +1608,27 @@ uma_vez = true
 position = Vector2(48.5, -1)
 shape = SubResource("RectangleShape2D_6w2tn")
 
+[node name="colisoes" type="Node2D" parent="." unique_id=163309789]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="colisoes" unique_id=914757360]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisoes/StaticBody2D" unique_id=97712315]
+position = Vector2(-784, -748)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_a3nj5")
+
+[node name="testeJangada" type="Area2D" parent="." unique_id=1557245071]
+position = Vector2(-564, -656)
+script = ExtResource("17_dvo31")
+variavel_necessaria = "falou_estanhoinicio"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testeJangada" unique_id=1281286220]
+position = Vector2(-1, -12)
+shape = SubResource("RectangleShape2D_a3nj5")
+
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
+[connection signal="area_entered" from="DialogoFonte" to="." method="_on_dialogo_fonte_area_entered"]
+[connection signal="area_entered" from="testeJangada" to="testeJangada" method="_on_area_entered"]
+[connection signal="area_exited" from="testeJangada" to="testeJangada" method="_on_area_exited"]
