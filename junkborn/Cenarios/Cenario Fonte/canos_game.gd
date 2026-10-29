@@ -66,6 +66,7 @@ func _unhandled_input(event):
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
+		print("JJ")
 		abrir()
 
 
