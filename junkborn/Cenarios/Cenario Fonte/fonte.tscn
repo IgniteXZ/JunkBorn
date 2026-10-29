@@ -13,10 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="10_dvo31"]
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="10_u2vtj"]
 [ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_behyc"]
+[ext_resource type="Script" uid="uid://k3gm7fqo3toe" path="res://Cenarios/Cenario Fonte/areaFonte.gd" id="11_tkujf"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
-[ext_resource type="Script" uid="uid://dgoca301ua7ii" path="res://Cenarios/Cenario Fonte/teste_jangada.gd" id="17_dvo31"]
+[ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="17_dvo31"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1539,6 +1540,7 @@ rendering_quadrant_size = 24
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("4_vnfls")]
 position = Vector2(-596, 112)
+scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
 visible = false
@@ -1559,9 +1561,11 @@ cena_minigame = ExtResource("7_1od1r")
 tex_cano = ExtResource("8_wi68o")
 tex_pa = ExtResource("9_4jw3k")
 tex_picareta = ExtResource("10_dvo31")
+modo_teste = true
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)
+script = ExtResource("11_tkujf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="canosGame/Area2D" unique_id=1339610815]
 position = Vector2(-3, -95.5)
@@ -1605,7 +1609,7 @@ script = ExtResource("13_behyc")
 uma_vez = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoFonte" unique_id=456953750]
-position = Vector2(48.5, -1)
+position = Vector2(49, 4)
 shape = SubResource("RectangleShape2D_6w2tn")
 
 [node name="colisoes" type="Node2D" parent="." unique_id=163309789]
@@ -1617,18 +1621,19 @@ position = Vector2(-784, -748)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_a3nj5")
 
-[node name="testeJangada" type="Area2D" parent="." unique_id=1557245071]
-position = Vector2(-564, -656)
+[node name="ExploraJangada" type="Node2D" parent="." unique_id=253326305]
 script = ExtResource("17_dvo31")
-variavel_necessaria = "falou_estanhoinicio"
+modo_teste = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="testeJangada" unique_id=1281286220]
+[node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1557245071]
+position = Vector2(-564, -656)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1281286220]
 position = Vector2(-1, -12)
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
+[connection signal="area_exited" from="canosGame/Area2D" to="canosGame/Area2D" method="_on_area_exited"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
 [connection signal="area_entered" from="DialogoFonte" to="." method="_on_dialogo_fonte_area_entered"]
-[connection signal="area_entered" from="testeJangada" to="testeJangada" method="_on_area_entered"]
-[connection signal="area_exited" from="testeJangada" to="testeJangada" method="_on_area_exited"]
