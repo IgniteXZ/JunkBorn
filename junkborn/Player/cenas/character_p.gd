@@ -7,7 +7,10 @@ func _ready() -> void:
 	Global.cidade_atual = 0
 	
 	if not Global.eventos.get("intro_vila", false):
+		Player.process_mode = Node.PROCESS_MODE_DISABLED
+		await TelaAto.aguardar()
 		start_dialog()
+		
 	
 	if Dialogic.VAR.deserto_liberado == true:
 		mandacaru.queue_free()
