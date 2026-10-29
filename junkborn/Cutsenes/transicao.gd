@@ -28,3 +28,10 @@ func fade_in() -> void:
 		1.0, 0.0, 0.5
 	)
 	await tween.finished
+	
+func dormir(pausa: float = 1.5) -> void:
+	await fade_out()
+	if Dialogic.current_timeline != null:
+		Dialogic.Text.hide_textbox(true)
+	await get_tree().create_timer(pausa).timeout
+	await fade_in()

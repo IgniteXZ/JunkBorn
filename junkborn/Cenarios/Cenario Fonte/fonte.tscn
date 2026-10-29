@@ -1622,7 +1622,6 @@ shape = SubResource("SegmentShape2D_a3nj5")
 [node name="testeJangada" type="Area2D" parent="." unique_id=1557245071]
 position = Vector2(-564, -656)
 script = ExtResource("17_dvo31")
-variavel_necessaria = "falou_estanhoinicio"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="testeJangada" unique_id=1281286220]
 position = Vector2(-1, -12)
