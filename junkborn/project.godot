@@ -136,7 +136,7 @@ variables={
 "liberou_menus": true,
 "madancaru_falou": false,
 "podeSairFonte": false,
-"pode_dormir": true,
+"pode_dormir": false,
 "pode_sair_casa": true,
 "rauchy_company": false
 }
