@@ -20,6 +20,9 @@ func mostrar(texto: String, cena: String = "", duracao: float = 2.5) -> void:
 	t.tween_property(fundo, "modulate:a", 1.0, 0.6)
 	await t.finished
 	
+	if Dialogic.current_timeline != null:
+		Dialogic.Text.hide_textbox(true)
+	
 	if cena != "":
 		get_tree().change_scene_to_file(cena)
 		
