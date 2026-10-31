@@ -1,11 +1,14 @@
 Filomeno: O que fazer? Será que eu sou capaz? Como a rauch company descobriu? Tantas perguntas …
 [wait time="2.1"]
 Filomeno: Mas se meus pais tentaram então eu também devo, começando pela fonte.
+[wait time="1.0"]
+Filomeno: Aah, que sono...
+[wait time="2.0"]
+do TelaAto.mostrar("ATO 1: A FONTE")
 set {pode_sair_casa} = true
 set {deserto_liberado} = true
 set {pode_dormir} = false
-[wait time="1.5"]
-do Global.fade()
-[wait time="0.1"]
+[wait time="1.2"]
 do GerenciadorMissoes.completar_missao("dormir")
 do Dialogic.start_timeline("acordou")
+do GerenciadorMissoes.iniciar("explorardeserto")

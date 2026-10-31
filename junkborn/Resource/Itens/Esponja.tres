@@ -7,7 +7,7 @@
 script = ExtResource("1_ir6vr")
 item_id = 3
 nome = "Esponja"
-descricao = "É um objeto pequeno, ele é meio mole e legal de apertar "
+descricao = "É um pedacinho de nuvem colorida e cheia de furinhos"
 textura = ExtResource("2_r35hu")
 tipoDeLixo = "Nada"
 Coletavel = false

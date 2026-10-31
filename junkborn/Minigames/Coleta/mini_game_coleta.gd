@@ -6,7 +6,7 @@ signal fechar_coleta
 @export var lista_de_lixos: Array[LixoData] = []
 
 # NOVO: Variável para controlar a quantidade no Inspector
-@export var quantidade_lixos: int = 5 
+@export var quantidade_lixos: int = 67 
 
 @export var limite_minimo: Vector2 = Vector2(30, 100)
 @export var limite_maximo: Vector2 = Vector2(1050, 700)

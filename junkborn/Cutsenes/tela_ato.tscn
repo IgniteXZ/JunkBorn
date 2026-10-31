@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ckl0ewxuq1luy"]
+
+[ext_resource type="Script" uid="uid://ddh3v1tgjowok" path="res://Cutsenes/tela_ato.gd" id="1_srq5e"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_24bgj"]
+
+[node name="TelaAto" type="CanvasLayer" unique_id=2111064600 node_paths=PackedStringArray("fundo", "titulo")]
+process_mode = 3
+layer = 110
+script = ExtResource("1_srq5e")
+fundo = NodePath("Fundo")
+titulo = NodePath("Fundo/Titulo")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=116267898]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Titulo" type="Label" parent="Fundo" unique_id=607971378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_24bgj")
+theme_override_font_sizes/font_size = 48
+text = "ATO 1"
+horizontal_alignment = 1
+vertical_alignment = 1

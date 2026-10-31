@@ -27,6 +27,7 @@ Global="*uid://cx8w5ymdwkvy2"
 Pause="*uid://bgewmbkw8lm8"
 Transicao="*uid://dvbfwx3uf7gy4"
 ConfirmarSaida="*uid://b8egsqvoe5auc"
+TelaAto="*uid://ckl0ewxuq1luy"
 
 [dialogic]
 
@@ -55,6 +56,7 @@ directories/dtl_directory={
 "bucha": "res://Dialogos/Timeline/bucha.dtl",
 "caifonte": "res://Dialogos/Timeline/caifonte.dtl",
 "camaEstanho": "res://Dialogos/Timeline/camaEstanho.dtl",
+"caminhoerrado": "res://Dialogos/Timeline/caminhoerrado.dtl",
 "cansado": "res://Dialogos/Timeline/cansado.dtl",
 "carpete": "res://Dialogos/Timeline/carpete.dtl",
 "cutsceneCamaFiolmeno": "res://Dialogos/Timeline/cutsceneCamaFiolmeno.dtl",
@@ -68,6 +70,7 @@ directories/dtl_directory={
 "falasNpc6": "res://Dialogos/Timeline/falasNpc6.dtl",
 "falasdonpc1": "res://Dialogos/Timeline/falasdonpc1.dtl",
 "filomenoChegaVila": "res://Dialogos/Timeline/filomenoChegaVila.dtl",
+"fonte": "res://Dialogos/Timeline/fonte.dtl",
 "grupoNpcs": "res://Dialogos/Timeline/grupoNpcs.dtl",
 "janela": "res://Dialogos/Timeline/janela.dtl",
 "mandacaruFala1": "res://Dialogos/Timeline/mandacaruFala1.dtl",
@@ -123,15 +126,18 @@ audio/channel_defaults={
 }
 variables={
 "Filomeno_estacoComBoneco": false,
+"FinalSecreto": {
+"BonecoNoBolso": false
+},
 "NewVar": "",
 "deserto_liberado": false,
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
-"forja_liberada": true,
-"liberou_menus": true,
+"forja_liberada": false,
+"liberou_menus": false,
 "madancaru_falou": false,
 "podeSairFonte": false,
-"pode_dormir": true,
+"pode_dormir": false,
 "pode_sair_casa": true,
 "rauchy_company": false
 }
