@@ -26,3 +26,4 @@ func _on_timeline_ended():
 	Global.eventos["intro_vila"] = true
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	Player.process_mode = Node.PROCESS_MODE_INHERIT
+	Tutorial.mostrar("andar", "<move_up><move_left><move_down><move_right> ou as setas|para andar", "move_left move_right move_up move_down")
