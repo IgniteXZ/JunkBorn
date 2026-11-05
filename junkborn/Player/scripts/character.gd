@@ -17,6 +17,8 @@ signal PassarCanvas(canvas:CanvasLayer)
 @export_category("Objects")
 @export var _animation_tree: AnimationTree = null
 
+
+
 @export var canvaa: CanvasLayer
 
 var knockback_vector: Vector2 = Vector2.ZERO
@@ -30,6 +32,7 @@ var tempoAcabado: bool = false
 var pode_mover: bool = true #travar depois em minigames
 
 func _ready() -> void:
+	$Animation.speed_scale = 0.2
 	_state_machine = _animation_tree["parameters/playback"]
 	call_deferred("_aplicar_spawn")
 	
