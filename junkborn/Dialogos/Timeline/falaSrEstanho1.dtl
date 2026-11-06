@@ -9,3 +9,4 @@ srEstanho (normal): E Filomeno, pode pegar algo na estante do meu quarto por fav
 srEstanho (normal): É uma caderneta de anotações marrom e um livro verde
 Filomeno (Normal): Oh, okay
 do GerenciadorMissoes.iniciar("pedidoestanho")
+do Tutorial.mostrar("missao", "<Missoes> ver missão atual")

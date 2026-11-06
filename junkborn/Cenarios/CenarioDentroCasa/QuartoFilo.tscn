@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_c0nvc"]
 [ext_resource type="Texture2D" uid="uid://csrg3ljqheq8d" path="res://Cenarios/CenarioDentroCasa/quarto finlomeno.png" id="2_gn4rn"]
+[ext_resource type="Script" uid="uid://51qtg2n54am8" path="res://Cenarios/CenarioDentroCasa/boneco.gd" id="3_8ynj7"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_qc74i"]
 [ext_resource type="Script" uid="uid://beyayhl2laaak" path="res://Cenarios/CenarioDentroCasa/sai_do_quarto_filo.gd" id="4_gn4rn"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="5_qc74i"]
@@ -445,6 +446,9 @@ size = Vector2(77, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xci24"]
 size = Vector2(52, 8.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc74i"]
+size = Vector2(42, 44)
+
 [node name="Node2D2" type="Node2D" unique_id=1574714337]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
@@ -460,11 +464,6 @@ tile_set = SubResource("TileSet_x42px")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=83091006]
 position = Vector2(98, 127)
 tile_map_data = PackedByteArray("AAD///n/AQAMAAoAAAD///r/AQAMAAsAAAAAAPn/AQANAAoAAAAAAPr/AQANAAsAAAABAPn/AQAOAAoAAAABAPr/AQAOAAsAAAD7//j/AQAHAAgAAAD7//n/AQAHAAkAAAD8//j/AQAIAAgAAAD8//n/AQAIAAkAAAD9//j/AQAJAAgAAAD9//n/AQAJAAkAAAD8//v/AQAIAA0AAAD8//z/AQAIAA4AAAD8//3/AQAIAA8AAAD9//v/AQAJAA0AAAD9//z/AQAJAA4AAAD9//3/AQAJAA8AAAD+//v/AQAKAA0AAAD+//z/AQAKAA4AAAD+//3/AQAKAA8AAAD///v/AQALAA0AAAD///z/AQALAA4AAAD///3/AQALAA8AAAAAAPv/AQAMAA0AAAAAAPz/AQAMAA4AAAAAAP3/AQAMAA8AAAD6//r/AQAFAA0AAAD6//v/AQAFAA4AAAD6//z/AQAFAA8AAAD7//r/AQAGAA0AAAD7//v/AQAGAA4AAAD7//z/AQAGAA8AAAD6//3/AQAFABAAAAD7//3/AQAGABAAAAA=")
-tile_set = SubResource("TileSet_x42px")
-
-[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1269769846]
-position = Vector2(98, 127)
-tile_map_data = PackedByteArray("AAAAAPr/AQARAA0AAAD6//v/AQAAAA4AAAD6//z/AQAAAA8AAAD7//v/AQABAA4AAAD7//z/AQABAA8AAAA=")
 tile_set = SubResource("TileSet_x42px")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=23438383]
@@ -543,6 +542,21 @@ shape = SubResource("RectangleShape2D_6o4we")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=616946588]
 position = Vector2(39, 103.25)
 shape = SubResource("RectangleShape2D_xci24")
+
+[node name="DialogoMesa" type="Area2D" parent="." unique_id=1991529996]
+position = Vector2(-26, -88)
+script = ExtResource("5_qc74i")
+timeline = "mesa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoMesa" unique_id=1092098235]
+position = Vector2(11, 131)
+shape = SubResource("RectangleShape2D_qc74i")
+
+[node name="boneco" type="TileMapLayer" parent="." unique_id=1269769846]
+position = Vector2(98, 127)
+tile_map_data = PackedByteArray("AAAAAPr/AQARAA0AAAD6//v/AQAAAA4AAAD6//z/AQAAAA8AAAD7//v/AQABAA4AAAD7//z/AQABAA8AAAA=")
+tile_set = SubResource("TileSet_x42px")
+script = ExtResource("3_8ynj7")
 
 [connection signal="area_entered" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="saiDoQuartoFilo" to="saiDoQuartoFilo" method="_on_area_exited"]

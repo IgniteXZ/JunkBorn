@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://c28pqx2ew88a7"]
 
-[ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_uldkv"]
 [ext_resource type="Texture2D" uid="uid://eu5h3ougkq2w" path="res://Cenarios/cenario desertoFonte/tileset terrapedra.png" id="2_h1eus"]
 [ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_h1lxh"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="3_26iue"]
@@ -1036,7 +1035,6 @@ radius = 45.70102
 height = 280.09985
 
 [node name="Node2D2" type="Node2D" unique_id=240260216]
-script = ExtResource("1_uldkv")
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1761516652]
 z_index = -1
