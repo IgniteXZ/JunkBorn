@@ -7,7 +7,6 @@ var camada_aviso: CanvasLayer
 var aviso: Label
 var jogador_dentro = false
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area.body_entered.connect(_ao_entrar)
@@ -103,6 +102,9 @@ func _unhandled_input(event):
 	
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
 		liberar()
+		Global.chamarJangada = true
 		
 func liberar():
 	$"../colisoes/StaticBody2D/CollisionShape2D".set_deferred("disabled", true)
+	
+	

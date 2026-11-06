@@ -1,5 +1,9 @@
 extends Node
 
+#outros
+var chamarJangada : bool = false
+
+
 #mapa cidade atual
 var cidade_atual : int = 0
 
