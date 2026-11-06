@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_e841g")
-receitas = Array[ExtResource("2_jtwxe")]([ExtResource("5_175ki"), ExtResource("7_m6p2d"), ExtResource("8_cf2kd"), ExtResource("9_5g8fd"), ExtResource("7_xaie4"), ExtResource("4_evxgb"), ExtResource("10_evxgb"), ExtResource("3_xaie4"), ExtResource("6_gqd1b")])
+receitas = Array[ExtResource("2_jtwxe")]([ExtResource("5_175ki"), ExtResource("7_m6p2d"), ExtResource("8_cf2kd"), ExtResource("9_5g8fd"), ExtResource("7_xaie4"), ExtResource("10_evxgb"), ExtResource("3_xaie4"), ExtResource("6_gqd1b"), ExtResource("4_evxgb")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=335549352]
 layout_mode = 0

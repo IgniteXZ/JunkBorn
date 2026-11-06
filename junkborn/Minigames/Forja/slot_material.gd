@@ -60,10 +60,8 @@ func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 			return data["sprite"] == textura_obrigatoria
 		return false
 
-	if data.has("item") and data["item"] is LixoData:
-		return true
-
-	return false
+	# Aceita o arraste se houver pelo menos uma imagem associada
+	return data.has("sprite") and data["sprite"] != null
 
 func _drop_data(_position: Vector2, data: Variant) -> void:
 	if eh_apenas_previa:
@@ -71,13 +69,35 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 
 	if not icone_material: icone_material = _obter_icone()
 	if not texto_quantidade: texto_quantidade = _obter_texto()
-	
+
 	var quantidade_jogador = int(data["amount"])
 	quantidade_acumulada += quantidade_jogador
 	
+	# 1. Tenta obter o item da forma padrão
 	if data.has("item") and data["item"] is LixoData:
 		item_data = data["item"]
-	
+	elif data.has("item_data") and data["item_data"] is LixoData:
+		item_data = data["item_data"]
+	elif data.has("backup") and "item_data" in data["backup"] and data["backup"].item_data != null:
+		item_data = data["backup"].item_data
+		
+	# 2. SE O ITEM CONTINUAR NULO (O seu caso do log): Faz a busca inteligente por textura
+	if item_data == null and data.has("sprite") and data["sprite"] is Texture2D:
+		var caminho_img = data["sprite"].resource_path
+		if caminho_img != "":
+			# Transforma "res://Resource/Itens/Plastico.png" para "res://Resource/Itens/Plastico.tres"
+			var caminho_tres = caminho_img.replace(".png", ".tres").replace(".ctex", ".tres")
+			
+			if ResourceLoader.exists(caminho_tres):
+				item_data = load(caminho_tres) as LixoData
+				print(">>> INJEÇÃO: Item recuperado automaticamente pelo disco: ", caminho_tres)
+			else:
+				# Caso seus resources fiquem em pastas diferentes das imagens (ex: pasta 'Resource' e pasta 'Itens')
+				var caminho_alternativo = caminho_tres.replace("/Itens/", "/").replace("/Textures/", "/Resource/")
+				if ResourceLoader.exists(caminho_alternativo):
+					item_data = load(caminho_alternativo) as LixoData
+					print(">>> INJEÇÃO (Alternativa): Item recuperado: ", caminho_alternativo)
+
 	if icone_material:
 		if textura_obrigatoria != null:
 			icone_material.texture = textura_obrigatoria
@@ -97,6 +117,9 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		if "item_data" in slot_origem: slot_origem.item_data = null
 		
 	_avisar_tela_principal()
+
+
+
 
 func _atualizar_texto_quantidade():
 	if texto_quantidade:

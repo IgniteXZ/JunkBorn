@@ -24,20 +24,35 @@ func _process(_delta: float) -> void:
 func _obter_receita_do_item(lixo: LixoData) -> RecipeData:
 	if not lixo:
 		return null
-	for receita in receitas:
-		var recurso_receita = null
-		if "item_resultado" in receita and receita.item_resultado:
-			recurso_receita = receita.item_resultado
-		else:
-			for prop in receita.get_property_list():
-				var val = receita.get(prop.name)
-				if val is LixoData:
-					recurso_receita = val
-					break
 		
-		if recurso_receita == lixo:
+	var nome_lixo_limpo = lixo.nome.replace(" ", "").to_lower() if lixo.nome else ""
+	var path_lixo_limpo = lixo.resource_path.get_file().get_basename().replace(" ", "").to_lower() if lixo.resource_path else ""
+
+	for receita in receitas:
+		if not receita:
+			continue
+
+		if "item_resultado" in receita and receita.item_resultado == lixo:
 			return receita
+
+		if "nome_resultado" in receita and receita.nome_resultado != "":
+			var nome_receita_limpo = receita.nome_resultado.replace(" ", "").to_lower()
+			if nome_receita_limpo == nome_lixo_limpo or nome_receita_limpo == path_lixo_limpo:
+				return receita
+				
+	
+		if receita.resource_path != "":
+			var nome_arquivo_receita = receita.resource_path.get_file().get_basename().replace(" ", "").to_lower()
+			if nome_arquivo_receita == nome_lixo_limpo or nome_arquivo_receita == path_lixo_limpo:
+				return receita
+				
+		 
+		if "item_resultado" in receita and receita.item_resultado and receita.item_resultado.resource_path == lixo.resource_path:
+			return receita
+				
 	return null
+
+
 
 func _monitorar_previa() -> void:
 	var item_no_slot = slot_entrada.item_data if ("quantidade_acumulada" in slot_entrada and slot_entrada.quantidade_acumulada > 0) else null

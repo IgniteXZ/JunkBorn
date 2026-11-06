@@ -2,13 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="1_bojh8"]
 [ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_jieqa"]
-[ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="2_qcde7"]
+[ext_resource type="Texture2D" uid="uid://bow1jnh7hngv5" path="res://Resource/Itens/sacolaPlastica.png" id="1_qcde7"]
+[ext_resource type="Resource" uid="uid://ccabuixb7keu6" path="res://Resource/Itens/SacolaPlastica.tres" id="3_dcxlh"]
 
 [resource]
 script = ExtResource("1_jieqa")
-nome_resultado = "Plastico"
-icone_resultado = ExtResource("1_bojh8")
-item_resultado = ExtResource("2_qcde7")
+nome_resultado = "Sacaola plastica"
+icone_resultado = ExtResource("1_qcde7")
+item_resultado = ExtResource("3_dcxlh")
 ingredientes = {
 ExtResource("1_bojh8"): 1
 }

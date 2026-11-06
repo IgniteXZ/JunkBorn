@@ -11,6 +11,6 @@ nome_resultado = "Garrafa Plastica"
 icone_resultado = ExtResource("1_ba32r")
 item_resultado = ExtResource("3_ba32r")
 ingredientes = {
-ExtResource("2_lvrnn"): 1
+ExtResource("2_lvrnn"): 2
 }
 metadata/_custom_type_script = "uid://dycfmqmje3pms"

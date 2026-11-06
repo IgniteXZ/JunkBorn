@@ -11,6 +11,6 @@ nome_resultado = "metal"
 icone_resultado = ExtResource("1_8xxp7")
 item_resultado = ExtResource("2_8xxp7")
 ingredientes = {
-ExtResource("1_io70f"): 1
+ExtResource("1_io70f"): 2
 }
 metadata/_custom_type_script = "uid://dycfmqmje3pms"
