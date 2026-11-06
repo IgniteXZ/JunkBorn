@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ryf00hcp53uk" path="res://Resource/Itens/pa.png" id="9_4jw3k"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="9_p1e2c"]
 [ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="10_dvo31"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="10_u2vtj"]
-[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_behyc"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
@@ -1489,13 +1487,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw5o1"]
 size = Vector2(548, 221)
 
-[sub_resource type="Resource" id="Resource_wi68o"]
-script = ExtResource("10_u2vtj")
-nome = "Semente1"
-textura = ExtResource("11_behyc")
-id_item_mapa = "0"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
 size = Vector2(574, 67)
 
@@ -1561,8 +1552,7 @@ position = Vector2(-3, -95.5)
 shape = SubResource("RectangleShape2D_cw5o1")
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_p1e2c")]
-position = Vector2(-421, -721)
-dados_item = SubResource("Resource_wi68o")
+position = Vector2(-404, -658)
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
 [node name="spawnFonte" type="Marker2D" parent="." unique_id=191055139]
