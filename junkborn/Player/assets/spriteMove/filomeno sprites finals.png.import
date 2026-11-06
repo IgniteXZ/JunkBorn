@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07ptjd1a6e84"
-path="res://.godot/imported/filomeno sprites finals (3).png-712689ce3f2456e3bcd8b234c425880c.ctex"
+uid="uid://bvmjyqgn48y4f"
+path="res://.godot/imported/filomeno sprites finals.png-6022693bbedfb872ee8d95cb6b5d04be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/assets/spriteMove/filomeno sprites finals (3).png"
-dest_files=["res://.godot/imported/filomeno sprites finals (3).png-712689ce3f2456e3bcd8b234c425880c.ctex"]
+source_file="res://Player/assets/spriteMove/filomeno sprites finals.png"
+dest_files=["res://.godot/imported/filomeno sprites finals.png-6022693bbedfb872ee8d95cb6b5d04be.ctex"]
 
 [params]
 

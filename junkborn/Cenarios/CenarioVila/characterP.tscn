@@ -1286,7 +1286,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="SpriteFrames" id="SpriteFrames_sq0mp"]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 2.5,
 "texture": ExtResource("18_urtpg")
 }, {
 "duration": 1.5,
@@ -1307,7 +1307,7 @@ height = 84.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_ifxyd"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.5,
 "texture": ExtResource("16_0xg0n")
 }, {
 "duration": 1.0,
@@ -1328,7 +1328,7 @@ height = 128.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_bfwth"]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 2.5,
 "texture": ExtResource("18_wuro2")
 }, {
 "duration": 1.5,
@@ -1370,10 +1370,10 @@ height = 120.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3nj5"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("24_1evj1")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("25_a4q6s")
 }],
 "loop": 1,
@@ -1391,10 +1391,10 @@ height = 88.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns0o7"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.5,
 "texture": ExtResource("26_lsdmm")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("27_cegfn")
 }],
 "loop": 1,
@@ -1413,7 +1413,7 @@ height = 118.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvkme"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.5,
 "texture": ExtResource("28_7xnrc")
 }, {
 "duration": 1.0,

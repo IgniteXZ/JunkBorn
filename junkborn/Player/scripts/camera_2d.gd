@@ -26,6 +26,7 @@ func _process(_delta: float) -> void:
 	
 	if Global.cidade_atual == 0:
 		limit_bottom = 400
+		limit_right = 1600
 	elif Global.cidade_atual ==1:
 		limit_bottom =1550
 		limit_right = 1595
