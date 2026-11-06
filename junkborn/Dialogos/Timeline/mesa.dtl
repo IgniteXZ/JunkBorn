@@ -1,12 +1,13 @@
+join Filomeno left
 if {Filomeno_estacoComBoneco} == false:
-	Filomeno: Meu boneco de palha.
-	O vô diz que foi uma das coisas que meus pais deixaram.
+	Filomeno (Normal): Meu boneco de palha.
+	Filomeno (Sigma): O vô diz que foi uma das coisas que meus pais deixaram.
 	- Sim
-		Filomeno: Bom, que tal passear um pouco amigão?
+		Filomeno (surpreso): Bom, que tal passear um pouco amigão?
 		Conseguiu um boneco de palha
 		set {Filomeno_estacoComBoneco} = true
 		set {FinalSecreto.BonecoNoBolso} = true
 	- Não
 		Você deixou o boneco de palha na mesa.
 else:
-	Filomeno: A mesa de jantar
+	Filomeno (Normal): A mesa de jantar

@@ -1,4 +1,7 @@
+join Filomeno (Normal) left
 Filomeno (Normal): Esse era o local do desenho no mapa?
-Filomeno: Parece que não tem nada aqui...
+Filomeno (Sigma): Parece que não tem nada aqui...
+leave Filomeno
 [wait time="2.0"]
-Filomeno: Oque!? AAAAAH!
+join Filomeno (surpreso) left
+Filomeno (surpreso): Oque!? AAAAAH!

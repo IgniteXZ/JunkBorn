@@ -143,6 +143,7 @@ variables={
 "rauchy_company": false
 }
 glossary/glossary_files=["uid://b5xaxr87hkumi"]
+portraits/default_portrait="res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
 
 [display]
 
