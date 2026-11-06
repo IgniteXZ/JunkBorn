@@ -5,7 +5,7 @@ extends DialogicPortrait
 @export_file var image := ""
 
 
-var unhighlighted_color := Color.DARK_GRAY
+var unhighlighted_color := Color(0.3, 0.3, 0.3, 1.0)
 
 ## Variables prefixed with `state_` will get copied to the next portrait if it uses the same scene.
 var state_highlighted := false

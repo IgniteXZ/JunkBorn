@@ -7,15 +7,43 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "EstiloTeste",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "feliz",
 &"description": "",
 &"display_name": "Sr Estanho",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
-&"portraits": {},
-&"scale": 1.0
+&"offset": Vector2(260, 0),
+&"portraits": {
+"fechado": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/srestanho/olho fechado/estanhofechado1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"feliz": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/srestanho/feliz/estanhofeliz1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"normal": {
+"export_overrides": {
+"image": "\"res://Sprites/portraits/srestanho/neutro/srestanho1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 0.75
 }

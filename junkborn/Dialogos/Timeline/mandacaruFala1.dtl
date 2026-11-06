@@ -1,45 +1,47 @@
+join mandacaru (bravo) right
+join Filomeno (Normal) left
 if {madancaru_falou} == false:
-	mandacaru: VAMOS IMBECIS! DESCARREGUEM TODAS AS PEDRAS E LEVEM PARA FORJA!
-	mandacaru: Ahn?
-	mandacaru: Ah! Olha quem está aqui!
-	mandacaru: Se não é o neto do grande “sr.estanho”, hahaha!
-	mandacaru: O que você quer garoto?
+	mandacaru (bravo): VAMOS IMBECIS! DESCARREGUEM TODAS AS PEDRAS E LEVEM PARA FORJA!
+	mandacaru (confusso): Ahn?
+	mandacaru (normal): Ah! Olha quem está aqui!
+	mandacaru (rindo): Se não é o neto do grande “sr.estanho”, hahaha!
+	mandacaru (bravo): O que você quer garoto?
 set {madancaru_falou} = true
 if {madancaru_falou} == true:
 	- Floresta de Pedras
-		mandacaru: Ah, a floresta de pedras, a grande cidade vista após as dunas.
-		mandacaru: Aqueles pimposos da cidade!
-		mandacaru: Pelo menos dão um bom retorno pra quem merece seu posto. Se é que me entende, ha! Ha!
-		mandacaru: Se  trabalhar duro talvez consiga um serviço por lá, mas prepare os pulmões!
-		mandacaru: Se acha o ar daqui ruim, não viu como é a rotina naquele lugar.
-		mandacaru: E é bom não se meter em encrencas! Aqueles bixos de metal voadores da Rauch Company estão por toda parte.
-		mandacaru: Como é o nome deles? Drânes?.. Dunes?
+		mandacaru (normal): Ah, a floresta de pedras, a grande cidade vista após as dunas.
+		mandacaru (bravo): Aqueles pimposos da cidade!
+		mandacaru (rindo): Pelo menos dão um bom retorno pra quem merece seu posto. Se é que me entende, ha! Ha!
+		mandacaru (rindo): Se  trabalhar duro talvez consiga um serviço por lá, mas prepare os pulmões!
+		mandacaru (normal): Se acha o ar daqui ruim, não viu como é a rotina naquele lugar.
+		mandacaru (bravo): E é bom não se meter em encrencas! Aqueles bixos de metal voadores da Rauch Company estão por toda parte.
+		mandacaru (confusso): Como é o nome deles? Drânes?.. Dunes?
 	- Forja
-		mandacaru: É pra onde vai todos os minérios que vocês coletam.
-		mandacaru: Separamos as impurezas e formamos as barras.
-		mandacaru: E tudo é mandado para a floresta de pedras.
-		mandacaru: Depois disso é aquele pessoal da cidade que se vira com o resto.
-		mandacaru: Pouco me importa o que querem com isso.
-		mandacaru: Se eu continuar onde estou, pra mim está ótimo.
+		mandacaru (normal): É pra onde vai todos os minérios que vocês coletam.
+		mandacaru (normal): Separamos as impurezas e formamos as barras.
+		mandacaru (normal): E tudo é mandado para a floresta de pedras.
+		mandacaru (normal): Depois disso é aquele pessoal da cidade que se vira com o resto.
+		mandacaru (bravo): Pouco me importa o que querem com isso.
+		mandacaru (rindo): Se eu continuar onde estou, pra mim está ótimo.
 	- Suprimentos
-		mandacaru: Bom, vocês trabalham pra isso não?
-		mandacaru: Essa rotina que todos da vila estanho tem é apenas para sobreviver a esse “mundo cruel” em que vivemos.
-		mandacaru: E é claro, você gosta de comer, beber, ter um lugar pra se tratar de doenças e dormir não?
-		mandacaru: Se não quiser trabalhar, o deserto está lá fora a todo dispor.
+		mandacaru (confusso): Bom, vocês trabalham pra isso não?
+		mandacaru (normal): Essa rotina que todos da vila estanho tem é apenas para sobreviver a esse “mundo cruel” em que vivemos.
+		mandacaru (confusso): E é claro, você gosta de comer, beber, ter um lugar pra se tratar de doenças e dormir não?
+		mandacaru (bravo): Se não quiser trabalhar, o deserto está lá fora a todo dispor.
 	- Natureza
-		mandacaru: Que? Natureza?
-		mandacaru: HAHAHAHA!!!!
-		mandacaru: O QUE?! VAI ME CONTAR SOBRE CAMPOS VERDES E FLORESTAS?! NÃO ME FAÇA RIR GAROTO!! HAHAHA!!
-		mandacaru: Esse mundo fantástico já se foi a tempos garoto.
-		mandacaru: Seu avô deve ter visto o fim dessa época, antes de virar apenas memória.
-		mandacaru: Agora será apenas mais uma coisa levada pelas areias do tempo.
+		mandacaru (confusso): Que? Natureza?
+		mandacaru (rindo): HAHAHAHA!!!!
+		mandacaru (rindo): O QUE?! VAI ME CONTAR SOBRE CAMPOS VERDES E FLORESTAS?! NÃO ME FAÇA RIR GAROTO!! HAHAHA!!
+		mandacaru (normal): Esse mundo fantástico já se foi a tempos garoto.
+		mandacaru (normal): Seu avô deve ter visto o fim dessa época, antes de virar apenas memória.
+		mandacaru (normal): Agora será apenas mais uma coisa levada pelas areias do tempo.
 	- Nada
-		mandacaru: Para de me encher, então!
+		mandacaru (bravo): Para de me encher, então!
 	if {FinalSecreto.BonecoNoBolso} == true:
 		- Boneco
-			mandacaru: Esse Boneco... Ele parece bem interessante...
+			mandacaru (normal): Esse Boneco... Ele parece bem interessante...
 			[wait_input]
-			mandacaru: Você poderia dar ele para mim?
+			mandacaru (normal): Você poderia dar ele para mim?
 			- Sim
 				Você deu o boneco para mandacaru
 				set {FinalSecreto.BonecoNoBolso} = false

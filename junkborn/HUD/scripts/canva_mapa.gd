@@ -10,3 +10,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Mapa") and Dialogic.VAR.get_variable("liberou_menus", false and Global.esta_coleta, false):
 		$Mapa.visible = not $Mapa.visible
+		if $Mapa.visible:
+			$"../ui_canvas/inventory".hide()
+			
+			$"../ui_canvas/inventory/ui_livro/Livro".hide()
+			$"../ui_canvas/inventory/ui_livro/Livro2".hide()

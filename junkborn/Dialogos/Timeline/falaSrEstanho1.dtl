@@ -1,9 +1,11 @@
+join Filomeno left
 do GerenciadorMissoes.completar_missao("irpracasa")
-Filomeno: Vô, cheguei.
-srEstanho: Ah, filomeno! Voltou cedo hoje.
-Filomeno: É, consegui bater a meta mais cedo.
-srEstanho: Que bom, agora terá um tempinho a mais para descansar.
-srEstanho: E Filomeno, pode pegar algo na estante do meu quarto por favor?
-srEstanho: É uma caderneta de anotações marrom e um livro verde
-Filomeno: Oh, okay
+Filomeno (Normal): Vô, cheguei.
+join srEstanho right
+srEstanho (feliz): Ah, filomeno! Voltou cedo hoje.
+Filomeno (Normal): É, consegui bater a meta mais cedo.
+srEstanho (normal): Que bom, agora terá um tempinho a mais para descansar.
+srEstanho (normal): E Filomeno, pode pegar algo na estante do meu quarto por favor?
+srEstanho (normal): É uma caderneta de anotações marrom e um livro verde
+Filomeno (Normal): Oh, okay
 do GerenciadorMissoes.iniciar("pedidoestanho")

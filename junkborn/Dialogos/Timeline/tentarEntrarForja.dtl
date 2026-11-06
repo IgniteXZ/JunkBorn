@@ -1,2 +1,3 @@
-Filomeno:  Não tenho permissão para entrar na fábrica.
-Filomeno: Melhor não causar encrenca.
+join Filomeno (Normal) left
+Filomeno (Normal): Não tenho permissão para entrar na fábrica.
+Filomeno (cansado): Melhor não causar encrenca.

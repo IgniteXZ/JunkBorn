@@ -13,7 +13,11 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false) and not Global.esta_coleta:
 		$inventory.visible = not $inventory.visible
-
+		if $inventory.visible:
+			$"../CanvaMapa/Mapa".hide()
+			$inventory/ui_livro/Livro.hide()
+			$inventory/ui_livro/Livro2.hide()
+			
 func _ready() -> void:
 	add_to_group("inventario")
 	carregar_inventario()
