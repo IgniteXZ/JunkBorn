@@ -27,6 +27,7 @@ Global="*uid://cx8w5ymdwkvy2"
 Pause="*uid://bgewmbkw8lm8"
 Transicao="*uid://dvbfwx3uf7gy4"
 ConfirmarSaida="*uid://b8egsqvoe5auc"
+AudioManager="*uid://cjhtiq4bcdmni"
 
 [dialogic]
 
@@ -82,13 +83,10 @@ directories/dtl_directory={
 "tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl",
 "timelineTeste": "res://Dialogos/teste/timelineTeste.dtl"
 }
-layout/style_directory={
-"": "res://Dialogos/Style/EstiloTeste.tres",
-"EstiloTeste": "res://Dialogos/Style/EstiloTeste.tres"
-}
+layout/style_directory={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogos/Style/EstiloTeste.tres"]
-layout/default_style="res://Dialogos/Style/EstiloTeste.tres"
+layout/style_list=[]
+layout/default_style=""
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -123,9 +121,6 @@ audio/channel_defaults={
 }
 variables={
 "Filomeno_estacoComBoneco": false,
-"FinalSecreto": {
-"BonecoNoBolso": false
-},
 "NewVar": "",
 "deserto_liberado": false,
 "falou_estanhoinicio": false,
@@ -138,7 +133,13 @@ variables={
 "pode_sair_casa": true,
 "rauchy_company": false
 }
-glossary/glossary_files=["uid://b5xaxr87hkumi"]
+glossary/glossary_files=[]
+translation/enabled=false
+translation/original_locale="pt_BR"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
 
 [display]
 
