@@ -5,6 +5,8 @@ if {Filomeno_estacoComBoneco} == false:
 	- Sim
 		Filomeno (surpreso): Bom, que tal passear um pouco amigão?
 		Conseguiu um boneco de palha
+		[signal arg="pegou_boneco"]
+		[signal arg="boneco_inv"]
 		set {Filomeno_estacoComBoneco} = true
 		set {FinalSecreto.BonecoNoBolso} = true
 	- Não

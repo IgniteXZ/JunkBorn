@@ -12,7 +12,7 @@ func _ready() -> void:
 		start_dialog()
 		
 	
-	if Dialogic.VAR.deserto_liberado == true:
+	if Dialogic.VAR.deserto_liberado == true and Global.cidade_atual == 0:
 		mandacaru.queue_free()
 		npc.queue_free()
 

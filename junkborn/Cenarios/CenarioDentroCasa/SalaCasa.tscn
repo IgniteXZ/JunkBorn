@@ -387,9 +387,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
 radius = 39.20459
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrw66"]
-size = Vector2(160, 75)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5a1v"]
 size = Vector2(206, 17)
 
@@ -599,14 +596,6 @@ timeline = "retrato"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoRetrato" unique_id=879347244]
 position = Vector2(257, 144)
 shape = SubResource("CircleShape2D_qrw66")
-
-[node name="DialogoMesa" type="Area2D" parent="." unique_id=1031613547]
-script = ExtResource("8_rxvhl")
-timeline = "mesa"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoMesa" unique_id=1367243413]
-position = Vector2(64, 128.5)
-shape = SubResource("RectangleShape2D_qrw66")
 
 [node name="colisoes" type="Node2D" parent="." unique_id=1296413760]
 
