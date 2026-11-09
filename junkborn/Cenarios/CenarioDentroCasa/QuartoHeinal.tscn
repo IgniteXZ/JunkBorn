@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cv0frprgohdi4" path="res://Cenarios/CenarioDentroCasa/quarto srestanho.png" id="2_jhjp2"]
 [ext_resource type="Texture2D" uid="uid://csrg3ljqheq8d" path="res://Cenarios/CenarioDentroCasa/quarto finlomeno.png" id="3_hacy1"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="3_vipka"]
+[ext_resource type="Texture2D" uid="uid://7rim2ol1hm16" path="res://Cenarios/CenarioDentroCasa/estante1.png" id="4_cxtgh"]
+[ext_resource type="Texture2D" uid="uid://ws7ay3hbchww" path="res://Cenarios/CenarioDentroCasa/estante2.png" id="5_rbkqg"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="6_hacy1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vr3i"]
@@ -943,11 +945,33 @@ texture_region_size = Vector2i(24, 24)
 15:17/0 = 0
 18:17/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7k2bh"]
+texture = ExtResource("4_cxtgh")
+texture_region_size = Vector2i(24, 24)
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtiso"]
+texture = ExtResource("5_rbkqg")
+texture_region_size = Vector2i(24, 24)
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_vhdtt"]
 tile_size = Vector2i(24, 24)
-sources/0 = SubResource("TileSetAtlasSource_hacy1")
 sources/1 = SubResource("TileSetAtlasSource_cxtgh")
 sources/2 = SubResource("TileSetAtlasSource_rbkqg")
+sources/5 = SubResource("TileSetAtlasSource_vtiso")
+sources/0 = SubResource("TileSetAtlasSource_hacy1")
+sources/4 = SubResource("TileSetAtlasSource_7k2bh")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
 radius = 27.294687
@@ -1007,20 +1031,26 @@ position = Vector2(98, 127)
 tile_map_data = PackedByteArray("AAD6//z/AAAFAAoAAAD6//3/AAAFAAsAAAD7//z/AAAGAAoAAAD7//3/AAAGAAsAAAD8//z/AAAHAAoAAAD8//3/AAAHAAsAAAD+//3/AAAMAA4AAAD+//7/AAAMAA8AAAD+////AAAMABAAAAD///3/AAANAA4AAAD///7/AAANAA8AAAD/////AAANABAAAAAAAP3/AAAOAA4AAAAAAP7/AAAOAA8AAAAAAP//AAAOABAAAAA=")
 tile_set = SubResource("TileSet_vhdtt")
 
-[node name="TileMapLayer6" type="TileMapLayer" parent="." unique_id=1759443898]
-position = Vector2(86, 127)
-tile_map_data = PackedByteArray("AAD6//3/AAAHAA0AAAD6//7/AAAHAA4AAAD6////AAAHAA8AAAD7//3/AAAIAA0AAAD7//7/AAAIAA4AAAD7////AAAIAA8AAAA=")
+[node name="Estante1" type="TileMapLayer" parent="." unique_id=1759443898]
+position = Vector2(100, 126)
+tile_map_data = PackedByteArray("AAAAAPv/BAAAAAEAAAAAAPz/BAAAAAIAAAAAAP3/BAAAAAMAAAABAPv/BAABAAEAAAABAPz/BAABAAIAAAABAP3/BAABAAMAAAA=")
+tile_set = SubResource("TileSet_vhdtt")
+
+[node name="Estante2" type="TileMapLayer" parent="." unique_id=1057244697]
+visible = false
+position = Vector2(100, 126)
+tile_map_data = PackedByteArray("AAAAAPv/BQAAAAEAAAAAAPz/BQAAAAIAAAAAAP3/BQAAAAMAAAABAPv/BQABAAEAAAABAPz/BQABAAIAAAABAP3/BQABAAMAAAA=")
 tile_set = SubResource("TileSet_vhdtt")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="." unique_id=1545211664]
-position = Vector2(105, 127)
-tile_map_data = PackedByteArray("AAD///z/AAAJAAsAAAD///3/AAAJAAwAAAD///7/AAAJAA0AAAAAAPz/AAAKAAsAAAAAAP3/AAAKAAwAAAAAAP7/AAAKAA0AAAABAPz/AAALAAsAAAABAP3/AAALAAwAAAABAP7/AAALAA0AAAA=")
+position = Vector2(94, 126)
+tile_map_data = PackedByteArray("AAD6//3/AgAFAA0AAAD6//7/AgAFAA4AAAD6////AgAFAA8AAAD6/wAAAgAFABAAAAD7//3/AgAGAA0AAAD7//7/AgAGAA4AAAD7////AgAGAA8AAAD7/wAAAgAGABAAAAA=")
 tile_set = SubResource("TileSet_vhdtt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=490047866]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=419901772]
-position = Vector2(128, 69)
+position = Vector2(-30, 102)
 shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=217430830]
@@ -1096,7 +1126,7 @@ timeline = "armarioDiario"
 uma_vez = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoEstante" unique_id=149057442]
-position = Vector2(-26, 96)
+position = Vector2(111, 50)
 shape = SubResource("CircleShape2D_qrw66")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=803791560]
