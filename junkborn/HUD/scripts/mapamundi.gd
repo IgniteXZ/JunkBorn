@@ -1,21 +1,33 @@
+
 extends Control
 
+@export var iconejogador: Sprite2D
+@onready var imagem_mapa: TextureRect = $TextureRect
+
+
 var posicaocidade: Array[Vector2] = [
-	Vector2(810, 254),
-	Vector2(602, 231),
-	Vector2(391, 612),
-	Vector2(220,798)
+	Vector2(0.777, 0.255), #vila
+	Vector2(0.60, 0.21), #deserto1
+	Vector2(0.40, 0.65),  
+	Vector2(0.81, 0.196)  #forja
 ]
 
-
-@export var iconejogador: Sprite2D
-	
-	
-	
-func _ready() -> void:
-	pass
-	
 func _process(_delta: float) -> void:
 	var pos_atual = Global.cidade_atual
-	
-	iconejogador.global_position = posicaocidade[pos_atual]
+
+	if pos_atual < 0 or pos_atual >= posicaocidade.size():
+		return
+
+	if iconejogador == null or imagem_mapa.texture == null:
+		return
+
+	var tamanho_textura = imagem_mapa.texture.get_size()
+	var escala = minf(
+		imagem_mapa.size.x / tamanho_textura.x,
+		imagem_mapa.size.y / tamanho_textura.y
+	)
+
+	var tamanho_imagem = tamanho_textura * escala
+	var margem = (imagem_mapa.size - tamanho_imagem) / 2.0
+
+	iconejogador.position = margem + tamanho_imagem * posicaocidade[pos_atual]

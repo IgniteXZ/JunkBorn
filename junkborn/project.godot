@@ -133,7 +133,7 @@ variables={
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
 "forja_liberada": false,
-"liberou_menus": false,
+"liberou_menus": true,
 "madancaru_falou": false,
 "podeSairFonte": false,
 "pode_dormir": false,
