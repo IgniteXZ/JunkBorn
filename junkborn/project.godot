@@ -29,6 +29,7 @@ Transicao="*uid://dvbfwx3uf7gy4"
 ConfirmarSaida="*uid://b8egsqvoe5auc"
 TelaAto="*uid://ckl0ewxuq1luy"
 Tutorial="*uid://dv5giqryygeik"
+AudioManager="*uid://cjhtiq4bcdmni"
 
 [dialogic]
 
@@ -86,13 +87,10 @@ directories/dtl_directory={
 "tentarEntrarForja": "res://Dialogos/Timeline/tentarEntrarForja.dtl",
 "timelineTeste": "res://Dialogos/teste/timelineTeste.dtl"
 }
-layout/style_directory={
-"": "res://Dialogos/Style/EstiloTeste.tres",
-"EstiloTeste": "res://Dialogos/Style/EstiloTeste.tres"
-}
+layout/style_directory={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogos/Style/EstiloTeste.tres"]
-layout/default_style="res://Dialogos/Style/EstiloTeste.tres"
+layout/style_list=[]
+layout/default_style=""
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -131,11 +129,11 @@ variables={
 "BonecoNoBolso": false
 },
 "NewVar": "",
-"deserto_liberado": true,
+"deserto_liberado": false,
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
-"forja_liberada": true,
-"liberou_menus": true,
+"forja_liberada": false,
+"liberou_menus": false,
 "madancaru_falou": false,
 "podeSairFonte": false,
 "pode_dormir": false,
@@ -144,6 +142,12 @@ variables={
 }
 glossary/glossary_files=["uid://b5xaxr87hkumi"]
 portraits/default_portrait="res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
+translation/enabled=false
+translation/original_locale="pt_BR"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
 
 [display]
 

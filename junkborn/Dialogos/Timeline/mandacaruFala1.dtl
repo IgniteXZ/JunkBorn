@@ -1,3 +1,4 @@
+
 join mandacaru (bravo) right
 join Filomeno (Normal) left
 if {madancaru_falou} == false:
@@ -12,7 +13,7 @@ if {madancaru_falou} == true:
 		mandacaru (normal): Ah, a floresta de pedras, a grande cidade vista após as dunas.
 		mandacaru (bravo): Aqueles pimposos da cidade!
 		mandacaru (rindo): Pelo menos dão um bom retorno pra quem merece seu posto. Se é que me entende, ha! Ha!
-		mandacaru (rindo): Se  trabalhar duro talvez consiga um serviço por lá, mas prepare os pulmões!
+		mandacaru (rindo): Se trabalhar duro talvez consiga um serviço por lá, mas prepare os pulmões!
 		mandacaru (normal): Se acha o ar daqui ruim, não viu como é a rotina naquele lugar.
 		mandacaru (bravo): E é bom não se meter em encrencas! Aqueles bixos de metal voadores da Rauch Company estão por toda parte.
 		mandacaru (confusso): Como é o nome deles? Drânes?.. Dunes?
