@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://cs8rq47bkkhh0"]
 
 [ext_resource type="Texture2D" uid="uid://b47f7r2t3t5x2" path="res://Cenarios/CenarioDentroCasa/casa filomeno.png" id="1_ecsqw"]
+[ext_resource type="Script" uid="uid://dbtdaua4ypkoj" path="res://Cenarios/CenarioDentroCasa/sala_casa.gd" id="1_iujb1"]
+[ext_resource type="AudioStream" uid="uid://chh85rtohnrrr" path="res://Audios/SoundTrack/TentativaFracassadaouSeila.mp3" id="2_3epk2"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_ifgmi"]
 [ext_resource type="Script" uid="uid://chyjqje86cacw" path="res://Cenarios/CenarioDentroCasa/estanho.gd" id="5_msrtw"]
 [ext_resource type="Texture2D" uid="uid://cjbq4hy7cmnxc" path="res://NPC/Sprites/Estranho/srEstanholdles.png" id="5_tf7uv"]
@@ -418,6 +420,8 @@ size = Vector2(12, 7)
 size = Vector2(71, 4)
 
 [node name="Node2D" type="Node2D" unique_id=1574714337]
+script = ExtResource("1_iujb1")
+musica = ExtResource("2_3epk2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329850615]
 position = Vector2(98, 127)

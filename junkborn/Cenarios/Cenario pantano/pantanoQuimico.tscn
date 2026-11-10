@@ -16,8 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bn2c24f5jq8fr" path="res://Cenarios/Cenario Fonte/tileset fonte1.png" id="9_qlqu2"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="10_072d7"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="11_7mwnk"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="12_ck1bn"]
-[ext_resource type="Texture2D" uid="uid://bqahdgjy5ude4" path="res://NPC/Sprites/Npc3/npc3-1.png" id="13_tagv4"]
+[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="17_g34os"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -555,14 +554,6 @@ sources/0 = SubResource("TileSetAtlasSource_qwcuk")
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Resource" id="Resource_p1e2c"]
-script = ExtResource("12_ck1bn")
-id = 1
-nome = "Semente3"
-textura = ExtResource("13_tagv4")
-id_item_mapa = "1"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
-
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_nn1nm")
 
@@ -686,7 +677,7 @@ vertical_alignment = 1
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("11_7mwnk")]
 position = Vector2(-468, -2)
-dados_item = SubResource("Resource_p1e2c")
+dados_item = ExtResource("17_g34os")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]

@@ -2,9 +2,10 @@ extends Node2D
 @export var mandacaru: CharacterBody2D
 @export var npc: CharacterBody2D
 @onready var Player = $"y-sort/Character"
-
+@export var musica: AudioStream
 func _ready() -> void:
 	Global.cidade_atual = 0
+	AudioManager.tocar_musica(musica)
 	
 	if not Global.eventos.get("intro_vila", false):
 		start_dialog()
