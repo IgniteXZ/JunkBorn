@@ -1,12 +1,12 @@
 extends Node2D
 @export var mandacaru: CharacterBody2D
 @export var npc: CharacterBody2D
-
+@export var musica: AudioStream
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
 	Global.cidade_atual = 3
-
+	AudioManager.tocar_musica(musica) 
 	if Dialogic.VAR.deserto_liberado == true:
 		mandacaru.visible = true
 		mandacaru.position = Vector2(-673,379)

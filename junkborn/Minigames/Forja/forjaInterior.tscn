@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="1_1qej2"]
 [ext_resource type="Script" uid="uid://dkf4nxnymdms7" path="res://Minigames/Forja/forja_interior.gd" id="1_tiw0q"]
+[ext_resource type="AudioStream" uid="uid://ce2si8ovxskqp" path="res://Audios/SoundTrack/qegqqegqegqeg.mp3" id="2_mak5v"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_odo8e"]
 [ext_resource type="Texture2D" uid="uid://n575n5pnc2xf" path="res://Cenarios/CenariosDeserto/tileset/tileset pedrareia.png" id="2_uwx8q"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="3_0ul4c"]
@@ -533,6 +534,7 @@ height = 239.99976
 script = ExtResource("1_tiw0q")
 mandacaru = NodePath("mandacaruDois")
 npc = NodePath("npc6")
+musica = ExtResource("2_mak5v")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2123369225]
 position = Vector2(1246.3438, 373.28906)
