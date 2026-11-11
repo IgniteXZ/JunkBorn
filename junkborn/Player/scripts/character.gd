@@ -18,6 +18,7 @@ signal PassarCanvas(canvas:CanvasLayer)
 
 @export_category("Objects")
 @export var _animation_tree: AnimationTree = null
+@export var Jangada: LixoData
 
 
 
@@ -126,7 +127,9 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 
 	var canvas = get_tree().root.find_child("ui_canvas", true, false)
 	if canvas:
+		perderJangada()
 		canvas.remover_item_aleatorio()
+		
 		
 	var direcaoEmpurra = (global_position - bodyy.global_position).normalized()
 	knockback_vector = (direcaoEmpurra * 400.0 * 2)
@@ -135,6 +138,27 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.2).timeout
 	empurrado = false
 	bodyy = null
+	
+func perderJangada() -> void:
+	var canvas = get_tree().root.find_child("ui_canvas", true, false)
+	if canvas == null or not canvas.has_method("remover_itens_por_textura"):
+		push_error("Inventário não encontrado ou sem a função 'remover_itens_por_textura'.")
+		return
+
+	var qtd: int = canvas.remover_itens_por_textura(Jangada.textura)
+	if qtd <= 0:
+		print("Você não tem Jangada no inventário!")
+		return
+	
+	# --- NOVO: Verifica se ele estava na jangada quando ela sumiu ---
+	# Usando a variável Global que você já usa no _animate()
+	if Global.chamarJangada == true:
+		print("A jangada sumiu debaixo do jogador! Voltando para o início...")
+		
+		# Desliga o estado de jangada
+		Global.chamarJangada = false 
+		
+	
 	
 	
 func _on_empurrado_body_exited(body: Node2D) -> void:

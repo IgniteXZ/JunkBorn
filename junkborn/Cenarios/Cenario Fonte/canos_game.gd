@@ -17,7 +17,11 @@ var camada_minigame: CanvasLayer
 var camada_botao: CanvasLayer
 
 
+@export var musica: AudioStream
+
 func _ready():
+	
+	
 	area.body_entered.connect(_ao_entrar)
 	area.body_exited.connect(_ao_sair)
 
@@ -39,6 +43,7 @@ func _ready():
 func _ao_entrar(body):
 	if body.is_in_group("player"):
 		jogador_dentro = true
+		
 
 
 func _ao_sair(body):
@@ -144,6 +149,10 @@ func abrir():
 
 	MinigameCanos.fase_atual = 0
 	MinigameCanos.mapa_salvo = []
+	
+	# Só toca se houver uma música definida para esta fonte
+	if musica:
+		AudioManager.tocar_musica(musica)
 
 	_montar()
 
@@ -207,6 +216,7 @@ func congelar_jogador(congelar: bool):
 func _ao_sair_do_minigame():
 	MinigameCanos.fase_atual = 0
 	MinigameCanos.mapa_salvo = []
+	AudioManager.parar_musica()
 	fechar()
 
 
@@ -218,4 +228,5 @@ func _ao_reiniciar():
 
 func _ao_concluir():
 	# Nada é consumido: o cano e a pá são "chaves"
+	AudioManager.parar_musica()
 	fechar()

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dghwj6rlh3k82"]
+
+[ext_resource type="Script" uid="uid://dquak2oe2crws" path="res://Su.gd" id="1_4s6r5"]
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="2_o7cve"]
+
+[node name="Node2D" type="Node2D" unique_id=543594372]
+script = ExtResource("1_4s6r5")
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("2_o7cve")]

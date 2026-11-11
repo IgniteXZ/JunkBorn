@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="9_p1e2c"]
 [ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="10_dvo31"]
 [ext_resource type="Script" uid="uid://k3gm7fqo3toe" path="res://Cenarios/Cenario Fonte/areaFonte.gd" id="11_tkujf"]
+[ext_resource type="AudioStream" uid="uid://5mm61klje7h6" path="res://Audios/SoundTrack/SigmaEmRives.mp3" id="12_dvo31"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
@@ -1499,7 +1500,7 @@ size = Vector2(365, 95)
 a = Vector2(-3.000061, -417.00003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
-size = Vector2(377.5, 20)
+size = Vector2(377.5, 108)
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_u2vtj")
@@ -1553,6 +1554,7 @@ tex_cano = ExtResource("8_wi68o")
 tex_pa = ExtResource("9_4jw3k")
 tex_picareta = ExtResource("10_dvo31")
 modo_teste = true
+musica = ExtResource("12_dvo31")
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)
@@ -1621,6 +1623,8 @@ position = Vector2(-1, -12)
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
+[connection signal="area_entered" from="canosGame/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="canosGame/Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="area_exited" from="canosGame/Area2D" to="canosGame/Area2D" method="_on_area_exited"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
