@@ -15,9 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="6_0fj8k"]
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="6_d7c43"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="10_tk3gm"]
-[ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_7c7ir"]
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
-[ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_7c7ir"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
@@ -683,9 +681,6 @@ sources/4 = SubResource("TileSetAtlasSource_t0mu4")
 sources/6 = SubResource("TileSetAtlasSource_s4tim")
 sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tb5fl"]
-radius = 59.03389
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
 radius = 56.400356
 
@@ -889,18 +884,6 @@ rendering_quadrant_size = 24
 
 [node name="passagemdeCena" type="Node2D" parent="." unique_id=1863857707]
 
-[node name="EntradadesertoMinigame" type="Sprite2D" parent="passagemdeCena" unique_id=340405690]
-position = Vector2(-427, 281)
-texture = ExtResource("10_tk3gm")
-
-[node name="Area2DMini" type="Area2D" parent="passagemdeCena/EntradadesertoMinigame" unique_id=895365158 node_paths=PackedStringArray("mini_game_coleta", "jogador")]
-script = ExtResource("11_7c7ir")
-mini_game_coleta = NodePath("../../../ui_coleta/MiniGameColeta")
-jogador = NodePath("../../../Node2D/Character")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=33387605]
-shape = SubResource("CircleShape2D_tb5fl")
-
 [node name="saidaDesertoVila" type="Sprite2D" parent="passagemdeCena" unique_id=385324499]
 position = Vector2(627, 33)
 
@@ -934,16 +917,6 @@ spawn_destino = "spawnsDeserto2/entradaDeserto2"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaDeserto2/Area2D" unique_id=1773968306]
 position = Vector2(2, -1)
 shape = SubResource("CircleShape2D_fpo1d")
-
-[node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
-layer = 10
-
-[node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_7c7ir")]
-visible = false
-
-[node name="DialogoColeta" parent="ui_coleta/MiniGameColeta" index="3" unique_id=246670327]
-layer = 100
-visible = false
 
 [node name="spawnsDeserto" type="Node2D" parent="." unique_id=1250606799]
 
@@ -1081,13 +1054,8 @@ scale = Vector2(1.053854, -0.5374398)
 shape = SubResource("RectangleShape2D_ns0o7")
 
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
-[connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
-[connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
-[connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
 [connection signal="area_entered" from="CharmarDrone" to="CharmarDrone" method="_on_area_entered"]
-
-[editable path="ui_coleta/MiniGameColeta"]
