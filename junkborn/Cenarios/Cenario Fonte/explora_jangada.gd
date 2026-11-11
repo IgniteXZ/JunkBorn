@@ -98,6 +98,7 @@ func contar() -> Dictionary:
 	
 func _unhandled_input(event):
 	if not jogador_dentro:
+		Global.chamarJangada = false
 		return
 	
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:

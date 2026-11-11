@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 #signal DaumaPegadaAqui(global_position: Vector2)
-@onready var tex = $texture
-@onready var texJangada = $textureJangada
+
 
 
 var _state_machine
@@ -86,11 +85,13 @@ func _move() -> void:
 	velocity.y = lerp(velocity.y, _direction.normalized().y * _mover_speed, _friction)
 func _animate() -> void:
 	if velocity.length() > 1 and Global.chamarJangada == true: 
+		$texture.hide()
+		$textureJangada.show()
 		_state_machine.travel("jangada")
-		tex.Visible = false
-		texJangada.Visible = true
 		return 
-	if velocity.length() > 1:
+	if velocity.length() > 1 and Global.chamarJangada == false:
+		$texture.show()
+		$textureJangada.hide()
 		_state_machine.travel("walk")
 		return
 	_state_machine.travel("idle")
