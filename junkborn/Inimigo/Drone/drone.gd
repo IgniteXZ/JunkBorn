@@ -8,6 +8,8 @@ var impulso: bool = false
 @onready var SP = $SpriteDrone
 @export var Tempo: Timer
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SP.play("default")
@@ -15,9 +17,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
-	
-	
+
 	if Perseguicao and linear_velocity.length() < 255.5 and not impulso:
 		var direction = global_position.direction_to(OndeEuvou)
 		apply_central_impulse(direction * ImpulsoMaster)
@@ -46,6 +46,9 @@ func _physics_process(delta: float) -> void:
 
 func IniciarTempo():
 	Tempo.start()
+	
+
+
 
 #SInais
 func _on_detectar_mandar_aura(posicaoGlobal: Vector2) -> void:
@@ -64,3 +67,5 @@ func _on_timer_timeout() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+	
+	

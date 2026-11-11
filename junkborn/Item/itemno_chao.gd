@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dados_item: ItemData # Aqui você arrasta o arquivo .tres do item específico direto no Inspetor!
+@export var dados_item: LixoData # Aqui você arrasta o arquivo .tres do item específico direto no Inspetor!
 @export var labelinteragir: Label
 
 var perto: bool = false
@@ -13,7 +13,8 @@ func _ready() -> void:
 		return
 
 	# Se o item já foi coletado antes, remove ele do mapa imediatamente
-	if Global.itens_coletados.has(dados_item.id_item_mapa):
+	#if Global.itens_coletados.has(dados_item.id_item_mapa):
+	if Global.itens_coletados.has(dados_item.item_id):
 		queue_free()
 		return
 		
@@ -30,10 +31,12 @@ func _process(_delta: float) -> void:
 			return
 
 		# Tenta adicionar o item usando os dados do Recurso
-		if canvass.add_item_inventory(dados_item.id, dados_item.textura, dados_item.nome):
+		#if canvass.add_item_inventory(dados_item.id, dados_item.textura, dados_item.nome):
+		if canvass.add_item_inventory(dados_item.item_id, dados_item.textura, dados_item.nome):
 			
-			if not Global.itens_coletados.has(dados_item.id_item_mapa):
-				Global.itens_coletados.append(dados_item.id_item_mapa)
+			#if not Global.itens_coletados.has(dados_item.id_item_mapa):
+			if not Global.itens_coletados.has(dados_item.item_id):
+				Global.itens_coletados.append(dados_item.item_id)
 			
 			# Aqui você pode disparar missões específicas do item se ele possuir, ou geral
 			# Exemplo: se o item tiver missões vinculadas no futuro

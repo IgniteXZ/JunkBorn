@@ -92,6 +92,7 @@ func remover_item_aleatorio() -> bool:
 	for slot in $inventory/GridContainer.get_children():
 		if slot.get_node("sprite").texture != null:
 			slots_ocupados.append(slot)
+			
 
 	if slots_ocupados.is_empty():
 		return false # Inventário vazio, nada pra remover
