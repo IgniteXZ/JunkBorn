@@ -4,19 +4,27 @@ extends CanvasLayer
 @onready var tooltip_nome: Label = $Tooltip/Nome
 
 # atalho abrir e fechar inventario
+
 func _process(_delta: float) -> void:
 	_atualizar_tooltip()
-	
-	if get_tree().get_nodes_in_group("minigame_aberto").size() > 0:
-		$inventory.visible = false
+
+	# Fecha as interfaces automaticamente durante minigames
+	if Global.esta_coleta or not get_tree().get_nodes_in_group("minigame_aberto").is_empty():
+		$inventory.hide()
+		$inventory/ui_livro/Livro.hide()
+		$inventory/ui_livro/Livro2.hide()
+		$"../CanvaMapa/Mapa".hide()
 		return
-	
-	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false) and not Global.esta_coleta:
+
+	# Abre e fecha normalmente fora dos minigames
+	if Input.is_action_just_pressed("inventory") and Dialogic.VAR.get_variable("liberou_menus", false):
 		$inventory.visible = not $inventory.visible
+
 		if $inventory.visible:
 			$"../CanvaMapa/Mapa".hide()
 			$inventory/ui_livro/Livro.hide()
 			$inventory/ui_livro/Livro2.hide()
+
 			
 func _ready() -> void:
 	add_to_group("inventario")
@@ -37,24 +45,35 @@ func _atualizar_tooltip() -> void:
 		tooltip.position = tooltip.get_global_mouse_position() + Vector2(16, 16)
 
 # coletar item no chão
+
 func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
-	for slot in $inventory/GridContainer.get_children():
+	var slots = $inventory/GridContainer.get_children()
+
+	# Guarda o nome para o tooltip
+	if nome != "":
+		Global.nomes_itens[sprite] = nome
+
+	# PRIMEIRO: procura um item igual
+	for slot in slots:
+		if slot.get_node("sprite").texture == sprite:
+			var quantidade = int(slot.get_node("amount").text)
+			slot.get_node("amount").text = str(quantidade + 1)
+
+			salvar_inventario()
+			return true
+
+	# SEGUNDO: se não encontrou, procura um slot vazio
+	for slot in slots:
 		if slot.get_node("sprite").texture == null:
 			slot.get_node("sprite").texture = sprite
 			slot.get_node("amount").text = "1"
-
-			# SALVA O ID NO SLOT (usando metadados do Godot)
 			slot.set_meta("item_id", ID)
-			
-
-			# guarda o nome ligado à imagem (usado pelo tooltip)
-			if nome != "":
-				Global.nomes_itens[sprite] = nome
 
 			salvar_inventario()
-			return true # Item adicionado com sucesso
+			return true
 
 	return false
+
 
 # remove um item específico pelo ID
 func remover_item_por_id(ID: int) -> bool:

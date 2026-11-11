@@ -795,7 +795,6 @@ rendering_quadrant_size = 24
 
 [node name="EntradadesertoMinigame" type="Sprite2D" parent="passagemdeCena" unique_id=340405690]
 position = Vector2(-427, 281)
-texture = ExtResource("10_rm03r")
 
 [node name="Area2DMini" type="Area2D" parent="passagemdeCena/EntradadesertoMinigame" unique_id=895365158 node_paths=PackedStringArray("mini_game_coleta", "jogador")]
 script = ExtResource("11_gi7v4")
@@ -803,6 +802,117 @@ mini_game_coleta = NodePath("../../../ui_coleta/MiniGameColeta")
 jogador = NodePath("../../../y-sort/Character")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=33387605]
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1027415029]
+position = Vector2(135, 691)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1321418261]
+position = Vector2(-198, 989)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=487993750]
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1338803971]
+position = Vector2(172, 863)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=278372186]
+position = Vector2(-631, 938)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=395408038]
+position = Vector2(-18, 1135)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=19842812]
+position = Vector2(258, 1018)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=218697879]
+position = Vector2(-111, 710)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1574951532]
+position = Vector2(-2590, 641)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1856259616]
+position = Vector2(-2214, 1577)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1085055087]
+position = Vector2(-1984, 1410)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=124080439]
+position = Vector2(-2489, 1288)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=871730783]
+position = Vector2(-2189, 1118)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=437264880]
+position = Vector2(-2426, 931)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1916246362]
+position = Vector2(-2711, 1090)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=604315472]
+position = Vector2(-2376, 710)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=294686038]
+position = Vector2(-2117, 765)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1766245361]
+position = Vector2(-1923, 917)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1040329490]
+position = Vector2(-1654, 924)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=104175698]
+position = Vector2(-1665, 1131)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=916539801]
+position = Vector2(-1544, 796)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=739714677]
+position = Vector2(41, 1445)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1555235781]
+position = Vector2(75, 1293)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=384259826]
+position = Vector2(-577, 1266)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1376996347]
+position = Vector2(-736, 1221)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1869313633]
+position = Vector2(-1285, 997)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=254867675]
+position = Vector2(-446, 1048)
+shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=2090822237]
+position = Vector2(-180, 1193)
 shape = SubResource("CircleShape2D_tb5fl")
 
 [node name="saidaDesertoVila" type="Sprite2D" parent="passagemdeCena" unique_id=385324499]
@@ -825,7 +935,6 @@ shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10
-visible = false
 
 [node name="MiniGameColeta" parent="ui_coleta" unique_id=1136356552 instance=ExtResource("13_5owje")]
 visible = false
