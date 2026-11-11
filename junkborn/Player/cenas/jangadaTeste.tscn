@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://n4ewptfo5p13"]
+
+[ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="1_fuxy6"]
+[ext_resource type="Script" path="res://Player/cenas/jangadaTesteMorte.gd" id="2_urmpr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga66r"]
+size = Vector2(893, 505)
+
+[node name="JangadaTeste" type="Node2D" unique_id=596210109]
+
+[node name="Character" parent="." unique_id=489748546 instance=ExtResource("1_fuxy6")]
+position = Vector2(411, 559)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=172973501]
+script = ExtResource("2_urmpr")
+modo_teste = true
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=219847036]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=778235342]
+position = Vector2(436.5, 242.5)
+shape = SubResource("RectangleShape2D_ga66r")

@@ -1499,7 +1499,7 @@ size = Vector2(365, 95)
 a = Vector2(-3.000061, -417.00003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
-size = Vector2(377.5, 20)
+size = Vector2(566, 306)
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_u2vtj")
@@ -1617,7 +1617,7 @@ modo_teste = true
 position = Vector2(-564, -656)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1281286220]
-position = Vector2(-1, -12)
+position = Vector2(-36, -155)
 shape = SubResource("RectangleShape2D_a3nj5")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]

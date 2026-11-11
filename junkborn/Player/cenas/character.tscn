@@ -220,9 +220,9 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_nf8lx"]
-resource_name = "jangada_down"
-length = 0.09
+[sub_resource type="Animation" id="Animation_dg47h"]
+resource_name = "jangadaIdle_down"
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -243,7 +243,123 @@ tracks/1/path = NodePath("textureJangada:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_634vk"]
+resource_name = "jangadaIdle_left"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textureJangada:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textureJangada:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_dyod7"]
+resource_name = "jangadaIdle_right"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textureJangada:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textureJangada:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_dmk7r"]
+resource_name = "jangadaIdle_up"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textureJangada:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textureJangada:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_nf8lx"]
+resource_name = "jangada_down"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textureJangada:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textureJangada:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -251,7 +367,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_3sw64"]
 resource_name = "jangada_left"
-length = 0.09
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -260,7 +376,7 @@ tracks/0/path = NodePath("textureJangada:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [6, 7]
@@ -280,7 +396,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_we08w"]
 resource_name = "jangada_right"
-length = 0.09
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -289,7 +405,7 @@ tracks/0/path = NodePath("textureJangada:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [4, 5]
@@ -309,7 +425,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_6smge"]
 resource_name = "jangada_up"
-length = 0.09
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -318,7 +434,7 @@ tracks/0/path = NodePath("textureJangada:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 3]
@@ -459,6 +575,10 @@ _data = {
 &"idle_left": SubResource("Animation_66mvx"),
 &"idle_right": SubResource("Animation_ofb83"),
 &"idle_up": SubResource("Animation_6oh5x"),
+&"jangadaIdle_down": SubResource("Animation_dg47h"),
+&"jangadaIdle_left": SubResource("Animation_634vk"),
+&"jangadaIdle_right": SubResource("Animation_dyod7"),
+&"jangadaIdle_up": SubResource("Animation_dmk7r"),
 &"jangada_down": SubResource("Animation_nf8lx"),
 &"jangada_left": SubResource("Animation_3sw64"),
 &"jangada_right": SubResource("Animation_we08w"),
@@ -521,6 +641,32 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_ofb83")
 blend_point_3/pos = Vector2(0, -1)
 blend_point_3/name = &"jangada_up"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kaa01"]
+animation = &"jangadaIdle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y80us"]
+animation = &"jangadaIdle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ls7ee"]
+animation = &"jangadaIdle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xrygb"]
+animation = &"jangadaIdle_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_gnud0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_kaa01")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_0/name = &"jangadaIdle_left"
+blend_point_1/node = SubResource("AnimationNodeAnimation_y80us")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"jangadaIdle_right"
+blend_point_2/node = SubResource("AnimationNodeAnimation_ls7ee")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_2/name = &"jangadaIdle_down"
+blend_point_3/node = SubResource("AnimationNodeAnimation_xrygb")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"jangadaIdle_up"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xbl6u"]
 animation = &"walk_down"
 
@@ -548,12 +694,16 @@ blend_point_3/pos = Vector2(1, 0)
 blend_point_3/name = &"walk_right"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wldxa"]
+states/End/position = Vector2(1077.6, 103.296005)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_dmk7r")
 states/idle/position = Vector2(400, 88)
 states/jangada/node = SubResource("AnimationNodeBlendSpace2D_6oh5x")
 states/jangada/position = Vector2(729, 107)
+states/jangadaIdle/node = SubResource("AnimationNodeBlendSpace2D_gnud0")
+states/jangadaIdle/position = Vector2(907.60004, 104.87681)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_ls7ee")
 states/walk/position = Vector2(573, 88)
+graph_offset = Vector2(293.24094, 0)
 
 [node name="Character" type="CharacterBody2D" unique_id=489748546 node_paths=PackedStringArray("camera", "_animation_tree", "canvaa") groups=["player"]]
 y_sort_enabled = true
@@ -610,6 +760,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=581194120]
@@ -697,6 +851,7 @@ tree_root = SubResource("AnimationNodeStateMachine_wldxa")
 anim_player = NodePath("../Animation")
 parameters/idle/blend_position = Vector2(0, 0)
 parameters/jangada/blend_position = Vector2(0, 0)
+parameters/jangadaIdle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [connection signal="body_entered" from="Empurrado" to="." method="_on_empurrado_body_entered"]
