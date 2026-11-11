@@ -1,0 +1,9 @@
+join Filomeno (surpreso) left
+Filomeno (surpreso): O que é isso..?
+Filomeno (Normal): Parece uma semente...
+[wait time="1.0"]
+Filomeno (surpreso): E tem outra coisa!
+Filomeno (Sigma): Uma página....
+Filomeno (surpreso): Parece do diário!
+Filomeno (Normal): Vou verificar
+do GerenciadorMissoes.iniciar("verlivro")
