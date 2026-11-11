@@ -153,7 +153,7 @@ func perderJangada() -> void:
 	# --- NOVO: Verifica se ele estava na jangada quando ela sumiu ---
 	# Usando a variável Global que você já usa no _animate()
 	if Global.chamarJangada == true:
-		print("A jangada sumiu debaixo do jogador! Voltando para o início...")
+		position = Vector2(-592.0, -55.0)
 		
 		# Desliga o estado de jangada
 		Global.chamarJangada = false 
