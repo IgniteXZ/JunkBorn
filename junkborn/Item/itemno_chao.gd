@@ -2,6 +2,7 @@ extends Area2D
 
 @export var dados_item: ItemData # Aqui você arrasta o arquivo .tres do item específico direto no Inspetor!
 @export var labelinteragir: Label
+@export var pagina_id: String = ""
 
 var perto: bool = false
 var canvass: CanvasLayer = null
@@ -34,6 +35,12 @@ func _process(_delta: float) -> void:
 			
 			if not Global.itens_coletados.has(dados_item.id_item_mapa):
 				Global.itens_coletados.append(dados_item.id_item_mapa)
+				
+			if not Global.itens_coletados.has(dados_item.id_item_mapa):
+				Global.itens_coletados.append(dados_item.id_item_mapa)
+
+			if pagina_id != "":
+				Global.paginas_coletadas[pagina_id] = true
 			
 			# Aqui você pode disparar missões específicas do item se ele possuir, ou geral
 			# Exemplo: se o item tiver missões vinculadas no futuro

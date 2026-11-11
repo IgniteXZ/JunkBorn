@@ -1,3 +1,4 @@
 join Filomeno (surpreso) left
 Filomeno (surpreso): O que? Que lugar é esse?
 Filomeno (Normal): É a caverna do desenho?
+do GerenciadorMissoes.completar_missao("explorardeserto")

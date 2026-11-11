@@ -10,9 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://5x47uyca4bwo" path="res://HUD/sprites/livroAberto.png" id="13_1s72l"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
 [ext_resource type="Texture2D" uid="uid://ouorf48t2ljp" path="res://HUD/sprites/diarioShiny.png" id="13_58chr"]
-[ext_resource type="Texture2D" uid="uid://c1sxne5emv2xn" path="res://HUD/sprites/pagina.jpg" id="13_awwgi"]
+[ext_resource type="Texture2D" uid="uid://bbdoerrgrc7mc" path="res://HUD/sprites/pgVazia1.png" id="13_gqrh1"]
+[ext_resource type="Texture2D" uid="uid://bc3iveje82jrd" path="res://HUD/sprites/pgVazia2.png" id="14_8kugn"]
 [ext_resource type="Script" uid="uid://07t3i7xodfmn" path="res://HUD/scripts/ui_livro.gd" id="14_10kb4"]
 [ext_resource type="PackedScene" uid="uid://vdamr8acgl8k" path="res://HUD/tscn/livro.tscn" id="14_gqrh1"]
+[ext_resource type="Texture2D" uid="uid://b83fq8hasncxw" path="res://HUD/sprites/pgEspadaEsq.tres" id="15_gqrh1"]
 [ext_resource type="Texture2D" uid="uid://bvchkvpt2r85d" path="res://HUD/sprites/livroBotanicaShiny.png" id="16_58chr"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
@@ -213,31 +215,59 @@ visible = false
 [node name="Livro2" parent="ui_livro" unique_id=1488017157 instance=ExtResource("14_gqrh1")]
 visible = false
 bloquear_paginas = true
-rasgada_esquerda = ExtResource("13_awwgi")
-rasgada_direita = ExtResource("13_awwgi")
+rasgada_esquerda = ExtResource("13_gqrh1")
+rasgada_direita = ExtResource("14_8kugn")
+pages = Array[Dictionary]([{
+"id": "espada",
+"illustration": ExtResource("15_gqrh1"),
+"text": ""
+}, {
+"id": "pagina_2",
+"illustration": ExtResource("14_8kugn"),
+"text": ""
+}])
 
 [node name="TextureRect" parent="ui_livro/Livro2" index="0" unique_id=1156959553]
 texture = ExtResource("13_1s72l")
 
-[node name="VBoxEsq" parent="ui_livro/Livro2/TextureRect/EspacoEsq" parent_id_path=PackedInt32Array(1488017157, 930050189) index="0" unique_id=1721902399]
+[node name="EspacoEsq" parent="ui_livro/Livro2/TextureRect" index="2" unique_id=930050189]
+offset_left = 0.0
+offset_top = 55.0
+offset_right = 700.0
+offset_bottom = 820.0
+
+[node name="VBoxEsq" parent="ui_livro/Livro2/TextureRect/EspacoEsq" index="0" unique_id=1721902399]
 offset_left = 0.0
 offset_top = 0.0
-offset_right = -30.0
-offset_bottom = -30.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_constants/separation = 0
 
 [node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="0" unique_id=23054016]
+custom_minimum_size = Vector2(0, 0)
 size_flags_vertical = 3
-stretch_mode = 0
 
-[node name="VBoxDir" parent="ui_livro/Livro2/TextureRect/EspacoDir" parent_id_path=PackedInt32Array(1488017157, 1299080639) index="0" unique_id=173351270]
+[node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="1" unique_id=1134170586]
+size_flags_vertical = 1
+
+[node name="EspacoDir" parent="ui_livro/Livro2/TextureRect" index="3" unique_id=1299080639]
+offset_left = 700.0
+offset_top = 55.0
+offset_right = 1400.0
+offset_bottom = 820.0
+
+[node name="VBoxDir" parent="ui_livro/Livro2/TextureRect/EspacoDir" index="0" unique_id=173351270]
 offset_left = 0.0
 offset_top = 0.0
-offset_right = -29.0
-offset_bottom = -30.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_constants/separation = 0
 
 [node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="0" unique_id=1862995299]
 size_flags_vertical = 3
-stretch_mode = 0
+
+[node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="1" unique_id=1530474607]
+size_flags_vertical = 1
 
 [connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]
