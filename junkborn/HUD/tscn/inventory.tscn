@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmj6ro7q2y0l6" path="res://HUD/tscn/botaolivro.tscn" id="6_u6vfn"]
 [ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="10_pt6v2"]
 [ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="12_8kugn"]
+[ext_resource type="PackedScene" path="res://HUD/tscn/diario.tscn" id="12_58chr"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
 [ext_resource type="Texture2D" uid="uid://5x47uyca4bwo" path="res://HUD/sprites/livroAberto.png" id="13_1s72l"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
@@ -209,8 +210,7 @@ texture = ExtResource("12_8kugn")
 [node name="ui_livro" type="CanvasLayer" parent="." unique_id=1690693382]
 script = ExtResource("14_10kb4")
 
-[node name="Livro" parent="ui_livro" unique_id=2109212644 instance=ExtResource("14_gqrh1")]
-visible = false
+[node name="Livro" parent="ui_livro" unique_id=1848472087 instance=ExtResource("12_58chr")]
 
 [node name="Livro2" parent="ui_livro" unique_id=1488017157 instance=ExtResource("14_gqrh1")]
 visible = false
