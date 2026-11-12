@@ -27,6 +27,11 @@ var empurrado: bool
 
 var tempoAcabado: bool = false
 
+# Posição inicial do jogador nesta cena, depois que o Global aplica o spawn salvo.
+var posicao_inicial: Vector2 = Vector2.ZERO
+var spawn_inicial_definido: bool = false
+var perdendo_itens: bool = false
+
 var pode_mover: bool = true #travar depois em minigames
 
 # Limiar de velocidade para considerar "andando" (evita alternar walk/idle)
@@ -48,6 +53,10 @@ func _ready() -> void:
 
 func _aplicar_spawn() -> void:
 	Global.aplicar_spawn(self)
+	# Aguarda um frame para garantir que o spawn definido pelo Global foi aplicado.
+	await get_tree().process_frame
+	posicao_inicial = global_position
+	spawn_inicial_definido = true
 
 
 func _physics_process(_delta: float) -> void:
@@ -130,52 +139,79 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_empurrado_body_entered(body: Node2D) -> void:
-	if empurrado:
+	# A área Empurrado do jogador detecta o corpo físico do drone (collision layer 2).
+	if perdendo_itens or not is_instance_valid(body):
 		return
 
-	empurrado = true
+	# Evita que vários drones iniciem a penalidade ao mesmo tempo.
+	perdendo_itens = true
+	pode_mover = false
+	velocity = Vector2.ZERO
+	knockback_vector = Vector2.ZERO
 	bodyy = body
 
 	if camera:
-		camera.tremer(3.0)
+		camera.tremer(5.0)
 
-	var canvas = get_tree().root.find_child("ui_canvas", true, false)
-	if canvas:
-		perderJangada()
-		canvas.remover_item_aleatorio()
+	await _executar_penalidade_drone()
 
-	var direcaoEmpurra = (global_position - bodyy.global_position).normalized()
-	knockback_vector = direcaoEmpurra * 400.0 * 2
 
-	await get_tree().create_timer(0.2).timeout
-	empurrado = false
+func _obter_transicao() -> Node:
+	# Primeiro tenta usar o Autoload existente.
+	var transicao := get_tree().root.get_node_or_null("Transicao")
+	if transicao != null:
+		return transicao
+
+	# Fallback: instancia a mesma cena de transição caso ela não esteja como Autoload.
+	var cena_transicao := load("res://Cutsenes/transicao.tscn") as PackedScene
+	if cena_transicao == null:
+		push_error("Não foi possível carregar res://Cutsenes/transicao.tscn")
+		return null
+
+	transicao = cena_transicao.instantiate()
+	get_tree().root.add_child(transicao)
+	return transicao
+
+
+func _executar_penalidade_drone() -> void:
+	var transicao := _obter_transicao()
+
+	# Fecha a tela antes de alterar o inventário e reposicionar o jogador.
+	if transicao != null and transicao.has_method("fade_out"):
+		await transicao.fade_out()
+
+	var canvas := get_tree().root.find_child("ui_canvas", true, false)
+	if canvas != null and canvas.has_method("limpar_inventario_completo"):
+		canvas.limpar_inventario_completo()
+	else:
+		push_error("ui_canvas não encontrado ou sem limpar_inventario_completo().")
+
+	# A jangada também é perdida junto com os demais itens.
+	Global.chamarJangada = false
+
+	# Volta ao spawn inicial desta instância/cena.
+	if spawn_inicial_definido:
+		global_position = posicao_inicial
+	else:
+		# Fallback para casos em que a colisão ocorre antes da captura do spawn.
+		Global.aplicar_spawn(self)
+
+	velocity = Vector2.ZERO
+	knockback_vector = Vector2.ZERO
 	bodyy = null
+	empurrado = false
 
+	# Reabre a cena usando o shader de transição que já existe no projeto.
+	if transicao != null and transicao.has_method("fade_in"):
+		await transicao.fade_in()
 
+	# A mensagem aparece depois que a imagem volta, sem ficar escondida pelo fade.
+	if canvas != null and is_instance_valid(canvas) and canvas.has_method("mostrar_mensagem_perda"):
+		canvas.mostrar_mensagem_perda()
 
-	
-func perderJangada() -> void:
-	var canvas = get_tree().root.find_child("ui_canvas", true, false)
-	if canvas == null or not canvas.has_method("remover_itens_por_textura"):
-		push_error("Inventário não encontrado ou sem a função 'remover_itens_por_textura'.")
-		return
+	pode_mover = true
+	perdendo_itens = false
 
-	var qtd: int = canvas.remover_itens_por_textura(Jangada.textura)
-	if qtd <= 0:
-		print("Você não tem Jangada no inventário!")
-		return
-	
-	# --- NOVO: Verifica se ele estava na jangada quando ela sumiu ---
-	# Usando a variável Global que você já usa no _animate()
-	if Global.chamarJangada == true:
-		position = Vector2(-592.0, -55.0)
-		
-		# Desliga o estado de jangada
-		Global.chamarJangada = false 
-		
-	
-	
-	
 
 func _on_empurrado_body_exited(body: Node2D) -> void:
 	pass

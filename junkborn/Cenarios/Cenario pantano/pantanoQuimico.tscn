@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cmeq3o6l3a1jh"]
 
 [ext_resource type="Script" uid="uid://uqe00s7f551b" path="res://Cenarios/Cenario pantano/pantano_quimico.gd" id="1_072d7"]
+[ext_resource type="AudioStream" uid="uid://dipncgh2l077n" path="res://Audios/SoundTrack/QueijocomCheiroDeOpenGL.mp3" id="2_dxywq"]
 [ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_qlqu2"]
 [ext_resource type="Texture2D" uid="uid://qlh68ir5jd7r" path="res://Cenarios/Cenario pantano/tileset pedra.png" id="2_sti70"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png" id="3_072d7"]
@@ -19,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="15_072d7"]
 [ext_resource type="Texture2D" uid="uid://ct68r5wxndxob" path="res://Cenarios/Cenario pantano/tileset escombros.png" id="15_dxywq"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="17_g34os"]
+[ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="21_ka6kb"]
+[ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="22_je6m8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1527,8 +1530,793 @@ sources/1 = SubResource("TileSetAtlasSource_kxlyg")
 sources/2 = SubResource("TileSetAtlasSource_yn25k")
 sources/0 = SubResource("TileSetAtlasSource_knu6n")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0000"]
+size = Vector2(144, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0001"]
+size = Vector2(192, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0002"]
+size = Vector2(72, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0003"]
+size = Vector2(72, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0004"]
+size = Vector2(240, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0005"]
+size = Vector2(360, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0006"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0007"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0008"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0009"]
+size = Vector2(288, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0010"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0011"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0012"]
+size = Vector2(1344, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0013"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0014"]
+size = Vector2(1392, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0015"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0016"]
+size = Vector2(1488, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0017"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0018"]
+size = Vector2(288, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0019"]
+size = Vector2(1560, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0020"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0021"]
+size = Vector2(336, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0022"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0023"]
+size = Vector2(1512, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0024"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0025"]
+size = Vector2(1608, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0026"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0027"]
+size = Vector2(1656, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0028"]
+size = Vector2(1536, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0029"]
+size = Vector2(1704, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0030"]
+size = Vector2(1656, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0031"]
+size = Vector2(1992, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0032"]
+size = Vector2(1704, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0033"]
+size = Vector2(4080, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0034"]
+size = Vector2(4152, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0035"]
+size = Vector2(4416, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0036"]
+size = Vector2(4344, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0037"]
+size = Vector2(4368, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0038"]
+size = Vector2(2736, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0039"]
+size = Vector2(1464, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0040"]
+size = Vector2(2496, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0041"]
+size = Vector2(1488, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0042"]
+size = Vector2(1968, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0043"]
+size = Vector2(1560, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0044"]
+size = Vector2(1512, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0045"]
+size = Vector2(1224, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0046"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0047"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0048"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0049"]
+size = Vector2(1368, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0050"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0051"]
+size = Vector2(192, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0052"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0053"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0054"]
+size = Vector2(1272, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0055"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0056"]
+size = Vector2(1272, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0057"]
+size = Vector2(912, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0058"]
+size = Vector2(192, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0059"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0060"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0061"]
+size = Vector2(240, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0062"]
+size = Vector2(1368, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0063"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0064"]
+size = Vector2(888, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0065"]
+size = Vector2(1512, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0066"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0067"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0068"]
+size = Vector2(888, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0069"]
+size = Vector2(360, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0070"]
+size = Vector2(1560, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0071"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0072"]
+size = Vector2(1584, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0073"]
+size = Vector2(816, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0074"]
+size = Vector2(864, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0075"]
+size = Vector2(1632, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0076"]
+size = Vector2(864, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0077"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0078"]
+size = Vector2(1704, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0079"]
+size = Vector2(840, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0080"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0081"]
+size = Vector2(936, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0082"]
+size = Vector2(816, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0083"]
+size = Vector2(912, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0084"]
+size = Vector2(768, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0085"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0086"]
+size = Vector2(1728, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0087"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0088"]
+size = Vector2(960, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0089"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0090"]
+size = Vector2(1392, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0091"]
+size = Vector2(480, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0092"]
+size = Vector2(144, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0093"]
+size = Vector2(1200, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0094"]
+size = Vector2(432, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0095"]
+size = Vector2(2592, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0096"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0097"]
+size = Vector2(2280, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0098"]
+size = Vector2(480, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0099"]
+size = Vector2(432, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0100"]
+size = Vector2(2232, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0101"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0102"]
+size = Vector2(1440, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0103"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0104"]
+size = Vector2(384, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0105"]
+size = Vector2(1392, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0106"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0107"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0108"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0109"]
+size = Vector2(408, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0110"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0111"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0112"]
+size = Vector2(96, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0113"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0114"]
+size = Vector2(216, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0115"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0116"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0117"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0118"]
+size = Vector2(144, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0119"]
+size = Vector2(1224, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0120"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0121"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0122"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0123"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0124"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0125"]
+size = Vector2(1272, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0126"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0127"]
+size = Vector2(840, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0128"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0129"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0130"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0131"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0132"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0133"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0134"]
+size = Vector2(2208, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0135"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0136"]
+size = Vector2(96, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0137"]
+size = Vector2(816, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0138"]
+size = Vector2(1320, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0139"]
+size = Vector2(144, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0140"]
+size = Vector2(3216, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0141"]
+size = Vector2(3624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0142"]
+size = Vector2(1296, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0143"]
+size = Vector2(3624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0144"]
+size = Vector2(3600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0145"]
+size = Vector2(1272, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0146"]
+size = Vector2(1248, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0147"]
+size = Vector2(3840, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0148"]
+size = Vector2(1200, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0149"]
+size = Vector2(4104, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0150"]
+size = Vector2(3576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0151"]
+size = Vector2(984, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0152"]
+size = Vector2(528, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0153"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0154"]
+size = Vector2(2712, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0155"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0156"]
+size = Vector2(1032, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0157"]
+size = Vector2(2664, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0158"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0159"]
+size = Vector2(744, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0160"]
+size = Vector2(2040, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0161"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0162"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0163"]
+size = Vector2(1032, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0164"]
+size = Vector2(912, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0165"]
+size = Vector2(360, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0166"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0167"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0168"]
+size = Vector2(960, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0169"]
+size = Vector2(720, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0170"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0171"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0172"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0173"]
+size = Vector2(960, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0174"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0175"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0176"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0177"]
+size = Vector2(792, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0178"]
+size = Vector2(288, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0179"]
+size = Vector2(480, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0180"]
+size = Vector2(864, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0181"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0182"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0183"]
+size = Vector2(816, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0184"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0185"]
+size = Vector2(168, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0186"]
+size = Vector2(480, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0187"]
+size = Vector2(768, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0188"]
+size = Vector2(648, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0189"]
+size = Vector2(864, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0190"]
+size = Vector2(336, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0191"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0192"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0193"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0194"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0195"]
+size = Vector2(120, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0196"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0197"]
+size = Vector2(144, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0198"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0199"]
+size = Vector2(384, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0200"]
+size = Vector2(360, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0201"]
+size = Vector2(408, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0202"]
+size = Vector2(288, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0203"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0204"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0205"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0206"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0207"]
+size = Vector2(384, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0208"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0209"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0210"]
+size = Vector2(456, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0211"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0212"]
+size = Vector2(360, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0213"]
+size = Vector2(792, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0214"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0215"]
+size = Vector2(1992, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0216"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0217"]
+size = Vector2(648, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0218"]
+size = Vector2(2232, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0219"]
+size = Vector2(600, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0220"]
+size = Vector2(1272, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0221"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0222"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0223"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0224"]
+size = Vector2(4032, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0225"]
+size = Vector2(4056, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0226"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0227"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0228"]
+size = Vector2(432, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0229"]
+size = Vector2(4032, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0230"]
+size = Vector2(720, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0231"]
+size = Vector2(528, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0232"]
+size = Vector2(3984, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0233"]
+size = Vector2(3936, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0234"]
+size = Vector2(552, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0235"]
+size = Vector2(744, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0236"]
+size = Vector2(3888, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0237"]
+size = Vector2(576, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0238"]
+size = Vector2(720, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0239"]
+size = Vector2(3816, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0240"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0241"]
+size = Vector2(72, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0242"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0243"]
+size = Vector2(3504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0244"]
+size = Vector2(696, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0245"]
+size = Vector2(648, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0246"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0247"]
+size = Vector2(888, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0248"]
+size = Vector2(672, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0249"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0250"]
+size = Vector2(504, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0251"]
+size = Vector2(912, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0252"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0253"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0254"]
+size = Vector2(312, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0255"]
+size = Vector2(624, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0256"]
+size = Vector2(408, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0257"]
+size = Vector2(888, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0258"]
+size = Vector2(264, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0259"]
+size = Vector2(864, 24)
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_colpj"]
+segments = PackedVector2Array(-3474, 563, -3469, 554, -3469, 554, -3455, 556, -3455, 556, -3450, 553, -3450, 553, -3447, 531, -3447, 531, -3431, 532, -3431, 532, -3426, 529, -3426, 529, -3423, 507, -3423, 507, -3407, 508, -3407, 508, -3402, 505, -3402, 505, -3400, 460, -3400, 460, -3379, 458, -3379, 458, -3376, 436, -3376, 436, -3355, 434, -3355, 434, -3351, 411, -3351, 411, -3322, 413, -3322, 413, -3307, 410, -3307, 410, -3306, 395, -3306, 395, -3301, 386, -3301, 386, -3274, 389, -3274, 389, -3072, 387, -3072, 387, -3065, 392, -3065, 392, -3061, 410, -3061, 410, -3048, 411, -3048, 411, -3041, 416, -3041, 416, -3039, 431, -3039, 431, -3033, 436, -3033, 436, -2664, 435, -2664, 435, -2657, 440, -2657, 440, -2654, 449, -2654, 449, -2655, 484, -2655, 484, -2678, 493, -2678, 493, -2679, 508, -2679, 508, -2702, 517, -2702, 517, -2706, 535, -2706, 535, -2716, 535, -2716, 535, -2717, 539, -2717, 539, -2726, 541, -2726, 541, -2729, 556, -2729, 556, -2698, 557, -2698, 557, -2682, 553, -2682, 553, -2679, 531, -2679, 531, -2663, 532, -2663, 532, -2658, 529, -2658, 529, -2655, 507, -2655, 507, -2639, 508, -2639, 508, -2634, 505, -2634, 505, -2631, 483, -2631, 483, -2615, 484, -2615, 484, -2610, 481, -2610, 481, -2610, 467, -2610, 467, -2605, 458, -2605, 458, -2578, 461, -2578, 461, -2194, 461, -2194, 461, -2178, 457, -2178, 457, -2175, 435, -2175, 435, -2159, 436, -2159, 436, -2154, 433, -2154, 433, -2154, 419, -2154, 419, -2149, 410, -2149, 410, -2122, 413, -2122, 413, -1992, 411, -1992, 411, -1985, 416, -1985, 416, -1982, 425, -1982, 425, -1982, 481, -1982, 481, -1977, 484, -1977, 484, -1940, 485, -1940, 485, -1935, 503, -1935, 503, -1929, 508, -1929, 508, -1892, 509, -1892, 509, -1887, 527, -1887, 527, -1881, 532, -1881, 532, -1776, 531, -1776, 531, -1769, 536, -1769, 536, -1767, 551, -1767, 551, -1761, 556, -1761, 556, -1628, 557, -1628, 557, -1622, 569, -1622, 569, -1623, 623, -1623, 623, -1617, 628, -1617, 628, -1604, 629, -1604, 629, -1598, 649, -1598, 649, -1580, 653, -1580, 653, -1574, 665, -1574, 665, -1575, 724, -1575, 724, -1606, 735, -1606, 735, -1620, 732, -1620, 732, -1626, 751, -1626, 751, -1636, 751, -1636, 751, -1639, 756, -1639, 756, -1654, 759, -1654, 759, -1661, 755, -1661, 755, -1678, 759, -1678, 759, -1685, 755, -1685, 755, -1702, 759, -1702, 759, -1709, 755, -1709, 755, -1726, 759, -1726, 759, -1733, 755, -1733, 755, -1766, 758, -1766, 758, -1771, 753, -1771, 753, -1772, 731, -1772, 731, -1798, 735, -1798, 735, -1805, 731, -1805, 731, -1822, 735, -1822, 735, -1829, 731, -1829, 731, -1846, 735, -1846, 735, -1853, 731, -1853, 731, -1870, 735, -1870, 735, -1877, 731, -1877, 731, -1894, 735, -1894, 735, -1901, 731, -1901, 731, -1918, 735, -1918, 735, -1925, 731, -1925, 731, -1942, 735, -1942, 735, -1949, 731, -1949, 731, -1982, 734, -1982, 734, -1987, 729, -1987, 729, -1988, 707, -1988, 707, -2030, 710, -2030, 710, -2035, 705, -2035, 705, -2036, 683, -2036, 683, -2062, 687, -2062, 687, -2080, 685, -2080, 685, -2084, 659, -2084, 659, -2110, 663, -2110, 663, -2117, 659, -2117, 659, -2134, 663, -2134, 663, -2141, 659, -2141, 659, -2158, 663, -2158, 663, -2165, 659, -2165, 659, -2182, 663, -2182, 663, -2189, 659, -2189, 659, -2206, 663, -2206, 663, -2213, 659, -2213, 659, -2230, 663, -2230, 663, -2237, 659, -2237, 659, -2254, 663, -2254, 663, -2261, 659, -2261, 659, -2278, 663, -2278, 663, -2285, 659, -2285, 659, -2327, 663, -2327, 663, -2333, 659, -2333, 659, -2342, 661, -2342, 661, -2346, 679, -2346, 679, -2356, 679, -2356, 679, -2357, 683, -2357, 683, -2366, 685, -2366, 685, -2370, 703, -2370, 703, -2380, 703, -2380, 703, -2383, 708, -2383, 708, -2398, 711, -2398, 711, -2405, 707, -2405, 707, -2422, 711, -2422, 711, -2429, 707, -2429, 707, -2446, 711, -2446, 711, -2453, 707, -2453, 707, -2470, 711, -2470, 711, -2477, 707, -2477, 707, -2494, 711, -2494, 711, -2501, 707, -2501, 707, -2518, 711, -2518, 711, -2525, 707, -2525, 707, -2542, 711, -2542, 711, -2549, 707, -2549, 707, -2566, 711, -2566, 711, -2573, 707, -2573, 707, -2606, 710, -2606, 710, -2611, 705, -2611, 705, -2612, 683, -2612, 683, -2625, 686, -2625, 686, -2634, 683, -2634, 683, -2636, 659, -2636, 659, -2649, 662, -2649, 662, -2658, 659, -2658, 659, -2660, 635, -2660, 635, -2702, 638, -2702, 638, -2707, 633, -2707, 633, -2708, 611, -2708, 611, -2721, 614, -2721, 614, -2730, 611, -2730, 611, -2731, 563, -2731, 563, -2750, 565, -2750, 565, -2751, 604, -2751, 604, -2756, 608, -2756, 608, -2764, 607, -2764, 607, -2767, 612, -2767, 612, -2782, 615, -2782, 615, -2789, 611, -2789, 611, -2806, 615, -2806, 615, -2813, 611, -2813, 611, -2830, 615, -2830, 615, -2837, 611, -2837, 611, -2854, 615, -2854, 615, -2861, 611, -2861, 611, -2878, 615, -2878, 615, -2885, 611, -2885, 611, -2902, 615, -2902, 615, -2909, 611, -2909, 611, -2926, 615, -2926, 615, -2933, 611, -2933, 611, -2950, 615, -2950, 615, -2964, 612, -2964, 612, -2970, 631, -2970, 631, -2980, 631, -2980, 631, -2983, 636, -2983, 636, -2998, 639, -2998, 639, -3005, 635, -3005, 635, -3014, 637, -3014, 637, -3015, 676, -3015, 676, -3020, 680, -3020, 680, -3028, 679, -3028, 679, -3031, 684, -3031, 684, -3046, 687, -3046, 687, -3053, 683, -3053, 683, -3070, 687, -3070, 687, -3077, 683, -3077, 683, -3094, 687, -3094, 687, -3101, 683, -3101, 683, -3118, 687, -3118, 687, -3125, 683, -3125, 683, -3142, 687, -3142, 687, -3156, 684, -3156, 684, -3162, 703, -3162, 703, -3172, 703, -3172, 703, -3175, 708, -3175, 708, -3190, 711, -3190, 711, -3197, 707, -3197, 707, -3214, 711, -3214, 711, -3221, 707, -3221, 707, -3238, 711, -3238, 711, -3245, 707, -3245, 707, -3262, 711, -3262, 711, -3269, 707, -3269, 707, -3286, 711, -3286, 711, -3293, 707, -3293, 707, -3310, 711, -3310, 711, -3317, 707, -3317, 707, -3334, 711, -3334, 711, -3341, 707, -3341, 707, -3358, 711, -3358, 711, -3365, 707, -3365, 707, -3382, 711, -3382, 711, -3389, 707, -3389, 707, -3422, 710, -3422, 710, -3427, 705, -3427, 705, -3427, 684, -3427, 684, -3448, 685, -3448, 685, -3451, 681, -3451, 681, -3451, 660, -3451, 660, -3470, 662, -3470, 662, -3475, 657, -3475, 657, -3474, 563, -929, 320, -926, 329, -926, 329, -926, 421, -926, 421, -930, 425, -930, 425, -950, 425, -950, 425, -951, 484, -951, 484, -974, 493, -974, 493, -978, 511, -978, 511, -988, 511, -988, 511, -989, 515, -989, 515, -998, 517, -998, 517, -999, 556, -999, 556, -1022, 565, -1022, 565, -1026, 583, -1026, 583, -1036, 583, -1036, 583, -1037, 587, -1037, 587, -1046, 589, -1046, 589, -1047, 628, -1047, 628, -1070, 637, -1070, 637, -1071, 676, -1071, 676, -1094, 685, -1094, 685, -1098, 703, -1098, 703, -1108, 703, -1108, 703, -1111, 708, -1111, 708, -1126, 711, -1126, 711, -1133, 707, -1133, 707, -1150, 711, -1150, 711, -1164, 708, -1164, 708, -1167, 724, -1167, 724, -1172, 728, -1172, 728, -1180, 727, -1180, 727, -1183, 732, -1183, 732, -1238, 734, -1238, 734, -1243, 729, -1243, 729, -1244, 707, -1244, 707, -1286, 710, -1286, 710, -1291, 705, -1291, 705, -1292, 683, -1292, 683, -1318, 687, -1318, 687, -1338, 683, -1338, 683, -1337, 559, -1337, 559, -1333, 554, -1333, 554, -1319, 556, -1319, 556, -1314, 553, -1314, 553, -1311, 531, -1311, 531, -1295, 532, -1295, 532, -1290, 529, -1290, 529, -1287, 507, -1287, 507, -1220, 509, -1220, 509, -1215, 519, -1215, 519, -1215, 532, -1215, 532, -1238, 541, -1238, 541, -1239, 575, -1239, 575, -1233, 580, -1233, 580, -1195, 578, -1195, 578, -1194, 570, -1194, 570, -1181, 568, -1181, 568, -1181, 557, -1181, 557, -1171, 554, -1171, 554, -1169, 545, -1169, 545, -1157, 544, -1157, 544, -1157, 533, -1157, 533, -1146, 529, -1146, 529, -1144, 484, -1144, 484, -1114, 485, -1114, 485, -1098, 481, -1098, 481, -1098, 449, -1098, 449, -1108, 449, -1108, 449, -1109, 472, -1109, 472, -1133, 471, -1133, 471, -1133, 426, -1133, 426, -1098, 424, -1098, 424, -1096, 388, -1096, 388, -1074, 385, -1074, 385, -1071, 339, -1071, 339, -1031, 340, -1031, 340, -1026, 337, -1026, 337, -1026, 323, -1026, 323, -1021, 314, -1021, 314, -994, 317, -994, 317, -936, 315, -936, 315, -929, 320, -5634, 11, -5629, 2, -5629, 2, -5615, 4, -5615, 4, -5610, 1, -5610, 1, -5610, -13, -5610, -13, -5605, -22, -5605, -22, -5578, -19, -5578, -19, -5563, -22, -5563, -22, -5560, -68, -5560, -68, -5539, -70, -5539, -70, -5538, -85, -5538, -85, -5533, -94, -5533, -94, -5506, -91, -5506, -91, -5491, -94, -5491, -94, -5490, -109, -5490, -109, -5485, -118, -5485, -118, -5423, -116, -5423, -116, -5418, -119, -5418, -119, -5418, -133, -5418, -133, -5413, -142, -5413, -142, -5386, -139, -5386, -139, -5303, -140, -5303, -140, -5298, -143, -5298, -143, -5295, -165, -5295, -165, -5279, -164, -5279, -164, -5274, -167, -5274, -167, -5274, -181, -5274, -181, -5269, -190, -5269, -190, -5242, -187, -5242, -187, -5112, -189, -5112, -189, -5105, -184, -5105, -184, -5103, -169, -5103, -169, -5097, -164, -5097, -164, -5016, -165, -5016, -165, -5009, -160, -5009, -160, -5006, -151, -5006, -151, -5007, -49, -5007, -49, -4985, -40, -4985, -40, -4981, -22, -4981, -22, -4954, -19, -4954, -19, -4920, -21, -4920, -21, -4913, -16, -4913, -16, -4909, 2, -4909, 2, -4896, 3, -4896, 3, -4889, 8, -4889, 8, -4885, 26, -4885, 26, -4858, 29, -4858, 29, -4824, 27, -4824, 27, -4817, 32, -4817, 32, -4815, 52, -4815, 52, -4838, 61, -4838, 61, -4839, 100, -4839, 100, -4862, 109, -4862, 109, -4863, 124, -4863, 124, -4886, 133, -4886, 133, -4890, 151, -4890, 151, -4900, 151, -4900, 151, -4903, 156, -4903, 156, -4918, 159, -4918, 159, -4925, 155, -4925, 155, -4942, 159, -4942, 159, -4956, 156, -4956, 156, -4959, 172, -4959, 172, -4964, 176, -4964, 176, -4972, 175, -4972, 175, -4975, 180, -4975, 180, -4990, 183, -4990, 183, -4997, 179, -4997, 179, -5014, 183, -5014, 183, -5028, 180, -5028, 180, -5031, 196, -5031, 196, -5054, 205, -5054, 205, -5055, 220, -5055, 220, -5078, 229, -5078, 229, -5079, 244, -5079, 244, -5084, 248, -5084, 248, -5092, 247, -5092, 247, -5095, 252, -5095, 252, -5110, 255, -5110, 255, -5117, 251, -5117, 251, -5134, 255, -5134, 255, -5141, 251, -5141, 251, -5158, 255, -5158, 255, -5165, 251, -5165, 251, -5182, 255, -5182, 255, -5189, 251, -5189, 251, -5206, 255, -5206, 255, -5213, 251, -5213, 251, -5230, 255, -5230, 255, -5237, 251, -5237, 251, -5254, 255, -5254, 255, -5261, 251, -5261, 251, -5278, 255, -5278, 255, -5285, 251, -5285, 251, -5327, 255, -5327, 255, -5346, 251, -5346, 251, -5348, 227, -5348, 227, -5374, 231, -5374, 231, -5392, 229, -5392, 229, -5396, 203, -5396, 203, -5404, 203, -5404, 203, -5407, 209, -5407, 209, -5450, 209, -5450, 209, -5453, 205, -5453, 205, -5466, 203, -5466, 203, -5468, 179, -5468, 179, -5494, 183, -5494, 183, -5512, 181, -5512, 181, -5516, 155, -5516, 155, -5542, 159, -5542, 159, -5549, 155, -5549, 155, -5566, 159, -5566, 159, -5584, 157, -5584, 157, -5587, 153, -5587, 153, -5587, 84, -5587, 84, -5630, 86, -5630, 86, -5635, 81, -5635, 81, -5634, 11, -6375, 911, -6353, 920, -6353, 920, -6349, 938, -6349, 938, -6336, 939, -6336, 939, -6329, 944, -6329, 944, -6327, 976, -6327, 976, -5538, 976, -5538, 976, -5540, 947, -5540, 947, -5566, 951, -5566, 951, -5573, 947, -5573, 947, -5590, 951, -5590, 951, -5597, 947, -5597, 947, -5630, 950, -5630, 950, -5635, 945, -5635, 945, -5636, 923, -5636, 923, -5662, 927, -5662, 927, -5676, 924, -5676, 924, -5679, 940, -5679, 940, -5684, 944, -5684, 944, -5692, 943, -5692, 943, -5695, 948, -5695, 948, -5750, 950, -5750, 950, -5755, 945, -5755, 945, -5756, 899, -5756, 899, -5782, 903, -5782, 903, -5789, 899, -5789, 899, -5806, 903, -5806, 903, -5824, 901, -5824, 901, -5827, 897, -5827, 897, -5824, 748, -5824, 748, -5803, 746, -5803, 746, -5800, 724, -5800, 724, -5779, 722, -5779, 722, -5778, 707, -5778, 707, -5773, 698, -5773, 698, -5746, 701, -5746, 701, -5602, 701, -5602, 701, -5587, 698, -5587, 698, -5584, 676, -5584, 676, -5562, 673, -5562, 673, -5560, 580, -5560, 580, -5539, 578, -5539, 578, -5538, 563, -5538, 563, -5533, 554, -5533, 554, -5506, 557, -5506, 557, -5376, 555, -5376, 555, -5369, 560, -5369, 560, -5367, 575, -5367, 575, -5361, 580, -5361, 580, -5303, 580, -5303, 580, -5298, 577, -5298, 577, -5295, 555, -5295, 555, -5279, 556, -5279, 556, -5274, 553, -5274, 553, -5271, 531, -5271, 531, -5255, 532, -5255, 532, -5250, 529, -5250, 529, -5247, 507, -5247, 507, -5231, 508, -5231, 508, -5226, 505, -5226, 505, -5226, 443, -5226, 443, -5223, 435, -5223, 435, -5111, 436, -5111, 436, -5106, 433, -5106, 433, -5106, 419, -5106, 419, -5101, 410, -5101, 410, -5074, 413, -5074, 413, -4991, 412, -4991, 412, -4986, 409, -4986, 409, -4983, 387, -4983, 387, -4967, 388, -4967, 388, -4962, 385, -4962, 385, -4959, 363, -4959, 363, -4930, 365, -4930, 365, -4914, 361, -4914, 361, -4914, 323, -4914, 323, -4909, 314, -4909, 314, -4882, 317, -4882, 317, -4679, 316, -4679, 316, -4674, 313, -4674, 313, -4671, 291, -4671, 291, -4631, 292, -4631, 292, -4626, 289, -4626, 289, -4623, 267, -4623, 267, -4607, 268, -4607, 268, -4602, 265, -4602, 265, -4603, 203, -4603, 203, -4622, 205, -4622, 205, -4623, 220, -4623, 220, -4628, 224, -4628, 224, -4636, 223, -4636, 223, -4641, 230, -4641, 230, -4651, 225, -4651, 225, -4650, 179, -4650, 179, -4645, 170, -4645, 170, -4604, 173, -4604, 173, -4599, 183, -4599, 183, -4601, 196, -4601, 196, -4579, 194, -4579, 194, -4578, 179, -4578, 179, -4573, 170, -4573, 170, -4546, 173, -4546, 173, -4319, 172, -4319, 172, -4314, 169, -4314, 169, -4311, 147, -4311, 147, -4282, 149, -4282, 149, -4267, 146, -4267, 146, -4266, 131, -4266, 131, -4261, 122, -4261, 122, -4234, 125, -4234, 125, -4056, 123, -4056, 123, -4049, 128, -4049, 128, -4045, 146, -4045, 146, -4032, 147, -4032, 147, -4025, 152, -4025, 152, -4023, 167, -4023, 167, -4017, 172, -4017, 172, -4002, 169, -4002, 169, -4002, 155, -4002, 155, -3997, 146, -3997, 146, -3970, 149, -3970, 149, -3815, 148, -3815, 148, -3810, 145, -3810, 145, -3808, 100, -3808, 100, -3787, 98, -3787, 98, -3783, 75, -3783, 75, -3623, 76, -3623, 76, -3618, 73, -3618, 73, -3615, 51, -3615, 51, -3599, 52, -3599, 52, -3594, 49, -3594, 49, -3591, 27, -3591, 27, -3575, 28, -3575, 28, -3570, 25, -3570, 25, -3567, 3, -3567, 3, -3551, 4, -3551, 4, -3546, 1, -3546, 1, -3546, -13, -3546, -13, -3541, -22, -3541, -22, -3514, -19, -3514, -19, -2842, -19, -2842, -19, -2826, -23, -2826, -23, -2823, -45, -2823, -45, -2807, -44, -2807, -44, -2802, -47, -2802, -47, -2802, -61, -2802, -61, -2797, -70, -2797, -70, -2770, -67, -2770, -67, -2495, -68, -2495, -68, -2490, -71, -2490, -71, -2487, -93, -2487, -93, -2471, -92, -2471, -92, -2466, -95, -2466, -95, -2466, -109, -2466, -109, -2461, -118, -2461, -118, -2434, -115, -2434, -115, -2232, -117, -2232, -117, -2225, -112, -2225, -112, -2223, -97, -2223, -97, -2217, -92, -2217, -92, -2159, -92, -2159, -92, -2154, -95, -2154, -95, -2151, -117, -2151, -117, -2135, -116, -2135, -116, -2130, -119, -2130, -119, -2130, -253, -2130, -253, -2127, -261, -2127, -261, -2039, -260, -2039, -260, -2034, -263, -2034, -263, -2031, -285, -2031, -285, -1991, -284, -1991, -284, -1986, -287, -1986, -287, -1983, -309, -1983, -309, -1954, -307, -1954, -307, -1939, -310, -1939, -310, -1936, -332, -1936, -332, -1915, -334, -1915, -334, -1914, -349, -1914, -349, -1909, -358, -1909, -358, -1882, -355, -1882, -355, -1799, -356, -1799, -356, -1794, -359, -1794, -359, -1791, -381, -1791, -381, -1775, -380, -1775, -380, -1770, -383, -1770, -383, -1767, -405, -1767, -405, -1727, -404, -1727, -404, -1722, -407, -1722, -407, -1722, -421, -1722, -421, -1717, -430, -1717, -430, -1631, -428, -1631, -428, -1626, -431, -1626, -431, -1623, -453, -1623, -453, -1594, -451, -1594, -451, -1579, -454, -1579, -454, -1576, -476, -1576, -476, -1555, -478, -1555, -478, -1551, -501, -1551, -501, -1522, -499, -1522, -499, -1507, -502, -1507, -502, -1504, -524, -1504, -524, -1483, -526, -1483, -526, -1480, -548, -1480, -548, -1474, -550, -1474, -550, -1450, -547, -1450, -547, -1104, -549, -1104, -549, -1097, -544, -1097, -544, -1094, -535, -1094, -535, -1095, -500, -1095, -500, -1100, -496, -1100, -496, -1108, -497, -1108, -497, -1111, -492, -1111, -492, -1126, -489, -1126, -489, -1133, -493, -1133, -493, -1150, -489, -1150, -489, -1157, -493, -1157, -493, -1174, -489, -1174, -489, -1181, -493, -1181, -493, -1198, -489, -1198, -489, -1205, -493, -1205, -493, -1222, -489, -1222, -489, -1229, -493, -1229, -493, -1238, -491, -1238, -491, -1239, -428, -1239, -428, -1262, -419, -1262, -419, -1262, -359, -1262, -359, -1257, -356, -1257, -356, -1224, -357, -1224, -357, -1217, -352, -1217, -352, -1213, -334, -1213, -334, -1186, -331, -1186, -331, -1103, -332, -1103, -332, -1098, -335, -1098, -335, -1098, -349, -1098, -349, -1093, -358, -1093, -358, -1066, -355, -1066, -355, -936, -357, -936, -357, -929, -352, -929, -352, -926, -343, -926, -343, -927, -289, -927, -289, -921, -284, -921, -284, -908, -283, -908, -283, -902, -271, -902, -271, -903, -145, -903, -145, -897, -140, -897, -140, -864, -141, -864, -141, -857, -136, -857, -136, -854, -127, -854, -127, -855, -92, -855, -92, -858, -89, -858, -89, -868, -89, -868, -89, -871, -84, -871, -84, -886, -81, -886, -81, -893, -85, -893, -85, -902, -83, -902, -83, -903, -25, -903, -25, -892, -19, -892, -19, -892, -8, -892, -8, -845, -7, -845, -7, -844, 15, -844, 15, -916, 17, -916, 17, -916, 63, -916, 63, -940, 65, -940, 65, -940, 87, -940, 87, -964, 89, -964, 89, -964, 111, -964, 111, -988, 113, -988, 113, -988, 135, -988, 135, -1012, 137, -1012, 137, -1012, 159, -1012, 159, -1036, 161, -1036, 161, -1037, 184, -1037, 184, -1084, 185, -1084, 185, -1084, 207, -1084, 207, -1087, 209, -1087, 209, -1156, 209, -1156, 209, -1157, 232, -1157, 232, -1204, 233, -1204, 233, -1204, 250, -1204, 250, -1222, 255, -1222, 255, -1229, 251, -1229, 251, -1246, 255, -1246, 255, -1253, 251, -1253, 251, -1270, 255, -1270, 255, -1277, 251, -1277, 251, -1294, 255, -1294, 255, -1301, 251, -1301, 251, -1318, 255, -1318, 255, -1325, 251, -1325, 251, -1342, 255, -1342, 255, -1349, 251, -1349, 251, -1366, 255, -1366, 255, -1373, 251, -1373, 251, -1390, 255, -1390, 255, -1397, 251, -1397, 251, -1414, 255, -1414, 255, -1421, 251, -1421, 251, -1438, 255, -1438, 255, -1445, 251, -1445, 251, -1462, 255, -1462, 255, -1469, 251, -1469, 251, -1486, 255, -1486, 255, -1493, 251, -1493, 251, -1510, 255, -1510, 255, -1517, 251, -1517, 251, -1534, 255, -1534, 255, -1541, 251, -1541, 251, -1574, 254, -1574, 254, -1579, 249, -1579, 249, -1580, 203, -1580, 203, -1606, 207, -1606, 207, -1624, 205, -1624, 205, -1627, 201, -1627, 201, -1626, 185, -1626, 185, -1648, 185, -1648, 185, -1652, 179, -1652, 179, -1660, 179, -1660, 179, -1661, 161, -1661, 161, -1672, 161, -1672, 161, -1676, 155, -1676, 155, -1696, 157, -1696, 157, -1700, 131, -1700, 131, -1726, 135, -1726, 135, -1733, 131, -1733, 131, -1751, 135, -1751, 135, -1757, 131, -1757, 131, -1766, 133, -1766, 133, -1767, 172, -1767, 172, -1790, 181, -1790, 181, -1791, 196, -1791, 196, -1814, 205, -1814, 205, -1818, 223, -1818, 223, -1828, 223, -1828, 223, -1831, 228, -1831, 228, -1846, 231, -1846, 231, -1853, 227, -1853, 227, -1870, 231, -1870, 231, -1877, 227, -1877, 227, -1894, 231, -1894, 231, -1901, 227, -1901, 227, -1918, 231, -1918, 231, -1925, 227, -1925, 227, -1942, 231, -1942, 231, -1949, 227, -1949, 227, -1966, 231, -1966, 231, -1973, 227, -1973, 227, -1990, 231, -1990, 231, -1997, 227, -1997, 227, -2014, 231, -2014, 231, -2021, 227, -2021, 227, -2038, 231, -2038, 231, -2045, 227, -2045, 227, -2062, 231, -2062, 231, -2069, 227, -2069, 227, -2086, 231, -2086, 231, -2093, 227, -2093, 227, -2126, 230, -2126, 230, -2131, 225, -2131, 225, -2132, 203, -2132, 203, -2145, 206, -2145, 206, -2154, 203, -2154, 203, -2156, 179, -2156, 179, -2169, 182, -2169, 182, -2178, 179, -2178, 179, -2180, 155, -2180, 155, -2206, 159, -2206, 159, -2213, 155, -2213, 155, -2230, 159, -2230, 159, -2237, 155, -2237, 155, -2254, 159, -2254, 159, -2261, 155, -2261, 155, -2278, 159, -2278, 159, -2285, 155, -2285, 155, -2302, 159, -2302, 159, -2309, 155, -2309, 155, -2326, 159, -2326, 159, -2333, 155, -2333, 155, -2350, 159, -2350, 159, -2357, 155, -2357, 155, -2374, 159, -2374, 159, -2381, 155, -2381, 155, -2398, 159, -2398, 159, -2405, 155, -2405, 155, -2422, 159, -2422, 159, -2429, 155, -2429, 155, -2446, 159, -2446, 159, -2453, 155, -2453, 155, -2470, 159, -2470, 159, -2477, 155, -2477, 155, -2494, 159, -2494, 159, -2501, 155, -2501, 155, -2518, 159, -2518, 159, -2525, 155, -2525, 155, -2542, 159, -2542, 159, -2549, 155, -2549, 155, -2591, 159, -2591, 159, -2597, 155, -2597, 155, -2606, 157, -2606, 157, -2610, 175, -2610, 175, -2620, 175, -2620, 175, -2623, 180, -2623, 180, -2638, 183, -2638, 183, -2652, 180, -2652, 180, -2658, 199, -2658, 199, -2668, 199, -2668, 199, -2671, 204, -2671, 204, -2686, 207, -2686, 207, -2700, 204, -2700, 204, -2706, 223, -2706, 223, -2716, 223, -2716, 223, -2719, 228, -2719, 228, -2734, 231, -2734, 231, -2741, 227, -2741, 227, -2758, 231, -2758, 231, -2765, 227, -2765, 227, -2782, 231, -2782, 231, -2789, 227, -2789, 227, -2806, 231, -2806, 231, -2813, 227, -2813, 227, -2830, 231, -2830, 231, -2837, 227, -2837, 227, -2854, 231, -2854, 231, -2861, 227, -2861, 227, -2878, 231, -2878, 231, -2885, 227, -2885, 227, -2902, 231, -2902, 231, -2909, 227, -2909, 227, -2926, 231, -2926, 231, -2933, 227, -2933, 227, -2950, 231, -2950, 231, -2957, 227, -2957, 227, -2974, 231, -2974, 231, -2981, 227, -2981, 227, -2998, 231, -2998, 231, -3005, 227, -3005, 227, -3022, 231, -3022, 231, -3029, 227, -3029, 227, -3046, 231, -3046, 231, -3053, 227, -3053, 227, -3070, 231, -3070, 231, -3077, 227, -3077, 227, -3094, 231, -3094, 231, -3101, 227, -3101, 227, -3118, 231, -3118, 231, -3125, 227, -3125, 227, -3142, 231, -3142, 231, -3149, 227, -3149, 227, -3166, 231, -3166, 231, -3173, 227, -3173, 227, -3190, 231, -3190, 231, -3197, 227, -3197, 227, -3214, 231, -3214, 231, -3221, 227, -3221, 227, -3238, 231, -3238, 231, -3245, 227, -3245, 227, -3287, 231, -3287, 231, -3306, 227, -3306, 227, -3308, 203, -3308, 203, -3321, 206, -3321, 206, -3330, 203, -3330, 203, -3332, 179, -3332, 179, -3345, 182, -3345, 182, -3354, 179, -3354, 179, -3356, 155, -3356, 155, -3369, 158, -3369, 158, -3378, 155, -3378, 155, -3380, 131, -3380, 131, -3406, 135, -3406, 135, -3413, 131, -3413, 131, -3430, 135, -3430, 135, -3437, 131, -3437, 131, -3454, 135, -3454, 135, -3461, 131, -3461, 131, -3478, 135, -3478, 135, -3485, 131, -3485, 131, -3502, 135, -3502, 135, -3516, 132, -3516, 132, -3519, 148, -3519, 148, -3542, 157, -3542, 157, -3543, 172, -3543, 172, -3566, 181, -3566, 181, -3567, 196, -3567, 196, -3572, 200, -3572, 200, -3580, 199, -3580, 199, -3583, 204, -3583, 204, -3598, 207, -3598, 207, -3605, 203, -3605, 203, -3622, 207, -3622, 207, -3629, 203, -3629, 203, -3646, 207, -3646, 207, -3653, 203, -3653, 203, -3670, 207, -3670, 207, -3677, 203, -3677, 203, -3694, 207, -3694, 207, -3701, 203, -3701, 203, -3710, 205, -3710, 205, -3711, 244, -3711, 244, -3734, 253, -3734, 253, -3735, 268, -3735, 268, -3740, 272, -3740, 272, -3748, 271, -3748, 271, -3751, 276, -3751, 276, -3767, 279, -3767, 279, -3774, 275, -3774, 275, -3791, 279, -3791, 279, -3798, 275, -3798, 275, -3815, 279, -3815, 279, -3822, 275, -3822, 275, -3839, 279, -3839, 279, -3846, 275, -3846, 275, -3863, 279, -3863, 279, -3870, 275, -3870, 275, -3887, 279, -3887, 279, -3894, 275, -3894, 275, -3911, 279, -3911, 279, -3918, 275, -3918, 275, -3935, 279, -3935, 279, -3942, 275, -3942, 275, -3959, 279, -3959, 279, -3966, 275, -3966, 275, -3983, 279, -3983, 279, -3990, 275, -3990, 275, -4007, 279, -4007, 279, -4026, 275, -4026, 275, -4028, 251, -4028, 251, -4054, 255, -4054, 255, -4061, 251, -4061, 251, -4078, 255, -4078, 255, -4085, 251, -4085, 251, -4127, 255, -4127, 255, -4133, 251, -4133, 251, -4142, 253, -4142, 253, -4146, 271, -4146, 271, -4156, 271, -4156, 271, -4159, 276, -4159, 276, -4174, 279, -4174, 279, -4181, 275, -4181, 275, -4198, 279, -4198, 279, -4205, 275, -4205, 275, -4214, 277, -4214, 277, -4215, 292, -4215, 292, -4238, 301, -4238, 301, -4239, 316, -4239, 316, -4262, 325, -4262, 325, -4263, 340, -4263, 340, -4286, 349, -4286, 349, -4287, 364, -4287, 364, -4292, 368, -4292, 368, -4300, 367, -4300, 367, -4303, 372, -4303, 372, -4318, 375, -4318, 375, -4325, 371, -4325, 371, -4342, 375, -4342, 375, -4349, 371, -4349, 371, -4366, 375, -4366, 375, -4373, 371, -4373, 371, -4390, 375, -4390, 375, -4397, 371, -4397, 371, -4414, 375, -4414, 375, -4421, 371, -4421, 371, -4438, 375, -4438, 375, -4445, 371, -4445, 371, -4462, 375, -4462, 375, -4469, 371, -4469, 371, -4486, 375, -4486, 375, -4493, 371, -4493, 371, -4510, 375, -4510, 375, -4524, 372, -4524, 372, -4530, 391, -4530, 391, -4540, 391, -4540, 391, -4541, 395, -4541, 395, -4550, 397, -4550, 397, -4554, 415, -4554, 415, -4564, 415, -4564, 415, -4565, 419, -4565, 419, -4574, 421, -4574, 421, -4575, 460, -4575, 460, -4578, 463, -4578, 463, -4588, 463, -4588, 463, -4591, 468, -4591, 468, -4606, 471, -4606, 471, -4613, 467, -4613, 467, -4630, 471, -4630, 471, -4637, 467, -4637, 467, -4654, 471, -4654, 471, -4661, 467, -4661, 467, -4678, 471, -4678, 471, -4685, 467, -4685, 467, -4702, 471, -4702, 471, -4709, 467, -4709, 467, -4726, 471, -4726, 471, -4740, 468, -4740, 468, -4746, 487, -4746, 487, -4756, 487, -4756, 487, -4757, 491, -4757, 491, -4766, 493, -4766, 493, -4770, 511, -4770, 511, -4780, 511, -4780, 511, -4783, 516, -4783, 516, -4798, 519, -4798, 519, -4805, 515, -4805, 515, -4814, 517, -4814, 517, -4815, 532, -4815, 532, -4838, 541, -4838, 541, -4842, 559, -4842, 559, -4852, 559, -4852, 559, -4853, 563, -4853, 563, -4862, 565, -4862, 565, -4862, 613, -4862, 613, -4866, 631, -4866, 631, -4876, 631, -4876, 631, -4879, 636, -4879, 636, -4894, 639, -4894, 639, -4908, 636, -4908, 636, -4914, 655, -4914, 655, -4924, 655, -4924, 655, -4927, 660, -4927, 660, -4942, 663, -4942, 663, -4956, 660, -4956, 660, -4959, 676, -4959, 676, -4964, 680, -4964, 680, -4972, 679, -4972, 679, -4975, 684, -4975, 684, -4990, 687, -4990, 687, -4997, 683, -4997, 683, -5014, 687, -5014, 687, -5021, 683, -5021, 683, -5038, 687, -5038, 687, -5052, 684, -5052, 684, -5055, 700, -5055, 700, -5078, 709, -5078, 709, -5079, 724, -5079, 724, -5102, 733, -5102, 733, -5103, 748, -5103, 748, -5108, 752, -5108, 752, -5116, 751, -5116, 751, -5119, 756, -5119, 756, -5134, 759, -5134, 759, -5141, 755, -5141, 755, -5158, 759, -5158, 759, -5165, 755, -5165, 755, -5182, 759, -5182, 759, -5189, 755, -5189, 755, -5198, 757, -5198, 757, -5199, 772, -5199, 772, -5222, 781, -5222, 781, -5226, 799, -5226, 799, -5236, 799, -5236, 799, -5237, 803, -5237, 803, -5246, 805, -5246, 805, -5247, 863, -5247, 863, -5241, 868, -5241, 868, -5204, 869, -5204, 869, -5198, 889, -5198, 889, -5180, 893, -5180, 893, -5175, 911, -5175, 911, -5169, 916, -5169, 916, -4944, 915, -4944, 915, -4937, 920, -4937, 920, -4935, 935, -4935, 935, -4929, 940, -4929, 940, -4762, 941, -4762, 941, -4746, 937, -4746, 937, -4746, 923, -4746, 923, -4741, 914, -4741, 914, -4714, 917, -4714, 917, -4631, 916, -4631, 916, -4626, 913, -4626, 913, -4624, 844, -4624, 844, -4603, 842, -4603, 842, -4600, 820, -4600, 820, -4578, 817, -4578, 817, -4576, 676, -4576, 676, -4555, 674, -4555, 674, -4552, 652, -4552, 652, -4531, 650, -4531, 650, -4527, 627, -4527, 627, -4463, 628, -4463, 628, -4458, 625, -4458, 625, -4455, 603, -4455, 603, -4439, 604, -4439, 604, -4434, 601, -4434, 601, -4434, 587, -4434, 587, -4429, 578, -4429, 578, -4343, 580, -4343, 580, -4338, 577, -4338, 577, -4335, 555, -4335, 555, -4306, 557, -4306, 557, -4291, 554, -4291, 554, -4287, 507, -4287, 507, -4247, 508, -4247, 508, -4242, 505, -4242, 505, -4239, 483, -4239, 483, -4199, 484, -4199, 484, -4194, 481, -4194, 481, -4191, 459, -4191, 459, -4162, 461, -4162, 461, -4147, 458, -4147, 458, -4144, 436, -4144, 436, -4123, 434, -4123, 434, -4122, 419, -4122, 419, -4117, 410, -4117, 410, -4055, 412, -4055, 412, -4050, 409, -4050, 409, -4047, 387, -4047, 387, -4018, 389, -4018, 389, -4003, 386, -4003, 386, -4000, 364, -4000, 364, -3979, 362, -3979, 362, -3978, 347, -3978, 347, -3973, 338, -3973, 338, -3946, 341, -3946, 341, -3720, 339, -3720, 339, -3713, 344, -3713, 344, -3709, 362, -3709, 362, -3672, 363, -3672, 363, -3665, 368, -3665, 368, -3661, 386, -3661, 386, -3648, 387, -3648, 387, -3641, 392, -3641, 392, -3638, 401, -3638, 401, -3639, 431, -3639, 431, -3633, 436, -3633, 436, -3620, 437, -3620, 437, -3614, 449, -3614, 449, -3615, 580, -3615, 580, -3638, 589, -3638, 589, -3642, 607, -3642, 607, -3652, 607, -3652, 607, -3655, 612, -3655, 612, -3670, 615, -3670, 615, -3677, 611, -3677, 611, -3694, 615, -3694, 615, -3701, 611, -3701, 611, -3718, 615, -3718, 615, -3725, 611, -3725, 611, -3742, 615, -3742, 615, -3749, 611, -3749, 611, -3766, 615, -3766, 615, -3773, 611, -3773, 611, -3790, 615, -3790, 615, -3804, 612, -3804, 612, -3807, 652, -3807, 652, -3830, 661, -3830, 661, -3831, 676, -3831, 676, -3854, 685, -3854, 685, -3858, 703, -3858, 703, -3868, 703, -3868, 703, -3871, 708, -3871, 708, -3886, 711, -3886, 711, -3893, 707, -3893, 707, -3910, 711, -3910, 711, -3917, 707, -3917, 707, -3934, 711, -3934, 711, -3948, 708, -3948, 708, -3951, 748, -3951, 748, -3982, 759, -3982, 759, -3989, 755, -3989, 755, -4006, 759, -4006, 759, -4013, 755, -4013, 755, -4030, 759, -4030, 759, -4037, 755, -4037, 755, -4054, 759, -4054, 759, -4061, 755, -4061, 755, -4078, 759, -4078, 759, -4085, 755, -4085, 755, -4118, 758, -4118, 758, -4123, 753, -4123, 753, -4124, 731, -4124, 731, -4150, 735, -4150, 735, -4157, 731, -4157, 731, -4174, 735, -4174, 735, -4181, 731, -4181, 731, -4198, 735, -4198, 735, -4205, 731, -4205, 731, -4222, 735, -4222, 735, -4229, 731, -4229, 731, -4246, 735, -4246, 735, -4253, 731, -4253, 731, -4270, 735, -4270, 735, -4277, 731, -4277, 731, -4294, 735, -4294, 735, -4301, 731, -4301, 731, -4318, 735, -4318, 735, -4325, 731, -4325, 731, -4342, 735, -4342, 735, -4356, 732, -4356, 732, -4362, 751, -4362, 751, -4372, 751, -4372, 751, -4373, 755, -4373, 755, -4385, 761, -4385, 761, -4396, 761, -4396, 761, -4397, 779, -4397, 779, -4409, 785, -4409, 785, -4418, 785, -4418, 785, -4421, 779, -4421, 779, -4430, 781, -4430, 781, -4430, 817, -4430, 817, -4412, 821, -4412, 821, -4407, 839, -4407, 839, -4401, 844, -4401, 844, -4152, 843, -4152, 843, -4145, 848, -4145, 848, -4143, 863, -4143, 863, -4137, 868, -4137, 868, -3504, 867, -3504, 867, -3497, 872, -3497, 872, -3495, 887, -3495, 887, -3489, 892, -3489, 892, -3408, 891, -3408, 891, -3401, 896, -3401, 896, -3397, 914, -3397, 914, -3370, 917, -3370, 917, -3167, 916, -3167, 916, -3162, 913, -3162, 913, -3162, 899, -3162, 899, -3157, 890, -3157, 890, -3071, 892, -3071, 892, -3066, 889, -3066, 889, -3066, 875, -3066, 875, -3061, 866, -3061, 866, -3034, 869, -3034, 869, -2760, 867, -2760, 867, -2753, 872, -2753, 872, -2751, 887, -2751, 887, -2745, 892, -2745, 892, -2664, 891, -2664, 891, -2657, 896, -2657, 896, -2653, 914, -2653, 914, -2626, 917, -2626, 917, -2327, 916, -2327, 916, -2322, 913, -2322, 913, -2322, 899, -2322, 899, -2317, 890, -2317, 890, -2290, 893, -2290, 893, -2207, 892, -2207, 892, -2202, 889, -2202, 889, -2202, 875, -2202, 875, -2197, 866, -2197, 866, -2170, 869, -2170, 869, -2040, 867, -2040, 867, -2033, 872, -2033, 872, -2031, 887, -2031, 887, -2025, 892, -2025, 892, -1896, 891, -1896, 891, -1889, 896, -1889, 896, -1885, 914, -1885, 914, -1858, 917, -1858, 917, -1703, 916, -1703, 916, -1698, 913, -1698, 913, -1698, 899, -1698, 899, -1693, 890, -1693, 890, -1666, 893, -1666, 893, -1439, 892, -1439, 892, -1434, 889, -1434, 889, -1434, 875, -1434, 875, -1429, 866, -1429, 866, -1402, 869, -1402, 869, -1152, 867, -1152, 867, -1145, 872, -1145, 872, -1141, 890, -1141, 890, -1128, 891, -1128, 891, -1121, 896, -1121, 896, -1119, 911, -1119, 911, -1113, 916, -1113, 916, -887, 916, -887, 916, -882, 913, -882, 913, -882, 899, -882, 899, -877, 890, -877, 890, -815, 892, -815, 892, -810, 889, -810, 889, -810, 875, -810, 875, -805, 866, -805, 866, -719, 868, -719, 868, -714, 865, -714, 865, -711, 843, -711, 843, -671, 844, -671, 844, -666, 841, -666, 841, -663, 819, -663, 819, -623, 820, -623, 820, -618, 817, -618, 817, -615, 795, -615, 795, -575, 796, -575, 796, -570, 793, -570, 793, -567, 771, -567, 771, -538, 773, -538, 773, -523, 770, -523, 770, -522, 755, -522, 755, -517, 746, -517, 746, -461, 748, -461, 748, -461, 738, -461, 738, -450, 736, -450, 736, -445, 722, -445, 722, -418, 725, -418, 725, -402, 721, -402, 721, -404, 707, -404, 707, -430, 711, -430, 711, -448, 709, -448, 709, -451, 705, -451, 705, -451, 684, -451, 684, -470, 686, -470, 686, -474, 683, -474, 683, -476, 659, -476, 659, -502, 663, -502, 663, -509, 659, -509, 659, -526, 663, -526, 663, -533, 659, -533, 659, -550, 663, -550, 663, -557, 659, -557, 659, -574, 663, -574, 663, -581, 659, -581, 659, -598, 663, -598, 663, -605, 659, -605, 659, -622, 663, -622, 663, -629, 659, -629, 659, -662, 662, -662, 662, -667, 657, -667, 657, -668, 635, -668, 635, -695, 639, -695, 639, -710, 638, -710, 638, -715, 633, -715, 633, -712, 580, -712, 580, -691, 578, -691, 578, -688, 556, -688, 556, -667, 554, -667, 554, -663, 531, -663, 531, -634, 533, -634, 533, -619, 530, -619, 530, -616, 508, -616, 508, -595, 506, -595, 506, -592, 484, -592, 484, -571, 482, -571, 482, -568, 460, -568, 460, -547, 458, -547, 458, -544, 436, -544, 436, -523, 434, -523, 434, -520, 412, -520, 412, -499, 410, -499, 410, -496, 388, -496, 388, -474, 385, -474, 385, -476, 347, -476, 347, -502, 351, -502, 351, -509, 347, -509, 347, -526, 351, -526, 351, -533, 347, -533, 347, -550, 351, -550, 351, -557, 347, -557, 347, -574, 351, -574, 351, -581, 347, -581, 347, -598, 351, -598, 351, -605, 347, -605, 347, -622, 351, -622, 351, -629, 347, -629, 347, -646, 351, -646, 351, -654, 347, -654, 347, -671, 351, -671, 351, -677, 348, -677, 348, -677, 343, -677, 343, -687, 343, -687, 343, -687, 364, -687, 364, -710, 374, -710, 374, -715, 369, -715, 369, -712, 340, -712, 340, -690, 339, -690, 339, -691, 324, -691, 324, -734, 326, -734, 326, -739, 321, -739, 321, -736, 292, -736, 292, -714, 289, -714, 289, -711, 243, -711, 243, -682, 245, -682, 245, -667, 242, -667, 242, -664, 220, -664, 220, -643, 218, -643, 218, -642, 203, -642, 203, -637, 194, -637, 194, -610, 197, -610, 197, -571, 194, -571, 194, -567, 147, -567, 147, -503, 148, -503, 148, -498, 145, -498, 145, -495, 123, -495, 123, -479, 124, -479, 124, -474, 121, -474, 121, -471, 99, -471, 99, -455, 100, -455, 100, -450, 97, -450, 97, -451, 36, -451, 36, -472, 37, -472, 37, -476, 11, -476, 11, -502, 15, -502, 15, -509, 11, -509, 11, -526, 15, -526, 15, -533, 11, -533, 11, -550, 15, -550, 15, -557, 11, -557, 11, -574, 15, -574, 15, -581, 11, -581, 11, -598, 15, -598, 15, -605, 11, -605, 11, -638, 14, -638, 14, -643, 9, -643, 9, -640, -20, -640, -20, -619, -22, -619, -22, -618, -37, -618, -37, -613, -46, -613, -46, -586, -43, -586, -43, -571, -46, -571, -46, -568, -68, -568, -68, -546, -71, -546, -71, -544, -116, -544, -116, -523, -118, -523, -118, -522, -133, -522, -133, -517, -142, -517, -142, -490, -139, -490, -139, -226, -139, -226, -139, -210, -143, -210, -143, -210, -157, -210, -157, -205, -166, -205, -166, -178, -163, -178, -163, -163, -166, -163, -166, -160, -188, -160, -188, -139, -190, -139, -190, -136, -212, -136, -212, -114, -215, -114, -215, -113, -329, -113, -329, -109, -334, -109, -334, -95, -332, -95, -332, -90, -335, -90, -335, -87, -357, -87, -357, -71, -356, -71, -356, -66, -359, -66, -359, -63, -381, -63, -381, -23, -380, -23, -380, -18, -383, -18, -383, -15, -405, -15, -405, 14, -403, 14, -403, 29, -406, 29, -406, 30, -421, 30, -421, 35, -430, 35, -430, 62, -427, 62, -427, 169, -428, 169, -428, 174, -431, 174, -431, 173, -444, 173, -444, 154, -442, 154, -442, 150, -445, 150, -445, 149, -492, 149, -492, 128, -491, 128, -491, 124, -517, 124, -517, 98, -513, 98, -513, 91, -517, 91, -517, 74, -513, 74, -513, 67, -517, 67, -517, 50, -513, 50, -513, 43, -517, 43, -517, 26, -513, 26, -513, 19, -517, 19, -517, -14, -514, -14, -514, -19, -519, -19, -519, -20, -541, -20, -541, -46, -537, -46, -537, -53, -541, -53, -541, -70, -537, -70, -537, -77, -541, -77, -541, -94, -537, -94, -537, -101, -541, -101, -541, -118, -537, -118, -537, -125, -541, -125, -541, -142, -537, -142, -537, -149, -541, -149, -541, -166, -537, -166, -537, -173, -541, -173, -541, -190, -537, -190, -537, -197, -541, -197, -541, -214, -537, -214, -537, -221, -541, -221, -541, -238, -537, -238, -537, -245, -541, -245, -541, -262, -537, -262, -537, -269, -541, -269, -541, -286, -537, -286, -537, -293, -541, -293, -541, -310, -537, -310, -537, -317, -541, -317, -541, -334, -537, -334, -537, -341, -541, -341, -541, -358, -537, -358, -537, -365, -541, -365, -541, -398, -538, -398, -538, -403, -543, -403, -543, -404, -565, -404, -565, -430, -561, -430, -561, -437, -565, -437, -565, -454, -561, -454, -561, -461, -565, -461, -565, -494, -562, -494, -562, -499, -567, -499, -567, -500, -589, -500, -589, -513, -586, -513, -586, -522, -589, -522, -589, -524, -613, -524, -613, -566, -610, -566, -610, -571, -615, -571, -615, -572, -637, -572, -637, -614, -634, -614, -634, -619, -639, -619, -639, -620, -661, -620, -661, -646, -657, -646, -657, -664, -659, -664, -659, -667, -663, -667, -663, -667, -684, -667, -684, -686, -682, -686, -682, -691, -687, -691, -687, -688, -764, -688, -764, -667, -766, -667, -766, -666, -781, -666, -781, -661, -790, -661, -790, -634, -787, -634, -787, -619, -790, -619, -790, -618, -805, -618, -805, -613, -814, -613, -814, -586, -811, -586, -811, -571, -814, -571, -814, -570, -829, -570, -829, -565, -838, -565, -838, -538, -835, -538, -835, -499, -838, -499, -838, -496, -860, -496, -860, -474, -863, -474, -863, -476, -901, -476, -901, -502, -897, -502, -897, -516, -900, -516, -900, -522, -881, -522, -881, -532, -881, -532, -881, -535, -876, -535, -876, -550, -873, -550, -873, -557, -877, -557, -877, -574, -873, -574, -873, -581, -877, -581, -877, -598, -873, -598, -873, -605, -877, -605, -877, -622, -873, -622, -873, -629, -877, -629, -877, -646, -873, -646, -873, -653, -877, -653, -877, -686, -874, -686, -874, -691, -879, -691, -879, -692, -901, -692, -901, -718, -897, -718, -897, -732, -900, -732, -900, -738, -881, -738, -881, -748, -881, -748, -881, -751, -876, -751, -876, -766, -873, -766, -873, -780, -876, -780, -876, -783, -860, -783, -860, -788, -856, -788, -856, -796, -857, -796, -857, -799, -852, -799, -852, -814, -849, -814, -849, -821, -853, -821, -853, -830, -851, -830, -851, -831, -836, -831, -836, -854, -827, -854, -827, -858, -809, -858, -809, -868, -809, -868, -809, -871, -804, -871, -804, -886, -801, -886, -801, -893, -805, -893, -805, -910, -801, -910, -801, -917, -805, -917, -805, -926, -803, -926, -803, -927, -788, -927, -788, -950, -779, -950, -779, -951, -740, -951, -740, -974, -731, -974, -731, -975, -716, -975, -716, -980, -712, -980, -712, -988, -713, -988, -713, -991, -708, -991, -708, -1006, -705, -1006, -705, -1013, -709, -1013, -709, -1030, -705, -1030, -705, -1037, -709, -1037, -709, -1054, -705, -1054, -705, -1061, -709, -1061, -709, -1078, -705, -1078, -705, -1085, -709, -1085, -709, -1102, -705, -1102, -705, -1109, -709, -1109, -709, -1126, -705, -1126, -705, -1133, -709, -1133, -709, -1150, -705, -1150, -705, -1157, -709, -1157, -709, -1174, -705, -1174, -705, -1181, -709, -1181, -709, -1198, -705, -1198, -705, -1212, -708, -1212, -708, -1218, -689, -1218, -689, -1228, -689, -1228, -689, -1229, -685, -1229, -685, -1238, -683, -1238, -683, -1242, -665, -1242, -665, -1252, -665, -1252, -665, -1255, -660, -1255, -660, -1270, -657, -1270, -657, -1277, -661, -1277, -661, -1294, -657, -1294, -657, -1301, -661, -1301, -661, -1318, -657, -1318, -657, -1325, -661, -1325, -661, -1342, -657, -1342, -657, -1349, -661, -1349, -661, -1366, -657, -1366, -657, -1373, -661, -1373, -661, -1390, -657, -1390, -657, -1397, -661, -1397, -661, -1414, -657, -1414, -657, -1421, -661, -1421, -661, -1438, -657, -1438, -657, -1445, -661, -1445, -661, -1462, -657, -1462, -657, -1469, -661, -1469, -661, -1486, -657, -1486, -657, -1493, -661, -1493, -661, -1526, -658, -1526, -658, -1531, -663, -1531, -663, -1532, -685, -1532, -685, -1558, -681, -1558, -681, -1565, -685, -1565, -685, -1582, -681, -1582, -681, -1589, -685, -1589, -685, -1606, -681, -1606, -681, -1613, -685, -1613, -685, -1630, -681, -1630, -681, -1637, -685, -1637, -685, -1654, -681, -1654, -681, -1661, -685, -1661, -685, -1678, -681, -1678, -681, -1685, -685, -1685, -685, -1702, -681, -1702, -681, -1709, -685, -1709, -685, -1742, -682, -1742, -682, -1747, -687, -1747, -687, -1748, -733, -1748, -733, -1774, -729, -1774, -729, -1781, -733, -1781, -733, -1798, -729, -1798, -729, -1805, -733, -1805, -733, -1822, -729, -1822, -729, -1829, -733, -1829, -733, -1846, -729, -1846, -729, -1853, -733, -1853, -733, -1870, -729, -1870, -729, -1877, -733, -1877, -733, -1894, -729, -1894, -729, -1901, -733, -1901, -733, -1918, -729, -1918, -729, -1925, -733, -1925, -733, -1942, -729, -1942, -729, -1949, -733, -1949, -733, -1991, -729, -1991, -729, -1997, -733, -1997, -733, -2006, -731, -2006, -731, -2010, -713, -2010, -713, -2020, -713, -2020, -713, -2021, -709, -2021, -709, -2030, -707, -2030, -707, -2034, -689, -2034, -689, -2044, -689, -2044, -689, -2045, -685, -2045, -685, -2054, -683, -2054, -683, -2058, -665, -2058, -665, -2068, -665, -2068, -665, -2071, -660, -2071, -660, -2086, -657, -2086, -657, -2093, -661, -2093, -661, -2110, -657, -2110, -657, -2124, -660, -2124, -660, -2127, -644, -2127, -644, -2132, -640, -2132, -640, -2140, -641, -2140, -641, -2143, -636, -2143, -636, -2158, -633, -2158, -633, -2165, -637, -2165, -637, -2182, -633, -2182, -633, -2196, -636, -2196, -636, -2202, -617, -2202, -617, -2212, -617, -2212, -617, -2215, -612, -2215, -612, -2230, -609, -2230, -609, -2237, -613, -2237, -613, -2254, -609, -2254, -609, -2261, -613, -2261, -613, -2278, -609, -2278, -609, -2285, -613, -2285, -613, -2302, -609, -2302, -609, -2309, -613, -2309, -613, -2326, -609, -2326, -609, -2333, -613, -2333, -613, -2350, -609, -2350, -609, -2357, -613, -2357, -613, -2374, -609, -2374, -609, -2381, -613, -2381, -613, -2398, -609, -2398, -609, -2405, -613, -2405, -613, -2422, -609, -2422, -609, -2429, -613, -2429, -613, -2471, -609, -2471, -609, -2477, -613, -2477, -613, -2486, -611, -2486, -611, -2490, -593, -2490, -593, -2500, -593, -2500, -593, -2503, -588, -2503, -588, -2518, -585, -2518, -585, -2525, -589, -2525, -589, -2542, -585, -2542, -585, -2549, -589, -2549, -589, -2566, -585, -2566, -585, -2573, -589, -2573, -589, -2590, -585, -2590, -585, -2597, -589, -2597, -589, -2614, -585, -2614, -585, -2621, -589, -2621, -589, -2638, -585, -2638, -585, -2645, -589, -2645, -589, -2662, -585, -2662, -585, -2669, -589, -2669, -589, -2686, -585, -2686, -585, -2693, -589, -2693, -589, -2710, -585, -2710, -585, -2717, -589, -2717, -589, -2734, -585, -2734, -585, -2741, -589, -2741, -589, -2758, -585, -2758, -585, -2765, -589, -2765, -589, -2782, -585, -2782, -585, -2789, -589, -2789, -589, -2806, -585, -2806, -585, -2813, -589, -2813, -589, -2855, -585, -2855, -585, -2874, -589, -2874, -589, -2876, -613, -2876, -613, -2902, -609, -2902, -609, -2920, -611, -2920, -611, -2924, -637, -2924, -637, -2950, -633, -2950, -633, -2957, -637, -2957, -637, -2990, -634, -2990, -634, -2995, -639, -2995, -639, -2996, -661, -2996, -661, -3022, -657, -3022, -657, -3040, -659, -3040, -659, -3044, -685, -3044, -685, -3070, -681, -3070, -681, -3077, -685, -3077, -685, -3094, -681, -3094, -681, -3101, -685, -3101, -685, -3134, -682, -3134, -682, -3139, -687, -3139, -687, -3140, -709, -3140, -709, -3153, -706, -3153, -706, -3162, -709, -3162, -709, -3164, -733, -3164, -733, -3190, -729, -3190, -729, -3197, -733, -3197, -733, -3214, -729, -3214, -729, -3221, -733, -3221, -733, -3254, -730, -3254, -730, -3259, -735, -3259, -735, -3260, -757, -3260, -757, -3286, -753, -3286, -753, -3293, -757, -3293, -757, -3310, -753, -3310, -753, -3317, -757, -3317, -757, -3350, -754, -3350, -754, -3355, -759, -3355, -759, -3356, -781, -3356, -781, -3382, -777, -3382, -777, -3400, -779, -3400, -779, -3403, -783, -3403, -783, -3403, -804, -3403, -804, -3422, -802, -3422, -802, -3426, -805, -3426, -805, -3428, -829, -3428, -829, -3454, -825, -3454, -825, -3461, -829, -3461, -829, -3494, -826, -3494, -826, -3499, -831, -3499, -831, -3500, -853, -3500, -853, -3526, -849, -3526, -849, -3544, -851, -3544, -851, -3548, -877, -3548, -877, -3574, -873, -3574, -873, -3581, -877, -3581, -877, -3598, -873, -3598, -873, -3605, -877, -3605, -877, -3622, -873, -3622, -873, -3629, -877, -3629, -877, -3646, -873, -3646, -873, -3653, -877, -3653, -877, -3670, -873, -3670, -873, -3677, -877, -3677, -877, -3694, -873, -3694, -873, -3701, -877, -3701, -877, -3718, -873, -3718, -873, -3725, -877, -3725, -877, -3742, -873, -3742, -873, -3749, -877, -3749, -877, -3766, -873, -3766, -873, -3773, -877, -3773, -877, -3790, -873, -3790, -873, -3797, -877, -3797, -877, -3814, -873, -3814, -873, -3821, -877, -3821, -877, -3838, -873, -3838, -873, -3845, -877, -3845, -877, -3862, -873, -3862, -873, -3869, -877, -3869, -877, -3886, -873, -3886, -873, -3893, -877, -3893, -877, -3910, -873, -3910, -873, -3917, -877, -3917, -877, -3959, -873, -3959, -873, -3965, -877, -3965, -877, -3974, -875, -3974, -875, -3978, -857, -3978, -857, -3988, -857, -3988, -857, -3989, -853, -3989, -853, -3998, -851, -3998, -851, -4002, -833, -4002, -833, -4012, -833, -4012, -833, -4015, -828, -4015, -828, -4030, -825, -4030, -825, -4037, -829, -4037, -829, -4054, -825, -4054, -825, -4061, -829, -4061, -829, -4078, -825, -4078, -825, -4085, -829, -4085, -829, -4102, -825, -4102, -825, -4109, -829, -4109, -829, -4126, -825, -4126, -825, -4133, -829, -4133, -829, -4150, -825, -4150, -825, -4157, -829, -4157, -829, -4174, -825, -4174, -825, -4181, -829, -4181, -829, -4198, -825, -4198, -825, -4205, -829, -4205, -829, -4222, -825, -4222, -825, -4229, -829, -4229, -829, -4246, -825, -4246, -825, -4253, -829, -4253, -829, -4270, -825, -4270, -825, -4277, -829, -4277, -829, -4294, -825, -4294, -825, -4301, -829, -4301, -829, -4318, -825, -4318, -825, -4325, -829, -4325, -829, -4342, -825, -4342, -825, -4349, -829, -4349, -829, -4366, -825, -4366, -825, -4373, -829, -4373, -829, -4390, -825, -4390, -825, -4397, -829, -4397, -829, -4439, -825, -4439, -825, -4458, -829, -4458, -829, -4459, -876, -4459, -876, -4480, -875, -4480, -875, -4483, -879, -4483, -879, -4483, -900, -4483, -900, -4502, -898, -4502, -898, -4506, -901, -4506, -901, -4508, -925, -4508, -925, -4534, -921, -4534, -921, -4541, -925, -4541, -925, -4558, -921, -4558, -921, -4565, -925, -4565, -925, -4582, -921, -4582, -921, -4589, -925, -4589, -925, -4606, -921, -4606, -921, -4620, -924, -4620, -924, -4625, -919, -4625, -919, -4636, -919, -4636, -919, -4636, -902, -4636, -902, -4646, -899, -4646, -899, -4647, -860, -4647, -860, -4650, -857, -4650, -857, -4660, -857, -4660, -857, -4663, -852, -4663, -852, -4678, -849, -4678, -849, -4685, -853, -4685, -853, -4694, -851, -4694, -851, -4695, -817, -4695, -817, -4689, -812, -4689, -812, -4676, -811, -4676, -811, -4671, -793, -4671, -793, -4665, -788, -4665, -788, -4608, -789, -4608, -789, -4601, -784, -4601, -784, -4598, -775, -4598, -775, -4598, -719, -4598, -719, -4580, -715, -4580, -715, -4575, -697, -4575, -697, -4569, -692, -4569, -692, -4532, -691, -4532, -691, -4526, -679, -4526, -679, -4527, -649, -4527, -649, -4505, -640, -4505, -640, -4501, -622, -4501, -622, -4474, -619, -4474, -619, -4392, -621, -4392, -621, -4385, -616, -4385, -616, -4383, -601, -4383, -601, -4377, -596, -4377, -596, -4176, -597, -4176, -597, -4169, -592, -4169, -592, -4166, -583, -4166, -583, -4166, -551, -4166, -551, -4148, -547, -4148, -547, -4143, -529, -4143, -529, -4137, -524, -4137, -524, -3936, -525, -3936, -525, -3929, -520, -3929, -520, -3925, -502, -3925, -502, -3898, -499, -3898, -499, -3456, -501, -3456, -501, -3449, -496, -3449, -496, -3447, -481, -3447, -481, -3441, -476, -3441, -476, -3072, -477, -3072, -477, -3065, -472, -3065, -472, -3063, -457, -3063, -457, -3057, -452, -3057, -452, -2784, -453, -2784, -453, -2777, -448, -2777, -448, -2773, -430, -2773, -430, -2746, -427, -2746, -427, -2712, -429, -2712, -429, -2705, -424, -2705, -424, -2703, -409, -2703, -409, -2697, -404, -2697, -404, -2471, -404, -2471, -404, -2466, -407, -2466, -407, -2466, -421, -2466, -421, -2461, -430, -2461, -430, -2434, -427, -2434, -427, -2256, -429, -2256, -429, -2249, -424, -2249, -424, -2247, -404, -2247, -404, -2270, -395, -2270, -395, -2271, -308, -2271, -308, -2294, -299, -2294, -299, -2295, -284, -2295, -284, -2300, -280, -2300, -280, -2308, -281, -2308, -281, -2311, -276, -2311, -276, -2326, -273, -2326, -273, -2333, -277, -2333, -277, -2350, -273, -2350, -273, -2357, -277, -2357, -277, -2374, -273, -2374, -273, -2381, -277, -2381, -277, -2398, -273, -2398, -273, -2405, -277, -2405, -277, -2422, -273, -2422, -273, -2429, -277, -2429, -277, -2446, -273, -2446, -273, -2453, -277, -2453, -277, -2470, -273, -2470, -273, -2477, -277, -2477, -277, -2494, -273, -2494, -273, -2508, -276, -2508, -276, -2514, -257, -2514, -257, -2524, -257, -2524, -257, -2525, -253, -2525, -253, -2534, -251, -2534, -251, -2538, -233, -2538, -233, -2548, -233, -2548, -233, -2551, -228, -2551, -228, -2566, -225, -2566, -225, -2580, -228, -2580, -228, -2586, -209, -2586, -209, -2596, -209, -2596, -209, -2599, -204, -2599, -204, -2614, -201, -2614, -201, -2621, -205, -2621, -205, -2638, -201, -2638, -201, -2645, -205, -2645, -205, -2662, -201, -2662, -201, -2669, -205, -2669, -205, -2686, -201, -2686, -201, -2693, -205, -2693, -205, -2710, -201, -2710, -201, -2717, -205, -2717, -205, -2734, -201, -2734, -201, -2741, -205, -2741, -205, -2758, -201, -2758, -201, -2765, -205, -2765, -205, -2782, -201, -2782, -201, -2789, -205, -2789, -205, -2806, -201, -2806, -201, -2813, -205, -2813, -205, -2830, -201, -2830, -201, -2837, -205, -2837, -205, -2854, -201, -2854, -201, -2868, -204, -2868, -204, -2871, -164, -2871, -164, -2874, -161, -2874, -161, -2884, -161, -2884, -161, -2887, -156, -2887, -156, -2902, -153, -2902, -153, -2909, -157, -2909, -157, -2926, -153, -2926, -153, -2940, -156, -2940, -156, -2946, -137, -2946, -137, -2956, -137, -2956, -137, -2959, -132, -2959, -132, -2974, -129, -2974, -129, -2981, -133, -2981, -133, -2998, -129, -2998, -129, -3005, -133, -3005, -133, -3022, -129, -3022, -129, -3029, -133, -3029, -133, -3046, -129, -3046, -129, -3053, -133, -3053, -133, -3070, -129, -3070, -129, -3077, -133, -3077, -133, -3094, -129, -3094, -129, -3101, -133, -3101, -133, -3118, -129, -3118, -129, -3125, -133, -3125, -133, -3142, -129, -3142, -129, -3149, -133, -3149, -133, -3166, -129, -3166, -129, -3173, -133, -3173, -133, -3190, -129, -3190, -129, -3197, -133, -3197, -133, -3214, -129, -3214, -129, -3221, -133, -3221, -133, -3238, -129, -3238, -129, -3245, -133, -3245, -133, -3262, -129, -3262, -129, -3269, -133, -3269, -133, -3286, -129, -3286, -129, -3293, -133, -3293, -133, -3310, -129, -3310, -129, -3317, -133, -3317, -133, -3334, -129, -3334, -129, -3341, -133, -3341, -133, -3358, -129, -3358, -129, -3365, -133, -3365, -133, -3398, -130, -3398, -130, -3403, -135, -3403, -135, -3403, -156, -3403, -156, -3424, -155, -3424, -155, -3427, -159, -3427, -159, -3427, -180, -3427, -180, -3448, -179, -3448, -179, -3451, -183, -3451, -183, -3451, -204, -3451, -204, -3470, -202, -3470, -202, -3475, -207, -3475, -207, -3474, -319, -3474, -319, -3476, -325, -3476, -325, -3489, -322, -3489, -322, -3498, -325, -3498, -325, -3500, -349, -3500, -349, -3526, -345, -3526, -345, -3533, -349, -3533, -349, -3550, -345, -3550, -345, -3557, -349, -3557, -349, -3574, -345, -3574, -345, -3581, -349, -3581, -349, -3598, -345, -3598, -345, -3605, -349, -3605, -349, -3622, -345, -3622, -345, -3628, -347, -3628, -347, -3628, -321, -3628, -321, -3638, -319, -3638, -319, -3638, -251, -3638, -251, -3642, -233, -3642, -233, -3652, -233, -3652, -233, -3655, -228, -3655, -228, -3670, -225, -3670, -225, -3677, -229, -3677, -229, -3694, -225, -3694, -225, -3702, -229, -3702, -229, -3718, -225, -3718, -225, -3724, -227, -3724, -227, -3727, -223, -3727, -223, -3759, -223, -3759, -223, -3762, -209, -3762, -209, -3772, -209, -3772, -209, -3773, -205, -3773, -205, -3782, -203, -3782, -203, -3783, -44, -3783, -44, -3806, -35, -3806, -35, -3810, -17, -3810, -17, -3820, -17, -3820, -17, -3823, -12, -3823, -12, -3838, -9, -3838, -9, -3858, -13, -3858, -13, -3860, -37, -3860, -37, -3886, -33, -3886, -33, -3893, -37, -3893, -37, -3910, -33, -3910, -33, -3917, -37, -3917, -37, -3934, -33, -3934, -33, -3941, -37, -3941, -37, -3958, -33, -3958, -33, -3965, -37, -3965, -37, -3982, -33, -3982, -33, -3989, -37, -3989, -37, -4006, -33, -4006, -33, -4013, -37, -4013, -37, -4030, -33, -4030, -33, -4037, -37, -4037, -37, -4054, -33, -4054, -33, -4061, -37, -4061, -37, -4094, -34, -4094, -34, -4099, -39, -4099, -39, -4100, -61, -4100, -61, -4126, -57, -4126, -57, -4144, -59, -4144, -59, -4148, -85, -4148, -85, -4174, -81, -4174, -81, -4181, -85, -4181, -85, -4198, -81, -4198, -81, -4204, -83, -4204, -83, -4207, -79, -4207, -79, -4252, -80, -4252, -80, -4253, -126, -4253, -126, -4242, -128, -4242, -128, -4242, -175, -4242, -175, -4244, -181, -4244, -181, -4262, -178, -4262, -178, -4267, -183, -4267, -183, -4267, -228, -4267, -228, -4294, -225, -4294, -225, -4301, -229, -4301, -229, -4318, -225, -4318, -225, -4336, -227, -4336, -227, -4339, -231, -4339, -231, -4339, -276, -4339, -276, -4360, -275, -4360, -275, -4364, -301, -4364, -301, -4390, -297, -4390, -297, -4397, -301, -4397, -301, -4414, -297, -4414, -297, -4421, -301, -4421, -301, -4438, -297, -4438, -297, -4445, -301, -4445, -301, -4462, -297, -4462, -297, -4469, -301, -4469, -301, -4486, -297, -4486, -297, -4493, -301, -4493, -301, -4510, -297, -4510, -297, -4517, -301, -4517, -301, -4534, -297, -4534, -297, -4541, -301, -4541, -301, -4558, -297, -4558, -297, -4565, -301, -4565, -301, -4582, -297, -4582, -297, -4589, -301, -4589, -301, -4606, -297, -4606, -297, -4613, -301, -4613, -301, -4630, -297, -4630, -297, -4637, -301, -4637, -301, -4654, -297, -4654, -297, -4661, -301, -4661, -301, -4678, -297, -4678, -297, -4685, -301, -4685, -301, -4702, -297, -4702, -297, -4709, -301, -4709, -301, -4726, -297, -4726, -297, -4733, -301, -4733, -301, -4750, -297, -4750, -297, -4757, -301, -4757, -301, -4774, -297, -4774, -297, -4781, -301, -4781, -301, -4798, -297, -4798, -297, -4805, -301, -4805, -301, -4822, -297, -4822, -297, -4829, -301, -4829, -301, -4846, -297, -4846, -297, -4853, -301, -4853, -301, -4870, -297, -4870, -297, -4877, -301, -4877, -301, -4894, -297, -4894, -297, -4901, -301, -4901, -301, -4918, -297, -4918, -297, -4926, -301, -4926, -301, -4943, -297, -4943, -297, -4962, -301, -4962, -301, -4964, -325, -4964, -325, -4990, -321, -4990, -321, -4997, -325, -4997, -325, -5014, -321, -5014, -321, -5021, -325, -5021, -325, -5038, -321, -5038, -321, -5045, -325, -5045, -325, -5062, -321, -5062, -321, -5069, -325, -5069, -325, -5086, -321, -5086, -321, -5093, -325, -5093, -325, -5110, -321, -5110, -321, -5117, -325, -5117, -325, -5134, -321, -5134, -321, -5141, -325, -5141, -325, -5158, -321, -5158, -321, -5165, -325, -5165, -325, -5182, -321, -5182, -321, -5189, -325, -5189, -325, -5206, -321, -5206, -321, -5213, -325, -5213, -325, -5230, -321, -5230, -321, -5237, -325, -5237, -325, -5254, -321, -5254, -321, -5261, -325, -5261, -325, -5278, -321, -5278, -321, -5285, -325, -5285, -325, -5302, -321, -5302, -321, -5309, -325, -5309, -325, -5326, -321, -5326, -321, -5333, -325, -5333, -325, -5350, -321, -5350, -321, -5357, -325, -5357, -325, -5374, -321, -5374, -321, -5381, -325, -5381, -325, -5398, -321, -5398, -321, -5405, -325, -5405, -325, -5422, -321, -5422, -321, -5429, -325, -5429, -325, -5446, -321, -5446, -321, -5453, -325, -5453, -325, -5470, -321, -5470, -321, -5477, -325, -5477, -325, -5494, -321, -5494, -321, -5501, -325, -5501, -325, -5518, -321, -5518, -321, -5525, -325, -5525, -325, -5542, -321, -5542, -321, -5549, -325, -5549, -325, -5566, -321, -5566, -321, -5580, -324, -5580, -324, -5583, -308, -5583, -308, -5588, -304, -5588, -304, -5596, -305, -5596, -305, -5597, -296, -5597, -296, -5607, -295, -5607, -295, -5610, -281, -5610, -281, -5620, -281, -5620, -281, -5621, -277, -5621, -277, -5630, -275, -5630, -275, -5634, -257, -5634, -257, -5644, -257, -5644, -257, -5645, -253, -5645, -253, -5654, -251, -5654, -251, -5658, -233, -5658, -233, -5668, -233, -5668, -233, -5671, -228, -5671, -228, -5686, -225, -5686, -225, -5693, -229, -5693, -229, -5710, -225, -5710, -225, -5717, -229, -5717, -229, -5734, -225, -5734, -225, -5741, -229, -5741, -229, -5750, -227, -5750, -227, -5751, -212, -5751, -212, -5774, -203, -5774, -203, -5778, -185, -5778, -185, -5788, -185, -5788, -185, -5789, -181, -5789, -181, -5798, -179, -5798, -179, -5799, -140, -5799, -140, -5802, -137, -5802, -137, -5812, -137, -5812, -137, -5815, -132, -5815, -132, -5830, -129, -5830, -129, -5837, -133, -5837, -133, -5854, -129, -5854, -129, -5861, -133, -5861, -133, -5878, -129, -5878, -129, -5885, -133, -5885, -133, -5894, -131, -5894, -131, -5895, -44, -5895, -44, -5918, -35, -5918, -35, -5919, 95, -5919, 95, -5913, 100, -5913, 100, -5856, 99, -5856, 99, -5849, 104, -5849, 104, -5846, 121, -5846, 121, -5828, 125, -5828, 125, -5822, 137, -5822, 137, -5823, 239, -5823, 239, -5817, 244, -5817, 244, -5804, 245, -5804, 245, -5798, 257, -5798, 257, -5799, 364, -5799, 364, -5822, 373, -5822, 373, -5823, 436, -5823, 436, -5854, 447, -5854, 447, -5861, 443, -5861, 443, -5878, 447, -5878, 447, -5885, 443, -5885, 443, -5902, 447, -5902, 447, -5909, 443, -5909, 443, -5926, 447, -5926, 447, -5933, 443, -5933, 443, -5942, 445, -5942, 445, -5943, 604, -5943, 604, -5974, 615, -5974, 615, -5981, 611, -5981, 611, -5998, 615, -5998, 615, -6005, 611, -6005, 611, -6022, 615, -6022, 615, -6029, 611, -6029, 611, -6046, 615, -6046, 615, -6053, 611, -6053, 611, -6070, 615, -6070, 615, -6077, 611, -6077, 611, -6086, 613, -6086, 613, -6087, 628, -6087, 628, -6110, 637, -6110, 637, -6114, 655, -6114, 655, -6124, 655, -6124, 655, -6125, 659, -6125, 659, -6134, 661, -6134, 661, -6135, 772, -6135, 772, -6158, 781, -6158, 781, -6159, 796, -6159, 796, -6182, 805, -6182, 805, -6183, 820, -6183, 820, -6188, 824, -6188, 824, -6196, 823, -6196, 823, -6199, 828, -6199, 828, -6214, 831, -6214, 831, -6221, 827, -6221, 827, -6238, 831, -6238, 831, -6245, 827, -6245, 827, -6262, 831, -6262, 831, -6269, 827, -6269, 827, -6286, 831, -6286, 831, -6293, 827, -6293, 827, -6302, 829, -6302, 829, -6303, 844, -6303, 844, -6326, 853, -6326, 853, -6327, 868, -6327, 868, -6350, 877, -6350, 877, -6351, 892, -6351, 892, -6374, 901, -6374, 901, -6375, 911)
+
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_072d7")
+musica = ExtResource("2_dxywq")
+intervalo_maximo_drone = 11.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
@@ -1658,6 +2446,1060 @@ rendering_quadrant_size = 24
 position = Vector2(-468, -2)
 dados_item = ExtResource("17_g34os")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+
+[node name="ExploraJangada" type="Node2D" parent="." unique_id=247499452]
+script = ExtResource("21_ka6kb")
+modo_teste = true
+tex_jangada = ExtResource("22_je6m8")
+
+[node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1797675930]
+
+[node name="Verde0001" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1473158606]
+position = Vector2(-4564, -955)
+shape = SubResource("RectangleShape2D_pj0000")
+
+[node name="Verde0002" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=339081663]
+position = Vector2(-4564, -931)
+shape = SubResource("RectangleShape2D_pj0001")
+
+[node name="Verde0003" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=153710184]
+position = Vector2(-712, -931)
+shape = SubResource("RectangleShape2D_pj0002")
+
+[node name="Verde0004" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1692467581]
+position = Vector2(-496, -931)
+shape = SubResource("RectangleShape2D_pj0003")
+
+[node name="Verde0005" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=690620971]
+position = Vector2(-4564, -907)
+shape = SubResource("RectangleShape2D_pj0004")
+
+[node name="Verde0006" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=625901256]
+position = Vector2(-616, -907)
+shape = SubResource("RectangleShape2D_pj0005")
+
+[node name="Verde0007" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=579341423]
+position = Vector2(-3760, -907)
+shape = SubResource("RectangleShape2D_pj0006")
+
+[node name="Verde0008" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=399655412]
+position = Vector2(-3748, -883)
+shape = SubResource("RectangleShape2D_pj0007")
+
+[node name="Verde0009" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1681559892]
+position = Vector2(-640, -883)
+shape = SubResource("RectangleShape2D_pj0008")
+
+[node name="Verde0010" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=320106707]
+position = Vector2(-4564, -883)
+shape = SubResource("RectangleShape2D_pj0009")
+
+[node name="Verde0011" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1553201078]
+position = Vector2(-4072, -859)
+shape = SubResource("RectangleShape2D_pj0010")
+
+[node name="Verde0012" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1690571865]
+position = Vector2(-652, -859)
+shape = SubResource("RectangleShape2D_pj0011")
+
+[node name="Verde0013" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1271165722]
+position = Vector2(-4060, -835)
+shape = SubResource("RectangleShape2D_pj0012")
+
+[node name="Verde0014" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=286699713]
+position = Vector2(-688, -835)
+shape = SubResource("RectangleShape2D_pj0013")
+
+[node name="Verde0015" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1368073012]
+position = Vector2(-4036, -811)
+shape = SubResource("RectangleShape2D_pj0014")
+
+[node name="Verde0016" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1006070220]
+position = Vector2(-712, -811)
+shape = SubResource("RectangleShape2D_pj0015")
+
+[node name="Verde0017" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=168252793]
+position = Vector2(-3988, -787)
+shape = SubResource("RectangleShape2D_pj0016")
+
+[node name="Verde0018" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=163989047]
+position = Vector2(-760, -787)
+shape = SubResource("RectangleShape2D_pj0017")
+
+[node name="Verde0019" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=301209005]
+position = Vector2(-1876, -763)
+shape = SubResource("RectangleShape2D_pj0018")
+
+[node name="Verde0020" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=569521477]
+position = Vector2(-3928, -763)
+shape = SubResource("RectangleShape2D_pj0019")
+
+[node name="Verde0021" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=599635468]
+position = Vector2(-784, -763)
+shape = SubResource("RectangleShape2D_pj0020")
+
+[node name="Verde0022" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1185242216]
+position = Vector2(-1876, -739)
+shape = SubResource("RectangleShape2D_pj0021")
+
+[node name="Verde0023" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1392825378]
+position = Vector2(-928, -739)
+shape = SubResource("RectangleShape2D_pj0022")
+
+[node name="Verde0024" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=156985561]
+position = Vector2(-3880, -739)
+shape = SubResource("RectangleShape2D_pj0023")
+
+[node name="Verde0025" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1305264595]
+position = Vector2(-1792, -715)
+shape = SubResource("RectangleShape2D_pj0024")
+
+[node name="Verde0026" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=527000596]
+position = Vector2(-3832, -715)
+shape = SubResource("RectangleShape2D_pj0025")
+
+[node name="Verde0027" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1637640408]
+position = Vector2(-952, -715)
+shape = SubResource("RectangleShape2D_pj0026")
+
+[node name="Verde0028" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1495616196]
+position = Vector2(-3808, -691)
+shape = SubResource("RectangleShape2D_pj0027")
+
+[node name="Verde0029" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1606083910]
+position = Vector2(-1372, -691)
+shape = SubResource("RectangleShape2D_pj0028")
+
+[node name="Verde0030" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1270252923]
+position = Vector2(-3760, -667)
+shape = SubResource("RectangleShape2D_pj0029")
+
+[node name="Verde0031" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1000911954]
+position = Vector2(-1384, -667)
+shape = SubResource("RectangleShape2D_pj0030")
+
+[node name="Verde0032" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=573392624]
+position = Vector2(-1504, -643)
+shape = SubResource("RectangleShape2D_pj0031")
+
+[node name="Verde0033" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1064669077]
+position = Vector2(-3712, -643)
+shape = SubResource("RectangleShape2D_pj0032")
+
+[node name="Verde0034" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1365438422]
+position = Vector2(-2524, -619)
+shape = SubResource("RectangleShape2D_pj0033")
+
+[node name="Verde0035" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=697409992]
+position = Vector2(-2464, -595)
+shape = SubResource("RectangleShape2D_pj0034")
+
+[node name="Verde0036" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1838238661]
+position = Vector2(-2212, -571)
+shape = SubResource("RectangleShape2D_pj0035")
+
+[node name="Verde0037" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1966808229]
+position = Vector2(-2032, -547)
+shape = SubResource("RectangleShape2D_pj0036")
+
+[node name="Verde0038" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=113955983]
+position = Vector2(-2020, -523)
+shape = SubResource("RectangleShape2D_pj0037")
+
+[node name="Verde0039" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1729526405]
+position = Vector2(-2812, -499)
+shape = SubResource("RectangleShape2D_pj0038")
+
+[node name="Verde0040" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1830483678]
+position = Vector2(-544, -487)
+shape = SubResource("RectangleShape2D_pj0039")
+
+[node name="Verde0041" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=442865762]
+position = Vector2(-2716, -475)
+shape = SubResource("RectangleShape2D_pj0040")
+
+[node name="Verde0042" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1599242941]
+position = Vector2(-532, -451)
+shape = SubResource("RectangleShape2D_pj0041")
+
+[node name="Verde0043" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1007557512]
+position = Vector2(-2500, -451)
+shape = SubResource("RectangleShape2D_pj0042")
+
+[node name="Verde0044" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=830682427]
+position = Vector2(-2320, -427)
+shape = SubResource("RectangleShape2D_pj0043")
+
+[node name="Verde0045" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=696724164]
+position = Vector2(-544, -415)
+shape = SubResource("RectangleShape2D_pj0044")
+
+[node name="Verde0046" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=433889688]
+position = Vector2(-2200, -403)
+shape = SubResource("RectangleShape2D_pj0045")
+
+[node name="Verde0047" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=562382781]
+position = Vector2(-2584, -379)
+shape = SubResource("RectangleShape2D_pj0046")
+
+[node name="Verde0048" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1739591159]
+position = Vector2(-3568, -379)
+shape = SubResource("RectangleShape2D_pj0047")
+
+[node name="Verde0049" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=822831292]
+position = Vector2(-1996, -379)
+shape = SubResource("RectangleShape2D_pj0048")
+
+[node name="Verde0050" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=319494902]
+position = Vector2(-616, -379)
+shape = SubResource("RectangleShape2D_pj0049")
+
+[node name="Verde0051" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=299170184]
+position = Vector2(-640, -355)
+shape = SubResource("RectangleShape2D_pj0050")
+
+[node name="Verde0052" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=915887678]
+position = Vector2(-3556, -355)
+shape = SubResource("RectangleShape2D_pj0051")
+
+[node name="Verde0053" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=307696843]
+position = Vector2(-5272, -355)
+shape = SubResource("RectangleShape2D_pj0052")
+
+[node name="Verde0054" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=870902343]
+position = Vector2(-2020, -355)
+shape = SubResource("RectangleShape2D_pj0053")
+
+[node name="Verde0055" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1919980297]
+position = Vector2(-4984, -331)
+shape = SubResource("RectangleShape2D_pj0054")
+
+[node name="Verde0056" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=838639288]
+position = Vector2(-2032, -331)
+shape = SubResource("RectangleShape2D_pj0055")
+
+[node name="Verde0057" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1396491777]
+position = Vector2(-664, -331)
+shape = SubResource("RectangleShape2D_pj0056")
+
+[node name="Verde0058" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=668054227]
+position = Vector2(-508, -307)
+shape = SubResource("RectangleShape2D_pj0057")
+
+[node name="Verde0059" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1833294783]
+position = Vector2(-1156, -307)
+shape = SubResource("RectangleShape2D_pj0058")
+
+[node name="Verde0060" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=193309105]
+position = Vector2(-4984, -307)
+shape = SubResource("RectangleShape2D_pj0059")
+
+[node name="Verde0061" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1667087080]
+position = Vector2(-2200, -307)
+shape = SubResource("RectangleShape2D_pj0060")
+
+[node name="Verde0062" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1086607411]
+position = Vector2(-3556, -307)
+shape = SubResource("RectangleShape2D_pj0061")
+
+[node name="Verde0063" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1251541058]
+position = Vector2(-4984, -283)
+shape = SubResource("RectangleShape2D_pj0062")
+
+[node name="Verde0064" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=368062140]
+position = Vector2(-2224, -283)
+shape = SubResource("RectangleShape2D_pj0063")
+
+[node name="Verde0065" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=912896393]
+position = Vector2(-520, -271)
+shape = SubResource("RectangleShape2D_pj0064")
+
+[node name="Verde0066" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=269222132]
+position = Vector2(-5008, -259)
+shape = SubResource("RectangleShape2D_pj0065")
+
+[node name="Verde0067" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1285498232]
+position = Vector2(-3592, -259)
+shape = SubResource("RectangleShape2D_pj0066")
+
+[node name="Verde0068" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=729595552]
+position = Vector2(-2272, -259)
+shape = SubResource("RectangleShape2D_pj0067")
+
+[node name="Verde0069" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1881132953]
+position = Vector2(-2440, -235)
+shape = SubResource("RectangleShape2D_pj0068")
+
+[node name="Verde0070" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1449993687]
+position = Vector2(-3616, -235)
+shape = SubResource("RectangleShape2D_pj0069")
+
+[node name="Verde0071" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1428261053]
+position = Vector2(-5008, -235)
+shape = SubResource("RectangleShape2D_pj0070")
+
+[node name="Verde0072" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1950501472]
+position = Vector2(-3616, -211)
+shape = SubResource("RectangleShape2D_pj0071")
+
+[node name="Verde0073" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=876605304]
+position = Vector2(-5020, -211)
+shape = SubResource("RectangleShape2D_pj0072")
+
+[node name="Verde0074" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1339854303]
+position = Vector2(-2500, -211)
+shape = SubResource("RectangleShape2D_pj0073")
+
+[node name="Verde0075" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=512936598]
+position = Vector2(-508, -211)
+shape = SubResource("RectangleShape2D_pj0074")
+
+[node name="Verde0076" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1613056504]
+position = Vector2(-5020, -187)
+shape = SubResource("RectangleShape2D_pj0075")
+
+[node name="Verde0077" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=249368553]
+position = Vector2(-2524, -187)
+shape = SubResource("RectangleShape2D_pj0076")
+
+[node name="Verde0078" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=198407116]
+position = Vector2(-3604, -187)
+shape = SubResource("RectangleShape2D_pj0077")
+
+[node name="Verde0079" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1520052172]
+position = Vector2(-5056, -163)
+shape = SubResource("RectangleShape2D_pj0078")
+
+[node name="Verde0080" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=589407815]
+position = Vector2(-520, -163)
+shape = SubResource("RectangleShape2D_pj0079")
+
+[node name="Verde0081" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1760151621]
+position = Vector2(-5584, -139)
+shape = SubResource("RectangleShape2D_pj0080")
+
+[node name="Verde0082" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=721455910]
+position = Vector2(-4672, -139)
+shape = SubResource("RectangleShape2D_pj0081")
+
+[node name="Verde0083" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=271351960]
+position = Vector2(-532, -139)
+shape = SubResource("RectangleShape2D_pj0082")
+
+[node name="Verde0084" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1936780819]
+position = Vector2(-4588, -115)
+shape = SubResource("RectangleShape2D_pj0083")
+
+[node name="Verde0085" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=599914620]
+position = Vector2(-556, -115)
+shape = SubResource("RectangleShape2D_pj0084")
+
+[node name="Verde0086" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1960759513]
+position = Vector2(-5596, -115)
+shape = SubResource("RectangleShape2D_pj0085")
+
+[node name="Verde0087" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=316898920]
+position = Vector2(-2956, -127)
+shape = SubResource("RectangleShape2D_pj0086")
+
+[node name="Verde0088" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=916314859]
+position = Vector2(-5656, -91)
+shape = SubResource("RectangleShape2D_pj0087")
+
+[node name="Verde0089" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=696943772]
+position = Vector2(-4564, -91)
+shape = SubResource("RectangleShape2D_pj0088")
+
+[node name="Verde0090" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1073691209]
+position = Vector2(-712, -91)
+shape = SubResource("RectangleShape2D_pj0089")
+
+[node name="Verde0091" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1465121943]
+position = Vector2(-3124, -67)
+shape = SubResource("RectangleShape2D_pj0090")
+
+[node name="Verde0092" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1891238511]
+position = Vector2(-5692, -67)
+shape = SubResource("RectangleShape2D_pj0091")
+
+[node name="Verde0093" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=883471136]
+position = Vector2(-2188, -67)
+shape = SubResource("RectangleShape2D_pj0092")
+
+[node name="Verde0094" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=449297012]
+position = Vector2(-4444, -67)
+shape = SubResource("RectangleShape2D_pj0093")
+
+[node name="Verde0095" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=894957572]
+position = Vector2(-724, -55)
+shape = SubResource("RectangleShape2D_pj0094")
+
+[node name="Verde0096" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=862938025]
+position = Vector2(-3748, -43)
+shape = SubResource("RectangleShape2D_pj0095")
+
+[node name="Verde0097" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=549912919]
+position = Vector2(-5728, -43)
+shape = SubResource("RectangleShape2D_pj0096")
+
+[node name="Verde0098" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1539190226]
+position = Vector2(-3904, -19)
+shape = SubResource("RectangleShape2D_pj0097")
+
+[node name="Verde0099" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=673330498]
+position = Vector2(-700, -19)
+shape = SubResource("RectangleShape2D_pj0098")
+
+[node name="Verde0100" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1607147647]
+position = Vector2(-5740, -7)
+shape = SubResource("RectangleShape2D_pj0099")
+
+[node name="Verde0101" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1567907436]
+position = Vector2(-3904, 5)
+shape = SubResource("RectangleShape2D_pj0100")
+
+[node name="Verde0102" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1491645397]
+position = Vector2(-688, 5)
+shape = SubResource("RectangleShape2D_pj0101")
+
+[node name="Verde0103" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=253335723]
+position = Vector2(-4228, 29)
+shape = SubResource("RectangleShape2D_pj0102")
+
+[node name="Verde0104" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1408098873]
+position = Vector2(-676, 29)
+shape = SubResource("RectangleShape2D_pj0103")
+
+[node name="Verde0105" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1463605489]
+position = Vector2(-5764, 41)
+shape = SubResource("RectangleShape2D_pj0104")
+
+[node name="Verde0106" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=467517440]
+position = Vector2(-4228, 53)
+shape = SubResource("RectangleShape2D_pj0105")
+
+[node name="Verde0107" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1247056643]
+position = Vector2(-688, 53)
+shape = SubResource("RectangleShape2D_pj0106")
+
+[node name="Verde0108" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1665787882]
+position = Vector2(-700, 77)
+shape = SubResource("RectangleShape2D_pj0107")
+
+[node name="Verde0109" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=625727461]
+position = Vector2(-4216, 77)
+shape = SubResource("RectangleShape2D_pj0108")
+
+[node name="Verde0110" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=450904183]
+position = Vector2(-5752, 89)
+shape = SubResource("RectangleShape2D_pj0109")
+
+[node name="Verde0111" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1092696249]
+position = Vector2(-712, 101)
+shape = SubResource("RectangleShape2D_pj0110")
+
+[node name="Verde0112" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=914874363]
+position = Vector2(-3448, 101)
+shape = SubResource("RectangleShape2D_pj0111")
+
+[node name="Verde0113" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=679708537]
+position = Vector2(-1732, 101)
+shape = SubResource("RectangleShape2D_pj0112")
+
+[node name="Verde0114" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1474389012]
+position = Vector2(-4240, 101)
+shape = SubResource("RectangleShape2D_pj0113")
+
+[node name="Verde0115" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1577816546]
+position = Vector2(-3448, 125)
+shape = SubResource("RectangleShape2D_pj0114")
+
+[node name="Verde0116" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1296040476]
+position = Vector2(-5728, 125)
+shape = SubResource("RectangleShape2D_pj0115")
+
+[node name="Verde0117" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=571619987]
+position = Vector2(-724, 125)
+shape = SubResource("RectangleShape2D_pj0116")
+
+[node name="Verde0118" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1570197911]
+position = Vector2(-2392, 125)
+shape = SubResource("RectangleShape2D_pj0117")
+
+[node name="Verde0119" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=796391871]
+position = Vector2(-1732, 125)
+shape = SubResource("RectangleShape2D_pj0118")
+
+[node name="Verde0120" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1910010706]
+position = Vector2(-4360, 125)
+shape = SubResource("RectangleShape2D_pj0119")
+
+[node name="Verde0121" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1749940838]
+position = Vector2(-5668, 149)
+shape = SubResource("RectangleShape2D_pj0120")
+
+[node name="Verde0122" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1766447132]
+position = Vector2(-2404, 149)
+shape = SubResource("RectangleShape2D_pj0121")
+
+[node name="Verde0123" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=220125830]
+position = Vector2(-1720, 149)
+shape = SubResource("RectangleShape2D_pj0122")
+
+[node name="Verde0124" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=591876988]
+position = Vector2(-3448, 149)
+shape = SubResource("RectangleShape2D_pj0123")
+
+[node name="Verde0125" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1864807637]
+position = Vector2(-748, 149)
+shape = SubResource("RectangleShape2D_pj0124")
+
+[node name="Verde0126" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=168934737]
+position = Vector2(-4408, 149)
+shape = SubResource("RectangleShape2D_pj0125")
+
+[node name="Verde0127" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1828822695]
+position = Vector2(-3508, 173)
+shape = SubResource("RectangleShape2D_pj0126")
+
+[node name="Verde0128" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=777430270]
+position = Vector2(-4648, 173)
+shape = SubResource("RectangleShape2D_pj0127")
+
+[node name="Verde0129" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=961494829]
+position = Vector2(-784, 173)
+shape = SubResource("RectangleShape2D_pj0128")
+
+[node name="Verde0130" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=674969167]
+position = Vector2(-3928, 173)
+shape = SubResource("RectangleShape2D_pj0129")
+
+[node name="Verde0131" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=242138944]
+position = Vector2(-2416, 173)
+shape = SubResource("RectangleShape2D_pj0130")
+
+[node name="Verde0132" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=553082198]
+position = Vector2(-5644, 173)
+shape = SubResource("RectangleShape2D_pj0131")
+
+[node name="Verde0133" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1318009887]
+position = Vector2(-1696, 173)
+shape = SubResource("RectangleShape2D_pj0132")
+
+[node name="Verde0134" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1981985143]
+position = Vector2(-856, 197)
+shape = SubResource("RectangleShape2D_pj0133")
+
+[node name="Verde0135" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1641709159]
+position = Vector2(-2644, 197)
+shape = SubResource("RectangleShape2D_pj0134")
+
+[node name="Verde0136" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=775765611]
+position = Vector2(-5596, 197)
+shape = SubResource("RectangleShape2D_pj0135")
+
+[node name="Verde0137" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=556612023]
+position = Vector2(-4012, 197)
+shape = SubResource("RectangleShape2D_pj0136")
+
+[node name="Verde0138" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1507543818]
+position = Vector2(-4684, 197)
+shape = SubResource("RectangleShape2D_pj0137")
+
+[node name="Verde0139" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1172090968]
+position = Vector2(-5200, 221)
+shape = SubResource("RectangleShape2D_pj0138")
+
+[node name="Verde0140" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=949613032]
+position = Vector2(-4084, 221)
+shape = SubResource("RectangleShape2D_pj0139")
+
+[node name="Verde0141" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1999842598]
+position = Vector2(-2140, 221)
+shape = SubResource("RectangleShape2D_pj0140")
+
+[node name="Verde0142" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1480513881]
+position = Vector2(-2416, 245)
+shape = SubResource("RectangleShape2D_pj0141")
+
+[node name="Verde0143" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1085376852]
+position = Vector2(-5212, 257)
+shape = SubResource("RectangleShape2D_pj0142")
+
+[node name="Verde0144" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=406814401]
+position = Vector2(-2440, 269)
+shape = SubResource("RectangleShape2D_pj0143")
+
+[node name="Verde0145" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=668825839]
+position = Vector2(-2476, 293)
+shape = SubResource("RectangleShape2D_pj0144")
+
+[node name="Verde0146" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=399853838]
+position = Vector2(-5200, 293)
+shape = SubResource("RectangleShape2D_pj0145")
+
+[node name="Verde0147" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=629628540]
+position = Vector2(-5212, 317)
+shape = SubResource("RectangleShape2D_pj0146")
+
+[node name="Verde0148" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1699851660]
+position = Vector2(-2380, 317)
+shape = SubResource("RectangleShape2D_pj0147")
+
+[node name="Verde0149" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1305528893]
+position = Vector2(-5236, 341)
+shape = SubResource("RectangleShape2D_pj0148")
+
+[node name="Verde0150" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1257444916]
+position = Vector2(-2488, 341)
+shape = SubResource("RectangleShape2D_pj0149")
+
+[node name="Verde0151" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=664233310]
+position = Vector2(-2776, 365)
+shape = SubResource("RectangleShape2D_pj0150")
+
+[node name="Verde0152" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1704199939]
+position = Vector2(-5368, 377)
+shape = SubResource("RectangleShape2D_pj0151")
+
+[node name="Verde0153" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1355388860]
+position = Vector2(-700, 377)
+shape = SubResource("RectangleShape2D_pj0152")
+
+[node name="Verde0154" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1020054627]
+position = Vector2(-4264, 389)
+shape = SubResource("RectangleShape2D_pj0153")
+
+[node name="Verde0155" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1353127416]
+position = Vector2(-2392, 389)
+shape = SubResource("RectangleShape2D_pj0154")
+
+[node name="Verde0156" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=957706059]
+position = Vector2(-712, 413)
+shape = SubResource("RectangleShape2D_pj0155")
+
+[node name="Verde0157" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=877381451]
+position = Vector2(-5440, 413)
+shape = SubResource("RectangleShape2D_pj0156")
+
+[node name="Verde0158" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=570987740]
+position = Vector2(-2368, 413)
+shape = SubResource("RectangleShape2D_pj0157")
+
+[node name="Verde0159" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=397065154]
+position = Vector2(-4288, 413)
+shape = SubResource("RectangleShape2D_pj0158")
+
+[node name="Verde0160" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1194199380]
+position = Vector2(-4384, 437)
+shape = SubResource("RectangleShape2D_pj0159")
+
+[node name="Verde0161" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1159817199]
+position = Vector2(-2080, 437)
+shape = SubResource("RectangleShape2D_pj0160")
+
+[node name="Verde0162" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=295226476]
+position = Vector2(-724, 437)
+shape = SubResource("RectangleShape2D_pj0161")
+
+[node name="Verde0163" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1723029829]
+position = Vector2(-3472, 437)
+shape = SubResource("RectangleShape2D_pj0162")
+
+[node name="Verde0164" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=201181642]
+position = Vector2(-5464, 437)
+shape = SubResource("RectangleShape2D_pj0163")
+
+[node name="Verde0165" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1949204427]
+position = Vector2(-5524, 461)
+shape = SubResource("RectangleShape2D_pj0164")
+
+[node name="Verde0166" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=335469722]
+position = Vector2(-3496, 461)
+shape = SubResource("RectangleShape2D_pj0165")
+
+[node name="Verde0167" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=428224239]
+position = Vector2(-4432, 461)
+shape = SubResource("RectangleShape2D_pj0166")
+
+[node name="Verde0168" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1447430114]
+position = Vector2(-736, 461)
+shape = SubResource("RectangleShape2D_pj0167")
+
+[node name="Verde0169" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=443558720]
+position = Vector2(-2596, 461)
+shape = SubResource("RectangleShape2D_pj0168")
+
+[node name="Verde0170" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1800977478]
+position = Vector2(-4468, 485)
+shape = SubResource("RectangleShape2D_pj0169")
+
+[node name="Verde0171" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1561322282]
+position = Vector2(-2428, 485)
+shape = SubResource("RectangleShape2D_pj0170")
+
+[node name="Verde0172" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1006581620]
+position = Vector2(-760, 485)
+shape = SubResource("RectangleShape2D_pj0171")
+
+[node name="Verde0173" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1380778650]
+position = Vector2(-3496, 485)
+shape = SubResource("RectangleShape2D_pj0172")
+
+[node name="Verde0174" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=236424712]
+position = Vector2(-1540, 485)
+shape = SubResource("RectangleShape2D_pj0173")
+
+[node name="Verde0175" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=926281506]
+position = Vector2(-784, 509)
+shape = SubResource("RectangleShape2D_pj0174")
+
+[node name="Verde0176" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=919521169]
+position = Vector2(-4504, 509)
+shape = SubResource("RectangleShape2D_pj0175")
+
+[node name="Verde0177" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1379660644]
+position = Vector2(-2656, 509)
+shape = SubResource("RectangleShape2D_pj0176")
+
+[node name="Verde0178" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1105129473]
+position = Vector2(-5584, 509)
+shape = SubResource("RectangleShape2D_pj0177")
+
+[node name="Verde0179" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1236264404]
+position = Vector2(-3508, 521)
+shape = SubResource("RectangleShape2D_pj0178")
+
+[node name="Verde0180" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=639907702]
+position = Vector2(-796, 533)
+shape = SubResource("RectangleShape2D_pj0179")
+
+[node name="Verde0181" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1288043565]
+position = Vector2(-1540, 533)
+shape = SubResource("RectangleShape2D_pj0180")
+
+[node name="Verde0182" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1948510326]
+position = Vector2(-4540, 533)
+shape = SubResource("RectangleShape2D_pj0181")
+
+[node name="Verde0183" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=124655304]
+position = Vector2(-2680, 533)
+shape = SubResource("RectangleShape2D_pj0182")
+
+[node name="Verde0184" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1560897491]
+position = Vector2(-1516, 557)
+shape = SubResource("RectangleShape2D_pj0183")
+
+[node name="Verde0185" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1647738332]
+position = Vector2(-3520, 557)
+shape = SubResource("RectangleShape2D_pj0184")
+
+[node name="Verde0186" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=345997989]
+position = Vector2(-2704, 557)
+shape = SubResource("RectangleShape2D_pj0185")
+
+[node name="Verde0187" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1563961867]
+position = Vector2(-820, 557)
+shape = SubResource("RectangleShape2D_pj0186")
+
+[node name="Verde0188" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1253135002]
+position = Vector2(-5596, 557)
+shape = SubResource("RectangleShape2D_pj0187")
+
+[node name="Verde0189" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1712497800]
+position = Vector2(-4576, 569)
+shape = SubResource("RectangleShape2D_pj0188")
+
+[node name="Verde0190" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=673002724]
+position = Vector2(-5668, 581)
+shape = SubResource("RectangleShape2D_pj0189")
+
+[node name="Verde0191" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1750553201]
+position = Vector2(-2812, 581)
+shape = SubResource("RectangleShape2D_pj0190")
+
+[node name="Verde0192" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1476454985]
+position = Vector2(-856, 581)
+shape = SubResource("RectangleShape2D_pj0191")
+
+[node name="Verde0193" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=830521271]
+position = Vector2(-3616, 581)
+shape = SubResource("RectangleShape2D_pj0192")
+
+[node name="Verde0194" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=339556468]
+position = Vector2(-1468, 581)
+shape = SubResource("RectangleShape2D_pj0193")
+
+[node name="Verde0195" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=730286724]
+position = Vector2(-4612, 605)
+shape = SubResource("RectangleShape2D_pj0194")
+
+[node name="Verde0196" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1033651277]
+position = Vector2(-1216, 605)
+shape = SubResource("RectangleShape2D_pj0195")
+
+[node name="Verde0197" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=439641189]
+position = Vector2(-5812, 605)
+shape = SubResource("RectangleShape2D_pj0196")
+
+[node name="Verde0198" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1074364241]
+position = Vector2(-5332, 605)
+shape = SubResource("RectangleShape2D_pj0197")
+
+[node name="Verde0199" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=106969260]
+position = Vector2(-868, 605)
+shape = SubResource("RectangleShape2D_pj0198")
+
+[node name="Verde0200" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1650680889]
+position = Vector2(-2836, 605)
+shape = SubResource("RectangleShape2D_pj0199")
+
+[node name="Verde0201" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1980879862]
+position = Vector2(-1480, 617)
+shape = SubResource("RectangleShape2D_pj0200")
+
+[node name="Verde0202" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1645502469]
+position = Vector2(-3640, 617)
+shape = SubResource("RectangleShape2D_pj0201")
+
+[node name="Verde0203" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=665623665]
+position = Vector2(-2212, 629)
+shape = SubResource("RectangleShape2D_pj0202")
+
+[node name="Verde0204" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1175000495]
+position = Vector2(-2836, 629)
+shape = SubResource("RectangleShape2D_pj0203")
+
+[node name="Verde0205" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1736301367]
+position = Vector2(-4684, 629)
+shape = SubResource("RectangleShape2D_pj0204")
+
+[node name="Verde0206" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=483651994]
+position = Vector2(-784, 629)
+shape = SubResource("RectangleShape2D_pj0205")
+
+[node name="Verde0207" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1190238094]
+position = Vector2(-5836, 629)
+shape = SubResource("RectangleShape2D_pj0206")
+
+[node name="Verde0208" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=328515502]
+position = Vector2(-1468, 653)
+shape = SubResource("RectangleShape2D_pj0207")
+
+[node name="Verde0209" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1969424395]
+position = Vector2(-772, 653)
+shape = SubResource("RectangleShape2D_pj0208")
+
+[node name="Verde0210" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1442821943]
+position = Vector2(-2884, 653)
+shape = SubResource("RectangleShape2D_pj0209")
+
+[node name="Verde0211" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=740905300]
+position = Vector2(-3640, 653)
+shape = SubResource("RectangleShape2D_pj0210")
+
+[node name="Verde0212" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1907471163]
+position = Vector2(-4744, 653)
+shape = SubResource("RectangleShape2D_pj0211")
+
+[node name="Verde0213" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1472133587]
+position = Vector2(-2200, 653)
+shape = SubResource("RectangleShape2D_pj0212")
+
+[node name="Verde0214" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1190197738]
+position = Vector2(-784, 677)
+shape = SubResource("RectangleShape2D_pj0213")
+
+[node name="Verde0215" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1407753571]
+position = Vector2(-4792, 677)
+shape = SubResource("RectangleShape2D_pj0214")
+
+[node name="Verde0216" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=527158340]
+position = Vector2(-2968, 677)
+shape = SubResource("RectangleShape2D_pj0215")
+
+[node name="Verde0217" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=428219838]
+position = Vector2(-1432, 677)
+shape = SubResource("RectangleShape2D_pj0216")
+
+[node name="Verde0218" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=902973878]
+position = Vector2(-5848, 677)
+shape = SubResource("RectangleShape2D_pj0217")
+
+[node name="Verde0219" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1737479472]
+position = Vector2(-2872, 701)
+shape = SubResource("RectangleShape2D_pj0218")
+
+[node name="Verde0220" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=446923914]
+position = Vector2(-4816, 701)
+shape = SubResource("RectangleShape2D_pj0219")
+
+[node name="Verde0221" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1258307633]
+position = Vector2(-1000, 701)
+shape = SubResource("RectangleShape2D_pj0220")
+
+[node name="Verde0222" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1772087623]
+position = Vector2(-4240, 701)
+shape = SubResource("RectangleShape2D_pj0221")
+
+[node name="Verde0223" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1238925839]
+position = Vector2(-5860, 725)
+shape = SubResource("RectangleShape2D_pj0222")
+
+[node name="Verde0224" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=101228136]
+position = Vector2(-4876, 725)
+shape = SubResource("RectangleShape2D_pj0223")
+
+[node name="Verde0225" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1386223706]
+position = Vector2(-2380, 725)
+shape = SubResource("RectangleShape2D_pj0224")
+
+[node name="Verde0226" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=796119837]
+position = Vector2(-2392, 749)
+shape = SubResource("RectangleShape2D_pj0225")
+
+[node name="Verde0227" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1149272770]
+position = Vector2(-5956, 749)
+shape = SubResource("RectangleShape2D_pj0226")
+
+[node name="Verde0228" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=141825985]
+position = Vector2(-4888, 749)
+shape = SubResource("RectangleShape2D_pj0227")
+
+[node name="Verde0229" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=340234109]
+position = Vector2(-5980, 773)
+shape = SubResource("RectangleShape2D_pj0228")
+
+[node name="Verde0230" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=879495258]
+position = Vector2(-2452, 773)
+shape = SubResource("RectangleShape2D_pj0229")
+
+[node name="Verde0231" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1987040856]
+position = Vector2(-4900, 773)
+shape = SubResource("RectangleShape2D_pj0230")
+
+[node name="Verde0232" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1885988124]
+position = Vector2(-6052, 797)
+shape = SubResource("RectangleShape2D_pj0231")
+
+[node name="Verde0233" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1832535702]
+position = Vector2(-2476, 797)
+shape = SubResource("RectangleShape2D_pj0232")
+
+[node name="Verde0234" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=760381567]
+position = Vector2(-2500, 821)
+shape = SubResource("RectangleShape2D_pj0233")
+
+[node name="Verde0235" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=614219931]
+position = Vector2(-6064, 821)
+shape = SubResource("RectangleShape2D_pj0234")
+
+[node name="Verde0236" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=224393357]
+position = Vector2(-4912, 821)
+shape = SubResource("RectangleShape2D_pj0235")
+
+[node name="Verde0237" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=617267796]
+position = Vector2(-2524, 845)
+shape = SubResource("RectangleShape2D_pj0236")
+
+[node name="Verde0238" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1985511260]
+position = Vector2(-6076, 845)
+shape = SubResource("RectangleShape2D_pj0237")
+
+[node name="Verde0239" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1318389745]
+position = Vector2(-4924, 869)
+shape = SubResource("RectangleShape2D_pj0238")
+
+[node name="Verde0240" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=269129475]
+position = Vector2(-2536, 869)
+shape = SubResource("RectangleShape2D_pj0239")
+
+[node name="Verde0241" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=283939380]
+position = Vector2(-6064, 869)
+shape = SubResource("RectangleShape2D_pj0240")
+
+[node name="Verde0242" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1671759591]
+position = Vector2(-5656, 893)
+shape = SubResource("RectangleShape2D_pj0241")
+
+[node name="Verde0243" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1143656560]
+position = Vector2(-6064, 893)
+shape = SubResource("RectangleShape2D_pj0242")
+
+[node name="Verde0244" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1852396592]
+position = Vector2(-2428, 893)
+shape = SubResource("RectangleShape2D_pj0243")
+
+[node name="Verde0245" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=248632740]
+position = Vector2(-4936, 893)
+shape = SubResource("RectangleShape2D_pj0244")
+
+[node name="Verde0246" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1733380706]
+position = Vector2(-4912, 917)
+shape = SubResource("RectangleShape2D_pj0245")
+
+[node name="Verde0247" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1243977779]
+position = Vector2(-976, 917)
+shape = SubResource("RectangleShape2D_pj0246")
+
+[node name="Verde0248" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1744616922]
+position = Vector2(-5968, 917)
+shape = SubResource("RectangleShape2D_pj0247")
+
+[node name="Verde0249" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=370068648]
+position = Vector2(-1732, 917)
+shape = SubResource("RectangleShape2D_pj0248")
+
+[node name="Verde0250" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=375718574]
+position = Vector2(-2476, 917)
+shape = SubResource("RectangleShape2D_pj0249")
+
+[node name="Verde0251" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1516804102]
+position = Vector2(-3280, 917)
+shape = SubResource("RectangleShape2D_pj0250")
+
+[node name="Verde0252" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1120661135]
+position = Vector2(-5956, 941)
+shape = SubResource("RectangleShape2D_pj0251")
+
+[node name="Verde0253" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1280694232]
+position = Vector2(-1792, 941)
+shape = SubResource("RectangleShape2D_pj0252")
+
+[node name="Verde0254" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=454607445]
+position = Vector2(-1000, 941)
+shape = SubResource("RectangleShape2D_pj0253")
+
+[node name="Verde0255" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=669204769]
+position = Vector2(-3280, 941)
+shape = SubResource("RectangleShape2D_pj0254")
+
+[node name="Verde0256" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1233170817]
+position = Vector2(-4900, 941)
+shape = SubResource("RectangleShape2D_pj0255")
+
+[node name="Verde0257" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1973535693]
+position = Vector2(-2488, 941)
+shape = SubResource("RectangleShape2D_pj0256")
+
+[node name="Verde0258" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1402650515]
+position = Vector2(-5944, 965)
+shape = SubResource("RectangleShape2D_pj0257")
+
+[node name="Verde0259" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1008681807]
+position = Vector2(-4840, 965)
+shape = SubResource("RectangleShape2D_pj0258")
+
+[node name="Verde0260" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=554833168]
+position = Vector2(-5932, 989)
+shape = SubResource("RectangleShape2D_pj0259")
+
+[node name="colisoes" type="Node2D" parent="." unique_id=1258129533]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="colisoes" unique_id=1721919657]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisoes/StaticBody2D" unique_id=1667515029]
+shape = SubResource("ConcavePolygonShape2D_colpj")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
