@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://cnjnum311hgje"]
+
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_eqx6m"]
+
+[resource]
+script = ExtResource("1_eqx6m")
+id_missao = "buscarsementes"
+titulo = "Sementemeno"
+descricao = "Busque todas as sementes pelo mundo"
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

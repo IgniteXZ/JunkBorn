@@ -8,6 +8,7 @@ extends Control
 @export var botaoavancapag: Button
 
 @export var bloquear_paginas: bool = false
+@export var liberar_pags: bool = false
 @export var rasgada_esquerda: Texture2D
 @export var rasgada_direita: Texture2D
 @export var texto_bloqueado: String = ""
@@ -43,10 +44,20 @@ func update_book_pages() -> void:
 	botaovoltapag.disabled = (current_left_index == 0)
 	botaoavancapag.disabled = (right_index >= pages.size() - 1)
 
+
 func _mostrar_pagina(foto: TextureRect, texto: RichTextLabel, data: Dictionary, rasgada: Texture2D) -> void:
-	var liberada = not bloquear_paginas or Global.paginas_coletadas.has(data.get("id", ""))
+	var liberada: bool
+
+	if liberar_pags:
+		# Diário: libera todas as páginas ao coletar a Semente 1
+		liberada = Global.itens_coletados.has("fonte_semente_1")
+	else:
+		# Livro de botânica: mantém a coleta individual
+		liberada = not bloquear_paginas or Global.paginas_coletadas.has(data.get("id", ""))
+
 	texto.text = data.get("text", "") if liberada else texto_bloqueado
 	foto.texture = data.get("illustration") if liberada else rasgada
+
 
 func _on_prev_pressed() -> void:
 	if current_left_index >= 2:

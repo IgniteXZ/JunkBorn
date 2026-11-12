@@ -6,10 +6,16 @@ extends Control
 
 
 var posicaocidade: Array[Vector2] = [
-	Vector2(0.777, 0.255), #vila
-	Vector2(0.60, 0.21), #deserto1
-	Vector2(0.40, 0.65),  
-	Vector2(0.81, 0.196)  #forja
+	Vector2(0.777, 0.255), #vila 0
+	Vector2(0.60, 0.21), #deserto1 1
+	Vector2(0.40, 0.65),  #deserto2 2
+	Vector2(0.81, 0.196),  #forja 3
+	Vector2(0.40, 0.65),  #desertoFonte 4
+	Vector2(0.40, 0.65),  #pantano quimico 5
+	Vector2(0.40, 0.65),  #fonte 6
+
+
+
 ]
 
 func _process(_delta: float) -> void:
