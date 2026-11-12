@@ -4,7 +4,6 @@ extends Node2D
 @onready var Player = $"y-sort/Character"
 @export var musica: AudioStream
 func _ready() -> void:
-	print(Dialogic.VAR.has("FinalSecreto.BonecoNoBolso"))
 	Global.cidade_atual = 0
 	AudioManager.tocar_musica(musica)
 	

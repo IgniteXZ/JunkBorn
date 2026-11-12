@@ -44,7 +44,7 @@ func parar_musica() -> void:
 		current_tween.kill()
 		
 	current_tween = create_tween()
-	current_tween.tween_property(player, "volume_db", -80.0, 3.0)
+	current_tween.tween_property(player, "volume_db", -80.0, 0.7)
 	await current_tween.finished
 	player.stop()
 	
