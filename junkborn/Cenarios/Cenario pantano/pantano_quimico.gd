@@ -10,6 +10,7 @@ var drone_scene: PackedScene = preload("res://Inimigo/Drone/drone.tscn")
 
 
 func _ready() -> void:
+
 	AudioManager.tocar_musica(musica)
 	randomize()
 	_spawn_drone_periodicamente()
@@ -43,3 +44,5 @@ func _spawn_drone() -> void:
 	var angulo := randf_range(0.0, TAU)
 	var distancia := randf_range(145.0, 165.0)
 	drone.global_position = jogador.global_position + Vector2.RIGHT.rotated(angulo) * distancia
+	Global.cidade_atual = 5
+

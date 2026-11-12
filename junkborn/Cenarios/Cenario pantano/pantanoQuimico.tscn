@@ -2414,6 +2414,7 @@ y_sort_enabled = true
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("10_072d7")]
 position = Vector2(715, -702)
+scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
 visible = false

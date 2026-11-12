@@ -31,6 +31,10 @@ func _process(_delta: float) -> void:
 		limit_bottom =1550
 		limit_right = 1595
 		limit_left = -3345
+	elif  Global.cidade_atual == 5:
+		limit_bottom =975
+		limit_right = 785
+		limit_left = -6532
 		
 		
 	drag_horizontal_enabled = true
