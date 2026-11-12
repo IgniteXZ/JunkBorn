@@ -1,10 +1,46 @@
 [gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://cnjnum311hgje"]
 
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_eqx6m"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_1"]
+script = ExtResource("2_destino")
+regiao_id = 6
+titulo = "Semente 1 — Fonte"
+id_item_coletado = "fonte_semente_1"
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_2"]
+script = ExtResource("2_destino")
+titulo = "Semente das Minas — defina a posicao no mapa"
+id_item_coletado = "0"
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_3"]
+script = ExtResource("2_destino")
+regiao_id = 2
+titulo = "Semente do Deserto 2"
+id_item_coletado = "1"
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_4"]
+script = ExtResource("2_destino")
+regiao_id = 5
+titulo = "Semente do Pantano Quimico"
+id_item_coletado = "2"
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_5"]
+script = ExtResource("2_destino")
+titulo = "Semente ainda sem cena posicionada"
+id_item_coletado = "3"
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_6"]
+script = ExtResource("2_destino")
+regiao_id = 1
+titulo = "Semente do Deserto 1"
+id_item_coletado = "4"
 
 [resource]
 script = ExtResource("1_eqx6m")
 id_missao = "buscarsementes"
 titulo = "Sementemeno"
 descricao = "Busque todas as sementes pelo mundo"
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_buscarsementes_1"), SubResource("DestinoMissaoMapa_buscarsementes_2"), SubResource("DestinoMissaoMapa_buscarsementes_3"), SubResource("DestinoMissaoMapa_buscarsementes_4"), SubResource("DestinoMissaoMapa_buscarsementes_5"), SubResource("DestinoMissaoMapa_buscarsementes_6")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

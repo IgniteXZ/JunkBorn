@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bviw6438to0ub"]
 
-[ext_resource type="Script" uid="uid://d2paon6vh6pw7" path="res://deserto_1.gd" id="1_pmyn0"]
+[ext_resource type="Script" uid="uid://1tgl8sxxb1f" path="res://Cenarios/cenario deserto 2/deserto_2.gd" id="1_pmyn0"]
 [ext_resource type="Texture2D" uid="uid://dcccvktrojj0x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset-palha-terra.png" id="2_c82f6"]
 [ext_resource type="Texture2D" uid="uid://n575n5pnc2xf" path="res://Cenarios/CenariosDeserto/tileset/tileset pedrareia.png" id="3_cnavx"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="4_q5e38"]

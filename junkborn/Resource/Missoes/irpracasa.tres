@@ -1,10 +1,17 @@
 [gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://vjpqq3nwp6pj"]
 
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_5oib8"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_irpracasa_1"]
+script = ExtResource("2_destino")
+regiao_id = 0
+titulo = "Casa do Filomeno"
 
 [resource]
 script = ExtResource("1_5oib8")
 id_missao = "irpracasa"
 titulo = "Lar, doce lar"
 descricao = "Vá para sua casa."
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_irpracasa_1")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

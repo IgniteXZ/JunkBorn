@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c28pqx2ew88a7"]
 
+[ext_resource type="Script" uid="uid://rf5vp7acbrus" path="res://Cenarios/cenario desertoFonte/deserto_fonte.gd" id="1_ec6ab"]
 [ext_resource type="Texture2D" uid="uid://eu5h3ougkq2w" path="res://Cenarios/cenario desertoFonte/tileset terrapedra.png" id="2_h1eus"]
 [ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_h1lxh"]
 [ext_resource type="Texture2D" uid="uid://fmary4la52e4" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa.png" id="3_26iue"]
@@ -1072,6 +1073,7 @@ radius = 91.39545
 height = 311.15027
 
 [node name="Node2D2" type="Node2D" unique_id=240260216]
+script = ExtResource("1_ec6ab")
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1761516652]
 z_index = -1

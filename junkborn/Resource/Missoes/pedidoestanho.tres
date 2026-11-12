@@ -1,10 +1,17 @@
 [gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://djioyxq6xuqs1"]
 
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_u4mlx"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_pedidoestanho_1"]
+script = ExtResource("2_destino")
+regiao_id = 0
+titulo = "Quarto do Sr. Estanho"
 
 [resource]
 script = ExtResource("1_u4mlx")
 id_missao = "pedidoestanho"
 titulo = "Pedido do Avô"
 descricao = "Procure os livros que Sr. Estanho pediu."
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_pedidoestanho_1")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

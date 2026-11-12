@@ -1,10 +1,17 @@
 [gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://3degtyfbiqwv"]
 
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_230gw"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_explorardeserto_1"]
+script = ExtResource("2_destino")
+regiao_id = 6
+titulo = "Explore o Deserto"
 
 [resource]
 script = ExtResource("1_230gw")
 id_missao = "explorardeserto"
 titulo = "Terras raras"
 descricao = "Explore o deserto em busca de respostas"
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_explorardeserto_1")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

@@ -1049,8 +1049,9 @@ position = Vector2(-487, 843)
 rotation = -0.028361078
 scale = Vector2(1.3892792, -0.57244706)
 script = ExtResource("18_6u4ac")
-timeline = "caminhoerrado"
 automatico = true
+variavel_necessaria = "deserto2liberado"
+timeline_bloqueado = "caminhoerrado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50367244]
 position = Vector2(49.45726, 42.032272)

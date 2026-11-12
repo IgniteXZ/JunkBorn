@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkh8j1xovnmhy"]
 
 [ext_resource type="Script" uid="uid://cws57itrk6ugj" path="res://HUD/scripts/mapamundi.gd" id="1_f50jw"]
+[ext_resource type="Script" path="res://HUD/scripts/mapa_missoes.gd" id="3_missao"]
 [ext_resource type="Texture2D" uid="uid://b6r8lh3o8s02x" path="res://Sprites/FilomenoBetinhaMogado.png" id="2_0dxcv"]
 [ext_resource type="Texture2D" uid="uid://jy2fb674xvsf" path="res://HUD/sprites/mapa.png" id="2_f50jw"]
 
@@ -41,3 +42,13 @@ stretch_mode = 5
 position = Vector2(2027.1915, 410.3625)
 scale = Vector2(2, 1.844)
 texture = ExtResource("2_0dxcv")
+
+[node name="MarcadoresMissoes" type="Control" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_missao")

@@ -16,7 +16,6 @@ func completar_missao(id: String) -> void:
 			missao.concluida = true
 			missao_concluida.emit(missao)
 
-# Atalho para o Dialogic e para qualquer script: GerenciadorMissoes.iniciar("dormir")
 func iniciar(id: String) -> void:
 	var caminho: String = "res://Resource/Missoes/%s.tres" % id
 	if ResourceLoader.exists(caminho):

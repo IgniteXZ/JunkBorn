@@ -1,10 +1,17 @@
 [gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://rfvyhorvcw0a"]
 
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_ndmjw"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="DestinoMissaoMapa_fazercanos_1"]
+script = ExtResource("2_destino")
+regiao_id = 2
+titulo = "Deserto Inferior"
 
 [resource]
 script = ExtResource("1_ndmjw")
 id_missao = "fazercanos"
 titulo = "Água para vila"
 descricao = "Busque material no deserto para fabricar canos "
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_fazercanos_1")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"
