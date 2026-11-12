@@ -684,11 +684,11 @@ sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
 radius = 56.400356
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qrw66"]
-radius = 61.008198
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p4k"]
+size = Vector2(120, 254)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fpo1d"]
-radius = 55.00909
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnqts"]
+size = Vector2(133.18164, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
@@ -894,19 +894,24 @@ script = ExtResource("11_t0mu4")
 shape = SubResource("CircleShape2D_ce1y2")
 
 [node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
+visible = false
 position = Vector2(-4184, 12)
 texture = ExtResource("17_dhrox")
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDesertoFonte" unique_id=1978442284]
 script = ExtResource("18_6u4ac")
+automatico = true
 cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
 spawn_destino = "spawnsDesertoFonte/entradaDesertoFonte"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaDesertoFonte/Area2D" unique_id=947339904]
-shape = SubResource("CircleShape2D_qrw66")
+position = Vector2(50, 25)
+shape = SubResource("RectangleShape2D_g4p4k")
 
 [node name="entradaDeserto2" type="Sprite2D" parent="passagemdeCena" unique_id=283236006]
-position = Vector2(-661, 2352)
+visible = false
+position = Vector2(-693, 2352)
+scale = Vector2(7.140625, 1)
 texture = ExtResource("10_tk3gm")
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDeserto2" unique_id=1955715949]
@@ -915,8 +920,8 @@ cena_destino = "res://Cenarios/cenario deserto 2/deserto2.tscn"
 spawn_destino = "spawnsDeserto2/entradaDeserto2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaDeserto2/Area2D" unique_id=1773968306]
-position = Vector2(2, -1)
-shape = SubResource("CircleShape2D_fpo1d")
+position = Vector2(6.5120354, -66)
+shape = SubResource("RectangleShape2D_dnqts")
 
 [node name="spawnsDeserto" type="Node2D" parent="." unique_id=1250606799]
 

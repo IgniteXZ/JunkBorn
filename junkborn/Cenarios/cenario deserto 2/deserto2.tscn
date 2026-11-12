@@ -11,9 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ccqjw0d1jmtwh" path="res://CenarioAssets/assets/Cenario1.1/TileSet/monteColetaMini.png" id="8_cnavx"]
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="8_u0inf"]
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="9_ym8xy"]
-[ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="10_rm03r"]
 [ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_gi7v4"]
-[ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="12_dh8xp"]
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_5owje"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_ad0gh"]
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="15_37rfj"]
@@ -726,12 +724,6 @@ sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 [sub_resource type="CircleShape2D" id="CircleShape2D_tb5fl"]
 radius = 59.03389
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
-radius = 56.400356
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_m5a1v"]
-radius = 61.846584
-
 [sub_resource type="Resource" id="Resource_of28l"]
 script = ExtResource("15_37rfj")
 id = 1
@@ -806,18 +798,12 @@ script = ExtResource("11_gi7v4")
 mini_game_coleta = NodePath("../../../ui_coleta/MiniGameColeta")
 jogador = NodePath("../../../y-sort/Character")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=33387605]
-shape = SubResource("CircleShape2D_tb5fl")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1027415029]
 position = Vector2(135, 691)
 shape = SubResource("CircleShape2D_tb5fl")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1321418261]
 position = Vector2(-198, 989)
-shape = SubResource("CircleShape2D_tb5fl")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=487993750]
 shape = SubResource("CircleShape2D_tb5fl")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=1338803971]
@@ -920,24 +906,6 @@ shape = SubResource("CircleShape2D_tb5fl")
 position = Vector2(-180, 1193)
 shape = SubResource("CircleShape2D_tb5fl")
 
-[node name="saidaDesertoVila" type="Sprite2D" parent="passagemdeCena" unique_id=385324499]
-position = Vector2(627, 33)
-
-[node name="Area2D" type="Area2D" parent="passagemdeCena/saidaDesertoVila" unique_id=1446586386]
-script = ExtResource("12_dh8xp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDesertoVila/Area2D" unique_id=169427568]
-shape = SubResource("CircleShape2D_ce1y2")
-
-[node name="minGameCano" type="Sprite2D" parent="passagemdeCena" unique_id=1797226633]
-position = Vector2(-459, 616)
-texture = ExtResource("10_rm03r")
-
-[node name="Area2D" type="Area2D" parent="passagemdeCena/minGameCano" unique_id=1110741888]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/minGameCano/Area2D" unique_id=589286028]
-shape = SubResource("CircleShape2D_m5a1v")
-
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10
 
@@ -947,11 +915,6 @@ visible = false
 [node name="DialogoColeta" parent="ui_coleta/MiniGameColeta" index="3" unique_id=246670327]
 layer = 100
 visible = false
-
-[node name="spawnsDeserto" type="Node2D" parent="." unique_id=1250606799]
-
-[node name="sairVilaParaDeserto" type="Marker2D" parent="spawnsDeserto" unique_id=1005998621]
-position = Vector2(518, 41)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_ad0gh")]
 position = Vector2(-1406, 100)
@@ -974,8 +937,6 @@ position = Vector2(225, -409)
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
-[connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
-[connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
 [connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]

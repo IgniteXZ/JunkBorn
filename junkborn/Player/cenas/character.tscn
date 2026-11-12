@@ -48,6 +48,20 @@ shadow_color = Color(0, 0, 0, 0.4)
 shadow_size = 4
 shadow_offset = Vector2(3, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seeds_bg"]
+bg_color = Color(0.72, 0.65, 0.44, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_seeds_fill"]
+bg_color = Color(0.43, 0.57, 0.25, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(42, 16)
 
@@ -808,7 +822,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpo1d")
 
-[node name="Texto" type="RichTextLabel" parent="ui_canvas/MissaoHUD/Papel" unique_id=247844075]
+[node name="Conteudo" type="VBoxContainer" parent="ui_canvas/MissaoHUD/Papel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Texto" type="RichTextLabel" parent="ui_canvas/MissaoHUD/Papel/Conteudo" unique_id=247844075]
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.2901961, 0.20392157, 0.0627451, 1)
@@ -817,6 +836,39 @@ theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+
+[node name="ProgressoSementes" type="HBoxContainer" parent="ui_canvas/MissaoHUD/Papel/Conteudo"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Titulo" type="Label" parent="ui_canvas/MissaoHUD/Papel/Conteudo/ProgressoSementes"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.40, 0.28, 0.13, 1)
+theme_override_fonts/font = ExtResource("9_e40vv")
+theme_override_font_sizes/font_size = 10
+text = "Sementes"
+
+[node name="Barra" type="ProgressBar" parent="ui_canvas/MissaoHUD/Papel/Conteudo/ProgressoSementes"]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+max_value = 6.0
+step = 0.01
+show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxFlat_seeds_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_seeds_fill")
+
+[node name="Contador" type="Label" parent="ui_canvas/MissaoHUD/Papel/Conteudo/ProgressoSementes"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.29, 0.2, 0.06, 1)
+theme_override_fonts/font = ExtResource("9_e40vv")
+theme_override_font_sizes/font_size = 10
+text = "0/6"
 
 [node name="Aba" type="Label" parent="ui_canvas/MissaoHUD" unique_id=1291241702]
 layout_mode = 0

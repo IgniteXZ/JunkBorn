@@ -1,5 +1,5 @@
 join Filomeno (Normal) left
 Filomeno (Normal): EU sou o filosigma
 set {podeSairFonte} = true
-do GerenciadorMissoes.iniciar("buscarsementes")
 do GerenciadorMissoes.iniciar("fazercanos")
+do GerenciadorMissoes.iniciar("buscarsementes")

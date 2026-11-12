@@ -7,8 +7,15 @@ const DURACAO_AVISO := 3500
 const TAM_TITULO := 24
 const TAM_DESC := 18     # descrição maior (era 16)
 
+# Todas as sementes da missao, incluindo a primeira da Fonte.
+# Os demais IDs (0 a 4) sao usados em outras cenas do projeto.
+const IDS_SEMENTES: Array[String] = ["fonte_semente_1", "0", "1", "2", "3", "4"]
+
 @onready var papel: PanelContainer = $Papel
-@onready var texto: RichTextLabel = $Papel/Texto
+@onready var texto: RichTextLabel = $Papel/Conteudo/Texto
+@onready var progresso_sementes: HBoxContainer = $Papel/Conteudo/ProgressoSementes
+@onready var barra_sementes: ProgressBar = $Papel/Conteudo/ProgressoSementes/Barra
+@onready var contador_sementes: Label = $Papel/Conteudo/ProgressoSementes/Contador
 @onready var aba: Label = $Aba
 
 var _hover: bool = false
@@ -16,6 +23,8 @@ var _fixado: bool = false
 var _aberto: bool = false
 var _tween: Tween
 var _ultimo: String = ""
+var _valor_sementes_anterior: int = -1
+var _tween_sementes: Tween
 var _aviso_pendente: bool = false
 var _aviso_ate: int = 0
 var _novas: Dictionary = {}       # missão -> ms em que o "NOVA!" some (-1 = ainda não mostrado)
@@ -51,6 +60,8 @@ func _process(_delta: float) -> void:
 			_aberto = false
 			_animar()
 		return
+
+	_atualizar_progresso_sementes()
 
 	if _aviso_pendente:
 		_aviso_pendente = false
@@ -106,6 +117,45 @@ func _atualizar_texto(novo: String) -> void:
 	texto.text = novo
 	await get_tree().process_frame
 	papel.reset_size()
+
+func _atualizar_progresso_sementes() -> void:
+	# Mostra a barra somente se a missão de sementes estiver ativa
+	# (ou nos segundos em que uma missão concluída ainda aparece no post-it).
+	var mostrar_barra := false
+	for missao in GerenciadorMissoes.missoes_ativas:
+		if missao.id_missao == "buscarsementes":
+			mostrar_barra = not missao.concluida or _concluidas.has(missao)
+			break
+
+	if progresso_sementes.visible != mostrar_barra:
+		progresso_sementes.visible = mostrar_barra
+		papel.reset_size()
+
+	if not mostrar_barra:
+		return
+
+	# Usa o registro global: sementes repetidas não aumentam a contagem.
+	var total_coletadas := 0
+	for id_semente in IDS_SEMENTES:
+		if Global.itens_coletados.has(id_semente):
+			total_coletadas += 1
+
+	contador_sementes.text = "%d/%d" % [total_coletadas, IDS_SEMENTES.size()]
+
+	if total_coletadas == _valor_sementes_anterior:
+		return
+
+	if _tween_sementes and _tween_sementes.is_valid():
+		_tween_sementes.kill()
+
+	# Se uma semente foi coletada após a primeira exibição, abre o post-it.
+	if _valor_sementes_anterior >= 0 and total_coletadas > _valor_sementes_anterior:
+		_aviso_pendente = true
+
+	_valor_sementes_anterior = total_coletadas
+	_tween_sementes = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	_tween_sementes.tween_property(barra_sementes, "value", float(total_coletadas), 0.45)
+
 
 func _pulsar() -> void:
 	aba.pivot_offset = aba.size / 2.0
