@@ -20,7 +20,9 @@ func _get_drag_data(position: Vector2):
 		"sprite" : $sprite.texture,
 		"amount" : $amount.text,
 		"backup" : self,       # Guarda uma referência para este próprio slot (para caso precise reverter)
-		"item"   : item_data   # Guarda os dados do recurso do item
+		"item"   : item_data,  # Guarda os dados do recurso do item
+		"item_id": get_meta("item_id", -1),
+		"protegido_drone": bool(get_meta("protegido_drone", false))
 	}
 
 	# Salva os dados no backup temporário
@@ -52,6 +54,15 @@ func set_empty_slot() -> void:
 	$sprite.texture = null
 	$amount.text = ""
 	item_data = null
+	_aplicar_metadados(-1, false)
+
+
+func _aplicar_metadados(id: int, protegido: bool) -> void:
+	if id >= 0:
+		set_meta("item_id", id)
+	elif has_meta("item_id"):
+		remove_meta("item_id")
+	set_meta("protegido_drone", protegido)
 
 # Função nativa do Godot que valida se este slot pode receber o item que está sendo solto em cima dele
 func _can_drop_data(_position: Vector2, data) -> bool:
@@ -70,19 +81,26 @@ func _drop_data(_position: Vector2, data) -> void:
 		# Garante que o item_data seja mantido se estivesse vazio
 		if item_data == null and "item" in data:
 			item_data = data["item"]
+		set_meta("protegido_drone", bool(get_meta("protegido_drone", false)) or bool(data.get("protegido_drone", false)))
+		if not has_meta("item_id") and int(data.get("item_id", -1)) >= 0:
+			set_meta("item_id", int(data["item_id"]))
 	else:
 		# Se os itens forem diferentes, faz a troca (swap) de posições
 		# O conteúdo atual deste slot vai para o slot de origem de onde o item veio (o backup)
+		var id_antigo := int(get_meta("item_id", -1))
+		var protegido_antigo := bool(get_meta("protegido_drone", false))
 		data.backup.get_node("sprite").texture = $sprite.texture
 		data.backup.get_node("amount").text = $amount.text
 		if "item_data" in data.backup:
 			data.backup.item_data = item_data
-		
-		# O item que estava sendo arrastado assume o lugar neste slot
+		data.backup._aplicar_metadados(id_antigo, protegido_antigo)
+
+		# O item arrastado assume seu lugar com seu ID e protecao originais.
 		$sprite.texture = data.sprite
 		$amount.text = data.amount
 		if "item" in data:
 			item_data = data["item"]
+		_aplicar_metadados(int(data.get("item_id", -1)), bool(data.get("protegido_drone", false)))
 			
 	# Se o inventário principal tiver a função de salvar, atualiza o arquivo de save automaticamente
 	if has_node("../../..") and get_node("../../..").has_method("salvar_inventario"):
@@ -99,6 +117,7 @@ func _notification(what):
 			$amount.text = drag_backup["amount"]
 			if "item" in drag_backup:
 				item_data = drag_backup["item"]
+			_aplicar_metadados(int(drag_backup.get("item_id", -1)), bool(drag_backup.get("protegido_drone", false)))
 				
 			# Salva o inventário para registrar que o item retornou ao lugar
 			if has_node("../../..") and get_node("../../..").has_method("salvar_inventario"):

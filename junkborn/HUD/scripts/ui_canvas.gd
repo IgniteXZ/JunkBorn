@@ -44,10 +44,27 @@ func _atualizar_tooltip() -> void:
 		tooltip.reset_size()
 		tooltip.position = tooltip.get_global_mouse_position() + Vector2(16, 16)
 
-# coletar item no chão
+# Reconhece sementes pelo tipo de item, nunca pelo ID numerico (que pode se repetir).
+func _nome_e_semente(nome: String) -> bool:
+	return nome.to_lower().contains("semente")
 
-func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
+
+func _slot_protegido_drone(slot: Node) -> bool:
+	if bool(slot.get_meta("protegido_drone", false)):
+		return true
+
+	if "item_data" in slot and slot.item_data != null:
+		if _nome_e_semente(str(slot.item_data.nome)):
+			return true
+
+	var textura = slot.get_node("sprite").texture
+	return textura != null and _nome_e_semente(str(Global.nomes_itens.get(textura, "")))
+
+
+# coletar item no chão
+func add_item_inventory(ID: int, sprite: Texture, nome: String = "", protegido_drone: bool = false) -> bool:
 	var slots = $inventory/GridContainer.get_children()
+	var protegido := protegido_drone or _nome_e_semente(nome)
 
 	# Guarda o nome para o tooltip
 	if nome != "":
@@ -58,6 +75,8 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 		if slot.get_node("sprite").texture == sprite:
 			var quantidade = int(slot.get_node("amount").text)
 			slot.get_node("amount").text = str(quantidade + 1)
+			# Nunca perde a protecao ao empilhar outro item com a mesma textura.
+			slot.set_meta("protegido_drone", protegido or _slot_protegido_drone(slot))
 
 			salvar_inventario()
 			return true
@@ -68,6 +87,7 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 			slot.get_node("sprite").texture = sprite
 			slot.get_node("amount").text = "1"
 			slot.set_meta("item_id", ID)
+			slot.set_meta("protegido_drone", protegido)
 
 			salvar_inventario()
 			return true
@@ -77,12 +97,17 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 
 
 
-# Apaga todos os itens do inventário e sincroniza o estado global.
-func limpar_inventario_completo() -> void:
+# Fecha telas durante a colisao com drone, sem afetar o conteudo do inventario.
+func fechar_interfaces_para_drone() -> void:
 	$inventory.hide()
 	$inventory/ui_livro/Livro.hide()
 	$inventory/ui_livro/Livro2.hide()
 	$"../CanvaMapa/Mapa".hide()
+
+
+# Funcao antiga mantida por compatibilidade; drones nao a chamam mais.
+func limpar_inventario_completo() -> void:
+	fechar_interfaces_para_drone()
 
 	for slot in $inventory/GridContainer.get_children():
 		limpar_slot(slot)
@@ -90,7 +115,7 @@ func limpar_inventario_completo() -> void:
 
 
 # Mostra um aviso fofo após a penalidade do drone.
-func mostrar_mensagem_perda() -> void:
+func mostrar_mensagem_perda(roubou_item: bool = true) -> void:
 	var overlay := Control.new()
 	overlay.name = "MensagemPerdaItens"
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -118,7 +143,11 @@ func mostrar_mensagem_perda() -> void:
 	overlay.add_child(painel)
 
 	var texto := Label.new()
-	texto.text = "♡ A-Ah... o drone te pegou! ♡\nVocê perdeu todos os seus itens..."
+	texto.text = (
+		" A-Ah... o drone te pegou! \nVocê perdeu 1 item..."
+		if roubou_item else
+		" O drone te pegou! \nMas não havia nenhum item comum para roubar."
+	)
 	texto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	texto.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	texto.add_theme_color_override("font_color", Color(1.0, 0.82, 0.93, 1.0))
@@ -143,20 +172,28 @@ func remover_item_por_id(ID: int) -> bool:
 
 	return false # Não achou nenhum item com esse ID
 
-# remove um item aleatório do inventário (só entre os slots ocupados)
+# Remove UMA unidade de UM item comum aleatorio. Sementes nunca entram no sorteio.
 func remover_item_aleatorio() -> bool:
-	var slots_ocupados: Array = []
+	fechar_interfaces_para_drone()
+	var candidatos: Array[Node] = []
 
 	for slot in $inventory/GridContainer.get_children():
-		if slot.get_node("sprite").texture != null:
-			slots_ocupados.append(slot)
-			
+		if slot.get_node("sprite").texture == null:
+			continue
+		if _slot_protegido_drone(slot):
+			continue
+		candidatos.append(slot)
 
-	if slots_ocupados.is_empty():
-		return false # Inventário vazio, nada pra remover
+	if candidatos.is_empty():
+		return false
 
-	var slot_escolhido = slots_ocupados[randi() % slots_ocupados.size()]
-	limpar_slot(slot_escolhido)
+	var escolhido: Node = candidatos.pick_random()
+	var quantidade: int = max(1, int(escolhido.get_node("amount").text))
+	if quantidade > 1:
+		escolhido.get_node("amount").text = str(quantidade - 1)
+	else:
+		limpar_slot(escolhido)
+
 	salvar_inventario()
 	return true
 
@@ -168,6 +205,8 @@ func limpar_slot(slot: Node) -> void:
 		slot.item_data = null
 	if slot.has_meta("item_id"):
 		slot.remove_meta("item_id")
+	if slot.has_meta("protegido_drone"):
+		slot.remove_meta("protegido_drone")
 
 # dados dos itens salvos globalmente (todas cenas)
 func salvar_inventario() -> void:
@@ -176,10 +215,10 @@ func salvar_inventario() -> void:
 		Global.itens.append({
 			"sprite": slot.get_node("sprite").texture,
 			"amount": slot.get_node("amount").text,
-			"item_id": slot.get_meta("item_id") if slot.has_meta("item_id") else -1
+			"item_id": slot.get_meta("item_id") if slot.has_meta("item_id") else -1,
+			"protegido_drone": _slot_protegido_drone(slot)
 		})
 
-# carregar inventario atualizado ao trocar de cena
 func carregar_inventario() -> void:
 	var slots = $inventory/GridContainer.get_children()
 
@@ -194,8 +233,15 @@ func carregar_inventario() -> void:
 
 		if dados.has("item_id") and dados["item_id"] != -1:
 			slots[i].set_meta("item_id", dados["item_id"])
+		else:
+			if slots[i].has_meta("item_id"):
+				slots[i].remove_meta("item_id")
+
+		var protegido := bool(dados.get("protegido_drone", false))
+		if not protegido and dados["sprite"] != null:
+			protegido = _nome_e_semente(str(Global.nomes_itens.get(dados["sprite"], "")))
+		slots[i].set_meta("protegido_drone", protegido)
 			
-# Remove do inventário todos os itens com essa textura e devolve a quantidade total
 func remover_itens_por_textura(textura: Texture2D) -> int:
 	var total := 0
 	for slot in $inventory/GridContainer.get_children():

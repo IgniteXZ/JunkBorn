@@ -60,6 +60,21 @@ func _ao_sair(body):
 		reativar_colisao()
 
 
+# Retorno ao ponto seguro apos a captura pelo drone, exclusivamente no pantano.
+func encerrar_exploracao_por_drone() -> void:
+	Global.chamarJangada = false
+	aberto = false
+	jogador_dentro = false
+	if is_instance_valid(aviso):
+		aviso.visible = false
+	reativar_colisao()
+
+
+func _exit_tree() -> void:
+	# A jangada nao deve continuar ativa ao mudar para outra cena.
+	Global.chamarJangada = false
+
+
 func obter_slots() -> Array:
 	var slots = []
 	var jogador = get_tree().get_first_node_in_group("player")

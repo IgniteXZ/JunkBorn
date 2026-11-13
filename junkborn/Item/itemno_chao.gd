@@ -50,10 +50,16 @@ func _process(_delta: float) -> void:
 			return
 
 		# Adiciona o item ao inventário
+		# Os recursos ItemData de progressao e todas as sementes sao irroubaveis.
+		var protegido_drone: bool = dados_item.nome.to_lower().contains("semente")
+		if dados_item is ItemData and dados_item.id_item_mapa != "":
+			protegido_drone = true
+
 		if canvass.add_item_inventory(
 			id_inventario,
 			dados_item.textura,
-			dados_item.nome
+			dados_item.nome,
+			protegido_drone
 		):
 
 			# Registra a coleta
