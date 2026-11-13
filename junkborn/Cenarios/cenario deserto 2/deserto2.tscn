@@ -875,6 +875,9 @@ radius = 59.03389
 [sub_resource type="CircleShape2D" id="CircleShape2D_e7ti3"]
 radius = 560.75037
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
+size = Vector2(764.5, 76.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
@@ -954,7 +957,7 @@ position = Vector2(-3640, -101)
 shape = SubResource("RectangleShape2D_pmyn0")
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("7_lqdx4")]
-position = Vector2(-3777, 23)
+position = Vector2(-3775, 112)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1317716736]
 visible = false
@@ -1103,6 +1106,17 @@ cena_destino = "res://Cenarios/cenario minas/minas.tscn"
 position = Vector2(-4934, 1435)
 shape = SubResource("CircleShape2D_e7ti3")
 
+[node name="saidaDeserto2" type="Area2D" parent="passagemdeCena" unique_id=415242434]
+visible = false
+script = ExtResource("13_c82f6")
+automatico = true
+cena_destino = "res://Cenarios/CenariosDeserto/Deserto1.tscn"
+spawn_destino = "spawnsDeserto/saidaDeerto2para1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDeserto2" unique_id=1645737841]
+position = Vector2(-3714.25, -49)
+shape = SubResource("RectangleShape2D_e7ti3")
+
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10
 
@@ -1129,7 +1143,10 @@ shape = SubResource("RectangleShape2D_xrivr")
 [node name="spawnsDeserto2" type="Node2D" parent="." unique_id=1817560835]
 
 [node name="entradaDeserto2" type="Marker2D" parent="spawnsDeserto2" unique_id=1555590594]
-position = Vector2(225, -409)
+position = Vector2(-3770, 149)
+
+[node name="saidaMina" type="Marker2D" parent="spawnsDeserto2" unique_id=429603710]
+position = Vector2(-4243, 1199)
 
 [node name="colisoes" type="Node2D" parent="." unique_id=159370839]
 

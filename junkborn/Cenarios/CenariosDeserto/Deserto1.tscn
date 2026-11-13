@@ -870,13 +870,13 @@ position = Vector2(50, 25)
 shape = SubResource("RectangleShape2D_g4p4k")
 
 [node name="entradaDeserto2" type="Sprite2D" parent="passagemdeCena" unique_id=283236006]
-visible = false
 position = Vector2(-693, 2352)
 scale = Vector2(7.140625, 1)
 texture = ExtResource("10_tk3gm")
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDeserto2" unique_id=1955715949]
 script = ExtResource("18_6u4ac")
+automatico = true
 cena_destino = "res://Cenarios/cenario deserto 2/deserto2.tscn"
 spawn_destino = "spawnsDeserto2/entradaDeserto2"
 
@@ -891,6 +891,9 @@ position = Vector2(518, 41)
 
 [node name="saidaDesertoFonte" type="Marker2D" parent="spawnsDeserto" unique_id=1224011301]
 position = Vector2(-3976, 8)
+
+[node name="saidaDeerto2para1" type="Marker2D" parent="spawnsDeserto" unique_id=847647589]
+position = Vector2(-631, 2073)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
 position = Vector2(-2823, 1875)
