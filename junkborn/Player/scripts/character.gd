@@ -47,8 +47,21 @@ func _ready() -> void:
 		camera.process_callback = Camera2D.CAMERA2D_PROCESS_PHYSICS
 	
 	$Animation.speed_scale = 0.2
+
 	_state_machine = _animation_tree["parameters/playback"]
+
+# Define a direção inicial do Filomeno: olhando para baixo
+	var direcao_inicial = Vector2(0, 1)
+
+	_animation_tree["parameters/idle/blend_position"] = direcao_inicial
+	_animation_tree["parameters/walk/blend_position"] = direcao_inicial
+	_animation_tree["parameters/jangada/blend_position"] = direcao_inicial
+	_animation_tree["parameters/jangadaIdle/blend_position"] = direcao_inicial
+
+	_state_machine.travel("idle")
+
 	call_deferred("_aplicar_spawn")
+
 
 
 func _aplicar_spawn() -> void:
@@ -62,6 +75,7 @@ func _aplicar_spawn() -> void:
 func _physics_process(_delta: float) -> void:
 	if not pode_mover:
 		velocity = Vector2.ZERO
+		_animate()
 		return
 
 	if empurrado:
