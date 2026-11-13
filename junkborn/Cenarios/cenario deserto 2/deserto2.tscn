@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_ad0gh"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="15_3xbu2"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_ij8sj"]
+[ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="17_pmyn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7c43"]
 texture = ExtResource("2_c82f6")
@@ -912,6 +913,9 @@ size = Vector2(465.625, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5owje"]
 size = Vector2(223.8125, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(618, 68)
+
 [node name="Node2D4" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_pmyn0")
@@ -1169,6 +1173,22 @@ shape = SubResource("RectangleShape2D_dh8xp")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="colisoes/colisoes" unique_id=429931679]
 position = Vector2(-5065.9063, 1407)
 shape = SubResource("RectangleShape2D_5owje")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1697522591]
+script = ExtResource("17_pmyn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=995758253]
+position = Vector2(251, 258)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Marker2D" type="Marker2D" parent="Area2D" unique_id=1183692144]
+position = Vector2(29, -161)
+
+[node name="Marker2D2" type="Marker2D" parent="Area2D" unique_id=761887595]
+position = Vector2(313, -160)
+
+[node name="Marker2D3" type="Marker2D" parent="Area2D" unique_id=792340968]
+position = Vector2(487, -137)
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
