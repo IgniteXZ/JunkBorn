@@ -45,4 +45,3 @@ func _spawn_drone() -> void:
 	var distancia := randf_range(145.0, 165.0)
 	drone.global_position = jogador.global_position + Vector2.RIGHT.rotated(angulo) * distancia
 	Global.cidade_atual = 5
-
