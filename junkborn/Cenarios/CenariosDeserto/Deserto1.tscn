@@ -857,7 +857,6 @@ script = ExtResource("11_t0mu4")
 shape = SubResource("CircleShape2D_ce1y2")
 
 [node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
-visible = false
 position = Vector2(-4184, 12)
 texture = ExtResource("17_dhrox")
 
@@ -890,6 +889,9 @@ shape = SubResource("RectangleShape2D_dnqts")
 
 [node name="sairVilaParaDeserto" type="Marker2D" parent="spawnsDeserto" unique_id=1005998621]
 position = Vector2(518, 41)
+
+[node name="saidaDesertoFonte" type="Marker2D" parent="spawnsDeserto" unique_id=1224011301]
+position = Vector2(-3976, 8)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
 position = Vector2(-2823, 1875)
@@ -1052,7 +1054,7 @@ rotation = -0.028361078
 scale = Vector2(1.3892792, -0.57244706)
 script = ExtResource("18_6u4ac")
 automatico = true
-variavel_necessaria = "deserto2liberado"
+variavel_necessaria = "podeSairFonte"
 timeline_bloqueado = "caminhoerrado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50367244]

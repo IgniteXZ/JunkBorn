@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="9_ym8xy"]
 [ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_gi7v4"]
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_5owje"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_c82f6"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_ad0gh"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="15_3xbu2"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_ij8sj"]
@@ -871,6 +872,9 @@ sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 [sub_resource type="CircleShape2D" id="CircleShape2D_tb5fl"]
 radius = 59.03389
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7ti3"]
+radius = 560.75037
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
@@ -1089,6 +1093,15 @@ shape = SubResource("CircleShape2D_tb5fl")
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="passagemdeCena/EntradadesertoMinigame/Area2DMini" unique_id=2090822237]
 position = Vector2(-180, 1193)
 shape = SubResource("CircleShape2D_tb5fl")
+
+[node name="entradaMinas" type="Area2D" parent="passagemdeCena" unique_id=724294589]
+script = ExtResource("13_c82f6")
+automatico = true
+cena_destino = "res://Cenarios/cenario minas/minas.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/entradaMinas" unique_id=545900760]
+position = Vector2(-4934, 1435)
+shape = SubResource("CircleShape2D_e7ti3")
 
 [node name="ui_coleta" type="CanvasLayer" parent="." unique_id=175532763]
 layer = 10

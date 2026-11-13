@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ct68r5wxndxob" path="res://Cenarios/Cenario pantano/tileset escombros.png" id="15_dxywq"]
 [ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="19_yjgqi"]
 [ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="21_ka6kb"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="21_yjgqi"]
 [ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="22_je6m8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
@@ -3485,6 +3486,9 @@ size = Vector2(822.75, 17.289063)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka6kb"]
 size = Vector2(7316, 30.125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
+size = Vector2(124.5, 801)
+
 [node name="Node2D3" type="Node2D" unique_id=240260216]
 script = ExtResource("1_072d7")
 intervalo_minimo_drone = 300.0
@@ -3584,7 +3588,7 @@ tile_set = SubResource("TileSet_kxlyg")
 y_sort_enabled = true
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("10_072d7")]
-position = Vector2(715, -702)
+position = Vector2(545, -777)
 scale = Vector2(0.8, 0.8)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
@@ -4726,6 +4730,16 @@ position = Vector2(-2866, 965.9375)
 shape = SubResource("RectangleShape2D_ka6kb")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2005903544]
+
+[node name="saidaPantano" type="Area2D" parent="." unique_id=494773514]
+script = ExtResource("21_yjgqi")
+automatico = true
+cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
+spawn_destino = "spawnsDesertoFonte/saidaPantano"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saidaPantano" unique_id=818274652]
+position = Vector2(719, -727)
+shape = SubResource("RectangleShape2D_e7ti3")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
