@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="20_umam2"]
-[ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="21_dhrox"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
 [ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
 
@@ -893,13 +892,8 @@ shape = SubResource("RectangleShape2D_dnqts")
 position = Vector2(518, 41)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
-position = Vector2(-184, 82)
+position = Vector2(-2823, 1875)
 dados_item = ExtResource("20_umam2")
-labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
-
-[node name="ItemnoChao2" parent="." unique_id=683223515 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
-position = Vector2(-134, 183)
-dados_item = ExtResource("21_dhrox")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684488821]
@@ -1138,5 +1132,3 @@ position = Vector2(-3519, 1733)
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
-[connection signal="area_entered" from="ItemnoChao2" to="ItemnoChao2" method="_on_area_entered"]
-[connection signal="area_exited" from="ItemnoChao2" to="ItemnoChao2" method="_on_area_exited"]

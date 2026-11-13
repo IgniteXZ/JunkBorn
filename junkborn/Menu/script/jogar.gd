@@ -11,8 +11,9 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
+	AudioManager.parar_musica()
 	get_tree().change_scene_to_file("res://Cutsenes/cutscene.tscn")
-
+	
 
 func _on_mouse_entered() -> void:
 	grab_focus()
