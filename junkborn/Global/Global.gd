@@ -20,8 +20,8 @@ var paginas_coletadas: Dictionary = {}
 
 var DesligarMusica: bool = false
 
-var TerminouOminiGame: bool = false
-
+var TerminouOminiGame: bool = true
+var drones_spawnados: Array = []
 func fade() -> void:
 	await Transicao.fade_out()
 	await Transicao.fade_in()

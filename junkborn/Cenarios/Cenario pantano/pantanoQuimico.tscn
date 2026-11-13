@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://br45r73ruyieu" path="res://Cenarios/Cenario pantano/tileset imoveis pantano.png" id="14_qlqu2"]
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="15_072d7"]
 [ext_resource type="Texture2D" uid="uid://ct68r5wxndxob" path="res://Cenarios/Cenario pantano/tileset escombros.png" id="15_dxywq"]
-[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="17_g34os"]
 [ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="21_ka6kb"]
 [ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="22_je6m8"]
 
@@ -3616,7 +3615,6 @@ rendering_quadrant_size = 24
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("11_7mwnk")]
 position = Vector2(-468, -2)
-dados_item = ExtResource("17_g34os")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
 [node name="ExploraJangada" type="Node2D" parent="." unique_id=247499452]

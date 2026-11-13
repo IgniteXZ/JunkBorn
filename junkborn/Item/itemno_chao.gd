@@ -1,7 +1,6 @@
-
 extends Area2D
 
-@export var dados_item: Resource
+@export var dados_item: ItemData
 @export var labelinteragir: Label
 @export var pagina_id: String = ""
 
@@ -22,11 +21,6 @@ func _ready() -> void:
 		id_inventario = dados_item.id
 		if dados_item.id_item_mapa != "":
 			id_coleta = dados_item.id_item_mapa
-
-	elif dados_item is LixoData:
-		id_inventario = dados_item.item_id
-		id_coleta = dados_item.item_id
-
 	else:
 		push_error("Tipo de item não reconhecido!")
 		return
@@ -49,17 +43,25 @@ func _process(_delta: float) -> void:
 		if not is_instance_valid(canvass):
 			return
 
+
 		# Adiciona o item ao inventário
 		# Os recursos ItemData de progressao e todas as sementes sao irroubaveis.
 		var protegido_drone: bool = dados_item.nome.to_lower().contains("semente")
 		if dados_item is ItemData and dados_item.id_item_mapa != "":
 			protegido_drone = true
 
+
+		# Adiciona o item ao inventário (4º argumento = o RECURSO inteiro)
+
 		if canvass.add_item_inventory(
 			id_inventario,
 			dados_item.textura,
 			dados_item.nome,
+
 			protegido_drone
+
+			dados_item
+
 		):
 
 			# Registra a coleta

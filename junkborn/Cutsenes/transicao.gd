@@ -1,32 +1,24 @@
 extends CanvasLayer
 
 @onready var fade: ColorRect = $Fade
+@export var velocidade_fade: float = 0.2 # Velocidade do fade (quanto menor, mais rápido)
 
 func _ready() -> void:
 	layer = 100
-	if fade.material is ShaderMaterial:
-		fade.material.set_shader_parameter("luminance_cutoff", 0.0) # <--- "progress" minúsculo
+	# Garante que o ColorRect é preto e começa totalmente invisível (transparente)
+	fade.color = Color.BLACK
+	fade.modulate.a = 0.0
 
 func fade_out() -> void:
-	var material = fade.material as ShaderMaterial
-	if not material: return
-	
 	var tween := create_tween()
-	tween.tween_method(
-		func(val): material.set_shader_parameter("luminance_cutoff", val), # <--- "progress" minúsculo
-		0.0, 1.0, 0.5
-	)
+	# Faz a tela escurecer (vai de 0.0 até 1.0 de opacidade)
+	tween.tween_property(fade, "modulate:a", 1.0, velocidade_fade)
 	await tween.finished
 	
 func fade_in() -> void:
-	var material = fade.material as ShaderMaterial
-	if not material: return
-	
 	var tween := create_tween()
-	tween.tween_method(
-		func(val): material.set_shader_parameter("luminance_cutoff", val), # <--- "progress" minúsculo
-		1.0, 0.0, 0.5
-	)
+	# Faz a tela clarear (vai de 1.0 até 0.0 de opacidade)
+	tween.tween_property(fade, "modulate:a", 0.0, velocidade_fade)
 	await tween.finished
 	
 func dormir(pausa: float = 1.5) -> void:

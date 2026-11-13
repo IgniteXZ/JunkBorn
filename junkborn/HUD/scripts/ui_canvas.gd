@@ -230,6 +230,7 @@ func carregar_inventario() -> void:
 
 		slots[i].get_node("sprite").texture = dados["sprite"]
 		slots[i].get_node("amount").text = dados["amount"]
+		slots[i].item_data = dados.get("item_data", null)
 
 		if dados.has("item_id") and dados["item_id"] != -1:
 			slots[i].set_meta("item_id", dados["item_id"])

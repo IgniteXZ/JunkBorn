@@ -18,12 +18,10 @@
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
-[ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_s4fo3"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
-[ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="21_dhrox"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="24_5a60c"]
+[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="20_umam2"]
+[ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
 [ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
-[ext_resource type="Texture2D" uid="uid://cig0s7wt1pxv0" path="res://Resource/Itens/sementeOrapro.png" id="25_vcs2c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -626,9 +624,6 @@ size = Vector2(120, 254)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnqts"]
 size = Vector2(133.18164, 150)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(870, 362)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5a1v"]
 size = Vector2(1008, 20)
 
@@ -692,14 +687,6 @@ size = Vector2(24.999878, 27.892578)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ataks"]
 size = Vector2(394.5, 20)
 
-[sub_resource type="Resource" id="Resource_jqjrk"]
-script = ExtResource("24_5a60c")
-id = 4
-nome = "SementeOprarprio"
-textura = ExtResource("25_vcs2c")
-id_item_mapa = "4"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5a60c"]
 a = Vector2(18.49012, -445.7408)
 b = Vector2(-22.2725, 454.86688)
@@ -740,6 +727,12 @@ b = Vector2(307, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0o7"]
 size = Vector2(377.7827, 33.67872)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(96, 374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
+size = Vector2(649, 593)
 
 [node name="Node2D2" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
@@ -899,17 +892,9 @@ shape = SubResource("RectangleShape2D_dnqts")
 position = Vector2(518, 41)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
-position = Vector2(-176, 116)
-dados_item = ExtResource("21_dhrox")
+position = Vector2(-184, 82)
+dados_item = ExtResource("20_umam2")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
-
-[node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
-position = Vector2(-1502, 118)
-script = ExtResource("17_s4fo3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharmarDrone" unique_id=1664574486]
-position = Vector2(-447, 27)
-shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684488821]
 
@@ -999,7 +984,6 @@ shape = SubResource("RectangleShape2D_ataks")
 
 [node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("24_6u4ac")]
 position = Vector2(-342, 144)
-semente = SubResource("Resource_jqjrk")
 label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]
@@ -1077,9 +1061,74 @@ rotation = -0.038397245
 scale = Vector2(1.053854, -0.5374398)
 shape = SubResource("RectangleShape2D_ns0o7")
 
+[node name="AparecerDrone" type="Area2D" parent="." unique_id=1923807501]
+script = ExtResource("22_umam2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AparecerDrone" unique_id=330487526]
+position = Vector2(-2288, 134)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Marker2D" type="Marker2D" parent="AparecerDrone" unique_id=155727700]
+position = Vector2(-2002, 193)
+
+[node name="Marker2D3" type="Marker2D" parent="AparecerDrone" unique_id=967483016]
+position = Vector2(-2135, 347)
+
+[node name="Marker2D2" type="Marker2D" parent="AparecerDrone" unique_id=174846142]
+position = Vector2(-2050, -11)
+
+[node name="AparecerDrone2" type="Area2D" parent="." unique_id=1704643078]
+script = ExtResource("22_umam2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AparecerDrone2" unique_id=1524751543]
+position = Vector2(-1247, 183)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Marker2D" type="Marker2D" parent="AparecerDrone2" unique_id=1636655290]
+position = Vector2(-1030, 296)
+
+[node name="Marker2D3" type="Marker2D" parent="AparecerDrone2" unique_id=1105797989]
+position = Vector2(-920, 184)
+
+[node name="Marker2D2" type="Marker2D" parent="AparecerDrone2" unique_id=1026324692]
+position = Vector2(-930, 69)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1717638473]
+script = ExtResource("22_umam2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=468580024]
+position = Vector2(-3581.5, 1577.5)
+shape = SubResource("RectangleShape2D_b1lj4")
+
+[node name="Marker2D" type="Marker2D" parent="Area2D2" unique_id=1555733654]
+position = Vector2(-3392, 1952)
+
+[node name="Marker2D2" type="Marker2D" parent="Area2D2" unique_id=1290938464]
+position = Vector2(-3210, 1695)
+
+[node name="Marker2D3" type="Marker2D" parent="Area2D2" unique_id=97166368]
+position = Vector2(-3150, 1524)
+
+[node name="Marker2D4" type="Marker2D" parent="Area2D2" unique_id=971170257]
+position = Vector2(-3092, 1653)
+
+[node name="Marker2D5" type="Marker2D" parent="Area2D2" unique_id=1492116569]
+position = Vector2(-3150, 1887)
+
+[node name="Marker2D6" type="Marker2D" parent="Area2D2" unique_id=1053176329]
+position = Vector2(-3465, 1675)
+
+[node name="Marker2D7" type="Marker2D" parent="Area2D2" unique_id=745652452]
+position = Vector2(-3274, 1566)
+
+[node name="Marker2D8" type="Marker2D" parent="Area2D2" unique_id=817196785]
+position = Vector2(-3598, 1825)
+
+[node name="Marker2D9" type="Marker2D" parent="Area2D2" unique_id=1177051378]
+position = Vector2(-3519, 1733)
+
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_exited"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
-[connection signal="area_entered" from="CharmarDrone" to="CharmarDrone" method="_on_area_entered"]
