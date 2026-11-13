@@ -447,7 +447,7 @@ size = Vector2(77, 20)
 size = Vector2(52, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc74i"]
-size = Vector2(42, 44)
+size = Vector2(42, 38)
 
 [node name="Node2D2" type="Node2D" unique_id=1574714337]
 
@@ -549,12 +549,16 @@ script = ExtResource("5_qc74i")
 timeline = "mesa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoMesa" unique_id=1092098235]
-position = Vector2(11, 131)
+position = Vector2(11, 108)
 shape = SubResource("RectangleShape2D_qc74i")
 
-[node name="boneco" type="TileMapLayer" parent="." unique_id=1269769846]
-position = Vector2(98, 127)
-tile_map_data = PackedByteArray("AAAAAPr/AQARAA0AAAD6//v/AQAAAA4AAAD6//z/AQAAAA8AAAD7//v/AQABAA4AAAD7//z/AQABAA8AAAA=")
+[node name="y-sort" type="Node2D" parent="." unique_id=1414542635]
+y_sort_enabled = true
+
+[node name="boneco" type="TileMapLayer" parent="y-sort" unique_id=1269769846]
+y_sort_enabled = true
+position = Vector2(100, 109)
+tile_map_data = PackedByteArray("AAAAAPr/AQARAA0AAAD6//z/AQAAAA8AAAD7//v/AQABAA4AAAD7//z/AQABAA8AAAD6//v/AQAAAA4AAAA=")
 tile_set = SubResource("TileSet_x42px")
 script = ExtResource("3_8ynj7")
 

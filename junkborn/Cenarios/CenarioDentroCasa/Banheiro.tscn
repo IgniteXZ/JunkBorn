@@ -511,7 +511,10 @@ size = Vector2(51, 6)
 radius = 17.117243
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hx70"]
-radius = 10.000004
+radius = 19.026293
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qf8oh"]
+radius = 6.324559
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
 size = Vector2(38, 32)
@@ -590,9 +593,14 @@ position = Vector2(103, 43)
 shape = SubResource("CircleShape2D_m5a1v")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=1513826968]
-position = Vector2(91, -24)
+position = Vector2(85, -27.999998)
 rotation = -3.192207
 shape = SubResource("CircleShape2D_0hx70")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=185168797]
+position = Vector2(71, -23)
+rotation = 1.7453293
+shape = SubResource("CircleShape2D_qf8oh")
 
 [node name="sairB" type="Area2D" parent="." unique_id=869517601 node_paths=PackedStringArray("labelInteragir")]
 script = ExtResource("4_4ddvs")
@@ -613,6 +621,7 @@ script = ExtResource("5_is0nw")
 timeline = "pinico"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=223034009]
+visible = false
 position = Vector2(92.875, -25.25)
 shape = SubResource("RectangleShape2D_qrw66")
 
