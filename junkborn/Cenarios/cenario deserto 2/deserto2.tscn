@@ -14,8 +14,7 @@
 [ext_resource type="Script" uid="uid://oibi2gh6n2n3" path="res://area_2d_mini.gd" id="11_gi7v4"]
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_5owje"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_ad0gh"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="15_37rfj"]
-[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="16_v1113"]
+[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="15_3xbu2"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_ij8sj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7c43"]
@@ -871,14 +870,6 @@ sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 [sub_resource type="CircleShape2D" id="CircleShape2D_tb5fl"]
 radius = 59.03389
 
-[sub_resource type="Resource" id="Resource_of28l"]
-script = ExtResource("15_37rfj")
-id = 1
-nome = "Semente"
-textura = ExtResource("16_v1113")
-id_item_mapa = "1"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(870, 362)
 
@@ -1106,16 +1097,16 @@ layer = 100
 visible = false
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_ad0gh")]
-position = Vector2(-1406, 100)
-dados_item = SubResource("Resource_of28l")
+position = Vector2(357, 180)
+dados_item = ExtResource("15_3xbu2")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
 [node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
-position = Vector2(-1412, 109)
+position = Vector2(-1748, 156)
 script = ExtResource("17_ij8sj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharmarDrone" unique_id=1664574486]
-position = Vector2(5, -9)
+position = Vector2(-654, -150)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="spawnsDeserto2" type="Node2D" parent="." unique_id=1817560835]

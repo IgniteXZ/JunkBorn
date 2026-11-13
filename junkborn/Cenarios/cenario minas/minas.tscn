@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btinby4saakng" path="res://Cenarios/Cenario Fonte/fonte.gd" id="1_kp2dk"]
 [ext_resource type="Texture2D" uid="uid://bn2c24f5jq8fr" path="res://Cenarios/Cenario Fonte/tileset fonte1.png" id="2_b5bg6"]
+[ext_resource type="AudioStream" uid="uid://bdgec1tjpriqh" path="res://Audios/SoundTrack/TrapezioMagnezio.mp3" id="2_hctfr"]
 [ext_resource type="Texture2D" uid="uid://b4vu4xvkiutbk" path="res://Cenarios/Cenario Fonte/tileset fonte2.png" id="3_d6sp6"]
 [ext_resource type="Texture2D" uid="uid://c8tcudvsmr43" path="res://Cenarios/Cenario Fonte/tileset fonte1e2.png" id="4_5d6l1"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="5_ut7wu"]
@@ -2139,6 +2140,7 @@ height = 168.0
 
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_kp2dk")
+musica = ExtResource("2_hctfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
@@ -2164,7 +2166,7 @@ tile_set = SubResource("TileSet_xrfvi")
 rendering_quadrant_size = 24
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_o20hw")]
-position = Vector2(-421, -721)
+position = Vector2(-2475, -550)
 dados_item = SubResource("Resource_wi68o")
 labelinteragir = NodePath("../y-sort2/Character/LabelInteragir")
 
