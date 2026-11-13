@@ -39,7 +39,7 @@ func _process(_delta: float) -> void:
 	if requisitos_ok(c):
 		aviso.text = "Aperte E para interagir"
 	else:
-		aviso.text = "Você precisa de uma jangada para explorar a fonte."
+		aviso.text = "Você precisa de uma jangada para explorar o pantano quimico."
 
 	aviso.visible = true
 

@@ -16,8 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
-[ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="17_dvo31"]
-[ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="19_mgdxn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1763,13 +1761,6 @@ shape = SubResource("RectangleShape2D_msxt5")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="colisoes/StaticBody2D" unique_id=1586047303]
 position = Vector2(-392.0625, 115)
 shape = SubResource("RectangleShape2D_mgdxn")
-
-[node name="ExploraJangada" type="Node2D" parent="." unique_id=253326305]
-script = ExtResource("17_dvo31")
-tex_jangada = ExtResource("19_mgdxn")
-
-[node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1557245071]
-position = Vector2(-564, -656)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=268793449]
 position = Vector2(-592, -55)
