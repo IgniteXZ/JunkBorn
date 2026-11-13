@@ -17,7 +17,7 @@ var camada_minigame: CanvasLayer
 var camada_botao: CanvasLayer
 
 
-@export var musica: AudioStream
+
 
 func _ready():
 	
@@ -150,9 +150,7 @@ func abrir():
 	MinigameCanos.fase_atual = 0
 	MinigameCanos.mapa_salvo = []
 	
-	# Só toca se houver uma música definida para esta fonte
-	if musica:
-		AudioManager.tocar_musica(musica)
+	
 
 	_montar()
 

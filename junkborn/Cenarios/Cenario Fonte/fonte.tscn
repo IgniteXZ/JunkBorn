@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="9_p1e2c"]
 [ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="10_dvo31"]
 [ext_resource type="Script" uid="uid://k3gm7fqo3toe" path="res://Cenarios/Cenario Fonte/areaFonte.gd" id="11_tkujf"]
-[ext_resource type="AudioStream" uid="uid://bdgec1tjpriqh" path="res://Audios/SoundTrack/TrapezioMagnezio.mp3" id="12_msxt5"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
 [ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="15_dvo31"]
@@ -1693,7 +1692,6 @@ tex_cano = ExtResource("8_wi68o")
 tex_pa = ExtResource("9_4jw3k")
 tex_picareta = ExtResource("10_dvo31")
 modo_teste = true
-musica = ExtResource("12_msxt5")
 
 [node name="Area2D" type="Area2D" parent="canosGame" unique_id=1631101147]
 position = Vector2(-602, -744)

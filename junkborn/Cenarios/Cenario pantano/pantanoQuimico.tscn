@@ -3489,7 +3489,7 @@ size = Vector2(7316, 30.125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
 size = Vector2(124.5, 801)
 
-[node name="Node2D3" type="Node2D" unique_id=240260216]
+[node name="Node2D4" type="Node2D" unique_id=240260216]
 script = ExtResource("1_072d7")
 intervalo_minimo_drone = 300.0
 
@@ -3619,7 +3619,7 @@ tile_set = SubResource("TileSet_xrfvi")
 rendering_quadrant_size = 24
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("11_7mwnk")]
-position = Vector2(-5210, 160)
+position = Vector2(-5409, 53)
 dados_item = ExtResource("19_yjgqi")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 
