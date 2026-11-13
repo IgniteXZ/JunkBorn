@@ -46,7 +46,7 @@ func _atualizar_tooltip() -> void:
 
 # coletar item no chão
 
-func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
+func add_item_inventory(ID: int, sprite: Texture, nome: String = "", dados: Resource = null) -> bool:
 	var slots = $inventory/GridContainer.get_children()
 
 	# Guarda o nome para o tooltip
@@ -58,6 +58,8 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 		if slot.get_node("sprite").texture == sprite:
 			var quantidade = int(slot.get_node("amount").text)
 			slot.get_node("amount").text = str(quantidade + 1)
+			if dados != null and slot.item_data == null:
+				slot.item_data = dados
 
 			salvar_inventario()
 			return true
@@ -68,6 +70,7 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "") -> bool:
 			slot.get_node("sprite").texture = sprite
 			slot.get_node("amount").text = "1"
 			slot.set_meta("item_id", ID)
+			slot.item_data = dados
 
 			salvar_inventario()
 			return true
@@ -176,10 +179,11 @@ func salvar_inventario() -> void:
 		Global.itens.append({
 			"sprite": slot.get_node("sprite").texture,
 			"amount": slot.get_node("amount").text,
-			"item_id": slot.get_meta("item_id") if slot.has_meta("item_id") else -1
+			"item_id": slot.get_meta("item_id") if slot.has_meta("item_id") else -1,
+			"item_data": slot.item_data
 		})
 
-# carregar inventario atualizado ao trocar de cena
+
 func carregar_inventario() -> void:
 	var slots = $inventory/GridContainer.get_children()
 
@@ -191,9 +195,39 @@ func carregar_inventario() -> void:
 
 		slots[i].get_node("sprite").texture = dados["sprite"]
 		slots[i].get_node("amount").text = dados["amount"]
+		slots[i].item_data = dados.get("item_data", null)
 
 		if dados.has("item_id") and dados["item_id"] != -1:
 			slots[i].set_meta("item_id", dados["item_id"])
+		
+# Adicione esta função no script do seu Inventário (ex: ui_canvas.gd)
+# Remove TODAS as sementes (qualquer item com tipo "semente") e devolve um Array
+# com o item_data repetido uma vez por unidade.
+func remover_todas_as_sementes() -> Array:
+	var sementes: Array = []
+
+	for slot in $inventory/GridContainer.get_children():
+		var dados = slot.item_data
+		if slot.get_node("sprite").texture != null:
+			print("[INV] slot com item | item_data: ", dados, " | tipo: ", dados.tipo if dados else "SEM DADOS")
+		if dados == null or dados.tipo != "semente":
+			continue
+		# ... resto igual
+
+		var texto: String = slot.get_node("amount").text
+		var qtd: int = int(texto) if texto != "" else 1
+		for i in range(qtd):
+			sementes.append(dados)
+
+		limpar_slot(slot)
+
+	if not sementes.is_empty():
+		salvar_inventario()
+
+	return sementes
+
+# carregar inventario atualizado ao trocar de cena
+
 			
 # Remove do inventário todos os itens com essa textura e devolve a quantidade total
 func remover_itens_por_textura(textura: Texture2D) -> int:

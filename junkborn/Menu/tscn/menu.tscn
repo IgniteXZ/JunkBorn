@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfrroip1p708d" path="res://Menu/tscn/menu.gd" id="1_80ekw"]
 [ext_resource type="Texture2D" uid="uid://4chjhoctyetc" path="res://Menu/sprite/menufundo.png" id="1_b4q87"]
-[ext_resource type="AudioStream" uid="uid://5mm61klje7h6" path="res://Audios/SoundTrack/SigmaEmRives.mp3" id="2_gcxu8"]
+[ext_resource type="AudioStream" uid="uid://c1ck7onyql1e1" path="res://Audios/SoundTrack/OrquestradoresClaude.mp3" id="2_gcxu8"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_mjkk2"]
 [ext_resource type="Script" uid="uid://dmppt1foktb1q" path="res://Menu/script/sair.gd" id="3_m05b3"]
 [ext_resource type="Script" uid="uid://bdtcxscdwa2nw" path="res://Menu/script/jogar.gd" id="3_t6cjk"]

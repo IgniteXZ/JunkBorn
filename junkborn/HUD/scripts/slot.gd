@@ -1,7 +1,7 @@
 extends Control
 
 # Exporta uma variável do tipo 'LixoData' (recurso customizado) para guardar os dados do item neste slot
-@export var item_data: LixoData
+@export var item_data: ItemData
 # Variável auxiliar para guardar temporariamente os dados caso o jogador cancele o arrasto
 var drag_backup = null
 
@@ -106,3 +106,23 @@ func _notification(what):
 
 		# Limpa a variável de backup após finalizar o processo
 		drag_backup = null
+
+# --- ADICIONE ESTAS FUNÇÕES NO FINAL DO SEU SLOT.GD ---
+
+# Retorna verdadeiro se o slot tiver uma textura válida (tem item)
+func tem_item() -> bool:
+	return $sprite.texture != null
+
+# Retorna os dados do recurso (LixoData) guardado neste slot
+func get_item_data() -> ItemData:
+	return item_data
+
+# Retorna a quantidade numérica atual do texto do slot
+func get_quantidade() -> int:
+	if $amount.text.is_valid_int():
+		return int($amount.text)
+	return 0
+
+# Limpa o slot completamente (usado quando as sementes são plantadas)
+func clear_slot() -> void:
+	set_empty_slot() # Ou mantenha sua lógica de limpeza se preferir, mas veja abaixo:

@@ -9,4 +9,5 @@ id = 2
 nome = "SementeEspada"
 textura = ExtResource("2_3028d")
 id_item_mapa = "2"
+tipo = "semente"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

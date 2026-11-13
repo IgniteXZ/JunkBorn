@@ -40,13 +40,13 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 5
 
-[node name="Slot" parent="GridContainer" unique_id=1077371328 instance=ExtResource("2_lic60")]
+[node name="Slot" parent="GridContainer" unique_id=1077371328 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot2" parent="GridContainer" unique_id=1339989651 instance=ExtResource("2_lic60")]
+[node name="Slot2" parent="GridContainer" unique_id=1339989651 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot2" index="0" unique_id=1549255035]
@@ -55,110 +55,110 @@ texture = ExtResource("3_rqyyd")
 [node name="sprite" parent="GridContainer/Slot2" index="1" unique_id=2099300488]
 layout_direction = 3
 
-[node name="Slot3" parent="GridContainer" unique_id=22392142 instance=ExtResource("2_lic60")]
+[node name="Slot3" parent="GridContainer" unique_id=22392142 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot3" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot4" parent="GridContainer" unique_id=424986864 instance=ExtResource("2_lic60")]
+[node name="Slot4" parent="GridContainer" unique_id=424986864 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot4" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot5" parent="GridContainer" unique_id=1186434627 instance=ExtResource("2_lic60")]
+[node name="Slot5" parent="GridContainer" unique_id=1186434627 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot5" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot6" parent="GridContainer" unique_id=867441514 instance=ExtResource("2_lic60")]
+[node name="Slot6" parent="GridContainer" unique_id=867441514 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot6" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot7" parent="GridContainer" unique_id=248800838 instance=ExtResource("2_lic60")]
+[node name="Slot7" parent="GridContainer" unique_id=248800838 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot7" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot8" parent="GridContainer" unique_id=1082262799 instance=ExtResource("2_lic60")]
+[node name="Slot8" parent="GridContainer" unique_id=1082262799 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 item_data = ExtResource("10_pt6v2")
 
 [node name="background" parent="GridContainer/Slot8" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot9" parent="GridContainer" unique_id=748481143 instance=ExtResource("2_lic60")]
+[node name="Slot9" parent="GridContainer" unique_id=748481143 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot9" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot10" parent="GridContainer" unique_id=389718707 instance=ExtResource("2_lic60")]
+[node name="Slot10" parent="GridContainer" unique_id=389718707 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot10" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot11" parent="GridContainer" unique_id=1754837915 instance=ExtResource("2_lic60")]
+[node name="Slot11" parent="GridContainer" unique_id=1754837915 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot11" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot12" parent="GridContainer" unique_id=1419154164 instance=ExtResource("2_lic60")]
+[node name="Slot12" parent="GridContainer" unique_id=1419154164 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot12" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot13" parent="GridContainer" unique_id=1405631013 instance=ExtResource("2_lic60")]
+[node name="Slot13" parent="GridContainer" unique_id=1405631013 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot13" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot14" parent="GridContainer" unique_id=154393647 instance=ExtResource("2_lic60")]
+[node name="Slot14" parent="GridContainer" unique_id=154393647 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot14" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot15" parent="GridContainer" unique_id=286813772 instance=ExtResource("2_lic60")]
+[node name="Slot15" parent="GridContainer" unique_id=286813772 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot15" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot16" parent="GridContainer" unique_id=1744155287 instance=ExtResource("2_lic60")]
+[node name="Slot16" parent="GridContainer" unique_id=1744155287 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot16" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot17" parent="GridContainer" unique_id=276070336 instance=ExtResource("2_lic60")]
+[node name="Slot17" parent="GridContainer" unique_id=276070336 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot17" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot18" parent="GridContainer" unique_id=2095458766 instance=ExtResource("2_lic60")]
+[node name="Slot18" parent="GridContainer" unique_id=2095458766 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot18" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot19" parent="GridContainer" unique_id=358943296 instance=ExtResource("2_lic60")]
+[node name="Slot19" parent="GridContainer" unique_id=358943296 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot19" index="0" unique_id=1549255035]
 texture = ExtResource("3_rqyyd")
 
-[node name="Slot20" parent="GridContainer" unique_id=1345642550 instance=ExtResource("2_lic60")]
+[node name="Slot20" parent="GridContainer" unique_id=1345642550 groups=["slots"] instance=ExtResource("2_lic60")]
 layout_mode = 2
 
 [node name="background" parent="GridContainer/Slot20" index="0" unique_id=1549255035]

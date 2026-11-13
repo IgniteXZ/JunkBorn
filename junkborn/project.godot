@@ -176,6 +176,7 @@ folder_colors={
 
 UI=""
 Player="InteragirDoplayer"
+slots=""
 
 [input]
 
