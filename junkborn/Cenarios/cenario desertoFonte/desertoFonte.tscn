@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b7yr6pfq8f0ju" path="res://Cenarios/cenario desertoFonte/terraPraPlantar.png" id="14_ec6ab"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="14_esxbg"]
 [ext_resource type="Texture2D" uid="uid://cep3hldp0ms8x" path="res://CenarioAssets/assets/Cenario1.1/TileSet/buracoSprite.png" id="14_xilwp"]
+[ext_resource type="Script" uid="uid://wpqflxcpgda" path="res://Cenarios/cenario desertoFonte/entrada_fonte.gd" id="18_entrfonte"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1c8b"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -1277,6 +1278,9 @@ height = 311.15027
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
 size = Vector2(179, 703)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s80n1"]
+size = Vector2(113, 139)
+
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_ec6ab")
 
@@ -1419,8 +1423,10 @@ tile_set = SubResource("TileSet_ukhvp")
 position = Vector2(-761, 314)
 
 [node name="entradaDesertoFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=1984481161]
-visible = false
-position = Vector2(21, -76)
+position = Vector2(-119, -77)
+
+[node name="saidaPantano" type="Marker2D" parent="spawnsDesertoFonte" unique_id=908825468]
+position = Vector2(-1344, 207)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1960152451]
 
@@ -1454,12 +1460,10 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_xilwp")
 
 [node name="entradaFonte" type="Area2D" parent="." unique_id=1317015298]
-script = ExtResource("14_esxbg")
+script = ExtResource("18_entrfonte")
 timeline = "caifonte"
 automatico = true
-uma_vez = true
 cena_destino = "res://Cenarios/Cenario Fonte/fonte.tscn"
-spawn_destino = "res://Cenarios/Cenario Fonte/fonte.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entradaFonte" unique_id=945158878]
 position = Vector2(-531, 385)
@@ -1482,3 +1486,13 @@ cena_destino = "res://Cenarios/Cenario pantano/pantanoQuimico.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entradaPantano" unique_id=1276820490]
 position = Vector2(-445.5, 112.5)
 shape = SubResource("RectangleShape2D_e7ti3")
+
+[node name="saidaDesertoFonte" type="Area2D" parent="." unique_id=1862012798]
+script = ExtResource("14_esxbg")
+automatico = true
+cena_destino = "res://Cenarios/CenariosDeserto/Deserto1.tscn"
+spawn_destino = "spawnsDeserto/saidaDesertoFonte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saidaDesertoFonte" unique_id=450872819]
+position = Vector2(31.5, -59.5)
+shape = SubResource("RectangleShape2D_s80n1")
