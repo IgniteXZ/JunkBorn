@@ -133,8 +133,8 @@ func mostrar_mensagem_perda(roubou_item: bool = true) -> void:
 	painel.offset_bottom = 62
 
 	var estilo := StyleBoxFlat.new()
-	estilo.bg_color = Color(0.16, 0.075, 0.18, 0.96)
-	estilo.border_color = Color(1.0, 0.58, 0.82, 1.0)
+	estilo.bg_color = Color(0.698, 0.365, 0.035, 0.663)
+	estilo.border_color = Color(0.841, 0.164, 0.13, 1.0)
 	estilo.set_border_width_all(2)
 	estilo.set_corner_radius_all(18)
 	estilo.shadow_color = Color(0.04, 0.02, 0.08, 0.55)
@@ -144,14 +144,14 @@ func mostrar_mensagem_perda(roubou_item: bool = true) -> void:
 
 	var texto := Label.new()
 	texto.text = (
-		" A-Ah... o drone te pegou! \nVocê perdeu 1 item..."
+		" Eu fui roubado? \nVocê perdeu 1 item..."
 		if roubou_item else
-		" O drone te pegou! \nMas não havia nenhum item comum para roubar."
+		" O drone foi te roubar \nMas você é pobre."
 	)
 	texto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	texto.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	texto.add_theme_color_override("font_color", Color(1.0, 0.82, 0.93, 1.0))
-	texto.add_theme_color_override("font_outline_color", Color(0.20, 0.07, 0.18, 1.0))
+	texto.add_theme_color_override("font_color", Color(0.737, 0.165, 0.0, 1.0))
+	texto.add_theme_color_override("font_outline_color", Color(0.974, 0.908, 0.914, 1.0))
 	texto.add_theme_constant_override("outline_size", 3)
 	texto.add_theme_font_size_override("font_size", 21)
 	painel.add_child(texto)
