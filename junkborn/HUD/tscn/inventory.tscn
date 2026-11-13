@@ -23,6 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://b83fq8hasncxw" path="res://HUD/sprites/pgEspadaEsq.tres" id="15_gqrh1"]
 [ext_resource type="Texture2D" uid="uid://bvchkvpt2r85d" path="res://HUD/sprites/livroBotanicaShiny.png" id="16_58chr"]
 [ext_resource type="Texture2D" uid="uid://bnnm53irmdakh" path="res://HUD/sprites/diarioPagina4.png" id="16_sdd3e"]
+[ext_resource type="Texture2D" uid="uid://06gpmi02tgn" path="res://HUD/sprites/pgOraProDir.tres" id="23_w1obm"]
+[ext_resource type="Texture2D" uid="uid://du5oihhcx617v" path="res://HUD/sprites/pgAguape.png" id="24_36usp"]
+[ext_resource type="Texture2D" uid="uid://b30n84drr8wvj" path="res://HUD/sprites/pgGiraDir.tres" id="25_wcckc"]
+[ext_resource type="Texture2D" uid="uid://badjyw147vcnm" path="res://HUD/sprites/pgSamanEsq.tres" id="26_2l8k0"]
+[ext_resource type="Texture2D" uid="uid://qmpjd0wwdvj6" path="res://HUD/sprites/pgVerbasco.png" id="27_h4pe1"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
@@ -243,9 +248,25 @@ pages = Array[Dictionary]([{
 "illustration": ExtResource("15_gqrh1"),
 "text": "Planta muito resistente, com folhas que sobrevivem mesmo em condições hostis. Destaca-se pela capacidade única de converter gás carbônico em oxigênio durante a noite, além de filtrar toxinas. Ela purifica continuamente o ar de ambientes fechados, favorecendo o sono e reduzindo alergias respiratórias. "
 }, {
-"id": "pagina_2",
-"illustration": ExtResource("14_8kugn"),
-"text": ""
+"id": "orapronobis",
+"illustration": ExtResource("23_w1obm"),
+"text": "Trepadeira rústica nativa com folhas suculentas e espinhos no caule. No ambiente, protege o solo contra erosão, atrai polinizadores com suas flores e cresce com pouquíssima água. Para a saúde humana, é uma superalimento riquíssimo em proteínas vegetais, ferro, fibras e vitaminas A e C, combatendo a anemia e fortalecendo a imunidade. "
+}, {
+"id": "aguape",
+"illustration": ExtResource("24_36usp"),
+"text": "Planta aquática flutuante de crescimento rápido com folhas arredondadas e flores, resistente a águas turvas e estagnadas. Faz fitorremediação hídrica: suas raízes densas absorvem metais pesados, esgoto e poluentes químicos da água. Embora não seja voltada ao consumo humano direto, protege a saúde pública ao descontaminar mananciais e frear a proliferação de doenças hídricas."
+}, {
+"id": "girassol",
+"illustration": ExtResource("25_wcckc"),
+"text": "Planta de caule robusto e grandes flores amarelas que acompanham a trajetória do sol. Ambientalmente, extrai metais pesados como chumbo, arsênio e até elementos radioativos da terra contaminada. Suas sementes oferecem benefícios nutricionais à saúde, sendo ricas em vitamina E, gorduras boas e antioxidantes que fortalecem o sistema imunológico. "
+}, {
+"id": "samanbaia",
+"illustration": ExtResource("26_2l8k0"),
+"text": "Planta ornamental ancestral de folhagem densa, pendente e vibrante, adaptada a ambientes úmidos e sombreados. No ambiente, atua como um umidificador natural e filtra poluentes atmosféricos como xileno e formaldeído. Para a saúde humana, melhora a qualidade respiratória ao manter a umidade do ar equilibrada em locais secos ou poluídos. "
+}, {
+"id": "verbasco",
+"illustration": ExtResource("27_h4pe1"),
+"text": "Planta herbácea de folhas grandes e esbranquiçadas, capaz de colonizar terrenos degradados. No ambiente, atua como espécie pioneira na recuperação de solos pobres, estabilizando a terra e abrigando insetos benéficos. Suas folhas e flores possuem propriedades anti-inflamatórias naturais, sendo usadas tradicionalmente para aliviar tosse, asma e irritações pulmonares."
 }])
 
 [node name="TextureRect" parent="ui_livro/Livro2" index="0" unique_id=1156959553]

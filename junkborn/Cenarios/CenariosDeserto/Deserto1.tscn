@@ -733,7 +733,7 @@ size = Vector2(96, 374)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
 size = Vector2(649, 593)
 
-[node name="Node2D2" type="Node2D" unique_id=1307634865]
+[node name="Node2D3" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 musica = ExtResource("2_vcs2c")

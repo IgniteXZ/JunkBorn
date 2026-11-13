@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://06gpmi02tgn"]
+
+[ext_resource type="Texture2D" uid="uid://bj4qo4nxi3bl1" path="res://HUD/sprites/pgOraPro.png" id="1_b7pud"]
+
+[resource]
+atlas = ExtResource("1_b7pud")
+region = Rect2(264, 0, 264, 288)

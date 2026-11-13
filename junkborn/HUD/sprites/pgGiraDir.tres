@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://b30n84drr8wvj"]
+
+[ext_resource type="Texture2D" uid="uid://bhxxxl5tubihf" path="res://HUD/sprites/pgGirassol.png" id="1_jxuio"]
+
+[resource]
+atlas = ExtResource("1_jxuio")
+region = Rect2(264, 0, 264, 288)
