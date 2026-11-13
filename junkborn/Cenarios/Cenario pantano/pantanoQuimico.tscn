@@ -2516,6 +2516,7 @@ labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 [node name="ExploraJangada" type="Node2D" parent="." unique_id=247499452]
 visible = false
 script = ExtResource("21_ka6kb")
+modo_teste = true
 tex_jangada = ExtResource("22_je6m8")
 
 [node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1797675930]

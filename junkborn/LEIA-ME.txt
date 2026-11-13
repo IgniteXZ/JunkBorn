@@ -1,13 +1,10 @@
-CORRECAO LIVRO 2 - JUNKBORN 8
+CORRECAO: sem transicao visual em roubo comum de drone
 
-1. Faca backup de res://HUD/tscn/inventory.tscn.
-2. Feche o Godot.
-3. Extraia este ZIP na pasta raiz do projeto, onde esta project.godot.
-4. Substitua apenas HUD/tscn/inventory.tscn.
+Instalacao: substitua Player/scripts/character.gd por este, sobre o projeto que ja recebeu a correcao dos drones do Junkborn 9.
 
-Corrige o layout de TextureRect das duas paginas e dos RichTextLabel no Livro2.
-Mantem os textos configurados, as propriedades de paginas rasgadas, as missoes,
-o Diario e o script do Livro2 inalterados.
-A pagina espada ainda e liberada pelo item da Fonte, via pagina_id='espada'.
+Comportamento:
+- Fora da exploracao de jangada do Pantano: drone rouba um item comum, sem fade e sem teletransporte.
+- Durante exploracao com jangada no Pantano: continua com fade e retorno ao ponto seguro.
+- Sementes continuam protegidas.
 
-Nao testado dentro do editor Godot.
+Nao altera os demais arquivos.
