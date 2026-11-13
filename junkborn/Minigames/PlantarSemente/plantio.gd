@@ -44,9 +44,9 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _achar_inventario() -> Node:
-	var canvas := get_tree().get_first_node_in_group("inventario")
-	if canvas == null:
-		canvas = get_tree().root.find_child("ui_canvas", true, false)
+	 
+	
+	var canvas = get_tree().root.find_child("ui_canvas", true, false)
 	return canvas
 
 

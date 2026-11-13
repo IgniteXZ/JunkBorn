@@ -64,10 +64,7 @@ func _slot_protegido_drone(slot: Node) -> bool:
 # coletar item no chão
 # coletar item no chão
 func add_item_inventory(ID: int, sprite: Texture, nome: String = "", dados = null) -> bool:
-	print("[ADD] nome: ", nome, " | dados: ", dados)
-	
-	print_stack()
-	# ... resto igual
+	# Trava de segurança: só aceita Resource como 4º argumento
 	if dados != null and not (dados is Resource):
 		push_warning("add_item_inventory: o 4º argumento não é um recurso (veio: %s)" % str(dados))
 		dados = null
@@ -77,6 +74,10 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "", dados = nul
 	# Guarda o nome para o tooltip
 	if nome != "":
 		Global.nomes_itens[sprite] = nome
+
+	# Guarda o recurso por textura (sobrevive à troca de cena)
+	if dados != null:
+		Global.dados_por_textura[sprite] = dados
 
 	# PRIMEIRO: procura um item igual
 	for slot in slots:
@@ -238,18 +239,15 @@ func carregar_inventario() -> void:
 
 		slots[i].get_node("sprite").texture = dados["sprite"]
 		slots[i].get_node("amount").text = dados["amount"]
-		slots[i].item_data = dados.get("item_data", null)
+
+		# Restaura o recurso: primeiro do save, senão pela textura
+		var recurso = dados.get("item_data", null)
+		if recurso == null and dados["sprite"] != null:
+			recurso = Global.dados_por_textura.get(dados["sprite"], null)
+		slots[i].item_data = recurso
 
 		if dados.has("item_id") and dados["item_id"] != -1:
 			slots[i].set_meta("item_id", dados["item_id"])
-		else:
-			if slots[i].has_meta("item_id"):
-				slots[i].remove_meta("item_id")
-
-		var protegido := bool(dados.get("protegido_drone", false))
-		if not protegido and dados["sprite"] != null:
-			protegido = _nome_e_semente(str(Global.nomes_itens.get(dados["sprite"], "")))
-		slots[i].set_meta("protegido_drone", protegido)
 			
 func remover_itens_por_textura(textura: Texture2D) -> int:
 	var total := 0
@@ -268,17 +266,20 @@ func remover_todas_as_sementes() -> Array:
 	var sementes: Array = []
 
 	for slot in $inventory/GridContainer.get_children():
-		if slot.get_node("sprite").texture == null:
+		var textura = slot.get_node("sprite").texture
+		if textura == null:
 			continue
 
+		# Usa o do slot; se estiver vazio, recupera pela textura
 		var dados = slot.item_data
 		if dados == null:
-			print("[INV] slot com item mas item_data NULL")
+			dados = Global.dados_por_textura.get(textura, null)
+
+		if dados == null:
+			print("[INV] slot com item mas sem dados (nem pela textura)")
 			continue
 
-		var tipo_item: String = str(dados.tipo).strip_edges().to_lower() if "tipo" in dados else "SEM CAMPO TIPO"
-		print("[INV] item: ", dados.nome, " | tipo: '", tipo_item, "'")
-
+		var tipo_item: String = str(dados.tipo).strip_edges().to_lower() if "tipo" in dados else ""
 		if tipo_item != "semente":
 			continue
 

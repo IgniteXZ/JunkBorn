@@ -8,4 +8,5 @@ script = ExtResource("1_tav8i")
 nome = "Semente de Espada-de-São-Jorge"
 textura = ExtResource("2_evjdn")
 id_item_mapa = "fonte_semente_1"
+tipo = "semente"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

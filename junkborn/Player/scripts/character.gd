@@ -150,6 +150,11 @@ func _input(event: InputEvent) -> void:
 			Global.trocarCenaSemSpawn(
 				"res://Cenarios/Cenario Fonte/fonte.tscn"
 			)
+		if event.keycode == KEY_3:
+			Global.trocarCenaSemSpawn(
+				"res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
+				
+			)
 
 
 func _on_empurrado_body_entered(body: Node2D) -> void:

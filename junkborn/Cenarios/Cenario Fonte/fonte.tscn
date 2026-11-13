@@ -15,8 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://bdgec1tjpriqh" path="res://Audios/SoundTrack/TrapezioMagnezio.mp3" id="12_msxt5"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_u2vtj"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_behyc"]
+[ext_resource type="Resource" uid="uid://cwfmjpb7hmnyr" path="res://Resource/Itens/Sementes/Semente3.tres" id="15_dvo31"]
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
-[ext_resource type="Resource" uid="uid://cavn05nq18vt0" path="res://Item/Semente1.tres" id="18_s1xyz"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1705,7 +1705,7 @@ shape = SubResource("RectangleShape2D_cw5o1")
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_p1e2c")]
 position = Vector2(-404, -658)
-dados_item = ExtResource("18_s1xyz")
+dados_item = ExtResource("15_dvo31")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
 pagina_id = "espada"
 
