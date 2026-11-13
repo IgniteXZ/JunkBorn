@@ -5,7 +5,7 @@ var drone = preload("res://Inimigo/Drone/drone.tscn")
 
 
 func _ready() -> void:
-	Global.cidade_atual = 6
+	Global.cidade_atual = 7
 	AudioManager.tocar_musica(musica)
 
 

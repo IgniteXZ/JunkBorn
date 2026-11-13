@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c5c65rwg2vstu" path="res://Cenarios/cenario minas/minerador3-1.png" id="20_1n2cu"]
 [ext_resource type="Texture2D" uid="uid://38oxkj1rparc" path="res://Cenarios/cenario minas/minerador3-2.png" id="21_bo5oc"]
 [ext_resource type="Texture2D" uid="uid://1xg2ps5ky04o" path="res://Cenarios/cenario minas/Cópia de personagens1.png" id="22_mwlex"]
+[ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="22_wh1vl"]
 [ext_resource type="Texture2D" uid="uid://df7fil533b47h" path="res://Cenarios/cenario minas/Cópia de personagens2.png" id="23_6of7i"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
@@ -2138,6 +2139,9 @@ height = 168.0
 radius = 23.0
 height = 168.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
+size = Vector2(121, 148)
+
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_kp2dk")
 musica = ExtResource("2_hctfr")
@@ -2253,7 +2257,7 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_etflo")
 
 [node name="Character" parent="y-sort2" unique_id=489748546 instance=ExtResource("5_ut7wu")]
-position = Vector2(756, -36)
+position = Vector2(646, -36)
 
 [node name="LabelInteragir" type="Label" parent="y-sort2/Character" unique_id=1029647010]
 visible = false
@@ -2308,6 +2312,16 @@ shape = SubResource("CapsuleShape2D_24x85")
 position = Vector2(-2033, -368)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ha63x")
+
+[node name="saidaMina" type="Area2D" parent="." unique_id=269347248]
+script = ExtResource("22_wh1vl")
+automatico = true
+cena_destino = "res://Cenarios/cenario deserto 2/deserto2.tscn"
+spawn_destino = "spawnsDeserto2/saidaMina"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saidaMina" unique_id=917279501]
+position = Vector2(799.5, -10)
+shape = SubResource("RectangleShape2D_e7ti3")
 
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
