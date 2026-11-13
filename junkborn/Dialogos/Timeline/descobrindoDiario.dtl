@@ -1,5 +1,9 @@
 join Filomeno (Normal) left
-Filomeno (Normal): EU sou o filosigma
+Filomeno (Normal): Bom, se meus pais espalharam sementes por todo o deserto, vou atrás de procurá-las agora
+Filomeno (Sigma): e como vou fazer pra levar a água até o topo?
+Filomeno (Normal): elas vão precisar de irrigação constante...
+Filomeno (surpreso): já sei! Precisarei de canos para levar a água ao topo!
+Filomeno (Normal): lá nos montes de resíduo podem ter coisas pra me ajudar
 set {podeSairFonte} = true
 do GerenciadorMissoes.iniciar("fazercanos")
 do GerenciadorMissoes.iniciar("buscarsementes")
