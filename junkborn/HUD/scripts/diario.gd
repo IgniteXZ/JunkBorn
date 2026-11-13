@@ -7,7 +7,7 @@ extends Control
 # Cada entrada e UMA pagina, na ordem esquerda, direita, esquerda, direita.
 # Preencha o texto entre aspas, mantendo a imagem de cada pagina.
 @export var paginas: Array[Dictionary] = [
-	{"text": "banana", "illustration": preload("res://HUD/sprites/diarioPagina1.png")},
+	{"text": "Planta suculenta extremamente resistente, com folhas verticais rígidas e rajadas que sobrevivem mesmo em condições hostis. No ambiente, destaca-se pela capacidade única de converter gás carbônico em oxigênio durante a noite, além de filtrar toxinas como benzeno. Para a saúde, purifica continuamente o ar de ambientes fechados, favorecendo o sono e reduzindo alergias respiratórias. No jogo, gera 'bolhas de ar puro' que protegem Filomeno contra a fumaça tóxica da Rauch Company.", "illustration": preload("res://HUD/sprites/diarioPagina1.png")},
 	{"text": "omagaaa", "illustration": preload("res://HUD/sprites/diarioPagina2.png")},
 	{"text": "", "illustration": preload("res://HUD/sprites/diarioPagina3.png")},
 	{"text": "", "illustration": preload("res://HUD/sprites/diarioPagina4.png")}

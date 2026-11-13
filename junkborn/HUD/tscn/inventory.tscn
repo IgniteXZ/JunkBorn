@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmj6ro7q2y0l6" path="res://HUD/tscn/botaolivro.tscn" id="6_u6vfn"]
 [ext_resource type="Resource" uid="uid://swdjci3wgmne" path="res://Resource/Itens/plastico.tres" id="10_pt6v2"]
 [ext_resource type="Texture2D" uid="uid://cajhy5flpmxsq" path="res://HUD/sprites/diario.png" id="12_8kugn"]
-[ext_resource type="PackedScene" path="res://HUD/tscn/diario.tscn" id="12_58chr"]
+[ext_resource type="PackedScene" uid="uid://c5sat0rx26x6q" path="res://HUD/tscn/diario.tscn" id="12_58chr"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
 [ext_resource type="Texture2D" uid="uid://5x47uyca4bwo" path="res://HUD/sprites/livroAberto.png" id="13_1s72l"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
@@ -220,7 +220,7 @@ rasgada_direita = ExtResource("14_8kugn")
 pages = Array[Dictionary]([{
 "id": "espada",
 "illustration": ExtResource("15_gqrh1"),
-"text": ""
+"text": "Planta muito resistente, com folhas que sobrevivem mesmo em condições hostis. Destaca-se pela capacidade única de converter gás carbônico em oxigênio durante a noite, além de filtrar toxinas. Ela purifica continuamente o ar de ambientes fechados, favorecendo o sono e reduzindo alergias respiratórias. "
 }, {
 "id": "pagina_2",
 "illustration": ExtResource("14_8kugn"),
@@ -241,14 +241,15 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-theme_override_constants/separation = 0
-
-[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="0" unique_id=23054016]
-custom_minimum_size = Vector2(0, 0)
-size_flags_vertical = 3
 
 [node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="1" unique_id=1134170586]
-size_flags_vertical = 1
+anchor_top = 0.23
+anchor_bottom = 0.77
+mouse_filter = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_font_sizes/normal_font_size = 12
+scroll_active = false
 
 [node name="EspacoDir" parent="ui_livro/Livro2/TextureRect" index="3" unique_id=1299080639]
 offset_left = 700.0
@@ -261,13 +262,14 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-theme_override_constants/separation = 0
-
-[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="0" unique_id=1862995299]
-size_flags_vertical = 3
 
 [node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="1" unique_id=1530474607]
-size_flags_vertical = 1
+anchor_top = 0.23
+anchor_bottom = 0.77
+mouse_filter = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_font_sizes/normal_font_size = 12
 
 [connection signal="mouse_entered" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GridContainer2/botaolivro" to="GridContainer2/botaolivro" method="_on_mouse_exited"]

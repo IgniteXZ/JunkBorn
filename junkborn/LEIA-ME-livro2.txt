@@ -1,0 +1,30 @@
+ATUALIZACAO: LIVRO 2 - TEXTO DENTRO DO RETANGULO DA PLANTA
+
+Base: junkborn(7).zip
+Arquivos modificados: HUD/tscn/livro.tscn
+
+INSTALAR:
+1. Faca backup do arquivo HUD/tscn/livro.tscn no seu projeto.
+2. Feche o Godot.
+3. Extraia este ZIP na pasta onde fica project.godot, mantendo a estrutura de pastas.
+4. Reabra o Godot.
+
+EDITAR TEXTOS:
+1. Abra HUD/tscn/inventory.tscn.
+2. Selecione ui_livro > Livro2.
+3. No Inspector, expanda Pages, escolha a pagina e edite o campo text.
+   Exemplo para pagina 1: Uma planta resistente, comum em ambientes secos.
+4. Para ver o texto dessa pagina no jogo, o ID da pagina deve estar liberado por Global.paginas_coletadas.
+
+AJUSTAR POSICAO NO EDITOR:
+- Habilite Editable Children na instancia Livro2.
+- Selecione ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq/RichTextLabel
+  (ou EspacoDir/VBoxDir/RichTextLabel, conforme o lado).
+- Ajuste os anchors no Inspector, ou a retangulo com a ferramenta de selecao.
+- Nao mude os nomes dos nos; livro.gd usa essas referencias.
+
+ATENCAO:
+- O titulo da planta faz parte da arte da pagina pgEspada.
+- Esta atualizacao preserva o arquivo livro.gd, o Diario, o Livro 2
+  e a regra original de desbloqueio das paginas.
+- Este arquivo nao foi testado na engine Godot.

@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene format=3 uid="uid://c5sat0rx26x6q"]
 
-[ext_resource type="Script" path="res://HUD/scripts/diario.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://HUD/sprites/diarioPagina1.png" id="2_p1"]
-[ext_resource type="Texture2D" path="res://HUD/sprites/diarioPagina2.png" id="3_p2"]
-[ext_resource type="FontFile" path="res://Fonte/PressStart2P.ttf" id="4_font"]
-[ext_resource type="Texture2D" path="res://HUD/sprites/lombadaDiario.png" id="5_spine"]
-[ext_resource type="PackedScene" path="res://HUD/tscn/botaofechalivro.tscn" id="6_close"]
+[ext_resource type="Script" uid="uid://dgbys7jvmaaj3" path="res://HUD/scripts/diario.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cp16bd2phlge2" path="res://HUD/sprites/diarioPagina1.png" id="2_p1"]
+[ext_resource type="Texture2D" uid="uid://bgsj1ew32mplp" path="res://HUD/sprites/diarioPagina2.png" id="3_p2"]
+[ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="4_font"]
+[ext_resource type="Texture2D" uid="uid://c482dft3nlsyb" path="res://HUD/sprites/lombadaDiario.png" id="5_spine"]
+[ext_resource type="PackedScene" uid="uid://c7w5bsslvh2a0" path="res://HUD/tscn/botaofechalivro.tscn" id="6_close"]
 
-[node name="Livro" type="Control"]
+[node name="Livro" type="Control" unique_id=651806753]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -18,8 +18,9 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
-[node name="BookArea" type="Control" parent="."]
+[node name="BookArea" type="Control" parent="." unique_id=711605938]
 layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -32,77 +33,86 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Lombada" type="TextureRect" parent="BookArea"]
+[node name="Lombada" type="TextureRect" parent="BookArea" unique_id=98287643]
 layout_mode = 1
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -8.5
 offset_right = 8.5
+mouse_filter = 2
 texture = ExtResource("5_spine")
 expand_mode = 1
-stretch_mode = 0
-mouse_filter = 2
 
-[node name="Esquerda" type="Control" parent="BookArea"]
+[node name="Esquerda" type="Control" parent="BookArea" unique_id=1369926860]
 layout_mode = 1
 anchor_right = 0.5
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Fundo" type="TextureRect" parent="BookArea/Esquerda"]
+[node name="Fundo" type="TextureRect" parent="BookArea/Esquerda" unique_id=789236055]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_p1")
 expand_mode = 1
-stretch_mode = 0
-mouse_filter = 2
 
-[node name="Texto" type="RichTextLabel" parent="BookArea/Esquerda"]
+[node name="Texto" type="RichTextLabel" parent="BookArea/Esquerda" unique_id=673588541]
 layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.228
 anchor_top = 0.152
 anchor_right = 0.54
 anchor_bottom = 0.744
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("4_font")
+theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
 scroll_active = false
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_font")
-theme_override_font_sizes/normal_font_size = 10
 
-[node name="Direita" type="Control" parent="BookArea"]
+[node name="Direita" type="Control" parent="BookArea" unique_id=50122586]
 layout_mode = 1
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Fundo" type="TextureRect" parent="BookArea/Direita"]
+[node name="Fundo" type="TextureRect" parent="BookArea/Direita" unique_id=2050640225]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_p2")
 expand_mode = 1
-stretch_mode = 0
-mouse_filter = 2
 
-[node name="Texto" type="RichTextLabel" parent="BookArea/Direita"]
+[node name="Texto" type="RichTextLabel" parent="BookArea/Direita" unique_id=488623447]
 layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.46
 anchor_top = 0.152
 anchor_right = 0.772
 anchor_bottom = 0.744
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("4_font")
+theme_override_font_sizes/normal_font_size = 9
 bbcode_enabled = true
 scroll_active = false
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_font")
-theme_override_font_sizes/normal_font_size = 10
 
-[node name="Voltar" type="Button" parent="BookArea"]
+[node name="Voltar" type="Button" parent="BookArea" unique_id=1885463979]
 layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -25.2
@@ -112,8 +122,9 @@ theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 48
 text = "<"
 
-[node name="Avancar" type="Button" parent="BookArea"]
+[node name="Avancar" type="Button" parent="BookArea" unique_id=1757915401]
 layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -125,7 +136,7 @@ theme_override_fonts/font = ExtResource("4_font")
 theme_override_font_sizes/font_size = 48
 text = ">"
 
-[node name="Fechar" parent="BookArea" node_paths=PackedStringArray("livro") instance=ExtResource("6_close")]
+[node name="Fechar" parent="BookArea" unique_id=1243027764 node_paths=PackedStringArray("livro") instance=ExtResource("6_close")]
 layout_mode = 1
 offset_left = -1.0
 offset_top = -16.6
