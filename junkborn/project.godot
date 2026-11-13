@@ -79,6 +79,7 @@ directories/dtl_directory={
 "janela": "res://Dialogos/Timeline/janela.dtl",
 "mandacaruFala1": "res://Dialogos/Timeline/mandacaruFala1.dtl",
 "mesa": "res://Dialogos/Timeline/mesa.dtl",
+"pantanoBloqueio": "res://Dialogos/Timeline/pantanoBloqueio.dtl",
 "pia": "res://Dialogos/Timeline/pia.dtl",
 "pinico": "res://Dialogos/Timeline/pinico.dtl",
 "poratabloqueada": "res://Dialogos/Timeline/poratabloqueada.dtl",

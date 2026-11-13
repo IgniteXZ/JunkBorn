@@ -12,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://brrb8yuya7jwx" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset cerca.png" id="8_bo250"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="9_qq5vk"]
 [ext_resource type="Texture2D" uid="uid://8jvhdnth6djd" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset placeholder imoveis.png" id="12_gdgtv"]
-[ext_resource type="Texture2D" uid="uid://bmvtyru78cl2b" path="res://SpriteAlgo/images.jpg" id="13_500wf"]
-[ext_resource type="Script" uid="uid://cujnb82oxunh" path="res://HUD/scripts/item.gd" id="13_oprud"]
-[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="14_8llo0"]
 [ext_resource type="Script" uid="uid://f5p7gkn71r56" path="res://Cenarios/CenarioDentroCasa/CenarioColeta/Script/mini_game_coleta.gd" id="15_0icm8"]
 [ext_resource type="Texture2D" uid="uid://bkhswug126xl1" path="res://NPC/Sprites/Npc1/npc1-1.png" id="16_0xg0n"]
 [ext_resource type="Script" uid="uid://dvxnnbfwym5x7" path="res://Player/cenas/npc_1.gd" id="16_wuro2"]
@@ -1432,8 +1429,6 @@ radius = 18.248287
 radius = 41.0
 height = 220.00122
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_500wf"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(68, 50)
 
@@ -1855,54 +1850,6 @@ position = Vector2(1300.9999, 91.99999)
 rotation = 1.5711273
 shape = SubResource("CapsuleShape2D_fpo1d")
 
-[node name="item1" type="Area2D" parent="." unique_id=810148950 node_paths=PackedStringArray("labelinteragir")]
-visible = false
-script = ExtResource("13_oprud")
-labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-id_item_mapa = "ve_item1"
-nome = "Tung"
-
-[node name="collision" type="CollisionShape2D" parent="item1" unique_id=184556170]
-position = Vector2(12, -14)
-shape = SubResource("RectangleShape2D_500wf")
-
-[node name="sprite" type="Sprite2D" parent="item1" unique_id=1393674261]
-position = Vector2(12.000002, -14.000002)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("13_500wf")
-
-[node name="item2" type="Area2D" parent="." unique_id=896609587 node_paths=PackedStringArray("labelinteragir")]
-visible = false
-script = ExtResource("13_oprud")
-labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-id_item_mapa = "ve_item2"
-nome = "Roblox"
-
-[node name="collision" type="CollisionShape2D" parent="item2" unique_id=763775455]
-position = Vector2(84, -9)
-shape = SubResource("RectangleShape2D_500wf")
-
-[node name="sprite" type="Sprite2D" parent="item2" unique_id=259322660]
-position = Vector2(85.00001, -9.000001)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("14_8llo0")
-
-[node name="item3" type="Area2D" parent="." unique_id=1127147407 node_paths=PackedStringArray("labelinteragir")]
-visible = false
-script = ExtResource("13_oprud")
-labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-id_item_mapa = "ve_item3"
-nome = "Robloxzinho"
-
-[node name="collision" type="CollisionShape2D" parent="item3" unique_id=1603857462]
-position = Vector2(129, 83)
-shape = SubResource("RectangleShape2D_500wf")
-
-[node name="sprite" type="Sprite2D" parent="item3" unique_id=644374980]
-position = Vector2(129, 83.00001)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("14_8llo0")
-
 [node name="MiniGameColeta" type="Area2D" parent="." unique_id=515256518]
 position = Vector2(213, -41)
 script = ExtResource("15_0icm8")
@@ -2006,15 +1953,6 @@ position = Vector2(495.99997, -68.999985)
 rotation = 0.84823
 shape = SubResource("CircleShape2D_0hx70")
 
-[connection signal="PassarCanvas" from="y-sort/Character" to="item1" method="_on_character_passar_canvas"]
-[connection signal="PassarCanvas" from="y-sort/Character" to="item2" method="_on_character_passar_canvas"]
-[connection signal="PassarCanvas" from="y-sort/Character" to="item3" method="_on_character_passar_canvas"]
-[connection signal="area_entered" from="item1" to="item1" method="_on_area_entered"]
-[connection signal="area_exited" from="item1" to="item1" method="_on_area_exited"]
-[connection signal="area_entered" from="item2" to="item2" method="_on_area_entered"]
-[connection signal="area_exited" from="item2" to="item2" method="_on_area_exited"]
-[connection signal="area_entered" from="item3" to="item3" method="_on_area_entered"]
-[connection signal="area_exited" from="item3" to="item3" method="_on_area_exited"]
 [connection signal="area_entered" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_entered"]
 [connection signal="area_exited" from="MiniGameColeta" to="MiniGameColeta" method="_on_area_exited"]
 [connection signal="area_entered" from="passarEntreCenas/forja" to="passarEntreCenas/forja" method="_on_area_entered"]

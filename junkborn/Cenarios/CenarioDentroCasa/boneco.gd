@@ -3,8 +3,15 @@ extends TileMapLayer
 const BONECO = preload("res://Resource/Itens/boneco.tres")
 const ID_BONECO := 100
 
+
 func _ready() -> void:
+	# Se Filomeno ja coletou o boneco, ele nao aparece novamente
+	if Dialogic.VAR.get_variable("Filomeno_estacoComBoneco", false):
+		queue_free()
+		return
+
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+
 
 
 func _on_dialogic_signal(argument: String) -> void:

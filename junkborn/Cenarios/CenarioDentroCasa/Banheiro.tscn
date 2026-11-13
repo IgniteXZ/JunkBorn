@@ -523,7 +523,7 @@ size = Vector2(38, 32)
 size = Vector2(35.125, 25.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpo1d"]
-size = Vector2(52, 52)
+size = Vector2(43, 39)
 
 [node name="Node2D" type="Node2D" unique_id=1574714337]
 
@@ -631,7 +631,7 @@ script = ExtResource("5_is0nw")
 timeline = "pia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=2103217913]
-position = Vector2(85, -15)
+position = Vector2(89.5, -8.5)
 shape = SubResource("RectangleShape2D_fpo1d")
 
 [connection signal="area_entered" from="sairB" to="sairB" method="_on_area_entered"]

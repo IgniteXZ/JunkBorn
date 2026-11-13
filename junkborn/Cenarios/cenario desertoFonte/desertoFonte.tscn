@@ -1274,6 +1274,9 @@ size = Vector2(93, 1723.375)
 radius = 91.39545
 height = 311.15027
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
+size = Vector2(179, 703)
+
 [node name="Node2D2" type="Node2D" unique_id=240260216]
 script = ExtResource("1_ec6ab")
 
@@ -1411,12 +1414,12 @@ tile_map_data = PackedByteArray("AADr//3/BwAAAAMAAADr//7/BwAAAAMAAADr////BwAAAAM
 tile_set = SubResource("TileSet_ukhvp")
 
 [node name="spawnsDesertoFonte" type="Node2D" parent="." unique_id=708454426]
-visible = false
 
 [node name="spawnSaiFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=667308716]
-position = Vector2(-637, 322)
+position = Vector2(-761, 314)
 
 [node name="entradaDesertoFonte" type="Marker2D" parent="spawnsDesertoFonte" unique_id=1984481161]
+visible = false
 position = Vector2(21, -76)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1960152451]
@@ -1467,3 +1470,15 @@ shape = SubResource("CapsuleShape2D_87td0")
 position = Vector2(-611.99994, 535)
 rotation = 0.16715127
 shape = SubResource("CapsuleShape2D_87td0")
+
+[node name="entradaPantano" type="Area2D" parent="." unique_id=2105128897]
+position = Vector2(-1044, 112)
+script = ExtResource("14_esxbg")
+automatico = true
+variavel_necessaria = "podeSairFonte"
+timeline_bloqueado = "pantanoBloqueio"
+cena_destino = "res://Cenarios/Cenario pantano/pantanoQuimico.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entradaPantano" unique_id=1276820490]
+position = Vector2(-445.5, 112.5)
+shape = SubResource("RectangleShape2D_e7ti3")

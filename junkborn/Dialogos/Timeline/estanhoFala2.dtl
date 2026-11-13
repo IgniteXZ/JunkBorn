@@ -1,49 +1,48 @@
 join srEstanho right
 join Filomeno left
-if {filomeno_estaComDiario} == false:
-	srEstanho (normal): Quer conversar sobre algo Filomeno?
-	- Porquê Sr. Estanho
-		srEstanho (feliz): Haha! Quer saber desse velho apelido?
-		srEstanho (normal): Seu vô Hivaldo era o líder da vila a anos atrás.
-		srEstanho (normal): E por ter recém descoberto a mina no meu tempo ela era abundante em estanho.
-		srEstanho (feliz): Então recebi esse apelido do povo.
-		srEstanho (fechado): Mas se eu soubesse do estrago que a rauch company teria feito com isso…
-		srEstanho (fechado): bom, se arrepender do passado não mudará nada, não?
-		srEstanho (normal): Agora sou apenas um homem velho e doente… incapaz de fazer qualquer coisa pra mudar os erros que cometi.
-		set {rauchy_company} = true
-	- Vila
-		srEstanho (feliz): Ah, nossa vila.
-		srEstanho (normal): Seu nome original se perdeu com o passar dos anos.
-		srEstanho (fechado): Assim como tudo que existia antes da extinção da natureza.
-		srEstanho (normal): Agora chamada de “Vila Estanho”.
-		srEstanho (normal): Pois antigamente tinha uma alta quantia de estanho na mina.
-		srEstanho (fechado): Agora a quantidade diminuiu consideravelmente desde então.
-		srEstanho (normal): Mas o nome prevalece apesar de tudo.
-	- Natureza
-		srEstanho (feliz): Velhos tempos… eu era bem novo quando ainda tinham campos com grama pelas colinas de terra, mesmo com pouca mata.
-		srEstanho (fechado): Quando eu tive sua mãe, já estava tudo acabado.
-		srEstanho (normal): Então lentamente a areia começou a tomar tudo…
-		srEstanho (normal): A terra começou a ressecar, ficando semelhante a rochas, o gramado virou palha, e areia começou a tomar o horizonte.
-		srEstanho (normal): E então acabou no momento que vivemos.
-		srEstanho (fechado): Enfim… tudo isso culpa das decisões de pessoas irresponsáveis que só pensavam em si.
-		srEstanho (normal): Infelizmente eu era uma delas… Agora estou colhendo o que plantei.
-	- Mandacaru
-		srEstanho (normal): É… Agora ele é quem toma conta dessa vila.
-		srEstanho (normal): Alguém arrogante e orgulhoso, que só pensa em seu próprio benefício.
-		srEstanho (fechado): Eu também era assim quando tomava conta da vila, infelizmente.
-		srEstanho (normal): Mas quando percebi o que estava fazendo, e quais seriam as consequências disso pro futuro.
-		srEstanho (normal): Busquei agir de alguma forma, mas me tiraram do comando antes que eu fizesse qualquer coisa.
-		srEstanho (fechado): E colocaram alguém que simbolizava força e autoridade, apenas para continuar o ciclo.
-		srEstanho (normal): E vai continuar assim, enquanto “eles” estiverem no comando de tudo isso.
-		if {rauchy_company} == true:
-			- Rauchy Company
-				srEstanho (normal): “Eles”... são praticamente os donos desse novo mundo.
-				srEstanho (normal): A partir da destruição da fauna e flora durante décadas.
-				srEstanho (fechado): Quase nada restou nesse mundo.
-				srEstanho (normal): Governos caíram, cidades deixaram de existir.
-				srEstanho (normal): Então a Rauch Company surgiu, com a promessa de trazer “ordem e fartura” para esse mundo arrasado.
-				srEstanho (normal): Todos se agarraram a promessa do novo salvador.
-				srEstanho (fechado): Mal sabiam que iriam trazer essa “ordem e fartura” tornando o povo em peões.
-				srEstanho (normal): Agora não passam de figurões que consomem o pouco que sobrou desse mundo em caos.
-	- Nada
-		srEstanho (feliz): Ah, ok.
+srEstanho (normal): Quer conversar sobre algo Filomeno?
+- Porquê Sr. Estanho
+	srEstanho (feliz): Haha! Quer saber desse velho apelido?
+	srEstanho (normal): Seu vô Hivaldo era o líder da vila a anos atrás.
+	srEstanho (normal): E por ter recém descoberto a mina no meu tempo ela era abundante em estanho.
+	srEstanho (feliz): Então recebi esse apelido do povo.
+	srEstanho (fechado): Mas se eu soubesse do estrago que a rauch company teria feito com isso…
+	srEstanho (fechado): bom, se arrepender do passado não mudará nada, não?
+	srEstanho (normal): Agora sou apenas um homem velho e doente… incapaz de fazer qualquer coisa pra mudar os erros que cometi.
+	set {rauchy_company} = true
+- Vila
+	srEstanho (feliz): Ah, nossa vila.
+	srEstanho (normal): Seu nome original se perdeu com o passar dos anos.
+	srEstanho (fechado): Assim como tudo que existia antes da extinção da natureza.
+	srEstanho (normal): Agora chamada de “Vila Estanho”.
+	srEstanho (normal): Pois antigamente tinha uma alta quantia de estanho na mina.
+	srEstanho (fechado): Agora a quantidade diminuiu consideravelmente desde então.
+	srEstanho (normal): Mas o nome prevalece apesar de tudo.
+- Natureza
+	srEstanho (feliz): Velhos tempos… eu era bem novo quando ainda tinham campos com grama pelas colinas de terra, mesmo com pouca mata.
+	srEstanho (fechado): Quando eu tive sua mãe, já estava tudo acabado.
+	srEstanho (normal): Então lentamente a areia começou a tomar tudo…
+	srEstanho (normal): A terra começou a ressecar, ficando semelhante a rochas, o gramado virou palha, e areia começou a tomar o horizonte.
+	srEstanho (normal): E então acabou no momento que vivemos.
+	srEstanho (fechado): Enfim… tudo isso culpa das decisões de pessoas irresponsáveis que só pensavam em si.
+	srEstanho (normal): Infelizmente eu era uma delas… Agora estou colhendo o que plantei.
+- Mandacaru
+	srEstanho (normal): É… Agora ele é quem toma conta dessa vila.
+	srEstanho (normal): Alguém arrogante e orgulhoso, que só pensa em seu próprio benefício.
+	srEstanho (fechado): Eu também era assim quando tomava conta da vila, infelizmente.
+	srEstanho (normal): Mas quando percebi o que estava fazendo, e quais seriam as consequências disso pro futuro.
+	srEstanho (normal): Busquei agir de alguma forma, mas me tiraram do comando antes que eu fizesse qualquer coisa.
+	srEstanho (fechado): E colocaram alguém que simbolizava força e autoridade, apenas para continuar o ciclo.
+	srEstanho (normal): E vai continuar assim, enquanto “eles” estiverem no comando de tudo isso.
+	if {rauchy_company} == true:
+		- Rauchy Company
+			srEstanho (normal): “Eles”... são praticamente os donos desse novo mundo.
+			srEstanho (normal): A partir da destruição da fauna e flora durante décadas.
+			srEstanho (fechado): Quase nada restou nesse mundo.
+			srEstanho (normal): Governos caíram, cidades deixaram de existir.
+			srEstanho (normal): Então a Rauch Company surgiu, com a promessa de trazer “ordem e fartura” para esse mundo arrasado.
+			srEstanho (normal): Todos se agarraram a promessa do novo salvador.
+			srEstanho (fechado): Mal sabiam que iriam trazer essa “ordem e fartura” tornando o povo em peões.
+			srEstanho (normal): Agora não passam de figurões que consomem o pouco que sobrou desse mundo em caos.
+- Nada
+	srEstanho (feliz): Ah, ok.

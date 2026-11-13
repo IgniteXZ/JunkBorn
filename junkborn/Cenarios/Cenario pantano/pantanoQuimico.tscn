@@ -4725,6 +4725,8 @@ shape = SubResource("RectangleShape2D_yjgqi")
 position = Vector2(-2866, 965.9375)
 shape = SubResource("RectangleShape2D_ka6kb")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=2005903544]
+
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
