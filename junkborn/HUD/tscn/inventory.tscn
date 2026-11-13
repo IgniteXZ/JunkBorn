@@ -9,14 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://c5sat0rx26x6q" path="res://HUD/tscn/diario.tscn" id="12_58chr"]
 [ext_resource type="Script" uid="uid://db5nkn0g1eggt" path="res://HUD/scripts/botaolivrobotanica.gd" id="12_awwgi"]
 [ext_resource type="Texture2D" uid="uid://5x47uyca4bwo" path="res://HUD/sprites/livroAberto.png" id="13_1s72l"]
+[ext_resource type="Texture2D" uid="uid://cp16bd2phlge2" path="res://HUD/sprites/diarioPagina1.png" id="13_6f1v5"]
 [ext_resource type="Texture2D" uid="uid://2wbv7agtvm6m" path="res://HUD/sprites/livrobotanica.png" id="13_10kb4"]
 [ext_resource type="Texture2D" uid="uid://ouorf48t2ljp" path="res://HUD/sprites/diarioShiny.png" id="13_58chr"]
+[ext_resource type="Texture2D" uid="uid://c1cwb4aubvshc" path="res://HUD/sprites/diarioRasgEsq.tres" id="13_dbes8"]
 [ext_resource type="Texture2D" uid="uid://bbdoerrgrc7mc" path="res://HUD/sprites/pgVazia1.png" id="13_gqrh1"]
 [ext_resource type="Texture2D" uid="uid://bc3iveje82jrd" path="res://HUD/sprites/pgVazia2.png" id="14_8kugn"]
 [ext_resource type="Script" uid="uid://07t3i7xodfmn" path="res://HUD/scripts/ui_livro.gd" id="14_10kb4"]
+[ext_resource type="Texture2D" uid="uid://bgsj1ew32mplp" path="res://HUD/sprites/diarioPagina2.png" id="14_ge5gi"]
 [ext_resource type="PackedScene" uid="uid://vdamr8acgl8k" path="res://HUD/tscn/livro.tscn" id="14_gqrh1"]
+[ext_resource type="Texture2D" uid="uid://vo1tihe8mwry" path="res://HUD/sprites/diarioRasgDir.tres" id="14_sdd3e"]
+[ext_resource type="Texture2D" uid="uid://cx7gstjwl5q0s" path="res://HUD/sprites/diarioPagina3.png" id="15_dbes8"]
 [ext_resource type="Texture2D" uid="uid://b83fq8hasncxw" path="res://HUD/sprites/pgEspadaEsq.tres" id="15_gqrh1"]
 [ext_resource type="Texture2D" uid="uid://bvchkvpt2r85d" path="res://HUD/sprites/livroBotanicaShiny.png" id="16_58chr"]
+[ext_resource type="Texture2D" uid="uid://bnnm53irmdakh" path="res://HUD/sprites/diarioPagina4.png" id="16_sdd3e"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1380545637]
 offset_right = 600.0
@@ -211,6 +217,21 @@ texture = ExtResource("12_8kugn")
 script = ExtResource("14_10kb4")
 
 [node name="Livro" parent="ui_livro" unique_id=1848472087 instance=ExtResource("12_58chr")]
+pagina_rasgada_esquerda = ExtResource("13_dbes8")
+pagina_rasgada_direita = ExtResource("14_sdd3e")
+paginas = Array[Dictionary]([{
+"illustration": ExtResource("13_6f1v5"),
+"text": "Após anos procurando um local para as plantas, encontramos perto do pântano químico um lugar..."
+}, {
+"illustration": ExtResource("14_ge5gi"),
+"text": "Esse lugar é a esperança do deserto, onde as plantas poderão ser salvas e poderão florescer novamente"
+}, {
+"illustration": ExtResource("15_dbes8"),
+"text": "A Rauchs Company nos achou antes de conseguirmos levar a água pra superfície e começar a plantar, então espalhamos as sementes pelo deserto, cada uma em uma região"
+}, {
+"illustration": ExtResource("16_sdd3e"),
+"text": "Após as coisas se acalmarem vamos pegar todas elas e plantar perto da fonte, aonde poderão florescer e trazer a natureza de volta."
+}])
 
 [node name="Livro2" parent="ui_livro" unique_id=1488017157 instance=ExtResource("14_gqrh1")]
 visible = false
