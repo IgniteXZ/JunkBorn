@@ -1,57 +1,13 @@
-JUNKBORN 7 — MARCADORES DE MISSOES NO MAPA
-================================================
+CORRECAO LIVRO 2 - JUNKBORN 8
 
-INSTALACAO
-1. Faca uma copia de seguranca do projeto e feche o Godot.
-2. Extraia este ZIP na pasta principal do Junkborn, onde esta project.godot.
-3. Confirme a substituicao APENAS dos arquivos incluidos no ZIP.
-4. Abra o Godot, espere a importacao e teste abrir o mapa depois de iniciar uma missao.
+1. Faca backup de res://HUD/tscn/inventory.tscn.
+2. Feche o Godot.
+3. Extraia este ZIP na pasta raiz do projeto, onde esta project.godot.
+4. Substitua apenas HUD/tscn/inventory.tscn.
 
-ALTERACOES:
-- Novo: DestinoMissaoMapa.gd (recurso para configurar um destino)
-- Alterado: MissaiResource.gd (array de destinos no Inspector)
-- Novo: HUD/scripts/mapa_missoes.gd (mostra marcadores amarelos e dicas)
-- Alterado: HUD/tscn/mapamundi.tscn (acrescenta UM no de marcadores)
-- Alterados: 6 recursos .tres de missoes com destinos conhecidos
-- NAO modifica HUD/scripts/mapamundi.gd: suas coordenadas do mapa sao preservadas!
-- NAO altera o HUD de progresso das sementes, inventario, Diario ou Livro 2.
+Corrige o layout de TextureRect das duas paginas e dos RichTextLabel no Livro2.
+Mantem os textos configurados, as propriedades de paginas rasgadas, as missoes,
+o Diario e o script do Livro2 inalterados.
+A pagina espada ainda e liberada pelo item da Fonte, via pagina_id='espada'.
 
-FUNCIONAMENTO
-- Quando a missao esta ativa, aparece um ! amarelo no destino cadastrado.
-- Destinos em uma mesma regiao sao agrupados (numero no icone).
-- Passe o mouse ou clique/toque para ver o nome e a descricao da missao.
-- Quando a missao termina, o marcador desaparece.
-- Marcadores de sementes desaparecem quando o ID estiver em Global.itens_coletados.
-- A semente da Fonte tambem esta cadastrada; caso tenha sido coletada antes do
-  inicio da missao, o marcador nao aparece, como deve acontecer.
-
-DESTINOS JA CADASTRADOS
-- irpracasa, dormir, pedidoestanho -> Vila (ID 0)
-- explorardeserto, fazercanos -> Deserto 1 (ID 1)
-- buscarsementes -> Fonte 6 (ID 'fonte_semente_1'), Deserto 2 (ID '1'),
-  Pantano Quimico 5 (ID '2'), Deserto 1 (ID '4').
-- buscarsementes -> Minas (ID '0') ainda sem coordenada: regiao_id = -1.
-- buscarsementes -> semente de coleta ID '3' ainda sem cena no projeto: -1.
-- verlivro -> sem marcador, porque o Diario pode ser aberto de qualquer lugar.
-
-COMO CADASTRAR OUTROS DESTINOS
-1. Abra um recurso em res://Resource/Missoes/ (ex.: buscarsementes.tres).
-2. No Inspector, expanda 'Destinos Mapa'.
-3. Cada item e um recurso DestinoMissaoMapa. Configure:
-   - Regiao Id: ID da cena na lista 'posicaocidade' do mapamundi.gd.
-   - Titulo: o texto apresentado no marcador.
-   - Id Item Coletado: apenas para coletaveis. Deixe vazio nas outras missoes.
-4. Para adicionar regioes novas, acrescente a coordenada no array
-   'posicaocidade' do seu mapamundi.gd e use o indice correspondente.
-   Ex.: Minas seria regiao_id 7 se voce adicionar o 8o Vector2 ao array.
-   Nao copie uma coordenada inventada. Meça a posicao da entrada das Minas no mapa.
-5. Se ainda nao souber o ponto, use -1; o objetivo nao gera marcador ate definir.
-
-OBSERVACOES
-- As coordenadas de Deserto 2/Pantano/Fonte no junkborn(7).zip ainda eram
-  provisoriamente iguais. Este ZIP NAO sobrescreve suas coordenadas atuais.
-- Os marcadores mostram REGIOES, nao a posicao exata do item dentro do cenario.
-- O exemplo de 'fazercanos' usa Deserto 1, pois o texto diz deserto; altere o
-  destino no Inspector caso o material esteja no Deserto 2.
-- Nao testado dentro do Godot neste ambiente. Se o Godot apontar erro,
-  envie o texto do erro para ajustar precisamente.
+Nao testado dentro do editor Godot.

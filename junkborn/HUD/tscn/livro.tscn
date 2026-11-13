@@ -82,7 +82,7 @@ offset_top = 131.0
 offset_right = 380.0
 offset_bottom = 623.0
 
-[node name="VBoxEsq" type="VBoxContainer" parent="TextureRect/EspacoEsq" unique_id=1721902399]
+[node name="VBoxEsq" type="Control" parent="TextureRect/EspacoEsq" unique_id=1721902399]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,22 +93,31 @@ offset_right = -15.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/EspacoEsq/VBoxEsq" unique_id=23054016]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 6
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_02bdd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/EspacoEsq/VBoxEsq" unique_id=1134170586]
-layout_mode = 2
-size_flags_vertical = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.232
+anchor_top = 0.36
+anchor_right = 0.536
+anchor_bottom = 0.702
+offset_top = 35.0
+offset_bottom = 35.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_ivuo1")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 13
 
 [node name="EspacoDir" type="Control" parent="TextureRect" unique_id=1299080639]
 layout_mode = 1
@@ -118,7 +127,7 @@ offset_top = 131.0
 offset_right = 1245.0
 offset_bottom = 627.0
 
-[node name="VBoxDir" type="VBoxContainer" parent="TextureRect/EspacoDir" unique_id=173351270]
+[node name="VBoxDir" type="Control" parent="TextureRect/EspacoDir" unique_id=173351270]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,19 +138,29 @@ offset_right = -14.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/EspacoDir/VBoxDir" unique_id=1862995299]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 6
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_fssjj")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/EspacoDir/VBoxDir" unique_id=1530474607]
-layout_mode = 2
-size_flags_vertical = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.465
+anchor_top = 0.36
+anchor_right = 0.785
+anchor_bottom = 0.792
+offset_top = 33.23999
+offset_bottom = 33.23999
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_ivuo1")
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 13
+scroll_active = false
