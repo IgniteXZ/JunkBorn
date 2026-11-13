@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="10_tk3gm"]
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
-[ext_resource type="Texture2D" uid="uid://b32vlfe3qcdis" path="res://SpriteAlgo/roblox.jpg" id="17_dhrox"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="20_umam2"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
@@ -857,7 +856,6 @@ shape = SubResource("CircleShape2D_ce1y2")
 
 [node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
 position = Vector2(-4184, 12)
-texture = ExtResource("17_dhrox")
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/entradaDesertoFonte" unique_id=1978442284]
 script = ExtResource("18_6u4ac")
