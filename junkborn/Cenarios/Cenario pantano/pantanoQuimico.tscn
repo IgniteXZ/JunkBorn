@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="17_g34os"]
 [ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="21_ka6kb"]
 [ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="22_je6m8"]
+[ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="22_ka6kb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -4724,6 +4725,11 @@ shape = SubResource("RectangleShape2D_yjgqi")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1169085317]
 position = Vector2(-2866, 965.9375)
 shape = SubResource("RectangleShape2D_ka6kb")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1394524347 node_paths=PackedStringArray("jogador")]
+script = ExtResource("22_ka6kb")
+timeline = "ChegandoNoPantano"
+jogador = NodePath("../y-sort/Character")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
