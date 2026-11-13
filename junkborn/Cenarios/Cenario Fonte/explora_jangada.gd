@@ -1,4 +1,5 @@
 extends Node2D
+
 @export var modo_teste = false
 @export var tex_jangada: Texture2D
 @onready var area = $testeJangada
@@ -6,12 +7,13 @@ extends Node2D
 var camada_aviso: CanvasLayer
 var aviso: Label
 var jogador_dentro = false
+var aberto = false  # NOVO: indica que a jangada já foi liberada/usada
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	area.body_entered.connect(_ao_entrar)
 	area.body_exited.connect(_ao_sair)
-	
+
 	camada_aviso = CanvasLayer.new()
 	camada_aviso.layer = 4
 	add_child(camada_aviso)
@@ -27,19 +29,20 @@ func _ready() -> void:
 	camada_aviso.add_child(aviso)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if not jogador_dentro:
+func _process(_delta: float) -> void:
+	# CORRIGIDO: se já interagiu (aberto), não mostra mais o aviso
+	if not jogador_dentro or aberto:
 		return
 
 	var c = contar()
 
-	if c["jangada"] >= 1:
+	if requisitos_ok(c):
 		aviso.text = "Aperte E para interagir"
 	else:
 		aviso.text = "Você precisa de uma jangada para explorar a fonte."
 
 	aviso.visible = true
+
 
 func _ao_entrar(body):
 	if body.is_in_group("player"):
@@ -50,8 +53,13 @@ func _ao_sair(body):
 	if body.is_in_group("player"):
 		jogador_dentro = false
 		aviso.visible = false
+		Global.chamarJangada = false
+		# Se quiser que a colisão volte ao sair da área, mantenha as 2 linhas abaixo.
+		# Se não quiser, apague-as (e a linha 'aberto = false').
+		aberto = false
+		reativar_colisao()
 
-	
+
 func obter_slots() -> Array:
 	var slots = []
 	var jogador = get_tree().get_first_node_in_group("player")
@@ -64,19 +72,22 @@ func obter_slots() -> Array:
 			slots.append(no)
 
 	return slots
-	
+
+
 func mesma_textura(a, b) -> bool:
 	if a == null or b == null:
 		return false
 	if a == b:
 		return true
 	return a.resource_path != "" and a.resource_path == b.resource_path
-	
+
+
 func chave_da_textura(tex) -> String:
 	if mesma_textura(tex, tex_jangada):
 		return "jangada"
 	return ""
-	
+
+
 func contar() -> Dictionary:
 	if modo_teste:
 		return {"jangada": 1}
@@ -95,17 +106,32 @@ func contar() -> Dictionary:
 			r[chave] += 1
 
 	return r
-	
+
+
+# NOVO: mesma ideia da fonte, centraliza a verificação
+func requisitos_ok(c: Dictionary) -> bool:
+	return c["jangada"] >= 1
+
+
 func _unhandled_input(event):
-	if not jogador_dentro:
-		Global.chamarJangada = false
+	# CORRIGIDO: ignora se fora da área ou se já interagiu
+	if not jogador_dentro or aberto:
 		return
-	
+
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
-		liberar()
+		# CORRIGIDO: só libera se tiver a jangada no inventário
+		if not requisitos_ok(contar()):
+			return
+
+		aberto = true
+		aviso.visible = false  # CORRIGIDO: texto some ao apertar E
 		Global.chamarJangada = true
-		
+		liberar()
+
+
 func liberar():
 	$"../colisoes/StaticBody2D/CollisionShape2D".set_deferred("disabled", true)
-	
-	
+
+
+func reativar_colisao():
+	$"../colisoes/StaticBody2D/CollisionShape2D".set_deferred("disabled", false)

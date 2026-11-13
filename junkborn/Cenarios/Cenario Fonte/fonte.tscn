@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="16_4jw3k"]
 [ext_resource type="Script" uid="uid://b35vrpexl1b73" path="res://Cenarios/Cenario Fonte/explora_jangada.gd" id="17_dvo31"]
 [ext_resource type="Texture2D" uid="uid://tvsdbbtpposo" path="res://Resource/Itens/jangada.png" id="19_mgdxn"]
-[ext_resource type="PackedScene" uid="uid://dcsc2ipuigyya" path="res://Inimigo/Drone/drone.tscn" id="19_msxt5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -1632,9 +1631,6 @@ size = Vector2(51.75, 27.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgdxn"]
 size = Vector2(35.875, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nj5"]
-size = Vector2(377.5, 108)
-
 [node name="Node2D" type="Node2D" unique_id=240260216]
 script = ExtResource("1_u2vtj")
 musica = ExtResource("12_u2vtj")
@@ -1774,13 +1770,6 @@ tex_jangada = ExtResource("19_mgdxn")
 
 [node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1557245071]
 position = Vector2(-564, -656)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExploraJangada/testeJangada" unique_id=1281286220]
-position = Vector2(-36, -155)
-shape = SubResource("RectangleShape2D_a3nj5")
-
-[node name="Drone" parent="." unique_id=201041272 instance=ExtResource("19_msxt5")]
-position = Vector2(-198, -394)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=268793449]
 position = Vector2(-592, -55)
