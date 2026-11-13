@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://vo1tihe8mwry"]
+
+[ext_resource type="Texture2D" uid="uid://cpki3n3gefqjv" path="res://HUD/sprites/diarioAbertoRasgado.png" id="1_fcb2h"]
+
+[resource]
+atlas = ExtResource("1_fcb2h")
+region = Rect2(264, 0, 264, 288)

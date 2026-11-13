@@ -142,6 +142,8 @@ func _on_empurrado_body_entered(body: Node2D) -> void:
 	# A área Empurrado do jogador detecta o corpo físico do drone (collision layer 2).
 	if perdendo_itens or not is_instance_valid(body):
 		return
+	if not body.is_in_group("drone"):
+		return
 
 	# Evita que vários drones iniciem a penalidade ao mesmo tempo.
 	perdendo_itens = true
@@ -173,41 +175,70 @@ func _obter_transicao() -> Node:
 	return transicao
 
 
+# Somente a exploracao do Pantano com a jangada permite teletransporte.
+func _exploracao_jangada_ativa() -> bool:
+	var cena := get_tree().current_scene
+	if cena == null or cena.scene_file_path != "res://Cenarios/Cenario pantano/pantanoQuimico.tscn":
+		return false
+
+	var exploracao := cena.get_node_or_null("ExploraJangada")
+	return (
+		exploracao != null
+		and Global.chamarJangada
+		and bool(exploracao.get("aberto"))
+		and bool(exploracao.get("jogador_dentro"))
+	)
+
+
 func _executar_penalidade_drone() -> void:
-	var transicao := _obter_transicao()
+	# Captura o contexto antes do fade, pois a colisao pode mudar durante a transicao.
+	var deve_retornar: bool = _exploracao_jangada_ativa()
+	var cena := get_tree().current_scene
+	var exploracao: Node = cena.get_node_or_null("ExploraJangada") if deve_retornar else null
+	var destino: Vector2 = posicao_inicial
+	if deve_retornar:
+		var marcador := cena.get_node_or_null("RetornoDroneJangada") as Marker2D
+		if marcador != null:
+			destino = marcador.global_position
 
-	# Fecha a tela antes de alterar o inventário e reposicionar o jogador.
-	if transicao != null and transicao.has_method("fade_out"):
-		await transicao.fade_out()
+	# So faz a transicao visual quando houver retorno ao ponto seguro no Pantano.
+	# Em um roubo comum, o jogador permanece no mesmo local, sem fade.
+	var transicao: Node = null
+	if deve_retornar:
+		transicao = _obter_transicao()
+		if transicao != null and transicao.has_method("fade_out"):
+			await transicao.fade_out()
 
+	# A perda de UM item comum acontece em qualquer cena com drones.
 	var canvas := get_tree().root.find_child("ui_canvas", true, false)
-	if canvas != null and canvas.has_method("limpar_inventario_completo"):
-		canvas.limpar_inventario_completo()
+	var roubou_item := false
+	if canvas != null and canvas.has_method("remover_item_aleatorio"):
+		roubou_item = canvas.remover_item_aleatorio()
 	else:
-		push_error("ui_canvas não encontrado ou sem limpar_inventario_completo().")
+		push_error("ui_canvas não encontrado ou sem remover_item_aleatorio().")
 
-	# A jangada também é perdida junto com os demais itens.
-	Global.chamarJangada = false
+	if deve_retornar:
+		# So recua para a area segura se foi atingido explorando com jangada.
+		if spawn_inicial_definido or cena.get_node_or_null("RetornoDroneJangada") != null:
+			global_position = destino
+		else:
+			Global.aplicar_spawn(self)
 
-	# Volta ao spawn inicial desta instância/cena.
-	if spawn_inicial_definido:
-		global_position = posicao_inicial
-	else:
-		# Fallback para casos em que a colisão ocorre antes da captura do spawn.
-		Global.aplicar_spawn(self)
+		if is_instance_valid(exploracao) and exploracao.has_method("encerrar_exploracao_por_drone"):
+			exploracao.encerrar_exploracao_por_drone()
+		else:
+			Global.chamarJangada = false
 
 	velocity = Vector2.ZERO
 	knockback_vector = Vector2.ZERO
 	bodyy = null
 	empurrado = false
 
-	# Reabre a cena usando o shader de transição que já existe no projeto.
-	if transicao != null and transicao.has_method("fade_in"):
+	if deve_retornar and transicao != null and transicao.has_method("fade_in"):
 		await transicao.fade_in()
 
-	# A mensagem aparece depois que a imagem volta, sem ficar escondida pelo fade.
 	if canvas != null and is_instance_valid(canvas) and canvas.has_method("mostrar_mensagem_perda"):
-		canvas.mostrar_mensagem_perda()
+		canvas.mostrar_mensagem_perda(roubou_item)
 
 	pode_mover = true
 	perdendo_itens = false
