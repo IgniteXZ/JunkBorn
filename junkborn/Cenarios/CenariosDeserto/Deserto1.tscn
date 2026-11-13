@@ -21,7 +21,6 @@
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="20_umam2"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
-[ext_resource type="PackedScene" uid="uid://c1hhpw6bo5ql0" path="res://Minigames/PlantarSemente/PlantarSemente.tscn" id="24_6u4ac"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -983,10 +982,6 @@ shape = SubResource("RectangleShape2D_k2fa0")
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=155876778]
 position = Vector2(-4067.25, -73)
 shape = SubResource("RectangleShape2D_ataks")
-
-[node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("24_6u4ac")]
-position = Vector2(-342, 144)
-label_interagir = NodePath("../Node2D/Character/LabelInteragir")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1691001552]
 position = Vector2(-584, 2442)
