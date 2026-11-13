@@ -43,25 +43,12 @@ func _process(_delta: float) -> void:
 		if not is_instance_valid(canvass):
 			return
 
-
-		# Adiciona o item ao inventário
-		# Os recursos ItemData de progressao e todas as sementes sao irroubaveis.
-		var protegido_drone: bool = dados_item.nome.to_lower().contains("semente")
-		if dados_item is ItemData and dados_item.id_item_mapa != "":
-			protegido_drone = true
-
-
 		# Adiciona o item ao inventário (4º argumento = o RECURSO inteiro)
-
 		if canvass.add_item_inventory(
 			id_inventario,
 			dados_item.textura,
 			dados_item.nome,
-
-			protegido_drone
-
 			dados_item
-
 		):
 
 			# Registra a coleta
@@ -78,24 +65,16 @@ func _process(_delta: float) -> void:
 			queue_free()
 
 
-
-func _on_area_entered(area: Area2D) -> void:
-	if not area.is_in_group("Player"):
-		return
-
+func _on_area_entered(_area: Area2D) -> void:
 	perto = true
 	if labelinteragir:
 		labelinteragir.visible = true
 
 
-func _on_area_exited(area: Area2D) -> void:
-	if not area.is_in_group("Player"):
-		return
-
+func _on_area_exited(_area: Area2D) -> void:
 	perto = false
 	if labelinteragir:
 		labelinteragir.visible = false
-
 
 
 func _on_character_passar_canvas(canvas: CanvasLayer) -> void:

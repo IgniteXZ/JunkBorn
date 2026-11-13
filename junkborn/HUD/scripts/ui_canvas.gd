@@ -62,9 +62,17 @@ func _slot_protegido_drone(slot: Node) -> bool:
 
 
 # coletar item no chão
-func add_item_inventory(ID: int, sprite: Texture, nome: String = "", protegido_drone: bool = false) -> bool:
+# coletar item no chão
+func add_item_inventory(ID: int, sprite: Texture, nome: String = "", dados = null) -> bool:
+	print("[ADD] nome: ", nome, " | dados: ", dados)
+	
+	print_stack()
+	# ... resto igual
+	if dados != null and not (dados is Resource):
+		push_warning("add_item_inventory: o 4º argumento não é um recurso (veio: %s)" % str(dados))
+		dados = null
+
 	var slots = $inventory/GridContainer.get_children()
-	var protegido := protegido_drone or _nome_e_semente(nome)
 
 	# Guarda o nome para o tooltip
 	if nome != "":
@@ -75,8 +83,8 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "", protegido_d
 		if slot.get_node("sprite").texture == sprite:
 			var quantidade = int(slot.get_node("amount").text)
 			slot.get_node("amount").text = str(quantidade + 1)
-			# Nunca perde a protecao ao empilhar outro item com a mesma textura.
-			slot.set_meta("protegido_drone", protegido or _slot_protegido_drone(slot))
+			if dados != null and slot.item_data == null:
+				slot.item_data = dados
 
 			salvar_inventario()
 			return true
@@ -87,7 +95,7 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "", protegido_d
 			slot.get_node("sprite").texture = sprite
 			slot.get_node("amount").text = "1"
 			slot.set_meta("item_id", ID)
-			slot.set_meta("protegido_drone", protegido)
+			slot.item_data = dados
 
 			salvar_inventario()
 			return true
@@ -253,3 +261,35 @@ func remover_itens_por_textura(textura: Texture2D) -> int:
 	if total > 0:
 		salvar_inventario()
 	return total
+
+# Remove TODAS as sementes (qualquer item com tipo "semente") e devolve um Array
+# com o item_data repetido uma vez por unidade.
+func remover_todas_as_sementes() -> Array:
+	var sementes: Array = []
+
+	for slot in $inventory/GridContainer.get_children():
+		if slot.get_node("sprite").texture == null:
+			continue
+
+		var dados = slot.item_data
+		if dados == null:
+			print("[INV] slot com item mas item_data NULL")
+			continue
+
+		var tipo_item: String = str(dados.tipo).strip_edges().to_lower() if "tipo" in dados else "SEM CAMPO TIPO"
+		print("[INV] item: ", dados.nome, " | tipo: '", tipo_item, "'")
+
+		if tipo_item != "semente":
+			continue
+
+		var texto: String = slot.get_node("amount").text
+		var qtd: int = int(texto) if texto != "" else 1
+		for i in range(qtd):
+			sementes.append(dados)
+
+		limpar_slot(slot)
+
+	if not sementes.is_empty():
+		salvar_inventario()
+
+	return sementes
