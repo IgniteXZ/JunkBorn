@@ -1068,7 +1068,7 @@ visible = false
 [node name="spawnsForja" type="Node2D" parent="." unique_id=2135651128]
 
 [node name="entradaForja" type="Marker2D" parent="spawnsForja" unique_id=1356522167]
-position = Vector2(220, 798)
+position = Vector2(220, 724)
 gizmo_extents = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1957274144]
