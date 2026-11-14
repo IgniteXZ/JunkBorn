@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://rb67up68ic4"]
 
 [ext_resource type="Script" uid="uid://bfrroip1p708d" path="res://Menu/tscn/menu.gd" id="1_80ekw"]
-[ext_resource type="Texture2D" uid="uid://4chjhoctyetc" path="res://Menu/sprite/menufundo.png" id="1_b4q87"]
 [ext_resource type="AudioStream" uid="uid://c1ck7onyql1e1" path="res://Audios/SoundTrack/OrquestradoresClaude.mp3" id="2_gcxu8"]
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="2_mjkk2"]
+[ext_resource type="Texture2D" uid="uid://c0cdfgx773vko" path="res://HUD/sprites/telaInicial.png" id="3_gcxu8"]
 [ext_resource type="Script" uid="uid://dmppt1foktb1q" path="res://Menu/script/sair.gd" id="3_m05b3"]
 [ext_resource type="Script" uid="uid://bdtcxscdwa2nw" path="res://Menu/script/jogar.gd" id="3_t6cjk"]
 [ext_resource type="Script" uid="uid://ikdj5v3a7448" path="res://Menu/script/opcoes.gd" id="4_ixj20"]
@@ -57,7 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_b4q87")
+texture = ExtResource("3_gcxu8")
 
 [node name="Titulo" type="Label" parent="." unique_id=18289514]
 layout_mode = 1

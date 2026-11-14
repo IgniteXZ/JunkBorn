@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5a1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hx70"]
+size = Vector2(58, 37)
 
 [node name="Escavar" type="Area2D" unique_id=1899616426]
 script = ExtResource("1_dgxjm")
@@ -13,4 +14,5 @@ script = ExtResource("1_dgxjm")
 shape = SubResource("RectangleShape2D_m5a1v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2039219246]
+position = Vector2(-3, -2.5)
 shape = SubResource("RectangleShape2D_0hx70")

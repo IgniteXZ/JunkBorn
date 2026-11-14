@@ -2319,6 +2319,7 @@ position = Vector2(799.5, -10)
 shape = SubResource("RectangleShape2D_e7ti3")
 
 [node name="Escavar" parent="." unique_id=406869501 node_paths=PackedStringArray("camada", "sementes") instance=ExtResource("22_24x85")]
+position = Vector2(-2475, -527)
 tipo = 1
 camada = NodePath("../y-sort2/pedraQuebravel")
 tex_ferramenta = ExtResource("23_ha63x")
