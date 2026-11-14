@@ -13,18 +13,19 @@ func _ready():
 		lista_de_itens.add_child(nova_linha)
 		nova_linha.configurar_linha(receita)
 		linhas_carregadas.append(nova_linha)
+		
+	HudEstilo.aplicar(self)
+	HudEstilo.embrulhar_com_titulo($divisaoPrincipal, "FORJA", true)
+
 func verificar_todas_as_receitas():
 	var alguma_receita_pronta = false
 	for linha in linhas_carregadas:
+		linha.atualizar_destaque()
 		if linha.verificar_linha_completa():
 			alguma_receita_pronta = true
-			break
-	if alguma_receita_pronta:
-		botao_forjar_universal.disabled = false
-		botao_forjar_universal.modulate = Color(0, 1, 0)
-	else:
-		botao_forjar_universal.disabled = true
-		botao_forjar_universal.modulate = Color(1, 1, 1)
+	botao_forjar_universal.disabled = not alguma_receita_pronta
+	botao_forjar_universal.modulate = Color(0.7, 1, 0.7) if alguma_receita_pronta else Color(1, 1, 1)
+
 func _obter_recurso_da_receita(receita: RecipeData) -> LixoData:
 	for prop in receita.get_property_list():
 		var valor = receita.get(prop.name)

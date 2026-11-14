@@ -11,6 +11,8 @@ nome_resultado = "Picareta"
 icone_resultado = ExtResource("1_2rxjy")
 item_resultado = ExtResource("3_nnbjg")
 ingredientes = {
-ExtResource("2_xy7xu"): 2
+ExtResource("2_xy7xu"): 3
 }
+descricao_resultado = "Com a picareta, eu consigo quebrar pedras e também facilitar a criação da tubulação de água."
+nomes_materiais = Array[String](["Metal", ""])
 metadata/_custom_type_script = "uid://dycfmqmje3pms"

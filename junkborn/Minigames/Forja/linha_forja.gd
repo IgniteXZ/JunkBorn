@@ -8,8 +8,16 @@ const SLOT_MATERIAL_SCENE = preload("res://Minigames/Forja/slotMaterial.tscn")
 
 var slots_da_linha: Array[SlotMaterial] = []
 
+func atualizar_destaque() -> void:
+	var pronta := verificar_linha_completa()
+	icone_resultado.modulate = Color(1, 1, 1, 1) if pronta else Color(1, 1, 1, 0.5)
+
 func configurar_linha(receita: RecipeData):
+	
 	icone_resultado.texture = receita.icone_resultado
+	icone_resultado.mouse_filter = Control.MOUSE_FILTER_STOP
+	icone_resultado.tooltip_text = HudEstilo.quebrar_linhas(receita.texto_resultado())
+	
 	
 	for filho in container_materiais.get_children():
 		filho.queue_free()
@@ -29,10 +37,16 @@ func configurar_linha(receita: RecipeData):
 		
 		novo_slot.setup_slot(imagem_item, quantidade_necessaria)
 		
+		var nome: String = receita.nome_material(i)
+		if nome == "" and Global.nomes_itens.has(imagem_item):
+			nome = str(Global.nomes_itens[imagem_item])
+		novo_slot.tooltip_text = nome
+		
 		if i < lista_ingredientes.size() - 1:
 			var sinal_mais = Label.new()
 			sinal_mais.text = "+"
 			container_materiais.add_child(sinal_mais)
+		atualizar_destaque()
 
 func verificar_linha_completa() -> bool:
 	for slot in slots_da_linha:

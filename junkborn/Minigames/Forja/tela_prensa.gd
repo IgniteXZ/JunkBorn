@@ -17,7 +17,11 @@ func _ready() -> void:
 		button_prensar.pressed.connect(_on_button_pressed)
 	if not canvass:
 		canvass = get_tree().get_first_node_in_group("InterfaceUsuario")
-
+		
+		HudEstilo.aplicar(self)
+	HudEstilo.estilizar_janela($PanelContainer)
+	HudEstilo.embrulhar_com_titulo($PanelContainer/divisaoPrincipal, "PRENSA")
+		
 func _process(_delta: float) -> void:
 	_monitorar_previa()
 
@@ -93,6 +97,10 @@ func _gerar_icones_previa() -> void:
 			
 		if slot_previa.has_method("setup_slot"):
 			slot_previa.setup_slot(tex, qtd_final, true)
+		var nome: String = receita.nome_material(receita.ingredientes.keys().find(ingrediente))
+		if nome == "" and ingrediente is Object and "nome" in ingrediente:
+			nome = str(ingrediente.nome)
+		slot_previa.tooltip_text = nome
 
 func _on_button_pressed() -> void:
 	if not item_atual and slot_entrada and slot_entrada.item_data:
