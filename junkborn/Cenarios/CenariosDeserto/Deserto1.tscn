@@ -1162,34 +1162,12 @@ rotation = -0.038397245
 scale = Vector2(1.053854, -0.5374398)
 shape = SubResource("RectangleShape2D_ns0o7")
 
-[node name="AparecerDrone" type="Area2D" parent="." unique_id=1923807501]
-script = ExtResource("22_umam2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AparecerDrone" unique_id=330487526]
-position = Vector2(-2288, 134)
-shape = SubResource("RectangleShape2D_13qdw")
-
-[node name="Marker2D" type="Marker2D" parent="AparecerDrone" unique_id=155727700]
-position = Vector2(-2002, 193)
-
-[node name="Marker2D3" type="Marker2D" parent="AparecerDrone" unique_id=967483016]
-position = Vector2(-2135, 347)
-
-[node name="Marker2D2" type="Marker2D" parent="AparecerDrone" unique_id=174846142]
-position = Vector2(-2050, -11)
-
 [node name="AparecerDrone2" type="Area2D" parent="." unique_id=1704643078]
 script = ExtResource("22_umam2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AparecerDrone2" unique_id=1524751543]
 position = Vector2(-1247, 183)
 shape = SubResource("RectangleShape2D_13qdw")
-
-[node name="Marker2D" type="Marker2D" parent="AparecerDrone2" unique_id=1636655290]
-position = Vector2(-1030, 296)
-
-[node name="Marker2D3" type="Marker2D" parent="AparecerDrone2" unique_id=1105797989]
-position = Vector2(-920, 184)
 
 [node name="Marker2D2" type="Marker2D" parent="AparecerDrone2" unique_id=1026324692]
 position = Vector2(-930, 69)
@@ -1201,32 +1179,11 @@ script = ExtResource("22_umam2")
 position = Vector2(-3581.5, 1577.5)
 shape = SubResource("RectangleShape2D_b1lj4")
 
-[node name="Marker2D" type="Marker2D" parent="Area2D2" unique_id=1555733654]
-position = Vector2(-3392, 1952)
-
-[node name="Marker2D2" type="Marker2D" parent="Area2D2" unique_id=1290938464]
-position = Vector2(-3210, 1695)
-
-[node name="Marker2D3" type="Marker2D" parent="Area2D2" unique_id=97166368]
-position = Vector2(-3150, 1524)
-
-[node name="Marker2D4" type="Marker2D" parent="Area2D2" unique_id=971170257]
-position = Vector2(-3092, 1653)
-
-[node name="Marker2D5" type="Marker2D" parent="Area2D2" unique_id=1492116569]
-position = Vector2(-3150, 1887)
-
-[node name="Marker2D6" type="Marker2D" parent="Area2D2" unique_id=1053176329]
-position = Vector2(-3465, 1675)
-
-[node name="Marker2D7" type="Marker2D" parent="Area2D2" unique_id=745652452]
-position = Vector2(-3274, 1566)
-
 [node name="Marker2D8" type="Marker2D" parent="Area2D2" unique_id=817196785]
-position = Vector2(-3598, 1825)
+position = Vector2(-3377, 822)
 
 [node name="Marker2D9" type="Marker2D" parent="Area2D2" unique_id=1177051378]
-position = Vector2(-3519, 1733)
+position = Vector2(-2127, 137)
 
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
