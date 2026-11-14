@@ -1,0 +1,36 @@
+CORREÇÃO DO PLANTIO - JUNKBORN
+Base: junkborn(20261114-195211).zip
+
+INSTALAÇÃO
+1) Faça backup da pasta do projeto.
+2) Extraia este ZIP DENTRO da pasta do jogo que contém project.godot.
+3) Confirme a substituição dos arquivos existentes.
+4) Abra o projeto no Godot e teste em uma partida de teste.
+
+ALTERAÇÕES
+- HUD/scripts/ui_canvas.gd: consulta não destrutiva das sementes válidas e consumo seguro de uma unidade de cada espécie.
+- Global/Global.gd: registro das espécies plantadas e sinal plantio_atualizado(quantidade), ambos válidos durante a sessão.
+- Minigames/PlantarSemente/plantio.gd: prepara a criação das plantas antes de consumir sementes, cria 5 visuais distintos, grava e restaura posições ao voltar ao local.
+- Minigames/PlantarSemente/planta_cultivada.gd (NOVO): desenha as cinco espécies com formas vetoriais simples.
+- Minigames/PlantarSemente/planta_cultivada.tscn (NOVO): prefab da planta cultivada.
+- Minigames/PlantarSemente/PlantarSemente.tscn: substitui o drone que era planta padrão pelo prefab correto.
+- Cenarios/cenario desertoFonte/desertoFonte.tscn: retira o override que desativava a cena padrão da planta.
+- Item/Semente1.tres: define a cena de planta da semente da Fonte.
+- Resource/Itens/Sementes/SementeAgua.tres: define a cena do Aguapé.
+- Resource/Itens/Sementes/Semente3.tres: define a cena da Ora-pro-nóbis.
+- Resource/Itens/Sementes/SementeGirassol.tres: marca como semente e define a cena de planta.
+- Resource/Itens/Sementes/SementeSaman.tres: marca como semente e define a cena de planta.
+
+COMPORTAMENTO
+- Somente as 5 sementes alcançáveis entram no plantio; Verbácio fica fora.
+- A tecla E planta todas as espécies válidas presentes no inventário (pode ser aos poucos).
+- Só consome sementes quando a cena de cada planta é válida.
+- Cada espécie é plantada uma única vez. Posições não são aleatórias e não se sobrepõem.
+- As plantas reaparecem se o jogador sair da região e voltar NA MESMA SESSÃO.
+- A lista fica em Global.plantas_plantadas; a quantidade pode ser acompanhada pelo sinal Global.plantio_atualizado.
+- Não inclui novas missões ou diálogos, como combinado.
+- Plantas são desenhos simples feitos por código; podem ser substituídas por sprites próprios depois.
+
+LIMITAÇÃO
+- O projeto não conta com salvamento em disco para o plantio; o registro permanece apenas durante a sessão aberta do jogo.
+- Não foi possível executar o Godot neste ambiente. Validação realizada por inspeção estática e referências.

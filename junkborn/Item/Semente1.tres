@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_tav8i"]
 [ext_resource type="Texture2D" uid="uid://delbqik1iy824" path="res://Resource/Itens/sementeEspada.png" id="2_evjdn"]
 
+[ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
+
 [resource]
 script = ExtResource("1_tav8i")
 nome = "Semente de Espada-de-São-Jorge"
 textura = ExtResource("2_evjdn")
 id_item_mapa = "fonte_semente_1"
 tipo = "semente"
+planta_scene = ExtResource("3_planta")
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

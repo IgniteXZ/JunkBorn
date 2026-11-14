@@ -21,6 +21,11 @@ var paginas_coletadas: Dictionary = {}
 var DesligarMusica: bool = false
 
 var TerminouOminiGame: bool = false
+# Chave: ID único de coleta da semente; valor: deslocamento local no terreno.
+# Este dicionário persiste enquanto o jogo está aberto, inclusive entre cenas.
+var plantas_plantadas: Dictionary = {}
+signal plantio_atualizado(quantidade: int)
+
 var drones_spawnados: Array = []
 
 var dados_por_textura: Dictionary = {}

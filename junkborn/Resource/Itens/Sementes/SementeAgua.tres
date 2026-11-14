@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_sj23n"]
 [ext_resource type="Texture2D" uid="uid://dj3s1yksd5hvv" path="res://Resource/Itens/sementeAguap.png" id="2_njx2p"]
 
+[ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
+
 [resource]
 script = ExtResource("1_sj23n")
 id = 3
@@ -10,4 +12,5 @@ nome = "Semente de Aguapé"
 textura = ExtResource("2_njx2p")
 id_item_mapa = "mina_semente3"
 tipo = "semente"
+planta_scene = ExtResource("3_planta")
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

@@ -263,6 +263,84 @@ func remover_itens_por_textura(textura: Texture2D) -> int:
 	return total
 
 
+
+# Plantio: apenas as cinco sementes encontráveis na história.
+# A sexta (Verbácio) fica fora deste processo.
+const IDS_SEMENTES_PLANTIO = [
+	"fonte_semente_1",
+	"deserto1_semente2",
+	"deserto2_semente5",
+	"mina_semente3",
+    "pantano_semente_4"
+]
+
+
+func _semente_plantavel_no_slot(slot: Node) -> ItemData:
+	var textura: Texture2D = slot.get_node("sprite").texture
+	if textura == null:
+		return null
+	var dados = slot.item_data
+	if dados == null:
+		dados = Global.dados_por_textura.get(textura, null)
+	if not (dados is ItemData):
+		return null
+	if dados.tipo.strip_edges().to_lower() != "semente":
+		return null
+	if not IDS_SEMENTES_PLANTIO.has(dados.id_item_mapa):
+		return null
+	return dados
+
+
+# Consulta sem retirar os itens: o plantio valida todas as plantas primeiro.
+func listar_sementes_para_plantio(ja_plantadas: Dictionary) -> Array:
+	var encontradas: Array = []
+	var vistas: Dictionary = {}
+	for slot in $inventory/GridContainer.get_children():
+		var dados := _semente_plantavel_no_slot(slot)
+		if dados == null:
+			continue
+		var chave: String = dados.id_item_mapa
+		if ja_plantadas.has(chave) or vistas.has(chave):
+			continue
+		if int(slot.get_node("amount").text) < 1:
+			continue
+		vistas[chave] = true
+		encontradas.append({"id": chave, "dados": dados})
+	return encontradas
+
+
+# Transação: confirma a presença de TODAS as sementes antes de retirar uma sequer.
+# Consome uma unidade por espécie e mantém as demais unidades do mesmo slot.
+func consumir_sementes_plantio(ids: Array) -> bool:
+	if ids.is_empty():
+		return false
+	var slots_a_consumir: Array = []
+	var vistas: Dictionary = {}
+	for chave_variant in ids:
+		var chave: String = str(chave_variant)
+		if vistas.has(chave) or not IDS_SEMENTES_PLANTIO.has(chave):
+			return false
+		vistas[chave] = true
+		var encontrado: Node = null
+		for slot in $inventory/GridContainer.get_children():
+			var dados := _semente_plantavel_no_slot(slot)
+			if dados != null and dados.id_item_mapa == chave:
+				if int(slot.get_node("amount").text) > 0:
+					encontrado = slot
+					break
+		if encontrado == null:
+			return false
+		slots_a_consumir.append(encontrado)
+
+	for slot in slots_a_consumir:
+		var quantidade: int = int(slot.get_node("amount").text)
+		if quantidade > 1:
+			slot.get_node("amount").text = str(quantidade - 1)
+		else:
+			limpar_slot(slot)
+	salvar_inventario()
+	return true
+
 func remover_todas_as_sementes() -> Array:
 	var sementes: Array = []
 
