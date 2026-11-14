@@ -85,6 +85,7 @@ func add_item_inventory(ID: int, sprite: Texture, nome: String = "", dados = nul
 		if slot.get_node("sprite").texture == sprite:
 			var quantidade = int(slot.get_node("amount").text)
 			slot.get_node("amount").text = str(quantidade + 1)
+			slot.set_meta("item_id", ID)
 			if dados != null and slot.item_data == null:
 				slot.item_data = dados
 
