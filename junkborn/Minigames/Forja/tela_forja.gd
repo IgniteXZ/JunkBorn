@@ -33,63 +33,42 @@ func _obter_recurso_da_receita(receita: RecipeData) -> LixoData:
 			return valor
 	print(">>> ATENÇÃO: A receita '", receita.nome_resultado if "nome_resultado" in receita else "Sem Nome", "' não tem nenhum LixoData associado no Inspetor!")
 	return null
-func _on_button_pressed():
-	var canvas_inventario = canvass
-	if not canvas_inventario:
-		canvas_inventario = get_tree().get_first_node_in_group("InterfaceUsuario")
-	if not canvas_inventario:
-		canvas_inventario = get_parent() as CanvasLayer
-		
+func _on_button_pressed() -> void:
+	var inventario = get_tree().get_first_node_in_group("inventario")
+
+	if inventario == null:
+		push_error("Forja: inventário não encontrado!")
+		return
+
 	for i in range(linhas_carregadas.size()):
 		var linha = linhas_carregadas[i]
 		var receita = receitas[i]
-		if linha.verificar_linha_completa():
-			print("FORJADO COM SUCESSO: ", receita.nome_resultado)
-			var item_adicionado = false
-			var recurso_gerado = _obter_recurso_da_receita(receita)
-			
-			print(">>> DEBUG FORJA - Recurso gerado pela receita: ", recurso_gerado)
-			
-			var nome_item: String = recurso_gerado.nome if recurso_gerado else receita.nome_resultado
-			Global.nomes_itens[receita.icone_resultado] = nome_item
-			
-			if canvas_inventario:
-				var todos_os_nos = canvas_inventario.find_children("*", "Control", true, false)
-				
-				for no in todos_os_nos:
-					if not no.has_method("set_empty_slot"):
-						continue
-						
-					var sprite = no.get_node_or_null("sprite")
-					var amount = no.get_node_or_null("amount")
-					if sprite and amount and sprite.texture == receita.icone_resultado:
-						var qtd_atual = int(amount.text)
-						if qtd_atual <= 0: qtd_atual = 1
-						amount.text = str(qtd_atual + 1)
-						no.item_data = recurso_gerado
-						item_adicionado = true
-						break
-				
-				if not item_adicionado:
-					for no in todos_os_nos:
-						if not no.has_method("set_empty_slot"):
-							continue
-							
-						var sprite = no.get_node_or_null("sprite")
-						var amount = no.get_node_or_null("amount")
-						if sprite and amount and sprite.texture == null:
-							sprite.texture = receita.icone_resultado
-							amount.text = "1"
-							no.item_data = recurso_gerado
-							item_adicionado = true
-							break
-							
-			if item_adicionado:
-				for slot in linha.slots_da_linha:
-					if slot.has_method("consumir_material_forja"):
-						slot.consumir_material_forja()
-			else:
-				print("ERRO: Inventário cheio! Forja cancelada.")
+
+		if not linha.verificar_linha_completa():
+			continue
+
+		var resultado: LixoData = receita.item_resultado
+
+		if resultado == null or resultado.textura == null:
+			push_warning("Forja: resultado inválido em " + receita.nome_resultado)
+			continue
+
+		var adicionado = inventario.add_item_inventory(
+			resultado.item_id,
+			resultado.textura,
+			resultado.nome,
+			resultado
+		)
+
+		if not adicionado:
+			print("Forja: inventário cheio!")
+			continue
+
+		# Só consome os ingredientes após adicionar o item
+		for slot in linha.slots_da_linha:
+			slot.consumir_material_forja()
+
 	verificar_todas_as_receitas()
+	
 func _on_character_passar_canvas(canvas: CanvasLayer) -> void:
 	canvass = canvas

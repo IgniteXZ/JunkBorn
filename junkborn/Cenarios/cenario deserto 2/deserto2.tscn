@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://bbgcp5dkx0y50" path="res://Resource/Itens/Sementes/SementeGirassol.tres" id="16_c82f6"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_ij8sj"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="17_pmyn0"]
+[ext_resource type="Script" uid="uid://dd3mw6sa0rvc3" path="res://NPC/ScriptsNPC/dialogo_ao_entrar.gd" id="19_cnavx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7c43"]
 texture = ExtResource("2_c82f6")
@@ -1325,6 +1326,11 @@ position = Vector2(313, -160)
 
 [node name="Marker2D3" type="Marker2D" parent="Area2D" unique_id=792340968]
 position = Vector2(487, -137)
+
+[node name="dialogoDeserto2" type="Node2D" parent="." unique_id=609498787 node_paths=PackedStringArray("jogador")]
+script = ExtResource("19_cnavx")
+timeline = "dialogoDeserto2"
+jogador = NodePath("../y-sort/Character")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
