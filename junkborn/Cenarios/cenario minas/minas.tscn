@@ -18,9 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://1rypkmve7eam" path="res://Cenarios/cenario minas/minerador2-2.png" id="19_gr7km"]
 [ext_resource type="Texture2D" uid="uid://c5c65rwg2vstu" path="res://Cenarios/cenario minas/minerador3-1.png" id="20_1n2cu"]
 [ext_resource type="Texture2D" uid="uid://38oxkj1rparc" path="res://Cenarios/cenario minas/minerador3-2.png" id="21_bo5oc"]
+[ext_resource type="PackedScene" uid="uid://brqi375vw5kym" path="res://Minigames/escavarEMinerar/escavar.tscn" id="22_24x85"]
 [ext_resource type="Texture2D" uid="uid://1xg2ps5ky04o" path="res://Cenarios/cenario minas/Cópia de personagens1.png" id="22_mwlex"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="22_wh1vl"]
 [ext_resource type="Texture2D" uid="uid://df7fil533b47h" path="res://Cenarios/cenario minas/Cópia de personagens2.png" id="23_6of7i"]
+[ext_resource type="Texture2D" uid="uid://bs4aq5nekdo5l" path="res://Resource/Itens/picareta.png" id="23_ha63x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwkeg"]
 
@@ -2162,7 +2164,7 @@ tile_set = SubResource("TileSet_xrfvi")
 rendering_quadrant_size = 24
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_o20hw")]
-position = Vector2(-2475, -550)
+position = Vector2(-2479, -534)
 dados_item = ExtResource("5_hctfr")
 labelinteragir = NodePath("../y-sort2/Character/LabelInteragir")
 pagina_id = "aguape"
@@ -2187,7 +2189,6 @@ tile_map_data = PackedByteArray("AAAVAP3/AwAAAAAAAAAVAP7/AwAAAAEAAAAWAP3/AwABAAA
 tile_set = SubResource("TileSet_jhtq8")
 
 [node name="pedraQuebravel" type="TileMapLayer" parent="y-sort2" unique_id=2123233482]
-visible = false
 y_sort_enabled = true
 position = Vector2(67, 41)
 tile_map_data = PackedByteArray("AACU/+f/BAAAAAAAAACU/+j/BAAAAAEAAACV/+f/BAABAAAAAACV/+j/BAABAAEAAACW/+f/BAACAAAAAACW/+j/BAACAAEAAACX/+f/BAADAAAAAACX/+j/BAADAAEAAAA=")
@@ -2316,6 +2317,12 @@ spawn_destino = "spawnsDeserto2/saidaMina"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saidaMina" unique_id=917279501]
 position = Vector2(799.5, -10)
 shape = SubResource("RectangleShape2D_e7ti3")
+
+[node name="Escavar" parent="." unique_id=406869501 node_paths=PackedStringArray("camada", "sementes") instance=ExtResource("22_24x85")]
+tipo = 1
+camada = NodePath("../y-sort2/pedraQuebravel")
+tex_ferramenta = ExtResource("23_ha63x")
+sementes = [NodePath("../ItemnoChao")]
 
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]

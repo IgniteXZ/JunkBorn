@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://brqi375vw5kym"]
+
+[ext_resource type="Script" uid="uid://vsjmj6m5nx2x" path="res://Minigames/escavarEMinerar/escavar.gd" id="1_dgxjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5a1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hx70"]
+
+[node name="Escavar" type="Area2D" unique_id=1899616426]
+script = ExtResource("1_dgxjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=254583882]
+shape = SubResource("RectangleShape2D_m5a1v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2039219246]
+shape = SubResource("RectangleShape2D_0hx70")

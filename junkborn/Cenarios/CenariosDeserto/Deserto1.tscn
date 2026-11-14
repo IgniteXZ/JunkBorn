@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://d2iah7u1hagx3" path="res://Resource/Itens/Sementes/SementeSaman.tres" id="19_lnwlp"]
+[ext_resource type="PackedScene" uid="uid://brqi375vw5kym" path="res://Minigames/escavarEMinerar/escavar.tscn" id="21_umam2"]
+[ext_resource type="Texture2D" uid="uid://ryf00hcp53uk" path="res://Resource/Itens/pa.png" id="22_dhrox"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
@@ -793,6 +795,9 @@ b = Vector2(19.27681, -771.45105)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irqob"]
 size = Vector2(692.5, 49.75)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_je6m8"]
+radius = 24.083189
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfgki"]
 size = Vector2(145, 46.375)
 
@@ -992,7 +997,7 @@ position = Vector2(-3976, 8)
 position = Vector2(-631, 2073)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
-position = Vector2(-2823, 1875)
+position = Vector2(-2232, 1809)
 dados_item = ExtResource("19_lnwlp")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
 pagina_id = "samanbaia"
@@ -1127,6 +1132,10 @@ shape = SubResource("SegmentShape2D_g4p4k")
 position = Vector2(-2496.25, 1565.125)
 shape = SubResource("RectangleShape2D_irqob")
 
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1134940083]
+position = Vector2(-2231, 1811)
+shape = SubResource("CircleShape2D_je6m8")
+
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" unique_id=858307718]
 position = Vector2(-2963, 1634.8125)
 shape = SubResource("RectangleShape2D_wfgki")
@@ -1227,6 +1236,11 @@ position = Vector2(-3598, 1825)
 
 [node name="Marker2D9" type="Marker2D" parent="Area2D2" unique_id=1177051378]
 position = Vector2(-3519, 1733)
+
+[node name="Escavar" parent="." unique_id=406869501 node_paths=PackedStringArray("camada", "sementes") instance=ExtResource("21_umam2")]
+camada = NodePath("../terraQuebrar")
+tex_ferramenta = ExtResource("22_dhrox")
+sementes = [NodePath("../ItemnoChao")]
 
 [connection signal="PassarCanvas" from="Node2D/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/saidaDesertoVila/Area2D" to="passagemdeCena/saidaDesertoVila/Area2D" method="_on_area_entered"]
