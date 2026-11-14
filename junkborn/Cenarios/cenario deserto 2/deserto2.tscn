@@ -1318,14 +1318,11 @@ script = ExtResource("17_pmyn0")
 position = Vector2(251, 258)
 shape = SubResource("RectangleShape2D_13qdw")
 
-[node name="Marker2D" type="Marker2D" parent="Area2D" unique_id=1183692144]
-position = Vector2(29, -161)
-
 [node name="Marker2D2" type="Marker2D" parent="Area2D" unique_id=761887595]
-position = Vector2(313, -160)
+position = Vector2(230, -115)
 
 [node name="Marker2D3" type="Marker2D" parent="Area2D" unique_id=792340968]
-position = Vector2(487, -137)
+position = Vector2(-92, 1049)
 
 [node name="dialogoDeserto2" type="Node2D" parent="." unique_id=609498787 node_paths=PackedStringArray("jogador")]
 script = ExtResource("19_cnavx")
