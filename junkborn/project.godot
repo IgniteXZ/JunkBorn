@@ -47,6 +47,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
+"EntrandoNoDeserto": "res://Dialogos/Timeline/EntrandoNoDeserto.dtl",
 "FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",
 "acordou": "res://Dialogos/Timeline/acordou.dtl",
