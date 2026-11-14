@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_khsrx"]
 [ext_resource type="Texture2D" uid="uid://cig0s7wt1pxv0" path="res://Resource/Itens/sementeOrapro.png" id="2_gwq2s"]
-
 [ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
 
 [resource]

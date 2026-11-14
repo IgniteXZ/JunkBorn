@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://otpx4b8vjvgn"]
+
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="1_missao"]
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="2_destino"]
+
+[sub_resource type="Resource" id="Destino_falarcomavo"]
+script = ExtResource("2_destino")
+regiao_id = 0
+titulo = "Casa do Filomeno"
+
+[resource]
+script = ExtResource("1_missao")
+id_missao = "falarcomavo"
+titulo = "De volta ao lar"
+descricao = "Volte para casa e converse com seu avô sobre a semente que falta."
+destinos_mapa = Array[ExtResource("2_destino")]([SubResource("Destino_falarcomavo")])

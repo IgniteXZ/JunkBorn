@@ -997,7 +997,7 @@ func ganhar_jogo():
 			"Concluir",
 			concluir_minigame
 		)
-		Global.TerminouOminiGame = true
+		# A água só fica liberada quando o jogador clicar em "Concluir".
 
 
 func derrotar_jogo(motivo = "sem_cano"):

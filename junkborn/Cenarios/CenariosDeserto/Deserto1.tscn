@@ -826,7 +826,7 @@ sources/4 = SubResource("TileSetAtlasSource_t0mu4")
 sources/6 = SubResource("TileSetAtlasSource_s4tim")
 sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 
-[node name="Node2D5" type="Node2D" unique_id=1307634865]
+[node name="Node2D6" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 musica = ExtResource("2_vcs2c")
@@ -1137,6 +1137,12 @@ timeline_bloqueado = "caminhoerrado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=50367244]
 position = Vector2(49.45726, 42.032272)
+rotation = -0.038397245
+scale = Vector2(1.053854, -0.5374398)
+shape = SubResource("RectangleShape2D_ns0o7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1653800574]
+position = Vector2(-2180.9875, 321.4211)
 rotation = -0.038397245
 scale = Vector2(1.053854, -0.5374398)
 shape = SubResource("RectangleShape2D_ns0o7")

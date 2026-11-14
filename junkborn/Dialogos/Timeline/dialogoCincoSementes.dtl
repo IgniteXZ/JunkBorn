@@ -1,0 +1,10 @@
+join Filomeno (surpreso) left
+Filomeno (surpreso): Só falta uma semente...
+Filomeno (Normal): O diário diz que são seis sementes... mas só achei cinco
+if {Global.TerminouOminiGame} == true:
+	Filomeno (Normal): Melhor plantar essas cinco antes de anoitecer.
+	Filomeno (Normal): Depois pergunto ao vovô sobre a última semente.
+else:
+	Filomeno (Normal): Mas antes preciso levar a água até a superfície.
+	Filomeno (Normal): Assim poderei plantar essas cinco sementes. Depois pergunto ao vovô sobre a última.
+do Global.concluir_dialogo_cinco_sementes()

@@ -64,6 +64,8 @@ directories/dtl_directory={
 "carpete": "res://Dialogos/Timeline/carpete.dtl",
 "cutsceneCamaFiolmeno": "res://Dialogos/Timeline/cutsceneCamaFiolmeno.dtl",
 "descobrindoDiario": "res://Dialogos/Timeline/descobrindoDiario.dtl",
+"dialogoAreaPlantacao": "res://Dialogos/Timeline/dialogoAreaPlantacao.dtl",
+"dialogoCincoSementes": "res://Dialogos/Timeline/dialogoCincoSementes.dtl",
 "dialogoDeserto2": "res://Dialogos/Timeline/dialogoDeserto2.dtl",
 "dialogoEntrouFonte": "res://Dialogos/Timeline/dialogoEntrouFonte.dtl",
 "dialogoSemente1": "res://Dialogos/Timeline/dialogoSemente1.dtl",

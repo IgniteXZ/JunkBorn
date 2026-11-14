@@ -1,0 +1,3 @@
+join Filomeno (Normal) left
+Filomeno (Normal): Eu consigo plantar as sementes aqui.
+do Global.concluir_dialogo_area_plantacao()
