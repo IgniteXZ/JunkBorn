@@ -1998,19 +1998,15 @@ texture = ExtResource("13_ha63x")
 texture_region_size = Vector2i(24, 24)
 0:1/0 = 0
 0:1/0/y_sort_origin = -24
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.0892391, 5.31015, 12, 4.613737, 12, 12, -0.5223112, 12)
 1:1/0 = 0
 1:1/0/y_sort_origin = -24
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 4.78784, 12, 4.613737, 12, 12, -12, 12)
 1:0/0 = 0
 0:0/0 = 0
 2:0/0 = 0
 3:1/0 = 0
 3:1/0/y_sort_origin = -24
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 5.6583557, -0.17410469, 5.6583557, -1.0446205, 12, -12, 12)
 2:1/0 = 0
 2:1/0/y_sort_origin = -24
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 4.78784, 12, 4.613737, 12, 12, -12, 12)
 3:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jhtq8"]
@@ -2132,6 +2128,10 @@ height = 168.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ha63x"]
 radius = 23.0
 height = 168.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4ybo"]
+radius = 6.0
+height = 72.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ti3"]
 size = Vector2(121, 148)
@@ -2308,6 +2308,11 @@ position = Vector2(-2033, -368)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ha63x")
 
+[node name="pedra" type="CollisionShape2D" parent="y-sort2/StaticBody2D" unique_id=2035949600]
+position = Vector2(-2478, -514)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_r4ybo")
+
 [node name="saidaMina" type="Area2D" parent="." unique_id=269347248]
 script = ExtResource("22_wh1vl")
 automatico = true
@@ -2318,12 +2323,13 @@ spawn_destino = "spawnsDeserto2/saidaMina"
 position = Vector2(799.5, -10)
 shape = SubResource("RectangleShape2D_e7ti3")
 
-[node name="Escavar" parent="." unique_id=406869501 node_paths=PackedStringArray("camada", "sementes") instance=ExtResource("22_24x85")]
+[node name="Escavar" parent="." unique_id=406869501 node_paths=PackedStringArray("camada", "sementes", "colisoes") instance=ExtResource("22_24x85")]
 position = Vector2(-2475, -527)
 tipo = 1
 camada = NodePath("../y-sort2/pedraQuebravel")
 tex_ferramenta = ExtResource("23_ha63x")
 sementes = [NodePath("../ItemnoChao")]
+colisoes = [NodePath("../y-sort2/StaticBody2D/pedra")]
 
 [connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
 [connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
