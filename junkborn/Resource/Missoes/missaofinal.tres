@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="1_0uu00"]
 [ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="2_wwmc2"]
 
+[sub_resource type="Resource" id="Resource_0uu00"]
+script = ExtResource("1_0uu00")
+regiao_id = 8
+titulo = "O Topo"
+metadata/_custom_type_script = "uid://53qlefytxrod"
+
 [resource]
 script = ExtResource("2_wwmc2")
 id_missao = "missaofinal"
 titulo = "A Última Semente"
 descricao = "Vá até o topo do deserto através do deserto inferior para buscar a última semente"
+destinos_mapa = Array[ExtResource("1_0uu00")]([SubResource("Resource_0uu00")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

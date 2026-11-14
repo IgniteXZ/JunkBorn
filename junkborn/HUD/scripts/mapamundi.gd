@@ -14,6 +14,7 @@ var posicaocidade: Array[Vector2] = [
 	Vector2(0.256, 0.299),  #pantano quimico 5
 	Vector2(0.404, 0.33),  #fonte 6
 	Vector2(0.4515, 0.6319),  #mina 7
+	Vector2(0.88, 0.211 ) #topo 8
 
 
 
