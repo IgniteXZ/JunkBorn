@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://injxiwg4uaj4"]
+
+[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_7s4tj"]
+
+[resource]
+script = ExtResource("1_7s4tj")
+id = 6
+nome = "Semente de Verbácio"
+id_item_mapa = "x_verbacio"
+metadata/_custom_type_script = "uid://btfe53qhba1f0"

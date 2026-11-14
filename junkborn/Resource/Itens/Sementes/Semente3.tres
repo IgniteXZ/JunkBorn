@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_khsrx")
 id = 4
-nome = "SementeOprarprio"
+nome = "Semente de Ora-pro-nóbis"
 textura = ExtResource("2_gwq2s")
-id_item_mapa = "4"
+id_item_mapa = "pantano_semente_4"
 tipo = "semente"
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

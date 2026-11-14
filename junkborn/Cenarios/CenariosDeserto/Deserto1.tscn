@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
-[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="20_umam2"]
+[ext_resource type="Resource" uid="uid://d2iah7u1hagx3" path="res://Resource/Itens/Sementes/SementeSaman.tres" id="19_lnwlp"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="22_umam2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5a60c"]
@@ -732,7 +732,7 @@ size = Vector2(96, 374)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
 size = Vector2(649, 593)
 
-[node name="Node2D3" type="Node2D" unique_id=1307634865]
+[node name="Node2D5" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_0klxa")
 musica = ExtResource("2_vcs2c")
@@ -895,8 +895,9 @@ position = Vector2(-631, 2073)
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_b3x04")]
 position = Vector2(-2823, 1875)
-dados_item = ExtResource("20_umam2")
+dados_item = ExtResource("19_lnwlp")
 labelinteragir = NodePath("../Node2D/Character/LabelInteragir")
+pagina_id = "samanbaia"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684488821]
 

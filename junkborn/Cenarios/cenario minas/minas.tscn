@@ -5,10 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://bdgec1tjpriqh" path="res://Audios/SoundTrack/TrapezioMagnezio.mp3" id="2_hctfr"]
 [ext_resource type="Texture2D" uid="uid://b4vu4xvkiutbk" path="res://Cenarios/Cenario Fonte/tileset fonte2.png" id="3_d6sp6"]
 [ext_resource type="Texture2D" uid="uid://c8tcudvsmr43" path="res://Cenarios/Cenario Fonte/tileset fonte1e2.png" id="4_5d6l1"]
+[ext_resource type="Resource" uid="uid://ci4ncimuuookc" path="res://Resource/Itens/Sementes/SementeAgua.tres" id="5_hctfr"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="5_ut7wu"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="9_o20hw"]
-[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="10_1dx6c"]
-[ext_resource type="Texture2D" uid="uid://bv8081xn5tvek" path="res://NPC/Sprites/Npc2/npc2-2.png" id="11_lv45g"]
 [ext_resource type="Texture2D" uid="uid://5ntwri36nix6" path="res://Cenarios/cenario minas/pedraNaoQuebravel.png" id="12_24x85"]
 [ext_resource type="AudioStream" uid="uid://blc5oq6g7yl2f" path="res://Audios/SoundTrack/FontesComicSans.mp3" id="12_sycf7"]
 [ext_resource type="Script" uid="uid://csimeuuvvyg8v" path="res://Cenarios/cenario minas/character_body_2d.gd" id="13_cdq1q"]
@@ -348,13 +347,6 @@ texture_region_size = Vector2i(24, 24)
 tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qwcuk")
-
-[sub_resource type="Resource" id="Resource_wi68o"]
-script = ExtResource("10_1dx6c")
-nome = "Semente1"
-textura = ExtResource("11_lv45g")
-id_item_mapa = "0"
-metadata/_custom_type_script = "uid://btfe53qhba1f0"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1od1r"]
 texture = ExtResource("2_b5bg6")
@@ -2171,8 +2163,9 @@ rendering_quadrant_size = 24
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("9_o20hw")]
 position = Vector2(-2475, -550)
-dados_item = SubResource("Resource_wi68o")
+dados_item = ExtResource("5_hctfr")
 labelinteragir = NodePath("../y-sort2/Character/LabelInteragir")
+pagina_id = "aguape"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1856725427]
 stream = ExtResource("12_sycf7")
@@ -2263,11 +2256,11 @@ position = Vector2(646, -36)
 visible = false
 z_index = 1
 y_sort_enabled = true
-offset_left = -82.0
-offset_top = -95.0
-offset_right = 104.0
-offset_bottom = -72.0
-text = "Aperte E para interagir"
+offset_left = -87.0
+offset_top = -70.0
+offset_right = 99.0
+offset_bottom = -47.0
+text = "[E] Interagir"
 label_settings = SubResource("LabelSettings_0icm8")
 horizontal_alignment = 1
 vertical_alignment = 1
