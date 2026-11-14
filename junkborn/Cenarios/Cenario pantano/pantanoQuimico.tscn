@@ -3492,7 +3492,6 @@ size = Vector2(124.5, 801)
 
 [node name="Node2D4" type="Node2D" unique_id=240260216]
 script = ExtResource("1_072d7")
-intervalo_minimo_drone = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
