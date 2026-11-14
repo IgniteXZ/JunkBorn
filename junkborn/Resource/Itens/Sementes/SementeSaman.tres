@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d2iah7u1hagx3"]
+
+[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_pxs4d"]
+[ext_resource type="Texture2D" uid="uid://npas81635lly" path="res://Resource/Itens/sementeSaman.png" id="2_tmqtf"]
+
+[resource]
+script = ExtResource("1_pxs4d")
+id = 2
+nome = "Semente de Samanbaia"
+textura = ExtResource("2_tmqtf")
+id_item_mapa = "deserto1_semente2"
+metadata/_custom_type_script = "uid://btfe53qhba1f0"

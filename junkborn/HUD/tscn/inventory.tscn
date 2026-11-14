@@ -250,11 +250,11 @@ pages = Array[Dictionary]([{
 }, {
 "id": "orapronobis",
 "illustration": ExtResource("23_w1obm"),
-"text": "Trepadeira rústica nativa com folhas suculentas e espinhos no caule. No ambiente, protege o solo contra erosão, atrai polinizadores com suas flores e cresce com pouquíssima água. Para a saúde humana, é uma superalimento riquíssimo em proteínas vegetais, ferro, fibras e vitaminas A e C, combatendo a anemia e fortalecendo a imunidade. "
+"text": "Trepadeira na com folhas suculentas e espinhos no caule. Protege o solo contra erosão, atrai polinizadores com suas flores e cresce com pouquíssima água. Para a saúde humana, é uma superalimento riquíssimo em proteínas vegetais, ferro, fibras e vitaminas A e C, combatendo a anemia e fortalecendo a imunidade. "
 }, {
 "id": "aguape",
 "illustration": ExtResource("24_36usp"),
-"text": "Planta aquática flutuante de crescimento rápido com folhas arredondadas e flores, resistente a águas turvas e estagnadas. Faz fitorremediação hídrica: suas raízes densas absorvem metais pesados, esgoto e poluentes químicos da água. Embora não seja voltada ao consumo humano direto, protege a saúde pública ao descontaminar mananciais e frear a proliferação de doenças hídricas."
+"text": "Planta aquática de crescimento rápido com folhas arredondadas e resistentes a águas turvas e estagnadas. Faz fitorremediação hídrica: suas raízes absorvem metais pesados, esgoto e poluentes químicos da água. Embora não seja voltada ao consumo humano direto, protege a saúde  ao descontaminar mananciais e frear a proliferação de doenças."
 }, {
 "id": "girassol",
 "illustration": ExtResource("25_wcckc"),
@@ -262,7 +262,7 @@ pages = Array[Dictionary]([{
 }, {
 "id": "samanbaia",
 "illustration": ExtResource("26_2l8k0"),
-"text": "Planta ornamental ancestral de folhagem densa, pendente e vibrante, adaptada a ambientes úmidos e sombreados. No ambiente, atua como um umidificador natural e filtra poluentes atmosféricos como xileno e formaldeído. Para a saúde humana, melhora a qualidade respiratória ao manter a umidade do ar equilibrada em locais secos ou poluídos. "
+"text": "Planta ornamental  de folhagem densa e vibrante, adaptada a ambientes úmidos e sombreados. Atua como um umidificador natural e filtra poluentes atmosféricos como xileno e formaldeído. Melhora a qualidade respiratória ao manter a umidade do ar equilibrada em locais secos ou poluídos. "
 }, {
 "id": "verbasco",
 "illustration": ExtResource("27_h4pe1"),
@@ -277,17 +277,21 @@ offset_left = 0.0
 offset_top = 55.0
 offset_right = 700.0
 offset_bottom = 820.0
+mouse_filter = 2
 
 [node name="VBoxEsq" parent="ui_livro/Livro2/TextureRect/EspacoEsq" index="0" unique_id=1721902399]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+mouse_filter = 2
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="0" unique_id=23054016]
+mouse_filter = 2
 
 [node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoEsq/VBoxEsq" index="1" unique_id=1134170586]
 anchor_top = 0.23
 anchor_bottom = 0.77
-mouse_filter = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 2
 theme_override_font_sizes/normal_font_size = 12
@@ -298,17 +302,21 @@ offset_left = 700.0
 offset_top = 55.0
 offset_right = 1400.0
 offset_bottom = 820.0
+mouse_filter = 2
 
 [node name="VBoxDir" parent="ui_livro/Livro2/TextureRect/EspacoDir" index="0" unique_id=173351270]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+mouse_filter = 2
+
+[node name="TextureRect" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="0" unique_id=1862995299]
+mouse_filter = 2
 
 [node name="RichTextLabel" parent="ui_livro/Livro2/TextureRect/EspacoDir/VBoxDir" index="1" unique_id=1530474607]
 anchor_top = 0.23
 anchor_bottom = 0.77
-mouse_filter = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 2
 theme_override_font_sizes/normal_font_size = 12

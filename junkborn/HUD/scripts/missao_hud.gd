@@ -9,7 +9,16 @@ const TAM_DESC := 18     # descrição maior (era 16)
 
 # Todas as sementes da missao, incluindo a primeira da Fonte.
 # Os demais IDs (0 a 4) sao usados em outras cenas do projeto.
-const IDS_SEMENTES: Array[String] = ["fonte_semente_1", "0", "1", "2", "3", "4"]
+
+const IDS_SEMENTES: Array[String] = [
+	"fonte_semente_1",
+	"deserto1_semente2",
+	"deserto2_semente5",
+	"mina_semente3",
+	"pantano_semente_4",
+	"x_verbacio"
+]
+
 
 @onready var papel: PanelContainer = $Papel
 @onready var texto: RichTextLabel = $Papel/Conteudo/Texto

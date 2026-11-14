@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_pdkw8")
-id = 2
 nome = "SementeEspada"
 textura = ExtResource("2_3028d")
 id_item_mapa = "2"

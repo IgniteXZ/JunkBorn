@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bbgcp5dkx0y50"]
+
+[ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_vr300"]
+[ext_resource type="Texture2D" uid="uid://d4fer4bovrp55" path="res://Resource/Itens/sementeGiras.png" id="2_1yy7b"]
+
+[resource]
+script = ExtResource("1_vr300")
+id = 5
+nome = "Semente de Girassol"
+textura = ExtResource("2_1yy7b")
+id_item_mapa = "deserto2_semente5"
+metadata/_custom_type_script = "uid://btfe53qhba1f0"

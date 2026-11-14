@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://drgcpjldu5grx" path="res://Minigames/Coleta/mini_game_coleta.tscn" id="13_5owje"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="13_c82f6"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_ad0gh"]
-[ext_resource type="Resource" uid="uid://b7a2elo1vslob" path="res://Resource/Itens/Sementes/SementeEspada.tres" id="15_3xbu2"]
+[ext_resource type="Resource" uid="uid://bbgcp5dkx0y50" path="res://Resource/Itens/Sementes/SementeGirassol.tres" id="16_c82f6"]
 [ext_resource type="Script" uid="uid://bfm4620x5hk0m" path="res://Cenarios/CenariosDeserto/charmar_drone.gd" id="17_ij8sj"]
 [ext_resource type="Script" uid="uid://xgk27408s4bk" path="res://DroneAparecer.gd" id="17_pmyn0"]
 
@@ -1129,8 +1129,9 @@ visible = false
 
 [node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_ad0gh")]
 position = Vector2(357, 180)
-dados_item = ExtResource("15_3xbu2")
+dados_item = ExtResource("16_c82f6")
 labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
+pagina_id = "girassol"
 
 [node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
 position = Vector2(-1748, 156)
