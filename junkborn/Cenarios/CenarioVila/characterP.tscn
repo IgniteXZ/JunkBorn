@@ -1899,7 +1899,7 @@ position = Vector2(221, 82)
 gizmo_extents = 0.0
 
 [node name="sairDesertoParaVila" type="Marker2D" parent="spawnsVila" unique_id=1453320485]
-position = Vector2(-615, 108)
+position = Vector2(-514, 116)
 
 [node name="sairForja" type="Marker2D" parent="spawnsVila" unique_id=906331749]
 position = Vector2(858, -64)
