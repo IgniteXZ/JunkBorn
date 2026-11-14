@@ -229,4 +229,4 @@ func _ao_concluir():
 	# Nada é consumido: o cano e a pá são "chaves"
 	AudioManager.parar_musica()
 	fechar()
-	Dialogic.start_timeline("dialogoTenhoQuePlantar")
+	Dialogic.start("dialogoTenhoQuePlantar")
