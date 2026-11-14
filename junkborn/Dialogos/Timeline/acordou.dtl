@@ -4,3 +4,4 @@ Filomeno (Normal): Mmm... Parece que nesse diário tem várias páginas faltando
 Filomeno (Normal): E o local desenhado parece o deserto, perto do pantano quimico
 Filomeno (cansado): Talvez lá eu encontre mais respostas…
 do GerenciadorMissoes.iniciar("explorardeserto")
+set {forja_liberada} = true

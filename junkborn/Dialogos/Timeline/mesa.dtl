@@ -12,4 +12,4 @@ if {Filomeno_estacoComBoneco} == false:
 	- Não
 		Você deixou o boneco de palha na mesa.
 else:
-	Filomeno (Normal): A mesa de jantar
+	Filomeno (Normal): A  cômoda

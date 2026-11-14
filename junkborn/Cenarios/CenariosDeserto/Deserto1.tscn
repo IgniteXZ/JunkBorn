@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="6_0fj8k"]
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="6_d7c43"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="10_tk3gm"]
-[ext_resource type="Script" uid="uid://87e8c0lgjdq1" path="res://area_2d.gd" id="11_t0mu4"]
 [ext_resource type="PackedScene" uid="uid://cafjbgfvu2ewo" path="res://Item/itemno_chao.tscn" id="14_b3x04"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="18_6u4ac"]
 [ext_resource type="Resource" uid="uid://d2iah7u1hagx3" path="res://Resource/Itens/Sementes/SementeSaman.tres" id="19_lnwlp"]
@@ -613,8 +612,8 @@ sources/4 = SubResource("TileSetAtlasSource_t0mu4")
 sources/6 = SubResource("TileSetAtlasSource_s4tim")
 sources/0 = SubResource("TileSetAtlasSource_1hfg1")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ce1y2"]
-radius = 56.400356
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je6m8"]
+size = Vector2(80, 232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p4k"]
 size = Vector2(120, 254)
@@ -849,10 +848,14 @@ rendering_quadrant_size = 24
 position = Vector2(627, 33)
 
 [node name="Area2D" type="Area2D" parent="passagemdeCena/saidaDesertoVila" unique_id=1446586386]
-script = ExtResource("11_t0mu4")
+script = ExtResource("18_6u4ac")
+automatico = true
+cena_destino = "res://Cenarios/CenarioVila/characterP.tscn"
+spawn_destino = "spawnsVila/sairDesertoParaVila"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="passagemdeCena/saidaDesertoVila/Area2D" unique_id=169427568]
-shape = SubResource("CircleShape2D_ce1y2")
+position = Vector2(30, 18)
+shape = SubResource("RectangleShape2D_je6m8")
 
 [node name="entradaDesertoFonte" type="Sprite2D" parent="passagemdeCena" unique_id=317034886]
 position = Vector2(-4184, 12)
