@@ -13,6 +13,6 @@ metadata/_custom_type_script = "uid://53qlefytxrod"
 script = ExtResource("2_utbg2")
 id_missao = "irminigamecano"
 titulo = "Resgatando a Água"
-descricao = "Volte para a fonte e use o cano para trazer água para a vila."
+descricao = "Volte para a fonte e use o cano para trazer água para a superfície"
 destinos_mapa = Array[ExtResource("1_m7l00")]([SubResource("Resource_5eqyr")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

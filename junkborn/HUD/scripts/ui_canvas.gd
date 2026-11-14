@@ -262,8 +262,7 @@ func remover_itens_por_textura(textura: Texture2D) -> int:
 		salvar_inventario()
 	return total
 
-# Remove TODAS as sementes (qualquer item com tipo "semente") e devolve um Array
-# com o item_data repetido uma vez por unidade.
+
 func remover_todas_as_sementes() -> Array:
 	var sementes: Array = []
 
@@ -272,7 +271,6 @@ func remover_todas_as_sementes() -> Array:
 		if textura == null:
 			continue
 
-		# Usa o do slot; se estiver vazio, recupera pela textura
 		var dados = slot.item_data
 		if dados == null:
 			dados = Global.dados_por_textura.get(textura, null)
@@ -328,7 +326,12 @@ func _verificar_missao_material() -> void:
 					var id_missao = missao.id_missao
 					GerenciadorMissoes.completar_missao(id_missao)
 					
+					
+					
 					if id_missao == "fazercanos":
 						GerenciadorMissoes.iniciar("canoforja")
+					
+					elif id_missao == "canoforja":
+						GerenciadorMissoes.iniciar("irminigamecano")
 					return
 					
