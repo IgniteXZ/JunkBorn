@@ -1,8 +1,7 @@
 extends Control
 
 # Exporta uma variável do tipo 'LixoData' (recurso customizado) para guardar os dados do item neste slot
-@export var item_data: ItemData
-# Variável auxiliar para guardar temporariamente os dados caso o jogador cancele o arrasto
+@export var item_data: Resource# Variável auxiliar para guardar temporariamente os dados caso o jogador cancele o arrasto
 var drag_backup = null
 
 
@@ -133,8 +132,8 @@ func tem_item() -> bool:
 	return $sprite.texture != null
 
 # Retorna os dados do recurso (LixoData) guardado neste slot
-func get_item_data() -> ItemData:
-	return item_data
+func get_item_data() -> Resource:
+		return item_data
 
 # Retorna a quantidade numérica atual do texto do slot
 func get_quantidade() -> int:

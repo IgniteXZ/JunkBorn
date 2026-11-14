@@ -7,6 +7,7 @@ extends CanvasLayer
 
 func _process(_delta: float) -> void:
 	_atualizar_tooltip()
+	_verificar_missao_material()
 
 	# Fecha as interfaces automaticamente durante minigames
 	if Global.esta_coleta or not get_tree().get_nodes_in_group("minigame_aberto").is_empty():
@@ -155,7 +156,7 @@ func mostrar_mensagem_perda(roubou_item: bool = true) -> void:
 	texto.text = (
 		" Eu fui roubado? \nVocê perdeu 1 item..."
 		if roubou_item else
-		" O drone foi te roubar \nMas você é pobre."
+		" O drone foi te roubar \nMas você não havia nada"
 	)
 	texto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	texto.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -294,3 +295,39 @@ func remover_todas_as_sementes() -> Array:
 		salvar_inventario()
 
 	return sementes
+	
+	
+
+
+func _verificar_missao_material() -> void:
+	for missao in GerenciadorMissoes.missoes_ativas:
+		if missao.concluida:
+			continue
+
+		var id_necessario: int = -1
+
+		match missao.id_missao:
+			"fazercanos":
+				id_necessario = 11 # Plastico
+			"canoforja":
+				id_necessario = 1 # Cano
+			_:
+				continue
+
+		for slot in $inventory/GridContainer.get_children():
+			if not slot.has_meta("item_id"):
+				continue
+
+			var id_item = int(slot.get_meta("item_id"))
+
+			if id_item == id_necessario:
+				var quantidade = int(slot.get_node("amount").text)
+
+				if quantidade >= 1:
+					var id_missao = missao.id_missao
+					GerenciadorMissoes.completar_missao(id_missao)
+					
+					if id_missao == "fazercanos":
+						GerenciadorMissoes.iniciar("canoforja")
+					return
+					

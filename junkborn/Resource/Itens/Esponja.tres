@@ -7,7 +7,7 @@
 script = ExtResource("1_ir6vr")
 item_id = 3
 nome = "Esponja"
-descricao = "Uma esponja velha imunda, toda cheia de sujeira, nem a prensa dá jeito nisso"
+descricao = "É um material muito ruim para ser reciclado, não há como utilizá-la para produzir algo útil"
 textura = ExtResource("2_r35hu")
 tipoDeLixo = "Nada"
 Coletavel = false

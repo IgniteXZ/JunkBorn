@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://bmcw8tymslqlk"]
+
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="1_l7yq7"]
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="2_gvyft"]
+
+[sub_resource type="Resource" id="Resource_6h34l"]
+script = ExtResource("1_l7yq7")
+regiao_id = 3
+titulo = "Forja"
+metadata/_custom_type_script = "uid://53qlefytxrod"
+
+[resource]
+script = ExtResource("2_gvyft")
+id_missao = "canoforja"
+titulo = "Forjando"
+descricao = "Vá para a Forja ao lado da vila  e fabrique um cano "
+destinos_mapa = Array[ExtResource("1_l7yq7")]([SubResource("Resource_6h34l")])
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"
