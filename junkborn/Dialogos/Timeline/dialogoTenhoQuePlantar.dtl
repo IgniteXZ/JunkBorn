@@ -1,0 +1,5 @@
+join Filomeno (surpreso) left
+Filomeno (surpreso): Eu consegui!
+Filomeno (Normal): Agora a água deve ter subido para a superfície
+Filomeno (Normal): Vou subir para ver!
+do GerenciadorMissoes.iniciar("verplantacao")
