@@ -1,13 +1,12 @@
 extends Control
 
-const LARGURA := 420.0   # largura do post-it aberto (era 520)
+const LARGURA := 420.0   
 const PEEK := 60.0
 const MARGEM := 8.0
 const DURACAO_AVISO := 3500
 const TAM_TITULO := 24
-const TAM_DESC := 18     # descrição maior (era 16)
+const TAM_DESC := 18    
 
-# As cinco sementes recuperáveis (o Verbácio só aparece na história).
 const IDS_SEMENTES: Array[String] = [
 	"fonte_semente_1",
 	"deserto1_semente2",
@@ -33,11 +32,11 @@ var _valor_sementes_anterior: int = -1
 var _tween_sementes: Tween
 var _aviso_pendente: bool = false
 var _aviso_ate: int = 0
-var _novas: Dictionary = {}       # missão -> ms em que o "NOVA!" some (-1 = ainda não mostrado)
-var _concluidas: Dictionary = {}  # missão -> ms em que o risco some (-1 = ainda não mostrado)
+var _novas: Dictionary = {}       
+var _concluidas: Dictionary = {}  
 
 func _ready() -> void:
-	barra_sementes.max_value = float(IDS_SEMENTES.size())
+	barra_sementes.max_value = 6.0
 	papel.custom_minimum_size.x = LARGURA
 	papel.get_theme_stylebox("panel").content_margin_right = PEEK + 14.0
 	aba.position = Vector2(LARGURA - PEEK, 10)
@@ -126,8 +125,7 @@ func _atualizar_texto(novo: String) -> void:
 	papel.reset_size()
 
 func _atualizar_progresso_sementes() -> void:
-	# Mostra a barra somente se a missão de sementes estiver ativa
-	# (ou nos segundos em que uma missão concluída ainda aparece no post-it).
+
 	var mostrar_barra := false
 	for missao in GerenciadorMissoes.missoes_ativas:
 		if missao.id_missao == "buscarsementes":
@@ -147,7 +145,7 @@ func _atualizar_progresso_sementes() -> void:
 		if Global.itens_coletados.has(id_semente):
 			total_coletadas += 1
 
-	contador_sementes.text = "%d/%d" % [total_coletadas, IDS_SEMENTES.size()]
+	contador_sementes.text = "%d/6" % total_coletadas
 
 	if total_coletadas == _valor_sementes_anterior:
 		return
@@ -155,7 +153,6 @@ func _atualizar_progresso_sementes() -> void:
 	if _tween_sementes and _tween_sementes.is_valid():
 		_tween_sementes.kill()
 
-	# Se uma semente foi coletada após a primeira exibição, abre o post-it.
 	if _valor_sementes_anterior >= 0 and total_coletadas > _valor_sementes_anterior:
 		_aviso_pendente = true
 

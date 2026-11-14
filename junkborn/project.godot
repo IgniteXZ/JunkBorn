@@ -68,6 +68,7 @@ directories/dtl_directory={
 "dialogoCincoSementes": "res://Dialogos/Timeline/dialogoCincoSementes.dtl",
 "dialogoDeserto2": "res://Dialogos/Timeline/dialogoDeserto2.dtl",
 "dialogoEntrouFonte": "res://Dialogos/Timeline/dialogoEntrouFonte.dtl",
+"dialogoFinal": "res://Dialogos/Timeline/dialogoFinal.dtl",
 "dialogoSemente1": "res://Dialogos/Timeline/dialogoSemente1.dtl",
 "dialogoTenhoQuePlantar": "res://Dialogos/Timeline/dialogoTenhoQuePlantar.dtl",
 "discusaoFilomenoEstanho": "res://Dialogos/Timeline/discusaoFilomenoEstanho.dtl",
@@ -138,6 +139,7 @@ variables={
 "BonecoNoBolso": false
 },
 "NewVar": "",
+"conversarComAvo": true,
 "deserto2liberado": true,
 "deserto_liberado": true,
 "falou_estanhoinicio": false,

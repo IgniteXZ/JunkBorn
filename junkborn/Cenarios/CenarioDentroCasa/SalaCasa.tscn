@@ -641,6 +641,12 @@ shape = SubResource("RectangleShape2D_rj1pe")
 position = Vector2(75.5, 253)
 shape = SubResource("RectangleShape2D_pbiow")
 
+[node name="dialogoFinal" type="Node2D" parent="." unique_id=31226326 node_paths=PackedStringArray("jogador")]
+script = ExtResource("9_rxvhl")
+timeline = "dialogoFinal"
+variavel_necessaria = "conversarComAvo"
+jogador = NodePath("../Node/Character")
+
 [connection signal="area_entered" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemCenas/sairCasaFilo" to="passagemCenas/sairCasaFilo" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemCenas/EntrarNoQuartoFilo" to="passagemCenas/EntrarNoQuartoFilo" method="_on_area_entered"]

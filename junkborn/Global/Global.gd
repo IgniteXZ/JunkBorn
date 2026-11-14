@@ -139,6 +139,7 @@ func _ao_plantio_atualizado(quantidade: int) -> void:
 	_missao_avo_iniciada = true
 	GerenciadorMissoes.completar_missao("plantar5sementes")
 	GerenciadorMissoes.iniciar("falarcomavo")
+	Dialogic.VAR.set_variable("conversarComAvo", true)
 
 
 var drones_spawnados: Array = []

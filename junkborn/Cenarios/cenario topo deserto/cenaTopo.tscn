@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bsfnyu3wpjkdm"]
 
-[ext_resource type="Script" uid="uid://hqj0fgb8k3ai" path="res://Player/cenas/character_p.gd" id="1_kyhrh"]
+[ext_resource type="Script" uid="uid://ba87cc0qtoc0d" path="res://Cenarios/cenario topo deserto/cena_topo.gd" id="1_t30iu"]
 [ext_resource type="Texture2D" uid="uid://cruvqg26ijl2k" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax5.png" id="2_s86k8"]
 [ext_resource type="Texture2D" uid="uid://bqmglgwbyg3lk" path="res://Cenarios/cenario topo deserto/paralaxC3.png" id="3_fyjjf"]
 [ext_resource type="Texture2D" uid="uid://i30vrivj2w0w" path="res://CenarioAssets/assets/Cenario1.1/paralax/paralax3.png" id="3_t30iu"]
@@ -340,7 +340,8 @@ b = Vector2(240, 201)
 size = Vector2(525.5, 16)
 
 [node name="Node2D2" type="Node2D" unique_id=240260216]
-script = ExtResource("1_kyhrh")
+position = Vector2(192, -159)
+script = ExtResource("1_t30iu")
 
 [node name="ParallaxNode" type="Node2D" parent="." unique_id=1761516652]
 z_index = -1
@@ -477,7 +478,7 @@ tile_set = SubResource("TileSet_ukhvp")
 y_sort_enabled = true
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("13_18n0w")]
-position = Vector2(-596, 112)
+position = Vector2(-675, 785)
 
 [node name="LabelInteragir" type="Label" parent="y-sort/Character" unique_id=1029647010]
 z_index = 1

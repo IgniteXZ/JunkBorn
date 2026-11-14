@@ -1016,7 +1016,10 @@ size = Vector2(223.8125, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(618, 68)
 
-[node name="Node2D4" type="Node2D" unique_id=1307634865]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7610"]
+size = Vector2(564, 111)
+
+[node name="Node2D5" type="Node2D" unique_id=1307634865]
 position = Vector2(903, -898)
 script = ExtResource("1_pmyn0")
 
@@ -1048,6 +1051,10 @@ tile_set = SubResource("TileSet_tk3gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=730870190]
 position = Vector2(235.75, -569)
+shape = SubResource("RectangleShape2D_m5a1v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=1281323530]
+position = Vector2(348, -162)
 shape = SubResource("RectangleShape2D_m5a1v")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=1459484828]
@@ -1312,6 +1319,7 @@ position = Vector2(-5065.9063, 1407)
 shape = SubResource("RectangleShape2D_5owje")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1697522591]
+position = Vector2(4, 157)
 script = ExtResource("17_pmyn0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=995758253]
@@ -1328,6 +1336,16 @@ position = Vector2(-92, 1049)
 script = ExtResource("19_cnavx")
 timeline = "dialogoDeserto2"
 jogador = NodePath("../y-sort/Character")
+
+[node name="entradaTopo" type="Area2D" parent="." unique_id=1948293621]
+script = ExtResource("13_c82f6")
+automatico = true
+variavel_necessaria = "conversarComAvo"
+cena_destino = "res://Cenarios/cenario topo deserto/cenaTopo.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entradaTopo" unique_id=1858450068]
+position = Vector2(277, -109)
+shape = SubResource("RectangleShape2D_b7610")
 
 [connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]

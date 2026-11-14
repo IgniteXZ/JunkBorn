@@ -37,6 +37,6 @@ id_item_coletado = "deserto1_semente2"
 script = ExtResource("1_eqx6m")
 id_missao = "buscarsementes"
 titulo = "Sementemeno"
-descricao = "Encontre as cinco sementes disponíveis. A sexta, Verbácio, continua desaparecida."
+descricao = "Encontre as sementes pelo mundo"
 destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_buscarsementes_1"), SubResource("DestinoMissaoMapa_buscarsementes_2"), SubResource("DestinoMissaoMapa_buscarsementes_3"), SubResource("DestinoMissaoMapa_buscarsementes_4"), SubResource("DestinoMissaoMapa_buscarsementes_6")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

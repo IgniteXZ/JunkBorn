@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://vt2dwwso2crp"]
+
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="1_0uu00"]
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="2_wwmc2"]
+
+[resource]
+script = ExtResource("2_wwmc2")
+id_missao = "missaofinal"
+titulo = "A Última Semente"
+descricao = "Vá até o topo do deserto através do deserto inferior para buscar a última semente"
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"
