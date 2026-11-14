@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_pxs4d"]
 [ext_resource type="Texture2D" uid="uid://npas81635lly" path="res://Resource/Itens/sementeSaman.png" id="2_tmqtf"]
 
+[ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
+
 [resource]
 script = ExtResource("1_pxs4d")
 id = 2
 nome = "Semente de Samanbaia"
 textura = ExtResource("2_tmqtf")
 id_item_mapa = "deserto1_semente2"
+tipo = "semente"
+planta_scene = ExtResource("3_planta")
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

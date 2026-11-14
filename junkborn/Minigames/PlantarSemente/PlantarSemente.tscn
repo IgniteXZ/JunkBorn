@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1hhpw6bo5ql0"]
 
 [ext_resource type="Script" uid="uid://bauorcil3a3x0" path="res://Minigames/PlantarSemente/plantio.gd" id="2_rxr3m"]
-[ext_resource type="PackedScene" uid="uid://dcsc2ipuigyya" path="res://Inimigo/Drone/drone.tscn" id="4_enwl5"]
+[ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="4_enwl5"]
 [ext_resource type="Texture2D" uid="uid://cq05kqcgy8f86" path="res://icon.svg" id="5_enwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]

@@ -1502,5 +1502,4 @@ shape = SubResource("RectangleShape2D_s80n1")
 [node name="Plantio" parent="." unique_id=1897567993 node_paths=PackedStringArray("label_interagir") instance=ExtResource("18_86e0u")]
 position = Vector2(-508, 115)
 scale = Vector2(1.8, 1.8)
-planta_scene = null
 label_interagir = NodePath("../y-sort/Character/LabelInteragir")

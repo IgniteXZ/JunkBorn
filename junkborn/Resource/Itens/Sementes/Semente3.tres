@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_khsrx"]
 [ext_resource type="Texture2D" uid="uid://cig0s7wt1pxv0" path="res://Resource/Itens/sementeOrapro.png" id="2_gwq2s"]
 
+[ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
+
 [resource]
 script = ExtResource("1_khsrx")
 id = 4
@@ -10,4 +12,5 @@ nome = "Semente de Ora-pro-nóbis"
 textura = ExtResource("2_gwq2s")
 id_item_mapa = "pantano_semente_4"
 tipo = "semente"
+planta_scene = ExtResource("3_planta")
 metadata/_custom_type_script = "uid://btfe53qhba1f0"

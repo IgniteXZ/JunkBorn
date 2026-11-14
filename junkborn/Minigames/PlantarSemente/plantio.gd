@@ -1,8 +1,18 @@
 extends Area2D
 
-@export var planta_scene: PackedScene  # fallback, usado se a semente não tiver planta_scene
-@export var label_interagir: Label     # opcional: aviso "Aperte E"
-@export var raio_espalhar: float = 30.0
+@export var planta_scene: PackedScene
+@export var label_interagir: Label
+@export var raio_espalhar: float = 30.0  # Mantido por compatibilidade com o Inspector.
+
+# Uma posição diferente para cada semente evita plantas sobrepostas.
+const POSICOES: Dictionary = {
+	"fonte_semente_1": Vector2(-22, -12),
+	"deserto1_semente2": Vector2(-5, -21),
+	"deserto2_semente5": Vector2(18, -12),
+	"mina_semente3": Vector2(-17, 15),
+	"pantano_semente_4": Vector2(17, 15)
+}
+const CENA_PLANTA: PackedScene = preload("res://Minigames/PlantarSemente/planta_cultivada.tscn")
 
 var perto: bool = false
 
@@ -12,13 +22,13 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	if label_interagir:
 		label_interagir.visible = false
+	_restaurar_plantas()
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Interagir"):
-		print("[AREA] E apertado | perto: ", perto, " | TerminouOminiGame: ", Global.TerminouOminiGame)
-	if perto and Input.is_action_just_pressed("Interagir") and Global.TerminouOminiGame:
-		plantar_sementes()
+	if perto and Global.TerminouOminiGame and Input.is_action_just_pressed("Interagir"):
+		if Dialogic.current_timeline == null:
+			plantar_sementes()
 
 
 func _eh_player(body: Node) -> bool:
@@ -26,55 +36,113 @@ func _eh_player(body: Node) -> bool:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("[AREA] body entrou: ", body.name, " | eh_player: ", _eh_player(body))
 	if _eh_player(body):
 		perto = true
-		if label_interagir:
-			label_interagir.visible = true
-
-
-
+		_atualizar_aviso()
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if _eh_player(body):
 		perto = false
-		if label_interagir:
-			label_interagir.visible = false
+		_atualizar_aviso()
+
+
+func _atualizar_aviso() -> void:
+	if label_interagir:
+		label_interagir.visible = perto and Global.TerminouOminiGame and Global.plantas_plantadas.size() < 5
 
 
 func _achar_inventario() -> Node:
-	 
-	
-	var canvas = get_tree().root.find_child("ui_canvas", true, false)
-	return canvas
+	return get_tree().get_first_node_in_group("inventario")
+
+
+func _cena_para_semente(dados: ItemData) -> PackedScene:
+	if dados.planta_scene != null:
+		return dados.planta_scene
+	if planta_scene != null:
+		return planta_scene
+	return CENA_PLANTA
+
+
+func _instanciar_planta(cena: PackedScene, id_semente: String) -> Node2D:
+	if cena == null:
+		return null
+	var instancia: Node = cena.instantiate()
+	if not (instancia is Node2D):
+		push_error("A cena da planta não possui raiz Node2D: " + id_semente)
+		if instancia != null:
+			instancia.free()
+		return null
+	instancia.set("especie", id_semente)
+	return instancia as Node2D
+
+
+func _inserir_planta(planta: Node2D, posicao_local: Vector2) -> void:
+	# Mesmo YSort do jogador, para as plantas respeitarem a profundidade da cena.
+	var camada: Node = get_parent().get_node_or_null("y-sort")
+	if camada == null:
+		camada = get_parent()
+	camada.add_child(planta)
+	planta.global_position = to_global(posicao_local)
+
+
+func _restaurar_plantas() -> void:
+	# Global permanece vivo entre mudanças de cena.
+	for id_variant in Global.plantas_plantadas.keys():
+		var id_semente: String = str(id_variant)
+		if not POSICOES.has(id_semente):
+			continue
+		var planta := _instanciar_planta(CENA_PLANTA, id_semente)
+		if planta != null:
+			var posicao: Vector2 = Global.plantas_plantadas[id_semente]
+			_inserir_planta(planta, posicao)
+	_atualizar_aviso()
 
 
 func plantar_sementes() -> void:
+	if not Global.TerminouOminiGame:
+		return
 	var canvas := _achar_inventario()
-	if canvas == null or not canvas.has_method("remover_todas_as_sementes"):
-		push_error("Inventário não encontrado ou sem 'remover_todas_as_sementes'.")
+	if canvas == null or not canvas.has_method("listar_sementes_para_plantio") or not canvas.has_method("consumir_sementes_plantio"):
+		push_error("Plantio: inventário indisponível ou desatualizado.")
 		return
 
-	var sementes: Array = canvas.remover_todas_as_sementes()
+	# 1. Consulta não destrutiva: nenhuma semente sai do inventário ainda.
+	var sementes: Array = canvas.listar_sementes_para_plantio(Global.plantas_plantadas)
 	if sementes.is_empty():
-		print("Você não tem sementes no inventário!")
+		print("[PLANTIO] Nenhuma semente disponível para plantar.")
 		return
 
-	var plantadas := 0
-	for dados in sementes:
-		var cena: PackedScene = dados.planta_scene if dados.planta_scene != null else planta_scene
-		if cena == null:
-			push_error("A semente '%s' não tem planta_scene e a área também não." % dados.nome)
-			continue
+	# 2. Cria todas as plantas ANTES de alterar o inventário.
+	var preparadas: Array = []
+	var ids: Array = []
+	for entrada in sementes:
+		var dados: ItemData = entrada["dados"]
+		var id_semente: String = entrada["id"]
+		var planta := _instanciar_planta(_cena_para_semente(dados), id_semente)
+		if planta == null:
+			for item in preparadas:
+				(item["planta"] as Node).free()
+			push_error("Plantio cancelado; nenhuma semente foi consumida.")
+			return
+		preparadas.append({"id": id_semente, "planta": planta})
+		ids.append(id_semente)
 
-		var pos := global_position + Vector2(
-			randf_range(-raio_espalhar, raio_espalhar),
-			randf_range(-raio_espalhar, raio_espalhar)
-		)
-		var nova_planta = cena.instantiate()
-		get_parent().add_child(nova_planta)
-		nova_planta.global_position = pos
-		plantadas += 1
+	# 3. Só agora retira uma unidade de cada semente, de modo atômico.
+	if not canvas.consumir_sementes_plantio(ids):
+		for item in preparadas:
+			(item["planta"] as Node).free()
+		push_warning("Plantio cancelado: o inventário mudou durante a interação.")
+		return
 
-	print("Plantou ", plantadas, " sementes!")
+	# 4. Registra a espécie e a posição para manter as plantas entre cenas.
+	for item in preparadas:
+		var id_semente: String = item["id"]
+		var posicao: Vector2 = POSICOES[id_semente]
+		Global.plantas_plantadas[id_semente] = posicao
+		_inserir_planta(item["planta"] as Node2D, posicao)
+
+	var total: int = Global.plantas_plantadas.size()
+	Global.plantio_atualizado.emit(total)
+	print("[PLANTIO] Plantou %d semente(s); total: %d/5." % [preparadas.size(), total])
+	_atualizar_aviso()
