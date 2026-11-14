@@ -7,7 +7,7 @@
 script = ExtResource("1_r06fp")
 item_id = 9
 nome = "Panela"
-descricao = "As panelas antigamente eram usadas pra fazer comida, atualmente nos não a usamos mais"
+descricao = "Caramba, uma panela! Metal desse tipo vale ouro na forja, dá pra transformar em varias coisas!"
 textura = ExtResource("2_5jxp5")
 tipoDeLixo = "Metal"
 pode_desmanchar = true

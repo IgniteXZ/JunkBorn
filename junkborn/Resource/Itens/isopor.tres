@@ -7,7 +7,7 @@
 script = ExtResource("1_64tbx")
 item_id = 5
 nome = "Isopor"
-descricao = "É um objeto estranho, ele meio que vai se partindo na mão, se transformando em objetos menores"
+descricao = "Eca, isopor... isso esfarela tudo na mão e voa longe. Não dá pra reaproveitar nada disso na fábrica"
 textura = ExtResource("2_sof7g")
 tipoDeLixo = "Papel"
 Coletavel = false

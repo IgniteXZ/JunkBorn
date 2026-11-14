@@ -7,6 +7,7 @@
 script = ExtResource("1_8jo23")
 item_id = 12
 nome = "Restos"
+descricao = "Eca, esses restos não servem pra nada, só vai estragar o resto dos materiais"
 textura = ExtResource("2_jjuo1")
 tipoDeLixo = "Nada"
 Coletavel = false

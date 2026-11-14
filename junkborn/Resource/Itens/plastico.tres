@@ -7,7 +7,7 @@
 script = ExtResource("1_yf2ls")
 item_id = 11
 nome = "Plastico"
-descricao = "Sempre que eu volto da mina sempre vejo um monte desses \"Plasticos\", acho que é assim que meu avô chama, porque parece que eles nunca somem?"
+descricao = "Como isso não apodrece na terra serve certinho de matéria-prima"
 textura = ExtResource("2_uqowf")
 tipoDeLixo = "Plastico"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

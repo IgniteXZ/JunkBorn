@@ -7,7 +7,7 @@
 script = ExtResource("1_6vp0b")
 item_id = 4
 nome = "Garrafa Plastica"
-descricao = "Meu avô tinha um dessas em casa, lembro quando ele contava historias sobre que eles guardavam varias quantidades de agua em varias dessas, devia ser bom..."
+descricao = "Esse plástico não estraga nunca, talvez tenha alguma utilidade lá na prensa"
 textura = ExtResource("2_c3f88")
 tipoDeLixo = "Plastico"
 pode_desmanchar = true
