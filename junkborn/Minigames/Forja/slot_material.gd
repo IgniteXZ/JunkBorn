@@ -116,9 +116,46 @@ func _drop_data(_position: Vector2, data: Variant) -> void:
 		if texto_inventario: texto_inventario.text = ""
 		if "item_data" in slot_origem: slot_origem.item_data = null
 		
+	_animar_pop()
+		
 	_avisar_tela_principal()
 
+func _atualizar_cor_quantidade() -> void:
+	if not texto_quantidade or eh_apenas_previa:
+		return
+	var cor := Color(1, 1, 1, 0.7)
+	if item_colocado_corretamente:
+		cor = HudEstilo.COR_OK
+	elif quantidade_acumulada > 0:
+		cor = HudEstilo.COR_TITULO
+	texto_quantidade.add_theme_color_override("font_color", cor)
 
+# Slot acende com borda dourada quando o item arrastado encaixa nele
+func _notification(what: int) -> void:
+	if eh_apenas_previa:
+		return
+	if what == NOTIFICATION_DRAG_BEGIN:
+		var data = null
+		if get_viewport().has_method("gui_get_drag_data"):
+			data = get_viewport().gui_get_drag_data()
+		_destacar(data == null or _can_drop_data(Vector2.ZERO, data))
+	elif what == NOTIFICATION_DRAG_END:
+		_destacar(false)
+
+func _destacar(ligado: bool) -> void:
+	if ligado:
+		var sb := get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+		if sb:
+			sb.border_color = HudEstilo.COR_TITULO
+			add_theme_stylebox_override("panel", sb)
+	else:
+		remove_theme_stylebox_override("panel")
+
+func _animar_pop() -> void:
+	pivot_offset = size / 2.0
+	var tween := create_tween()
+	tween.tween_property(self, "scale", Vector2(1.12, 1.12), 0.08)
+	tween.tween_property(self, "scale", Vector2.ONE, 0.12)
 
 
 func _atualizar_texto_quantidade():
@@ -129,6 +166,7 @@ func _atualizar_texto_quantidade():
 			texto_quantidade.text = str(quantidade_acumulada)
 			
 	item_colocado_corretamente = (quantidade_obrigatoria > 0 and quantidade_acumulada >= quantidade_obrigatoria) or (quantidade_obrigatoria == 0 and quantidade_acumulada > 0)
+	_atualizar_cor_quantidade()
 
 func consumir_material_forja():
 	quantidade_acumulada -= quantidade_obrigatoria
