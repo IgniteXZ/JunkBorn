@@ -6,36 +6,37 @@
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_1"]
 script = ExtResource("2_destino")
 regiao_id = 6
-titulo = "Semente 1 — Fonte"
+titulo = "Semente - Fonte"
 id_item_coletado = "fonte_semente_1"
 
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_2"]
 script = ExtResource("2_destino")
-titulo = "Semente das Minas — defina a posicao no mapa"
-id_item_coletado = "0"
+regiao_id = 7
+titulo = "Semente - Minas"
+id_item_coletado = "mina_semente3"
 
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_3"]
 script = ExtResource("2_destino")
 regiao_id = 2
-titulo = "Semente do Deserto 2"
-id_item_coletado = "1"
+titulo = "Semente - Deserto 2"
+id_item_coletado = "deserto2_semente5"
 
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_4"]
 script = ExtResource("2_destino")
 regiao_id = 5
-titulo = "Semente do Pantano Quimico"
-id_item_coletado = "2"
+titulo = "Semente - Pântano Químico"
+id_item_coletado = "pantano_semente_4"
 
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_5"]
 script = ExtResource("2_destino")
-titulo = "Semente ainda sem cena posicionada"
+titulo = "Semente - Local não definido"
 id_item_coletado = "3"
 
 [sub_resource type="Resource" id="DestinoMissaoMapa_buscarsementes_6"]
 script = ExtResource("2_destino")
 regiao_id = 1
-titulo = "Semente do Deserto 1"
-id_item_coletado = "4"
+titulo = "Semente - Deserto 1"
+id_item_coletado = "deserto1_semente2"
 
 [resource]
 script = ExtResource("1_eqx6m")
