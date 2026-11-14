@@ -133,8 +133,8 @@ variables={
 "BonecoNoBolso": false
 },
 "NewVar": "",
-"deserto2liberado": false,
-"deserto_liberado": false,
+"deserto2liberado": true,
+"deserto_liberado": true,
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
 "forja_liberada": false,
