@@ -225,6 +225,8 @@ func _ao_reiniciar():
 
 
 func _ao_concluir():
+	GerenciadorMissoes.completar_missao("irminigamecano")
 	# Nada é consumido: o cano e a pá são "chaves"
 	AudioManager.parar_musica()
 	fechar()
+	Dialogic.start_timeline("dialogoTenhoQuePlantar")
