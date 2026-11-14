@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://c4fvm6dgkerf5" path="res://Minigames/Forja/area_2d_2.gd" id="5_8hflg"]
 [ext_resource type="Texture2D" uid="uid://n47blrulp01g" path="res://CenarioAssets/assets/Cenario1.1/TileSet/tileset terra pedrasa.png" id="5_tiw0q"]
 [ext_resource type="Texture2D" uid="uid://dmjnnvb3tm6bb" path="res://Minigames/Forja/fabrica interior.png" id="6_rwvvd"]
-[ext_resource type="Script" uid="uid://c36eww8iq3bqy" path="res://Minigames/Forja/saidafabrica.gd" id="6_uifd1"]
 [ext_resource type="Texture2D" uid="uid://qlh68ir5jd7r" path="res://Cenarios/Cenario pantano/tileset pedra.png" id="7_5wnv6"]
 [ext_resource type="PackedScene" uid="uid://dkihrw1vll4jv" path="res://Minigames/Forja/telaForja.tscn" id="7_f0243"]
 [ext_resource type="Script" uid="uid://dmjrigv48o888" path="res://Player/cenas/mandacaru.gd" id="13_kqiwa"]
@@ -1052,7 +1051,10 @@ scale = Vector2(1, 0.515625)
 [node name="saidafabrica" type="Area2D" parent="Sprite2D2" unique_id=1044067319]
 position = Vector2(-215, -1588.3636)
 scale = Vector2(1, 1.939394)
-script = ExtResource("6_uifd1")
+script = ExtResource("16_5wnv6")
+automatico = true
+cena_destino = "res://Cenarios/CenarioVila/characterP.tscn"
+spawn_destino = "spawnsVila/sairForja"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/saidafabrica" unique_id=169731816]
 position = Vector2(215, 818)
@@ -1122,7 +1124,7 @@ tile_map_data = PackedByteArray("AAAMAOT/BQASAA8AAAAMAOX/BQASAA8AAAAMAOb/BQASAA8
 tile_set = SubResource("TileSet_50v5p")
 
 [node name="Character" parent="y-sort" unique_id=489748546 instance=ExtResource("2_odo8e")]
-position = Vector2(220, 786)
+position = Vector2(229, 708)
 
 [node name="mandacaruDois" type="CharacterBody2D" parent="y-sort" unique_id=1029387928]
 visible = false

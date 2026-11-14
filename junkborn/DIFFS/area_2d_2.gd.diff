@@ -1,0 +1,49 @@
+--- original/Minigames/Forja/area_2d_2.gd
++++ corrigido/Minigames/Forja/area_2d_2.gd
+@@ -98,31 +98,22 @@
+ 
+ 
+ 
+-func _fechar_forja():
++func _fechar_forja() -> bool:
++    if tela_forja_instanciada and is_instance_valid(tela_forja_instanciada):
++        if "linhas_carregadas" in tela_forja_instanciada:
++            for linha in tela_forja_instanciada.linhas_carregadas:
++                if "slots_da_linha" in linha:
++                    for slot in linha.slots_da_linha:
++                        if slot.quantidade_acumulada > 0:
++                            if not slot._devolver_itens_ao_inventario():
++                                # Impede apagar a bancada com material retido.
++                                return false
++        tela_forja_instanciada.queue_free()
+ 
+-	if tela_forja_instanciada and is_instance_valid(tela_forja_instanciada):
+-
+-		if "linhas_carregadas" in tela_forja_instanciada:
+-
+-			for linha in tela_forja_instanciada.linhas_carregadas:
+-
+-				if "slots_da_linha" in linha:
+-
+-					for slot in linha.slots_da_linha:
+-
+-						if slot.has_method("_devolver_itens_ao_inventario") and slot.quantidade_acumulada > 0:
+-
+-							slot._devolver_itens_ao_inventario()
+-
+-		tela_forja_instanciada.queue_free()
+-
+-		
+-
+-	tela_forja_instanciada = null
+-
+-	if perto and label_interagir_do_player:
+-
+-		label_interagir_do_player.visible = true
++    tela_forja_instanciada = null
++    if perto and label_interagir_do_player:
++        label_interagir_do_player.visible = true
++    return true
+ 
+ 
+ func _on_area_entered(area: Area2D) -> void:

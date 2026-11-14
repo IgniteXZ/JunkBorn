@@ -7,6 +7,6 @@
 script = ExtResource("1_fskp0")
 item_id = 7
 nome = "Metal"
-descricao = "Uma chapa de metal bem firme, perfeita pra transformar na forja e virar uma pá ou cano"
+descricao = "É um ótimo material para se reciclar, consigo usá-lo diretamente na forja da fábrica para produzir algo"
 textura = ExtResource("2_drcyl")
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

@@ -93,27 +93,18 @@ func _abrir_prensa():
 		print("ERRO: A prensa ainda não recebeu o Canvas do Player!")
 
 
-func _fechar_prensa():
-
+func _fechar_prensa() -> bool:
 	if tela_prensa_instanciada and is_instance_valid(tela_prensa_instanciada):
-
-		# Chama a rotina da Prensa de devolver itens ao inventário antes de fechar
-
 		if tela_prensa_instanciada.has_method("fechar_tela"):
-
-			tela_prensa_instanciada.fechar_tela()
-
+			if not tela_prensa_instanciada.fechar_tela():
+				return false  # Há materiais que não puderam voltar; não fechar.
 		else:
-
 			tela_prensa_instanciada.queue_free()
 
-		
-
 	tela_prensa_instanciada = null
-
 	if perto and label_interagir_do_player:
-
 		label_interagir_do_player.visible = true
+	return true
 
 
 func _on_area_entered(area: Area2D) -> void:

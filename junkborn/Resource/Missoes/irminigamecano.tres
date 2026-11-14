@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MissaoR" format=3 uid="uid://dydnewg4yyr5"]
+
+[ext_resource type="Script" uid="uid://53qlefytxrod" path="res://DestinoMissaoMapa.gd" id="1_m7l00"]
+[ext_resource type="Script" uid="uid://5nsrg0tbu8ee" path="res://MissaiResource.gd" id="2_utbg2"]
+
+[sub_resource type="Resource" id="Resource_5eqyr"]
+script = ExtResource("1_m7l00")
+regiao_id = 6
+titulo = "A Fonte"
+metadata/_custom_type_script = "uid://53qlefytxrod"
+
+[resource]
+script = ExtResource("2_utbg2")
+id_missao = "irminigamecano"
+titulo = "Resgatando a Água"
+descricao = "Volte para a fonte e use o cano para trazer água para a vila."
+destinos_mapa = Array[ExtResource("1_m7l00")]([SubResource("Resource_5eqyr")])
+metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

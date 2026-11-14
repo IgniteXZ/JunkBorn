@@ -11,7 +11,7 @@ titulo = "Deserto Inferior"
 [resource]
 script = ExtResource("1_ndmjw")
 id_missao = "fazercanos"
-titulo = "Água para vila"
-descricao = "Busque material no deserto para fabricar canos "
+titulo = "Os montes"
+descricao = "Busque plástico nos montes do  deserto inferior para fabricar canos "
 destinos_mapa = Array[ExtResource("2_destino")]([SubResource("DestinoMissaoMapa_fazercanos_1")])
 metadata/_custom_type_script = "uid://5nsrg0tbu8ee"

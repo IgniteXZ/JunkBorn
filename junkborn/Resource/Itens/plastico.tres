@@ -7,7 +7,7 @@
 script = ExtResource("1_yf2ls")
 item_id = 11
 nome = "Plastico"
-descricao = "Como isso não apodrece na terra serve certinho de matéria-prima"
+descricao = "É um ótimo material para se reciclar, consigo usá-lo na forja da fábrica para produzir algo"
 textura = ExtResource("2_uqowf")
 tipoDeLixo = "Plastico"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

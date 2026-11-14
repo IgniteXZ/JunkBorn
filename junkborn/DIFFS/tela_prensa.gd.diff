@@ -1,0 +1,237 @@
+--- original/Minigames/Forja/tela_prensa.gd
++++ corrigido/Minigames/Forja/tela_prensa.gd
+@@ -76,7 +76,7 @@
+ 		button_prensar.disabled = false
+ 	else:
+ 		button_prensar.modulate = Color(1.0, 1.0, 1.0, 1.0)
+-		button_prensar.disabled = false
++		button_prensar.disabled = true
+ 		return
+ 		
+ 	var qtd_itens = slot_entrada.quantidade_acumulada if "quantidade_acumulada" in slot_entrada else 1
+@@ -109,108 +109,124 @@
+ 	if slot_entrada and slot_entrada.quantidade_acumulada > 0:
+ 		executar_desmanche()
+ 
++const MATERIAIS_PRENSA = [
++    preload("res://Resource/Itens/plastico.tres"),
++    preload("res://Resource/Itens/metal.tres"),
++    preload("res://Resource/Itens/corda.tres")
++]
++
++
++func _identificar_material(chave: Variant) -> LixoData:
++    if chave is LixoData:
++        return chave
++    if not (chave is Texture2D):
++        return null
++    var registrado = Global.dados_por_textura.get(chave, null)
++    if registrado is LixoData and registrado.textura == chave:
++        return registrado
++    for candidato in MATERIAIS_PRENSA:
++        if candidato.textura == chave:
++            return candidato
++    return null
++
++
+ func executar_desmanche() -> void:
+-	var receita = _obter_receita_do_item(item_atual)
+-	if not receita:
+-		print(">>> ERRO: Receita não encontrada para o item: ", item_atual)
+-		return
+-		
+-	var qtd_itens = slot_entrada.quantidade_acumulada
+-
+-	slot_entrada.quantidade_acumulada = 0
+-	if "item_data" in slot_entrada:
+-		slot_entrada.item_data = null
+-	if slot_entrada.icone_material:
+-		slot_entrada.icone_material.texture = null
+-	if slot_entrada.texto_quantidade:
+-		slot_entrada.texto_quantidade.text = ""
+-	
+-	item_atual = null
+-	button_prensar.modulate = Color(1.0, 1.0, 1.0, 1.0)
+-
+-	var canvas_inv = canvass
+-	if not canvas_inv:
+-		canvas_inv = get_tree().get_first_node_in_group("InterfaceUsuario")
+-
+-	if not canvas_inv:
+-		print(">>> ERRO: Interface de usuário não encontrada!")
+-		_gerar_icones_previa()
+-		return
+-
+-	var todos_os_nos = canvas_inv.find_children("*", "Control", true, false)
+-
+-	for ingrediente in receita.ingredientes.keys():
+-		var qtd_final = receita.ingredientes[ingrediente] * qtd_itens
+-		
+-		var tex: Texture2D = null
+-		var recurso_ingrediente = ingrediente
+-		
+-		if ingrediente is Texture2D:
+-			tex = ingrediente
+-			recurso_ingrediente = null
+-		elif ingrediente is Object and "textura" in ingrediente:
+-			tex = ingrediente.textura
+-			
+-		if not tex:
+-			continue
+-			
+-		if recurso_ingrediente and "nome" in recurso_ingrediente:
+-			Global.nomes_itens[tex] = recurso_ingrediente.nome
+-
+-		var item_adicionado = false
+-
+-
+-		for no in todos_os_nos:
+-			if not no.has_method("set_empty_slot") or no == slot_entrada:
+-				continue
+-				
+-			var sprite = no.get_node_or_null("sprite")
+-			var amount = no.get_node_or_null("amount")
+-			
+-			if sprite and amount and sprite.texture == tex:
+-				var qtd_atual = int(amount.text)
+-				if qtd_atual <= 0: 
+-					qtd_atual = 1
+-				
+-				amount.text = str(qtd_atual + qtd_final)
+-				
+-				if recurso_ingrediente and "item_data" in no:
+-					no.item_data = recurso_ingrediente
+-					
+-				item_adicionado = true
+-				break
+-
+-		if not item_adicionado:
+-			for no in todos_os_nos:
+-				if not no.has_method("set_empty_slot") or no == slot_entrada:
+-					continue
+-					
+-				var sprite = no.get_node_or_null("sprite")
+-				var amount = no.get_node_or_null("amount")
+-				
+-				if sprite and amount and sprite.texture == null:
+-					sprite.texture = tex
+-					amount.text = str(qtd_final)
+-					
+-					if recurso_ingrediente and "item_data" in no:
+-						no.item_data = recurso_ingrediente
+-						
+-					item_adicionado = true
+-					break
+-
+-		if not item_adicionado:
+-			print(">>> AVISO: Inventário cheio! Não foi possível adicionar: ", tex)
+-
+-	_gerar_icones_previa()
+-
+-func _adicionar_material_ao_inventario(_ingrediente: Variant, _quantidade: int) -> void:
+-	pass
+-				
+-func fechar_tela() -> void:
+-	if slot_entrada and slot_entrada.quantidade_acumulada > 0:
+-		if slot_entrada.has_method("_devolver_itens_ao_inventario"):
+-			slot_entrada._devolver_itens_ao_inventario()
+-	queue_free()
++    var receita = _obter_receita_do_item(item_atual)
++    if receita == null or slot_entrada.quantidade_acumulada <= 0:
++        push_warning("Prensa: item sem receita válida.")
++        return
++
++    var inventario = canvass
++    if inventario == null or not inventario.has_method("add_item_inventory"):
++        inventario = get_tree().get_first_node_in_group("inventario")
++    if inventario == null or not inventario.has_method("add_item_inventory"):
++        push_warning("Prensa: inventário não encontrado; item preservado.")
++        return
++
++    var grid = inventario.get_node_or_null("inventory/GridContainer")
++    if grid == null:
++        return
++
++    # 1. Calcula TODOS os itens que serão devolvidos, sem consumir a entrada.
++    var saidas: Array[Dictionary] = []
++    for chave in receita.ingredientes.keys():
++        var recurso: LixoData = _identificar_material(chave)
++        var qtd: int = int(receita.ingredientes[chave]) * slot_entrada.quantidade_acumulada
++        if recurso == null or recurso.textura == null or qtd < 1:
++            push_warning("Prensa: material da receita não identificado; desmanche cancelado.")
++            return
++        saidas.append({"recurso": recurso, "quantidade": qtd})
++
++    # 2. Verifica espaço para todas as texturas diferentes, antes de alterar qualquer slot.
++    var disponiveis: int = 0
++    var texturas_ocupadas: Dictionary = {}
++    for slot in grid.get_children():
++        var textura = slot.get_node("sprite").texture
++        if textura == null:
++            disponiveis += 1
++        else:
++            texturas_ocupadas[textura] = true
++    for saida in saidas:
++        var textura = saida["recurso"].textura
++        if not texturas_ocupadas.has(textura):
++            disponiveis -= 1
++            texturas_ocupadas[textura] = true
++    if disponiveis < 0:
++        print("Prensa: espaço insuficiente; item continua na prensa.")
++        return
++
++    # 3. Snapshot para desfazer qualquer inserção parcial inesperada.
++    var anterior: Array[Dictionary] = []
++    for slot in grid.get_children():
++        anterior.append({
++            "textura": slot.get_node("sprite").texture,
++            "quantidade": slot.get_node("amount").text,
++            "recurso": slot.item_data,
++            "id": int(slot.get_meta("item_id", -1)),
++            "protegido": bool(slot.get_meta("protegido_drone", false))
++        })
++
++    # 4. Entrega todos os materiais pelos IDs corretos.
++    for saida in saidas:
++        var recurso: LixoData = saida["recurso"]
++        for i in range(saida["quantidade"]):
++            if not inventario.add_item_inventory(recurso.item_id, recurso.textura, recurso.nome, recurso):
++                for j in range(anterior.size()):
++                    var slot = grid.get_child(j)
++                    var estado = anterior[j]
++                    slot.get_node("sprite").texture = estado["textura"]
++                    slot.get_node("amount").text = estado["quantidade"]
++                    slot.item_data = estado["recurso"]
++                    if estado["id"] >= 0:
++                        slot.set_meta("item_id", estado["id"])
++                    elif slot.has_meta("item_id"):
++                        slot.remove_meta("item_id")
++                    slot.set_meta("protegido_drone", estado["protegido"])
++                inventario.salvar_inventario()
++                push_warning("Prensa: falha no inventário, desmanche cancelado.")
++                return
++
++    # 5. Apenas AGORA consome o item, depois do sucesso total.
++    slot_entrada.quantidade_acumulada = 0
++    slot_entrada.item_data = null
++    slot_entrada.item_colocado_corretamente = false
++    if slot_entrada.icone_material:
++        slot_entrada.icone_material.texture = null
++    slot_entrada._atualizar_texto_quantidade()
++    item_atual = null
++    button_prensar.disabled = true
++    button_prensar.modulate = Color.WHITE
++    _gerar_icones_previa()
++
++
++# Só fecha após devolver a entrada. Falha no retorno mantém a interface aberta.
++func fechar_tela() -> bool:
++    if slot_entrada and slot_entrada.quantidade_acumulada > 0:
++        if not slot_entrada._devolver_itens_ao_inventario():
++            return false
++    queue_free()
++    return true
++
+ 
+ func _on_character_passar_canvas(canvas: CanvasLayer) -> void:
+ 	canvass = canvas
