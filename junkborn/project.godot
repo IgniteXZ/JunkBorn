@@ -46,6 +46,7 @@ directories/dch_directory={
 "walter": "res://Dialogos/Characters/walter.dch"
 }
 directories/dtl_directory={
+"ChegandoNoPantano": "res://Dialogos/Timeline/ChegandoNoPantano.dtl",
 "CutsceneInicial": "res://Dialogos/Timeline/CutsceneInicial.dtl",
 "FalasNpc2": "res://Dialogos/Timeline/FalasNpc2.dtl",
 "Teste": "res://DialogicSystem/Timelines/Teste.dtl",

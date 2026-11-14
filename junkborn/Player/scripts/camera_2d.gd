@@ -31,6 +31,15 @@ func _process(_delta: float) -> void:
 		limit_bottom =1550
 		limit_right = 1595
 		limit_left = -3345
+	elif Global.cidade_atual ==2:
+		limit_bottom =1550
+		limit_top = -1440
+		limit_right = 1595
+		limit_left = -4345
+	elif Global.cidade_atual ==4:
+		limit_bottom =590
+		limit_right = 90
+		limit_left = -1575
 	elif  Global.cidade_atual == 5:
 		limit_bottom =975
 		limit_right = 785
