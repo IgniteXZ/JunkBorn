@@ -7,16 +7,13 @@ const DURACAO_AVISO := 3500
 const TAM_TITULO := 24
 const TAM_DESC := 18     # descrição maior (era 16)
 
-# Todas as sementes da missao, incluindo a primeira da Fonte.
-# Os demais IDs (0 a 4) sao usados em outras cenas do projeto.
-
+# As cinco sementes recuperáveis (o Verbácio só aparece na história).
 const IDS_SEMENTES: Array[String] = [
 	"fonte_semente_1",
 	"deserto1_semente2",
 	"deserto2_semente5",
 	"mina_semente3",
-	"pantano_semente_4",
-	"x_verbacio"
+	"pantano_semente_4"
 ]
 
 
@@ -40,6 +37,7 @@ var _novas: Dictionary = {}       # missão -> ms em que o "NOVA!" some (-1 = ai
 var _concluidas: Dictionary = {}  # missão -> ms em que o risco some (-1 = ainda não mostrado)
 
 func _ready() -> void:
+	barra_sementes.max_value = float(IDS_SEMENTES.size())
 	papel.custom_minimum_size.x = LARGURA
 	papel.get_theme_stylebox("panel").content_margin_right = PEEK + 14.0
 	aba.position = Vector2(LARGURA - PEEK, 10)

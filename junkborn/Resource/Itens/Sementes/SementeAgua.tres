@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_sj23n"]
 [ext_resource type="Texture2D" uid="uid://dj3s1yksd5hvv" path="res://Resource/Itens/sementeAguap.png" id="2_njx2p"]
-
 [ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
 
 [resource]

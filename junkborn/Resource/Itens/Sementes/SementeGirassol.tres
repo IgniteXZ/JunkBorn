@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://btfe53qhba1f0" path="res://ItemData.gd" id="1_vr300"]
 [ext_resource type="Texture2D" uid="uid://d4fer4bovrp55" path="res://Resource/Itens/sementeGiras.png" id="2_1yy7b"]
-
 [ext_resource type="PackedScene" path="res://Minigames/PlantarSemente/planta_cultivada.tscn" id="3_planta"]
 
 [resource]

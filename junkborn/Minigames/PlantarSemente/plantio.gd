@@ -26,9 +26,17 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	# A missão pode ser ativada enquanto o jogador já está dentro da área.
+	if perto:
+		_atualizar_aviso()
 	if perto and Global.TerminouOminiGame and Input.is_action_just_pressed("Interagir"):
 		if Dialogic.current_timeline == null:
 			plantar_sementes()
+
+
+func _exit_tree() -> void:
+	# Evita disparar a fala da plantação depois de trocar de cenário.
+	Global.sair_area_plantacao()
 
 
 func _eh_player(body: Node) -> bool:
@@ -38,18 +46,22 @@ func _eh_player(body: Node) -> bool:
 func _on_body_entered(body: Node2D) -> void:
 	if _eh_player(body):
 		perto = true
+		Global.entrar_area_plantacao()
 		_atualizar_aviso()
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if _eh_player(body):
 		perto = false
+		Global.sair_area_plantacao()
 		_atualizar_aviso()
 
 
 func _atualizar_aviso() -> void:
 	if label_interagir:
-		label_interagir.visible = perto and Global.TerminouOminiGame and Global.plantas_plantadas.size() < 5
+		label_interagir.visible = (perto and Global.TerminouOminiGame
+			and Global.missao_ativa("plantar5sementes")
+			and Global.plantas_plantadas.size() < 5)
 
 
 func _achar_inventario() -> Node:
@@ -100,7 +112,8 @@ func _restaurar_plantas() -> void:
 
 
 func plantar_sementes() -> void:
-	if not Global.TerminouOminiGame:
+	# Impede plantar parcialmente antes da fase correta da história.
+	if not Global.TerminouOminiGame or not Global.missao_ativa("plantar5sementes"):
 		return
 	var canvas := _achar_inventario()
 	if canvas == null or not canvas.has_method("listar_sementes_para_plantio") or not canvas.has_method("consumir_sementes_plantio"):
