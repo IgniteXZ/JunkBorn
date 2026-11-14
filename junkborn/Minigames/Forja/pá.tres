@@ -13,4 +13,6 @@ item_resultado = ExtResource("3_en5p8")
 ingredientes = {
 ExtResource("2_l544r"): 2
 }
+descricao_resultado = "Com a pá, eu consigo desenterrar e construir a tubulação."
+nomes_materiais = Array[String](["Metal"])
 metadata/_custom_type_script = "uid://dycfmqmje3pms"

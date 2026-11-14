@@ -15,4 +15,6 @@ ingredientes = {
 ExtResource("2_34uqu"): 6,
 ExtResource("3_errox"): 10
 }
+descricao_resultado = "Com a jangada, eu consigo atravessar o pântano químico."
+nomes_materiais = Array[String](["Corda", "Plastico"])
 metadata/_custom_type_script = "uid://dycfmqmje3pms"

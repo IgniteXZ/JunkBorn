@@ -13,4 +13,6 @@ item_resultado = ExtResource("3_fhwdb")
 ingredientes = {
 ExtResource("2_ndqhw"): 1
 }
+descricao_resultado = "Com as cordas, eu consigo montar uma jangada."
+nomes_materiais = Array[String](["Plastico"])
 metadata/_custom_type_script = "uid://dycfmqmje3pms"

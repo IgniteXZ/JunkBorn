@@ -797,8 +797,12 @@ size = Vector2(692.5, 49.75)
 size = Vector2(145, 46.375)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ishku"]
-a = Vector2(-11, -212)
+a = Vector2(4, -218)
 b = Vector2(248, 122)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e5nwv"]
+a = Vector2(49, -235)
+b = Vector2(-60, -132)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6u4ac"]
 a = Vector2(249, -444)
@@ -1130,6 +1134,10 @@ shape = SubResource("RectangleShape2D_wfgki")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1724099612]
 position = Vector2(-3308, 1528)
 shape = SubResource("SegmentShape2D_ishku")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1535484638]
+position = Vector2(-2832, 1784)
+shape = SubResource("SegmentShape2D_e5nwv")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2" unique_id=508552362]
 position = Vector2(-4003, 1427)
