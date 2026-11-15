@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dsthik2x2hkmi"]
+
+[ext_resource type="VideoStream" uid="uid://cdlruru3n30yc" path="res://Cutsenes/videoplayback.ogv" id="1_4bc1l"]
+[ext_resource type="Script" uid="uid://dgq1xilg2f1d2" path="res://Cutsenes/cutsceneTopo.gd" id="2_axnir"]
+
+[node name="CutsceneTopo" type="Control" unique_id=248069326]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1683009073]
+layout_mode = 0
+offset_left = -684.0
+offset_top = -423.0
+offset_right = 685.0
+offset_bottom = 379.0
+stream = ExtResource("1_4bc1l")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("2_axnir")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=912950696]
