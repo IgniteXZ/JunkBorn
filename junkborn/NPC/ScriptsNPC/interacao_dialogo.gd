@@ -8,6 +8,7 @@ extends Area2D
 @export var timeline_bloqueado: String = ""
 @export var cena_destino: String = ""
 @export var spawn_destino: String = ""
+@export var titulo_ato: String = ""
 
 var _player: Node = null
 var _label: Label = null
@@ -65,9 +66,9 @@ func _interagir() -> void:
 	elif automatico and cena_destino != "":
 		await _tocar_dialogo(timeline)
 		if is_inside_tree():
-			Global.trocar_cena(cena_destino, spawn_destino)
+			Global.trocar_cena(cena_destino, spawn_destino, titulo_ato)
 	elif cena_destino != "":
-		Global.trocar_cena(cena_destino, spawn_destino)
+		Global.trocar_cena(cena_destino, spawn_destino, titulo_ato)
 	else:
 		await _tocar_dialogo(timeline)
 

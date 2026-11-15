@@ -73,7 +73,7 @@ func _aplicar_spawn() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if not pode_mover:
+	if not pode_mover or Dialogic.current_timeline != null:
 		velocity = Vector2.ZERO
 		_animate()
 		return

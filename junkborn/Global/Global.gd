@@ -150,7 +150,7 @@ func fade() -> void:
 	await Transicao.fade_in()
 
 
-func trocar_cena(caminho: String, spawn: String) -> void:
+func trocar_cena(caminho: String, spawn: String, titulo_ato: String = "") -> void:
 	spawn_destino = spawn
 	
 	await Transicao.fade_out()
@@ -162,8 +162,21 @@ func trocar_cena(caminho: String, spawn: String) -> void:
 	await get_tree().process_frame
 	
 	await Transicao.fade_in()
-	
-	
+
+	# Usa a mesma tela de atos do prologo e do Ato 1, mas somente
+	# na primeira transicao que solicitar este titulo (saida da Fonte).
+	if titulo_ato != "":
+		var chave_ato := "tela_ato_exibida:" + titulo_ato
+		if not eventos.get(chave_ato, false):
+			eventos[chave_ato] = true
+			var jogador := get_tree().current_scene.find_child("Character", true, false)
+			if jogador != null:
+				jogador.set("pode_mover", false)
+			await TelaAto.mostrar(titulo_ato)
+			if is_instance_valid(jogador):
+				jogador.set("pode_mover", true)
+
+
 func trocarCenaSemSpawn(caminho: String) -> void:
 	
 	await Transicao.fade_out()
