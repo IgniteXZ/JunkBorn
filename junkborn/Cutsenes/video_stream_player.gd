@@ -3,7 +3,7 @@ var passarCena: bool = false
 var _saindo: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(8.0).timeout
+	await get_tree().create_timer(24.0).timeout
 	_ir_para_vila()
 
 
