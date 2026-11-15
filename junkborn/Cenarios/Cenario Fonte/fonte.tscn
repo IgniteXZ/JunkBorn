@@ -1629,7 +1629,7 @@ size = Vector2(51.75, 27.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgdxn"]
 size = Vector2(35.875, 22)
 
-[node name="Node2D2" type="Node2D" unique_id=240260216]
+[node name="Node2D3" type="Node2D" unique_id=240260216]
 script = ExtResource("1_u2vtj")
 musica = ExtResource("12_u2vtj")
 
@@ -1719,6 +1719,7 @@ variavel_necessaria = "podeSairFonte"
 timeline_bloqueado = "bloqueadoSaidaFonte"
 cena_destino = "res://Cenarios/cenario desertoFonte/desertoFonte.tscn"
 spawn_destino = "spawnsDesertoFonte/spawnSaiFonte"
+titulo_ato = "ATO 2: O Agricultor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saidaFonte" unique_id=344294550]
 position = Vector2(-11, 33)

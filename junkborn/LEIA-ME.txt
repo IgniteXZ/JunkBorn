@@ -1,38 +1,10 @@
-CORREÇÃO DA BANCADA E DA PRENSA — Junkborn
-Base revisada: junkborn(20261114-173657).zip
+Base: junkborn(20261114-231813).zip
 
-Este ZIP contém APENAS:
-- Minigames/Forja/slot_material.gd
-- Minigames/Forja/tela_prensa.gd
-- Minigames/Forja/area_2d.gd
-- Minigames/Forja/area_2d_2.gd
+Extraia na pasta que contém project.godot. Faça backup antes.
 
-NÃO substitui HUD/scripts/ui_canvas.gd nem Minigames/Forja/tela_forja.gd.
-Esses dois arquivos já tinham sido alterados manualmente por você.
+- interacao_dialogo.gd + Global.gd + fonte.tscn: mostra ATO 2 após sair da Fonte pela primeira vez, usando TelaAto, depois do fade.
+- area_2d_mini.gd: [E] Interagir nos montes de coleta.
+- character.gd: bloqueio de movimento durante timelines do Dialogic.
+- ui_livro.gd: abre primeira leitura nas páginas 3/4 e inicia descobrindoDiario após clicar em Sair.
 
-MUDANÇAS:
-1. Arrastar material para a bancada passa a salvar a remoção do inventário.
-2. Devolução registra nome, ID e recurso e só esvazia bancada após devolver tudo.
-3. A Prensa verifica se há espaço para TODOS os materiais antes de desmanchar.
-4. Ao desmanchar, usa os recursos reais de plástico/metal/corda, inclusive item_id.
-5. Se uma inserção falhar, restaura os slots e não consome o item de entrada.
-6. Interagir para fechar a Forja/Prensa não apaga a interface caso haja material sem lugar no inventário.
-
-COMO INSTALAR:
-1. Faça backup da pasta Minigames/Forja.
-2. Feche Godot.
-3. Extraia o ZIP na pasta principal do projeto (onde fica project.godot).
-4. Sobrescreva somente esses quatro scripts.
-5. Confira que ui_canvas.gd tem o ajuste recente do item_id no empilhamento
-   e tela_forja.gd usa add_item_inventory conforme última orientação.
-
-TESTES:
-A) Plástico para a bancada e devolução com botão direito: sem duplicar.
-B) Plástico na Forja -> Cano: ID 1, conclusão da missão canoforja.
-C) Cano na Prensa -> Plástico: ID 11, quantidade correta.
-D) Bancada com item, inventário sem espaço: a interface NÃO deve fechar apagando material.
-E) Reabra a Forja/Prensa e confirme que recursos/IDs dos itens estão corretos.
-F) Arraste e cancele sem soltar: item deve retornar ao slot original.
-
-IMPORTANTE: Não é um teste de execução do Godot. Faça backup e execute os testes
-no jogo; não é possível garantir ausência de regressões sem testar na engine.
+Não executado no Godot: testar os fluxos no editor.
