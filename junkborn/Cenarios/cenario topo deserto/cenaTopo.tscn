@@ -343,7 +343,7 @@ size = Vector2(525.5, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga66r"]
 size = Vector2(845.5, 129)
 
-[node name="Node2D3" type="Node2D" unique_id=240260216]
+[node name="Node2D4" type="Node2D" unique_id=240260216]
 position = Vector2(192, -159)
 script = ExtResource("1_t30iu")
 

@@ -139,7 +139,7 @@ variables={
 "BonecoNoBolso": false
 },
 "NewVar": "",
-"conversarComAvo": true,
+"conversarComAvo": false,
 "deserto2liberado": false,
 "deserto_liberado": false,
 "falou_estanhoinicio": false,
