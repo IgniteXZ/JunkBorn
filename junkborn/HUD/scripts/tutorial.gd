@@ -8,6 +8,14 @@ const MARGEM_BAIXO: float = 70.0
 @onready var linhas: VBoxContainer = $Caixa/Linhas
 
 var _ocupado: bool = false
+var _sessao: int = 0
+
+func reiniciar() -> void:
+	_sessao += 1
+	_ocupado = false
+	visible = false
+	caixa.modulate.a = 0.0
+
 
 func _ready() -> void:
 	caixa.modulate.a = 0.0
@@ -21,12 +29,19 @@ func mostrar(id: String, mensagem: String, acoes: String = "", duracao: float = 
 	_exibir(mensagem, acoes.split(" ", false), duracao)
 
 func _exibir(mensagem: String, acoes: PackedStringArray, duracao: float) -> void:
+	var sessao_atual: int = _sessao
 	while _ocupado or Dialogic.current_timeline != null or not get_tree().get_nodes_in_group("minigame_aberto").is_empty():
 		await get_tree().process_frame
+		if sessao_atual != _sessao:
+			return
+	if sessao_atual != _sessao:
+		return
 	_ocupado = true
 
 	_montar(mensagem)
 	await get_tree().process_frame
+	if sessao_atual != _sessao:
+		return
 	caixa.reset_size()
 	_posicionar()
 	visible = true
@@ -38,10 +53,14 @@ func _exibir(mensagem: String, acoes: PackedStringArray, duracao: float) -> void
 			if Input.is_action_just_pressed(a):
 				fim = 0
 		await get_tree().process_frame
+		if sessao_atual != _sessao:
+			return
 
 	var t: Tween = create_tween()
 	t.tween_property(caixa, "modulate:a", 0.0, 0.4)
 	await t.finished
+	if sessao_atual != _sessao:
+		return
 	visible = false
 	_ocupado = false
 

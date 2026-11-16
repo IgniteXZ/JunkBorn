@@ -2,3 +2,4 @@ join Filomeno (Normal) left
 Filomeno (Normal): Esse deserto árido
 Filomeno (bravo): Local favorito dos ratos voadores da Rauch Company
 Filomeno (Normal): Toda cautela vai ser pouca
+do Tutorial.mostrar("corrida", "Pressione <correr> para correr|Pressione novamente para andar", "correr", 10.0)

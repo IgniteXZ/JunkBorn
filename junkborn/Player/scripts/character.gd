@@ -10,6 +10,9 @@ signal PassarCanvas(canvas:CanvasLayer)
 
 @export_category("Variables")
 @export var _mover_speed: float = 140.0
+@export_range(1.0, 3.0, 0.05) var multiplicador_corrida: float = 1.6
+# Mantém o estado de corrida mesmo ao trocar de cena.
+static var corrida_ativa: bool = false
 
 @export var _friction: float = 1
 @export var _aceleration: float = 0.2
@@ -78,6 +81,11 @@ func _physics_process(_delta: float) -> void:
 		_animate()
 		return
 
+	# Cada toque em Shift alterna entre andar e correr.
+	# Durante diálogos/minigames, a verificação acima impede a alternância.
+	if Input.is_action_just_pressed("correr"):
+		corrida_ativa = not corrida_ativa
+
 	if empurrado:
 		velocity = knockback_vector
 		knockback_vector = knockback_vector.move_toward(Vector2.ZERO, _friction * 1000 * _delta)
@@ -106,7 +114,10 @@ func _move() -> void:
 		_animation_tree["parameters/jangada/blend_position"] = _dir_anim
 		_animation_tree["parameters/jangadaIdle/blend_position"] = _dir_anim
 
-		velocity = velocity.lerp(_direction * _mover_speed, _aceleration)
+		var velocidade_atual: float = _mover_speed
+		if corrida_ativa and not Global.chamarJangada:
+			velocidade_atual *= multiplicador_corrida
+		velocity = velocity.lerp(_direction * velocidade_atual, _aceleration)
 		return
 
 	velocity = velocity.lerp(Vector2.ZERO, _friction)

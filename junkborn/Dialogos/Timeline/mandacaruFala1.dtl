@@ -1,4 +1,3 @@
-
 join mandacaru (bravo) right
 join Filomeno (Normal) left
 if {madancaru_falou} == false:
@@ -41,10 +40,12 @@ if {madancaru_falou} == true:
 	if {FinalSecreto.BonecoNoBolso} == true:
 		- Boneco
 			mandacaru (normal): Esse Boneco... Ele parece bem interessante...
-			[wait_input]
 			mandacaru (normal): Você poderia dar ele para mim?
 			- Sim
-				Você deu o boneco para mandacaru
-				set {FinalSecreto.BonecoNoBolso} = false
+				do Global.entregar_boneco_ao_mandacaru()
+				if {FinalSecreto.BonecoNoBolso} == false:
+					Você deu o boneco para mandacaru
+				else:
+					O boneco não está no inventário.
 			- Não
 				Você não deu o boneco para mandacaru

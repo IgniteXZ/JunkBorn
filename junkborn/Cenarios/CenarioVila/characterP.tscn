@@ -1838,7 +1838,7 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_tvkme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="y-sort/npc6" unique_id=1372160085]
-position = Vector2(78, 355)
+position = Vector2(1300, 113)
 shape = SubResource("CircleShape2D_fm7tp")
 
 [node name="DialogoGrupo" type="Area2D" parent="y-sort/npc6" unique_id=1804924058]

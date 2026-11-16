@@ -25,5 +25,6 @@ srEstanho (normal): Tome cuidado Filomeno...
 Filomeno (Normal): Não se preocupe võ, eu irei cuidar disso
 Filomeno (bravo): Irei libertar o povo da nossa vila
 srEstanho (feliz): Estarei contando com você, Filomeno...
+do TelaAto.mostrar("ATO FINAL: A Cura")
 do GerenciadorMissoes.completar_missao("falarcomavo")
 do GerenciadorMissoes.iniciar("missaofinal")
