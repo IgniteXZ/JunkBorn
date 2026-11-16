@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bjflfoxi4xdhp" path="res://Cenarios/CenariosDeserto/tileset/tileset-palha-terra2 - Copia.png" id="10_3o7mo"]
 [ext_resource type="Texture2D" uid="uid://cfqlhckbtx3kv" path="res://Cenarios/CenariosDeserto/tileset/tileset areia pedrasa escura.png" id="11_lugx6"]
 [ext_resource type="PackedScene" uid="uid://bblifjy18wubl" path="res://Player/cenas/character.tscn" id="13_18n0w"]
+[ext_resource type="Script" uid="uid://b2l5xht0uw3a1" path="res://Cenarios/cenario topo deserto/cena_topo_chama.gd" id="16_fyjjf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1c8b"]
 load_path = "res://.godot/imported/paralax4.png-7572fde595e9733ce86e6c1bde9b6a65.ctex"
@@ -339,7 +340,10 @@ b = Vector2(240, 201)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3o7mo"]
 size = Vector2(525.5, 16)
 
-[node name="Node2D2" type="Node2D" unique_id=240260216]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga66r"]
+size = Vector2(845.5, 129)
+
+[node name="Node2D3" type="Node2D" unique_id=240260216]
 position = Vector2(192, -159)
 script = ExtResource("1_t30iu")
 
@@ -547,3 +551,13 @@ shape = SubResource("SegmentShape2D_0hx70")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="y-sort/StaticBody2D" unique_id=340205678]
 position = Vector2(-571.75, -62)
 shape = SubResource("RectangleShape2D_3o7mo")
+
+[node name="cenaTopoChama" type="Area2D" parent="." unique_id=1686111765]
+script = ExtResource("16_fyjjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cenaTopoChama" unique_id=1626996604]
+position = Vector2(-650, -129)
+shape = SubResource("RectangleShape2D_ga66r")
+
+[connection signal="area_entered" from="cenaTopoChama" to="cenaTopoChama" method="_on_area_entered"]
+[connection signal="area_exited" from="cenaTopoChama" to="cenaTopoChama" method="_on_area_exited"]
