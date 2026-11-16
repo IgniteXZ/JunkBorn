@@ -556,7 +556,7 @@ shape = SubResource("RectangleShape2D_3o7mo")
 script = ExtResource("16_fyjjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cenaTopoChama" unique_id=1626996604]
-position = Vector2(-650, -129)
+position = Vector2(-669, 15)
 shape = SubResource("RectangleShape2D_ga66r")
 
 [connection signal="area_entered" from="cenaTopoChama" to="cenaTopoChama" method="_on_area_entered"]
