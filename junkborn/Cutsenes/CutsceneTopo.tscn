@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsthik2x2hkmi"]
 
-[ext_resource type="VideoStream" uid="uid://cdlruru3n30yc" path="res://Cutsenes/videoplayback.ogv" id="1_4bc1l"]
+[ext_resource type="VideoStream" uid="uid://cbagxgfx05dkb" path="res://Cutsenes/InShot_20261115_212227704.ogv" id="1_4bc1l"]
 [ext_resource type="Script" uid="uid://dgq1xilg2f1d2" path="res://Cutsenes/cutsceneTopo.gd" id="2_axnir"]
 
 [node name="CutsceneTopo" type="Control" unique_id=248069326]
@@ -16,7 +16,7 @@ layout_mode = 0
 offset_left = -684.0
 offset_top = -423.0
 offset_right = 685.0
-offset_bottom = 379.0
+offset_bottom = 425.0
 stream = ExtResource("1_4bc1l")
 autoplay = true
 expand = true
