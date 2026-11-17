@@ -46,6 +46,15 @@ var _missao_avo_iniciada: bool = false
 
 func _ready() -> void:
 	plantio_atualizado.connect(_ao_plantio_atualizado)
+	# O Dialogic emite um sinal quando a opcao de entregar o boneco e escolhida.
+	# Isso evita a chamada direta de uma funcao dentro da escolha.
+	if not Dialogic.signal_event.is_connected(_ao_sinal_dialogic):
+		Dialogic.signal_event.connect(_ao_sinal_dialogic)
+
+
+func _ao_sinal_dialogic(argumento: Variant) -> void:
+	if argumento == "entregar_boneco_mandacaru":
+		entregar_boneco_ao_mandacaru()
 
 
 func _process(_delta: float) -> void:
@@ -199,3 +208,16 @@ func aplicar_spawn(player: Node2D) -> void:
 		player.global_position = spawn.global_position
 
 	spawn_destino = ""
+
+# Ao entregar o boneco para Mandacaru, remove o item 100 do inventario
+# e so desativa a escolha do dialogo se a remocao realmente ocorreu.
+func entregar_boneco_ao_mandacaru() -> void:
+	var inventario := get_tree().get_first_node_in_group("inventario")
+	if inventario == null or not inventario.has_method("remover_item_por_id"):
+		push_warning("Mandacaru: inventario indisponivel; boneco nao entregue.")
+		return
+
+	if inventario.remover_item_por_id(100):
+		Dialogic.VAR.set_variable("FinalSecreto.BonecoNoBolso", false)
+	else:
+		push_warning("Mandacaru: boneco (ID 100) nao encontrado no inventario.")

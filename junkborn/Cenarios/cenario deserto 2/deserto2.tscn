@@ -1340,7 +1340,7 @@ jogador = NodePath("../y-sort/Character")
 [node name="entradaTopo" type="Area2D" parent="." unique_id=1948293621]
 script = ExtResource("13_c82f6")
 automatico = true
-variavel_necessaria = "conversarComAvo"
+missao_necessaria = "missaofinal"
 cena_destino = "res://Cenarios/cenario topo deserto/cenaTopo.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entradaTopo" unique_id=1858450068]

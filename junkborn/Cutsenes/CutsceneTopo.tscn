@@ -20,7 +20,7 @@ offset_bottom = 425.0
 stream = ExtResource("1_4bc1l")
 autoplay = true
 expand = true
-loop = true
+loop = false
 script = ExtResource("2_axnir")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=912950696]

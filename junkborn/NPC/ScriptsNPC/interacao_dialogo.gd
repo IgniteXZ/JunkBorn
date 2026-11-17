@@ -5,6 +5,7 @@ extends Area2D
 @export var automatico: bool = false
 @export var uma_vez: bool = false
 @export var variavel_necessaria: String = ""
+@export var missao_necessaria: String = ""
 @export var timeline_bloqueado: String = ""
 @export var cena_destino: String = ""
 @export var spawn_destino: String = ""
@@ -52,6 +53,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		_interagir()
 
+func _tem_missao_necessaria() -> bool:
+    if missao_necessaria == "":
+        return true
+    for missao in GerenciadorMissoes.missoes_ativas:
+        if missao.id_missao == missao_necessaria and not missao.concluida:
+            return true
+    return false
+
 func _interagir() -> void:
 	if _ocupado or Dialogic.current_timeline != null or _esgotada():
 		return
@@ -61,7 +70,7 @@ func _interagir() -> void:
 	if uma_vez:
 		Global.eventos[_chave()] = true
 
-	if variavel_necessaria != "" and not Dialogic.VAR.get_variable(variavel_necessaria, false):
+	if not _tem_missao_necessaria() or (variavel_necessaria != "" and not Dialogic.VAR.get_variable(variavel_necessaria, false)):
 		await _tocar_dialogo(timeline_bloqueado)
 	elif automatico and cena_destino != "":
 		await _tocar_dialogo(timeline)

@@ -2,7 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://dqculcpxjqe4w" path="res://Fonte/PressStart2P.ttf" id="1_uplbc"]
 [ext_resource type="Script" uid="uid://dvrt3ippaeafq" path="res://Menu/script/controles.gd" id="1_wuskh"]
-[ext_resource type="Texture2D" uid="uid://cwxaa0k2lq818" path="res://Menu/sprite/wasd.png" id="2_s5jdh"]
 [ext_resource type="Script" uid="uid://dhnanj5fjgetq" path="res://Menu/script/voltar_controles.gd" id="4_xdly5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiah4"]
@@ -97,12 +96,10 @@ text = "Movimentar"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="WasdSprite" type="TextureRect" parent="Panel/ScrollContainer/VBoxContainer" unique_id=182645983]
-custom_minimum_size = Vector2(0, 90)
+[node name="WasdSprite" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer" unique_id=182645983]
+custom_minimum_size = Vector2(0, 112)
 layout_mode = 2
-texture = ExtResource("2_s5jdh")
-expand_mode = 1
-stretch_mode = 5
+mouse_filter = 2
 
 [node name="InteragirLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1175922845]
 custom_minimum_size = Vector2(0, 30)
@@ -113,12 +110,10 @@ text = "Interagir"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteragirSprite" type="TextureRect" parent="Panel/ScrollContainer/VBoxContainer" unique_id=178130199]
+[node name="InteragirSprite" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer" unique_id=178130199]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-texture = ExtResource("2_s5jdh")
-expand_mode = 1
-stretch_mode = 5
+mouse_filter = 2
 
 [node name="InventarioLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=479174567]
 custom_minimum_size = Vector2(0, 30)
@@ -130,12 +125,10 @@ text = "Inventário
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InventarioSprite" type="TextureRect" parent="Panel/ScrollContainer/VBoxContainer" unique_id=12996788]
+[node name="InventarioSprite" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer" unique_id=12996788]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-texture = ExtResource("2_s5jdh")
-expand_mode = 1
-stretch_mode = 5
+mouse_filter = 2
 
 [node name="Mapa" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1615038937]
 custom_minimum_size = Vector2(0, 30)
@@ -147,12 +140,10 @@ text = "Mapa
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MapaSprite" type="TextureRect" parent="Panel/ScrollContainer/VBoxContainer" unique_id=2003576917]
+[node name="MapaSprite" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer" unique_id=2003576917]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-texture = ExtResource("2_s5jdh")
-expand_mode = 1
-stretch_mode = 5
+mouse_filter = 2
 
 [node name="Pausar" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1482068646]
 custom_minimum_size = Vector2(0, 30)
@@ -163,12 +154,10 @@ text = "Pausar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PausarSprite" type="TextureRect" parent="Panel/ScrollContainer/VBoxContainer" unique_id=426835870]
+[node name="PausarSprite" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer" unique_id=426835870]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-texture = ExtResource("2_s5jdh")
-expand_mode = 1
-stretch_mode = 5
+mouse_filter = 2
 
 [node name="margem" type="Label" parent="Panel/ScrollContainer/VBoxContainer" unique_id=1964694802]
 custom_minimum_size = Vector2(0, 20)

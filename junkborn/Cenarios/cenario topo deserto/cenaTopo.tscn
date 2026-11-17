@@ -343,7 +343,7 @@ size = Vector2(525.5, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga66r"]
 size = Vector2(845.5, 129)
 
-[node name="Node2D3" type="Node2D" unique_id=240260216]
+[node name="Node2D4" type="Node2D" unique_id=240260216]
 position = Vector2(192, -159)
 script = ExtResource("1_t30iu")
 
@@ -556,7 +556,7 @@ shape = SubResource("RectangleShape2D_3o7mo")
 script = ExtResource("16_fyjjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cenaTopoChama" unique_id=1626996604]
-position = Vector2(-650, -129)
+position = Vector2(-669, 15)
 shape = SubResource("RectangleShape2D_ga66r")
 
 [connection signal="area_entered" from="cenaTopoChama" to="cenaTopoChama" method="_on_area_entered"]

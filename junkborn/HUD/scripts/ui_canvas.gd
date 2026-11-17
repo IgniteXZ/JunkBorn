@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var tooltip: PanelContainer = $Tooltip
 @onready var tooltip_nome: Label = $Tooltip/Nome
+const TEXTURA_JANGADA: Texture2D = preload("res://Resource/Itens/jangada.png")
 
 # atalho abrir e fechar inventario
 
@@ -54,12 +55,23 @@ func _slot_protegido_drone(slot: Node) -> bool:
 	if bool(slot.get_meta("protegido_drone", false)):
 		return true
 
+	# Nao verificar pelo ID 6: a Pa tambem usa esse numero no projeto.
 	if "item_data" in slot and slot.item_data != null:
-		if _nome_e_semente(str(slot.item_data.nome)):
+		var dados: Resource = slot.item_data
+		var nome_recurso := str(dados.get("nome")).strip_edges().to_lower()
+		if _nome_e_semente(nome_recurso) or nome_recurso == "jangada":
+			return true
+		if dados.resource_path == "res://Resource/Itens/jangada.tres":
 			return true
 
-	var textura = slot.get_node("sprite").texture
-	return textura != null and _nome_e_semente(str(Global.nomes_itens.get(textura, "")))
+	var textura: Texture2D = slot.get_node("sprite").texture
+	if textura == null:
+		return false
+	if textura == TEXTURA_JANGADA or textura.resource_path == TEXTURA_JANGADA.resource_path:
+		return true
+
+	var nome := str(Global.nomes_itens.get(textura, "")).strip_edges().to_lower()
+	return _nome_e_semente(nome) or nome == "jangada"
 
 
 # coletar item no chão

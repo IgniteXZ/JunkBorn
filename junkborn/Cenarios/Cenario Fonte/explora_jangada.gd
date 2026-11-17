@@ -2,7 +2,13 @@ extends Node2D
 
 @export var modo_teste = false
 @export var tex_jangada: Texture2D
-@onready var area = $testeJangada
+# Distancia minima da margem para exibir a jangada. Ajustavel pelo Inspector.
+@export_range(0.0, 20.0, 1.0) var margem_rio: float = 10.0
+@onready var area: Area2D = $testeJangada
+
+# Regioes ja desenhadas no pantano; nao alteramos suas colisoes.
+var _retangulos_rio: Array[Rect2] = []
+var _jogador: Node2D = null
 
 var camada_aviso: CanvasLayer
 var aviso: Label
@@ -13,6 +19,14 @@ var aberto = false  # NOVO: indica que a jangada já foi liberada/usada
 func _ready() -> void:
 	area.body_entered.connect(_ao_entrar)
 	area.body_exited.connect(_ao_sair)
+
+	# A colisao original ainda libera a entrada ao pressionar E.
+	# Para o visual da jangada, usamos apenas o centro do jogador
+	# e uma margem para ele nao navegar sobre a terra.
+	for filho in area.get_children():
+		if filho is CollisionShape2D and filho.shape is RectangleShape2D and not filho.disabled:
+			var tamanho: Vector2 = filho.shape.size
+			_retangulos_rio.append(Rect2(filho.position - tamanho / 2.0, tamanho))
 
 	camada_aviso = CanvasLayer.new()
 	camada_aviso.layer = 4
@@ -27,6 +41,41 @@ func _ready() -> void:
 	aviso.add_theme_color_override("font_outline_color", Color.BLACK)
 	aviso.visible = false
 	camada_aviso.add_child(aviso)
+
+
+func _physics_process(_delta: float) -> void:
+	if aberto:
+		# Quando o jogador aproxima-se da margem, deixa de aparecer
+		# sobre a jangada, mesmo que parte do corpo toque a Area2D.
+		Global.chamarJangada = jogador_dentro and _esta_na_agua_profunda()
+
+
+func _ponto_no_rio(ponto: Vector2) -> bool:
+	for regiao in _retangulos_rio:
+		if regiao.has_point(ponto):
+			return true
+	return false
+
+
+func _esta_na_agua_profunda() -> bool:
+	if not is_instance_valid(_jogador):
+		_jogador = get_tree().get_first_node_in_group("player") as Node2D
+	if _jogador == null:
+		return false
+
+	var centro := area.to_local(_jogador.global_position)
+	if not _ponto_no_rio(centro):
+		return false
+
+	# Amostragem sobre a UNIAO dos retangulos, evitando buracos
+	# entre as 260 faixas que formam o rio.
+	for deslocamento in [
+		Vector2(margem_rio, 0.0), Vector2(-margem_rio, 0.0),
+		Vector2(0.0, margem_rio), Vector2(0.0, -margem_rio)
+	]:
+		if not _ponto_no_rio(centro + deslocamento):
+			return false
+	return true
 
 
 func _process(_delta: float) -> void:
@@ -140,7 +189,7 @@ func _unhandled_input(event):
 
 		aberto = true
 		aviso.visible = false  # CORRIGIDO: texto some ao apertar E
-		Global.chamarJangada = true
+		Global.chamarJangada = _esta_na_agua_profunda()
 		liberar()
 
 
