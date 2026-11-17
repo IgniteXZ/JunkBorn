@@ -2,6 +2,7 @@ extends Node
 
 #outros
 var chamarJangada : bool = false
+var DesligarMusica: bool = false
 
 
 #mapa cidade atual
@@ -18,15 +19,12 @@ var spawn_destino: String = ""
 var esta_coleta: bool = false
 var paginas_coletadas: Dictionary = {}
 
-var DesligarMusica: bool = false
 
 var TerminouOminiGame: bool = false
-# Chave: ID único de coleta da semente; valor: deslocamento local no terreno.
-# Este dicionário persiste enquanto o jogo está aberto, inclusive entre cenas.
+
 var plantas_plantadas: Dictionary = {}
 signal plantio_atualizado(quantidade: int)
 
-# Progressão da história: a sexta semente (Verbácio) nunca é obtida.
 const SEMENTES_ENCONTRAVEIS: Array[String] = [
 	"fonte_semente_1",
 	"deserto1_semente2",
@@ -46,8 +44,7 @@ var _missao_avo_iniciada: bool = false
 
 func _ready() -> void:
 	plantio_atualizado.connect(_ao_plantio_atualizado)
-	# O Dialogic emite um sinal quando a opcao de entregar o boneco e escolhida.
-	# Isso evita a chamada direta de uma funcao dentro da escolha.
+
 	if not Dialogic.signal_event.is_connected(_ao_sinal_dialogic):
 		Dialogic.signal_event.connect(_ao_sinal_dialogic)
 

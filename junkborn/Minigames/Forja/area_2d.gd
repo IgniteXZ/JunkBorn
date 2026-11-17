@@ -97,7 +97,7 @@ func _fechar_prensa() -> bool:
 	if tela_prensa_instanciada and is_instance_valid(tela_prensa_instanciada):
 		if tela_prensa_instanciada.has_method("fechar_tela"):
 			if not tela_prensa_instanciada.fechar_tela():
-				return false  # Há materiais que não puderam voltar; não fechar.
+				return false 
 		else:
 			tela_prensa_instanciada.queue_free()
 

@@ -100,7 +100,7 @@ func _add_tecla(linha: HBoxContainer, acao: String) -> void:
 	estilo.bg_color = Color("#f0f0f0")
 	estilo.border_color = Color("#6b6b6b")
 	estilo.set_border_width_all(2)
-	estilo.border_width_bottom = 6   # dá o relevo de tecla
+	estilo.border_width_bottom = 6   
 	estilo.content_margin_left = 10
 	estilo.content_margin_right = 10
 	estilo.content_margin_top = 6
