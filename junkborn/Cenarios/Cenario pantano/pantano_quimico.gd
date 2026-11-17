@@ -3,8 +3,8 @@ extends Node2D
 @export var musica: AudioStream
 
 # O drone aparece em intervalos aleatórios entre 6 e 7 segundos.
-@export_range(6.0, 12, 0.1) var intervalo_minimo_drone: float = 6
-@export_range(6.0, 30, 0.1) var intervalo_maximo_drone: float = 7
+@export_range(6.0, 60, 0.1) var intervalo_minimo_drone: float = 6
+@export_range(6.0, 60, 0.1) var intervalo_maximo_drone: float = 7
 
 var drone_scene: PackedScene = preload("res://Inimigo/Drone/drone.tscn")
 

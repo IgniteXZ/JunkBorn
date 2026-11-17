@@ -54,12 +54,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		_interagir()
 
 func _tem_missao_necessaria() -> bool:
-    if missao_necessaria == "":
-        return true
-    for missao in GerenciadorMissoes.missoes_ativas:
-        if missao.id_missao == missao_necessaria and not missao.concluida:
-            return true
-    return false
+	if missao_necessaria == "":
+		return true
+	for missao in GerenciadorMissoes.missoes_ativas:
+		if missao.id_missao == missao_necessaria and not missao.concluida:
+			return true
+	return false
 
 func _interagir() -> void:
 	if _ocupado or Dialogic.current_timeline != null or _esgotada():

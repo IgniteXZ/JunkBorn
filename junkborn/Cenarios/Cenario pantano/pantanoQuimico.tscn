@@ -3529,8 +3529,8 @@ size = Vector2(124.5, 801)
 
 [node name="Node2D4" type="Node2D" unique_id=240260216]
 script = ExtResource("1_072d7")
-intervalo_minimo_drone = 12.0
-intervalo_maximo_drone = 18.1
+intervalo_minimo_drone = 60.0
+intervalo_maximo_drone = 60.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=211909192]
 position = Vector2(-544.125, 113.24999)
@@ -3665,7 +3665,6 @@ pagina_id = "orapronobis"
 
 [node name="ExploraJangada" type="Node2D" parent="." unique_id=247499452]
 script = ExtResource("21_ka6kb")
-modo_teste = true
 tex_jangada = ExtResource("22_je6m8")
 
 [node name="testeJangada" type="Area2D" parent="ExploraJangada" unique_id=1797675930]
