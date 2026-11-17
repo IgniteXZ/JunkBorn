@@ -145,11 +145,11 @@ variables={
 "falou_estanhoinicio": false,
 "filomeno_estaComDiario": false,
 "forja_liberada": false,
-"liberou_menus": true,
+"liberou_menus": false,
 "madancaru_falou": false,
 "podeSairFonte": false,
 "pode_dormir": false,
-"pode_sair_casa": false,
+"pode_sair_casa": true,
 "rauchy_company": false
 }
 glossary/glossary_files=["uid://b5xaxr87hkumi"]

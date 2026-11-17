@@ -232,7 +232,7 @@ paginas = Array[Dictionary]([{
 "text": "Esse lugar é a esperança do deserto, onde as plantas poderão ser salvas e poderão florescer novamente"
 }, {
 "illustration": ExtResource("15_dbes8"),
-"text": "A Rauchs Company nos achou antes de conseguirmos levar a água pra superfície e começar a plantar, então espalhamos as sementes pelo deserto, cada uma em uma região"
+"text": "A Rauch Company nos achou antes de conseguirmos levar a água pra superfície e começar a plantar, então espalhamos as sementes pelo deserto, cada uma em uma região"
 }, {
 "illustration": ExtResource("16_sdd3e"),
 "text": "Após as coisas se acalmarem vamos pegar todas elas e plantar perto da fonte, aonde poderão florescer e trazer a natureza de volta."
@@ -254,7 +254,7 @@ pages = Array[Dictionary]([{
 }, {
 "id": "aguape",
 "illustration": ExtResource("24_36usp"),
-"text": "Planta aquática de crescimento rápido com folhas arredondadas e resistentes a águas turvas e estagnadas. Faz fitorremediação hídrica: suas raízes absorvem metais pesados, esgoto e poluentes químicos da água. Embora não seja voltada ao consumo humano direto, protege a saúde  ao descontaminar mananciais e frear a proliferação de doenças."
+"text": "Planta aquática de crescimento rápido com folhas arredondadas e resistentes a águas turvas e estagnadas. Suas raízes absorvem metais pesados, esgoto e poluentes químicos da água. Embora não seja voltada ao consumo humano direto, protege a saúde  ao descontaminar mananciais e frear a proliferação de doenças."
 }, {
 "id": "girassol",
 "illustration": ExtResource("25_wcckc"),

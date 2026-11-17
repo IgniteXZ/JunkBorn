@@ -10,6 +10,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	$torneira.visible = Global.TerminouOminiGame
+
 	# Verifica se a semente foi coletada
 	if not coletou_semente_1():
 		return
