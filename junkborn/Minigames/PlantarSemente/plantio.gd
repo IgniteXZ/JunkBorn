@@ -18,8 +18,8 @@ var perto: bool = false
 
 
 func _ready() -> void:
-	Global.TerminouOminiGame = true
-	Global.plantas_plantadas = POSICOES.duplicate()
+	
+	
 
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
