@@ -13,11 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://dmjnnvb3tm6bb" path="res://Minigames/Forja/fabrica interior.png" id="6_rwvvd"]
 [ext_resource type="Texture2D" uid="uid://qlh68ir5jd7r" path="res://Cenarios/Cenario pantano/tileset pedra.png" id="7_5wnv6"]
 [ext_resource type="PackedScene" uid="uid://dkihrw1vll4jv" path="res://Minigames/Forja/telaForja.tscn" id="7_f0243"]
-[ext_resource type="Script" path="res://Minigames/Forja/npc_estatico.gd" id="13_kqiwa"]
 [ext_resource type="Texture2D" uid="uid://ctdit5tr8mbg4" path="res://NPC/Sprites/mandacaru/manda1.png" id="14_tiw0q"]
 [ext_resource type="Texture2D" uid="uid://6ccfrsxe3cxg" path="res://NPC/Sprites/mandacaru/manda2.png" id="15_rwvvd"]
 [ext_resource type="Script" uid="uid://2simyu656bpe" path="res://NPC/ScriptsNPC/interacao_dialogo.gd" id="16_5wnv6"]
-[ext_resource type="Script" path="res://Minigames/Forja/npc_estatico.gd" id="18_ckp5w"]
+[ext_resource type="Script" uid="uid://d3320ujh7oo4v" path="res://Minigames/Forja/npc_estatico.gd" id="18_ckp5w"]
 [ext_resource type="Texture2D" uid="uid://k1ogycl15q4t" path="res://NPC/Sprites/trabalhadores/personagens1.png" id="19_mak5v"]
 [ext_resource type="Texture2D" uid="uid://bfaj0wy7nendh" path="res://NPC/Sprites/trabalhadores/personagens2.png" id="20_cdac8"]
 
@@ -1130,7 +1129,7 @@ position = Vector2(229, 708)
 visible = false
 y_sort_enabled = true
 position = Vector2(-37, 338)
-script = ExtResource("13_kqiwa")
+script = ExtResource("18_ckp5w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="y-sort/mandacaruDois" unique_id=1576836131]
 y_sort_enabled = true
