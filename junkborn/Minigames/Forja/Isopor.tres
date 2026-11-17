@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://ba123qgstyhrq"]
+
+[ext_resource type="Script" uid="uid://dycfmqmje3pms" path="res://Minigames/Forja/recipeData.gd" id="1_6sqhu"]
+[ext_resource type="Texture2D" uid="uid://cywr31x3c6vct" path="res://Resource/Itens/isopor.png" id="1_es8x6"]
+[ext_resource type="Texture2D" uid="uid://c8oalqt2swfps" path="res://Resource/Itens/Plastico.png" id="2_etvra"]
+[ext_resource type="Resource" uid="uid://b5wdxhdlxpk7a" path="res://Resource/Itens/isopor.tres" id="3_5h1kq"]
+
+[resource]
+script = ExtResource("1_6sqhu")
+nome_resultado = "Isopor"
+icone_resultado = ExtResource("1_es8x6")
+item_resultado = ExtResource("3_5h1kq")
+ingredientes = {
+ExtResource("2_etvra"): 1
+}
+metadata/_custom_type_script = "uid://dycfmqmje3pms"

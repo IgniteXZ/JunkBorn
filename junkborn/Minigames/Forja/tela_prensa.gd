@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	_monitorar_previa()
 
 func _obter_receita_do_item(lixo: LixoData) -> RecipeData:
-	if not lixo:
+	if not lixo or not lixo.pode_desmanchar:
 		return null
 		
 	var nome_lixo_limpo = lixo.nome.replace(" ", "").to_lower() if lixo.nome else ""

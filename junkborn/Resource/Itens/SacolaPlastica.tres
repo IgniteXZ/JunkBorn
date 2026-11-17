@@ -10,4 +10,5 @@ nome = "Sacola Plastica"
 descricao = "É um ótimo objeto para se reciclar, consigo usá-lo diretamente na forja para produzir algo"
 textura = ExtResource("2_yn1py")
 tipoDeLixo = "Plastico"
+pode_desmanchar = true
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

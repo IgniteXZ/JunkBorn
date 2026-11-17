@@ -9,4 +9,5 @@ item_id = 7
 nome = "Metal"
 descricao = "É um ótimo material para se reciclar, consigo usá-lo diretamente na forja da fábrica para produzir algo"
 textura = ExtResource("2_drcyl")
+tipoDeLixo = "Metal"
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

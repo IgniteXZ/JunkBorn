@@ -10,4 +10,5 @@ nome = "Talheres"
 descricao = "São ótimos objetos para se reciclar, pode ser útil se eu levar para a prensa na fábrica"
 textura = ExtResource("2_h7bko")
 tipoDeLixo = "Metal"
+pode_desmanchar = true
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

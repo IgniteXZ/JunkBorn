@@ -9,5 +9,6 @@ item_id = 5
 nome = "Isopor"
 descricao = "É um ótimo material para se reciclar, pode ser útil se eu levar para a prensa da fábrica"
 textura = ExtResource("2_sof7g")
-tipoDeLixo = "Papel"
+tipoDeLixo = "Plastico"
+pode_desmanchar = true
 metadata/_custom_type_script = "uid://emlo1ywngpfw"

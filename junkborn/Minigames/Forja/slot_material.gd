@@ -61,7 +61,8 @@ const RECURSOS_CONHECIDOS = [
 	preload("res://Resource/Itens/jangada.tres"),
 	preload("res://Resource/Itens/Panela.tres"),
 	preload("res://Resource/Itens/Talheres.tres"),
-	preload("res://Resource/Itens/SacolaPlastica.tres")
+	preload("res://Resource/Itens/SacolaPlastica.tres"),
+	preload("res://Resource/Itens/isopor.tres")
 ]
 
 
@@ -119,6 +120,9 @@ func _can_drop_data(_position: Vector2, data: Variant) -> bool:
 	# Não aceita sementes/ItemData nem material sem recurso identificável.
 	var recurso = _recurso_arrastado(data)
 	if recurso == null or recurso.textura != textura:
+		return false
+	# Bloqueia o drop se o slot já tiver um item diferente acumulado
+	if quantidade_acumulada > 0 and item_data != null and item_data.item_id != recurso.item_id:
 		return false
 	return textura_obrigatoria == null or textura == textura_obrigatoria
 
