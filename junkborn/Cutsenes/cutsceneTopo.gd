@@ -9,6 +9,10 @@ func _ready() -> void:
 	if not is_playing():
 		play()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Confirmar"):
+		_ir_para_inicio()
+
 func _ir_para_inicio() -> void:
 	if _saindo:
 		return
