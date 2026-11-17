@@ -7,8 +7,8 @@ extends Area2D
 # Uma posição diferente para cada semente evita plantas sobrepostas.
 const POSICOES: Dictionary = {
 	"fonte_semente_1": Vector2(-22, -12),
-	"deserto1_semente2": Vector2(-5, -21),
-	"deserto2_semente5": Vector2(18, -12),
+	"deserto1_semente2": Vector2(-5, -12),
+	"deserto2_semente5": Vector2(5, -3),
 	"mina_semente3": Vector2(-17, 15),
 	"pantano_semente_4": Vector2(17, 15)
 }
@@ -18,10 +18,14 @@ var perto: bool = false
 
 
 func _ready() -> void:
+	Global.TerminouOminiGame = true
+	Global.plantas_plantadas = POSICOES.duplicate()
+
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	if label_interagir:
 		label_interagir.visible = false
+		
 	_restaurar_plantas()
 
 

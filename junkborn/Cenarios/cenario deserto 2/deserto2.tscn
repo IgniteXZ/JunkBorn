@@ -994,6 +994,12 @@ tile_map_data = PackedByteArray("AABe/wwAAAAHAAEAAABe/wsAAAAHAAYAAABe/woAAAAHAAY
 tile_set = SubResource("TileSet_s4tim")
 rendering_quadrant_size = 24
 
+[node name="ItemnoChao" parent="y-sort" unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_ad0gh")]
+position = Vector2(357, 180)
+dados_item = ExtResource("16_c82f6")
+labelinteragir = NodePath("../Character/LabelInteragir")
+pagina_id = "girassol"
+
 [node name="passagemdeCena" type="Node2D" parent="." unique_id=1863857707]
 
 [node name="EntradadesertoMinigame" type="Sprite2D" parent="passagemdeCena" unique_id=340405690]
@@ -1143,12 +1149,6 @@ visible = false
 layer = 100
 visible = false
 
-[node name="ItemnoChao" parent="." unique_id=1900860506 node_paths=PackedStringArray("labelinteragir") instance=ExtResource("14_ad0gh")]
-position = Vector2(357, 180)
-dados_item = ExtResource("16_c82f6")
-labelinteragir = NodePath("../y-sort/Character/LabelInteragir")
-pagina_id = "girassol"
-
 [node name="CharmarDrone" type="Area2D" parent="." unique_id=1243010409]
 position = Vector2(-1748, 156)
 script = ExtResource("17_ij8sj")
@@ -1258,12 +1258,12 @@ cena_destino = "res://Cenarios/cenario topo deserto/cenaTopo.tscn"
 position = Vector2(277, -109)
 shape = SubResource("RectangleShape2D_b7610")
 
-[connection signal="PassarCanvas" from="y-sort/Character" to="ItemnoChao" method="_on_character_passar_canvas"]
+[connection signal="PassarCanvas" from="y-sort/Character" to="y-sort/ItemnoChao" method="_on_character_passar_canvas"]
+[connection signal="area_entered" from="y-sort/ItemnoChao" to="y-sort/ItemnoChao" method="_on_area_entered"]
+[connection signal="area_exited" from="y-sort/ItemnoChao" to="y-sort/ItemnoChao" method="_on_area_exited"]
 [connection signal="area_entered" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_entered"]
 [connection signal="area_exited" from="passagemdeCena/EntradadesertoMinigame/Area2DMini" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_area_exited"]
 [connection signal="fechar_coleta" from="ui_coleta/MiniGameColeta" to="passagemdeCena/EntradadesertoMinigame/Area2DMini" method="_on_mini_game_coleta_fechar_coleta"]
-[connection signal="area_entered" from="ItemnoChao" to="ItemnoChao" method="_on_area_entered"]
-[connection signal="area_exited" from="ItemnoChao" to="ItemnoChao" method="_on_area_exited"]
 [connection signal="area_entered" from="CharmarDrone" to="CharmarDrone" method="_on_area_entered"]
 
 [editable path="ui_coleta/MiniGameColeta"]
