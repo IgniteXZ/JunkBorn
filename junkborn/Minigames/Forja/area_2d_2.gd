@@ -106,7 +106,6 @@ func _fechar_forja() -> bool:
 					for slot in linha.slots_da_linha:
 						if slot.quantidade_acumulada > 0:
 							if not slot._devolver_itens_ao_inventario():
-								# Impede apagar a bancada com material retido.
 								return false
 		tela_forja_instanciada.queue_free()
 

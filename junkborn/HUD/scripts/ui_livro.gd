@@ -10,6 +10,14 @@ func _ready() -> void:
 	# O botão original esconde o Livro; esta chamada diferida ocorre depois.
 	botao_fechar.pressed.connect(_ao_fechar_diario, CONNECT_DEFERRED)
 
+func _input(event: InputEvent) -> void:
+	if not $Livro.visible or event.is_echo():
+		return
+	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("inventory"):
+		get_viewport().set_input_as_handled()
+		$Livro.hide()
+		_ao_fechar_diario.call_deferred()
+
 
 func _on_botaolivrobotanica_pressed() -> void:
 	var diario := $Livro
